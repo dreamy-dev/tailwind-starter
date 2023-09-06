@@ -2,16 +2,13 @@ import { Navbar } from "flowbite-react";
 
 export default function NavBar() {
   return (
-    <Navbar fluid={true} rounded={true}>
+    <Navbar fluid={true} rounded={true} style={{ zIndex: "12" }}>
       <Navbar.Brand href="https://flowbite.com/">
         <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          className="mr-3 h-6 sm:h-9"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Stadler_Rail_logotype.svg/2560px-Stadler_Rail_logotype.svg.png"
+          className="mr-1 h-4 sm:h-6"
           alt="Flowbite Logo"
         />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite
-        </span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
