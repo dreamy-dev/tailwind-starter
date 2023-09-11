@@ -1,15 +1,13 @@
 "use client";
 
 import Hero from "./Hero";
-import NavBar from "./NavBar";
 import Stats from "./Stats";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      <NavBar />
+    <>
       <Hero />
       <Stats />
-    </main>
+    </>
   );
 }

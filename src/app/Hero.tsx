@@ -3,13 +3,6 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Products", href: "#" },
-  { name: "Carreer", href: "#" },
-  { name: "About us", href: "#" },
-];
-
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
