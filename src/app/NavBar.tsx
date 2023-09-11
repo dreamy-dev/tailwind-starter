@@ -8,10 +8,7 @@ export default function NavBar() {
 
   return (
     <Navbar
-      fluid={true}
-      rounded={true}
       style={{
-        zIndex: "12",
         marginTop: "30px",
         marginBottom: "30px",
         backgroundColor: "white",
