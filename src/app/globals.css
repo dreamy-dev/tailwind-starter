@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  :root {
+    --white-bg-rgb: 255, 255, 255;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --primaryDarkBlue-rgb: 11, 63, 117;
+    --primaryLightBlue-rgb: 0, 123, 192;
+    --primaryBlue-rgb: 30, 90, 154;
+    --primaryBlack-rgb: 0, 0, 0;
+    --secondaryOliveDark-rgb: 118, 136, 29;
+    --secondaryOlive-rgb: 148, 147, 0;
+    --secondaryOliveLight-rgb: 191, 184, 0;
+    --secondaryGreenDark-rgb: 0, 94, 93;
+    --secondaryGreen-rgb: 0, 134, 117;
+    --secondaryRedDark-rgb: 111, 38, 61;
+    --secondaryRed-rgb: 186, 12, 47;
+    --secondaryOrange-rgb: 254, 80, 0;
+    --secondaryBlueDark-rgb: 122, 153, 172;
+    --secondaryBlue-rgb: 0, 156, 189;
+    --secondaryBlueLight-rgb: 141, 200, 232;
+    --secondaryWarmGrayDark-rgb: 150, 140, 131;
+    --secondaryWarmGray-rgb: 182, 173, 165;
+    --secondaryWarmGrayLight-rgb: 203, 196, 188;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @layer base {
+    :root {
+      --white-bg-rgb: 255, 255, 255;
+      /* --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
+    }
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--white-bg-rgb));
 }
