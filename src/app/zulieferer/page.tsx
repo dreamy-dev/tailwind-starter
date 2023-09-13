@@ -1,5 +1,5 @@
 "use client";
 
-export default function Zulieferer(params: Function) {
+export default function Zulieferer() {
   return <div> Zulieferer page</div>;
 }

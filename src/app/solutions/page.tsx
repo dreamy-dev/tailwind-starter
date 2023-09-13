@@ -3,7 +3,7 @@
 import HeroSolutions from "./Hero";
 import Cards from "../../components/Cards";
 
-export default function Solutions(params: Function) {
+export default function Solutions() {
   return (
     <>
       <HeroSolutions></HeroSolutions>

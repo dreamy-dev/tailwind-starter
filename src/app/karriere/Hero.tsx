@@ -61,7 +61,7 @@ export default function CareerHero() {
               </h1>
               <p className="mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">
                 The best of Luxury Retreats is now Flowbite Luxe—offering the
-                world's most extraordinary homes with the highest standard of
+                worlds most extraordinary homes with the highest standard of
                 service.
               </p>
             </div>
