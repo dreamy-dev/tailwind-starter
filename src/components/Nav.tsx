@@ -78,7 +78,7 @@ export default function Nav() {
                 <div className="bg-gray-800 rounded-b-lg">
                   <img
                     className="max-w-full h-auto rounded-b-lg"
-                    src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2300&q=80"
+                    src="https://www.stadlerrail.com/media/img/worldmap-section-2019.jpg"
                     alt=""
                   />
                 </div>

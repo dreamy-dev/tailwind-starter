@@ -5,15 +5,17 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function CareerHero() {
   return (
-    <section className="bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
+    <section className="bg-[url('https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/coast-house-view.jpg')] bg-no-repeat bg-cover bg-center bg-gray-400 bg-blend-multiply">
       <div className="relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 xl:px-0 z-1">
         <div className="mb-6 max-w-screen-md lg:mb-0">
+          <br />
+          <br />
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-tight text-white md:text-5xl lg:text-6xl">
-            Every home is a destination
+            We move the world everyday
           </h1>
           <p className="mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">
-            The best of Luxury Retreats is now Flowbite Luxe—offering the worlds
-            most extraordinary homes with the highest standard of service.
+            Join us on our mission to help millions of people to reach their
+            destination
           </p>
         </div>
         <form
@@ -89,6 +91,8 @@ export default function CareerHero() {
             Search
           </a>
         </form>
+        <br />
+        <br />
       </div>
     </section>
   );
