@@ -22,6 +22,7 @@ export default function RootLayout({
         <NavBar />
         <main>{children}</main>
         <Footer />
+        <script src="../../node_modules/flowbite/dist/flowbite.min.js" async />
       </body>
     </html>
   );
