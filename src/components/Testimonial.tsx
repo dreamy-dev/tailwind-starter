@@ -38,7 +38,7 @@ export default function Testimonial() {
                 Micheal Gough
               </div>
               <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-                CEO at Google
+                Project Manager at Stadler,
               </div>
             </div>
           </figcaption>

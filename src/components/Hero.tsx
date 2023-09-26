@@ -20,10 +20,7 @@ export default function CareerHero() {
           action="#"
           className="grid gap-y-4 p-4 mt-8 w-full bg-white rounded lg:gap-x-4 lg:grid-cols-6 lg:mt-9 dark:bg-gray-800"
         >
-          <div
-            date-rangepicker
-            className="grid grid-cols-1 gap-x-4 lg:col-span-3"
-          >
+          <div className="grid grid-cols-1 gap-x-4 lg:col-span-3">
             <div className="relative">
               <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                 <svg
