@@ -27,10 +27,10 @@ export default function Testimonial() {
               </q>
             </p>
           </blockquote>
-          <figcaption className="flex items-center justify-center mt-6 space-x-3">
+          <figcaption className="flex items-center justify-center mt-8 space-x-3">
             <img
               className="w-6 h-6 rounded-full"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/team/member-2.png"
               alt="profile picture"
             />
             <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
@@ -38,7 +38,7 @@ export default function Testimonial() {
                 Micheal Gough
               </div>
               <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-                Project Manager at Stadler,
+                Project Manager at Stadler
               </div>
             </div>
           </figcaption>
