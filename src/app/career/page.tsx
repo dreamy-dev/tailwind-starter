@@ -1,4 +1,6 @@
 "use client";
+import Benefits from "@/components/Benefits";
+import Figures from "@/components/Figures";
 import Nav from "@/components/Nav";
 import NavTwo from "@/components/NavTwo";
 import Testimonial from "@/components/Testimonial";
@@ -9,8 +11,9 @@ export default function Karriere() {
     <>
       <CareerHero></CareerHero>
       <Nav />
-      {/* <NavTwo /> */}
-      {/* <Testimonial /> */}
+      <Benefits />
+      <Testimonial />
+      <Figures />
     </>
   );
 }
