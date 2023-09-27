@@ -45,7 +45,7 @@ export default function Jobs() {
           <div className="grid w-full grid-cols-1 gap-4 xl:max-w-3xl shrink-0 sm:grid-cols-2 md:grid-cols-3">
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover h-full h-auto scale-100 ease-in duration-300 group-hover:scale-125"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/anlagenbauer_berufserfahrene.jpg"
                 alt=""
               />
@@ -61,7 +61,7 @@ export default function Jobs() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover h-full h-auto scale-100 ease-in duration-300 group-hover:scale-125"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/schweisser_berufserfahrene.jpg"
                 alt=""
               />
@@ -77,7 +77,7 @@ export default function Jobs() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover h-80 h-full h-auto scale-100 ease-in duration-300 group-hover:scale-125"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/bild_075.jpg"
                 alt=""
               />
@@ -93,15 +93,15 @@ export default function Jobs() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover w-full h-[320px] lg:h-auto scale-100 ease-in duration-300 group-hover:scale-125"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/team/member-5.png"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                src="https://www.stadlerrail.com/media/img/c/interne_transporte_berufserfahrene.jpg"
                 alt=""
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Thom Belly</p>
+                  <p className="text-xl font-bold text-white">Anlagenbauer</p>
                   <p className="text-base font-medium text-gray-300">
-                    Front-end Developer
+                    Transport
                   </p>
                 </div>
               </div>
@@ -109,15 +109,17 @@ export default function Jobs() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover w-full h-[320px] lg:h-auto scale-100 ease-in duration-300 group-hover:scale-125"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/team/member-6.png"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                src="https://www.stadlerrail.com/media/img/c/elektro_vormontage_berufserfahrene.jpg"
                 alt=""
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Bonnie Green</p>
+                  <p className="text-xl font-bold text-white">
+                    Elektro Vormontage
+                  </p>
                   <p className="text-base font-medium text-gray-300">
-                    React Developer
+                    Engineering
                   </p>
                 </div>
               </div>
@@ -125,15 +127,15 @@ export default function Jobs() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover w-full h-[320px] lg:h-auto scale-100 ease-in duration-300 group-hover:scale-125"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/team/member-7.png"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                src="https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg"
                 alt=""
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Lana Byrd</p>
+                  <p className="text-xl font-bold text-white">Schreiner</p>
                   <p className="text-base font-medium text-gray-300">
-                    Marketing
+                    Engineering
                   </p>
                 </div>
               </div>
