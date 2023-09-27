@@ -6,8 +6,6 @@ import CTASection from "@/components/CTASection";
 import Figures from "@/components/Figures";
 import Jobs from "@/components/Jobs";
 import Nav from "@/components/Nav";
-import NavTwo from "@/components/NavTwo";
-import Stepper from "@/components/Stepper";
 import Testimonial from "@/components/Testimonial";
 import CareerHero from "../../components/Hero";
 
