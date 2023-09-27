@@ -33,11 +33,7 @@ export default function NavBar() {
         >
           Solutions
         </Navbar.Link>
-        <Navbar.Link
-          as={Link}
-          href="/karriere"
-          active={pathname === "/karriere"}
-        >
+        <Navbar.Link as={Link} href="/career" active={pathname === "/career"}>
           Career
         </Navbar.Link>
         <Navbar.Link as={Link} href="/company" active={pathname === "/company"}>
