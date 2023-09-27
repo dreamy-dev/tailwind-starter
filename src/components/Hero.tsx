@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function CareerHero() {
   return (
-    <section className="bg-[url('https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/coast-house-view.jpg')] bg-no-repeat bg-cover bg-center bg-gray-400 bg-blend-multiply">
+    <section className="bg-[url('/career1.jpg')] bg-no-repeat bg-cover bg-center bg-gray-400 bg-blend-multiply">
       <div className="relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 xl:px-0 z-1">
         <div className="mb-6 max-w-screen-md lg:mb-0">
           <br />
@@ -74,7 +74,7 @@ export default function CareerHero() {
 
           <a
             href=""
-            className="lg:col-span-1 justify-center md:w-auto text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center"
+            className="lg:col-span-1 justify-center md:w-auto text-white bg-primaryDarkBlue hover:bg-primary-900 focus:ring-4 focus:outline-none focus:primary-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center"
           >
             <svg
               className="mr-2 -ml-1 w-5 h-5"

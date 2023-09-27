@@ -21,7 +21,7 @@ module.exports = {
         900: "#1e3a8a",
         950: "#172554",
       },
-      primaryDarkBlue: "rgb(var(--primaryDarkBlue-rgb) / <alpha-value>)",
+      primaryDarkBlue: "#0b3f75",
       primaryLightBlue: "rgb(var(--primaryLightBlue-rgb) / <alpha-value>)",
       primaryBlue: "rgb(var(--primaryBlue-rgb) / <alpha-value>)",
       primaryBlack: "rgb(var(--primaryBlack-rgb) / <alpha-value>)",
@@ -43,7 +43,11 @@ module.exports = {
       secondaryWarmGrayLight:
         "rgb(var(--secondaryWarmGrayLight-rgb) / <alpha-value>)",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "hero-career": "url('/career1.jpg')",
+      },
+    },
   },
   plugins: [require("flowbite/plugin"), require("@tailwindcss/forms")],
 };

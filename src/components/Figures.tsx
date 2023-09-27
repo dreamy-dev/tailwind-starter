@@ -8,7 +8,7 @@ export default function Figures() {
         <div>
           <a
             href="#"
-            className="inline-flex justify-center items-center text-base font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
+            className="inline-flex justify-center items-center text-base font-medium text-primaryDarkBlue hover:text-primary-900 dark:text-primary-800 dark:hover:text-primary-700"
           >
             See open Jobs for Switzerland
             <svg

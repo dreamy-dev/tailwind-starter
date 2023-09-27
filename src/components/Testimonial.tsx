@@ -6,7 +6,7 @@ export default function Testimonial() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <figure className="max-w-screen-md mx-auto">
+        <figure className="max-w-screen-lg mx-auto">
           <svg
             className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
             viewBox="0 0 24 27"
@@ -21,9 +21,10 @@ export default function Testimonial() {
           <blockquote>
             <p className="text-2xl font-medium text-gray-900 dark:text-white">
               <q>
-                Flowbite is just awesome. It contains tons of predesigned
-                components and pages starting from login screen to complex
-                dashboard. Perfect choice for your next SaaS application.
+                Stadlers Antwort auf eine sich immer schneller entwickelnde
+                Bahnbranche: Innovative und modulare Fahrzeugkonzepte für jedes
+                Marktsegment, die durch kurze Entwicklungszeiten, hohe
+                Wirtschaftlichkeit und grosse Flexibilität überzeugen.
               </q>
             </p>
           </blockquote>

@@ -4,11 +4,11 @@ export default function Benefits() {
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-            Designed for business teams like yours
+            Benefits to join our team
           </h2>
           <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-            Here we focus on markets where technology, innovation, and capital
-            can unlock long-term value and drive economic growth.
+            We achieve our goals by working efficiently, flexibly and
+            independently.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Benefits() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                  Automatic categorization
+                  Betriebliches Gesundheitsmanagement
                 </h3>
                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                   Flow Budget automatically categorizes your income and
@@ -68,7 +68,8 @@ export default function Benefits() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                  Budgeting methods
+                  Möglichkeit zur Teilnahme an gemeinsamen sportlichen
+                  Aktivitäten
                 </h3>
                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                   The app offers a variety of budgeting methods, such as
@@ -98,7 +99,8 @@ export default function Benefits() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                  Budget goals
+                  Leistungsgerechte und tarifgebundene Vergütung und
+                  Sozialleistungen
                 </h3>
                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                   Set budget goals for each category and get real-time updates
@@ -127,7 +129,7 @@ export default function Benefits() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                  Reports and Analytics
+                  Betriebliches Gesundheitsmanagement
                 </h3>
                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                   We provide detailed reports and analytics that help users
@@ -157,7 +159,8 @@ export default function Benefits() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                  Cloud synchronization
+                  Möglichkeit zur Teilnahme an gemeinsamen sportlichen
+                  Aktivitäten
                 </h3>
                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                   Synch your data across multiple devices, so you can access
@@ -187,7 +190,8 @@ export default function Benefits() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 sm:text-2xl dark:text-white">
-                  Alerts and notifications
+                  Leistungsgerechte und tarifgebundene Vergütung und
+                  Sozialleistungen
                 </h3>
                 <p className="mt-2 text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
                   Flow budget will alert you if you are over-budgeting, and
@@ -203,7 +207,7 @@ export default function Benefits() {
           <a
             href="#"
             title=""
-            className="text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            className="text-white inline-flex items-center bg-primaryDarkBlue hover:bg-primary-900 focus:ring-4 focus:outline-none focus:ring-primary-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             role="button"
           >
             Get a demo
