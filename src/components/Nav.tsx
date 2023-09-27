@@ -22,12 +22,10 @@ export default function Nav() {
         {tabs.map((item) => (
           <button
             key={item.label}
-            className={
-              item === selectedTab
-                ? "bg-gray-100 hover:border-transparent text-center md:text-left p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-white/[.05] dark:hover:bg-gray-700 active"
-                : "text-center md:text-left hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-white/[.05] dark:hover:bg-gray-700"
-            }
             onClick={() => setSelectedTab(item)}
+            className={`${
+              selectedTab.label == item.label ? "bg-gray-100" : " "
+            } text-center md:text-left p-3 md:p-5 rounded-xl`}
             type="button"
             id="tabs-with-card-item-1"
             data-hs-tab="#tabs-with-card-1"
@@ -53,7 +51,7 @@ export default function Nav() {
                   {item.label}
                 </span>
                 <span className="hidden lg:block mt-2 text-gray-800 dark:text-gray-200">
-                  Create a business, whether you’ve got a fresh idea.
+                  See our locations in {item.label}
                 </span>
               </span>
             </span>
@@ -73,7 +71,7 @@ export default function Nav() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="max-w-[1140px] lg:pb-32 relative">
+            <div className="max-w-[1140px] lg:pb-12 relative">
               <figure className="ml-auto mr-20 relative z-[1] max-w-full w-[50rem] h-auto rounded-b-lg shadow-[0_2.75rem_3.5rem_-2rem_rgb(45_55_75_/_20%),_0_0_5rem_-2rem_rgb(45_55_75_/_15%)] dark:shadow-[0_2.75rem_3.5rem_-2rem_rgb(0_0_0_/_20%),_0_0_5rem_-2rem_rgb(0_0_0_/_15%)]">
                 <div className="bg-gray-800 rounded-b-lg">
                   <img
