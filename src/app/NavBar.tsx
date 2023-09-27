@@ -23,30 +23,22 @@ export default function NavBar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="main-navbar" />
       <Navbar.Collapse id="main-navbar">
-        <Navbar.Link as={Link} href="/" active={pathname === "/"}>
+        <Navbar.Link as={Link} href="/">
           Home
         </Navbar.Link>
-        <Navbar.Link
-          as={Link}
-          href="/solutions"
-          active={pathname === "/solutions"}
-        >
+        <Navbar.Link as={Link} href="/solutions">
           Solutions
         </Navbar.Link>
-        <Navbar.Link as={Link} href="/career" active={pathname === "/career"}>
+        <Navbar.Link as={Link} href="/career">
           Career
         </Navbar.Link>
-        <Navbar.Link as={Link} href="/company" active={pathname === "/company"}>
+        <Navbar.Link as={Link} href="/company">
           Company
         </Navbar.Link>
-        <Navbar.Link as={Link} href="/medien" active={pathname === "/medien"}>
+        <Navbar.Link as={Link} href="/medien">
           Media
         </Navbar.Link>
-        <Navbar.Link
-          as={Link}
-          href="/zulieferer"
-          active={pathname === "/zulieferer"}
-        >
+        <Navbar.Link as={Link} href="/zulieferer">
           Supplier
         </Navbar.Link>
       </Navbar.Collapse>

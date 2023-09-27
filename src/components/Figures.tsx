@@ -1,3 +1,5 @@
+import Slider from "./Slider";
+
 export default function Figures() {
   return (
     <section className="bg-white dark:bg-gray-900 lg:py-16 py-8">
@@ -26,7 +28,8 @@ export default function Figures() {
           </a>
         </div>
       </div>
-      <div className="mx-auto max-w-screen-xl">
+      <Slider />
+      {/* <div className="mx-auto max-w-screen-xl">
         <div
           id="animation-carousel"
           className="relative px-16 sm:px-24"
@@ -141,7 +144,8 @@ export default function Figures() {
             </span>
           </button>
         </div>
-      </div>
+      </div> */}
+
       <dl className="grid grid-cols-2 gap-8 mx-auto mt-8 max-w-screen-xl text-gray-900 lg:mt-14 sm:grid-cols-3 xl:grid-cols-6 dark:text-white">
         <div className="flex flex-col justify-center items-center">
           <dt className="mb-2 text-3xl font-extrabold md:text-4xl">73M+</dt>
