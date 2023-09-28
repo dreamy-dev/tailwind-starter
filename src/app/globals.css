@@ -2,30 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --white-bg-rgb: 255, 255, 255;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-    --primaryDarkBlue-rgb: 11, 63, 117;
-    --primaryLightBlue-rgb: 0, 123, 192;
-    --primaryBlue-rgb: 30, 90, 154;
-    --primaryBlack-rgb: 0, 0, 0;
-    --secondaryOliveDark-rgb: 118, 136, 29;
-    --secondaryOlive-rgb: 148, 147, 0;
-    --secondaryOliveLight-rgb: 191, 184, 0;
-    --secondaryGreenDark-rgb: 0, 94, 93;
-    --secondaryGreen-rgb: 0, 134, 117;
-    --secondaryRedDark-rgb: 111, 38, 61;
-    --secondaryRed-rgb: 186, 12, 47;
-    --secondaryOrange-rgb: 254, 80, 0;
-    --secondaryBlueDark-rgb: 122, 153, 172;
-    --secondaryBlue-rgb: 0, 156, 189;
-    --secondaryBlueLight-rgb: 141, 200, 232;
-    --secondaryWarmGrayDark-rgb: 150, 140, 131;
-    --secondaryWarmGray-rgb: 182, 173, 165;
-    --secondaryWarmGrayLight-rgb: 203, 196, 188;
-  }
+:root {
+  --white-bg-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primaryDarkBlue-rgb: "#0b3f75";
+  --primaryLightBlue-rgb: "#007bc0";
+  --primaryBlue-rgb: "#1e5a9a";
+  --primaryBlack-rgb: #000000;
+  --secondaryOliveDark-rgb: "#76881d";
+  --secondaryOlive-rgb: "#949300";
+  --secondaryOliveLight-rgb: "#bfb800";
+  --secondaryGreenDark-rgb: "#005e5d";
+  --secondaryGreen-rgb: "#008675";
+  --secondaryRedDark-rgb: "#6f263d";
+  --secondaryRed-rgb: "#ba0c2f";
+  --secondaryOrange-rgb: "#fe5000";
+  --secondaryBlueDark-rgb: "#7a99ac";
+  --secondaryBlue-rgb: "#009cbd";
+  --secondaryBlueLight-rgb: "#8dc8e8";
+  --secondaryWarmGrayDark-rgb: "#968c83";
+  --secondaryWarmGray-rgb: "#b6ada5";
+  --secondaryWarmGrayLight-rgb: "#cbc4bc";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -170,3 +168,41 @@ li button {
   pointer-events: none;
 }
  */
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+}
+
+.slideshow {
+  margin: auto;
+  width: 40vw;
+  aspect-ratio: calc(16 / 9);
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.prevButton {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.nextButton {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
