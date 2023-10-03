@@ -8,6 +8,7 @@ export default function NavBar() {
 
   return (
     <Navbar
+      className="font-customBlack"
       style={{
         marginTop: "30px",
         marginBottom: "30px",
