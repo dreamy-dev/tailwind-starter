@@ -5,7 +5,7 @@ import Page from "../components/Page";
 //import Testimonial from "./Testimonial";
 
 storyblokInit({
-  accessToken: "SIPyJNDrEIL5LqncrqovyQtt",
+  accessToken: "i20Q9ZZcD1z1cvrWLgX1zgtt",
   use: [apiPlugin],
   apiOptions: {
     region: "eu",

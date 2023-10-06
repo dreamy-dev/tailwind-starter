@@ -1,4 +1,5 @@
 "use client";
+
 import "./globals.css";
 
 import type { Metadata } from "next";
@@ -10,7 +11,7 @@ import StoryblokProvider from "../components/StoryblockProvider";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 
 storyblokInit({
-  accessToken: "SIPyJNDrEIL5LqncrqovyQtt",
+  accessToken: "i20Q9ZZcD1z1cvrWLgX1zgtt",
   use: [apiPlugin],
   apiOptions: {
     region: "eu",
@@ -19,10 +20,10 @@ storyblokInit({
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata: Metadata = {
-//   title: "Stadler Website Prototype",
-//   description: "Technical analysis phase",
-// };
+export const metadata: Metadata = {
+  title: "Stadler Website Prototype",
+  description: "Technical analysis phase",
+};
 
 export default function RootLayout({
   children,
