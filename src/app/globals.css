@@ -24,6 +24,83 @@
   --secondaryWarmGrayDark-rgb: "#968c83";
   --secondaryWarmGray-rgb: "#b6ada5";
   --secondaryWarmGrayLight-rgb: "#cbc4bc";
+  --customRegular: "Montserrat";
+}
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("/assets/Montserrat-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-BlackItalic";
+  src: url("/assets/Montserrat-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/assets/Montserrat-Bold") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-BoldItalic";
+  src: url("/assets/Montserrat-BoldItalic") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url("/assets/Montserrat-ExtraBold") format("truetype"),
+    url("/assets/Montserrat-ExtraBoldItalic") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBoldItalic";
+  src: url("/assets/Montserrat-ExtraBoldItalic") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("/assets/Montserrat-ExtraLight") format("truetype"),
+    url("/assets/Montserrat-ExtraLightItalic") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLightItalic";
+  src: url("/assets/Montserrat-ExtraLightItalic") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-LightItalic";
+  src: url("/assets/Montserrat-LightItalic") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("/assets/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url("/assets/Montserrat-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("/assets/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("/assets/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("/assets/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Thin";
+  src: url("/assets/Montserrat-Thin.ttf") format("truetype");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +115,7 @@
 
 body {
   color: rgb(var(--white-bg-rgb));
+  font-family: "Montserrat-Medium";
 }
 /* 
 .window {
