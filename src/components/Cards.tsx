@@ -5,7 +5,7 @@ export default function Cards() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primaryDarkBlue sm:text-4xl">
+          <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 md:text-4xl dark:text-white">
             From the blog
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">

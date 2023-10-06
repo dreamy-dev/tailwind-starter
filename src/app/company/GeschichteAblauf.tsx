@@ -3,11 +3,11 @@ export default function GeschichteAblauf() {
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl lg:text-center">
         <h2 className="mb-4 text-3xl lg:text-center tracking-tight font-extrabold text-gray-900 md:text-4xl dark:text-white">
-          Stats that matter
+          Flexibilität und Innovationskraft
         </h2>
         <p className="mx-auto max-w-2xl mt-6 lg:text-center text-lg leading-8 text-gray-600">
-          Our rigorous security and compliance standards are at the heart of all
-          we do. We work tirelessly to protect you and your customers.
+          Stadler baut Schienenfahrzeuge, die sich rechnen und auf die
+          Bedürfnisse der Kunden zugeschnitten sind.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default function GeschichteAblauf() {
             </p>
             <a
               href="#"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-800 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-800 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
             >
               Learn more
               <svg

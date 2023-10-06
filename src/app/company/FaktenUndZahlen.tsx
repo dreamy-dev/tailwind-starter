@@ -4,17 +4,17 @@ export default function FaktenUndZahlen() {
       <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 lg:py-16 lg:px-6 ">
         <div className="text-gray-500 sm:text-lg">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 md:text-4xl dark:text-white">
-            Stats that matter
+            Flexibilität und Innovationskraft
           </h2>
           <p className="mb-8 font-light lg:text-xl dark:text-gray-400">
-            Our rigorous security and compliance standards are at the heart of
-            all we do. We work tirelessly to protect you and your customers.
+            Stadler baut Schienenfahrzeuge, die sich rechnen und auf die
+            Bedürfnisse der Kunden zugeschnitten sind.
           </p>
           <div className="grid gap-6 lg:grid-cols-1 dark:border-gray-700 sm:grid-cols-2">
             <div className="flex">
               <div className="mr-4 shrink-0">
                 <svg
-                  className="w-8 h-8 text-primary-600 dark:text-primary-500"
+                  className="w-8 h-8 text-primaryDarkBlue dark:text-primary-800"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ export default function FaktenUndZahlen() {
             <div className="flex">
               <div className="mr-4 shrink-0">
                 <svg
-                  className="w-8 h-8 text-primary-600 dark:text-primary-500"
+                  className="w-8 h-8 text-primaryDarkBlue dark:text-primary-800"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ export default function FaktenUndZahlen() {
             <div className="flex">
               <div className="mr-4 shrink-0">
                 <svg
-                  className="w-8 h-8 text-primary-600 dark:text-primary-500"
+                  className="w-8 h-8 text-primaryDarkBlue dark:text-primary-800"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ export default function FaktenUndZahlen() {
             <div className="flex">
               <div className="mr-4 shrink-0">
                 <svg
-                  className="w-8 h-8 text-primary-600 dark:text-primary-500"
+                  className="w-8 h-8 text-primaryDarkBlue dark:text-primary-800"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"

@@ -38,12 +38,13 @@ export default function CompanyFeatures() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
+            Warum STADLER?
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Weil wir Züge aus der Sicht unserer Kunden bauen. Stadler hört zu,
+            entwickelt und baut das optimale Schienenfahrzeug nicht nur für
+            Kunden, sondern gemeinsam mit ihnen. Jeder Auftrag ist für uns eine
+            persönliche Angelegenheit.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -51,7 +52,7 @@ export default function CompanyFeatures() {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primaryDarkBlue">
                     <feature.icon
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
