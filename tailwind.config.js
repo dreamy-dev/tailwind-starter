@@ -39,6 +39,7 @@ module.exports = {
       secondaryWarmGrayDark: "#968c83",
       secondaryWarmGray: "#b6ada5",
       secondaryWarmGrayLight: "#cbc4bc",
+      secondaryBgcLightBlue: "#f4f7fa",
     },
     screens: {
       sm: "640px",

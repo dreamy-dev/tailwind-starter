@@ -7,54 +7,56 @@ interface ScrollTriggerProps {
   onExit?: () => boolean;
 }
 
-const Stats: React.FC = () => {
+const Stats: React.FC<{ props: ScrollTriggerProps }> = () => {
   const [counterOn, setCounterOn] = useState(false);
   const handleEnter = () => {
     setCounterOn(true);
-    return true; // You can return a boolean here if needed
+    return true;
   };
 
   const handleExit = () => {
     setCounterOn(false);
-    return true; // You can return a boolean here if needed
+    return false;
   };
   return (
-    <>
-      <ScrollTrigger onEnter={handleEnter} onExit={handleExit}>
-        <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-              <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt className="text-base leading-7 text-gray-600">
-                  Transactions every 24 hours
-                </dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                  {counterOn && <CountUp end={44} suffix="million" />}
-                </dd>
-              </div>
-              <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt className="text-base leading-7 text-gray-600">
-                  Assets under holding
-                </dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                  {counterOn && (
-                    <CountUp end={199} prefix="$" suffix=" trillion" />
-                  )}
-                </dd>
-              </div>
-              <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt className="text-base leading-7 text-gray-600">
-                  New users annually
-                </dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                  {counterOn && <CountUp end={46000} />}
-                </dd>
-              </div>
-            </dl>
-          </div>
+    <ScrollTrigger onEnter={handleEnter} onExit={handleExit}>
+      <div className="bg-secondaryBgcLightBlue py-24 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-base leading-7 text-gray-600">
+                Mitarbeiter weltweit
+              </dt>
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                {counterOn && <CountUp end={14} suffix=" Tsd" />}
+              </dd>
+            </div>
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-base leading-7 text-gray-600">
+                Produktionsstandorte
+              </dt>
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                {counterOn && <CountUp end={15} />}
+              </dd>
+            </div>
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-base leading-7 text-gray-600">
+                Arbeitstunden
+              </dt>
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                {counterOn && <CountUp end={170} suffix=" Mio" />}
+              </dd>
+            </div>
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-base leading-7 text-gray-600">Team</dt>
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                {counterOn && <CountUp end={1} />}
+              </dd>
+            </div>
+          </dl>
         </div>
-      </ScrollTrigger>
-    </>
+      </div>
+    </ScrollTrigger>
   );
 };
 export default Stats;
