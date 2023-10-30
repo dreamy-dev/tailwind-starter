@@ -42,6 +42,15 @@ export default function NavBar() {
         <Navbar.Link as={Link} href="/zulieferer">
           Supplier
         </Navbar.Link>
+        <Navbar.Link as={Link} href="/full-service">
+          Full Service
+        </Navbar.Link>
+        <Navbar.Link as={Link} href="/lieferanten">
+          Lieferanten
+        </Navbar.Link>
+        <Navbar.Link as={Link} href="/unternehmen">
+          Unternehmen
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
