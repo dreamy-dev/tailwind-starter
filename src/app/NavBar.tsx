@@ -48,9 +48,9 @@ export default function NavBar() {
         <Navbar.Link as={Link} href="/lieferanten">
           Lieferanten
         </Navbar.Link>
-        <Navbar.Link as={Link} href="/unternehmen">
+        {/* <Navbar.Link as={Link} href="/unternehmen">
           Unternehmen
-        </Navbar.Link>
+        </Navbar.Link> */}
       </Navbar.Collapse>
     </Navbar>
   );
