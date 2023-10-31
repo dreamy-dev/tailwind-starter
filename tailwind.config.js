@@ -22,6 +22,7 @@ module.exports = {
         950: "#172554",
       },
       primaryDarkBlue: "#0b3f75",
+      primaryBgcGray: "#F2F7FA",
       primaryLightBlue: "#007bc0",
       primaryBlue: "#1e5a9a",
       primaryBlack: "#000000",
