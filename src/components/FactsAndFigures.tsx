@@ -51,7 +51,7 @@ export default function FactsAndFigures() {
                     Mitarbeitende
                   </dt>
                   <dd className="order-first text-6xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                    13'743
+                    13&apos;743
                   </dd>
                 </div>
                 <div className="mx-auto flex max-w-xs flex-col gap-y-2 items-center">
@@ -112,7 +112,7 @@ export default function FactsAndFigures() {
                     </svg>
                   </dt>
                   <dd className="order-first text-6xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                    11'749
+                    11&apos;749
                   </dd>
                 </div>
               </dl>
