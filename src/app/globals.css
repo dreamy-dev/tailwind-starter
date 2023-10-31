@@ -117,6 +117,14 @@ body {
   color: rgb(var(--white-bg-rgb));
   font-family: "Montserrat-Medium";
 }
+
+.slides-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.slides-container::-webkit-scrollbar {
+  display: none;
+}
 /* 
 .window {
   width: 480px;

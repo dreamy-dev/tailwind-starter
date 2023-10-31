@@ -19,33 +19,40 @@ const navigation = {
     { name: "Partners", href: "#" },
   ],
   legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Impressum", href: "#" },
+    { name: "Disclaimer", href: "#" },
+    { name: "Complience", href: "#" },
+    { name: "Cookies", href: "#" },
+    { name: "Yertifizierung", href: "#" },
   ],
   social: [
     {
-      name: "Facebook",
+      name: "LinkedIn",
       href: "#",
       icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+        <svg
+          width="22"
+          height="20"
+          viewBox="0 0 22 20"
+          fill="none"
+          {...props}
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
             clipRule="evenodd"
+            d="M16.0647 6.30016C15.2027 6.26385 14.3455 6.43803 13.577 6.80561C12.8086 7.17319 12.1554 7.72154 11.6814 8.39689V6.28418H7.45741V19.6051H11.7113V13.1844C11.7113 11.49 12.1266 9.8542 14.5628 9.8542C17.0745 9.8542 17.4002 11.7911 17.4002 13.2963V19.6051H21.6668V12.4851C21.6668 8.98833 20.6713 6.30016 16.0647 6.30016Z"
+            fill="white"
           />
-        </svg>
-      ),
-    },
-    {
-      name: "Instagram",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
-            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
             clipRule="evenodd"
+            d="M2.46683 0.938477C2.0449 0.938477 1.63244 1.05567 1.28161 1.27522C0.930789 1.49478 0.657354 1.80685 0.495887 2.17196C0.33442 2.53708 0.292173 2.93884 0.374488 3.32644C0.456804 3.71404 0.659984 4.07008 0.958336 4.34952C1.25669 4.62897 1.63681 4.81927 2.05064 4.89637C2.46446 4.97347 2.89341 4.9339 3.28322 4.78267C3.67304 4.63143 4.00622 4.37532 4.24063 4.04673C4.47505 3.71814 4.60016 3.33182 4.60016 2.93662C4.60016 2.40668 4.3754 1.89844 3.97532 1.52372C3.57525 1.14899 3.03263 0.938477 2.46683 0.938477Z"
+            fill="white"
+          />
+          <path
+            d="M4.60016 6.30016H0.333497V19.6051H4.60016V6.30016Z"
+            fill="white"
           />
         </svg>
       ),
@@ -54,33 +61,19 @@ const navigation = {
       name: "Twitter",
       href: "#",
       icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-        </svg>
-      ),
-    },
-    {
-      name: "GitHub",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+        <svg
+          {...props}
+          width="26"
+          height="27"
+          viewBox="0 0 26 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             fillRule="evenodd"
-            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
             clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "YouTube",
-      href: "#",
-      icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-            clipRule="evenodd"
+            d="M25.3477 0.271484L16.759 15.3546L22.9965 26.2715H16.4329L10.1946 15.3546L18.8064 0.271484H25.3477ZM7.44804 3.50718L11.056 9.81511L6.07441 17.8459H0L4.91074 9.90816L1.27981 3.50718H7.44804Z"
+            fill="white"
           />
         </svg>
       ),
@@ -90,58 +83,40 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <img
-            className="h-7"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Stadler_Rail_logotype.svg/2560px-Stadler_Rail_logotype.svg.png"
-            alt="Company name"
-          />
-        </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-white">
-              Subscribe to our newsletter
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-gray-300">
-              The latest news, articles, and resources, sent to your inbox
-              weekly.
-            </p>
-          </div>
-          <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
-            <input
-              type="email"
-              name="email-address"
-              id="email-address"
-              autoComplete="email"
-              required
-              className="w-full min-w-0 appearance-none rounded-md border-0 bg-white/5 px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-56 sm:text-sm sm:leading-6"
-              placeholder="Enter your email"
-            />
-            <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+    <footer className="bg-secondaryBlueDark" aria-labelledby="footer-heading">
+      <div className="mx-auto max-w-full  px-6 py-8 sm:py-8 sm:px-6 lg:px-20 lg:py-10">
+        <div className="pt-8 lg:flex lg:items-center lg:justify-between">
+          <img className="h-7" src="/Logo-white.svg" alt="Company name" />
+          <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
+            <div className=" my-6 lg:mr-14">
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-md bg-primaryDarkBlue px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryDarkBlue"
+                className=" border border-white flex items-center justify-center bg-secondaryBlueDark px-3 py-2 text-xs font-medium text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryDarkBlue"
               >
-                Subscribe
+                Kontakt aufnehmen
               </button>
             </div>
-          </form>
+            <div className="flex space-x-4">
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-500 hover:text-gray-400"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+        <div className=" pt-8  lg:flex lg:items-center lg:justify-between">
           <div className="mt-10 md:mt-0">
-            <h3 className="text-sm font-semibold leading-6 text-white mb-6">
-              Legal
-            </h3>
-            <ul role="list" className="grid gap-4 grid-cols-3">
+            <ul
+              role="list"
+              className="lg:flex lg:items-center lg:justify-between  gap-8"
+            >
               {navigation.legal.map((item) => (
                 <li key={item.name}>
                   <a
@@ -158,18 +133,6 @@ export default function Footer() {
           <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
             &copy; 2020 Your Company, Inc. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            {navigation.social.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-500 hover:text-gray-400"
-              >
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
