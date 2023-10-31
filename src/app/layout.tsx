@@ -4,7 +4,10 @@ import { Montserrat } from "next/font/google";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-const fontFamily = Montserrat({ subsets: ["latin"] });
+const fontFamily = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Stadler Website Prototype",
