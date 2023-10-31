@@ -1,6 +1,6 @@
 export default function ButtonPrimary() {
   return (
-    <button className="bg-primary-500 text-white text-xs leading-6 font-medium">
+    <button className="bg-stadlergradient text-white text-base px-1.5 py-1 leading-6 font-medium rounded">
       Save changes
     </button>
   );
