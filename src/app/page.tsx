@@ -1,7 +1,7 @@
 "use client";
 
-import Hero from "./Hero";
-import Stats from "./Stats";
+import Hero from "../components/ExampleHero";
+import Stats from "../components/Stats";
 
 export default function HomePage() {
   return (
