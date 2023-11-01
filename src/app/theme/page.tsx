@@ -16,7 +16,7 @@ export default function Theme() {
       <br />
       <H1></H1>
       <H2 />
-      <H3 />
+      <H3 titleH3="hello there" />
       <H4 />
       <Lead />
 
