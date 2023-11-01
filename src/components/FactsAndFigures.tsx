@@ -1,6 +1,6 @@
 "use client";
 import H3 from "./typography/H3";
-export default function FactsAndFigures() {
+const FactsAndFigures = () => {
   return (
     <section className="bg-secondaryBgcGray dark:bg-gray-900 antialiased">
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-20">
@@ -121,4 +121,6 @@ export default function FactsAndFigures() {
       </div>
     </section>
   );
-}
+};
+
+export default FactsAndFigures;
