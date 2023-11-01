@@ -1,29 +1,12 @@
+import Button from "./elements/ButtonSecondary";
+
 const navigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
   legal: [
     { name: "Impressum", href: "#" },
     { name: "Disclaimer", href: "#" },
     { name: "Complience", href: "#" },
     { name: "Cookies", href: "#" },
-    { name: "Yertifizierung", href: "#" },
+    { name: "Zertifizierung", href: "#" },
   ],
   social: [
     {
@@ -83,7 +66,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-secondaryBlueDark" aria-labelledby="footer-heading">
+    <footer className="bg-darkBlue" aria-labelledby="footer-heading">
       <div className="mx-auto max-w-full  px-6 py-8 sm:py-8 sm:px-6 lg:px-20 lg:py-10">
         <div className="pt-8 lg:flex lg:items-center lg:justify-between">
           <img className="h-7" src="/Logo-white.svg" alt="Company name" />
@@ -121,7 +104,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm leading-6 text-gray-300 hover:text-white"
+                    className="text-base leading-6 text-skyblue hover:text-skyblue"
                   >
                     {item.name}
                   </a>
@@ -130,7 +113,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
+          <p className="mt-8 text-base leading-5 text-skyblue md:order-1 md:mt-0">
             &copy; 2020 Your Company, Inc. All rights reserved.
           </p>
         </div>
