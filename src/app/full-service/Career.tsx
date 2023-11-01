@@ -1,7 +1,9 @@
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
+
 export default function Career() {
   return (
     <section className="bg-white mt-12 mb-8">
-      <div className="max-w-screen-xl px-16 py-20 mx-auto bg-gray-50">
+      <div className="max-w-screen-xl px-16 py-20 mx-auto bg-bgcLightBlue">
         <h2 className="text-2xl mb-6 text-center font-extrabold leading-none tracking-tight text-black dark:text-white sm:text-3xl lg:text-4xl">
           Karriere bei Stadler
         </h2>
@@ -10,14 +12,15 @@ export default function Career() {
           <br /> braucht die besten Fachkräfte der Welt.
         </p>
         <div className="flex justify-center">
-          <a
+          <ButtonPrimary />
+          {/* <a
             href="#"
             title=""
             className="px-5 py-3 text-base font-medium text-center text-white bg-primary-700 rounded-lg shrink-0 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             role="button"
           >
             Jetzt bewerben
-          </a>
+          </a> */}
         </div>
       </div>
     </section>
