@@ -17,6 +17,7 @@ module.exports = {
       darkGreen: "#728427",
       midGreen: "#A8AD00",
       brightGreen: "#D6E10A",
+      bgcLightBlue: "#F2F7FA",
       /* example: {
         50: "#eff6ff",
         100: "#dbeafe",
