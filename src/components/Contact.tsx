@@ -13,7 +13,7 @@ export default function Contact() {
               />
             </div>
             <div className="w-2/3">
-              <div className="mb-8 ">
+              <div className="mb-8 tracking-tight">
                 <H2 titleH2="Ihr Ansprechpartner" textColor="white"></H2>
               </div>
               <p className="mb-8 font-light md:text-lg text-white">
