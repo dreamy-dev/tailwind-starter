@@ -19,7 +19,7 @@ export default function Hero() {
                 <div className="flex items-center">
                   <span className="mr-1 text-gray-500">|</span>
                   <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                    Full Service
+                    TSSSA
                   </span>
                 </div>
               </li>
@@ -27,16 +27,15 @@ export default function Hero() {
           </nav>
 
           <h1 className="mb-12 text-left mx-auto text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-900">
-            Full Service: Service Excellence für Ihre Flotte
+            TSSSA (TECHNICAL SUPPORT & SPARE SUPPLY AGREEMENT)
           </h1>
           <p className="font-light mx-auto text-left text-gray-700 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-400">
-            Der Full Service ist ein ganzheitliches Angebot, das die komplette
-            Fahrzeuginstandhaltung umfasst. Es handelt sich um präventive und
-            korrektive Instandhaltung, Revisionen, Condition-Based Maintenance,
-            Balanced Maintenance, Asset Management und Entity in Charge of
-            Maintenance (ECM). Sie profitieren von garantierter Verfügbarkeit,
-            Qualität und Rundum-Kundenservice zu einem fixen Kilometerpreis über
-            die Vertragsdauer.
+            Im Rahmen des TSSSA (Technical Support & Spare Supply Agreement)
+            bietet Stadler von Support-Funktionen über Flottenmanagement bis hin
+            zu Ersatzteilen einen breiten Katalog an möglichen Dienstleistungen
+            an. Gemeinsam mit den Kunden sorgt Stadler für maximale
+            Verfügbarkeit und optimale Instandhaltung. Diese bestimmen den
+            Leistungsumfang und profitieren von unserem bewährten Know-how.
           </p>
         </div>
       </div>
@@ -44,7 +43,7 @@ export default function Hero() {
         <div className="mr-auto place-self-center lg:col-span-12">
           <img
             className="h-auto max-w-full"
-            src="/hero-full-service.jpg"
+            src="/hero-tsssa-middle.jpg"
             alt=""
           />
         </div>
