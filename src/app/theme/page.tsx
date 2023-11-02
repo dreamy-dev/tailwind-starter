@@ -1,7 +1,7 @@
 "use client";
 
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import ButtonSecondary from "@/components/elements/ButtonSecondary";
+import Button from "@/components/elements/ButtonSecondary";
 import H1 from "@/components/typography/H1";
 import H2 from "@/components/typography/H2";
 import H3 from "@/components/typography/H3";
@@ -16,7 +16,7 @@ export default function Theme() {
       <br />
       <H1></H1>
       <H2 />
-      <H3 />
+      <H3 titleH3="hello there" />
       <H4 />
       <Lead />
 
@@ -26,7 +26,9 @@ export default function Theme() {
       <br />
       <ButtonPrimary />
       <br />
-      <ButtonSecondary />
+      <Button backgroundColor="white" borderColor="primary" textColor="primary">
+        Buttom text
+      </Button>
       {/* TODO:
       - Text Link
       - Icon Link */}
