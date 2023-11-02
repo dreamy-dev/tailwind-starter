@@ -1,10 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-const inter = Montserrat({ subsets: ["latin"] });
+const fontFamily = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Stadler Website Prototype",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={fontFamily.className}>
         <NavBar />
         <main>{children}</main>
         <Footer />
