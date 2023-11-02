@@ -1,10 +1,10 @@
-import Button from "./elements/ButtonSecondary";
+import Button from "../elements/ButtonSecondary";
 
 const navigation = {
   legal: [
     { name: "Impressum", href: "#" },
     { name: "Disclaimer", href: "#" },
-    { name: "Complience", href: "#" },
+    { name: "Compliance", href: "#" },
     { name: "Cookies", href: "#" },
     { name: "Zertifizierung", href: "#" },
   ],
@@ -71,13 +71,20 @@ export default function Footer() {
         <div className="pt-8 lg:flex lg:items-center lg:justify-between">
           <img className="h-7" src="/Logo-white.svg" alt="Company name" />
           <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
-            <div className=" my-6 lg:mr-14">
-              <button
+            <div className=" my-6 lg:mr-14 ">
+              <Button
+                backgroundColor="prymary"
+                textColor="white"
+                borderColor="white"
+              >
+                Kontakt aufnehmen
+              </Button>
+              {/* <button
                 type="submit"
                 className=" border border-white flex items-center justify-center bg-secondaryBlueDark px-3 py-2 text-xs font-medium text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryDarkBlue"
               >
                 Kontakt aufnehmen
-              </button>
+              </button> */}
             </div>
             <div className="flex space-x-4">
               {navigation.social.map((item) => (
@@ -114,7 +121,7 @@ export default function Footer() {
           </div>
 
           <p className="mt-8 text-base leading-5 text-skyblue md:order-1 md:mt-0">
-            &copy; 2020 Your Company, Inc. All rights reserved.
+            © 2023 Stadler, Inc. All rights reserved.
           </p>
         </div>
       </div>
