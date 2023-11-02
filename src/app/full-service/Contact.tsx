@@ -1,4 +1,3 @@
-import H2 from "./typography/H2";
 export default function Contact() {
   return (
     <>
@@ -13,9 +12,9 @@ export default function Contact() {
               />
             </div>
             <div className="w-2/3">
-              <div className="mb-8 ">
-                <H2 titleH2="Ihr Ansprechpartner" textColor="white"></H2>
-              </div>
+              <h2 className="mb-8 text-3xl tracking-tight font-extrabold text-white">
+                Ihr Ansprechpartner
+              </h2>
               <p className="mb-8 font-light md:text-lg text-white">
                 Wo andere Probleme sehen, schaffen wir für Sie Lösungen, die
                 ökologisch und wirtschaftlich begeistern. Bei uns stehen
