@@ -44,7 +44,7 @@ export default function References() {
                 className="inline-flex items-center justify-between px-1 py-1 pr-4 mb-6 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
                 role="alert"
               >
-                <span className="px-3 py-1 mr-3 text-xs text-white rounded-full bg-primary-600">
+                <span className="px-3 py-1 mr-3 text-xs text-white rounded-full bg-primary">
                   New
                 </span>{" "}
                 <span className="text-sm font-medium">See the Reference</span>

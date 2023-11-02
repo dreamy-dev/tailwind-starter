@@ -2,12 +2,12 @@ export default function Subscribe() {
   return (
     <section className="bg-white dark:bg-gray-200">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="gap-16 justify-between items-center p-6 text-white bg-gray-900 rounded-lg dark:bg-gray-800 lg:flex lg:gap-24 md:p-12">
+        <div className="gap-16 justify-between items-center p-6 text-white bg-primary rounded-lg dark:bg-gray-800 lg:flex lg:gap-24 md:p-12">
           <div className="w-full">
             <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl">
               Sign up for our newsletter
             </h2>
-            <p className="font-light text-gray-400 sm:text-xl">
+            <p className="font-light text-white sm:text-xl">
               Stay up to date with the roadmap progress, announcements and
               exclusive discounts feel free to sign up with your email.
             </p>
@@ -31,7 +31,7 @@ export default function Subscribe() {
                     </svg>
                   </div>
                   <input
-                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block p-3 pl-10 w-full text-sm border-white text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Enter your email"
                     type="email"
                   />
@@ -39,13 +39,13 @@ export default function Subscribe() {
                 <div>
                   <button
                     type="submit"
-                    className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-600 border-primary-600 hover:border-primary-700 sm:rounded-none sm:rounded-r-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-600 border-white hover:border-primary-700 sm:rounded-none sm:rounded-r-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     Subscribe
                   </button>
                 </div>
               </div>
-              <div className="text-sm text-left text-gray-400 dark:text-gray-300">
+              <div className="text-sm text-left text-white">
                 We care about the protection of your data.{" "}
                 <a href="#" className="font-medium text-white hover:underline">
                   Read our Privacy Policy
