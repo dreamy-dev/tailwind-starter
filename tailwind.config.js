@@ -19,6 +19,7 @@ module.exports = {
       brightGreen: "#D6E10A",
       bgcLightBlue: "#F2F7FA",
       skyblue: "#99BCd4",
+
       /* example: {
         50: "#eff6ff",
         100: "#dbeafe",
