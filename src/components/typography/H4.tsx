@@ -1,11 +1,3 @@
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  PromiseLikeOfReactNode,
-} from "react";
-
 interface H4Props {
   titleH4: string;
   textColor: string;
