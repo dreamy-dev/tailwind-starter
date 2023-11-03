@@ -3,11 +3,11 @@ import H3 from "@/components/typography/H3";
 export default function Features() {
   return (
     <section className="bg-white py-24 px-0 sm:py-24 lg:px-20">
-      <div className="max-w-screen-xl mx-auto bg-white">
+      <div className="max-w-full mx-auto bg-white">
         <div className="mb-10 tracking-tight dark:text-white ">
           <H3 titleH3="Für einen effizienten und modernen Bahnbetrieb"></H3>
         </div>
-        <ul className="flex items-center flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row">
+        <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row">
           <li>
             <img src="/spacer.jpg" alt="Image" />
 

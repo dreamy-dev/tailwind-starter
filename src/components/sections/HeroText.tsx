@@ -17,7 +17,11 @@ export default function HeroText(props?: any) {
           <br />
           Ein exzellentes Netzwerk
         </H1>
-        <Lead />
+        <Lead>
+          Der Flirt 160 setzt Massstäbe: Leichte Bauweise aus Aluminium,
+          markantes Design, höchster Passagierkomfort und einfache Wartung.
+          Erfahren Sie, was dieses Modell so unverwechselbar macht.
+        </Lead>
         {props.withCTA ? <ButtonPrimary /> : ""}
       </SmallWidth>
     </section>

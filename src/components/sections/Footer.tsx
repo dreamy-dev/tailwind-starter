@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
             <div className=" my-6 lg:mr-14 ">
               <Button
-                backgroundColor="prymary"
+                backgroundColor="primary"
                 textColor="white"
                 borderColor="white"
               >
