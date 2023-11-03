@@ -18,7 +18,7 @@ export default function Theme() {
       <H2 titleH2="hello there" textColor="black" />
       <H3 titleH3="hello there" />
       <H4 titleH4="hello there" textColor="black" />
-      <Lead />
+      <Lead>Lead Text</Lead>
 
       <br />
       <p>Elements</p>
@@ -26,7 +26,11 @@ export default function Theme() {
       <br />
       <ButtonPrimary />
       <br />
-      <Button backgroundColor="white" borderColor="primary" textColor="primary">
+      <Button
+        backgroundColorClass="bg-white"
+        borderColorClass="border-primary"
+        textColorClass="text-primary"
+      >
         Buttom text
       </Button>
       {/* TODO:

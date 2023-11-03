@@ -4,7 +4,7 @@ export default function QualityFeatures() {
   return (
     <>
       <section className="py-24 bg-stadlergradient px-20">
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-full mx-auto">
           <H2 titleH2="Qualitätsmerkmale" textColor="white"></H2>
           <div className="mt-8 lg:mt-16">
             <div className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24">

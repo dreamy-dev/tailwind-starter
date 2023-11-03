@@ -2,13 +2,13 @@ import H3 from "@/components/typography/H3";
 
 export default function Features() {
   return (
-    <section className="bg-white py-24 px-0 sm:py-24 lg:px-20">
+    <section className="bg-white py-24 px-8 sm:py-24 lg:px-20 md:px-10">
       <div className="max-w-full mx-auto bg-white">
         <div className="mb-10 tracking-tight dark:text-white ">
           <H3 titleH3="Für einen effizienten und modernen Bahnbetrieb"></H3>
         </div>
-        <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row">
-          <li>
+        <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 md:gap-16 md:flex-row">
+          <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
             <img src="/spacer.jpg" alt="Image" />
 
             <a
@@ -30,7 +30,7 @@ export default function Features() {
               </svg>
             </a>
           </li>
-          <li>
+          <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
             <img src="/spacer2.jpg" alt="Image" />
 
             <a
