@@ -31,7 +31,7 @@ export default function HomePage() {
     <>
       <Hero />
       <FactsAndFigures />
-      <Stats data={statsData} />
+      <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
     </>
   );
 }

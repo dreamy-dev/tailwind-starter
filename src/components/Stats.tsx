@@ -8,9 +8,10 @@ interface StatsProps {
     end: number;
     suffix: string;
   }[];
+  backgroundColor: string;
 }
 
-const Stats: React.FC<StatsProps> = ({ data }) => {
+const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
   const { scrollYProgress } = useScroll();
   const [counterOn, setCounterOn] = useState(false);
 
@@ -36,7 +37,7 @@ const Stats: React.FC<StatsProps> = ({ data }) => {
         className="progress-bar"
         style={{ scaleX: scrollYProgress }}
       />
-      <div className="bg-secondaryBgcLightBlue py-24 sm:py-24">
+      <div className={`py-24 sm:py-24 ${backgroundColor}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
             {data.map((stat, index) => (
