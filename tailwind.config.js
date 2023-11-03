@@ -50,6 +50,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-montserrat)"],
       },
+      height: {
+        700: "700px",
+      },
     },
   },
   plugins: [require("flowbite/plugin"), require("@tailwindcss/forms")],
