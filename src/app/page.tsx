@@ -7,6 +7,28 @@ import FactsAndFigures from "@/components/FactsAndFigures";
 import MapTextTitle from "@/components/MapTextTitle";
 
 export default function HomePage() {
+  const statsData = [
+    {
+      text: "Mitarbeiter weltweit",
+      end: 14,
+      suffix: "Tsd",
+    },
+    {
+      text: "Produktionsstandorte",
+      end: 15,
+      suffix: "",
+    },
+    {
+      text: "Arbeitstunden",
+      end: 170,
+      suffix: "Mio",
+    },
+    {
+      text: "Team",
+      end: 1,
+      suffix: "",
+    },
+  ];
   return (
     <>
       <Hero />
@@ -14,6 +36,7 @@ export default function HomePage() {
       <MapTextTitle />
       <Video></Video>
       {/* <Stats /> */}
+      <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
     </>
   );
 }
