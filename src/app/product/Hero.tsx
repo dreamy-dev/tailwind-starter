@@ -1,6 +1,6 @@
 "use client";
 
-export default function CareerHero() {
+export default function ProductHero() {
   return (
     <section className="w-full h-auto">
       <img

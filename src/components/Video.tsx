@@ -1,4 +1,4 @@
-import H3 from "./typography/H3";
+import H2 from "./typography/H2";
 import Button from "./elements/ButtonSecondary";
 export default function Video() {
   return (
@@ -13,7 +13,7 @@ export default function Video() {
       </div>
       <div className="lg:w-3/12 pl-6 lg:pl-20 w-full">
         <div className="w-full md:w-1/2 mt-10 lg:w-full">
-          <H3 titleH3="Karriere bei Stadler"></H3>
+          <H2 titleH2="Karriere bei Stadler"></H2>
           <p className="mt-2 text-xl tracking-tight text-black sm:text-xl">
             Wer alles für die besten Züge der Welt macht, braucht die besten
             Talente.
