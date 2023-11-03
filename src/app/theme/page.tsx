@@ -24,7 +24,7 @@ export default function Theme() {
       <p>Elements</p>
       <hr />
       <br />
-      <ButtonPrimary />
+      <ButtonPrimary>See more</ButtonPrimary>
       <br />
       <Button backgroundColor="white" borderColor="primary" textColor="primary">
         Buttom text
