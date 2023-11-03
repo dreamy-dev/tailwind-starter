@@ -2,107 +2,75 @@ export default function History() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
-        <div className="text-center">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-            Table of contents
+            Stadler History
           </h2>
         </div>
 
-        <div className="max-w-3xl p-5 mx-auto mt-8 space-y-5 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-          <div className="pb-5 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Chapter 1: Introduction to Design Principles
+        <ol className="relative border-l border-gray-200">
+          <li className="mb-10 ml-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400">
+              February 2022
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900">
+              Die neue Waldenburgerbahn nimmt den Betrieb auf
             </h3>
-            <p className="mt-1 text-base font-normal text-gray-500 dark:text-gray-400">
-              This chapter provides an overview of the basic principles of
-              design, such as balance, contrast, and hierarchy. It explains how
-              these principles can be used to create visually pleasing and
-              effective designs.
+            <p className="mb-4 text-base font-normal text-gray-500">
+              Neben den zehn TRAMLINK kommt damit die CBTC-Lösung von Stadler
+              erstmals in der Schweiz zum Einsatz.
             </p>
-          </div>
-
-          <div className="pb-5 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Chapter 2: Designing for User Experience
+          </li>
+          <li className="mb-10 ml-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400">
+              March 2022
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900">
+              Die Appenzeller Bahnen bestellen bei Stadler eine neue Zahnradbahn
             </h3>
-            <p className="mt-1 text-base font-normal text-gray-500 dark:text-gray-400">
-              This chapter explores the concept of user experience (UX) design
-              and how it relates to the overall design process. It covers topics
-              such as user research, usability testing, and user-centered
-              design.
+            <p className="text-base font-normal text-gray-500">
+              Die Appenzeller Bahnen bestellen bei Stadler eine neue Zahnradbahn
+              inklusive Ausrüstung des Fahrzeugs mit der CBTC-Lösung
+              (Communications-based Train Control) von Stadler. Das neue
+              Fahrzeug der Linie Rheineck–Walzenhausen ist damit die erste
+              vollautomatisierte Überland-Adhäsions- und Zahnradbahn der Welt.
             </p>
-          </div>
-
-          <div className="pb-5 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Chapter 3: Typography in Design
+          </li>
+          <li className="ml-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400">
+              April 2022
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900">
+              Stadler präsentiert sieben Weltpremieren
             </h3>
-            <p className="mt-1 text-base font-normal text-gray-500 dark:text-gray-400">
-              This chapter delves into the art and technique of typography,
-              including the history and evolution of type, the basics of
-              typographic hierarchy, and the use of typography in digital
-              design.
+            <p className="text-base font-normal text-gray-500">
+              An der InnoTrans präsentiert Stadler sieben Weltpremieren mit
+              innovativen und nachhalti- gen Antriebslösungen im Schie-
+              nenverkehr: Darunter den Was- serstoff-Triebzug FLIRT H2 für den
+              amerikanischen Personen- verkehr, den Weltrekord-Zug FLIRT Akku,
+              die stärkste Hybridlokomotive EURO9000 Europas und die
+              Strassenbahn der nächsten Generation TINA.
             </p>
-          </div>
-
-          <div className="pb-5 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Chapter 4: Color Theory and its Applications
+          </li>
+          <li className="ml-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400">
+              May 2022
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900">
+              Stadler feiert sein 80-Jahre-Jubiläum
             </h3>
-            <p className="mt-1 text-base font-normal text-gray-500 dark:text-gray-400">
-              This chapter covers the basics of color theory and its application
-              in design. It includes information on color wheels, complementary
-              colors, color schemes, and the psychological effects of color. It
-              also covers color management and color spaces in digital design.
+            <p className="text-base font-normal text-gray-500">
+              Stadler feiert sein 80-Jahre-Jubiläum und öffnet erstmals die Tore
+              des neuen Werks in St. Margrethen. Über 25 000 Besucherinnen und
+              Besucher erhalten einen Einblick hinter die Kulissen der
+              modernsten Fertigungsstätte für Schienenfahrzeuge in Europa.
             </p>
-          </div>
-
-          <div className="pb-5 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Chapter 5: Design for the Web
-            </h3>
-            <p className="mt-1 text-base font-normal text-gray-500 dark:text-gray-400">
-              This chapter will cover the basics of web design, including the
-              principles of responsive design, website layout, and typography,
-              as well as the use of HTML, CSS, and JavaScript.
-            </p>
-          </div>
-
-          <div className="">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Chapter 6: Branding and Identity Design
-            </h3>
-            <p className="mt-1 text-base font-normal text-gray-500 dark:text-gray-400">
-              This chapter will explore the process of creating and maintaining
-              a brand, including the development of a brand strategy, the
-              creation of a visual identity, and the use of design elements to
-              communicate a brand's message.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <a
-            href="#"
-            title=""
-            className="inline-flex items-center text-lg font-medium text-primary-600 hover:underline dark:text-primary-500"
-          >
-            Get free sample chapters
-            <svg
-              aria-hidden="true"
-              className="w-5 h-5 ml-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
   );

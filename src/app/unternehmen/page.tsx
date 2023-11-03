@@ -3,18 +3,24 @@ import Hero from "./Hero";
 import WertePrinzipen from "./WertePrinzipen";
 import FaktenZahlen from "./FaktenZahlen";
 import ManagementTeam from "./ManagementTeam";
+import Compliance from "./Compliance";
+import Nachhaltigkeit from "./Nachhaltigkeit";
 import History from "./History";
 import News from "./News";
-import Subscribe from "./Subscribe";
+import SuccessStories from "./SuccessStories";
+import Subscribe from "../../components/Subscribe";
 
 export default function Unternehmen() {
   return (
     <>
       <Hero />
-      {/* <WertePrinzipen /> */}
+      <WertePrinzipen />
       <FaktenZahlen />
       <ManagementTeam />
+      <Compliance />
+      <Nachhaltigkeit />
       <History />
+      <SuccessStories />
       <News />
       <Subscribe />
     </>
