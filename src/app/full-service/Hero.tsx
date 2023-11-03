@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="mr-auto place-self-center lg:col-span-12">
           <img
             className="h-auto max-w-full"
-            src="/hero-full-service.jpg"
+            src="/hero-full-service-narrow.jpg"
             alt=""
           />
         </div>
