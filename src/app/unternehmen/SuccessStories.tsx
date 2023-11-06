@@ -1,10 +1,12 @@
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
+
 export default function SuccessStories() {
   return (
     <section className="bg-white dark:bg-gray-900 antialiased">
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-            Our work
+            Success Stories
           </h2>
           <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
             Crafted with skill and care to help our clients grow their business!
@@ -13,6 +15,13 @@ export default function SuccessStories() {
 
         <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-4">
+            <a href="#">
+              <img
+                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/wordpress/image-1.jpg"
+                className="mb-2 w-full max-w-full rounded-lg"
+                alt="Image 1"
+              />
+            </a>
             <span className="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
               Alphabet Inc.
             </span>
@@ -47,6 +56,13 @@ export default function SuccessStories() {
           </div>
 
           <div className="space-y-4">
+            <a href="#">
+              <img
+                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/wordpress/image-1.jpg"
+                className="mb-2 w-full max-w-full rounded-lg"
+                alt="Image 1"
+              />
+            </a>
             <span className="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
               Microsoft Corp.
             </span>
@@ -81,6 +97,13 @@ export default function SuccessStories() {
           </div>
 
           <div className="space-y-4">
+            <a href="#">
+              <img
+                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/wordpress/image-1.jpg"
+                className="mb-2 w-full max-w-full rounded-lg"
+                alt="Image 1"
+              />
+            </a>
             <span className="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
               Adobe Inc.
             </span>
