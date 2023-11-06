@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useInView } from "framer-motion";
 
 interface StatsProps {
   data: {
@@ -12,31 +12,17 @@ interface StatsProps {
 }
 
 const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
-  const { scrollYProgress } = useScroll();
   const [counterOn, setCounterOn] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
-    const updateCounterOn = (latest: number) => {
-      if (latest > 0.5) {
-        setCounterOn(true);
-      } else {
-        setCounterOn(false);
-      }
-    };
-
-    const unsubscribe = scrollYProgress.onChange(updateCounterOn);
-
-    return () => {
-      unsubscribe();
-    };
-  }, [scrollYProgress]);
+    setCounterOn(true);
+  }, [isInView]);
 
   return (
     <>
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
+      <motion.div className="progress-bar" ref={ref} />
       <div className={`py-24 sm:py-24 ${backgroundColor}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
