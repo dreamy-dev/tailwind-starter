@@ -1,8 +1,10 @@
 "use client";
 
+import Video from "@/components/Video";
 import Hero from "../components/ExampleHero";
 import Stats from "../components/Stats";
 import FactsAndFigures from "@/components/FactsAndFigures";
+import MapTextTitle from "@/components/MapTextTitle";
 
 export default function HomePage() {
   const statsData = [
@@ -31,7 +33,10 @@ export default function HomePage() {
     <>
       <Hero />
       <FactsAndFigures />
+      <MapTextTitle />
       <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
+      <Video></Video>
+      {/* <Stats /> */}
     </>
   );
 }

@@ -3,13 +3,13 @@ import H3 from "./typography/H3";
 const FactsAndFigures = () => {
   return (
     <section className="bg-bgcLightBlue dark:bg-gray-900 antialiased">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-20">
+      <div className="max-w-full px-4 py-8 mx-auto lg:px-20 sm:py-16 lg:py-20">
         <div className="first-level">
           <div className="border-b border-black border-solid">
             <H3 titleH3="Wirtschaftliche Kennzahlen"></H3>
           </div>
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-full">
               <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                 <div className="mx-auto flex max-w-xs flex-col gap-y-2">
                   <dt className="text-xl leading-7 text-primaryDarkBlue">
@@ -44,7 +44,7 @@ const FactsAndFigures = () => {
             <H3 titleH3="Allgemeine Kennzahlen"></H3>
           </div>
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-full">
               <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                 <div className="mx-auto flex max-w-xs flex-col gap-y-2">
                   <dt className="text-xl leading-7 text-primaryDarkBlue">

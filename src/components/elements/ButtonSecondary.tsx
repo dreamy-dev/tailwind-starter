@@ -1,16 +1,40 @@
 type ButtonProps = {
-  backgroundColor: string;
-  textColor: string;
-  borderColor: string;
+  backgroundColorClass?: string;
+  textColorClass?: string;
+  borderColorClass?: string;
+  iconBefore?: React.ReactNode;
+  iconAfter?: React.ReactNode;
   children: React.ReactNode;
+  position?: "left" | "center" | "right";
 };
 
 export default function Button({
-  backgroundColor,
-  textColor,
-  borderColor,
+  backgroundColorClass,
+  textColorClass,
+  borderColorClass,
+  iconBefore,
+  iconAfter,
   children,
+  position,
 }: ButtonProps) {
-  const secondaryButtonStyles = `bg-${backgroundColor} border-2 border-${borderColor} text-${textColor} text-sm px-2.5 py-2 hover:primary-800 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded`;
-  return <button className={secondaryButtonStyles}>{children}</button>;
+  const containerStyles: React.CSSProperties = {
+    display: "flex",
+    justifyContent:
+      position === "left"
+        ? "flex-start"
+        : position === "center"
+        ? "center"
+        : "flex-end",
+    alignItems: "center",
+  };
+  const secondaryButtonStyles = `${backgroundColorClass} border-2 ${textColorClass} ${borderColorClass} flex text-sm px-2.5 py-2 hover:primary-800 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded`;
+  return (
+    <div style={containerStyles}>
+      <button className={secondaryButtonStyles}>
+        {iconBefore && <span className="mr-2">{iconBefore}</span>}
+        {children}
+        {iconAfter && <span className="ml-2">{iconAfter}</span>}
+      </button>
+    </div>
+  );
 }
