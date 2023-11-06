@@ -6,7 +6,7 @@ export default function Career() {
   return (
     <section className="bg-white mt-16 mb-16">
       <ContentWidth>
-        <div className="col-span-12 w-full  py-20 bg-bgcLightBlue">
+        <div className="col-span-12 w-full  py-20 bg-primarySolid-50">
           <div className="mb-4 text-center tracking-tight dark:text-white ">
             <H2 titleH2=" Karriere bei Stadler" textColor="black"></H2>
           </div>
