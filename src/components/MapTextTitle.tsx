@@ -3,7 +3,7 @@ import Lead from "@/components/typography/Lead";
 
 export default function MapTextTitle(props?: any) {
   return (
-    <section className="bg-bgcLightBlue  dark:bg-gray-900 ">
+    <section className="bg-primarySolid-50  dark:bg-gray-900 ">
       <div className="max-w-4xl mx-auto">
         <H2 titleH2="Standorte" styles="text-center"></H2>
         <Lead textSize="text-2xl">
