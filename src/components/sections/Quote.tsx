@@ -1,9 +1,11 @@
 "use client";
 
+import SmallWidth from "../layouts/SmallWidth";
+
 export default function Quote() {
   return (
-    <section className="bg-white dark:bg-gray-900">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+    <section className="bg-white py-20">
+      <SmallWidth>
         <figure className="max-w-screen-lg mx-auto">
           <svg
             className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
@@ -17,7 +19,7 @@ export default function Quote() {
             />
           </svg>
           <blockquote>
-            <p className="text-2xl font-medium text-gray-900 dark:text-white">
+            <p className="text-3xl leading-relaxed font-medium text-gray-900 text-center dark:text-white">
               <q>
                 Stadlers Antwort auf eine sich immer schneller entwickelnde
                 Bahnbranche: Innovative und modulare Fahrzeugkonzepte für jedes
@@ -28,21 +30,21 @@ export default function Quote() {
           </blockquote>
           <figcaption className="flex items-center justify-center mt-8 space-x-3">
             <img
-              className="w-6 h-6 rounded-full"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/team/member-2.png"
+              className="w-16 h-16 rounded-full object-cover"
+              src="https://www.stadlerrail.com/media/img/c/peter-spuhler-2023-2.jpg"
               alt="profile picture"
             />
-            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-              <div className="pr-3 font-medium text-gray-900 dark:text-white">
+            <div className="flex flex-col">
+              <div className=" font-medium text-gray-900 dark:text-white">
                 Peter Spuhler
               </div>
-              <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
+              <div className=" text-sm font-medium text-gray-500 dark:text-gray-400">
                 CEO
               </div>
             </div>
           </figcaption>
         </figure>
-      </div>
+      </SmallWidth>
     </section>
   );
 }
