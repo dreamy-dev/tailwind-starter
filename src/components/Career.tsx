@@ -3,8 +3,8 @@ import H2 from "@/components/typography/H2";
 
 export default function Career() {
   return (
-    <section className="bg-white mt-12 mb-8">
-      <div className="max-w-screen-xl px-16 py-20 mx-auto bg-bgcLightBlue">
+    <section className="bg-white mt-12 mb-8 px-0 lg:px-20">
+      <div className="max-w-full px-4 py-8  lg:px-6 sm:py-16 lg:py-20  mx-auto bg-bgcLightBlue">
         <div className="mb-4 text-center tracking-tight dark:text-white ">
           <H2 titleH2=" Karriere bei Stadler" textColor="black"></H2>
         </div>

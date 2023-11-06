@@ -1,13 +1,5 @@
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  PromiseLikeOfReactNode,
-} from "react";
-
 interface H3Props {
-  titleH3: string;
+  titleH3?: string;
 }
 
 const H3: React.FC<H3Props> = ({ titleH3 }) => {

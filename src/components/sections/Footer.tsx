@@ -73,9 +73,9 @@ export default function Footer() {
           <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
             <div className=" my-6 lg:mr-14 ">
               <Button
-                backgroundColor="prymary"
-                textColor="white"
-                borderColor="white"
+                backgroundColorClass="bg-transparent"
+                textColorClass="text-white"
+                borderColorClass="boered-white"
               >
                 Kontakt aufnehmen
               </Button>
