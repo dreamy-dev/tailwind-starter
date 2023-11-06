@@ -76,6 +76,7 @@ export default function Footer() {
                 backgroundColorClass="bg-transparent"
                 textColorClass="text-white"
                 borderColorClass="boered-white"
+                position="left"
               >
                 Kontakt aufnehmen
               </Button>

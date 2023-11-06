@@ -7,6 +7,7 @@ import H2 from "@/components/typography/H2";
 import H3 from "@/components/typography/H3";
 import H4 from "@/components/typography/H4";
 import Lead from "@/components/typography/Lead";
+import Text from "@/components/typography/Text";
 
 export default function Theme() {
   return (
@@ -19,6 +20,7 @@ export default function Theme() {
       <H3 titleH3="hello there" />
       <H4 titleH4="hello there" textColor="black" />
       <Lead>Lead Text</Lead>
+      <Text>Text</Text>
 
       <br />
       <p>Elements</p>
