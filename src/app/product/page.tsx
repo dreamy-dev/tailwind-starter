@@ -7,14 +7,14 @@ import ProductHero from "./Hero";
 import QualityFeatures from "@/components/QualityFeatures";
 import Specification from "@/components/Specification";
 import HeroText from "@/components/sections/HeroText";
-import Text from "@/components/sections/Text";
+import TextSection from "@/components/sections/TextSection";
 
 export default function Product() {
   return (
     <>
       <HeroText />
       <ProductHero />
-      <Text></Text>
+      <TextSection></TextSection>
       <QualityFeatures />
       <Specification />
       <Features />

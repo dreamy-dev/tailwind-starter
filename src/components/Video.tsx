@@ -1,5 +1,6 @@
 import H2 from "./typography/H2";
 import Button from "./elements/ButtonSecondary";
+import Text from "./typography/Text";
 export default function Video() {
   return (
     <div className=" bg-white flex flex-col pr:0 py-24 lg:flex-row items-center lg:pr-20">
@@ -14,20 +15,22 @@ export default function Video() {
       <div className="lg:w-3/12 pl-6 lg:pl-20 w-full">
         <div className="w-full md:w-1/2 mt-10 lg:w-full">
           <H2 titleH2="Karriere bei Stadler"></H2>
-          <p className="mt-2 text-xl tracking-tight text-black sm:text-xl">
+
+          <Text styles="my-6">
             Wer alles für die besten Züge der Welt macht, braucht die besten
             Talente.
-          </p>
-          <div className="mt-8">
-            <Button
-              backgroundColorClass="bg-transparent"
-              textColorClass="text-primary"
-              borderColorClass="border-primary"
-              position="left"
-            >
-              Jetzt bewerben
-            </Button>
-          </div>
+          </Text>
+        </div>
+
+        <div className="mt-8">
+          <Button
+            backgroundColorClass="bg-transparent"
+            textColorClass="text-primary"
+            borderColorClass="border-primary"
+            position="left"
+          >
+            Jetzt bewerben
+          </Button>
         </div>
       </div>
     </div>
