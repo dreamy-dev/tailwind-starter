@@ -2,8 +2,8 @@ import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 export default function SuccessStories() {
   return (
-    <section className="bg-white dark:bg-gray-900 antialiased">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+    <section className="bg-white ">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
             Success Stories
@@ -17,7 +17,7 @@ export default function SuccessStories() {
           <div className="space-y-4">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/wordpress/image-1.jpg"
+                src="/success-story.jpg"
                 className="mb-2 w-full max-w-full rounded-lg"
                 alt="Image 1"
               />
@@ -32,33 +32,41 @@ export default function SuccessStories() {
               Flowbite helps you connect with friends, family and communities of
               people who share your interests.
             </p>
-            <a
-              href="#"
-              title=""
-              className="text-white bg-primary-700 justify-center hover:bg-primary-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              role="button"
-            >
-              View case study
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 ml-2 -mr-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </a>
+            <div className="justify-center inline-flex items-center">
+              <ButtonPrimary>
+                Find out more
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
+            </div>
           </div>
 
           <div className="space-y-4">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/wordpress/image-1.jpg"
+                src="/success-story.jpg"
                 className="mb-2 w-full max-w-full rounded-lg"
                 alt="Image 1"
               />
@@ -73,33 +81,41 @@ export default function SuccessStories() {
               Flowbite helps you connect with friends, family and communities of
               people who share your interests.
             </p>
-            <a
-              href="#"
-              title=""
-              className="text-white bg-primary-700 justify-center hover:bg-primary-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              role="button"
-            >
-              View case study
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 ml-2 -mr-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </a>
+            <div className="justify-center inline-flex items-center">
+              <ButtonPrimary>
+                Find out more
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
+            </div>
           </div>
 
           <div className="space-y-4">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/wordpress/image-1.jpg"
+                src="/success-story.jpg"
                 className="mb-2 w-full max-w-full rounded-lg"
                 alt="Image 1"
               />
@@ -114,27 +130,35 @@ export default function SuccessStories() {
               Flowbite helps you connect with friends, family and communities of
               people who share your interests.
             </p>
-            <a
-              href="#"
-              title=""
-              className="text-white bg-primary-700 justify-center hover:bg-primary-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              role="button"
-            >
-              View case study
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 ml-2 -mr-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </a>
+            <div className="justify-center inline-flex items-center">
+              <ButtonPrimary>
+                Find out more
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
+            </div>
           </div>
         </div>
       </div>
