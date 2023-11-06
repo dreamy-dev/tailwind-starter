@@ -1,11 +1,11 @@
-import Lead from "@/components/typography/Lead";
-import SmallWidth from "../layouts/SmallWidth";
+import SmallWidth from "@/components/layouts/SmallWidth";
+import Text from "../typography/Text";
 
-export default function Text(props?: any) {
+export default function TextSection(props?: any) {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white dark:bg-gray-900 py-24">
       <SmallWidth>
-        <Lead textSize="text-2xl">
+        <Text>
           Der einstöckige Intercity- und Regionalzug fährt mit einer maximalen
           Geschwindigkeit von 160 km/h. Mit durchdachte Ingenieursleistung und
           Innovation passt sich der FLIRT 160 den spezifischen Anforderungen und
@@ -13,7 +13,7 @@ export default function Text(props?: any) {
           individuell konfigurierbare zwei- bis sechsstellige Zugskompositionen
           in Normal- und Breitspur, und bietet Flexibilität bei der Wahl
           zwischen elektrischem, Diesel- oder sogar bi-modalem Antrieb.
-        </Lead>
+        </Text>
       </SmallWidth>
     </section>
   );

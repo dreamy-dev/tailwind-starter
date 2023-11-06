@@ -34,9 +34,9 @@ export default function HomePage() {
       <Hero />
       <FactsAndFigures />
       <MapTextTitle />
+      <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
       <Video></Video>
       {/* <Stats /> */}
-      <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
     </>
   );
 }
