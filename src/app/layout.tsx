@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import NavBar from "../components/NavBar";
+import Header from "@/components/sections/Header";
 import Footer from "../components/sections/Footer";
 
 const fontFamily = Montserrat({
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontFamily.className}>
-        <NavBar />
+        <Header />
         <main>{children}</main>
         <Footer />
         <script src="../../node_modules/flowbite/dist/flowbite.min.js" async />
