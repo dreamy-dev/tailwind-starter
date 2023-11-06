@@ -6,11 +6,11 @@ import ProcurementDescriptions from "./ProcurementDescriptions";
 import CooperationDescription from "./CooperationDescription";
 import SustainableProcurement from "./SustainableProcurement";
 import FAQ from "./FAQ";
-import Contact from "./Contact";
 import FaktenUndZahlen from "../company/FaktenUndZahlen";
 import FaktenZahlen from "../unternehmen/FaktenZahlen";
 import FactsAndFigures from "@/components/FactsAndFigures";
 import Quote from "@/components/sections/Quote";
+import Contact from "@/components/sections/Contact";
 
 export default function Lieferanten() {
   return (
@@ -23,8 +23,8 @@ export default function Lieferanten() {
       <ProcurementDescriptions />
       <CooperationDescription />
       <SustainableProcurement />
-      <Contact />
       <FAQ />
+      <Contact />
     </>
   );
 }
