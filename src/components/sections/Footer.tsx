@@ -66,7 +66,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-darkBlue" aria-labelledby="footer-heading">
+    <footer className="bg-blueDark" aria-labelledby="footer-heading">
       <div className="mx-auto max-w-full  px-6 py-8 sm:py-8 sm:px-6 lg:px-20 lg:py-10">
         <div className="pt-8 lg:flex lg:items-center lg:justify-between">
           <img className="h-7" src="/Logo-white.svg" alt="Company name" />
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-base leading-6 text-skyblue hover:text-skyblue"
+                    className="text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                   >
                     {item.name}
                   </a>
@@ -121,7 +121,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <p className="mt-8 text-base leading-5 text-skyblue md:order-1 md:mt-0">
+          <p className="mt-8 text-base leading-5 text-primarySolid-400 md:order-1 md:mt-0">
             © 2023 Stadler, Inc. All rights reserved.
           </p>
         </div>

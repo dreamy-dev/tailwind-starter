@@ -36,7 +36,6 @@ export default function HomePage() {
       <MapTextTitle />
       <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
       <Video></Video>
-      {/* <Stats /> */}
     </>
   );
 }
