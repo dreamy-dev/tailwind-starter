@@ -4,7 +4,7 @@ import Hero from "./Hero";
 import Description from "./Description";
 import Advantages from "./Advantages";
 import References from "./References";
-import Contact from "../../components/Contact";
+import Contact from "../../components/sections/Contact";
 import Career from "../../components/Career";
 
 export default function FullService() {
