@@ -10,7 +10,7 @@ const navigation = {
 
 export default function TopNav() {
   return (
-    <section className="bg-darkBlue">
+    <section className="bg-primary">
       <ContentWidth>
         <div className="col-span-12 lg:flex lg:items-center justify-end">
           <div className="py-2 lg:flex lg:items-center  gap-6">
