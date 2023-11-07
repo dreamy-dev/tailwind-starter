@@ -11,6 +11,7 @@ import FaktenZahlen from "../unternehmen/FaktenZahlen";
 import FactsAndFigures from "@/components/FactsAndFigures";
 import Quote from "@/components/sections/Quote";
 import Contact from "@/components/sections/Contact";
+import TeaserDouble from "@/components/sections/TeaserDouble";
 
 export default function Lieferanten() {
   return (
@@ -20,8 +21,9 @@ export default function Lieferanten() {
       <FactsAndFigures />
       {/* <FaktenUndZahlen /> */}
       <Quote />
-      <ProcurementDescriptions />
-      <CooperationDescription />
+      {/* <ProcurementDescriptions />
+      <CooperationDescription /> */}
+      <TeaserDouble />
       <SustainableProcurement />
       <FAQ />
       <Contact />
