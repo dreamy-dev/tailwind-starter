@@ -2,15 +2,17 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import ButtonPrimary from "../elements/ButtonPrimary";
+import H1 from "../typography/H1";
 
 export default function CareerHero() {
   return (
     <section className="bg-[url('/career1.jpg')] bg-no-repeat bg-cover bg-center bg-gray-400 bg-blend-multiply">
-      <div className="relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 xl:px-0 z-1">
+      <div className="relative py-16 px-4 mx-auto max-w-screen-xl text-white lg:py-24 xl:px-0 z-1">
         <div className="mb-6 max-w-screen-md lg:mb-0">
           <br />
           <br />
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-tight text-white md:text-5xl lg:text-6xl">
             We move the world everyday
           </h1>
           <p className="mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">
@@ -71,25 +73,7 @@ export default function CareerHero() {
               />
             </div>
           </div>
-
-          <a
-            href=""
-            className="lg:col-span-1 justify-center md:w-auto text-white bg-primaryDarkBlue hover:bg-primary-900 focus:ring-4 focus:outline-none focus:primary-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center"
-          >
-            <svg
-              className="mr-2 -ml-1 w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-            Search
-          </a>
+          <ButtonPrimary position="center" buttonText="   Search  " />
         </form>
         <br />
         <br />

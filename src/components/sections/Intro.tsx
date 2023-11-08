@@ -20,13 +20,13 @@ export default function Intro() {
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
           <img
-            className="w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+            className="object-cover object-left h-96 scale-100 rounded-lg"
+            src="https://www.stadlerrail.com/media/img/c/industrielackierer_lernende.jpg"
             alt="office content 1"
           />
           <img
-            className="mt-4 w-full lg:mt-10 rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+            className="object-cover object-center h-96 scale-100 mt-4 h-full lg:mt-10 rounded-lg"
+            src="https://www.stadlerrail.com/media/img/c/schreiner_azubi_lernende.jpg"
             alt="office content 2"
           />
         </div>

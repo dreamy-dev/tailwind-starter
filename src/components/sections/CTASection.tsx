@@ -23,18 +23,18 @@ export default function CTASection() {
       </div>
       <div className="gap-4 mt-8 sm:grid sm:grid-cols-4 sm:mt-12">
         <img
-          className="col-span-2 mb-4 sm:block rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-1.png"
+          className="object-cover h-80 w-full scale-100 col-span-2 mb-4 sm:block rounded-lg"
+          src="https://www.stadlerrail.com/media/img/c/schweisser_berufserfahrene.jpg"
           alt="content gallery 1"
         />
         <img
-          className="hidden col-span-1 sm:block rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-2.png"
+          className=" object-cover h-80 scale-100 hidden col-span-1 sm:block rounded-lg"
+          src="https://www.stadlerrail.com/media/img/c/produktionsmechaniker_lernende.jpg"
           alt="content gallery 2"
         />
         <img
-          className="hidden col-span-1 sm:block rounded-lg"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+          className="object-cover h-80 scale-100 hidden col-span-1 sm:block rounded-lg"
+          src="https://www.stadlerrail.com/media/img/c/interne_transporte_berufserfahrene.jpg"
           alt="content gallery 3"
         />
       </div>
