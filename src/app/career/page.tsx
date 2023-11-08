@@ -6,6 +6,7 @@ import Jobs from "@/components/sections/TeaserJobs";
 import Intro from "@/components/sections/Intro";
 import Testimonials from "@/components/sections/Testimonials";
 import CareerHero from "../../components/sections/HeroCareer";
+import TeaserSuccessStories from "@/components/sections/TeaserSuccessStories";
 
 export default function Karriere() {
   return (
@@ -16,6 +17,7 @@ export default function Karriere() {
       <FactsAndFigures />
       <Jobs />
       <ApplicationProcess />
+      <TeaserSuccessStories />
       <CTASection />
     </>
   );
