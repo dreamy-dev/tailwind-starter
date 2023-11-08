@@ -6,7 +6,8 @@ interface StatsProps {
   data: {
     text: string;
     end: number;
-    suffix: string;
+    suffix?: string;
+    prefix?: string;
   }[];
   backgroundColor: string;
 }
@@ -35,7 +36,13 @@ const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
                   {stat.text}
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                  {counterOn && <CountUp end={stat.end} suffix={stat.suffix} />}
+                  {counterOn && (
+                    <CountUp
+                      end={stat.end}
+                      suffix={stat.suffix}
+                      prefix={stat.prefix}
+                    />
+                  )}
                 </dd>
               </div>
             ))}

@@ -1,5 +1,3 @@
-// import React, { useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
 import H3 from "./typography/H3";
 import Text from "./typography/Text";
 import * as React from "react";

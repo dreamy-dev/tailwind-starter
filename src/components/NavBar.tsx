@@ -10,7 +10,7 @@ export default function NavBar() {
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex items-center justify-between py-8">
-          <Link href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Stadler_Rail_logotype.svg/2560px-Stadler_Rail_logotype.svg.png"
               className="mr-1 h-4 sm:h-6"
@@ -23,7 +23,7 @@ export default function NavBar() {
             id="navbar-solid-bg"
           >
             <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-              <li>
+              {/* <li>
                 <Link
                   href="/"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600  rounded md:bg-transparent md:p-0  dark:bg-blue-600 md:dark:bg-transparent"
@@ -31,13 +31,13 @@ export default function NavBar() {
                 >
                   Home
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/solutions"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
-                  Solutions
+                  Lösungen
                 </Link>
               </li>
               <li>
@@ -45,57 +45,58 @@ export default function NavBar() {
                   href="/career"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
-                  Career
+                  Karriere
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/investor"
+                  className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Investor Relations
+                </Link>
+              </li>
+              {/* <li>
                 <Link
                   href="/company"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Company
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="/medien"
-                  className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Media
-                </Link>
-              </li>
-              <li>
+              </li> */}
+
+              {/* <li>
                 <Link
                   href="/zulieferer"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Supplier
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/full-service"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Full Service
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/product"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Product
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/lieferanten"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Lieferanten
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/unternehmen"
