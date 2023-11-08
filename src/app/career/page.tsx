@@ -1,7 +1,7 @@
 "use client";
 import ApplicationProcess from "@/components/ApplicationProcess";
 import CTASection from "@/components/CTASection";
-import Figures from "@/components/Figures";
+import FactsAndFigures from "@/components/FactsAndFigures";
 import Jobs from "@/components/Jobs";
 import Intro from "@/components/sections/Intro";
 import Testimonials from "@/components/sections/Testimonials";
@@ -13,7 +13,7 @@ export default function Karriere() {
       <CareerHero></CareerHero>
       <Intro />
       <Testimonials />
-      <Figures />
+      <FactsAndFigures />
       <Jobs />
       <ApplicationProcess />
       <CTASection />
