@@ -1,8 +1,8 @@
 export default function Subscribe() {
   return (
-    <section className="bg-white dark:bg-gray-200">
+    <section className="bg-white">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="gap-16 justify-between items-center p-6 text-white bg-primary rounded-lg dark:bg-gray-800 lg:flex lg:gap-24 md:p-12">
+        <div className="gap-16 justify-between items-center p-6 text-white bg-primary rounded-lg lg:flex lg:gap-24 md:p-12">
           <div className="w-full">
             <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl">
               Sign up for our newsletter
@@ -16,7 +16,7 @@ export default function Subscribe() {
             <form action="#">
               <div className="items-center mb-3 space-y-4 sm:flex sm:space-y-0">
                 <div className="relative w-full">
-                  <label className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <label className="hidden mb-2 text-sm font-medium text-gray-900">
                     Email address
                   </label>
                   <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">

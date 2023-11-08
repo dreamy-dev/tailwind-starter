@@ -1,7 +1,8 @@
 "use client";
 import Hero from "./Hero";
+import DNA from "./DNA";
+import Land from "./Land";
 import WertePrinzipen from "./WertePrinzipen";
-import FaktenZahlen from "./FaktenZahlen";
 import ManagementTeam from "./ManagementTeam";
 import Compliance from "./Compliance";
 import Nachhaltigkeit from "./Nachhaltigkeit";
@@ -12,34 +13,35 @@ import Subscribe from "../../components/Subscribe";
 import Stats from "../../components/Stats";
 
 export default function Unternehmen() {
-  const abc = [
+  const statistics = [
     {
-      text: "Mitarbeiter weltweit",
-      end: 14,
-      suffix: "Tsd",
+      text: "Mitarbeitende",
+      end: 2400,
+      suffix: "+",
     },
     {
-      text: "Produktionsstandorte",
-      end: 15,
+      text: "Länder",
+      end: 22,
       suffix: "",
     },
     {
-      text: "Arbeitstunden",
-      end: 170,
-      suffix: "Mio",
+      text: "Züge mit langfristigen Wartungsverträgen",
+      end: 1800,
+      suffix: "+",
     },
     {
-      text: "Team",
-      end: 1,
-      suffix: "",
+      text: "Kilometer pro Jahr",
+      end: 250,
+      suffix: " Mio.",
     },
   ];
   return (
     <>
       <Hero />
+      <DNA />
       <WertePrinzipen />
-      <FaktenZahlen />
-      <Stats data={abc} backgroundColor="bg-bgcLightBlue" />
+      <Stats data={statistics} backgroundColor="bg-bgcLightBlue" />
+      <Land />
       <ManagementTeam />
       <Compliance />
       <Nachhaltigkeit />

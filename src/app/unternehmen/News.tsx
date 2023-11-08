@@ -1,9 +1,8 @@
-export default function Subscribe() {
+import Link from "@/components/typography/Link";
+
+export default function News() {
   return (
-    <aside
-      aria-label="Related articles"
-      className="py-8 lg:py-24 bg-white dark:bg-gray-900 antialiased"
-    >
+    <aside aria-label="Related articles" className="py-8 lg:py-24 bg-white">
       <div className="px-4 mx-auto max-w-screen-xl">
         <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">
           Related articles
@@ -12,7 +11,7 @@ export default function Subscribe() {
           <article className="max-w-xs">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png"
+                src="/news-1.jpg"
                 className="mb-5 rounded-lg"
                 alt="Image 1"
               />
@@ -24,17 +23,12 @@ export default function Subscribe() {
               Over the past year, Volosoft has undergone many changes! After
               months of preparation.
             </p>
-            <a
-              href="#"
-              className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
-            >
-              Read in 2 minutes
-            </a>
+            <Link>Read in 2 minutes</Link>
           </article>
           <article className="max-w-xs">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png"
+                src="/news-2.jpg"
                 className="mb-5 rounded-lg"
                 alt="Image 2"
               />
@@ -46,17 +40,12 @@ export default function Subscribe() {
               Over the past year, Volosoft has undergone many changes! After
               months of preparation.
             </p>
-            <a
-              href="#"
-              className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
-            >
-              Read in 12 minutes
-            </a>
+            <Link>Read in 12 minutes</Link>
           </article>
           <article className="max-w-xs">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png"
+                src="/news-4.jpg"
                 className="mb-5 rounded-lg"
                 alt="Image 3"
               />
@@ -68,17 +57,12 @@ export default function Subscribe() {
               Over the past year, Volosoft has undergone many changes! After
               months of preparation.
             </p>
-            <a
-              href="#"
-              className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
-            >
-              Read in 8 minutes
-            </a>
+            <Link>Read in 8 minutes</Link>
           </article>
           <article className="max-w-xs">
             <a href="#">
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png"
+                src="/news-5.jpg"
                 className="mb-5 rounded-lg"
                 alt="Image 4"
               />
@@ -90,12 +74,8 @@ export default function Subscribe() {
               Over the past year, Volosoft has undergone many changes! After
               months of preparation.
             </p>
-            <a
-              href="#"
-              className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
-            >
-              Read in 4 minutes
-            </a>
+
+            <Link>Read in 4 minutes</Link>
           </article>
         </div>
       </div>

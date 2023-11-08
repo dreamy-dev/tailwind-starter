@@ -1,5 +1,7 @@
 "use client";
 
+import Button from "./elements/ButtonSecondary";
+
 export default function Stepper() {
   return (
     <ol className="items-top sm:flex">
@@ -20,7 +22,7 @@ export default function Stepper() {
         </div>
         <div className="mt-3 sm:pr-10">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Application
+            Step 1: Application
           </h3>
 
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -47,6 +49,10 @@ export default function Stepper() {
               />
             </svg>
           </a>
+          {/* Button isn't quite working yet: */}
+          {/* <Button position="left" iconAfter>
+            Apply now
+          </Button> */}
         </div>
       </li>
       <li className="relative mb-6 sm:mb-0">
@@ -66,7 +72,7 @@ export default function Stepper() {
         </div>
         <div className="mt-3 sm:pr-10">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Personal talk
+            Step 2: Personal talk
           </h3>
 
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -91,7 +97,7 @@ export default function Stepper() {
         </div>
         <div className="mt-3 sm:pr-10">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Job Offering
+            Step 3: Job Offering
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
             Get started with dozens of web components and interactive elements.

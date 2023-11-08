@@ -1,12 +1,31 @@
 "use client";
 
-import Image from "next/image";
-import { Button, Tabs, type TabsRef } from "flowbite-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Nav() {
-  const tabs = [{ label: "Europe" }, { label: "America" }, { label: "Asia" }];
+export default function Testimonials() {
+  const tabs = [
+    {
+      label: "Max Müller",
+      quote:
+        "Dank Stadler konnte ich eine Ausbildung in einem Bereich abschliessen der mich wirklich fasziniert.",
+      job: "Lernender Automatiker",
+      img: "https://www.stadlerrail.com/media/img/c/produktionsmechaniker_lernende.jpg",
+    },
+    {
+      label: "Jessica Steiner",
+      quote: "Bei Stadler arbeiten macht Spass.",
+      job: "Konstrukteur",
+      img: "https://www.stadlerrail.com/media/img/c/softwareentwickler_berufserfahrene.jpg",
+    },
+    {
+      label: "Michael Frei",
+      quote:
+        "Die Arbeit ist sehr spannend, weil man dazu beiträgt wortwörtlich die ganze Welt zu bewegen",
+      job: "Schreiner",
+      img: "https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg",
+    },
+  ];
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
@@ -35,23 +54,17 @@ export default function Nav() {
             data-tabs-target="#europe"
           >
             <span className="md:flex">
-              <svg
-                className="hidden md:block flex-shrink-0 md:mt-2 h-6 w-6 hs-tab-active:text-blue-600 text-gray-500 dark:hs-tab-active:text-blue-500 dark:text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
-                <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-              </svg>
+              <img
+                className="w-16 h-16 rounded object-cover"
+                src={item.img}
+                alt="profile picture"
+              />
               <span className="md:grow md:ml-5">
                 <span className="hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-gray-200">
                   {item.label}
                 </span>
                 <span className="hidden lg:block mt-2 text-gray-800 dark:text-gray-200">
-                  See our locations in {item.label}
+                  {item.job}
                 </span>
               </span>
             </span>
@@ -73,12 +86,8 @@ export default function Nav() {
           >
             <div className="max-w-[1140px] lg:pb-12 relative">
               <figure className="ml-auto mr-20 relative z-[1] max-w-full w-[50rem] h-auto rounded-b-lg shadow-[0_2.75rem_3.5rem_-2rem_rgb(45_55_75_/_20%),_0_0_5rem_-2rem_rgb(45_55_75_/_15%)] dark:shadow-[0_2.75rem_3.5rem_-2rem_rgb(0_0_0_/_20%),_0_0_5rem_-2rem_rgb(0_0_0_/_15%)]">
-                <div className="bg-gray-800 rounded-b-lg">
-                  <img
-                    className="max-w-full h-auto rounded-b-lg"
-                    src="https://www.stadlerrail.com/media/img/worldmap-section-2019.jpg"
-                    alt=""
-                  />
+                <div className="bg-white rounded-b-lg">
+                  <p>{selectedTab.quote}</p>
                 </div>
               </figure>
             </div>
