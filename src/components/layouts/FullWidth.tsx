@@ -3,5 +3,5 @@ type Props = {
 };
 
 export default function FullWidth({ children }: Props) {
-  return <div className="">{children}</div>;
+  return <div className="w-full grid grid-cols-12 gap-6">{children}</div>;
 }

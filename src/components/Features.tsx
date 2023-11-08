@@ -7,7 +7,7 @@ export default function Features() {
       <ContentWidth>
         <div className="col-span-12  max-w-full mx-auto bg-white">
           <div className="mb-10 tracking-tight dark:text-white ">
-            <H3 titleH3="Für einen effizienten und modernen Bahnbetrieb"></H3>
+            <H3>Für einen effizienten und modernen Bahnbetrieb</H3>
           </div>
           <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 md:gap-16 md:flex-row">
             <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">

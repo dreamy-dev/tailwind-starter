@@ -47,7 +47,7 @@ export default function Specification() {
       <ContentWidth>
         <div className="col-span-12 max-w-full">
           <div className="mx-auto max-w-2xl mb-16 lg:mx-0">
-            <H3 titleH3="Der Beste seiner Klasse"></H3>
+            <H3>Der Beste seiner Klasse</H3>
             <p className="mt-6 text-lg leading-8 text-lightGray">
               Seit 2004 besteht der FLIRT160 erfolgreich verschiedene
               klimatische Herausforderungen von Afrika bis zum Polarkreis. Es

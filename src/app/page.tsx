@@ -5,6 +5,7 @@ import Hero from "../components/ExampleHero";
 import Stats from "../components/Stats";
 import FactsAndFigures from "@/components/FactsAndFigures";
 import MapTextTitle from "@/components/MapTextTitle";
+import DoubleCard from "@/components/DoubleCard";
 
 export default function HomePage() {
   const statsData = [
@@ -34,7 +35,8 @@ export default function HomePage() {
       <Hero />
       <FactsAndFigures />
       <MapTextTitle />
-      <Stats data={statsData} backgroundColor="bg-bgcLightBlue" />
+      <Stats data={statsData} backgroundColor="bg-primarySolid-50" />
+      <DoubleCard />
       <Video></Video>
     </>
   );

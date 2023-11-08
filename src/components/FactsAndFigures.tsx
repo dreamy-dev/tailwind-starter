@@ -6,7 +6,7 @@ const FactsAndFigures = () => {
       <div className="max-w-full px-4 py-8 mx-auto lg:px-20 sm:py-16 lg:py-20">
         <div className="first-level">
           <div className="border-b border-black border-solid">
-            <H3 titleH3="Wirtschaftliche Kennzahlen"></H3>
+            <H3>Wirtschaftliche Kennzahlen</H3>
           </div>
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
             <div className="mx-auto max-w-full">
@@ -41,7 +41,7 @@ const FactsAndFigures = () => {
         </div>
         <div className="second-level">
           <div className=" border-b border-black border-solid">
-            <H3 titleH3="Allgemeine Kennzahlen"></H3>
+            <H3>Allgemeine Kennzahlen</H3>
           </div>
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
             <div className="mx-auto max-w-full">
