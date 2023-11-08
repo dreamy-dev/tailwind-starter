@@ -1,11 +1,13 @@
 type ButtonPrimaryProps = {
   children?: React.ReactNode;
   position?: "left" | "center" | "right";
+  buttonText?: string;
 };
 
 export default function ButtonPrimary({
   children,
   position,
+  buttonText,
 }: ButtonPrimaryProps) {
   const containerStyles: React.CSSProperties = {
     display: "flex",
@@ -24,7 +26,7 @@ export default function ButtonPrimary({
       <button className={primaryButtonStyles}>
         {children ?? (
           <>
-            Jetzt bewerben
+            {buttonText ? buttonText : "Jetzt bewerben"}
             <svg
               width="15"
               height="15"
