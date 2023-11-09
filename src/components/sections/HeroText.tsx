@@ -5,7 +5,7 @@ import Lead from "@/components/typography/Lead";
 
 export default function HeroText(props?: any) {
   return (
-    <section className="bg-white dark:bg-gray-900 pb-10">
+    <section className="bg-white dark:bg-gray-900 py-12 mb-12">
       <SmallWidth>
         <div className="mt-24 flex font-normal text-gray-600">
           <p>Lösungen</p>
