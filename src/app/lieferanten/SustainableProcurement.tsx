@@ -1,19 +1,19 @@
 "use client";
 
+import H2 from "@/components/typography/H2";
+
 export default function SustainableProcurement() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 sm:py-16 lg:px-6 ">
         <img
           className="mb-4 w-full lg:mb-0"
-          src="/FLIRT_H2_Teaser.jpg"
+          src="/8915911.jpg"
           alt="feature image"
         />
-        <div className="text-gray-500 dark:text-gray-400 sm:text-lg">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Verantwortungsvolle Beschaffung
-          </h2>
-          <p className="mb-4 font-light lg:text-xl">
+        <div className=" sm:text-lg">
+          <H2 titleH2={"Nachhaltigkeit in der Lieferkette"}></H2>
+          <p className="my-4 font-normal lg:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             sit amet eros pulvinar, commodo augue ac, viverra justo. Vivamus a
             ultricies elit. Interdum et malesuada fames ac ante ipsum primis in
@@ -39,10 +39,9 @@ export default function SustainableProcurement() {
                 <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
                   Lorem ipsum
                 </h3>
-                <p className="mb-2 font-light text-gray-500 dark:text-gray-400">
+                <p className="mb-2 font-normal text-gray-500 dark:text-gray-400">
                   Ut fringilla auctor dui, in vestibulum enim tempor ac. Nullam
-                  et velit eu ante tincidunt fringilla nec id tortor. Mauris
-                  venenatis justo magna.
+                  et velit eu ante tincidunt fringilla nec id tortor.
                 </p>
               </div>
             </div>
@@ -65,11 +64,9 @@ export default function SustainableProcurement() {
                 <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
                   Lorem ipsum
                 </h3>
-                <p className="mb-2 font-light text-gray-500 dark:text-gray-400">
+                <p className="mb-2 font-normal text-gray-500 dark:text-gray-400">
                   Vestibulum sit amet libero ut tellus finibus lacinia. Sed
-                  luctus libero eu fringilla finibus. Sed scelerisque facilisis
-                  neque condimentum lacinia. Fusce est massa, viverra sit amet
-                  risus eu, blandit tincidunt lacus.
+                  luctus libero eu fringilla finibus.
                 </p>
               </div>
             </div>
