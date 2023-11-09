@@ -2,6 +2,7 @@ import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import H1 from "@/components/typography/H1";
 import Lead from "@/components/typography/Lead";
+import { Children } from "react";
 
 export default function HeroText(props?: any) {
   return (
@@ -10,18 +11,10 @@ export default function HeroText(props?: any) {
         <div className="mt-24 flex font-normal text-gray-600">
           <p>Lösungen</p>
           <span className="px-3">|</span>
-          <p>Schienenfahrzeuge</p>
+          <p>{props.category}</p>
         </div>
-        <H1>
-          Unsere Lieferanten:
-          <br />
-          Ein exzellentes Netzwerk
-        </H1>
-        <Lead>
-          Stadler sucht Zulieferer, die mit Innovationskraft, Zuverlässigkeit
-          und hohem Qualitätsanspruch die Schienenmobilität der Zukunft
-          mitgestalten.
-        </Lead>
+        <H1>{props.title}</H1>
+        <Lead>{props.leadText}</Lead>
         {props.withCTA ? <ButtonPrimary position="left" /> : ""}
       </SmallWidth>
     </section>
