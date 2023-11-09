@@ -11,14 +11,13 @@ export default function Hero() {
           zuverlässig und betriebssicher – bei maximalem Reisekomfort für die
           Fahrgäste.
         </p>
-
         <iframe
           className="mx-auto w-full max-w-2xl h-64 rounded-lg sm:h-96"
           src="https://www.youtube.com/embed/RVIil82HKaA"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </section>
