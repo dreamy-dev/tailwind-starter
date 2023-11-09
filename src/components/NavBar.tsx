@@ -3,15 +3,6 @@ import ContentWidth from "./layouts/ContentWidth";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navigation = {
-  topNav: [
-    { name: "Medien", href: "/medien" },
-    { name: "Zulieferer", href: "/zulieferer" },
-    { name: "Kunden", href: "/kunden" },
-    { name: "Downloadcenter", href: "/downloadcenter" },
-  ],
-};
-
 export default function NavBar() {
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
@@ -43,7 +34,7 @@ export default function NavBar() {
               </li> */}
               <li>
                 <Link
-                  href="/solutions"
+                  href="/losungen"
                   className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Lösungen
@@ -78,7 +69,7 @@ export default function NavBar() {
               </li>
               <li>
                 <Link
-                  href="/investor"
+                  href="/investors"
                   className="block py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Investor Relations
