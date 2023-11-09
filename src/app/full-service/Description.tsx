@@ -4,22 +4,25 @@ export default function Description() {
   return (
     <section className="bg-white">
       <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img className="w-full" src="/card-1.jpg" alt="full service" />
+        <img
+          className="w-full"
+          src="https://www.stadlerrail.com/media/img/c/drehgestellmechaniker_berufserfahrene.jpg"
+          alt="full service"
+        />
         <div className="mt-4 md:mt-0">
           <H2
             textColor="black"
-            titleH2="Beschreibung der Dienstleistung und dem Nutzen für den Kunden"
+            titleH2="Beschreibung des Full Service Angebots"
             styles="font-extrabold mb-8"
           />
-          <p className="mb-6 font-light text-gray-500 md:text-lg">
-            Flowbite helps you connect with friends and communities of people
-            who share your interests. Connecting with your friends and family as
-            well as discovering new ones is easy with features like Groups.
-          </p>
-          <p className="font-light text-gray-500 md:text-lg">
-            Flowbite helps you connect with friends and communities of people
-            who share your interests. Connecting with your friends and family as
-            well as discovering new ones is easy with features like Groups.
+          <p className="mb-6 font-normal text-black-500 md:text-lg">
+            Der Full Service ist ein ganzheitliches Angebot, das die komplette
+            Fahrzeuginstandhaltung umfasst. Es handelt sich um präventive und
+            korrektive Instandhaltung, Revisionen, Condition-Based Maintenance,
+            Balanced Maintenance, Asset Management und Entity in Charge of
+            Maintenance (ECM). Sie profitieren von garantierter Verfügbarkeit,
+            Qualität und Rundum-Kundenservice zu einem fixen Kilometerpreis über
+            die Vertragsdauer.
           </p>
         </div>
       </div>

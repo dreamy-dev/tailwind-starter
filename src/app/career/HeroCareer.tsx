@@ -2,20 +2,20 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import ButtonPrimary from "../elements/ButtonPrimary";
-import H1 from "../typography/H1";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
+import H1 from "../../components/typography/H1";
 
 export default function CareerHero() {
   return (
-    <section className="bg-[url('/career1.jpg')] bg-no-repeat bg-cover bg-center bg-gray-400 bg-blend-multiply">
-      <div className="relative py-16 px-4 mx-auto max-w-screen-xl text-white lg:py-24 xl:px-0 z-1">
+    <section className="bg-[url('/career1.jpg')] bg-no-repeat bg-cover bg-left bg-gray-400 bg-blend-multiply">
+      <div className="relative py-24 px-4 mx-auto max-w-screen-xl text-white lg:pt-64 lg:pb-12 xl:px-0 z-1">
         <div className="mb-6 max-w-screen-md lg:mb-0">
           <br />
           <br />
           <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-tight text-white md:text-5xl lg:text-6xl">
-            We move the world everyday
+            Wir bewegen die Welt jeden Tag
           </h1>
-          <p className="mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">
+          <p className="my-8 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">
             Join us on our mission to help millions of people to reach their
             destination
           </p>

@@ -3,11 +3,8 @@ import Hero from "./Hero";
 import DNA from "./DNA";
 import Land from "./Land";
 import WertePrinzipen from "./WertePrinzipen";
-import ManagementTeam from "./ManagementTeam";
-import Compliance from "./Compliance";
 import Nachhaltigkeit from "./Nachhaltigkeit";
 import History from "./History";
-import News from "./News";
 import SuccessStories from "./SuccessStories";
 import Subscribe from "../../components/Subscribe";
 import Stats from "../../components/Stats";
@@ -42,12 +39,9 @@ export default function Unternehmen() {
       <WertePrinzipen />
       <Stats data={statistics} backgroundColor="bg-bgcLightBlue" />
       <Land />
-      <ManagementTeam />
-      <Compliance />
       <Nachhaltigkeit />
       <History />
       <SuccessStories />
-      <News />
       <Subscribe />
     </>
   );

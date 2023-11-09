@@ -25,7 +25,7 @@ export default function ButtonPrimary({
 
   return (
     <div style={containerStyles}>
-      <a className={primaryButtonStyles} href={href}>
+      <a className={primaryButtonStyles} href={href ?? "#"}>
         {children ?? (
           <>
             {buttonText ? buttonText : "Jetzt bewerben"}

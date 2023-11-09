@@ -9,17 +9,18 @@ export default function Jobs() {
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
         <div className="flex flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row xl:items-start">
           <div>
-            <H2 titleH2={"Our people make us great"}></H2>
-            <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-              Here we focus on markets where technology, innovation, can unlock
-              long-term value.
+            <H2 titleH2={"Unsere Mitarbeiter machen uns stolz"}></H2>
+            <p className="mt-4 text-base font-normal text-black sm:text-xl dark:text-gray-400">
+              Wir konzentrieren uns darauf, wie Technologie und Innovation
+              langfristigen Wert schaffen können.
             </p>
-            <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-              Youll interact with talented professionals, will be challenged to
-              solve difficult problems and think in new and creative ways.
+            <p className="mt-4 text-base font-normal text-black sm:text-xl dark:text-gray-400">
+              Sie haben die Möglichkeit, mit einem Team talentierter Fachleute
+              zusammenzuarbeiten, anspruchsvolle Probleme anzugehen und auf neue
+              und kreative Weise zu denken.
             </p>
             <div className="mt-8">
-              <ButtonPrimary position="left" buttonText="View all positions" />
+              <ButtonPrimary position="left" buttonText="Offene Positionen" />
             </div>
           </div>
 

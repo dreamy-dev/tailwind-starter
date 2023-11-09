@@ -3,9 +3,6 @@ export default function Compliance() {
     <section className="bg-white mb-12">
       <div className="items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-16 lg:px-6">
         <div className="col-span-2">
-          {/* <p className="text-lg font-medium text-primary-600 dark:text-primary-500">
-            COMPLIANCE
-          </p> */}
           <h2 className="mt-3 mb-8 text-3xl tracking-tight font-extrabold tracking-tight text-gray-900 md:text-4xl dark:text-white">
             Compliance
           </h2>
