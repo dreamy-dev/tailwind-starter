@@ -1,11 +1,15 @@
 type ButtonPrimaryProps = {
   children?: React.ReactNode;
   position?: "left" | "center" | "right";
+  buttonText?: string;
+  href?: string;
 };
 
 export default function ButtonPrimary({
   children,
   position,
+  buttonText,
+  href,
 }: ButtonPrimaryProps) {
   const containerStyles: React.CSSProperties = {
     display: "flex",
@@ -21,10 +25,10 @@ export default function ButtonPrimary({
 
   return (
     <div style={containerStyles}>
-      <button className={primaryButtonStyles}>
+      <a className={primaryButtonStyles} href={href ?? "#"}>
         {children ?? (
           <>
-            Jetzt bewerben
+            {buttonText ? buttonText : "Jetzt bewerben"}
             <svg
               width="15"
               height="15"
@@ -51,7 +55,7 @@ export default function ButtonPrimary({
             </svg>
           </>
         )}
-      </button>
+      </a>
     </div>
   );
 }

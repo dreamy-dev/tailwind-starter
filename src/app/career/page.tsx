@@ -1,24 +1,23 @@
 "use client";
-import ApplicationProcess from "@/components/ApplicationProcess";
-import Application from "@/components/ApplicationProcess";
-import Benefits from "@/components/Benefits";
-import CTASection from "@/components/CTASection";
-import Figures from "@/components/Figures";
-import Jobs from "@/components/Jobs";
-import Nav from "@/components/Nav";
-import Testimonial from "@/components/Testimonial";
-import CareerHero from "../../components/Hero";
+import ApplicationProcess from "@/app/career/ApplicationProcess";
+import CTASection from "@/components/sections/CTASection";
+import FactsAndFigures from "@/components/FactsAndFigures";
+import Jobs from "@/components/sections/TeaserJobs";
+import Intro from "@/components/sections/Intro";
+import Testimonials from "@/components/sections/Testimonials";
+import CareerHero from "./HeroCareer";
+import TeaserSuccessStories from "@/components/sections/TeaserSuccessStories";
 
 export default function Karriere() {
   return (
     <>
       <CareerHero></CareerHero>
-      <Nav />
-      <Benefits />
-      <Testimonial />
-      <Figures />
+      <Intro />
+      <Testimonials />
+      <FactsAndFigures />
       <Jobs />
       <ApplicationProcess />
+      <TeaserSuccessStories />
       <CTASection />
     </>
   );

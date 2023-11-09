@@ -1,11 +1,13 @@
 "use client";
 
+import Button from "./elements/ButtonSecondary";
+
 export default function Stepper() {
   return (
-    <ol className="items-top sm:flex">
+    <ol className="items-top sm:flex bg-white border-primarySolid-50">
       <li className="relative mb-6 sm:mb-0">
         <div className="flex items-center">
-          <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900  dark:ring-gray-900 shrink-0">
             <svg
               className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
               aria-hidden="true"
@@ -20,7 +22,7 @@ export default function Stepper() {
         </div>
         <div className="mt-3 sm:pr-10">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Application
+            Step 1: Application
           </h3>
 
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -47,11 +49,15 @@ export default function Stepper() {
               />
             </svg>
           </a>
+          {/* Button isn't quite working yet: */}
+          {/* <Button position="left" iconAfter>
+            Apply now
+          </Button> */}
         </div>
       </li>
       <li className="relative mb-6 sm:mb-0">
         <div className="flex items-center">
-          <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 dark:ring-gray-900 shrink-0">
             <svg
               className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
               aria-hidden="true"
@@ -66,7 +72,7 @@ export default function Stepper() {
         </div>
         <div className="mt-3 sm:pr-10">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Personal talk
+            Step 2: Personal talk
           </h3>
 
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -76,7 +82,7 @@ export default function Stepper() {
       </li>
       <li className="relative mb-6 sm:mb-0">
         <div className="flex items-center">
-          <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <div className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 dark:ring-gray-900 shrink-0">
             <svg
               className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
               aria-hidden="true"
@@ -91,7 +97,7 @@ export default function Stepper() {
         </div>
         <div className="mt-3 sm:pr-10">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Job Offering
+            Step 3: Job Offering
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
             Get started with dozens of web components and interactive elements.

@@ -31,7 +31,10 @@ export default function FAQ() {
                   aria-expanded="true"
                   aria-controls="accordion-flush-body-1"
                 >
-                  <span>Can I use Flowbite in open-source projects?</span>
+                  <span>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy?
+                  </span>
                   <svg
                     data-accordion-icon=""
                     className="w-6 h-6 rotate-180 shrink-0"
@@ -54,20 +57,12 @@ export default function FAQ() {
               >
                 <div className="py-5 border-b border-gray-200 dark:border-gray-700">
                   <p className="mb-2 text-gray-500 dark:text-gray-400">
-                    Flowbite is an open-source library of interactive components
-                    built on top of Tailwind CSS including buttons, dropdowns,
-                    modals, navbars, and more.
-                  </p>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Check out this guide to learn how to{" "}
-                    <a
-                      href="#"
-                      className="text-primary-600 dark:text-primary-500 hover:underline"
-                    >
-                      get started
-                    </a>{" "}
-                    and start developing websites even faster with components on
-                    top of Tailwind CSS.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                    justo duo dolores et ea rebum. Unit hela sera labore et
+                    dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                    et accusam et justo duo dolores et ea rebum.
                   </p>
                 </div>
               </div>
@@ -79,7 +74,9 @@ export default function FAQ() {
                   aria-expanded="false"
                   aria-controls="accordion-flush-body-2"
                 >
-                  <span>Is there a Figma file available?</span>
+                  <span>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr?
+                  </span>
                   <svg
                     data-accordion-icon=""
                     className="w-6 h-6 shrink-0"
@@ -128,7 +125,7 @@ export default function FAQ() {
                   aria-controls="accordion-flush-body-3"
                 >
                   <span>
-                    What are the differences between Flowbite and Tailwind UI?
+                    Lorem ipsum dolor sit sadipscing elitr amet consetetur?
                   </span>
                   <svg
                     data-accordion-icon=""
@@ -194,7 +191,9 @@ export default function FAQ() {
                   aria-expanded="false"
                   aria-controls="accordion-flush-body-4"
                 >
-                  <span>What about browser support?</span>
+                  <span>
+                    Lorem ipsum dolor sit consetetur sadipscing elitr?
+                  </span>
                   <svg
                     data-accordion-icon=""
                     className="w-6 h-6 shrink-0"

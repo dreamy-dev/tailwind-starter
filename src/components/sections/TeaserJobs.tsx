@@ -1,44 +1,26 @@
 "use client";
 
+import ButtonPrimary from "../elements/ButtonPrimary";
+import H2 from "../typography/H2";
+
 export default function Jobs() {
   return (
     <section className="bg-white dark:bg-gray-900 antialiased">
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
         <div className="flex flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row xl:items-start">
           <div>
-            <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-              Our people make us great
-            </h2>
-            <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-              Here we focus on markets where technology, innovation, can unlock
-              long-term value.
+            <H2 titleH2={"Unsere Mitarbeiter machen uns stolz"}></H2>
+            <p className="mt-4 text-base font-normal text-black sm:text-xl dark:text-gray-400">
+              Wir konzentrieren uns darauf, wie Technologie und Innovation
+              langfristigen Wert schaffen können.
             </p>
-            <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-              Youll interact with talented professionals, will be challenged to
-              solve difficult problems and think in new and creative ways.
+            <p className="mt-4 text-base font-normal text-black sm:text-xl dark:text-gray-400">
+              Sie haben die Möglichkeit, mit einem Team talentierter Fachleute
+              zusammenzuarbeiten, anspruchsvolle Probleme anzugehen und auf neue
+              und kreative Weise zu denken.
             </p>
-            <div className="mt-4">
-              <a
-                href="#"
-                title=""
-                className="text-white bg-primaryDarkBlue justify-center hover:bg-primary-900 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                role="button"
-              >
-                View all positions
-                <svg
-                  aria-hidden="true"
-                  className="w-5 h-5 ml-2 -mr-1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
+            <div className="mt-8">
+              <ButtonPrimary position="left" buttonText="Offene Positionen" />
             </div>
           </div>
 

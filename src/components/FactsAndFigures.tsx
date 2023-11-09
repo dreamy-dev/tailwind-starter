@@ -1,13 +1,17 @@
 "use client";
+import H2 from "./typography/H2";
 import H3 from "./typography/H3";
 const FactsAndFigures = () => {
   return (
     <section className="bg-primarySolid-50 dark:bg-gray-900 antialiased">
       <div className="max-w-full px-4 py-8 mx-auto lg:px-20 sm:py-16 lg:py-20">
+        <div className="text-center mb-4">
+          <H2 titleH2="Daten & Fakten"></H2>
+        </div>
         <div className="first-level">
-          <div className="border-b border-black border-solid">
+          {/* <div className="border-b border-black border-solid">
             <H3 titleH3="Wirtschaftliche Kennzahlen"></H3>
-          </div>
+          </div> */}
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
             <div className="mx-auto max-w-full">
               <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
@@ -40,9 +44,9 @@ const FactsAndFigures = () => {
           </div>
         </div>
         <div className="second-level">
-          <div className=" border-b border-black border-solid">
+          {/* <div className=" border-b border-black border-solid">
             <H3 titleH3="Allgemeine Kennzahlen"></H3>
-          </div>
+          </div> */}
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
             <div className="mx-auto max-w-full">
               <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
