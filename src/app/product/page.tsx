@@ -8,6 +8,7 @@ import QualityFeatures from "@/components/QualityFeatures";
 import Specification from "@/components/Specification";
 import HeroText from "@/components/sections/HeroText";
 import TextSection from "@/components/sections/TextSection";
+import ProductCarousel from "@/components/ProductCarousel";
 
 export default function Product() {
   return (
@@ -20,6 +21,7 @@ export default function Product() {
       <ProductHero />
       <TextSection></TextSection>
       <QualityFeatures />
+      <ProductCarousel />
       <Specification />
       <Features />
       <Contact />
