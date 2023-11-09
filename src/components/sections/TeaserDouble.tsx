@@ -1,4 +1,5 @@
 import ButtonPrimary from "../elements/ButtonPrimary";
+import H2 from "../typography/H2";
 
 export default function TeaserDouble() {
   return (
@@ -10,14 +11,12 @@ export default function TeaserDouble() {
               <div className="">
                 <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                   <div>
-                    <h2 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl dark:text-white">
-                      Procurement: Our standards
-                    </h2>
-                    <p className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
-                      Our app helps users easily track their expenses and create
-                      a budget. With a user-friendly interface, the app allows
-                      users to quickly input their income and expenses, and then
-                      automatically categorizes them for easy tracking.
+                    <H2 titleH2="Geschäftsbedingungen in der Beschaffung"></H2>
+                    <p className="mt-4 text-base font-normal text-gray-800 dark:text-gray-400 sm:text-xl">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores et ea rebum.
                     </p>
                   </div>
 
@@ -40,7 +39,7 @@ export default function TeaserDouble() {
                           </svg>
                         </div>
                         <span className="text-base font-medium text-gray-900 dark:text-white">
-                          Continuous integration and deployment
+                          Quality Testing
                         </span>
                       </li>
 
@@ -87,13 +86,13 @@ export default function TeaserDouble() {
                       </li>
                     </ul>
 
-                    <h3 className="mt-6 text-xl font-normal text-gray-500 dark:text-gray-400">
-                      Flow Budget takes the hassle out of budgeting and empowers
-                      users to take control of their finances
+                    <h3 className="mt-6 text-xl font-normal text-gray-800 dark:text-gray-400">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor.
                     </h3>
                   </div>
 
-                  <ButtonPrimary position="left" />
+                  <ButtonPrimary position="left" buttonText="Mehr dazu" />
                 </div>
               </div>
             </div>
@@ -101,8 +100,8 @@ export default function TeaserDouble() {
 
           <div className="hidden lg:block">
             <img
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-light.png"
-              className="dark:hidden w-[272px] h-[572px]"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-tabs-1.png"
+              className="dark:hidden w-full h-[572px]"
               alt=""
             />
           </div>
@@ -123,14 +122,11 @@ export default function TeaserDouble() {
           </div>
 
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-            <div>
-              <h2 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl dark:text-white">
-                Cooperation: Become a partner
-              </h2>
+            <div className="mt-6">
+              <H2 titleH2="Werden Sie Partner von Stadler"></H2>
               <p className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
-                With a user-friendly interface, the app allows users to quickly
-                input their income and expenses, and then automatically
-                categorizes them for easy tracking.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor
               </p>
             </div>
 
@@ -153,7 +149,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Dynamic reports and dashboards
+                    Qualitätsmanagement
                   </span>
                 </li>
 
@@ -174,7 +170,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Templates for everyone
+                    Versandinstruktionen
                   </span>
                 </li>
 
@@ -195,7 +191,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Development workflow
+                    Exportkontrolle und Zoll
                   </span>
                 </li>
 
@@ -216,7 +212,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Limitless business automation
+                    Logistikspezifikation
                   </span>
                 </li>
 
@@ -237,13 +233,13 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Knowledge management
+                    Einkaufsbedingungen
                   </span>
                 </li>
               </ul>
             </div>
 
-            <ButtonPrimary position="left" />
+            <ButtonPrimary position="left" buttonText="Jetzt Partner werden" />
           </div>
         </div>
       </div>

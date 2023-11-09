@@ -1,13 +1,8 @@
 "use client";
 
 import Hero from "./Hero";
-import Numbers from "./Numbers";
-import ProcurementDescriptions from "./ProcurementDescriptions";
-import CooperationDescription from "./CooperationDescription";
 import SustainableProcurement from "./SustainableProcurement";
-import FAQ from "./FAQ";
-import FaktenUndZahlen from "../company/FaktenUndZahlen";
-import FaktenZahlen from "../unternehmen/FaktenZahlen";
+import FAQ from "../../components/sections/FAQ";
 import FactsAndFigures from "@/components/FactsAndFigures";
 import Quote from "@/components/sections/Quote";
 import Contact from "@/components/sections/Contact";
@@ -21,8 +16,6 @@ export default function Lieferanten() {
       <FactsAndFigures />
       {/* <FaktenUndZahlen /> */}
       <Quote />
-      {/* <ProcurementDescriptions />
-      <CooperationDescription /> */}
       <TeaserDouble />
       <SustainableProcurement />
       <FAQ />

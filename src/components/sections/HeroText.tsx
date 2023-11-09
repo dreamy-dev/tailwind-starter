@@ -18,9 +18,9 @@ export default function HeroText(props?: any) {
           Ein exzellentes Netzwerk
         </H1>
         <Lead>
-          Der Flirt 160 setzt Massstäbe: Leichte Bauweise aus Aluminium,
-          markantes Design, höchster Passagierkomfort und einfache Wartung.
-          Erfahren Sie, was dieses Modell so unverwechselbar macht.
+          Stadler sucht Zulieferer, die mit Innovationskraft, Zuverlässigkeit
+          und hohem Qualitätsanspruch die Schienenmobilität der Zukunft
+          mitgestalten.
         </Lead>
         {props.withCTA ? <ButtonPrimary position="left" /> : ""}
       </SmallWidth>
