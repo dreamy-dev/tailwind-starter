@@ -12,9 +12,7 @@ export default function Lieferanten() {
   return (
     <>
       <Hero />
-      {/* <Numbers /> */}
       <FactsAndFigures />
-      {/* <FaktenUndZahlen /> */}
       <Quote />
       <TeaserDouble />
       <SustainableProcurement />
