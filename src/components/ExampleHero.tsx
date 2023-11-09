@@ -8,7 +8,7 @@ export default function Hero() {
     <div className="bg-white h-810 relative ">
       <div className="mx-auto max-wull  absolute inset-0 flex items-center flex-col md:flex-row">
         <motion.div
-          initial={{ x: -1000 }}
+          initial={{ x: -1800 }}
           animate={{ x: 0 }}
           transition={{ duration: 1 }}
           className="bg-[url('/Hero-home.jpg')] w-80 bg-right-top bg-cover h-450 bg-no-repeat absolute right-0 md:h-810 lg:h-810"
