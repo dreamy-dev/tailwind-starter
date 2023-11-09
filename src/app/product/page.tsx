@@ -12,7 +12,11 @@ import TextSection from "@/components/sections/TextSection";
 export default function Product() {
   return (
     <>
-      <HeroText />
+      <HeroText
+        category="Schienenfahrzeuge"
+        title={<>Leicht und flexibel: Flirt 160</>}
+        leadText="Der Flirt 160 setzt Massstäbe: Leichte Bauweise aus Aluminium, markantes Design, höchster Passagierkomfort und einfache Wartung. Erfahren Sie, was dieses Modell so unverwechselbar macht."
+      />
       <ProductHero />
       <TextSection></TextSection>
       <QualityFeatures />
