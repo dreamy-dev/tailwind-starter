@@ -7,17 +7,18 @@ export default function TeaserSuccessStories() {
       <SmallWidth>
         <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <H2 titleH2={"Our people make us great"}></H2>
-            <p className="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-              You'll interact with talented professionals, will be challenged to
-              solve difficult problems and think in new and creative ways.
+            <H2 titleH2={"Unsere Mitarbeiter machen uns aus"}></H2>
+            <p className="mt-4 text-base font-normal text-black sm:text-xl dark:text-gray-400">
+              Sie haben die Möglichkeit, mit einem Team talentierter Fachleute
+              zusammenzuarbeiten, anspruchsvolle Probleme anzugehen und auf neue
+              und kreative Weise zu denken.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 mt-8 lg:mt-16 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3">
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover h-full h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/produktionslogistik_studenten.jpg"
                 alt=""
               />
@@ -33,7 +34,7 @@ export default function TeaserSuccessStories() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover h-full h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/elektro_vormontage_berufserfahrene.jpg"
                 alt=""
               />
@@ -49,13 +50,13 @@ export default function TeaserSuccessStories() {
 
             <div className="relative overflow-hidden rounded-lg group">
               <img
-                className="object-cover h-full h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg"
                 alt=""
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Kevin McFall</p>
+                  <p className="text-xl font-bold text-white">Kevin Kiehl</p>
                   <p className="text-base font-medium text-gray-300">
                     5 Jahre bei Stadler
                   </p>

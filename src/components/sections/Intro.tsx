@@ -4,18 +4,14 @@ export default function Intro() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-        <div className="font-light sm:text-lg">
+        <div className="font-normal sm:text-lg">
           <H2 titleH2={"Unsere Kultur"}></H2>
           <p className="mb-4 mt-6">
-            We are strategists, designers and developers. Innovators and problem
-            solvers. Small enough to be simple and quick, but big enough to
-            deliver the scope you want at the pace you need. Small enough to be
-            simple and quick, but big enough to deliver the scope you want at
-            the pace you need.
-          </p>
-          <p>
-            We are strategists, designers and developers. Innovators and problem
-            solvers. Small enough to be simple and quick.
+            Wir sind Strategen, Designer und Entwickler. Innovatoren und
+            Problemlöser. Klein genug, um einfach und schnell zu sein, aber
+            gross genug, um den von Ihnen gewünschten Umfang in dem von Ihnen
+            benötigten Tempo zu liefern. Wir sind Strategen, Designer und
+            Entwickler. Innovatoren und Problemlöser.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
