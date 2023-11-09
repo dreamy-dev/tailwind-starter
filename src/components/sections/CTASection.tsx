@@ -10,10 +10,11 @@ export default function CTASection() {
     <section className="bg-white dark:bg-gray-900">
       <div className="bg-primaryBgcGray py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center">
-          <H2 titleH2={"Send us your CV"}></H2>
+          <H2 titleH2={"Spontanbewerbung"}></H2>
           <Text styles="my-6">
-            You haven`t found your job position yet? Send us your CV and be the
-            first one to be considered when a new job opening is created.
+            Du hast deine passende Stelle noch nicht gefunden? Sende uns deinen
+            Lebenslauf zu und sei der Erste, der berücksichtigt wird, wenn eine
+            neue Stellenanzeige erstellt wird.
           </Text>
           <ButtonPrimary
             position="center"
