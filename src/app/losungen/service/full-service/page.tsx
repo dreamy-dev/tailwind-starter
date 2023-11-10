@@ -3,8 +3,8 @@
 import Hero from "./Hero";
 import Description from "./Description";
 import Advantages from "./Advantages";
-import Contact from "../../components/sections/Contact";
-import Career from "../../components/Career";
+import Contact from "../../../../components/sections/Contact";
+import Career from "../../../../components/Career";
 
 export default function FullService() {
   return (

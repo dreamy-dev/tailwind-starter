@@ -15,6 +15,7 @@
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "@types/react-router-dom": "^5.3.3",
+    "clsx": "^2.0.0",
     "eslint": "8.47.0",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.5.0",
