@@ -9,6 +9,7 @@ import Specification from "@/components/Specification";
 import HeroText from "@/components/sections/HeroText";
 import TextSection from "@/components/sections/TextSection";
 import ProductCarousel from "@/components/ProductCarousel";
+import TestimonialsCarousel from "@/components/ReferenzenCarousel";
 
 export default function Product() {
   return (
@@ -24,6 +25,7 @@ export default function Product() {
       <ProductCarousel />
       <Specification />
       <Features />
+      <TestimonialsCarousel></TestimonialsCarousel>
       <Contact />
       <Career />
     </>
