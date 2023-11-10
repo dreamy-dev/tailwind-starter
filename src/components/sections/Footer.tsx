@@ -1,12 +1,13 @@
 import Button from "../elements/ButtonSecondary";
+import Link from "next/link";
 
 const navigation = {
   legal: [
-    { name: "Impressum", href: "#" },
-    { name: "Disclaimer", href: "#" },
-    { name: "Compliance", href: "#" },
-    { name: "Cookies", href: "#" },
-    { name: "Zertifizierung", href: "#" },
+    { name: "Impressum", href: "/impressum" },
+    { name: "Disclaimer", href: "/disclaimer" },
+    { name: "Compliance", href: "/compliance" },
+    { name: "Cookies", href: "/cookies" },
+    { name: "Zertifizierung", href: "/zertifiyierung" },
   ],
   social: [
     {
@@ -80,23 +81,17 @@ export default function Footer() {
               >
                 Kontakt aufnehmen
               </Button>
-              {/* <button
-                type="submit"
-                className=" border border-white flex items-center justify-center bg-secondaryBlueDark px-3 py-2 text-xs font-medium text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryDarkBlue"
-              >
-                Kontakt aufnehmen
-              </button> */}
             </div>
             <div className="flex space-x-4">
               {navigation.social.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-gray-500 hover:text-gray-400"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
