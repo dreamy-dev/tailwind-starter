@@ -1,5 +1,6 @@
 import Button from "../elements/ButtonSecondary";
 import Link from "next/link";
+import ContentWidth from "../layouts/ContentWidth";
 
 const navigation = {
   legal: [
@@ -68,11 +69,11 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-blueDark" aria-labelledby="footer-heading">
-      <div className="mx-auto max-w-full  px-6 py-8 sm:py-8 sm:px-6 lg:px-20 lg:py-10">
+      <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 sm:px-6  lg:py-10">
         <div className="pt-8 lg:flex lg:items-center lg:justify-between">
           <img className="h-7" src="/Logo-white.svg" alt="Company name" />
           <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
-            <div className=" my-6 lg:mr-14 ">
+            <div className=" mb-6 mt-12 lg:mt-6 lg:mr-14 ">
               <Button
                 backgroundColorClass="bg-transparent"
                 textColorClass="text-white"
@@ -97,17 +98,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className=" pt-8  lg:flex lg:items-center lg:justify-between">
+        <div className=" pt-8  lg:flex xl:flex-row md:flex-col md:justify-start md:items-start xl:items-center xl:justify-between">
           <div className="mt-10 md:mt-0">
             <ul
               role="list"
-              className="lg:flex lg:items-center lg:justify-between  gap-8"
+              className=" gap-6 grid sm:grid grid-cols-2 lg:flex lg:justify-between lg:items-center  lg:gap-8"
             >
               {navigation.legal.map((item) => (
-                <li key={item.name}>
+                <li key={item.name} className="mb-0 sm:mb-0 md:mb-8 xl:mb-0">
                   <a
                     href={item.href}
-                    className="text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
+                    className=" block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                   >
                     {item.name}
                   </a>
@@ -116,7 +117,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <p className="mt-8 text-base leading-5 text-primarySolid-400 md:order-1 md:mt-0">
+          <p className="mt-12 sm:mt-12 text-base leading-5 text-primarySolid-400 md:mt-0">
             © 2023 Stadler, Inc. All rights reserved.
           </p>
         </div>
