@@ -30,7 +30,7 @@ const navigationMain: NavItems = {
       submenuItems: [
         { title: "Schienenfahrt", href: "/losungen/schienenfahrt" },
         { title: "Signalling", href: "/losungen/signalling" },
-        { title: "Service", href: "/losungen/full-service" },
+        { title: "Service", href: "/losungen/service" },
       ],
     },
     { title: "Karriere", href: "/career", icon: <IconNav></IconNav> },
