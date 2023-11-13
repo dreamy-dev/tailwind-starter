@@ -37,7 +37,7 @@ const navigationMain: NavItems = {
       submenuItems: [
         {
           title: "Schienenfahrzeuge",
-          href: "/solutions/Schienenfahrzeuge",
+          href: "/solutions/schienenfahrzeuge",
         },
         { title: "Signalling", href: "/solutions/signalling" },
         { title: "Service", href: "/solutions/service" },
@@ -62,7 +62,7 @@ export default function NavBar() {
         <div className="bg-white col-span-12 w-full flex flex-col items-center justify-center md:justify-between lg:justify-between lg:flex-row py-8 md:min-h-fit min-h-[60vh] md:w-auto left-0 top-[10%] absolut md:static">
           <div>
             <Link href="/" className="flex justify-center items-center">
-              <img src="Logo.svg" className="h-4 sm:h-6" alt="Flowbite Logo" />
+              <img src="/Logo.svg" className="h-4 sm:h-6" alt="Flowbite Logo" />
             </Link>
           </div>
 
