@@ -15,7 +15,7 @@ export default function Hero() {
         >
           <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
             <img
-              src="/graph-wide.svg"
+              src="/Graph-wide.svg"
               className="md:block hidden max-h-screen h-full w-auto"
               alt=""
             />
