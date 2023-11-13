@@ -16,7 +16,7 @@ export default function HeroText(props?: any) {
         </div>
         <H1>{props.title}</H1>
         <Lead>{props.leadText}</Lead>
-        {props.withCTA ? <ButtonPrimary position="left" /> : ""}
+        {props.withCTA ? <ButtonPrimary position="left" buttonText={props.buttonText} /> : ""}
       </SmallWidth>
     </section>
   );

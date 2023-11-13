@@ -39,7 +39,7 @@ export default function TeaserDouble() {
                           </svg>
                         </div>
                         <span className="text-base font-medium text-gray-900 dark:text-white">
-                          Quality Testing
+                          Lorem ipsum
                         </span>
                       </li>
 
@@ -60,7 +60,7 @@ export default function TeaserDouble() {
                           </svg>
                         </div>
                         <span className="text-base font-medium text-gray-900 dark:text-white">
-                          Development workflow
+                          Dolor sitamet
                         </span>
                       </li>
 
@@ -81,7 +81,7 @@ export default function TeaserDouble() {
                           </svg>
                         </div>
                         <span className="text-base font-medium text-gray-900 dark:text-white">
-                          Knowledge management
+                          Takimata sancta
                         </span>
                       </li>
                     </ul>
@@ -100,8 +100,8 @@ export default function TeaserDouble() {
 
           <div className="hidden lg:block">
             <img
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-tabs-1.png"
-              className="dark:hidden w-full h-[572px]"
+              src="Referenzen_TSSSA_Bild-VR.jpg"
+              className="dark:hidden object-cover object-left h-full h-[572px]"
               alt=""
             />
           </div>
@@ -109,10 +109,10 @@ export default function TeaserDouble() {
 
         <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-20 lg:gap-16 lg:grid-cols-2">
           <div className="hidden lg:block">
-            <img
-              className="object-cover w-full dark:hidden"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-tabs-1.png"
-              alt="Feature illustration"
+          <img
+              src="news-1.jpg"
+              className="dark:hidden object-cover object-right h-full h-[572px]"
+              alt=""
             />
             <img
               className="hidden object-cover w-full dark:block"
@@ -149,7 +149,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Qualitätsmanagement
+                    Lorem ipusm
                   </span>
                 </li>
 
@@ -170,7 +170,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Versandinstruktionen
+                    Dolor sit amet
                   </span>
                 </li>
 
@@ -191,7 +191,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Exportkontrolle und Zoll
+                    Stet clita
                   </span>
                 </li>
 
@@ -212,7 +212,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Logistikspezifikation
+                    Dolore magna
                   </span>
                 </li>
 
@@ -233,7 +233,7 @@ export default function TeaserDouble() {
                     </svg>
                   </div>
                   <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Einkaufsbedingungen
+                    Consetetur sadip
                   </span>
                 </li>
               </ul>
