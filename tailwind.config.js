@@ -82,6 +82,7 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      "3xl": "1760px",
     },
     extend: {
       backgroundImage: {
@@ -98,10 +99,18 @@ module.exports = {
         450: "450px",
         350: "350px",
         690: "690px",
+        "hero-bg-height-extralarge-screen": "88.7%",
+        "hero-bg-height-middle-screen": "82.8%",
       },
       width: {
         80: "80%",
         40: "40%",
+        "hero-bg-large-screen": "43.5%",
+        "hero-bg-middle-screen": "44.27%",
+        "hero-image-small-screen": "66.67%",
+        "hero-image-large-screen": "66.25%",
+        "hero-bg-extralarge-screen": "51.66%",
+        "hero-image-extralarge-screen": "73.8%",
       },
     },
   },
