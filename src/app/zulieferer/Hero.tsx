@@ -6,6 +6,7 @@ export default function LieferantenHero(props?: any) {
       withCTA
       category="Lieferanten"
       leadText="Stadler sucht Zulieferer, die mit Innovationskraft, Zuverlässigkeit und hohem Qualitätsanspruch die Schienenmobilität der Zukunft mitgestalten."
+      buttonText="Login Lieferantenportal"
       title={
         <p>
           Unsere Lieferanten:

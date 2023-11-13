@@ -5,7 +5,8 @@ export default function Hero() {
   return (
     <section className="bg-white mt-12 mb-8 dark:bg-gray-900">
       <HeroText
-        category="All services"
+        category="Full service"
+        solution
         title={<p>Full Service – Integriertes Service-Konzept in der Nähe</p>}
         leadText="Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst."
       />
