@@ -2,6 +2,13 @@
 import ContentWidth from "./layouts/ContentWidth";
 import Link from "next/link";
 import IconNav from "./elements/IconNav";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+const variants = {
+  open: { opacity: 1, y: 0 },
+  closed: { opacity: 0, y: 100 },
+};
 
 type NavItem = {
   title: string;
@@ -24,37 +31,38 @@ const navigationMain: NavItems = {
   topNav: [
     {
       title: "Lösungen",
-      href: "/losungen",
+      href: "/solutions",
       icon: <IconNav></IconNav>,
       submenu: true,
       submenuItems: [
-        { title: "Schienenfahrt", href: "/losungen/schienenfahrt" },
-        { title: "Signalling", href: "/losungen/signalling" },
-        { title: "Service", href: "/losungen/service" },
+        {
+          title: "Schienenfahrzeuge",
+          href: "/solutions/schienenfahrzeuge",
+        },
+        { title: "Signalling", href: "/solutions/signalling" },
+        { title: "Service", href: "/solutions/service" },
       ],
     },
-    { title: "Karriere", href: "/career", icon: <IconNav></IconNav> },
+    { title: "Karriere", href: "/career", icon: false },
     {
       title: "Investor Relations",
       href: "/investors",
-      icon: <IconNav></IconNav>,
+      icon: false,
     },
-    { title: "Unternehmen", href: "/unternehmen", icon: <IconNav></IconNav> },
+    { title: "Unternehmen", href: "/unternehmen", icon: false },
   ],
 };
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
       <ContentWidth>
         <div className="bg-white col-span-12 w-full flex flex-col items-center justify-center md:justify-between lg:justify-between lg:flex-row py-8 md:min-h-fit min-h-[60vh] md:w-auto left-0 top-[10%] absolut md:static">
           <div>
             <Link href="/" className="flex justify-center items-center">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Stadler_Rail_logotype.svg/2560px-Stadler_Rail_logotype.svg.png"
-                className="h-4 sm:h-6"
-                alt="Flowbite Logo"
-              />
+              <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
             </Link>
           </div>
 
@@ -65,24 +73,34 @@ export default function NavBar() {
                   <Link
                     href={item.href}
                     className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    onMouseEnter={() => setIsOpen((isOpen) => !isOpen)}
                   >
                     {item.title}
-                    <IconNav></IconNav>
+                    {item.icon ?? <IconNav />}
                   </Link>
 
                   {item.submenu && item.submenuItems && (
-                    <ul>
+                    <motion.ul
+                      animate={isOpen ? "open" : "closed"}
+                      variants={variants}
+                      style={{
+                        position: "absolute",
+                        zIndex: "2",
+                        backgroundColor: "#fff",
+                        padding: "10px",
+                      }}
+                    >
                       {item.submenuItems.map((subItem) => (
-                        <li key={subItem.title}>
+                        <motion.li key={subItem.title}>
                           <Link
                             href={subItem.href}
                             className="text-primarySolid-600 hover:underline"
                           >
                             {subItem.title}
                           </Link>
-                        </li>
+                        </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   )}
                 </li>
               ))}

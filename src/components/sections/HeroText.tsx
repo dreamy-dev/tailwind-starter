@@ -9,13 +9,14 @@ export default function HeroText(props?: any) {
     <section className="bg-white dark:bg-gray-900 py-12 mb-12">
       <SmallWidth>
         <div className="mt-24 flex font-normal text-gray-600">
-          <p>Lösungen</p>
-          <span className="px-3">|</span>
+          {props.solution ? (
+            <><p>Lösungen</p><span className="px-3">|</span></>
+          ) : ''}
           <p>{props.category}</p>
         </div>
         <H1>{props.title}</H1>
         <Lead>{props.leadText}</Lead>
-        {props.withCTA ? <ButtonPrimary position="left" /> : ""}
+        {props.withCTA ? <ButtonPrimary position="left" buttonText={props.buttonText} /> : ""}
       </SmallWidth>
     </section>
   );

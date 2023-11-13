@@ -5,31 +5,56 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="bg-white h-810 relative ">
-      <div className="mx-auto max-wull  absolute inset-0 flex items-center flex-col md:flex-row">
-        <motion.div
-          initial={{ x: -1800 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1 }}
-          className="bg-[url('/Hero-home.jpg')] w-80 bg-right-top bg-cover h-450 bg-no-repeat absolute right-0 md:h-810 lg:h-810"
-        ></motion.div>
+    <div className="mx-auto max-w-screen-3xl bg-white">
+      <div className="w-full mb-8 relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
         <motion.div
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="bg-[url('/Graph.svg')] sm:w-1/2 lg:w-full  h-350 lg:h-700 bg-no-repeat absolute left-0 transform -translate-y-1/2 -translate-x-1/2 z-30"
+          className="md:w-hero-bg-middle-screen lg:w-hero-bg-large-screen xl:w-hero-bg-extralarge-screen bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 transform -translate-y-1/2 -translate-x-1/2 z-30"
         >
+          <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
+            <img
+              src="/Graph-wide.svg"
+              className="md:block hidden max-h-screen h-full w-auto"
+              alt=""
+            />
+            <img
+              src="/Graph.svg"
+              className="block md:hidden h-auto w-full"
+              alt=""
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 100 }}
+            animate={{ opacity: 1, x: 40 }}
             transition={{ duration: 0.5, delay: 1.5 }}
-            className=" z-40 absolute top-1/4 lg:top-1/4 md:top-1/2  transform -translate-y-1/2 translate-x-1/2 max-w-[330px]"
+            className="z-40 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-20 h-4/5 top-0 md:w-3/5 md:top-8 md:left-0 transform -translate-y-1/2 translate-x-1/2 w-4/6 max-w-[270px] md:max-w-[330px]"
           >
-            <H1>Driven from within.</H1>
-            <Text styles="mt-16">
+            <H1 styles="-mt-3 lg:mt-0 text-4xl lg:text-5xl">
+              Driven from within.
+            </H1>
+            <Text styles="text-md lg:text-xl mt-4 xl:mt-16">
               Für die besten Schienenfahrzeuge der Welt.
             </Text>
           </motion.div>
+        </motion.div>
+        <motion.div
+          initial={{ x: -1800 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1 }}
+          className="w-full md:w-hero-image-small-screen lg:w-hero-image-large-screen xl:w-hero-image-extralarge-screen bg-center bg-cover bg-no-repeat"
+        >
+          <img
+            src="/hero-home-blue.jpg"
+            className="w-full md:block hidden"
+            alt=""
+          />
+          <img
+            src="/hero-home-mobile.jpg"
+            className="w-full block md:hidden"
+            alt=""
+          />
         </motion.div>
       </div>
     </div>

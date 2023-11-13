@@ -6,7 +6,9 @@ type TextProps = {
 export default function Text({ children, styles }: TextProps) {
   return (
     <>
-      <p className={`text-xl text-black font-normal ${styles}`}>{children}</p>
+      <p className={`text-black font-normal ${styles ? styles : "text-xl"}`}>
+        {children}
+      </p>
     </>
   );
 }
