@@ -24,13 +24,13 @@ const navigationMain: NavItems = {
   topNav: [
     {
       title: "Lösungen",
-      href: "/losungen",
+      href: "/solutions",
       icon: <IconNav></IconNav>,
       submenu: true,
       submenuItems: [
-        { title: "Schienenfahrt", href: "/losungen/schienenfahrt" },
-        { title: "Signalling", href: "/losungen/signalling" },
-        { title: "Service", href: "/losungen/service" },
+        { title: "Schienenfahrt", href: "/solutions/schienenfahrt" },
+        { title: "Signalling", href: "/solutions/signalling" },
+        { title: "Service", href: "/solutions/service" },
       ],
     },
     { title: "Karriere", href: "/career", icon: <IconNav></IconNav> },
