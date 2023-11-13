@@ -2,6 +2,13 @@
 import ContentWidth from "./layouts/ContentWidth";
 import Link from "next/link";
 import IconNav from "./elements/IconNav";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+const variants = {
+  open: { opacity: 1, y: 0 },
+  closed: { opacity: 0, y: 100 },
+};
 
 type NavItem = {
   title: string;
@@ -44,6 +51,8 @@ const navigationMain: NavItems = {
 };
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
       <ContentWidth>
@@ -61,24 +70,34 @@ export default function NavBar() {
                   <Link
                     href={item.href}
                     className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    onClick={() => setIsOpen((isOpen) => !isOpen)}
                   >
                     {item.title}
                     {item.icon ?? <IconNav />}
                   </Link>
 
                   {item.submenu && item.submenuItems && (
-                    <ul>
+                    <motion.ul
+                      animate={isOpen ? "open" : "closed"}
+                      variants={variants}
+                      style={{
+                        position: "absolute",
+                        zIndex: "2",
+                        backgroundColor: "#fff",
+                        padding: "10px",
+                      }}
+                    >
                       {item.submenuItems.map((subItem) => (
-                        <li key={subItem.title}>
+                        <motion.li key={subItem.title}>
                           <Link
                             href={subItem.href}
                             className="text-primarySolid-600 hover:underline"
                           >
                             {subItem.title}
                           </Link>
-                        </li>
+                        </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   )}
                 </li>
               ))}
