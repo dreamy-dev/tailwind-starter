@@ -1,6 +1,6 @@
 "use client";
-import H2 from "./typography/H2";
-import H3 from "./typography/H3";
+import H2 from "../typography/H2";
+import H3 from "../typography/H3";
 const FactsAndFigures = () => {
   return (
     <section className="bg-primarySolid-50 dark:bg-gray-900 antialiased">

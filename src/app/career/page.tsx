@@ -1,7 +1,7 @@
 "use client";
 import ApplicationProcess from "@/app/career/ApplicationProcess";
 import CTASection from "@/components/sections/CTASection";
-import FactsAndFigures from "@/components/FactsAndFigures";
+import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Jobs from "@/components/sections/TeaserJobs";
 import Intro from "@/components/sections/Intro";
 import Testimonials from "@/components/sections/Testimonials";
