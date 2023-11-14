@@ -17,7 +17,11 @@ export default function Lieferanten() {
       <TeaserDouble />
       <SustainableProcurement />
       <FAQ />
-      <Contact />
+      <Contact
+        title="Ihr Kontakt"
+        contactname="Supply Management"
+        contactlevel=" "
+      />
     </>
   );
 }
