@@ -12,7 +12,7 @@ export default function Lieferanten() {
   return (
     <>
       <Hero />
-      <FactsAndFigures />
+      <FactsAndFigures title="Supply Chain Management in Zahlen" onlyOneRow />
       <Quote />
       <TeaserDouble />
       <SustainableProcurement />

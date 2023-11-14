@@ -14,7 +14,7 @@ export default function Karriere() {
       <CareerHero></CareerHero>
       <Intro />
       <Testimonials />
-      <FactsAndFigures />
+      {/* <FactsAndFigures /> */}
       <Jobs />
       <ApplicationProcess />
       <TeaserSuccessStories />
