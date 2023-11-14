@@ -1,13 +1,14 @@
 "use client";
 
 import HeroSolutions from "./Hero";
-import Cards from "../../components/Cards";
+import TeasersSolution from "./TeasersSolution";
 
 export default function Solutions() {
   return (
     <>
-      <HeroSolutions></HeroSolutions>
-      <Cards></Cards>
+      {/* <HeroSolutions></HeroSolutions> */}
+      <TeasersSolution />
+      {/* Referenzen */}
     </>
   );
 }
