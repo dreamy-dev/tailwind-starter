@@ -1,6 +1,7 @@
 import H3 from "./typography/H3";
 import Text from "./typography/Text";
 import H2 from "./typography/H2";
+import Link from "next/link";
 import Button from "./elements/ButtonSecondary";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState } from "react";
@@ -43,29 +44,34 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
 const images = [
   {
+    name: "Dallas Area Rapid Transit (DART) USA",
     title: "FLIRT bewegt die Welt",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/Hero-home.jpg",
+    img: "/train-c.jpg",
   },
   {
+    name: "Dallas Area Rapid Transit (DART) USA",
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/Hero-home.jpg",
+    img: "/train-c.jpg",
   },
   {
+    name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Hero-home.jpg",
+    img: "/train-c.jpg",
   },
   {
+    name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Hero-home.jpg",
+    img: "/train-c.jpg",
   },
   {
+    name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Hero-home.jpg",
+    img: "/train-c.jpg",
   },
 ];
 
@@ -115,18 +121,18 @@ const TestimonialsCarousel: React.FC = () => {
   };
 
   return (
-    <section className=" py-24 bg-white">
+    <section className=" py-24 bg-primarySolid-50">
       <div className="mb-12 flex justify-center items-center">
         <H2 titleH2="Referenzen"></H2>
       </div>
       <div className="flex flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
-          <div className="relative w-full max-w-[100%] flex items-center">
+          <div className="relative ml-20 w-full  max-w-[100%] flex items-center">
             <motion.div className="flex gap-4 flex-nowrap  overflow-hidden">
               {images.map((image, idx) => (
                 <TestimonialMotionDiv
                   key={image.title}
-                  className="flex flex-col mx-h-[500px] items-center min-w-[80%] bg-white border border-gray-200  shadow md:flex-row "
+                  className="flex flex-col h-auto items-center min-w-[100%]  lg:min-w-[80%] bg-white border border-gray-200  shadow md:flex-row "
                   animate={{
                     translateX: `calc(-${current * 100}% - ${current}rem)`,
                     opacity: idx === current ? 1 : 0.3,
@@ -136,45 +142,41 @@ const TestimonialsCarousel: React.FC = () => {
                   <img
                     src={image.img}
                     alt={image.title}
-                    className="w-1/2 m-h-[500px]"
+                    className="w-full md:w-1/2 max-h-[350px] md:max-h-[400px] lg:max-h-[440px]"
                   />
 
-                  <div className="flex flex-col justify-between p-4 leading-normal">
+                  <div className="flex flex-col m-auto p-4 leading-normal max-w-lg">
+                    <Text styles="mb-6 md:mb-10">{image.name}</Text>
                     <H3>{image.title}</H3>
 
-                    <Text styles="mb-6 mt-8 md:mb-6 mt-4 md:mt-8">
+                    <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
                       {image.text}
                     </Text>
-                    <Button
-                      backgroundColorClass="bg-transparent"
-                      borderColorClass="border-transparent"
-                      textColorClass="text-primary"
-                      position="left"
-                      styles="flex items-center"
-                      iconAfter={
-                        <svg
-                          width="10"
-                          height="10"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g clipPath="url(#clip0_4995_6662)">
-                            <path
-                              d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                              fill="#005893"
-                            />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_4995_6662">
-                              <rect width="20" height="20" fill="white" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      }
+                    <Link
+                      className="text-primary flex items-center gap-2"
+                      href="#"
                     >
                       Mehr erfahren
-                    </Button>
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g clipPath="url(#clip0_4995_6662)">
+                          <path
+                            d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
+                            fill="#005893"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_4995_6662">
+                            <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </Link>
                   </div>
                 </TestimonialMotionDiv>
               ))}
