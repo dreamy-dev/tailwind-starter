@@ -10,7 +10,11 @@ export default function DoubleCard() {
           <div className="mb-10 tracking-tight dark:text-white border border-solid border-greyBrighten"></div>
           <ul className="flex items-center justify-start flex-col gap-20 sm:gap-12 md:gap-16 lg:gap-y-28 md:flex-row">
             <li>
-              <img src="/spacer.jpg" alt="Image" />
+              <img
+                src="/spacer.jpg"
+                alt="Image"
+                className="block max-w-full h-auto"
+              />
 
               <a
                 href="#"
