@@ -26,6 +26,7 @@
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.15.0",
+    "swiper": "^11.0.4",
     "typescript": "5.1.6"
   },
   "devDependencies": {
