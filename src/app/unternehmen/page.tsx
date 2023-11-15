@@ -8,6 +8,8 @@ import History from "./History";
 import SuccessStories from "./SuccessStories";
 import Subscribe from "../../components/Subscribe";
 import Stats from "../../components/Stats";
+import NewsTeaser from "./NewsTeaser";
+import ContentWidth from "@/components/layouts/ContentWidth";
 
 export default function Unternehmen() {
   const statistics = [
@@ -41,7 +43,15 @@ export default function Unternehmen() {
       <Land />
       <Nachhaltigkeit />
       <History />
-      <SuccessStories />
+      {/* <SuccessStories /> */}
+      <ContentWidth>
+        <img
+          className="mr-4 col-span-12 w-full"
+          src="/Screenshot-Erfolgsgeschichten.png"
+          alt=""
+        />
+      </ContentWidth>
+      <NewsTeaser />
       <Subscribe />
     </>
   );
