@@ -99,17 +99,17 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className=" pt-8  lg:flex xl:flex-row md:flex-col md:justify-start md:items-start xl:items-center xl:justify-between">
-            <div className="mt-10 md:mt-0">
+          <div className=" lg:pt-8 flex-wrap flex-row  lg:flex xl:flex-row md:flex-col md:justify-start md:items-start xl:items-center xl:justify-between">
+            <div className="mt-16 lg:mt-0">
               <ul
                 role="list"
-                className=" gap-6 grid sm:grid grid-cols-2 lg:flex lg:justify-between lg:items-center  lg:gap-8"
+                className=" gap-6 gap-y-4 flex-wrap flex flex-row lg:gap-8"
               >
                 {navigation.legal.map((item) => (
-                  <li key={item.name} className="mb-0 sm:mb-0 md:mb-8 xl:mb-0">
+                  <li key={item.name}>
                     <a
                       href={item.href}
-                      className=" block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
+                      className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                     >
                       {item.name}
                     </a>
@@ -118,7 +118,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <p className="mt-12 sm:mt-12 text-base leading-5 text-primarySolid-400 md:mt-0">
+            <p className="mt-16 md:mt-16 lg:mt-16 xl:mt-0 sm:mt-12 text-base leading-5 text-primarySolid-400">
               © 2023 Stadler, Inc. All rights reserved.
             </p>
           </div>
