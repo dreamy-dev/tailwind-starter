@@ -3,7 +3,7 @@
 import Video from "@/components/Video";
 import Hero from "../components/ExampleHero";
 import Stats from "../components/Stats";
-import FactsAndFigures from "@/components/FactsAndFigures";
+import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import MapTextTitle from "@/components/MapTextTitle";
 import DoubleCard from "@/components/DoubleCard";
 

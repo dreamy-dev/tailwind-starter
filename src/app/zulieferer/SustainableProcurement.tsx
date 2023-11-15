@@ -7,8 +7,8 @@ export default function SustainableProcurement() {
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 sm:py-16 lg:px-6 ">
         <img
-          className="mb-4 w-full lg:mb-0"
-          src="/8915911.jpg"
+          className="mb-4 object-cover object-left h-[700px] lg:mb-0"
+          src="/SMILE-am-Zugersee.jpg"
           alt="feature image"
         />
         <div className=" sm:text-lg">
