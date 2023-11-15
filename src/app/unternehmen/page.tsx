@@ -11,6 +11,7 @@ import Stats from "../../components/Stats";
 import NewsTeaser from "./NewsTeaser";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
+import FactsAndFigures from "@/components/sections/FactsAndFigures";
 
 export default function Unternehmen() {
   const statistics = [
@@ -39,11 +40,11 @@ export default function Unternehmen() {
     <>
       <Hero />
       <DNA />
-      <WertePrinzipen />
-      <Stats data={statistics} backgroundColor="bg-bgcLightBlue" />
+      {/* <WertePrinzipen /> */}
+      <FactsAndFigures />
       <Land />
       <CorporateGorvernance />
-      <Nachhaltigkeit />
+      {/* <Nachhaltigkeit /> */}
       <History />
       {/* <SuccessStories /> */}
       <ContentWidth>
