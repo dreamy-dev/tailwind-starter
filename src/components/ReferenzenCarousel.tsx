@@ -123,6 +123,34 @@ const responsive: ResponsiveObject = {
 
 const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const [startX, setStartX] = useState(0);
+
+  const handleSwipe = (direction: "left" | "right") => {
+    const totalImages = images.length;
+    if (direction === "left" && current > 0) {
+      setCurrent(current - 1);
+    } else if (direction === "right" && current < totalImages - 1) {
+      setCurrent(current + 1);
+    }
+  };
+
+  const handleSwipeStart = (e: React.TouchEvent) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleSwipeMove = (e: React.TouchEvent) => {
+    const distanceX = e.touches[0].clientX - startX;
+
+    if (Math.abs(distanceX) > 50) {
+      const direction = distanceX > 0 ? "left" : "right";
+      handleSwipe(direction);
+      setStartX(e.touches[0].clientX);
+    }
+  };
+
+  const handleSwipeEnd = (e: React.TouchEvent) => {
+    console.log("Swipe ended");
+  };
 
   const onPrevClick = () => {
     if (current > 0) {
@@ -149,7 +177,12 @@ const TestimonialsCarousel: React.FC = () => {
       </div>
       <div className="flex lg:pl-20 flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
-          <div className="relative   w-full  max-w-[100%] flex items-center">
+          <div
+            className="relative   w-full  max-w-[100%] flex items-center"
+            onTouchStart={handleSwipeStart}
+            onTouchMove={handleSwipeMove}
+            onTouchEnd={handleSwipeEnd}
+          >
             <motion.div className="flex gap-4 flex-nowrap  overflow-hidden">
               {images.map((image, idx) => (
                 <TestimonialMotionDiv
@@ -305,11 +338,11 @@ const TestimonialsCarousel: React.FC = () => {
                   </a>
                   <Link
                     href="#"
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center"
+                    className="inline-flex items-center py-2 text-sm font-medium text-center"
                   >
                     <svg
-                      width="10"
-                      height="10"
+                      width="20"
+                      height="20"
                       viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
