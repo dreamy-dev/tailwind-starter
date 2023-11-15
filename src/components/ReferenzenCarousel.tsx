@@ -125,6 +125,8 @@ const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
 
+  /*  swipe logic starts here */
+
   const handleSwipe = (direction: "left" | "right") => {
     const totalImages = images.length;
     if (direction === "left" && current > 0) {
@@ -151,6 +153,8 @@ const TestimonialsCarousel: React.FC = () => {
   const handleSwipeEnd = (e: React.TouchEvent) => {
     console.log("Swipe ended");
   };
+
+  /*   swipe logic ends here */
 
   const onPrevClick = () => {
     if (current > 0) {
