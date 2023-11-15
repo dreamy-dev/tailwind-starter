@@ -10,6 +10,7 @@ import Subscribe from "../../components/Subscribe";
 import Stats from "../../components/Stats";
 import NewsTeaser from "./NewsTeaser";
 import ContentWidth from "@/components/layouts/ContentWidth";
+import CorporateGorvernance from "./CorporateGovernance";
 
 export default function Unternehmen() {
   const statistics = [
@@ -41,6 +42,7 @@ export default function Unternehmen() {
       <WertePrinzipen />
       <Stats data={statistics} backgroundColor="bg-bgcLightBlue" />
       <Land />
+      <CorporateGorvernance />
       <Nachhaltigkeit />
       <History />
       {/* <SuccessStories /> */}
