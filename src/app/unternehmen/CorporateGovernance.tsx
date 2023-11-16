@@ -25,7 +25,7 @@ export default function CorporateGorvernance() {
                 Lernen Sie die Verwaltungsräte von Stadler mit einem Blick auf
                 die Porträts kennen.
               </p>
-              <img className="w-8" src="/icons/arrow-blue.svg" alt="" />
+              <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
             </article>
           </a>
           <a href="/unternehmen/konzernleitung">
@@ -37,7 +37,7 @@ export default function CorporateGorvernance() {
                 Entdecken Sie, wer in der Konzernleitung von Stadler zugkräftig
                 am Werk ist.
               </p>
-              <img className="w-8" src="/icons/arrow-blue.svg" alt="" />
+              <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
             </article>
           </a>
           <a href="/compliance">
@@ -49,7 +49,7 @@ export default function CorporateGorvernance() {
                 Erfahren Sie, wie Stadler sicherstellt, dass juristische und
                 ethische Regeln eingehalten werden.
               </p>
-              <img className="w-8" src="/icons/arrow-blue.svg" alt="" />
+              <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
             </article>
           </a>
         </div>
