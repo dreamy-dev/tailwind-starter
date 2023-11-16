@@ -3,16 +3,16 @@
 import SmallWidth from "@/components/layouts/SmallWidth";
 import HeroText from "@/components/sections/HeroText";
 
-export default function Verwaltungsrat() {
+export default function Leitungsteam() {
   const team = [
     {
-      label: "Peter Spuhler",
-      job: "Verwaltungsratspräsident",
-      img: "https://www.stadlerrail.com/media/img/c/peter-spuhler-2023-2.jpg",
+      label: "Markus Bernsteiner",
+      job: "Group CEO",
+      img: "https://www.stadlerrail.com/media/img/c/markus-bernsteiner.jpg",
     },
     {
-      label: "Hans-Peter Schwald",
-      job: "Vizepräsident Verwaltungsrat, Senior Partner in der Anwaltskanzlei BIANCHISCHWALD LLC",
+      label: "Ansgar Brockmeyer",
+      job: "Divisionsleiter Verkauf & Marketing und Stellvertretender Group CEO",
       img: "https://www.stadlerrail.com/media/img/c/ansgar-brockmeyer.jpg",
     },
     {
@@ -29,8 +29,8 @@ export default function Verwaltungsrat() {
   return (
     <>
       <HeroText
-        title="Stadler Verwaltungsrat"
-        leadText="Der Verwaltungsrat der Stadler Rail AG wird von Peter Spuhler präsidiert. Ein Team mit acht Persönlichkeiten aus Wirtschaft und Politik nimmt gemeinsam die Aufgaben des Gremiums wahr."
+        title="Stadler Konzernleitung"
+        leadText="Sie bringen Stadler voll in Fahrt."
       />
       <SmallWidth>
         <div className="grid grid-cols-2 gap-3 mb-8">
