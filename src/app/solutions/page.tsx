@@ -1,21 +1,31 @@
 "use client";
 
 import Hero from "@/components/ExampleHero";
+import SmallWidth from "@/components/layouts/SmallWidth";
+import Lead from "@/components/typography/Lead";
 import HeroSolutions from "./Hero";
 import TeasersSolution from "./TeasersSolution";
 
 export default function Solutions() {
   return (
     <>
-      {/* <HeroSolutions></HeroSolutions> */}
       <Hero />
+      <SmallWidth>
+        <Lead>
+          Für Stadler endet Kundennähe nicht mit der Auslieferung der Züge.
+          Unsere Mitarbeitenden stehen unseren Kunden als Servicepartner rund um
+          die Uhr mit Rat und Tat zur Seite, um höchste Qualität zu garantieren.
+          Dadurch gewährleisten wir die Zuverlässigkeit und Verfügbarkeit
+          unserer Schienenfahrzeuge über die gesamte Lebensdauer.
+        </Lead>
+      </SmallWidth>
       <TeasersSolution />
       <img
         className="mr-4 w-auto h-36 md:w-full md:h-auto rounded-lg"
         src="/Referenzen.png"
         alt=""
       />
-      {/* Referenzen */}
+      {/* TODO: Referenzen */}
     </>
   );
 }
