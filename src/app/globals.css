@@ -50,3 +50,33 @@
   object-fit: cover;
   object-position: center;
 }
+
+.swiper-button-next::before {
+  content: url("/icons/chevron-right.svg");
+}
+
+/* Customize the prev button icon with inline SVG */
+.swiper-button-prev::before {
+  content: url("/icons/chevron-left.svg");
+}
+
+.swiper-button-prev::after {
+  content: none;
+  display: none;
+}
+
+.swiper-button-next::after {
+  content: none;
+  display: none;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: absolute;
+  top: 93%;
+  right: 20%;
+  z-index: 50;
+  width: 30px;
+}

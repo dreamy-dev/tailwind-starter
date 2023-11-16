@@ -1,3 +1,4 @@
+import Quote from "@/components/sections/Quote";
 import Lead from "../../components/typography/Lead";
 import Text from "../../components/typography/Text";
 
@@ -8,29 +9,37 @@ export default function DNA() {
         <div className="gap-8 items-center">
           <div className="text-gray-500 sm:text-lg">
             <Lead>
-              Mit durchdachte Ingenieursleistung und Innovation passt sich der
-              FLIRT 160 den spezifischen Anforderungen und Bedingungen von jedem
-              Projekt.
+              Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
+              Und mit Schweizer Werten, die das Standing von Stadler weltweit
+              fördern und prägen. Stadler steht für Zuverlässigkeit,
+              Flexibilität und Innovationskraft – seit 1942.
             </Lead>
+          </div>
+          <div>
             <Text>
-              Der einstöckige Intercity- und Regionalzug fährt mit einer
-              maximalen Geschwindigkeit von 160 km/h. Mit durchdachte
-              Ingenieursleistung und Innovation passt sich der FLIRT 160 den
-              spezifischen Anforderungen und Bedingungen von jedem Projekt. Die
-              modulare Bauweise erlaubt individuell konfigurierbare zwei- bis
-              sechsstellige Zugskompositionen in Normal- und Breitspur, und
-              bietet Flexibilität bei der Wahl zwischen elektrischem, Diesel-
-              oder sogar bi-modalem Antrieb.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+              dolor sit amet.
             </Text>
+            <Quote></Quote>
             <Text>
-              Der einstöckige Intercity- und Regionalzug fährt mit einer
-              maximalen Geschwindigkeit von 160 km/h. Mit durchdachte
-              Ingenieursleistung und Innovation passt sich der FLIRT 160 den
-              spezifischen Anforderungen und Bedingungen von jedem Projekt. Die
-              modulare Bauweise erlaubt individuell konfigurierbare zwei- bis
-              sechsstellige Zugskompositionen in Normal- und Breitspur, und
-              bietet Flexibilität bei der Wahl zwischen elektrischem, Diesel-
-              oder sogar bi-modalem Antrieb.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+              dolor sit amet.
             </Text>
           </div>
         </div>
