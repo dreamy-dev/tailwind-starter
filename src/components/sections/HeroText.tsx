@@ -14,7 +14,7 @@ export default function HeroText(props?: any) {
           ) : ''}
           <p>{props.category}</p>
         </div>
-        <H1>{props.title}</H1>
+        <H1>{props.title ?? 'Lorem ipsum dolor sit amet'}</H1>
         <Lead>{props.leadText}</Lead>
         {props.withCTA ? <ButtonPrimary position="left" buttonText={props.buttonText} /> : ""}
       </SmallWidth>
