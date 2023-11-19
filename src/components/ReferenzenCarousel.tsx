@@ -2,7 +2,6 @@ import H3 from "./typography/H3";
 import Text from "./typography/Text";
 import H2 from "./typography/H2";
 import Link from "next/link";
-import Button from "./elements/ButtonSecondary";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState } from "react";
 import TrainCard from "./TrainCard";
@@ -43,6 +42,7 @@ interface TestimonialMotionProps extends MotionProps {
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
+
 const trains = [
   {
     name: "Hybrider FLIRT 160 für Flughafen'Transit",
@@ -124,6 +124,7 @@ const responsive: ResponsiveObject = {
 const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
+  const [showTrains, setShowTrains] = useState(false);
 
   /*  swipe logic starts here */
 
@@ -167,8 +168,6 @@ const TestimonialsCarousel: React.FC = () => {
       setCurrent(current + 1);
     }
   };
-
-  const [showTrains, setShowTrains] = useState(false);
 
   const toggleTrainsVisibility = () => {
     setShowTrains(!showTrains);
@@ -247,7 +246,7 @@ const TestimonialsCarousel: React.FC = () => {
         <button
           type="button"
           onClick={toggleTrainsVisibility}
-          className="text-primary items-center text-base flex flex-row gap-2 w-1/2"
+          className="text-primary items-center text-base flex flex-row gap-2 w-1/2 whitespace-nowrap"
         >
           {!showTrains ? (
             <svg
