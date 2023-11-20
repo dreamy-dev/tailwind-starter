@@ -5,6 +5,7 @@ import Description from "./Description";
 import Advantages from "./Advantages";
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/Career";
+import ProductCarousel from "@/components/ProductCarousel";
 
 export default function FullService() {
   return (
@@ -12,12 +13,7 @@ export default function FullService() {
       <Hero />
       <Description />
       <Advantages />
-      {/* <References /> */}
-      <img
-        className="mr-4 w-auto h-36 md:w-full md:h-auto rounded-lg"
-        src="/Referenzen.png"
-        alt=""
-      />
+      <ProductCarousel />
       <Contact />
       <Career />
     </>

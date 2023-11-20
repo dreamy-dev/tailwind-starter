@@ -12,6 +12,7 @@ import NewsTeaser from "./NewsTeaser";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
+import ProductCarousel from "@/components/ProductCarousel";
 
 export default function Unternehmen() {
   const statistics = [
@@ -46,14 +47,7 @@ export default function Unternehmen() {
       <CorporateGorvernance />
       {/* <Nachhaltigkeit /> */}
       <History />
-      {/* <SuccessStories /> */}
-      <ContentWidth>
-        <img
-          className="mr-4 col-span-12 w-full"
-          src="/Screenshot-Erfolgsgeschichten.png"
-          alt=""
-        />
-      </ContentWidth>
+      <ProductCarousel />
       <NewsTeaser />
       <Subscribe />
     </>
