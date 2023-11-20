@@ -12,10 +12,17 @@ export default function Service() {
       <HeroText
         solution
         category="Service"
+        title="Service Angebot"
         leadText="Für Stadler endet Kundennähe nicht mit der Auslieferung der Züge. Unsere Mitarbeitenden stehen unseren Kunden als Servicepartner rund um die Uhr mit Rat und Tat zur Seite, um höchste Qualität zu garantieren. Dadurch gewährleisten wir die Zuverlässigkeit und Verfügbarkeit unserer Schienenfahrzeuge über die gesamte Lebensdauer."
       />
-      <FactsAndFigures title="Daten und Fakten" />
+      <img
+        width={"100%"}
+        className="h-700"
+        src="/header_service2.jpg"
+        alt="hero product image"
+      />
       <ServiceTeasers />
+      <FactsAndFigures title="Daten und Fakten" />
     </>
   );
 }
