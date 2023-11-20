@@ -28,19 +28,22 @@ const data = [
 const variants = {
   enter: (direction: number) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      // x: direction > 0 ? 1000 : -1000,
+      scale: 0.9,
       opacity: 0,
     };
   },
   center: {
     zIndex: 1,
-    x: 0,
+    // x: 0,
+    scale: 1,
     opacity: 1,
   },
   exit: (direction: number) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      scale: 0.9,
+      // x: direction < 0 ? 1000 : -1000,
       opacity: 0,
     };
   },
@@ -62,19 +65,18 @@ const ProductCarousel = () => {
 
   return (
     <>
-      <div className="w-full mx-auto h-690 overflow-hidden relative flex justify-center items-center">
-        <AnimatePresence initial={false} custom={direction}>
+      <div className="w-full mx-auto min-h-[120vh] md:min-h-[130vh] lg:min-h-[690px]  overflow-hidden relative flex justify-center items-center">
+        <AnimatePresence initial={false}>
           <motion.div
-            className="flex lg:flex-row flex-col items-center justify-center absolute top-0 max-w-full"
+            className="flex xl:flex-row flex-col items-center justify-center absolute top-0 max-w-full"
             key={imageIndex}
-            custom={direction}
             variants={variants}
             initial="enter"
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
+              scale: { type: "ease-in", duration: 0.5 },
+              opacity: { duration: 0.3 },
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -90,7 +92,7 @@ const ProductCarousel = () => {
             }}
           >
             <img
-              className="block mx-w-full h-auto"
+              className="block max-w-full h-auto"
               src={data[imageIndex].image}
               alt="Carousel Image"
             />

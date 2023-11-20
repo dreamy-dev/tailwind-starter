@@ -3,9 +3,10 @@
 import Video from "@/components/Video";
 import Hero from "../components/ExampleHero";
 import Stats from "../components/Stats";
-import FactsAndFigures from "@/components/FactsAndFigures";
+import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import MapTextTitle from "@/components/MapTextTitle";
 import DoubleCard from "@/components/DoubleCard";
+import HomePageCaroucel from "@/components/HomePageCaroucel";
 
 export default function HomePage() {
   const statsData = [
@@ -37,6 +38,7 @@ export default function HomePage() {
       <MapTextTitle />
       <Stats data={statsData} backgroundColor="bg-primarySolid-50" />
       <DoubleCard />
+      <HomePageCaroucel />
       <Video></Video>
     </>
   );
