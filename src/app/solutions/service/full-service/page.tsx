@@ -5,7 +5,7 @@ import Description from "./Description";
 import Advantages from "./Advantages";
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/Career";
-import ProductCarousel from "@/components/ProductCarousel";
+import ReferenzenCarousel from "../../../../components/ReferenzenCarousel";
 
 export default function FullService() {
   return (
@@ -13,7 +13,7 @@ export default function FullService() {
       <Hero />
       <Description />
       <Advantages />
-      <ProductCarousel />
+      <ReferenzenCarousel />
       <Contact />
       <Career />
     </>
