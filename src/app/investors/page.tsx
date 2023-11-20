@@ -28,7 +28,11 @@ export default function Investors() {
       <TextBlock />
       {/* Kultur & Mission -> hier wieder mit diesen interaktiven Cards */}
       <CorporateGorvernance />
-      <Contact />
+      <Contact
+        title="Investorenkontakt"
+        contactname="Daniel Strickler"
+        contactlevel="Investor Relations Officer"
+      />
       <Subscribe />
     </section>
   );
