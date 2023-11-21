@@ -2,7 +2,6 @@
 
 import ContentWidth from "@/components/layouts/ContentWidth";
 import Link from "@/components/typography/Link";
-import ProductCarousel from "@/components/ProductCarousel";
 
 export default function Schienenfahrzeuge() {
   return (
@@ -14,7 +13,6 @@ export default function Schienenfahrzeuge() {
           </Link>
         </div>
       </ContentWidth>
-      <ProductCarousel />
     </section>
   );
 }

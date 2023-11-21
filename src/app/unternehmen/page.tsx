@@ -12,7 +12,7 @@ import NewsTeaser from "./NewsTeaser";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
-import ProductCarousel from "@/components/ProductCarousel";
+import HomePageCarousel from "../../components/HomePageCaroucel";
 
 export default function Unternehmen() {
   const statistics = [
@@ -47,7 +47,7 @@ export default function Unternehmen() {
       <CorporateGorvernance />
       {/* <Nachhaltigkeit /> */}
       <History />
-      <ProductCarousel />
+      <HomePageCarousel />
       <NewsTeaser />
       <Subscribe />
     </>

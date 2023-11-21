@@ -5,6 +5,7 @@ import SmallWidth from "@/components/layouts/SmallWidth";
 import Lead from "@/components/typography/Lead";
 import HeroSolutions from "./Hero";
 import TeasersSolution from "./TeasersSolution";
+import ReferenzenCarousel from "../../components/ReferenzenCarousel";
 
 export default function Solutions() {
   return (
@@ -20,12 +21,7 @@ export default function Solutions() {
         </Lead>
       </SmallWidth>
       <TeasersSolution />
-      <img
-        className="mr-4 w-auto h-36 md:w-full md:h-auto rounded-lg"
-        src="/Referenzen.png"
-        alt=""
-      />
-      {/* TODO: Referenzen */}
+      <ReferenzenCarousel />
     </>
   );
 }
