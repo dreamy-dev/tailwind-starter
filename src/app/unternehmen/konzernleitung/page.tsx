@@ -25,6 +25,36 @@ export default function Leitungsteam() {
       job: "Divisionsleiter Service",
       img: "https://www.stadlerrail.com/media/img/c/daniel-baer.jpg",
     },
+    {
+      label: "Philipp brunner",
+      job: "Divisionsleiter Zentraleuropa",
+      img: "https://www.stadlerrail.com/media/img/c/philipp-brunner.jpg",
+    },
+    {
+      label: "Lucius gerig",
+      job: "Divisionsleiter Schweiz",
+      img: "https://www.stadlerrail.com/media/img/c/lucius-gerig.jpg",
+    },
+    {
+      label: "Jure mikolčić",
+      job: "Divisionsleiter Deutschland",
+      img: "https://www.stadlerrail.com/media/img/c/jure-mikolc%CC%8Cic%CC%81.jpg",
+    },
+    {
+      label: "Iñigo parra",
+      job: "Divisionsleiter Spanien",
+      img: "https://www.stadlerrail.com/media/img/c/in%CC%83igo-parra.jpg",
+    },
+    {
+      label: "Benjamin niederhauser",
+      job: "Divisionsleiter Components",
+      img: "https://www.stadlerrail.com/media/img/c/f%C3%BCr%20website_niderhauser_1800x1090.jpg",
+    },
+    {
+      label: "Marc trippel",
+      job: "Divisionsleiter Signalling",
+      img: "https://www.stadlerrail.com/media/img/c/marc-trippel.jpg",
+    },
   ];
   return (
     <>

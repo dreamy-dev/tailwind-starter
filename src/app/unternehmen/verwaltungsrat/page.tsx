@@ -13,17 +13,37 @@ export default function Verwaltungsrat() {
     {
       label: "Hans-Peter Schwald",
       job: "Vizepräsident Verwaltungsrat, Senior Partner in der Anwaltskanzlei BIANCHISCHWALD LLC",
-      img: "https://www.stadlerrail.com/media/img/c/ansgar-brockmeyer.jpg",
+      img: "https://www.stadlerrail.com/media/img/c/schwald-hans-peter-2023.jpg",
     },
     {
-      label: "Raphael Widmer",
-      job: "Group CFO",
-      img: "https://www.stadlerrail.com/media/img/c/raphael-widmer.jpg",
+      label: "Stefan AseNnkerschbaummer",
+      job: "Mitglied Verwaltungsrat, Aufsichtsratsvorsitzender der Robert Bosch GmbH",
+      img: "https://www.stadlerrail.com/media/img/c/stefan-asenkerschbaumer-2023.jpg",
     },
     {
-      label: "Daniel Baer",
+      label: "Barbara Egger-Jenzer",
       job: "Divisionsleiter Service",
-      img: "https://www.stadlerrail.com/media/img/c/daniel-baer.jpg",
+      img: "https://www.stadlerrail.com/media/img/c/barbara-egger-jenzer.jpg",
+    },
+    {
+      label: "Christoph Franz",
+      job: "Mitglied Verwaltungsrat, Vizepräsident des Verwaltungsrats Zurich Insurance Group AG",
+      img: "https://www.stadlerrail.com/media/img/c/christoph-franz.jpg",
+    },
+    {
+      label: "Wojciech Kostrzewa",
+      job: "Mitglied Verwaltungsrat, Präsident & CEO Billon Group Ltd",
+      img: "https://www.stadlerrail.com/media/img/c/wojciech-kostrzewa.jpg",
+    },
+    {
+      label: "Doris Leuthard",
+      job: "Mitglied Verwaltungsrat, ehemalige Schweizer Bundesrätin",
+      img: "https://www.stadlerrail.com/media/img/c/doris-leuthard.jpg",
+    },
+    {
+      label: "Kurt Rüegg",
+      job: "Mitglied Verwaltungsrat, Mitinhaber Alantra AG",
+      img: "https://www.stadlerrail.com/media/img/c/kurt-ruegg.jpg",
     },
   ];
   return (
