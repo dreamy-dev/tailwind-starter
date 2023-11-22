@@ -26,9 +26,10 @@ export default function Product() {
       <QualityFeatures />
       <ProductCarousel />
       <Specification />
-      <Features />
+
       {/* <TestSlider /> */}
       <TestimonialsCarousel></TestimonialsCarousel>
+      <Features />
       <Contact />
       <Career />
     </>
