@@ -72,7 +72,7 @@ export default function NavBar() {
                 <li key={item.title}>
                   {item.href == "/solutions" ? (
                     <div
-                      className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      className="flex gap-2 justify-center items-center cursor-pointer py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                       onClick={() => setIsOpen((isOpen) => !isOpen)}
                     >
                       {item.title}
@@ -106,6 +106,7 @@ export default function NavBar() {
                           <Link
                             href="/solutions"
                             className=" bg-primaryTrans-100 text-primary px-8 py-24 text-center"
+                            onClick={() => setIsOpen((isOpen) => !isOpen)}
                           >
                             <p className="text-lg">Übersicht</p>
                             <p className="font-semibold text-xl">Lösungen</p>
@@ -116,6 +117,7 @@ export default function NavBar() {
                                 <Link
                                   href={subItem.href}
                                   className="flex justify-between p-4 text-base text-primarySolid-600 hover:text-primary"
+                                  onClick={() => setIsOpen((isOpen) => !isOpen)}
                                 >
                                   <p>{subItem.title}</p>
                                   <span>
