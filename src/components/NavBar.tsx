@@ -29,6 +29,7 @@ type NavItems = {
 
 const navigationMain: NavItems = {
   topNav: [
+    { title: "Unternehmen", href: "/unternehmen", icon: false },
     {
       title: "Lösungen",
       href: "/solutions",
@@ -49,7 +50,6 @@ const navigationMain: NavItems = {
       href: "/investors",
       icon: false,
     },
-    { title: "Unternehmen", href: "/unternehmen", icon: false },
   ],
 };
 
