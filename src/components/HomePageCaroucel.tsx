@@ -147,11 +147,11 @@ const HomePageCaroucel: React.FC = () => {
   return (
     <section className=" py-24 bg-white ">
       <div className="relative">
-        <div className="mb-24 flex justify-center items-center">
+        <div className=" flex justify-center items-center">
           <H2 titleH2="Erfolgsgeschichten"></H2>
         </div>
         {isMobile && (
-          <div className="absolute top-[90px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
+          <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
             <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
               {cards.map((_, idx) => (
                 <button key={idx} onClick={() => setCurrent(idx)}>

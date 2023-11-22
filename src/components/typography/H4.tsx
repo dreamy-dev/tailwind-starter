@@ -3,7 +3,7 @@ interface H4Props {
   textColor: string;
 }
 const H4: React.FC<H4Props> = ({ titleH4, textColor }) => {
-  const H4Styles = `text-${textColor} text-xl font-bold break-words`;
+  const H4Styles = `text-${textColor} text-xl font-bold break-words mb-6`;
   return <h4 className={H4Styles}>{titleH4}</h4>;
 };
 
