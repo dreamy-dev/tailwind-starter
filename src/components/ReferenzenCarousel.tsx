@@ -175,7 +175,7 @@ const TestimonialsCarousel: React.FC = () => {
 
   return (
     <section className=" py-24 bg-primarySolid-50">
-      <div className="mb-12 flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <H2 titleH2="Referenzen"></H2>
       </div>
       <div className="flex lg:pl-20 flex-col items-center justify-between ">
