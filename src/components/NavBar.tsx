@@ -29,6 +29,7 @@ type NavItems = {
 
 const navigationMain: NavItems = {
   topNav: [
+    { title: "Unternehmen", href: "/unternehmen", icon: false },
     {
       title: "Lösungen",
       href: "/solutions",
@@ -49,7 +50,6 @@ const navigationMain: NavItems = {
       href: "/investors",
       icon: false,
     },
-    { title: "Unternehmen", href: "/unternehmen", icon: false },
   ],
 };
 
@@ -70,37 +70,66 @@ export default function NavBar() {
             <ul className="flex flex-col items-center lg:flex-row font-medium mt-4 rounded-lg bg-white md:flex-row md:items-center md:gap-[4vw] gap-8 md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
               {navigationMain.topNav.map((item) => (
                 <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    onMouseEnter={() => setIsOpen((isOpen) => !isOpen)}
-                  >
-                    {item.title}
-                    {item.icon ?? <IconNav />}
-                  </Link>
+                  {item.href == "/solutions" ? (
+                    <div
+                      className="flex gap-2 justify-center items-center cursor-pointer py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      onClick={() => setIsOpen((isOpen) => !isOpen)}
+                    >
+                      {item.title}
+                      {item.icon ?? <IconNav />}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      {item.title}
+                    </Link>
+                  )}
 
                   {item.submenu && item.submenuItems && (
-                    <motion.ul
+                    <motion.div
                       animate={isOpen ? "open" : "closed"}
                       variants={variants}
                       style={{
                         position: "absolute",
-                        zIndex: "2",
-                        backgroundColor: "#fff",
+                        zIndex: "9",
                         padding: "10px",
+                        width: "100%",
+                        left: "0",
+                        top: "80px",
                       }}
+                      className="bg-greySolid-50"
                     >
-                      {item.submenuItems.map((subItem) => (
-                        <motion.li key={subItem.title}>
+                      <ContentWidth>
+                        <div className="grid col-span-6 col-start-5 grid-cols-2 gap-6 p-8">
                           <Link
-                            href={subItem.href}
-                            className="text-primarySolid-600 hover:underline"
+                            href="/solutions"
+                            className=" bg-primaryTrans-100 text-primary px-8 py-24 text-center"
+                            onClick={() => setIsOpen((isOpen) => !isOpen)}
                           >
-                            {subItem.title}
+                            <p className="text-lg">Übersicht</p>
+                            <p className="font-semibold text-xl">Lösungen</p>
                           </Link>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
+                          <div className="grid content-center">
+                            {item.submenuItems.map((subItem) => (
+                              <motion.div key={subItem.title} className="">
+                                <Link
+                                  href={subItem.href}
+                                  className="flex justify-between p-4 text-base text-primarySolid-600 hover:text-primary"
+                                  onClick={() => setIsOpen((isOpen) => !isOpen)}
+                                >
+                                  <p>{subItem.title}</p>
+                                  <span>
+                                    <img src="/icons/chevron-right-light.svg" />
+                                  </span>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </ContentWidth>
+                    </motion.div>
                   )}
                 </li>
               ))}
