@@ -7,6 +7,7 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import MapTextTitle from "@/components/MapTextTitle";
 import DoubleCard from "@/components/DoubleCard";
 import HomePageCaroucel from "@/components/HomePageCaroucel";
+import Mobilitat from "@/components/Mobilitätslösungen";
 
 export default function HomePage() {
   const statsData = [
@@ -35,6 +36,7 @@ export default function HomePage() {
     <>
       <Hero />
       <FactsAndFigures />
+      <Mobilitat></Mobilitat>
       <MapTextTitle />
       <Stats data={statsData} backgroundColor="bg-primarySolid-50" />
       <DoubleCard />
