@@ -4,6 +4,7 @@ import Link from "next/link";
 import IconNav from "./elements/IconNav";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import SmallWidth from "./layouts/SmallWidth";
 
 const variants = {
   open: { opacity: 1, y: 0 },
@@ -70,37 +71,61 @@ export default function NavBar() {
             <ul className="flex flex-col items-center lg:flex-row font-medium mt-4 rounded-lg bg-white md:flex-row md:items-center md:gap-[4vw] gap-8 md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
               {navigationMain.topNav.map((item) => (
                 <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    onMouseEnter={() => setIsOpen((isOpen) => !isOpen)}
-                  >
-                    {item.title}
-                    {item.icon ?? <IconNav />}
-                  </Link>
+                  {item.href == "/solutions" ? (
+                    <div
+                      className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      onClick={() => setIsOpen((isOpen) => !isOpen)}
+                    >
+                      {item.title}
+                      {item.icon ?? <IconNav />}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      {item.title}
+                    </Link>
+                  )}
 
                   {item.submenu && item.submenuItems && (
-                    <motion.ul
+                    <motion.div
                       animate={isOpen ? "open" : "closed"}
                       variants={variants}
                       style={{
                         position: "absolute",
-                        zIndex: "2",
-                        backgroundColor: "#fff",
+                        zIndex: "9",
                         padding: "10px",
+                        width: "100%",
+                        left: "0",
+                        top: "80px",
                       }}
+                      className="bg-greySolid-50"
                     >
-                      {item.submenuItems.map((subItem) => (
-                        <motion.li key={subItem.title}>
+                      <SmallWidth>
+                        <div className="grid grid-cols-2 gap-4 p-8">
                           <Link
-                            href={subItem.href}
-                            className="text-primarySolid-600 hover:underline"
+                            href="/solutions"
+                            className=" bg-primaryTrans-100 text-primary p-8 text-center"
                           >
-                            {subItem.title}
+                            <p>Übersicht</p>
+                            <p className="font-medium">Lösungen</p>
                           </Link>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
+                          <div>
+                            {item.submenuItems.map((subItem) => (
+                              <motion.div key={subItem.title}>
+                                <Link
+                                  href={subItem.href}
+                                  className="text-primarySolid-600 hover:underline"
+                                >
+                                  <p>{subItem.title}</p>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </SmallWidth>
+                    </motion.div>
                   )}
                 </li>
               ))}
