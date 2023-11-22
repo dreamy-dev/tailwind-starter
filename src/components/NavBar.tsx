@@ -4,7 +4,6 @@ import Link from "next/link";
 import IconNav from "./elements/IconNav";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import SmallWidth from "./layouts/SmallWidth";
 
 const variants = {
   open: { opacity: 1, y: 0 },
@@ -102,29 +101,32 @@ export default function NavBar() {
                       }}
                       className="bg-greySolid-50"
                     >
-                      <SmallWidth>
-                        <div className="grid grid-cols-2 gap-4 p-8">
+                      <ContentWidth>
+                        <div className="grid col-span-6 col-start-5 grid-cols-2 gap-6 p-8">
                           <Link
                             href="/solutions"
-                            className=" bg-primaryTrans-100 text-primary p-8 text-center"
+                            className=" bg-primaryTrans-100 text-primary px-8 py-24 text-center"
                           >
-                            <p>Übersicht</p>
-                            <p className="font-medium">Lösungen</p>
+                            <p className="text-lg">Übersicht</p>
+                            <p className="font-semibold text-xl">Lösungen</p>
                           </Link>
-                          <div>
+                          <div className="grid content-center">
                             {item.submenuItems.map((subItem) => (
-                              <motion.div key={subItem.title}>
+                              <motion.div key={subItem.title} className="">
                                 <Link
                                   href={subItem.href}
-                                  className="text-primarySolid-600 hover:underline"
+                                  className="flex justify-between p-4 text-base text-primarySolid-600 hover:text-primary"
                                 >
                                   <p>{subItem.title}</p>
+                                  <span>
+                                    <img src="/icons/chevron-right-light.svg" />
+                                  </span>
                                 </Link>
                               </motion.div>
                             ))}
                           </div>
                         </div>
-                      </SmallWidth>
+                      </ContentWidth>
                     </motion.div>
                   )}
                 </li>
