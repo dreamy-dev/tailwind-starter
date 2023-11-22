@@ -4,7 +4,7 @@ interface H3Props {
 }
 
 const H3: React.FC<H3Props> = ({ children }) => {
-  return <h3 className="text-black text-2xl mb-8 font-bold">{children}</h3>;
+  return <h3 className="text-black text-2xl mb-6 font-bold">{children}</h3>;
 };
 
 export default H3;
