@@ -147,7 +147,7 @@ const HomePageCaroucel: React.FC = () => {
   return (
     <section className=" py-24 bg-white ">
       <div className="relative">
-        <div className="mb-24 flex justify-center items-center">
+        <div className=" flex justify-center items-center">
           <H2 titleH2="Erfolgsgeschichten"></H2>
         </div>
         {isMobile && (
