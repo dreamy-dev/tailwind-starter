@@ -3,9 +3,9 @@ import Text from "@/components/typography/Text";
 import SmallWidth from "./layouts/SmallWidth";
 import Button from "./elements/ButtonSecondary";
 
-export default function Mobilitat(props?: any) {
+export default function TeaserMobilitySolutions(props?: any) {
   return (
-    <section className="bg-stadlergradient pt-24 pb-12 dark:bg-gray-900 ">
+    <section className="pt-24 pb-12 dark:bg-gray-900 ">
       <SmallWidth>
         <div className="max-w-4xl mx-auto">
           <H2
