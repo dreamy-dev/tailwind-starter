@@ -2,44 +2,18 @@
 
 import Video from "@/components/Video";
 import Hero from "../components/ExampleHero";
-import Stats from "../components/Stats";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
-import MapTextTitle from "@/components/MapTextTitle";
-import DoubleCard from "@/components/DoubleCard";
 import HomePageCaroucel from "@/components/HomePageCaroucel";
-import Mobilitat from "@/components/TeaserMobilitySolutions";
 import TrainCarousel from "@/components/sections/TrainCarousel";
+import Map from "@/components/sections/Map";
 
 export default function HomePage() {
-  const statsData = [
-    {
-      text: "Mitarbeiter weltweit",
-      end: 14,
-      suffix: "Tsd",
-    },
-    {
-      text: "Produktionsstandorte",
-      end: 15,
-      suffix: "",
-    },
-    {
-      text: "Arbeitstunden",
-      end: 170,
-      suffix: "Mio",
-    },
-    {
-      text: "Team",
-      end: 1,
-      suffix: "",
-    },
-  ];
   return (
     <>
       <Hero />
       <FactsAndFigures />
       <TrainCarousel />
-      <MapTextTitle />
-      <Stats data={statsData} backgroundColor="bg-primarySolid-50" />
+      <Map></Map>
       <HomePageCaroucel />
       <Video></Video>
     </>

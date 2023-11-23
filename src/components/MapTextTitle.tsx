@@ -4,7 +4,7 @@ import SmallWidth from "./layouts/SmallWidth";
 
 export default function MapTextTitle(props?: any) {
   return (
-    <section className="bg-primarySolid-50  dark:bg-gray-900 ">
+    <section className="bg-white  dark:bg-gray-900 ">
       <SmallWidth>
         <div className="max-w-4xl mx-auto">
           <H2 titleH2="Standorte" styles="text-center"></H2>

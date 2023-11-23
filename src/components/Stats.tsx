@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import ContentWidth from "./layouts/ContentWidth";
 
 interface StatsProps {
   data: {
@@ -13,10 +14,10 @@ interface StatsProps {
 
 const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
   return (
-    <>
-      <motion.div className="progress-bar" />
-      <div className={`py-24 sm:py-24 ${backgroundColor}`}>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <ContentWidth>
+      <motion.div className="" />
+      <div className={`my-24 col-span-12 max-w-full  ${backgroundColor}`}>
+        <div className=" px-6 lg:px-8">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
             {data.map((stat, index) => (
               <div
@@ -37,7 +38,7 @@ const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
           </dl>
         </div>
       </div>
-    </>
+    </ContentWidth>
   );
 };
 
