@@ -3,17 +3,16 @@ import Button from "./elements/ButtonSecondary";
 import Text from "./typography/Text";
 export default function Video() {
   return (
-    <div className=" bg-white flex flex-col pr:0 py-24 lg:flex-row items-center lg:pr-20">
-      <div className="h-full w-full overflow-hidden md:left-0 md:h-full  lg:w-9/12">
-        <iframe
-          width="100%"
-          height="540"
-          src="https://www.youtube.com/embed/zuCsts82_y8"
-          title="YouTube video"
+    <div className=" bg-white flex flex-col py-24 lg:flex-row justify-between items-center">
+      <div className="max-width: 945px; max-height: 540px; overflow: hidden;">
+        <video
+          className="width: 100%; height: 100%; object-fit: cover;"
+          controls
+          src={"/MovieStadler.mp4"}
         />
       </div>
-      <div className="lg:w-3/12 pl-6 lg:pl-20 w-full">
-        <div className="w-full md:w-1/2 mt-10 lg:w-full">
+      <div className="lg:px-20 ">
+        <div className="">
           <H2 titleH2="Karriere bei Stadler"></H2>
 
           <Text styles="my-6">

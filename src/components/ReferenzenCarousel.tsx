@@ -186,11 +186,11 @@ const TestimonialsCarousel: React.FC = () => {
             onTouchMove={handleSwipeMove}
             onTouchEnd={handleSwipeEnd}
           >
-            <motion.div className="flex gap-4 flex-nowrap  overflow-hidden">
+            <motion.div className="flex gap-4 flex-nowrap  overflow-x-hidden ">
               {images.map((image, idx) => (
                 <TestimonialMotionDiv
                   key={image.title}
-                  className="flex flex-col h-auto items-center min-w-[100%]  lg:min-w-[90%] bg-white border border-gray-200  shadow md:flex-row "
+                  className="flex flex-col h-auto items-center min-w-[100%]  lg:min-w-[90%] bg-white md:flex-row shadow-md shadow-greyDarken-600 z-100"
                   animate={{
                     translateX: `calc(-${current * 100}% - ${current}rem)`,
                     opacity: idx === current ? 1 : 0.3,
@@ -203,7 +203,7 @@ const TestimonialsCarousel: React.FC = () => {
                     className="w-full md:w-1/2 max-h-[350px] md:max-h-[400px] lg:max-h-[440px]"
                   />
 
-                  <div className="flex flex-col m-auto p-4 leading-normal max-w-lg">
+                  <div className="flex flex-col m-auto p-4 leading-normal max-w-lg ">
                     <Text styles="mb-6 md:mb-10">{image.name}</Text>
                     <H3>{image.title}</H3>
 

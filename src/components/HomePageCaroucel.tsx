@@ -3,7 +3,7 @@ import Link from "next/link";
 import Text from "./typography/Text";
 import H2 from "./typography/H2";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Cards {
   title: string;
@@ -32,6 +32,7 @@ interface ResponsiveObject {
 interface TestimonialMotionProps extends MotionProps {
   responsive: ResponsiveObject;
   className?: string;
+  ref?: any;
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
@@ -58,27 +59,27 @@ const cards = [
   {
     title: "FLIRT bewegt die Welt",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/train-c.jpg",
+    img: "/card-1.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/train-c.jpg",
+    img: "/card-2.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    img: "/card-1.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    img: "/card-2.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    img: "/card-1.jpg",
   },
 ];
 
@@ -144,10 +145,49 @@ const HomePageCaroucel: React.FC = () => {
     }
   };
 
+  // Ref to store the height of each card's content
+  const cardContentRef = useRef<Array<HTMLDivElement | null>>([]);
+
+  // useEffect(() => {
+  //   const maxCardHeight = Math.max(
+  //     ...cardContentRef.current.map((ref) =>
+  //       ref instanceof HTMLElement ? ref.clientHeight : 0
+  //     )
+  //   );
+
+  //   cardContentRef.current.forEach((ref) => {
+  //     if (ref ) {
+  //       const container = ref.closest(".testimonial-motion-div");
+  //       if (container) {
+  //         container.style.height = `${maxCardHeight}px`;
+  //       }
+  //     }
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    const maxCardHeight = Math.max(
+      ...cardContentRef.current.map((ref) =>
+        ref instanceof HTMLElement ? ref.clientHeight : 0
+      )
+    );
+
+    cardContentRef.current.forEach((ref) => {
+      if (ref instanceof HTMLElement) {
+        const container = ref.closest(
+          ".testimonial-motion-div"
+        ) as HTMLDivElement | null;
+        if (container) {
+          container.style.height = `${maxCardHeight}px`;
+        }
+      }
+    });
+  }, []);
+
   return (
     <section className=" py-24 bg-white ">
       <div className="relative">
-        <div className=" flex justify-center items-center">
+        <div className="mb-24 flex justify-center items-center">
           <H2 titleH2="Erfolgsgeschichten"></H2>
         </div>
         {isMobile && (
@@ -166,7 +206,7 @@ const HomePageCaroucel: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="flex lg:pl-20 flex-col items-center justify-between">
+      <div className="flex lg:pl-[80px] flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
           <div
             className="relative   w-full  max-w-[100%] flex items-center"
@@ -174,11 +214,12 @@ const HomePageCaroucel: React.FC = () => {
             onTouchMove={handleSwipeMove}
             onTouchEnd={handleSwipeEnd}
           >
-            <motion.div className="flex gap-4 flex-nowrap  overflow-hidden ">
+            <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px]">
               {cards.map((card, idx) => (
                 <TestimonialMotionDiv
                   key={idx}
-                  className="min-w-[100%]  lg:min-w-[45%] bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                  ref={(el: any) => (cardContentRef.current[idx] = el)}
+                  className="min-w-[100%]  lg:min-w-[40%] testimonial-motion-div shadow-md shadow-greyDarken-300"
                   animate={{
                     translateX: `calc(-${current * 100}% - ${current}rem)`,
 
@@ -187,9 +228,13 @@ const HomePageCaroucel: React.FC = () => {
                   responsive={responsive}
                 >
                   <a href="#">
-                    <img className="w-full " src={card.img} alt="" />
+                    <img
+                      className="w-full max-h-[430px]"
+                      src={card.img}
+                      alt=""
+                    />
                   </a>
-                  <div className="p-5">
+                  <div className="p-5 ">
                     <div className="mb-4">
                       <H3>{card.title}</H3>
                     </div>
