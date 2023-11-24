@@ -37,24 +37,6 @@ interface TestimonialMotionProps extends MotionProps {
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
-// const responsive: ResponsiveObject = {
-//   desktop: {
-//     breakpoint: { max: 3000, min: 1024 },
-//     items: 3,
-//     paritialVisibilityGutter: 60,
-//   },
-//   tablet: {
-//     breakpoint: { max: 1024, min: 464 },
-//     items: 2,
-//     paritialVisibilityGutter: 50,
-//   },
-//   mobile: {
-//     breakpoint: { max: 464, min: 0 },
-//     items: 1,
-//     paritialVisibilityGutter: 30,
-//   },
-// };
-
 const cards = [
   {
     title: "FLIRT bewegt die Welt",
@@ -86,6 +68,7 @@ const cards = [
 const HomePageCaroucel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [responsive, setResponsive] = useState<ResponsiveObject>({
     desktop: {
@@ -141,6 +124,8 @@ const HomePageCaroucel: React.FC = () => {
 
   /*  swipe logic starts here */
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const handleSwipe = (direction: "left" | "right") => {
     const totalImages = cards.length;
     if (direction === "left" && current > 0) {
@@ -150,23 +135,53 @@ const HomePageCaroucel: React.FC = () => {
     }
   };
 
-  const handleSwipeStart = (e: React.TouchEvent) => {
-    setStartX(e.touches[0].clientX);
-  };
+  useEffect(() => {
+    const container = containerRef.current;
 
-  const handleSwipeMove = (e: React.TouchEvent) => {
-    const distanceX = e.touches[0].clientX - startX;
+    if (!container) return;
 
-    if (Math.abs(distanceX) > 50) {
-      const direction = distanceX > 0 ? "left" : "right";
-      handleSwipe(direction);
-      setStartX(e.touches[0].clientX);
-    }
-  };
+    const handleSwipeStart = (e: TouchEvent | MouseEvent) => {
+      setStartX(e instanceof TouchEvent ? e.touches[0].clientX : e.clientX);
+      setIsDragging(true);
+    };
 
-  const handleSwipeEnd = (e: React.TouchEvent) => {
-    console.log("Swipe ended");
-  };
+    const handleSwipeMove = (e: TouchEvent | MouseEvent) => {
+      if (!isDragging) return;
+
+      const clientX =
+        e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
+
+      const distanceX = clientX - startX;
+
+      if (Math.abs(distanceX) > 50) {
+        const direction = distanceX > 0 ? "left" : "right";
+        handleSwipe(direction);
+        setStartX(clientX);
+      }
+    };
+
+    const handleSwipeEnd = () => {
+      setIsDragging(false);
+    };
+
+    container.addEventListener("touchstart", handleSwipeStart);
+    container.addEventListener("touchmove", handleSwipeMove);
+    container.addEventListener("touchend", handleSwipeEnd);
+
+    container.addEventListener("mousedown", handleSwipeStart);
+    container.addEventListener("mousemove", handleSwipeMove);
+    container.addEventListener("mouseup", handleSwipeEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", handleSwipeStart);
+      container.removeEventListener("touchmove", handleSwipeMove);
+      container.removeEventListener("touchend", handleSwipeEnd);
+
+      container.removeEventListener("mousedown", handleSwipeStart);
+      container.removeEventListener("mousemove", handleSwipeMove);
+      container.removeEventListener("mouseup", handleSwipeEnd);
+    };
+  }, [isDragging, startX]);
 
   /*   swipe logic ends here */
 
@@ -236,9 +251,7 @@ const HomePageCaroucel: React.FC = () => {
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
           <div
             className="relative   w-full  max-w-[100%] flex items-center"
-            onTouchStart={handleSwipeStart}
-            onTouchMove={handleSwipeMove}
-            onTouchEnd={handleSwipeEnd}
+            ref={containerRef}
           >
             <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px]">
               {cards.map((card, idx) => (

@@ -3,7 +3,7 @@ import Text from "./typography/Text";
 import H2 from "./typography/H2";
 import Link from "next/link";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import TrainCard from "./TrainCard";
 import ContentWidth from "./layouts/ContentWidth";
 
@@ -123,10 +123,13 @@ const responsive: ResponsiveObject = {
 
 const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const [startX, setStartX] = useState(0);
   const [showTrains, setShowTrains] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   /*  swipe logic starts here */
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleSwipe = (direction: "left" | "right") => {
     const totalImages = images.length;
@@ -137,23 +140,53 @@ const TestimonialsCarousel: React.FC = () => {
     }
   };
 
-  const handleSwipeStart = (e: React.TouchEvent) => {
-    setStartX(e.touches[0].clientX);
-  };
+  useEffect(() => {
+    const container = containerRef.current;
 
-  const handleSwipeMove = (e: React.TouchEvent) => {
-    const distanceX = e.touches[0].clientX - startX;
+    if (!container) return;
 
-    if (Math.abs(distanceX) > 50) {
-      const direction = distanceX > 0 ? "left" : "right";
-      handleSwipe(direction);
-      setStartX(e.touches[0].clientX);
-    }
-  };
+    const handleSwipeStart = (e: TouchEvent | MouseEvent) => {
+      setStartX(e instanceof TouchEvent ? e.touches[0].clientX : e.clientX);
+      setIsDragging(true);
+    };
 
-  const handleSwipeEnd = (e: React.TouchEvent) => {
-    console.log("Swipe ended");
-  };
+    const handleSwipeMove = (e: TouchEvent | MouseEvent) => {
+      if (!isDragging) return;
+
+      const clientX =
+        e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
+
+      const distanceX = clientX - startX;
+
+      if (Math.abs(distanceX) > 50) {
+        const direction = distanceX > 0 ? "left" : "right";
+        handleSwipe(direction);
+        setStartX(clientX);
+      }
+    };
+
+    const handleSwipeEnd = () => {
+      setIsDragging(false);
+    };
+
+    container.addEventListener("touchstart", handleSwipeStart);
+    container.addEventListener("touchmove", handleSwipeMove);
+    container.addEventListener("touchend", handleSwipeEnd);
+
+    container.addEventListener("mousedown", handleSwipeStart);
+    container.addEventListener("mousemove", handleSwipeMove);
+    container.addEventListener("mouseup", handleSwipeEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", handleSwipeStart);
+      container.removeEventListener("touchmove", handleSwipeMove);
+      container.removeEventListener("touchend", handleSwipeEnd);
+
+      container.removeEventListener("mousedown", handleSwipeStart);
+      container.removeEventListener("mousemove", handleSwipeMove);
+      container.removeEventListener("mouseup", handleSwipeEnd);
+    };
+  }, [isDragging, startX]);
 
   /*   swipe logic ends here */
 
@@ -181,18 +214,16 @@ const TestimonialsCarousel: React.FC = () => {
       <div className="flex lg:pl-20 flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
           <div
-            className="relative   w-full  max-w-[100%] flex items-center"
-            onTouchStart={handleSwipeStart}
-            onTouchMove={handleSwipeMove}
-            onTouchEnd={handleSwipeEnd}
+            className="relative   w-full  max-w-[100%] flex items-center "
+            ref={containerRef}
           >
-            <motion.div className="flex gap-4 flex-nowrap  overflow-x-hidden ">
+            <motion.div className="flex gap-6 flex-nowrap  overflow-hidden mx-[-10px] px-[10px] my-[-10px] py-[10px]">
               {images.map((image, idx) => (
                 <TestimonialMotionDiv
                   key={image.title}
-                  className="flex flex-col h-auto items-center min-w-[100%]  lg:min-w-[90%] bg-white md:flex-row shadow-md shadow-greyDarken-600 z-100"
+                  className="flex flex-col items-center min-w-[100%]  shadow-md shadow-greyDarken-200  lg:min-w-[90%] bg-white md:flex-row "
                   animate={{
-                    translateX: `calc(-${current * 100}% - ${current}rem)`,
+                    translateX: `calc(-${current * 101}% - ${current}rem)`,
                     opacity: idx === current ? 1 : 0.3,
                   }}
                   responsive={responsive}
@@ -200,7 +231,7 @@ const TestimonialsCarousel: React.FC = () => {
                   <img
                     src={image.img}
                     alt={image.title}
-                    className="w-full md:w-1/2 max-h-[350px] md:max-h-[400px] lg:max-h-[440px]"
+                    className="w-full md:w-1/2 object-fill max-h-[350px] md:max-h-[400px] lg:max-h-[440px]"
                   />
 
                   <div className="flex flex-col m-auto p-4 leading-normal max-w-lg ">
@@ -211,13 +242,12 @@ const TestimonialsCarousel: React.FC = () => {
                       {image.text}
                     </Text>
                     <Link
-                      className="text-primary flex items-center gap-2"
                       href="#"
+                      className="inline-flex items-center py-2 text-sm font-medium text-center"
                     >
-                      Mehr erfahren
                       <svg
-                        width="10"
-                        height="10"
+                        width="20"
+                        height="20"
                         viewBox="0 0 20 20"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
