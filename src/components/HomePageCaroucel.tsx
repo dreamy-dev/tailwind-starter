@@ -37,23 +37,23 @@ interface TestimonialMotionProps extends MotionProps {
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
-const responsive: ResponsiveObject = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    paritialVisibilityGutter: 60,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    paritialVisibilityGutter: 50,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    paritialVisibilityGutter: 30,
-  },
-};
+// const responsive: ResponsiveObject = {
+//   desktop: {
+//     breakpoint: { max: 3000, min: 1024 },
+//     items: 3,
+//     paritialVisibilityGutter: 60,
+//   },
+//   tablet: {
+//     breakpoint: { max: 1024, min: 464 },
+//     items: 2,
+//     paritialVisibilityGutter: 50,
+//   },
+//   mobile: {
+//     breakpoint: { max: 464, min: 0 },
+//     items: 1,
+//     paritialVisibilityGutter: 30,
+//   },
+// };
 
 const cards = [
   {
@@ -87,6 +87,43 @@ const HomePageCaroucel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [responsive, setResponsive] = useState<ResponsiveObject>({
+    desktop: {
+      breakpoint: { max: 1680, min: 1024 },
+      items: 3,
+      paritialVisibilityGutter: 60,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      paritialVisibilityGutter: 50,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      paritialVisibilityGutter: 30,
+    },
+  });
+
+  useEffect(() => {
+    setResponsive({
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        paritialVisibilityGutter: 60,
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        paritialVisibilityGutter: 50,
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        paritialVisibilityGutter: 30,
+      },
+    });
+  }, []);
 
   //Show dots on mobile
   useEffect(() => {
@@ -145,49 +182,38 @@ const HomePageCaroucel: React.FC = () => {
     }
   };
 
-  // Ref to store the height of each card's content
   const cardContentRef = useRef<Array<HTMLDivElement | null>>([]);
 
-  // useEffect(() => {
-  //   const maxCardHeight = Math.max(
-  //     ...cardContentRef.current.map((ref) =>
-  //       ref instanceof HTMLElement ? ref.clientHeight : 0
-  //     )
-  //   );
-
-  //   cardContentRef.current.forEach((ref) => {
-  //     if (ref ) {
-  //       const container = ref.closest(".testimonial-motion-div");
-  //       if (container) {
-  //         container.style.height = `${maxCardHeight}px`;
-  //       }
-  //     }
-  //   });
-  // }, []);
-
   useEffect(() => {
-    const maxCardHeight = Math.max(
-      ...cardContentRef.current.map((ref) =>
-        ref instanceof HTMLElement ? ref.clientHeight : 0
-      )
-    );
+    const handleResize = () => {
+      const maxCardHeight = Math.max(
+        ...cardContentRef.current.map((ref) =>
+          ref instanceof HTMLElement ? ref.clientHeight : 0
+        )
+      );
 
-    cardContentRef.current.forEach((ref) => {
-      if (ref instanceof HTMLElement) {
-        const container = ref.closest(
-          ".testimonial-motion-div"
-        ) as HTMLDivElement | null;
-        if (container) {
-          container.style.height = `${maxCardHeight}px`;
+      cardContentRef.current.forEach((ref) => {
+        if (ref instanceof HTMLElement) {
+          const container = ref.closest(
+            ".testimonial-motion-div"
+          ) as HTMLDivElement | null;
+          if (container) {
+            container.style.height = `${maxCardHeight}px`;
+          }
         }
-      }
-    });
-  }, []);
+      });
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [responsive]);
 
   return (
     <section className=" py-24 bg-white ">
       <div className="relative">
-        <div className="mb-24 flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <H2 titleH2="Erfolgsgeschichten"></H2>
         </div>
         {isMobile && (
@@ -221,7 +247,7 @@ const HomePageCaroucel: React.FC = () => {
                   ref={(el: any) => (cardContentRef.current[idx] = el)}
                   className="min-w-[100%]  lg:min-w-[40%] testimonial-motion-div shadow-md shadow-greyDarken-300"
                   animate={{
-                    translateX: `calc(-${current * 100}% - ${current}rem)`,
+                    translateX: `calc(-${current * 102}% - ${current}rem)`,
 
                     opacity: idx === current || idx === current + 1 ? 1 : 0.3,
                   }}
