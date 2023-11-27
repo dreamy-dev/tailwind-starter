@@ -1,13 +1,13 @@
 import H2 from "@/components/typography/H2";
 import Text from "@/components/typography/Text";
-import SmallWidth from "./layouts/SmallWidth";
+import ContentWidth from "./layouts/ContentWidth";
 import Button from "./elements/ButtonSecondary";
 
 export default function TeaserMobilitySolutions(props?: any) {
   return (
     <section className="pt-24 pb-12 dark:bg-gray-900 ">
-      <SmallWidth>
-        <div className="max-w-4xl mx-auto">
+      <ContentWidth>
+        <div className="col-span-12 max-w-4xl mx-auto">
           <H2
             titleH2="Die Mobilitätslösungen von Stadler stehen für hohe Effizienz und Zuverlässigkeit"
             styles="text-center text-white"
@@ -46,8 +46,8 @@ export default function TeaserMobilitySolutions(props?: any) {
             Zu den Lösungen
           </Button>
         </div>
-        <div className="mb-10 tracking-tight dark:text-white border border-solid border-greyBrighten"></div>
-      </SmallWidth>
+        <div className="col-span-12 mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
+      </ContentWidth>
     </section>
   );
 }
