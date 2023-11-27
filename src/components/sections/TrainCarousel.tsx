@@ -59,10 +59,144 @@ const tabs = {
     },
     {
       title: "Urban",
+      trains: [
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+      ],
     },
-    { title: "Locomotives" },
+    {
+      title: "Locomotives",
+      trains: [
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+      ],
+    },
     {
       title: "Tailor Made",
+      trains: [
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+        {
+          img: "train-models/smile.png",
+          category: "Highspeed",
+          name: "Smile",
+          href: "#",
+        },
+      ],
     },
   ],
 };
@@ -124,20 +258,27 @@ const TrainCarousel = (props?: any) => {
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
-          {tabs.categories[0].trains.map((item) => (
-            <div key={item.name} className="bg-white text-black flex flex-col">
-              <img className="w-full" src={item.img} />
-              <div className="p-6">
-                <small className="text-greySolid-600 flex mb-2">
-                  {item.category}
-                </small>
-                <H3>{item.name}</H3>
-              </div>
-            </div>
-          ))}
+          {tabs.categories.map((category) =>
+            category.title == selectedTab.title
+              ? category.trains.map((item) => (
+                  <div
+                    key={item.name}
+                    className="bg-white text-black flex flex-col"
+                  >
+                    <img className="w-full" src={item.img} />
+                    <div className="p-6">
+                      <small className="text-greySolid-600 flex mb-2">
+                        {item.category}
+                      </small>
+                      <H3>{item.name}</H3>
+                    </div>
+                  </div>
+                ))
+              : ""
+          )}
           <div className="bg-transparent text-white border-solid border-2 border-white flex flex-col justify-center p-6">
             <small>Übersicht</small>
-            <H3>Mainline</H3>
+            <H3>{selectedTab.title}</H3>
           </div>
         </motion.div>
       </ContentWidth>
