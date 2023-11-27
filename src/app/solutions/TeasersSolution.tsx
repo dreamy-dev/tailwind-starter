@@ -21,7 +21,7 @@ export default function TeasersSolution() {
 
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             <div className="mt-6">
-              <H2 titleH2="Schienenfahrzeuge"></H2>
+              <H2>Schienenfahrzeuge</H2>
               <p className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
                 At vero eos et accusam et justo duo dolores et ea rebum. Stet
                 clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
@@ -39,7 +39,7 @@ export default function TeasersSolution() {
               <div className="">
                 <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                   <div>
-                    <H2 titleH2="Signalling"></H2>
+                    <H2>Signalling</H2>
                     <p className="mt-4 text-base font-normal text-gray-800 dark:text-gray-400 sm:text-xl">
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
@@ -79,7 +79,7 @@ export default function TeasersSolution() {
 
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             <div className="mt-6">
-              <H2 titleH2="Service"></H2>
+              <H2>Service</H2>
               <p className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem
                 ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur

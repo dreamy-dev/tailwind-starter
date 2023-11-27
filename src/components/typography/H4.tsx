@@ -1,11 +1,20 @@
 interface H4Props {
-  titleH4: string;
+  children?: string;
   textColor?: string;
   styles?: string;
+  resetStyles?: boolean;
 }
-const H4: React.FC<H4Props> = ({ titleH4, textColor, styles }) => {
-  const H4Styles = `text-${textColor} text-xl font-bold break-words ${styles}`;
-  return <h4 className={H4Styles}>{titleH4}</h4>;
+const H4: React.FC<H4Props> = ({
+  children,
+  textColor,
+  styles,
+  resetStyles,
+}) => {
+  const defaultStyles = "text-xl font-bold break-words";
+  const H4Styles = resetStyles
+    ? defaultStyles
+    : `${defaultStyles} text-${textColor || "black"} ${styles || ""}`;
+  return <h4 className={H4Styles}>{children}</h4>;
 };
 
 export default H4;

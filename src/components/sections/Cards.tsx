@@ -1,4 +1,4 @@
-import CardSimple from "./CardSimple";
+import CardSimple from "../elements/CardSimple";
 
 export default function Cards() {
   return (

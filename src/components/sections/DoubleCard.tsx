@@ -1,6 +1,6 @@
 import H2 from "@/components/typography/H2";
-import ContentWidth from "./layouts/ContentWidth";
-import Text from "./typography/Text";
+import ContentWidth from "../layouts/ContentWidth";
+import Text from "../typography/Text";
 
 export default function DoubleCard() {
   return (
@@ -16,11 +16,9 @@ export default function DoubleCard() {
                   href="#"
                   className="flex flex-col items-start gap-2 text-2xl font-bold text-white mt-4"
                 >
-                  <H2
-                    titleH2="Signalling"
-                    textColor="white"
-                    styles="mt-5 mb-4"
-                  ></H2>
+                  <H2 textColor="white" styles="mt-5 mb-4">
+                    Signalling
+                  </H2>
                   <Text styles="text-white mb-4">
                     Massgeschneiderte Signalling-Lösungen für kompromisslose
                     Sicherheit und Pünktlichkeit auf jeder Strecke.
@@ -54,11 +52,9 @@ export default function DoubleCard() {
                   href="#"
                   className="flex flex-col items-start  gap-2 text-2xl font-bold mt-4 text-white"
                 >
-                  <H2
-                    titleH2="Service"
-                    textColor="white"
-                    styles="mt-5 mb-4"
-                  ></H2>
+                  <H2 textColor="white" styles="mt-5 mb-4">
+                    Service
+                  </H2>
                   <Text styles="text-white mb-4">
                     Regelmässige Service für Gesamtlösungen und
                     Schienenfahrzeuge garantieren zuverlässige Spitzenleistung.

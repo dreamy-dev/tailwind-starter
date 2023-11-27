@@ -12,7 +12,7 @@ export default function SustainableProcurement() {
           alt="feature image"
         />
         <div className=" sm:text-lg">
-          <H2 titleH2={"Nachhaltigkeit in der Lieferkette"}></H2>
+          <H2>Nachhaltigkeit in der Lieferkette</H2>
           <p className="my-4 font-normal lg:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             sit amet eros pulvinar, commodo augue ac, viverra justo. Vivamus a

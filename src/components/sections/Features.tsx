@@ -1,5 +1,5 @@
 import H3 from "@/components/typography/H3";
-import ContentWidth from "./layouts/ContentWidth";
+import ContentWidth from "../layouts/ContentWidth";
 
 export default function Features() {
   return (

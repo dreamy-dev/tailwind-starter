@@ -1,5 +1,5 @@
-import NavBar from "../NavBar";
-import TopNav from "../TopNav";
+import NavBar from "./NavBar";
+import TopNav from "./TopNav";
 
 export default function Header() {
   return (

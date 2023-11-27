@@ -62,7 +62,7 @@ const ServiceTeasers = (props?: any) => {
     <section className="bg-white dark:bg-gray-900 antialiased my-8">
       <ContentWidth>
         <div className="col-span-12 my-8 ">
-          <H2 titleH2="Alle Services auf einen Blick"></H2>
+          <H2>Alle Services auf einen Blick</H2>
           <Text>
             Hier finden Sie eine Übersicht aller unser Service Angebote.
           </Text>

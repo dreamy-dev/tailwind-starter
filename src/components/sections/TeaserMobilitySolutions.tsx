@@ -1,17 +1,17 @@
 import H2 from "@/components/typography/H2";
 import Text from "@/components/typography/Text";
-import ContentWidth from "./layouts/ContentWidth";
-import Button from "./elements/ButtonSecondary";
+import ContentWidth from "../layouts/ContentWidth";
+import Button from "../elements/ButtonSecondary";
 
 export default function TeaserMobilitySolutions(props?: any) {
   return (
     <section className="pt-24 pb-12 dark:bg-gray-900 ">
       <ContentWidth>
         <div className="col-span-12 max-w-4xl mx-auto">
-          <H2
-            titleH2="Die Mobilitätslösungen von Stadler stehen für hohe Effizienz und Zuverlässigkeit"
-            styles="text-center text-white"
-          ></H2>
+          <H2 styles="text-center text-white">
+            Die Mobilitätslösungen von Stadler stehen für hohe Effizienz und
+            Zuverlässigkeit
+          </H2>
           <Text styles="my-8 text-center text-white">
             Stadler entwickelt die besten Schienenfahrzeuge der Welt. Diese
             werden mit massgeschneiderten Lösungen im Bereich Signaltechnik und

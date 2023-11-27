@@ -1,14 +1,14 @@
 import H2 from "@/components/typography/H2";
 import H4 from "@/components/typography/H4";
-import Text from "./typography/Text";
-import ContentWidth from "./layouts/ContentWidth";
+import Text from "../typography/Text";
+import ContentWidth from "../layouts/ContentWidth";
 export default function QualityFeatures() {
   return (
     <>
       <section className="py-24 bg-stadlergradient">
         <ContentWidth>
           <div className="col-span-12 max-w-full mx-auto">
-            <H2 titleH2="Qualitätsmerkmale" textColor="white"></H2>
+            <H2 textColor="white">Qualitätsmerkmale</H2>
             <div className="mt-8 lg:mt-16">
               <div className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24">
                 <div className="flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">
@@ -27,7 +27,7 @@ export default function QualityFeatures() {
                     </svg>
                   </div>
                   <div>
-                    <H4 titleH4="Leichtbauweise" textColor="white"></H4>
+                    <H4 textColor="white">Leichtbauweise</H4>
                     <Text styles="mt-2 text-xl  text-white sm:text-lg">
                       {" "}
                       Flow Budget automatically categorizes your income and
@@ -81,7 +81,7 @@ export default function QualityFeatures() {
                     </svg>
                   </div>
                   <div>
-                    <H4 titleH4="Spurtstärke" textColor="white"></H4>
+                    <H4 textColor="white">Spurtstärke</H4>
                     <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
                       The app offers a variety of budgeting methods, such as
                       50/30/20 rule, to help users find the approach that works
@@ -108,10 +108,7 @@ export default function QualityFeatures() {
                     </svg>
                   </div>
                   <div>
-                    <H4
-                      titleH4="Qualitative Verarbeitung"
-                      textColor="white"
-                    ></H4>
+                    <H4 textColor="white">Qualitative Verarbeitung</H4>
                     <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
                       Set budget goals for each category and get real-time
                       updates on how close you are to reaching them.
@@ -135,7 +132,7 @@ export default function QualityFeatures() {
                     </svg>
                   </div>
                   <div>
-                    <H4 titleH4="Modulare Plattform" textColor="white"></H4>
+                    <H4 textColor="white">Modulare Plattform</H4>
                     <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
                       We provide detailed reports and analytics that help users
                       understand their spending habits, and make more informed
@@ -172,9 +169,8 @@ export default function QualityFeatures() {
                     </svg>
                   </div>
                   <div>
-                    <H4 titleH4="Tailor Made" textColor="white"></H4>
+                    <H4 textColor="white">Tailor Made</H4>
                     <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-                      {" "}
                       Synch your data across multiple devices, so you can access
                       your budget and expenses from anywhere, at any time, and
                       on any device.
