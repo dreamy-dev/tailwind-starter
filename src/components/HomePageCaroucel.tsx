@@ -3,7 +3,7 @@ import Link from "next/link";
 import Text from "./typography/Text";
 import H2 from "./typography/H2";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Cards {
   title: string;
@@ -32,60 +32,81 @@ interface ResponsiveObject {
 interface TestimonialMotionProps extends MotionProps {
   responsive: ResponsiveObject;
   className?: string;
+  ref?: any;
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
-
-const responsive: ResponsiveObject = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    paritialVisibilityGutter: 60,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    paritialVisibilityGutter: 50,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    paritialVisibilityGutter: 30,
-  },
-};
 
 const cards = [
   {
     title: "FLIRT bewegt die Welt",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/train-c.jpg",
+    img: "/card-1.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/train-c.jpg",
+    img: "/card-2.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    img: "/card-1.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    img: "/card-2.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    img: "/card-1.jpg",
   },
 ];
 
 const HomePageCaroucel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [responsive, setResponsive] = useState<ResponsiveObject>({
+    desktop: {
+      breakpoint: { max: 1680, min: 1024 },
+      items: 3,
+      paritialVisibilityGutter: 60,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      paritialVisibilityGutter: 50,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      paritialVisibilityGutter: 30,
+    },
+  });
+
+  useEffect(() => {
+    setResponsive({
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        paritialVisibilityGutter: 60,
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        paritialVisibilityGutter: 50,
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        paritialVisibilityGutter: 30,
+      },
+    });
+  }, []);
 
   //Show dots on mobile
   useEffect(() => {
@@ -103,6 +124,8 @@ const HomePageCaroucel: React.FC = () => {
 
   /*  swipe logic starts here */
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const handleSwipe = (direction: "left" | "right") => {
     const totalImages = cards.length;
     if (direction === "left" && current > 0) {
@@ -112,23 +135,53 @@ const HomePageCaroucel: React.FC = () => {
     }
   };
 
-  const handleSwipeStart = (e: React.TouchEvent) => {
-    setStartX(e.touches[0].clientX);
-  };
+  useEffect(() => {
+    const container = containerRef.current;
 
-  const handleSwipeMove = (e: React.TouchEvent) => {
-    const distanceX = e.touches[0].clientX - startX;
+    if (!container) return;
 
-    if (Math.abs(distanceX) > 50) {
-      const direction = distanceX > 0 ? "left" : "right";
-      handleSwipe(direction);
-      setStartX(e.touches[0].clientX);
-    }
-  };
+    const handleSwipeStart = (e: TouchEvent | MouseEvent) => {
+      setStartX(e instanceof TouchEvent ? e.touches[0].clientX : e.clientX);
+      setIsDragging(true);
+    };
 
-  const handleSwipeEnd = (e: React.TouchEvent) => {
-    console.log("Swipe ended");
-  };
+    const handleSwipeMove = (e: TouchEvent | MouseEvent) => {
+      if (!isDragging) return;
+
+      const clientX =
+        e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
+
+      const distanceX = clientX - startX;
+
+      if (Math.abs(distanceX) > 50) {
+        const direction = distanceX > 0 ? "left" : "right";
+        handleSwipe(direction);
+        setStartX(clientX);
+      }
+    };
+
+    const handleSwipeEnd = () => {
+      setIsDragging(false);
+    };
+
+    container.addEventListener("touchstart", handleSwipeStart);
+    container.addEventListener("touchmove", handleSwipeMove);
+    container.addEventListener("touchend", handleSwipeEnd);
+
+    container.addEventListener("mousedown", handleSwipeStart);
+    container.addEventListener("mousemove", handleSwipeMove);
+    container.addEventListener("mouseup", handleSwipeEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", handleSwipeStart);
+      container.removeEventListener("touchmove", handleSwipeMove);
+      container.removeEventListener("touchend", handleSwipeEnd);
+
+      container.removeEventListener("mousedown", handleSwipeStart);
+      container.removeEventListener("mousemove", handleSwipeMove);
+      container.removeEventListener("mouseup", handleSwipeEnd);
+    };
+  }, [isDragging, startX]);
 
   /*   swipe logic ends here */
 
@@ -144,10 +197,38 @@ const HomePageCaroucel: React.FC = () => {
     }
   };
 
+  const cardContentRef = useRef<Array<HTMLDivElement | null>>([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const maxCardHeight = Math.max(
+        ...cardContentRef.current.map((ref) =>
+          ref instanceof HTMLElement ? ref.clientHeight : 0
+        )
+      );
+
+      cardContentRef.current.forEach((ref) => {
+        if (ref instanceof HTMLElement) {
+          const container = ref.closest(
+            ".testimonial-motion-div"
+          ) as HTMLDivElement | null;
+          if (container) {
+            container.style.height = `${maxCardHeight}px`;
+          }
+        }
+      });
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [responsive]);
+
   return (
     <section className=" py-24 bg-white ">
       <div className="relative">
-        <div className="mb-24 flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <H2 titleH2="Erfolgsgeschichten"></H2>
         </div>
         {isMobile && (
@@ -166,30 +247,33 @@ const HomePageCaroucel: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="flex lg:pl-20 flex-col items-center justify-between">
+      <div className="flex lg:pl-[80px] flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
           <div
             className="relative   w-full  max-w-[100%] flex items-center"
-            onTouchStart={handleSwipeStart}
-            onTouchMove={handleSwipeMove}
-            onTouchEnd={handleSwipeEnd}
+            ref={containerRef}
           >
-            <motion.div className="flex gap-4 flex-nowrap  overflow-hidden ">
+            <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px]">
               {cards.map((card, idx) => (
                 <TestimonialMotionDiv
                   key={idx}
-                  className="min-w-[100%]  lg:min-w-[45%] bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                  ref={(el: any) => (cardContentRef.current[idx] = el)}
+                  className="min-w-[100%]  lg:min-w-[40%] testimonial-motion-div shadow-md shadow-greyDarken-300"
                   animate={{
-                    translateX: `calc(-${current * 100}% - ${current}rem)`,
+                    translateX: `calc(-${current * 102}% - ${current}rem)`,
 
                     opacity: idx === current || idx === current + 1 ? 1 : 0.3,
                   }}
                   responsive={responsive}
                 >
                   <a href="#">
-                    <img className="w-full " src={card.img} alt="" />
+                    <img
+                      className="w-full max-h-[430px]"
+                      src={card.img}
+                      alt=""
+                    />
                   </a>
-                  <div className="p-5">
+                  <div className="p-5 ">
                     <div className="mb-4">
                       <H3>{card.title}</H3>
                     </div>
