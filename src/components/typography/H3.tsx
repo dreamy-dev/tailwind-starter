@@ -1,10 +1,15 @@
 interface H3Props {
-  titleH3?: string;
   children?: string | number;
+  styles?: string;
+  resetStyles?: boolean;
 }
 
-const H3: React.FC<H3Props> = ({ children }) => {
-  return <h3 className="text-2xl mb-6 font-bold">{children}</h3>;
+const H3: React.FC<H3Props> = ({ styles, children, resetStyles }) => {
+  const defaultStyles = "text-2xl mb-6 font-bold";
+  const H3Styles = resetStyles
+    ? defaultStyles
+    : `${defaultStyles} ${styles || ""}`;
+  return <h3 className={H3Styles}>{children}</h3>;
 };
 
 export default H3;

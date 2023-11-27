@@ -1,11 +1,11 @@
 "use client";
 
-import Hero from "@/components/ExampleHero";
+import Hero from "@/components/sections/HomePageHero";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import Lead from "@/components/typography/Lead";
 import HeroSolutions from "./Hero";
 import TeasersSolution from "./TeasersSolution";
-import ReferenzenCarousel from "../../components/ReferenzenCarousel";
+import ReferenzenCarousel from "../../components/sections/ReferenzenCarousel";
 
 export default function Solutions() {
   return (

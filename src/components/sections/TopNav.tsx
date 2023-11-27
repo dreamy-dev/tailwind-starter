@@ -1,4 +1,4 @@
-import ContentWidth from "./layouts/ContentWidth";
+import ContentWidth from "../layouts/ContentWidth";
 import Link from "next/link";
 const navigation = {
   topNav: [

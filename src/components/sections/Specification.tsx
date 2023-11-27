@@ -1,7 +1,7 @@
-import H3 from "./typography/H3";
-import H4 from "./typography/H4";
-import Button from "./elements/ButtonSecondary";
-import ContentWidth from "./layouts/ContentWidth";
+import H3 from "../typography/H3";
+import H4 from "../typography/H4";
+import Button from "../elements/ButtonSecondary";
+import ContentWidth from "../layouts/ContentWidth";
 const features = [
   {
     name: "Antrieb",
@@ -57,7 +57,7 @@ export default function Specification() {
             </p>
           </div>
           <div className="mb-10">
-            <H4 textColor="black" titleH4="Spezifikationen"></H4>
+            <H4 textColor="black">Spezifikationen</H4>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {features.map((feature) => (

@@ -7,7 +7,7 @@ export default function CorporateGorvernance() {
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <H2 titleH2="Corporate Governance"></H2>
+          <H2>Corporate Governance</H2>
           <Text>
             Als weltweit agierender Schienenfahrzeughersteller strebt Stadler
             nachhaltiges Wachstum an. Dabei setzen wir uns hohe Standards im

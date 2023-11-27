@@ -10,7 +10,7 @@ export default function CTASection() {
     <section className="bg-white dark:bg-gray-900">
       <div className="bg-primaryBgcGray py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center">
-          <H2 titleH2={"Spontanbewerbung"}></H2>
+          <H2>Spontanbewerbung</H2>
           <Text styles="my-6">
             Du hast deine passende Stelle noch nicht gefunden? Sende uns deinen
             Lebenslauf zu und sei der Erste, der berücksichtigt wird, wenn eine

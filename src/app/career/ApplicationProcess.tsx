@@ -1,14 +1,14 @@
 "use client";
 
 import H2 from "@/components/typography/H2";
-import Stepper from "../../components/Stepper";
+import Stepper from "../../components/sections/Stepper";
 
 export default function ApplicationProcess() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="max-w-screen-l sm:text-lg dark:text-gray-400">
-          <H2 titleH2={"Ihr Weg zu Stadler"}></H2>
+          <H2>Ihr Weg zu Stadler</H2>
           <p className="my-4 font-400">
             Sie möchten einsteigen und Teil unseres zugkräftigen Teams werden?
             Bringen Sie Ihre Karriere bei Stadler ins Rollen. Wir freuen uns auf

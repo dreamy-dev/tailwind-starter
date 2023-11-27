@@ -1,7 +1,7 @@
 "use client";
-import ContentWidth from "./layouts/ContentWidth";
+import ContentWidth from "../layouts/ContentWidth";
 import Link from "next/link";
-import IconNav from "./elements/IconNav";
+import IconNav from "../elements/IconNav";
 import { useState } from "react";
 import { motion } from "framer-motion";
 

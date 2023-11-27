@@ -1,9 +1,9 @@
 "use client";
-import H1 from "./typography/H1";
-import Text from "./typography/Text";
+import H1 from "../typography/H1";
+import Text from "../typography/Text";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function HomePageHero() {
   return (
     <div className="mx-auto max-w-screen-3xl bg-white">
       <div className="w-full mb-8 relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">

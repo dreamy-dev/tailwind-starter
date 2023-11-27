@@ -1,5 +1,5 @@
-import H3 from "./typography/H3";
-import Text from "./typography/Text";
+import H3 from "../typography/H3";
+import Text from "../typography/Text";
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";

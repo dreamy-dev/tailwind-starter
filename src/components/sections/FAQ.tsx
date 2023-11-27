@@ -2,14 +2,13 @@
 
 import SmallWidth from "@/components/layouts/SmallWidth";
 import H2 from "@/components/typography/H2";
-import H3 from "@/components/typography/H3";
 
 export default function FAQ() {
   return (
     <section className="bg-white dark:bg-gray-900">
       <SmallWidth>
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
-          <H2 titleH2="Frequently asked questions"></H2>
+          <H2>Frequently asked questions</H2>
           <p className="my-6">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam

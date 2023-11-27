@@ -1,6 +1,6 @@
 import ButtonPrimary from "../elements/ButtonPrimary";
-import MapTextTitle from "../MapTextTitle";
-import Stats from "../Stats";
+import MapTextTitle from "./MapTextTitle";
+import Stats from "./Stats";
 
 const countries = [
   "Schweiz",

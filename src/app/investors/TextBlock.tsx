@@ -8,7 +8,7 @@ export default function TextBlock() {
     <section>
       <ContentWidth>
         <div className="col-span-12 py-8">
-          <H2 titleH2="Lorem ipsum"></H2>
+          <H2>Lorem ipsum</H2>
           <br />
           <Text>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

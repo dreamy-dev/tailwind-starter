@@ -1,6 +1,6 @@
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import ContentWidth from "./layouts/ContentWidth";
+import ContentWidth from "../layouts/ContentWidth";
 
 interface StatsProps {
   data: {

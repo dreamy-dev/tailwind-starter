@@ -4,8 +4,8 @@ import Hero from "./Hero";
 import Description from "./Description";
 import Advantages from "./Advantages";
 import Contact from "../../../../components/sections/Contact";
-import Career from "../../../../components/Career";
-import ReferenzenCarousel from "../../../../components/ReferenzenCarousel";
+import Career from "../../../../components/sections/Career";
+import ReferenzenCarousel from "../../../../components/sections/ReferenzenCarousel";
 
 export default function FullService() {
   return (
