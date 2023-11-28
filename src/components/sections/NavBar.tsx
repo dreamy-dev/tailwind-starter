@@ -59,7 +59,7 @@ export default function NavBar() {
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
       <ContentWidth>
-        <div className="bg-white col-span-12 w-full flex flex-col items-center justify-center md:justify-between lg:justify-between lg:flex-row py-8 md:min-h-fit min-h-[60vh] md:w-auto left-0 top-[10%] absolut md:static">
+        <div className="bg-white col-span-12 w-full flex flex-col items-center justify-center md:justify-between lg:justify-between lg:flex-row pt-5 pb-12 md:min-h-fit min-h-[60vh] md:w-auto left-0 top-[10%] absolut md:static">
           <div>
             <Link href="/" className="flex justify-center items-center">
               <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
