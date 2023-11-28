@@ -14,9 +14,13 @@ export default function DoubleCard() {
               <div className="pr-0 lg:pr-16 ">
                 <a
                   href="#"
-                  className="flex flex-col items-start gap-2 text-2xl font-bold text-white mt-4"
+                  className="flex flex-col items-start gap-2 text-2xl font-bold text-white mt-4 mb-5"
                 >
-                  <H2 textColor="white" styles="mt-5 mb-4">
+                  <H2
+                    textColor="white"
+                    resetStyles={true}
+                    styles="mb-4 text-4xl font-bold"
+                  >
                     Signalling
                   </H2>
                   <Text styles="text-white mb-4">
@@ -50,9 +54,13 @@ export default function DoubleCard() {
               <div className=" pr-0 lg:pr-16 ">
                 <a
                   href="#"
-                  className="flex flex-col items-start  gap-2 text-2xl font-bold mt-4 text-white"
+                  className="flex flex-col items-start  gap-2 text-2xl font-bold mt-4 text-white mb-5"
                 >
-                  <H2 textColor="white" styles="mt-5 mb-4">
+                  <H2
+                    textColor="white"
+                    resetStyles={true}
+                    styles="mb-4 text-4xl font-bold"
+                  >
                     Service
                   </H2>
                   <Text styles="text-white mb-4">

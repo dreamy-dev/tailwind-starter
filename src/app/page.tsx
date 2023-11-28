@@ -6,15 +6,34 @@ import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TrainCarousel from "@/components/sections/TrainCarousel";
 import Map from "@/components/sections/Map";
 import HomePageHero from "../components/sections/HomePageHero";
+import MobileModal from "@/components/elements/MobileModal";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+  const [showMobileModal, setShowMobileModal] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowMobileModal(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
+      {showMobileModal && <MobileModal />}
       <HomePageHero />
       <FactsAndFigures />
       <TrainCarousel />
-      <Map></Map>
       <HomePageCaroucel />
+      <Map></Map>
+
       <Video></Video>
     </>
   );
