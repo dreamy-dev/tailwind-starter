@@ -11,7 +11,7 @@ const navigation = {
 
 export default function TopNav() {
   return (
-    <section className="bg-primary">
+    <section className="bg-white">
       <ContentWidth>
         <div className="col-span-12 ">
           <div className="py-2 flex flex-column sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center  gap-6">
@@ -23,18 +23,18 @@ export default function TopNav() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm leading-6 text-white hover:text-white"
+                    className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <ul className="lg:flex lg:items-center   gap-4">
-              <li className="lg:flex lg:items-center   gap-2">
+            <ul className="lg:flex lg:items-center gap-4">
+              <li className="lg:flex lg:items-center gap-2">
                 <img src="/icons/country.svg" alt="Country Icon" />
                 <a
-                  className="text-sm leading-6 text-white hover:text-white"
+                  className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
                   href="#"
                 >
                   Schweiz
@@ -43,7 +43,7 @@ export default function TopNav() {
               <li className="lg:flex lg:items-center  gap-2">
                 <img src="/icons/country-name.svg" alt="Language Icon" />
                 <a
-                  className="text-sm leading-6 text-white hover:text-white"
+                  className="text-base leading-6  font-medium text-primarySolid-800 hover:text-primary"
                   href="#"
                 >
                   DE
