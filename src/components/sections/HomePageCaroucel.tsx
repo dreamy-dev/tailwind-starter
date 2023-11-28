@@ -228,7 +228,7 @@ const HomePageCaroucel: React.FC = () => {
   return (
     <section className=" py-24 bg-white ">
       <div className="relative">
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center ">
           <H2>Erfolgsgeschichten</H2>
         </div>
         {isMobile && (
@@ -247,10 +247,10 @@ const HomePageCaroucel: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="flex lg:pl-[80px] flex-col items-center justify-between ">
+      <div className="flex  lg:pl-20  flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
           <div
-            className="relative   w-full  max-w-[100%] flex items-center"
+            className="relative w-full max-w-[100%] flex items-center"
             ref={containerRef}
           >
             <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px]">
@@ -258,9 +258,9 @@ const HomePageCaroucel: React.FC = () => {
                 <TestimonialMotionDiv
                   key={idx}
                   ref={(el: any) => (cardContentRef.current[idx] = el)}
-                  className="min-w-[100%]  lg:min-w-[40%] testimonial-motion-div shadow-md shadow-greyDarken-300"
+                  className="min-w-[100%] thems-center flex flex-col lg:min-w-[40%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                   animate={{
-                    translateX: `calc(-${current * 102}% - ${current}rem)`,
+                    translateX: `calc(-${current * 100}% - ${current}rem)`,
 
                     opacity: idx === current || idx === current + 1 ? 1 : 0.3,
                   }}

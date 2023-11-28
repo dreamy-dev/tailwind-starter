@@ -4,10 +4,10 @@ import Text from "../typography/Text";
 
 export default function Video() {
   return (
-    <div className=" bg-white flex flex-col py-24 lg:flex-row justify-between items-center">
+    <div className=" bg-white flex flex-col py-24 lg:flex-row justify-between items-center 2xl:max-w-[1760px] 2xl:mx-auto">
       <div className="max-width: 945px; max-height: 540px; overflow: hidden;">
         <video
-          className="width: 100%; height: 100%; object-fit: cover;"
+          className="width: 100%; height: 100%; object-fit: cover; 2xl:max-w-[880px]"
           controls
           src={"/MovieStadler.mp4"}
         />

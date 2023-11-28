@@ -10,9 +10,9 @@ const H2: React.FC<H2Props> = ({
   styles,
   resetStyles,
 }) => {
-  const defaultStyles = "text-4xl";
-  const H2Styles = `text-black font-bold pt-2 mb-8 ${
-    resetStyles ? defaultStyles : ""
+  const defaultStyles = "";
+  const H2Styles = ` ${
+    resetStyles ? defaultStyles : "text-4xl font-bold pt-2 mb-8"
   } ${styles || ""}`;
   return <h2 className={H2Styles}>{children}</h2>;
 };
