@@ -11,26 +11,7 @@ interface Cards {
   img: string;
 }
 
-interface ResponsiveObject {
-  desktop: {
-    breakpoint: { max: number; min: number };
-    items: number;
-    paritialVisibilityGutter: number;
-  };
-  tablet: {
-    breakpoint: { max: number; min: number };
-    items: number;
-    paritialVisibilityGutter: number;
-  };
-  mobile: {
-    breakpoint: { max: number; min: number };
-    items: number;
-    paritialVisibilityGutter: number;
-  };
-}
-
 interface TestimonialMotionProps extends MotionProps {
-  responsive: ResponsiveObject;
   className?: string;
   ref?: any;
 }
@@ -70,45 +51,6 @@ const HomePageCaroucel: React.FC = () => {
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [responsive, setResponsive] = useState<ResponsiveObject>({
-    desktop: {
-      breakpoint: { max: 1680, min: 1024 },
-      items: 3,
-      paritialVisibilityGutter: 60,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      paritialVisibilityGutter: 50,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      paritialVisibilityGutter: 30,
-    },
-  });
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setResponsive({
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3,
-          paritialVisibilityGutter: 60,
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2,
-          paritialVisibilityGutter: 50,
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1,
-          paritialVisibilityGutter: 30,
-        },
-      });
-    }
-  }, []);
 
   //Show dots on mobile
   useEffect(() => {
@@ -225,7 +167,7 @@ const HomePageCaroucel: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [responsive, cardContentRef]);
+  }, [cardContentRef]);
 
   return (
     <section className=" py-24 bg-white ">
@@ -234,7 +176,7 @@ const HomePageCaroucel: React.FC = () => {
           <H2>Erfolgsgeschichten</H2>
         </div>
         {isMobile && (
-          <div className="absolute top-[90px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
+          <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
             <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
               {cards.map((_, idx) => (
                 <button key={idx} onClick={() => setCurrent(idx)}>
@@ -260,21 +202,16 @@ const HomePageCaroucel: React.FC = () => {
                 <TestimonialMotionDiv
                   key={idx}
                   ref={(el: any) => (cardContentRef.current[idx] = el)}
-                  className="min-w-[100%]  lg:min-w-[40%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
+                  className="min-w-[100%]  lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                   animate={{
-                    translateX: `calc(-${current * 102}% - ${current}rem)`,
+                    translateX: `calc(-${current * 102}% - ${current}rem) `,
 
                     opacity: idx === current || idx === current + 1 ? 1 : 0.3,
                   }}
-                  responsive={responsive}
                 >
-                  <a href="#">
-                    <img
-                      className="w-full max-h-[430px]"
-                      src={card.img}
-                      alt=""
-                    />
-                  </a>
+                  {/* <a href="#"> */}
+                  <img className="w-full max-h-[430px]" src={card.img} alt="" />
+                  {/* </a> */}
                   <div className="p-5 ">
                     <div className="mb-4">
                       <H3>{card.title}</H3>
