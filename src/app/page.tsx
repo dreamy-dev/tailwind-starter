@@ -27,7 +27,7 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      {showMobileModal && <MobileModal />}
+      {/* {showMobileModal && <MobileModal />} */}
       <HomePageHero />
       <FactsAndFigures />
       <TrainCarousel />

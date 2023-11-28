@@ -7,9 +7,11 @@ export default function MapTextTitle(props?: any) {
     <section className="bg-white  dark:bg-gray-900 ">
       <SmallWidth>
         <div className="max-w-4xl mx-auto">
-          <H2 styles="text-center">Standorte</H2>
+          <H2 styles="text-center mb-6 text-4xl font-bold " resetStyles={true}>
+            Standorte
+          </H2>
 
-          <Text styles="my-6">
+          <Text styles="my-6 text-xl break-words">
             Diese Karte bietet Ihnen einen Überblick über unsere{" "}
             <strong>
               7 Produktionsorte, 5 Signalling-Kompetenzcenter, 7
