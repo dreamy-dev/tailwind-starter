@@ -8,11 +8,11 @@ export default function TeaserMobilitySolutions(props?: any) {
     <section className="pt-24 pb-12 dark:bg-gray-900 ">
       <ContentWidth>
         <div className="col-span-12 max-w-4xl mx-auto">
-          <H2 styles="text-center text-white">
+          <H2 styles="text-center text-white break-words">
             Die Mobilitätslösungen von Stadler stehen für hohe Effizienz und
             Zuverlässigkeit
           </H2>
-          <Text styles="my-8 text-center text-white">
+          <Text styles="my-8 text-center text-white break-words">
             Stadler entwickelt die besten Schienenfahrzeuge der Welt. Diese
             werden mit massgeschneiderten Lösungen im Bereich Signaltechnik und
             einem integrierten Service-Konzept komplementiert.

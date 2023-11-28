@@ -213,7 +213,7 @@ const TestimonialsCarousel: React.FC = () => {
       <div className="flex lg:pl-20 flex-col items-center justify-between ">
         <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
           <div
-            className="relative   w-full  max-w-[100%] flex items-center "
+            className="relative w-full max-w-[100%] flex items-center "
             ref={containerRef}
           >
             <motion.div className="flex gap-6 flex-nowrap  overflow-hidden mx-[-10px] px-[10px] my-[-10px] py-[10px]">
