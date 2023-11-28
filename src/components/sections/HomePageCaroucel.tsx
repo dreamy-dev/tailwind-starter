@@ -89,23 +89,25 @@ const HomePageCaroucel: React.FC = () => {
   });
 
   useEffect(() => {
-    setResponsive({
-      desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        paritialVisibilityGutter: 60,
-      },
-      tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        paritialVisibilityGutter: 50,
-      },
-      mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-        paritialVisibilityGutter: 30,
-      },
-    });
+    if (typeof window !== "undefined") {
+      setResponsive({
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3,
+          paritialVisibilityGutter: 60,
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2,
+          paritialVisibilityGutter: 50,
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          paritialVisibilityGutter: 30,
+        },
+      });
+    }
   }, []);
 
   //Show dots on mobile
@@ -223,7 +225,7 @@ const HomePageCaroucel: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [responsive]);
+  }, [responsive, cardContentRef]);
 
   return (
     <section className=" py-24 bg-white ">
