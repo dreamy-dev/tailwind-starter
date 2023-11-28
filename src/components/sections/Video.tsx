@@ -14,15 +14,17 @@ export default function Video() {
       </div>
       <div className="lg:px-20 ">
         <div className="">
-          <H2>Karriere bei Stadler</H2>
+          <H2 resetStyles={true} styles="text-4xl font-bold mb-6">
+            Karriere bei Stadler
+          </H2>
 
-          <Text styles="my-6 text-xl">
+          <Text styles="text-xl">
             Wer alles für die besten Züge der Welt macht, braucht die besten
             Talente.
           </Text>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <Button
             backgroundColorClass="bg-transparent"
             textColorClass="text-primary"
