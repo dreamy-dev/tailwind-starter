@@ -11,7 +11,7 @@ export default function TeaserDouble() {
               <div className="">
                 <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                   <div>
-                    <H2 titleH2="Geschäftsbedingungen in der Beschaffung"></H2>
+                    <H2>Geschäftsbedingungen in der Beschaffung</H2>
                     <p className="mt-4 text-base font-normal text-gray-800 dark:text-gray-400 sm:text-xl">
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
@@ -109,7 +109,7 @@ export default function TeaserDouble() {
 
         <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-20 lg:gap-16 lg:grid-cols-2">
           <div className="hidden lg:block">
-          <img
+            <img
               src="news-1.jpg"
               className="dark:hidden object-cover object-right h-full h-[572px]"
               alt=""
@@ -123,7 +123,7 @@ export default function TeaserDouble() {
 
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             <div className="mt-6">
-              <H2 titleH2="Werden Sie Partner von Stadler"></H2>
+              <H2>Werden Sie Partner von Stadler</H2>
               <p className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor

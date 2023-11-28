@@ -18,11 +18,9 @@ export default function Contact(props?: any) {
           </div>
           <div className="w-2/3">
             <div className=" tracking-tight">
-              <H2
-                styles="mb-8"
-                titleH2={props.title ?? "Ihr Kontakt"}
-                textColor="white"
-              ></H2>
+              <H2 styles="mb-8" textColor="white">
+                {props.title ?? "Ihr Kontakt"}
+              </H2>
             </div>
             <div className="mb-8 font-light md:text-lg text-white">
               <Text>
@@ -36,11 +34,9 @@ export default function Contact(props?: any) {
             </div>
             <ul className="flex-col text-white">
               <li>
-                <H4
-                  textColor="white"
-                  styles="mb-4"
-                  titleH4="Kontakt Verkauf Schweiz"
-                ></H4>
+                <H4 textColor="white" styles="mb-4">
+                  Kontakt Verkauf Schweiz
+                </H4>
               </li>
               <li className="mb-4 flex items-center">
                 <svg

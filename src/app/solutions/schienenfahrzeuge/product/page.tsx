@@ -1,16 +1,15 @@
 "use client";
 
 import Contact from "../../../../components/sections/Contact";
-import Career from "../../../../components/Career";
-import Features from "@/components/Features";
+import Career from "../../../../components/sections/Career";
+import Features from "@/components/sections/Features";
 import ProductHero from "./Hero";
-import QualityFeatures from "@/components/QualityFeatures";
-import Specification from "@/components/Specification";
+import QualityFeatures from "@/components/sections/QualityFeatures";
+import Specification from "@/components/sections/Specification";
 import HeroText from "@/components/sections/HeroText";
 import TextSection from "@/components/sections/TextSection";
-import ProductCarousel from "@/components/ProductCarousel";
-import TestimonialsCarousel from "@/components/ReferenzenCarousel";
-// import TestSlider from "@/components/testSlider";
+import ProductCarousel from "@/components/sections/ProductCarousel";
+import TestimonialsCarousel from "@/components/sections/ReferenzenCarousel";
 
 export default function Product() {
   return (
@@ -27,7 +26,6 @@ export default function Product() {
       <ProductCarousel />
       <Specification />
 
-      {/* <TestSlider /> */}
       <TestimonialsCarousel></TestimonialsCarousel>
       <Features />
       <Contact />

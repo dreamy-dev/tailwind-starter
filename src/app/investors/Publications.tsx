@@ -8,7 +8,7 @@ export default function Publications() {
     <section>
       <ContentWidth>
         <div className="col-span-12 py-8">
-          <H2 titleH2="Publikationen"></H2>
+          <H2>Publikationen</H2>
           <br />
           <Text>
             Bitte beachten Sie die neuesten Finanzberichte und erfahren Sie mehr
