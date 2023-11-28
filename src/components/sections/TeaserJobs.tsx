@@ -9,7 +9,7 @@ export default function Jobs() {
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
         <div className="flex flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row xl:items-start">
           <div>
-            <H2 titleH2={"Unsere Mitarbeiter machen uns stolz"}></H2>
+            <H2>Unsere Mitarbeiter machen uns stolz</H2>
             <p className="mt-4 text-base font-normal text-black sm:text-xl dark:text-gray-400">
               Wir konzentrieren uns darauf, wie Technologie und Innovation
               langfristigen Wert schaffen können.

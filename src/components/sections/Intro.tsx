@@ -5,7 +5,7 @@ export default function Intro() {
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div className="font-normal sm:text-lg">
-          <H2 titleH2={"Unsere Kultur"}></H2>
+          <H2>Unsere Kultur</H2>
           <p className="mb-4 mt-6">
             Wir sind Strategen, Designer und Entwickler. Innovatoren und
             Problemlöser. Klein genug, um einfach und schnell zu sein, aber

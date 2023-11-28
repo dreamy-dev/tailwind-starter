@@ -16,10 +16,10 @@ export default function Theme() {
       <hr />
       <br />
       <H1></H1>
-      <H2 titleH2="hello there" textColor="black" />
+      <H2 textColor="black">hello there</H2>
 
       <H3>hello there</H3>
-      <H4 titleH4="hello there" textColor="black" />
+      <H4 textColor="black">hello there</H4>
       <Lead>Lead Text</Lead>
       <Text>Text</Text>
 

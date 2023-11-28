@@ -1,11 +1,20 @@
 interface H2Props {
-  titleH2: string;
+  children?: any;
   textColor?: string;
   styles?: string;
+  resetStyles?: boolean;
 }
-const H2: React.FC<H2Props> = ({ titleH2, textColor, styles }) => {
-  const H2Styles = `text-${textColor} text-4xl font-bold sm:text-3xl lg:text-4xl mb-12 ${styles}`;
-  return <h2 className={H2Styles}>{titleH2}</h2>;
+const H2: React.FC<H2Props> = ({
+  children,
+  textColor,
+  styles,
+  resetStyles,
+}) => {
+  const defaultStyles = "text-4xl";
+  const H2Styles = `text-black font-bold pt-2 mb-8 ${
+    resetStyles ? defaultStyles : ""
+  } ${styles || ""}`;
+  return <h2 className={H2Styles}>{children}</h2>;
 };
 
 export default H2;

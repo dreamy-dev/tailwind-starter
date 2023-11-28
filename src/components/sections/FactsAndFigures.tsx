@@ -7,7 +7,7 @@ const FactsAndFigures = (props?: any) => {
     <section className="bg-primarySolid-50 dark:bg-gray-900 antialiased">
       <div className="max-w-full px-4 py-8 mx-auto lg:px-20 sm:py-16 lg:py-20">
         <div className="text-center mb-4">
-          <H2 titleH2={props.title ?? "Daten & Fakten"}></H2>
+          <H2>{props.title ?? "Daten & Fakten"}</H2>
         </div>
         <div className="first-level">
           {/* <div className="border-b border-black border-solid">

@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { rootCertificates } from "tls";
-import DoubleCard from "../DoubleCard";
+import DoubleCard from "./DoubleCard";
 import ContentWidth from "../layouts/ContentWidth";
 import FullWidth from "../layouts/FullWidth";
-import TeaserMobilitySolutions from "../TeaserMobilitySolutions";
+import TeaserMobilitySolutions from "./TeaserMobilitySolutions";
 import H3 from "../typography/H3";
 import Text from "../typography/Text";
 
