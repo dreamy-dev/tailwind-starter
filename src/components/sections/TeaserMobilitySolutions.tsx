@@ -12,7 +12,7 @@ export default function TeaserMobilitySolutions(props?: any) {
             Die Mobilitätslösungen von Stadler stehen für hohe Effizienz und
             Zuverlässigkeit
           </H2>
-          <Text styles="my-8 text-center text-white break-words">
+          <Text styles="my-8 text-xl text-center text-white break-words">
             Stadler entwickelt die besten Schienenfahrzeuge der Welt. Diese
             werden mit massgeschneiderten Lösungen im Bereich Signaltechnik und
             einem integrierten Service-Konzept komplementiert.

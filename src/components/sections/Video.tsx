@@ -16,7 +16,7 @@ export default function Video() {
         <div className="">
           <H2>Karriere bei Stadler</H2>
 
-          <Text styles="my-6">
+          <Text styles="my-6 text-xl">
             Wer alles für die besten Züge der Welt macht, braucht die besten
             Talente.
           </Text>

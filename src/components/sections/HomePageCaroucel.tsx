@@ -253,14 +253,14 @@ const HomePageCaroucel: React.FC = () => {
             className="relative w-full max-w-[100%] flex items-center"
             ref={containerRef}
           >
-            <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px]">
+            <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px] pr-1 mr-1">
               {cards.map((card, idx) => (
                 <TestimonialMotionDiv
                   key={idx}
                   ref={(el: any) => (cardContentRef.current[idx] = el)}
-                  className="min-w-[100%] thems-center flex flex-col lg:min-w-[40%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
+                  className="min-w-[100%]  lg:min-w-[40%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                   animate={{
-                    translateX: `calc(-${current * 100}% - ${current}rem)`,
+                    translateX: `calc(-${current * 102}% - ${current}rem)`,
 
                     opacity: idx === current || idx === current + 1 ? 1 : 0.3,
                   }}
