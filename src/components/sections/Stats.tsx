@@ -25,7 +25,7 @@ const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
                 key={index}
               >
                 <dt className="text-xl leading-7 text-primary">{stat.text}</dt>
-                <dd className="order-first  text-6xl font-semibold tracking-tight text-black sm:text-5xl">
+                <dd className="order-first  text-[64px] font-semibold tracking-tight text-black sm:text-5xl">
                   <CountUp
                     end={stat.end}
                     suffix={stat.suffix}

@@ -19,24 +19,20 @@ const countries = [
 ];
 const statsData = [
   {
-    text: "Mitarbeiter weltweit",
-    end: 14,
-    suffix: "Tsd",
+    text: "Produktionsorte",
+    end: 7,
   },
   {
-    text: "Produktionsstandorte",
-    end: 15,
-    suffix: "",
+    text: "Signalling-Kompetenzcenter",
+    end: 5,
   },
   {
-    text: "Arbeitstunden",
-    end: 170,
-    suffix: "Mio",
+    text: "Komponentenwerke",
+    end: 7,
   },
   {
-    text: "Team",
-    end: 1,
-    suffix: "",
+    text: "Service-Standorte",
+    end: 80,
   },
 ];
 
