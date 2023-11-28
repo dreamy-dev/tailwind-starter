@@ -67,12 +67,12 @@ export default function NavBar() {
           </div>
 
           <div className="w-full lg:w-auto" id="navbar-solid-bg">
-            <ul className="flex flex-col items-center lg:flex-row font-medium mt-4 rounded-lg bg-white md:flex-row md:items-center md:gap-[4vw] gap-8 md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
+            <ul className="flex flex-col items-center lg:flex-row font-medium mt-4 rounded-lg bg-white md:flex-row md:items-center md:mt-0 md:border-0 md:bg-transparent">
               {navigationMain.topNav.map((item) => (
-                <li key={item.title}>
+                <li key={item.title} className="px-5">
                   {item.href == "/solutions" ? (
                     <div
-                      className="flex gap-2 justify-center items-center cursor-pointer py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      className="flex gap-2 justify-center items-center cursor-pointer py-5 pl-3 pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                       onClick={() => setIsOpen((isOpen) => !isOpen)}
                     >
                       {item.title}
@@ -81,7 +81,7 @@ export default function NavBar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      className="flex gap-2 justify-center items-center py-5 pl-3 pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >
                       {item.title}
                     </Link>
