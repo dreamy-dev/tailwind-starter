@@ -46,7 +46,7 @@ export default function TeaserMobilitySolutions(props?: any) {
             Zu den Lösungen
           </Button>
         </div>
-        <div className="col-span-12 mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
+        <div className="col-span-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
       </ContentWidth>
     </section>
   );

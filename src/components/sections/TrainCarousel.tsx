@@ -6,6 +6,7 @@ import FullWidth from "../layouts/FullWidth";
 import TeaserMobilitySolutions from "./TeaserMobilitySolutions";
 import H3 from "../typography/H3";
 import Text from "../typography/Text";
+import Link from "../typography/Link";
 
 const tabs = {
   categories: [
@@ -204,13 +205,16 @@ const TrainCarousel = (props?: any) => {
     <section className="bg-stadlergradient">
       <TeaserMobilitySolutions></TeaserMobilitySolutions>
       <ContentWidth>
-        <div className="col-span-6 text-white">
+        <div className="col-span-6 ml-8 text-white">
           <H3>Schienenfahrzeuge</H3>
           <Text>
             Höchste Qualität und Zuverlässigkeit sind bei unseren
             Schienenfahrzeugen Standard. Alles andere wird projekt-spezifisch
             massgeschneidert.
           </Text>
+          <a className="flex mt-4" href="/solutions/schienenfahrzeuge">
+            <img className="h-5" src="/stadler-arrow-foreward.svg" />
+          </a>
         </div>
       </ContentWidth>
       <FullWidth>
