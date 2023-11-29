@@ -31,11 +31,11 @@ export default function HomePageHero() {
             transition={{ duration: 0.5, delay: 1.5 }}
             className="z-1 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-20 h-4/5 top-0 md:w-3/5 md:top-8 md:left-0 transform -translate-y-1/2 translate-x-1/2 w-4/6 max-w-[270px] md:max-w-[330px]"
           >
-            <H1 styles="-mt-3 lg:mt-0 text-4xl lg:text-5xl">
-              Driven from within.
+            <H1 styles="max-w-min lg:mt-0 text-7xl lg:text-7xl">
+              Driven to lead.
             </H1>
-            <Text styles="text-md lg:text-xl mt-4 xl:mt-16">
-              Für die besten Schienenfahrzeuge der Welt.
+            <Text styles="text-md lg:text-3xl mt-4 xl:mt-4">
+              Alles für die besten Schienenfahrzeuge der Welt.
             </Text>
           </motion.div>
         </motion.div>
@@ -46,7 +46,7 @@ export default function HomePageHero() {
           className="w-full md:w-hero-image-small-screen lg:w-hero-image-large-screen xl:w-hero-image-extralarge-screen bg-center bg-cover bg-no-repeat"
         >
           <img
-            src="/hero-home-blue.jpg"
+            src="/RhB_Weltrekord.jpg"
             className="w-full md:block hidden"
             alt=""
           />
