@@ -6,11 +6,13 @@ import FullWidth from "../layouts/FullWidth";
 import TeaserMobilitySolutions from "./TeaserMobilitySolutions";
 import H3 from "../typography/H3";
 import Text from "../typography/Text";
+import Link from "../typography/Link";
 
 const tabs = {
   categories: [
     {
-      title: "Mainline",
+      title: "Vollbahnen",
+      image: "/trains-1.png",
       trains: [
         {
           img: "train-models/mainline/smile.jpeg",
@@ -58,6 +60,7 @@ const tabs = {
     },
     {
       title: "Urban",
+      image: "/trains.png",
       trains: [
         {
           img: "train-models/urban/tina.jpeg",
@@ -104,7 +107,8 @@ const tabs = {
       ],
     },
     {
-      title: "Locomotives",
+      title: "Lokomotiven",
+      image: "/trains-2.png",
       trains: [
         {
           img: "train-models/locomotive/euro9000.jpeg",
@@ -152,6 +156,7 @@ const tabs = {
     },
     {
       title: "Tailor Made",
+      image: "/trains-3.png",
       trains: [
         {
           img: "train-models/tailormade/triebzug.jpeg",
@@ -194,39 +199,52 @@ const plusAnimation = {
 
 const TrainCarousel = (props?: any) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedTab, setSelectedTab] = useState(tabs.categories[0]);
+  const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
     <section className="bg-stadlergradient">
       <TeaserMobilitySolutions></TeaserMobilitySolutions>
       <ContentWidth>
-        <div className="col-span-6 text-white">
+        <div className="col-span-6 ml-8 text-white">
           <H3>Schienenfahrzeuge</H3>
           <Text>
             Höchste Qualität und Zuverlässigkeit sind bei unseren
             Schienenfahrzeugen Standard. Alles andere wird projekt-spezifisch
             massgeschneidert.
           </Text>
+          <a className="flex mt-4" href="/solutions/schienenfahrzeuge">
+            <img className="h-5" src="/stadler-arrow-foreward.svg" />
+          </a>
         </div>
       </ContentWidth>
       <FullWidth>
-        <img src="/trains.png" className="col-span-12 w-full" />
+        <img
+          src={tabs.categories[selectedCategory].image}
+          className="col-span-12 w-full"
+        />
       </FullWidth>
       <ContentWidth>
         <div className="col-span-8 col-start-3 col-end-11 grid grid-cols-4 my-6">
-          {tabs.categories.map((item) => (
+          {tabs.categories.map((item, key) => (
             <div
               key={item.title}
-              className="text-greyBrighten-600 font-semibold text-center flex flex-col items-center"
+              className={`${
+                selectedCategory === key
+                  ? "text-white"
+                  : "text-greyBrighten-600"
+              } font-semibold text-center flex flex-col items-center cursor-pointer`}
               onClick={() => (
-                setIsOpen((isOpen) => !isOpen), setSelectedTab(item)
+                setIsOpen(
+                  selectedCategory === key && isOpen === false ? true : false
+                ),
+                setSelectedCategory(key)
               )}
             >
               <p>{item.title}</p>
               <motion.img
-                className="w-4 mt-2"
+                className={`${selectedCategory === key ? "w-4" : "w-0"} mt-2`}
                 src="/plus-light.svg"
-                animate={item === selectedTab && isOpen ? "open" : "close"}
+                animate={selectedCategory === key && isOpen ? "open" : "close"}
                 variants={plusAnimation}
               />
             </div>
@@ -235,31 +253,38 @@ const TrainCarousel = (props?: any) => {
       </ContentWidth>
       <ContentWidth>
         <motion.div
-          className="col-span-12 grid grid-cols-4 grid-rows-2 gap-2"
+          className={`${
+            isOpen ? "grid" : "hidden"
+          } col-span-12 grid-cols-4 grid-rows-2 gap-2`}
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
-          {tabs.categories.map((category) =>
-            category.title == selectedTab.title
-              ? category.trains.map((item) => (
-                  <div
-                    key={item.name}
-                    className="bg-white text-black flex flex-col"
-                  >
-                    <img className="w-full" src={item.img} />
-                    <div className="p-6">
-                      <small className="text-greySolid-600 flex mb-2">
-                        {item.category}
-                      </small>
-                      <H3>{item.name}</H3>
-                    </div>
-                  </div>
-                ))
-              : ""
-          )}
-          <div className="bg-transparent text-white border-solid border-2 border-white flex flex-col justify-center p-6">
-            <small>Übersicht</small>
-            <H3>{selectedTab.title}</H3>
+          {tabs.categories[selectedCategory].trains.map((item) => (
+            <div key={item.name} className="bg-white text-black flex flex-col">
+              <img className="w-full" src={item.img} />
+              <div className="p-6">
+                <small className="text-greySolid-600 flex mb-2">
+                  {item.category}
+                </small>
+                <div className="flex flex-row items-center justify-between">
+                  <H3 styles="mb-0">{item.name}</H3>
+                  <a href="#">
+                    <img src="/icons/arrow-blue.svg" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+          <div className="bg-transparent text-white border-solid border-2 border-white grid p-6">
+            <div className="self-center">
+              <small>Übersicht</small>
+              <H3>{tabs.categories[selectedCategory].title}</H3>
+            </div>
+            <div className="justify-self-end place-self-end">
+              <a href="#">
+                <img className="w-5" src="/icons/arrow-white.svg" />
+              </a>
+            </div>
           </div>
         </motion.div>
       </ContentWidth>
