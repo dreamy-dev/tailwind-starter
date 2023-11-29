@@ -11,7 +11,7 @@ import Link from "../typography/Link";
 const tabs = {
   categories: [
     {
-      title: "Mainline",
+      title: "Vollbahnen",
       image: "/trains-1.png",
       trains: [
         {
@@ -107,7 +107,7 @@ const tabs = {
       ],
     },
     {
-      title: "Locomotives",
+      title: "Lokomotiven",
       image: "/trains-2.png",
       trains: [
         {
@@ -266,13 +266,25 @@ const TrainCarousel = (props?: any) => {
                 <small className="text-greySolid-600 flex mb-2">
                   {item.category}
                 </small>
-                <H3>{item.name}</H3>
+                <div className="flex flex-row items-center justify-between">
+                  <H3 styles="mb-0">{item.name}</H3>
+                  <a href="#">
+                    <img src="/icons/arrow-blue.svg" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
-          <div className="bg-transparent text-white border-solid border-2 border-white flex flex-col justify-center p-6">
-            <small>Übersicht</small>
-            <H3>{tabs.categories[selectedCategory].title}</H3>
+          <div className="bg-transparent text-white border-solid border-2 border-white grid p-6">
+            <div className="self-center">
+              <small>Übersicht</small>
+              <H3>{tabs.categories[selectedCategory].title}</H3>
+            </div>
+            <div className="justify-self-end place-self-end">
+              <a href="#">
+                <img className="w-5" src="/icons/arrow-white.svg" />
+              </a>
+            </div>
           </div>
         </motion.div>
       </ContentWidth>
