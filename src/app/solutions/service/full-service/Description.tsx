@@ -10,7 +10,7 @@ export default function Description() {
           alt="full service"
         />
         <div className="mt-4 md:mt-0">
-          <H2 textColor="black" styles="font-extrabold mb-8">
+          <H2 styles="font-extrabold mb-8">
             Beschreibung des Full Service Angebots
           </H2>
           <p className="mb-6 font-normal text-black-500 md:text-lg">
