@@ -11,8 +11,11 @@ export default function Video() {
           <div className="max-width: 945px; max-height: 540px; overflow: hidden;">
             <video
               className="width: 100%; height: 100%; object-fit: cover; 2xl:max-w-[880px]"
-              controls
-              src={"/MovieStadler.mp4"}
+              controls={false}
+              autoPlay={true}
+              muted={true}
+              src={"/videos/Movie-Stadler-Kurz-People-Focus.mp4"}
+              loop={true}
             />
           </div>
           <div className="lg:px-20 ">
@@ -21,6 +24,11 @@ export default function Video() {
                 Karriere bei Stadler
               </H2>
               <Text styles="text-xl">
+                Der Erfolg von Stadler beruht auf der leidenschaftlichen
+                Zusammenarbeit von unternehmerisch handelnden Menschen, die auch
+                Unmögliches möglich machen.
+                <br />
+                <br />
                 Wer alles für die besten Züge der Welt macht, braucht die besten
                 Talente.
               </Text>
