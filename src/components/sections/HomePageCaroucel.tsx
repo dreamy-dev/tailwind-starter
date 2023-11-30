@@ -217,7 +217,7 @@ const HomePageCaroucel: React.FC = () => {
                     >
                       {/* <a href="#"> */}
                       <img
-                        className="w-full max-h-[430px]"
+                        className="w-full max-h-[430px] object-cover"
                         src={card.img}
                         alt=""
                       />
