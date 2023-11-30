@@ -17,7 +17,6 @@ export default function MobileModal() {
         <div>
           <div className="fixed inset-0 bg-gray-800 bg-opacity-100 transition-opacity" />
         </div>
-
         <div className="fixed inset-0 w-screen ">
           <div className="flex h-full w-full items-center justify-center text-center">
             <div>
@@ -31,11 +30,11 @@ export default function MobileModal() {
                   </div>
                   <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                     <div className="text-base font-semibold leading-6 text-gray-900">
-                      Noch nicht bereit für Überprüfung
+                      Diese Ansicht ist noch nicht fertig
                     </div>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Noch im Entwicklungsprozess
+                        Diese Ansicht sind wir noch am Entwickeln
                       </p>
                     </div>
                   </div>
