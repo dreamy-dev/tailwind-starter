@@ -17,7 +17,7 @@ export default function MapTextTitle(props?: any) {
               7 Produktionsorte, 5 Signalling-Kompetenzcenter, 7
               Komponentenwerke, über 80 Service-Standorte.
             </strong>
-            An diesen Orten setzen wir uns mit unserer Expertise und viel
+            &nbsp;An diesen Orten setzen wir uns mit unserer Expertise und viel
             Innovation für nachhaltige Mobilität ein und gestalten die Zukunft
             der Mobilität aktiv mit.
           </Text>
