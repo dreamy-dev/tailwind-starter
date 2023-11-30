@@ -4,7 +4,7 @@ type Props = {
 
 export default function ContentWidth({ children }: Props) {
   return (
-    <div className="px-20 grid grid-cols-12 gap-6 2xl:max-w-screen-2xl mx-auto">
+    <div className="px-20 2xl:px-0 grid grid-cols-12 gap-6 2xl:max-w-screen-2xl mx-auto">
       {children}
     </div>
   );
