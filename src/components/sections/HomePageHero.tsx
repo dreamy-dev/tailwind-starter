@@ -34,9 +34,9 @@ export default function HomePageHero() {
           initial={{ x: -1800 }}
           animate={{ x: 0 }}
           transition={{ duration: 1 }}
-          className="w-full  bg-center bg-cover bg-no-repeat"
+          className="w-full bg-center bg-cover bg-no-repeat"
         >
-          <img src="/hero-snow-train.jpg" className="w-full" alt="" />
+          <img src="/hero-home-big.jpg" className="w-full" alt="" />
         </motion.div>
       </div>
     </div>
