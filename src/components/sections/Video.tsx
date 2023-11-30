@@ -8,17 +8,17 @@ export default function Video() {
     <div className="bg-white py-24  2xl:max-w-[1760px] 2xl:mx-auto">
       <FullWidth>
         <div className="col-span-12 flex flex-col lg:flex-row justify-between items-center">
-          <div className="max-width: 945px; max-height: 540px; overflow: hidden;">
+          <div className="overflow-hidden w-2/3 ">
             <video
-              className="width: 100%; height: 100%; object-fit: cover; 2xl:max-w-[880px]"
+              className="-mt-[1%] -mb-[1%]"
               controls={false}
               autoPlay={true}
               muted={true}
-              src={"/videos/Movie-Stadler-Kurz-People-Focus.mp4"}
+              src={"/videos/Movie-Stadler-Kurz-People-Focus-no-frame-1080.mp4"}
               loop={true}
             />
           </div>
-          <div className="lg:px-20 ">
+          <div className="lg:px-20 w-1/3">
             <div className="">
               <H2 resetStyles={true} styles="text-4xl font-bold mb-6">
                 Karriere bei Stadler

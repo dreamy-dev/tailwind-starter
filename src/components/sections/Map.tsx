@@ -53,7 +53,7 @@ export default function Map() {
               <ul className="text-primary ">
                 {countries.map((country, index) => (
                   <li className="mb-3 whitespace-no-wrap w-[250px]" key={index}>
-                    {country}
+                    <a href="#">{country}</a>
                   </li>
                 ))}
               </ul>
