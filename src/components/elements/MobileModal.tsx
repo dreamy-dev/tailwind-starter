@@ -30,11 +30,13 @@ export default function MobileModal() {
                   </div>
                   <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                     <div className="text-base font-semibold leading-6 text-gray-900">
-                      Diese Ansicht ist noch nicht fertig
+                      Die Mobile Ansicht ist noch nicht ready.
                     </div>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Diese Ansicht sind wir noch am Entwickeln
+                        Die Mobile / Handy Ansicht der Website befindet sich
+                        noch in der Entwicklung. Den Link bis dahin bitte auf
+                        Laptop / PC öffnen.
                       </p>
                     </div>
                   </div>
