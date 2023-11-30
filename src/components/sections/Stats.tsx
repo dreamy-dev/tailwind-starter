@@ -16,8 +16,8 @@ const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
   return (
     <ContentWidth>
       <motion.div className="" />
-      <div className={`my-24 col-span-12 max-w-full  ${backgroundColor}`}>
-        <div className=" px-6 lg:px-8">
+      <div className={`mt-16 mb-24 col-span-12 max-w-full  ${backgroundColor}`}>
+        <div className="px-6 lg:px-8">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-24 text-center lg:grid-cols-4">
             {data.map((stat, index) => (
               <div
@@ -25,7 +25,7 @@ const Stats: React.FC<StatsProps> = ({ data, backgroundColor }) => {
                 key={index}
               >
                 <dt className="text-xl leading-7 text-primary">{stat.text}</dt>
-                <dd className="order-first  text-[64px] font-semibold tracking-tight text-black sm:text-5xl">
+                <dd className="order-first text-6xl font-bold tracking-tight text-black sm:text-5xl">
                   <CountUp
                     end={stat.end}
                     suffix={stat.suffix}

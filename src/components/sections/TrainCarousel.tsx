@@ -224,31 +224,35 @@ const TrainCarousel = (props?: any) => {
         />
       </FullWidth>
       <ContentWidth>
-        <div className="col-span-8 col-start-3 col-end-11 grid grid-cols-4 my-6">
-          {tabs.categories.map((item, key) => (
-            <div
-              key={item.title}
-              className={`${
-                selectedCategory === key
-                  ? "text-white"
-                  : "text-greyBrighten-600"
-              } font-semibold text-center flex flex-col items-center cursor-pointer`}
-              onClick={() => (
-                setIsOpen(
-                  selectedCategory === key && isOpen === false ? true : false
-                ),
-                setSelectedCategory(key)
-              )}
-            >
-              <p>{item.title}</p>
-              <motion.img
-                className={`${selectedCategory === key ? "w-4" : "w-0"} mt-2`}
-                src="/plus-light.svg"
-                animate={selectedCategory === key && isOpen ? "open" : "close"}
-                variants={plusAnimation}
-              />
-            </div>
-          ))}
+        <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
+          <div className="flex flex-row items-start justify-center">
+            {tabs.categories.map((item, key) => (
+              <div
+                key={item.title}
+                className={`${
+                  selectedCategory === key
+                    ? "text-white"
+                    : "text-greyBrighten-600"
+                } font-semibold text-center px-4 flex flex-col items-center cursor-pointer`}
+                onClick={() => (
+                  setIsOpen(
+                    selectedCategory === key && isOpen === false ? true : false
+                  ),
+                  setSelectedCategory(key)
+                )}
+              >
+                <p>{item.title}</p>
+                <motion.img
+                  className={`${selectedCategory === key ? "w-4" : "w-0"} mt-2`}
+                  src="/plus-light.svg"
+                  animate={
+                    selectedCategory === key && isOpen ? "open" : "close"
+                  }
+                  variants={plusAnimation}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </ContentWidth>
       <ContentWidth>
