@@ -12,7 +12,7 @@ const tabs = {
   categories: [
     {
       title: "Vollbahnen",
-      image: "/trains-1.png",
+      image: "/trains-1-narrow.png",
       trains: [
         {
           img: "train-models/mainline/smile.jpeg",
@@ -60,7 +60,7 @@ const tabs = {
     },
     {
       title: "Urban",
-      image: "/trains.png",
+      image: "/trains-narrow.png",
       trains: [
         {
           img: "train-models/urban/tina.jpeg",
@@ -108,7 +108,7 @@ const tabs = {
     },
     {
       title: "Lokomotiven",
-      image: "/trains-2.png",
+      image: "/trains-2-narrow.png",
       trains: [
         {
           img: "train-models/locomotive/euro9000.jpeg",
@@ -156,7 +156,7 @@ const tabs = {
     },
     {
       title: "Tailor Made",
-      image: "/trains-3.png",
+      image: "/trains-3-narrow.png",
       trains: [
         {
           img: "train-models/tailormade/triebzug.jpeg",
