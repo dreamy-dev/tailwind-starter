@@ -23,7 +23,7 @@ const cards = [
   {
     title: "FLIRT bewegt die Welt",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/card-1.jpg",
+    img: "/Card2.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
@@ -33,7 +33,7 @@ const cards = [
   {
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/card-1.jpg",
+    img: "/Card2.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
@@ -43,7 +43,7 @@ const cards = [
   {
     title: "Im Land der längsten Zugstrecken",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/card-1.jpg",
+    img: "/Card2.jpg",
   },
 ];
 
