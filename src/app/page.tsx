@@ -14,7 +14,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleResize = () => {
-      setShowMobileModal(window.innerWidth <= 1024);
+      setShowMobileModal(window.innerWidth <= 1284);
     };
 
     handleResize();
@@ -27,13 +27,12 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      {/* {showMobileModal && <MobileModal />} */}
+      {showMobileModal && <MobileModal />}
       <HomePageHero />
       <FactsAndFigures />
       <TrainCarousel />
       <HomePageCaroucel />
       <Map></Map>
-
       <Video></Video>
     </>
   );
