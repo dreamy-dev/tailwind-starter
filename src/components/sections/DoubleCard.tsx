@@ -20,11 +20,7 @@ export default function DoubleCard() {
                   href="#"
                   className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
                 >
-                  <H2
-                    textColor="white"
-                    resetStyles={true}
-                    styles="mb-4 text-4xl font-bold"
-                  >
+                  <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
                     Signalling
                   </H2>
                   <Text styles="text-greyBrighten-800 mb-4">
@@ -64,11 +60,7 @@ export default function DoubleCard() {
                   href="#"
                   className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-white mb-5"
                 >
-                  <H2
-                    textColor="white"
-                    resetStyles={true}
-                    styles="mb-4 text-4xl font-bold"
-                  >
+                  <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
                     Service
                   </H2>
                   <Text styles="text-greyBrighten-800 mb-4">
