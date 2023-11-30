@@ -28,7 +28,7 @@ const cards = [
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/card-2.jpg",
+    img: "/card-2-carousel.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
@@ -38,7 +38,7 @@ const cards = [
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
     text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/card-2.jpg",
+    img: "/card-2-carousel.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
@@ -175,7 +175,7 @@ const HomePageCaroucel: React.FC = () => {
       <FullWidth>
         <div className="col-span-12">
           <div className="relative">
-            <div className="flex justify-center items-center ">
+            <div className="flex justify-center items-center mb-4">
               <H2>Erfolgsgeschichten</H2>
             </div>
             {isMobile && (
