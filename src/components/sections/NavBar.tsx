@@ -54,6 +54,7 @@ const navigationMain: NavItems = {
 };
 
 export default function NavBar() {
+  console.log("check");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
