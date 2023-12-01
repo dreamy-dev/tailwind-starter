@@ -29,25 +29,25 @@ type NavItems = {
 
 const navigationMain: NavItems = {
   topNav: [
-    { title: "Unternehmen", href: "/unternehmen", icon: false },
+    { title: "Unternehmen", href: "/#", icon: false },
     {
       title: "Lösungen",
-      href: "/solutions",
+      href: "/##",
       icon: <IconNav></IconNav>,
       submenu: true,
       submenuItems: [
         {
           title: "Schienenfahrzeuge",
-          href: "/solutions/schienenfahrzeuge",
+          href: "/#",
         },
-        { title: "Signalling", href: "/solutions/signalling" },
-        { title: "Service", href: "/solutions/service" },
+        { title: "Signalling", href: "/#" },
+        { title: "Service", href: "/#" },
       ],
     },
-    { title: "Karriere", href: "/career", icon: false },
+    { title: "Karriere", href: "/#", icon: false },
     {
       title: "Investor Relations",
-      href: "/investors",
+      href: "/#",
       icon: false,
     },
   ],
@@ -70,7 +70,7 @@ export default function NavBar() {
             <ul className="flex flex-col items-center lg:flex-row font-medium mt-4 rounded-lg bg-white md:flex-row md:items-center md:mt-0 md:border-0 md:bg-transparent">
               {navigationMain.topNav.map((item) => (
                 <li key={item.title} className="px-5">
-                  {item.href == "/solutions" ? (
+                  {item.href == "/##" ? (
                     <motion.div
                       className="flex gap-2 justify-center items-center cursor-pointer py-5 pl-3 pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                       onClick={() => setIsOpen((isOpen) => !isOpen)}
@@ -104,7 +104,7 @@ export default function NavBar() {
                       <ContentWidth>
                         <div className="grid col-span-6 col-start-5 grid-cols-2 gap-6 p-8">
                           <Link
-                            href="/solutions"
+                            href="/#"
                             className=" bg-primaryTrans-100 text-primary px-8 py-24 text-center"
                             onClick={() => setIsOpen((isOpen) => !isOpen)}
                           >

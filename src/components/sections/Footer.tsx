@@ -4,11 +4,11 @@ import ContentWidth from "../layouts/ContentWidth";
 
 const navigation = {
   legal: [
-    { name: "Impressum", href: "/impressum" },
-    { name: "Disclaimer", href: "/disclaimer" },
-    { name: "Compliance", href: "/compliance" },
-    { name: "Cookies", href: "/cookies" },
-    { name: "Zertifizierung", href: "/zertifiyierung" },
+    { name: "Impressum", href: "/#" },
+    { name: "Disclaimer", href: "/#" },
+    { name: "Compliance", href: "/#" },
+    { name: "Cookies", href: "/#" },
+    { name: "Zertifizierung", href: "/#" },
   ],
   social: [
     {
