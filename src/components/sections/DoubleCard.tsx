@@ -6,16 +6,16 @@ export default function DoubleCard() {
   return (
     <section className="py-24 sm:py-24">
       <ContentWidth>
-        <div className="col-span-12  max-w-full mx-auto">
+        <div className="col-span-12 max-w-full mx-auto">
           <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
-          <ul className="flex items-center justify-start flex-col gap-20 sm:gap-12 md:gap-20 lg:gap-y-28 md:flex-row">
-            <li className="max-w-[50%]">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 sm:gap-12 md:gap-20 lg:gap-y-28">
+            <li className="pr-[10%]">
               <img
-                src="/teaser_signalling.jpg"
+                src="/teaser_signalling-2.jpg"
                 alt="Image"
-                className="max-w-[80%] h-[400px]"
+                className="max-w-[90%] max-h-[400px]"
               />
-              <div className="pr-0 lg:pr-16 ">
+              <div className="pr-0">
                 <a
                   href="#"
                   className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
@@ -49,13 +49,13 @@ export default function DoubleCard() {
                 </a>
               </div>
             </li>
-            <li className="max-w-[50%]">
+            <li className="pr-[10%]">
               <img
                 src="/teaser_service.jpeg"
                 alt="Image"
-                className="max-w-[80%] h-[400px]"
+                className="max-w-[90%] max-h-[400px]"
               />
-              <div className=" pr-0 lg:pr-16 ">
+              <div className="pr-0">
                 <a
                   href="#"
                   className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-white mb-5"
