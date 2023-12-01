@@ -73,8 +73,7 @@ export default function NavBar() {
                   {item.href == "/solutions" ? (
                     <motion.div
                       className="flex gap-2 justify-center items-center cursor-pointer py-5 pl-3 pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                      onMouseEnter={() => setIsOpen((isOpen) => !isOpen)}
-                      onMouseLeave={() => setIsOpen((isOpen) => !isOpen)}
+                      onClick={() => setIsOpen((isOpen) => !isOpen)}
                     >
                       {item.title}
                       <motion.span></motion.span>

@@ -52,7 +52,7 @@ const FactsAndFigures = (props?: any) => {
                   </div>
                   <div className="mx-auto flex max-w-[400]  flex-col gap-y-2">
                     <dt className="text-xl leading-7 text-black">
-                      Auftragsbestand in CHF
+                      Auftragseingang in CHF
                     </dt>
                     <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                       <CountUp
