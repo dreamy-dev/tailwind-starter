@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 export default function HomePageHero() {
   return (
     <div className="mx-auto w-full bg-white">
-      <div className="w-full 3xl:max-h-[1150px] max-h-[950px] overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
+      <div className="w-full 3xl:max-h-[1150px] max-h-[750px] overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
         <motion.div
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="w-[744px] top-[9%] bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 transform -translate-y-1/2 -translate-x-1/2 "
+          className="w-[680px] 2xl:w-[744px] top-[7%] 2xl:top-[9%] bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 transform -translate-y-1/2 -translate-x-1/2 "
         >
           <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
             <img src="/Graph.svg" className="block h-auto w-full" alt="" />
