@@ -89,6 +89,7 @@ export default function NavBar() {
 
                   {item.submenu && item.submenuItems && (
                     <motion.div
+                      initial={"closed"}
                       animate={isOpen ? "open" : "closed"}
                       variants={variants}
                       style={{
