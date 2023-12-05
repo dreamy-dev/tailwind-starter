@@ -8,7 +8,7 @@ import H2 from "../typography/H2";
 const publications = [
   {
     img: "/publications/publ-card-1.png",
-    title: "Halbjahresbericht 2022",
+    title: "Halbjahresbericht 2023",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
@@ -19,18 +19,49 @@ const publications = [
     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
-    img: "/publications/publ-card-3.png",
-    title: "Halbjahresbericht 2022",
-    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_rail_halbjahresbericht_2022_de_web%203.pdf",
+    img: "/publications/publ-card-4.png",
+    title: "Nachhaltigkeitsbericht 2021",
+    text: "Unser Erfolgsmodell FLIRT bewegt täglich.",
+    href: "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
   },
-//   {
-//     img: "/publications/publ-2.png",
-//     title: "Halbjahresbericht 2021",
-//     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-//     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
-//   },
+];
 
+const tableData = [
+  {
+    publication: "Geschäftsbericht 2021",
+    date: "13. März 2021",
+    link: "https://www.stadlerrail.com/media/pdf/web_stadler_gb_2021_de.pdf",
+  },
+  {
+    publication: " Halbjahresbericht 2021",
+    date: "13. May 2021",
+    link: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
+  },
+  {
+    publication: "Geschäftsbericht 2020",
+    date: "22. May 2020",
+    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+  },
+  {
+    publication: "Halbjahresbericht 2020",
+    date: "24. December 2020",
+    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+  },
+  {
+    publication: " Geschäftsbericht 2019",
+    date: "15. August 2019",
+    link: "https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb19_de.pdf",
+  },
+  {
+    publication: "Halbjahresbericht 2019",
+    date: "1. January 2019",
+    link: "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
+  },
+  {
+    publication: "Finanzbericht 2018",
+    date: "10. Juli 2018",
+    link: "https://www.stadlerrail.com/media/pdf/finanzbericht_2018_de.pdf",
+  },
 ];
 
 export default function Publicationen() {
@@ -155,74 +186,30 @@ export default function Publicationen() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                {tableData.map((item, index) => (
+                  <tr
+                    key={index}
+                    className=
+                     "bg-white border-b dark:bg-black dark:border-gray-700"
                   >
-                    Halbjahresbericht
-                  </th>
-                  <td className="px-6 py-4">13. März 2023</td>
-                  <td className="px-6 py-4 text-primary">
-                    <a
-                      href="https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb20_de.pdf"
-                      target="_blank"
+                    <th
+                      scope="row"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
                     >
-                      PDF
-                    </a>
-                  </td>
-                </tr>
-                <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
-                  >
-                    Geschäftsbericht
-                  </th>
-                  <td className="px-6 py-4">13. März 2022</td>
-                  <td className="px-6 py-4 text-primary">
-                    <a
-                      href="https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb20_de.pdf"
-                      target="_blank"
-                    >
-                      PDF
-                    </a>
-                  </td>
-                </tr>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
-                  >
-                    Halbjahresbericht
-                  </th>
-                  <td className="px-6 py-4">22. May 2022</td>
-                  <td className="px-6 py-4 text-primary">
-                    <a
-                      href="https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf"
-                      target="_blank"
-                    >
-                      PDF
-                    </a>
-                  </td>
-                </tr>
-                {/* <tr className="bg-white dark:bg-gray-800">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
-                  >
-                    Geschäftsbericht
-                  </th>
-                  <td className="px-6 py-4">24. December 2021</td>
-                  <td className="px-6 py-4 text-primary">
-                    <a
-                      href="https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb19_de.pdf"
-                      target="_blank"
-                    >
-                      PDF
-                    </a>
-                  </td>
-                </tr> */}
+                      {item.publication}
+                    </th>
+                    <td className="px-6 py-4">{item.date}</td>
+                    <td className="px-6 py-4 text-primary">
+                      <a
+                        href={item.link}
+                        target="_blank"
+                      
+                      >
+                        PDF
+                      </a>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
