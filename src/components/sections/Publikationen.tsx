@@ -7,19 +7,19 @@ import H2 from "../typography/H2";
 
 const publications = [
   {
-    img: "/publications/publ-1.png",
+    img: "/publications/publ-card-1.png",
     title: "Halbjahresbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
-    img: "/publications/publ-1.png",
+    img: "/publications/publ-card-2.png",
     title: "Geschäftsbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
-    img: "/publications/publ-2.png",
+    img: "/publications/publ-card-3.png",
     title: "Halbjahresbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
     href: "https://www.stadlerrail.com/media/pdf/stadler_rail_halbjahresbericht_2022_de_web%203.pdf",
@@ -55,7 +55,7 @@ export default function Publicationen() {
               >
                 <a href="#">
                   <img
-                    className="object-cover max-h-[250px] w-full"
+                    className="object-contain max-h-auto w-full"
                     src={publication.img}
                     alt={publication.title}
                   />
@@ -206,7 +206,7 @@ export default function Publicationen() {
                     </a>
                   </td>
                 </tr>
-                <tr className="bg-white dark:bg-gray-800">
+                {/* <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
                     className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
@@ -222,7 +222,7 @@ export default function Publicationen() {
                       PDF
                     </a>
                   </td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>
