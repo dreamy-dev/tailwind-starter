@@ -11,7 +11,7 @@ export default function Features() {
           </div>
           <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 md:gap-16 md:flex-row">
             <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
-              <img src="/spacer.jpg" alt="Image" />
+              <img src="/teaser_signalling-2.jpg" alt="Image" />
 
               <a
                 href="#"
@@ -33,7 +33,7 @@ export default function Features() {
               </a>
             </li>
             <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
-              <img src="/spacer2.jpg" alt="Image" />
+              <img src="/teaser_service.jpeg" alt="Image" />
 
               <a
                 href="#"

@@ -18,7 +18,7 @@ export default function Contact(props?: any) {
           </div>
           <div className="w-2/3">
             <div className=" tracking-tight">
-              <H2 styles="mb-8">{props.title ?? "Ihr Kontakt"}</H2>
+              <H2 styles="mb-8 text-white">{props.title ?? "Ihr Kontakt"}</H2>
             </div>
             <div className="mb-8 font-light md:text-lg text-white">
               <Text>
