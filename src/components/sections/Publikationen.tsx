@@ -8,7 +8,13 @@ import H2 from "../typography/H2";
 const publications = [
   {
     img: "/publications/publ-1.png",
-    title: "Halbjahresbericht 2023",
+    title: "Halbjahresbericht 2022",
+    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
+    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+  },
+  {
+    img: "/publications/publ-1.png",
+    title: "Geschäftsbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
@@ -18,12 +24,13 @@ const publications = [
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
     href: "https://www.stadlerrail.com/media/pdf/stadler_rail_halbjahresbericht_2022_de_web%203.pdf",
   },
-  {
-    img: "/publications/publ-3.png",
-    title: "Halbjahresbericht 2021",
-    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
-  },
+//   {
+//     img: "/publications/publ-2.png",
+//     title: "Halbjahresbericht 2021",
+//     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
+//     href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
+//   },
+
 ];
 
 export default function Publicationen() {
@@ -38,11 +45,9 @@ export default function Publicationen() {
       <ContentWidth>
         <div className="col-span-12  w-full">
           <div className="text-start">
-            <H2 >
-              Publikationen
-            </H2>
+            <H2>Publikationen</H2>
           </div>
-          <div className="w-full mx-auto justify-center items-center grid grid-cols-1 gap-x-20 gap-y-10 lg:max-w-none lg:grid-cols-3">
+          <div className="w-full mx-auto justify-center items-center grid grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-3">
             {publications.map((publication) => (
               <div
                 key={publication.title}
@@ -155,9 +160,26 @@ export default function Publicationen() {
                     scope="row"
                     className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
                   >
+                    Halbjahresbericht
+                  </th>
+                  <td className="px-6 py-4">13. März 2023</td>
+                  <td className="px-6 py-4 text-primary">
+                    <a
+                      href="https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb20_de.pdf"
+                      target="_blank"
+                    >
+                      PDF
+                    </a>
+                  </td>
+                </tr>
+                <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                  >
                     Geschäftsbericht
                   </th>
-                  <td className="px-6 py-4">2020</td>
+                  <td className="px-6 py-4">13. März 2022</td>
                   <td className="px-6 py-4 text-primary">
                     <a
                       href="https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb20_de.pdf"
@@ -174,7 +196,7 @@ export default function Publicationen() {
                   >
                     Halbjahresbericht
                   </th>
-                  <td className="px-6 py-4">2020</td>
+                  <td className="px-6 py-4">22. May 2022</td>
                   <td className="px-6 py-4 text-primary">
                     <a
                       href="https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf"
@@ -191,7 +213,7 @@ export default function Publicationen() {
                   >
                     Geschäftsbericht
                   </th>
-                  <td className="px-6 py-4">2019</td>
+                  <td className="px-6 py-4">24. December 2021</td>
                   <td className="px-6 py-4 text-primary">
                     <a
                       href="https://www.stadlerrail.com/media/pdf/web_stadler_rail_gb19_de.pdf"
