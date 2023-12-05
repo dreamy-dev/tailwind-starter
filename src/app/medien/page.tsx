@@ -1,5 +1,23 @@
 "use client";
 
+import Career from "@/components/sections/Career";
+import Subscribe from "@/components/sections/Subscribe";
+import Publicationen from "@/components/sections/Publikationen";
+import HeroText from "@/components/sections/HeroText";
+
+
 export default function Medien() {
-  return <div> Medien page</div>;
+  return (
+    <div>
+      <HeroText
+       
+     
+        title={<>Medienbereich</>}
+        leadText="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+      />
+      <Publicationen></Publicationen>
+      <Career></Career>
+      <Subscribe />
+    </div>
+  );
 }
