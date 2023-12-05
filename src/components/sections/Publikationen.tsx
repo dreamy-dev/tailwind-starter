@@ -50,7 +50,7 @@ export default function Publicationen() {
               >
                 <a href="#">
                   <img
-                    className="object-cover"
+                    className="object-cover max-h-[250px] w-full"
                     src={publication.img}
                     alt={publication.title}
                   />
