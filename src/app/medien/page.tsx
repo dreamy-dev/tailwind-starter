@@ -6,6 +6,7 @@ import Publicationen from "@/components/sections/Publikationen";
 import HeroText from "@/components/sections/HeroText";
 import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TeaserDownload from "../../components/sections/TeaserDownload";
+import EventCalendar from "@/components/sections/EventCalendar";
 
 const newsCards = [
   {
@@ -103,7 +104,9 @@ export default function Medien() {
       <HomePageCaroucel items={newsCards} carouselTitle="News room" />
       <TeaserDownload></TeaserDownload>
       <Publicationen></Publicationen>
+      <EventCalendar></EventCalendar>
       <Contact></Contact>
+      <TeaserDownload></TeaserDownload>
       <Subscribe />
     </div>
   );

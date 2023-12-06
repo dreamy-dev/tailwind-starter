@@ -1,7 +1,7 @@
 export default function Subscribe() {
   return (
-    <section className="bg-white my-20">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <section className="bg-white mb-20">
+      <div className="px-4 mx-auto max-w-screen-xl lg:px-6">
         <div className="gap-16 justify-between items-center p-6 text-white bg-primary rounded-lg lg:flex lg:gap-24 md:p-12">
           <div className="w-full">
             <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl">

@@ -1,0 +1,76 @@
+import ContentWidth from "../layouts/ContentWidth";
+const eventData = [
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+];
+export default function EventCalendar() {
+  return (
+    <>
+      <section className="bg-white py-20">
+        <ContentWidth>
+          <div className="max-w-full col-span-12">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" className="px-6 py-3">
+                   Event
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                   Date
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                   Event ansehen
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {eventData.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="bg-white border-b dark:bg-black dark:border-gray-700"
+                  >
+                    <th
+                      scope="row"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                    >
+                      {item.event}
+                    </th>
+                    <td className="px-6 py-4">{item.date}</td>
+                    <td className="px-6 py-4 text-primary">
+                      <a href={item.link} target="_blank">
+                        Event ansehen
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </ContentWidth>
+      </section>
+    </>
+  );
+}

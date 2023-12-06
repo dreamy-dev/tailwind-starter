@@ -17,7 +17,7 @@ function TeaserDownload() {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </Text>
-          <ButtonPrimary position="left">
+          <ButtonPrimary position="left" href="/downloadcenter">
             Download Center{" "}
             <svg
               width="15"
