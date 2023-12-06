@@ -18,7 +18,7 @@ function TeaserDownload() {
             aliquip ex ea commodo consequat.
           </Text>
           <ButtonPrimary position="left" href="/downloadcenter">
-            Download Center{" "}
+            Alle Medienmitteilungen
             <svg
               width="15"
               height="15"

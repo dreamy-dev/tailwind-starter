@@ -18,7 +18,7 @@ export default function Service() {
       <img
         width={"100%"}
         className="h-700"
-        src="/header_service2.jpg"
+        src="/teaser_service.jpeg"
         alt="hero product image"
       />
       <ServiceTeasers />

@@ -5,11 +5,14 @@ import H2 from "../typography/H2";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
+import ButtonPrimary from "../elements/ButtonPrimary";
 
 interface Cards {
   title: string;
   text: string;
   img: string;
+  date?: string;
+ 
 }
 
 interface TestimonialMotionProps extends MotionProps {
@@ -20,6 +23,8 @@ interface TestimonialMotionProps extends MotionProps {
 interface CarouselProps {
   items: Cards[];
   carouselTitle: string;
+  showButton?: boolean;
+  showDate?: boolean;
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
@@ -35,6 +40,8 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+   const [showDate, setShowDate] = useState(true);
 
   //Show dots on mobile
   useEffect(() => {
@@ -159,7 +166,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
         <div className="col-span-12">
           <div className="relative">
             <div className="flex justify-center items-center mb-4">
-              <H2>{ carouselTitle}</H2>
+              <H2>{carouselTitle}</H2>
             </div>
             {isMobile && (
               <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
@@ -209,6 +216,12 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
                         <div className="mb-4">
                           <H3>{card.title}</H3>
                         </div>
+                        {showDate && (
+                          <div className="mb-4 text-primary">
+                            <p>{card.date}</p>
+                          </div>
+                        )}
+
                         <div className="mb-4">
                           <Text>{card.text}</Text>
                         </div>
@@ -282,6 +295,37 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
               </motion.div>
             </div>
           </div>
+          {showButton && (
+            <div className="mt-10">
+              <ButtonPrimary position="left">
+                Alle News{" "}
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
+            </div>
+          )}
         </div>
       </FullWidth>
     </section>
