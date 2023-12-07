@@ -74,7 +74,11 @@ export default function Unternehmen() {
       <CorporateGorvernance />
       {/* <Nachhaltigkeit /> */}
       <History />
-      <HomePageCarousel items={ cards} carouselTitle="Title"/>
+      <HomePageCarousel
+        items={cards}
+        carouselTitle="Title"
+        h2Styles="flex justify-center items-center"
+      />
       <NewsTeaser />
       <Subscribe />
     </>

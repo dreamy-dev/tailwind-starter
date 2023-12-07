@@ -64,7 +64,11 @@ export default function HomePage() {
       <HomePageHero />
       <FactsAndFigures />
       <TrainCarousel />
-      <HomePageCaroucel items={cards} carouselTitle="Erfolgsgeschichten" />
+      <HomePageCaroucel
+        items={cards}
+        carouselTitle="Erfolgsgeschichten"
+        h2Styles="flex justify-center items-center"
+      />
       <Map></Map>
       <Video></Video>
     </>

@@ -110,9 +110,10 @@ export default function Medien() {
       />
       <HomePageCaroucel
         items={newsCards}
-        carouselTitle="News room"
+        carouselTitle="News"
         showButton={true}
         showDate={true}
+        h2Styles="flex justify-left items-left"
       ></HomePageCaroucel>
 
       <TeaserDownload></TeaserDownload>

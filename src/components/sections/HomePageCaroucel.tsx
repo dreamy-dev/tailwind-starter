@@ -25,6 +25,7 @@ interface CarouselProps {
   carouselTitle: string;
   showButton?: boolean;
   showDate?: boolean;
+  h2Styles?: string;
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
@@ -35,13 +36,14 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 const HomePageCaroucel: React.FC<CarouselProps> = ({
   items,
   carouselTitle,
+ h2Styles 
 }) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showButton, setShowButton] = useState(true);
-   const [showDate, setShowDate] = useState(true);
+  const [showDate, setShowDate] = useState(true);
 
   //Show dots on mobile
   useEffect(() => {
@@ -165,8 +167,8 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
       <FullWidth>
         <div className="col-span-12">
           <div className="relative">
-            <div className="flex justify-center items-center mb-4">
-              <H2>{carouselTitle}</H2>
+            <div className="lg:pl-20  mb-4">
+              <H2 styles={h2Styles}>{carouselTitle}</H2>
             </div>
             {isMobile && (
               <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
@@ -192,7 +194,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
                 className="relative w-full max-w-[100%] flex items-center"
                 ref={containerRef}
               >
-                <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px] pr-1 mr-1">
+                <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
                   {items.map((card, idx) => (
                     <TestimonialMotionDiv
                       key={idx}
@@ -296,7 +298,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
             </div>
           </div>
           {showButton && (
-            <div className="mt-10">
+            <div className="mt-10 pl-20">
               <ButtonPrimary position="left">
                 Alle News{" "}
                 <svg
