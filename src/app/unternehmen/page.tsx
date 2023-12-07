@@ -12,6 +12,7 @@ import NewsTeaser from "./NewsTeaser";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
+import FactsAndFigures from "@/components/sections/FactsAndFigures";
 
 const cards = [
   {
@@ -43,6 +44,37 @@ const cards = [
 export default function Unternehmen() {
   const statistics = [
     {
+      text: "Nettoerlös in CHF",
+      start: 0,
+      end: 3.8,
+      suffix: "Mrd.",
+      duration: 3,
+      separator: " ",
+      decimals: 1,
+      decimal: ".",
+    },
+    {
+      text: "Auftragsbestand in CHF",
+      start: 0,
+      end: 22,
+      suffix: "Mrd.",
+      duration: 3,
+    },
+    {
+      text: "Auftragseingang in CHF",
+      start: 0,
+      end: 8.6,
+      suffix: " Mrd.",
+      separator: " ",
+      decimals: 1,
+      decimal: ".",
+      duration: 3,
+    },
+  ];
+
+
+  const  daten= [
+    {
       text: "Mitarbeitende",
       end: 2400,
       suffix: "+",
@@ -68,7 +100,12 @@ export default function Unternehmen() {
       <Hero />
       <DNA />
       {/* <WertePrinzipen /> */}
-      <Stats data={statistics}></Stats>
+      <FactsAndFigures
+        data1={statistics}
+        data2={daten}
+        title="Daten & Facten"
+        showTwoRows={false}
+      ></FactsAndFigures>
       <Land />
       <CorporateGorvernance />
       {/* <Nachhaltigkeit /> */}
