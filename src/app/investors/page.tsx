@@ -10,7 +10,62 @@ import CorporateGorvernance from "../unternehmen/CorporateGovernance";
 import InvestorHero from "./Hero";
 import Publications from "./Publications";
 import TextBlock from "./TextBlock";
-
+const daten = [
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // suffix: "%",
+    // prefix: "&gt;",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    // duration: 3,
+  },
+];
+const fakten = [
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // suffix: "%",
+    // prefix: "&gt;",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    duration: 3,
+  },
+];
 export default function Investors() {
   return (
     <section>
@@ -22,7 +77,7 @@ export default function Investors() {
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen
        */}
-      <FactsAndFigures />
+      <FactsAndFigures data1={daten} data2={fakten} />
       {/* Warum investieren -> Text */}
       {/* Geschätsmodell -> Text */}
       <TextBlock />
