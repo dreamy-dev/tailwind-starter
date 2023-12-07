@@ -11,7 +11,6 @@ import Stats from "../../components/sections/Stats";
 import NewsTeaser from "./NewsTeaser";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
-import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
 
 const cards = [
@@ -69,7 +68,7 @@ export default function Unternehmen() {
       <Hero />
       <DNA />
       {/* <WertePrinzipen /> */}
-      <FactsAndFigures />
+      <Stats data={statistics}></Stats>
       <Land />
       <CorporateGorvernance />
       {/* <Nachhaltigkeit /> */}
