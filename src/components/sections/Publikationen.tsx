@@ -174,13 +174,13 @@ export default function Publicationen() {
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 w-1/3">
                     Publikation
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 w-1/3">
                     Erscheinungsdatum
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 w-1/3">
                     Download
                   </th>
                 </tr>
@@ -189,8 +189,7 @@ export default function Publicationen() {
                 {tableData.map((item, index) => (
                   <tr
                     key={index}
-                    className=
-                     "bg-white border-b dark:bg-black dark:border-gray-700"
+                    className="bg-white border-b dark:bg-black dark:border-gray-700"
                   >
                     <th
                       scope="row"
@@ -200,11 +199,7 @@ export default function Publicationen() {
                     </th>
                     <td className="px-6 py-4">{item.date}</td>
                     <td className="px-6 py-4 text-primary">
-                      <a
-                        href={item.link}
-                        target="_blank"
-                      
-                      >
+                      <a href={item.link} target="_blank">
                         PDF
                       </a>
                     </td>

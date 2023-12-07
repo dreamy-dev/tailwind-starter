@@ -9,13 +9,22 @@ function TeaserDownload() {
   return (
     <section className="bg-white pb-20">
       <ContentWidth>
-        <div className="col-span-12 max-w-full mx-auto">
+        <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>Medienmitteilungen</H2>
-          <Text styles="mb-8 w-1/2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+          <Text styles="mb-4">
+            05.12.2023 Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet
+            starkes Wachstum.
+          </Text>
+          <Text styles="mb-4">
+            09.11.2023 Stadler macht Lokomotiven für das ETCS fit und ermöglicht
+            damit schnelleren ETCS-Roll-Out in Deutschland.
+          </Text>
+          <Text styles="mb-4">
+            07.11.2023 Stadler eröffnet neues Logistikzentrum für den
+            Schienenverkehr in Berlin Pankow. 
+          </Text>
+          <Text styles="mb-8">
+            31.10.2023 TRAMLINK startet Linienverkehr in Bern.
           </Text>
           <ButtonPrimary position="left" href="/downloadcenter">
             Alle Medienmitteilungen
