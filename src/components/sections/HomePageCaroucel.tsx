@@ -167,7 +167,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
       <FullWidth>
         <div className="col-span-12">
           <div className="relative">
-            <div className="lg:pl-20  mb-4">
+            <div className="mb-4">
               <H2 styles={h2Styles}>{carouselTitle}</H2>
             </div>
             {isMobile && (
@@ -298,7 +298,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
             </div>
           </div>
           {showButton && (
-            <div className="mt-10 pl-20">
+            <div className="mt-10">
               <ButtonPrimary position="left">
                 Alle News{" "}
                 <svg
