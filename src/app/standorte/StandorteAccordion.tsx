@@ -48,8 +48,11 @@ export default function StandorteAccordion() {
 
   return (
     <>
-      {locations.map((item) => (
-        <div className="text-gray-500 mb-8 border bg-white border border-gray-200 shadow-md">
+      {locations.map((item, key) => (
+        <div
+          key={key}
+          className="text-gray-500 mb-8 border bg-white border border-gray-200 shadow-md"
+        >
           <div className="flex items-start justify-between w-full p-5 font-medium rtl:text-right text-gray-500">
             <div className="pt-4">
               <div className="flex">
@@ -66,8 +69,9 @@ export default function StandorteAccordion() {
 
               <div className="items-start space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                 <div className="-ml-2 mr-3 w-full flex">
-                  {item.type.map((type) => (
+                  {item.type.map((type, key) => (
                     <a
+                      key={key}
                       href="#"
                       className="inline-block px-4 py-2 mr-4 border rounded-full text-xs"
                     >
