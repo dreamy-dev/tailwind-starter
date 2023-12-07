@@ -77,7 +77,7 @@ export default function Investors() {
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen
        */}
-      <FactsAndFigures data1={daten} data2={fakten} />
+      <FactsAndFigures data1={daten} data2={fakten} showTwoRows={false} title="Daten & Facten"/>
       {/* Warum investieren -> Text */}
       {/* Geschätsmodell -> Text */}
       <TextBlock />
