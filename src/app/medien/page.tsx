@@ -8,6 +8,7 @@ import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TeaserDownload from "../../components/sections/TeaserDownload";
 import EventCalendar from "@/components/sections/EventCalendar";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import TeaserGeneral from "@/components/sections/TeaserGeneral";
 
 
 const newsCards = [
@@ -111,14 +112,15 @@ export default function Medien() {
       <HomePageCaroucel
         items={newsCards}
         carouselTitle="News"
-        showButton={true}
         showDate={true}
+        showButton={true}
         h2Styles="flex justify-left items-left"
       ></HomePageCaroucel>
 
       <TeaserDownload></TeaserDownload>
       <Publicationen></Publicationen>
       <EventCalendar></EventCalendar>
+      <TeaserGeneral title="Mediathek" ctaText="Download center"></TeaserGeneral>
       <Contact></Contact>
 
       <Subscribe />
