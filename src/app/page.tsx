@@ -127,6 +127,7 @@ export default function HomePage() {
         items={cards}
         carouselTitle="Erfolgsgeschichten"
         h2Styles="flex justify-center items-center"
+        showButton={false}
       />
       <Map></Map>
       <Video></Video>
