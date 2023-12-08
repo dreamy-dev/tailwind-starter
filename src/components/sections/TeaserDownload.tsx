@@ -35,8 +35,8 @@ const TeaserDownload: React.FC<TeaserProps> = () => {
           </Lead>
 
           <ul className="mb-8">
-            {listMedienmitteilungen.map((item) => (
-              <li className="mb-6 text-xl flex justify-between items-center">
+            {listMedienmitteilungen.map((item, index) => (
+              <li className="mb-6 text-xl flex justify-between items-center" key={index}>
                 <p className="mr-10">{item.text}</p>
                 <Button
                   textColorClass="text-primary"
