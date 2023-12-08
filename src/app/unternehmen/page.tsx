@@ -14,6 +14,7 @@ import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
+import TeaserGeneral from "@/components/sections/TeaserGeneral";
 
 const cards = [
   {
@@ -117,6 +118,7 @@ export default function Unternehmen() {
         h2Styles="flex justify-center items-center"
        showButton={false}
       />
+      <TeaserGeneral title="News zu Stadler" ctaText="Mehr erfahren"></TeaserGeneral>
       <NewsTeaser />
       <Subscribe />
     </>

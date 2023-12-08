@@ -8,21 +8,24 @@ import ButtonPrimary from "../elements/ButtonPrimary";
 interface TeaserDownloadProps {
   title?: string;
     customText?: string;
-    ctaText?: string;
+  ctaText?: string;
+  href?: string;
 }
 
-function TeaserGeneral({ title, customText, ctaText }: TeaserDownloadProps) {
+function TeaserGeneral({ title, customText, ctaText, href }: TeaserDownloadProps) {
   return (
     <section className="bg-white pb-20">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>{title}</H2>
-          <Text styles="mb-8">{customText? customText : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
-          
+          <Text styles="mb-8 text-xl">
+            {customText
+              ? customText
+              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
           </Text>
 
-          <ButtonPrimary position="left" href="/downloadcenter">
-          {ctaText ? ctaText : "Alle ansehen"}
+          <ButtonPrimary position="left" href={href ? href : "/downloadcenter"}>
+            {ctaText ? ctaText : "Alle ansehen"}
             <svg
               width="15"
               height="15"

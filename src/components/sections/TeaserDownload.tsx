@@ -2,30 +2,68 @@
 
 import ContentWidth from "../layouts/ContentWidth";
 import H2 from "../typography/H2";
-import Text from "../typography/Text";
+import Lead from "../typography/Lead";
 import ButtonPrimary from "../elements/ButtonPrimary";
+import Button from "../elements/ButtonSecondary";
 
-function TeaserDownload() {
+interface TeaserProps {
+
+  showList?: boolean;
+
+}
+
+const listMedienmitteilungen = [{
+  text: "05.12.2023 Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet starkes Wachstum."
+}, {
+  text:"07.11.2023 Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow."
+  }, {
+  text: "09.11.2023 Stadler macht Lokomotiven für das ETCS fit und ermöglicht damit schnelleren ETCS-Roll-Out in Deutschland."
+  },
+  {
+    text: "31.10.2023 TRAMLINK startet Linienverkehr in Bern."
+}]
+
+const TeaserDownload: React.FC<TeaserProps> = () => {
   return (
     <section className="bg-white pb-20">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>Medienmitteilungen</H2>
-          <Text styles="mb-4">
-            05.12.2023 Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet
-            starkes Wachstum.
-          </Text>
-          <Text styles="mb-4">
-            09.11.2023 Stadler macht Lokomotiven für das ETCS fit und ermöglicht
-            damit schnelleren ETCS-Roll-Out in Deutschland.
-          </Text>
-          <Text styles="mb-4">
-            07.11.2023 Stadler eröffnet neues Logistikzentrum für den
-            Schienenverkehr in Berlin Pankow. 
-          </Text>
-          <Text styles="mb-8">
-            31.10.2023 TRAMLINK startet Linienverkehr in Bern.
-          </Text>
+          <Lead>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Lead>
+
+          <ul className="mb-8">
+            {listMedienmitteilungen.map((item) => (
+              <li className="mb-6 text-xl flex justify-between items-center">
+                <p className="mr-10">{item.text}</p>
+                <Button
+                  textColorClass="text-primary"
+                  borderColorClass="border-primary"
+                  styles="flex gap-2"
+                >
+                  <svg
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.2257 12.6027V14.8206H1.77433V12.6027H0V16.5949H16V12.6027H14.2257Z"
+                      fill="#005893"
+                    />
+                    <path
+                      d="M14.2878 7.54142L13.2099 6.13083L8.87164 9.44882V0.625977H7.09731V9.44882L2.75465 6.13083L1.67675 7.54142L7.98447 12.3632L14.2878 7.54142Z"
+                      fill="#005893"
+                    />
+                  </svg>
+                  Download
+                </Button>
+              </li>
+            ))}
+          </ul>
           <ButtonPrimary position="left" href="/downloadcenter">
             Alle Medienmitteilungen
             <svg
