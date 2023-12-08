@@ -26,6 +26,7 @@ interface CarouselProps {
   showButton?: boolean;
   showDate?: boolean;
   h2Styles?: string;
+
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
@@ -36,13 +37,14 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 const HomePageCaroucel: React.FC<CarouselProps> = ({
   items,
   carouselTitle,
- h2Styles 
+  h2Styles,
+ showButton = true,
 }) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [showButton, setShowButton] = useState(true);
+
   const [showDate, setShowDate] = useState(true);
 console.log("showButton value:", showButton);
   //Show dots on mobile
@@ -297,7 +299,7 @@ console.log("showButton value:", showButton);
               </motion.div>
             </div>
           </div>
-          {showButton !== false && (
+          {showButton && (
             <div className="mt-10 lg:pl-20 2xl:pl-0">
               <ButtonPrimary position="left">
                 Alle News{" "}

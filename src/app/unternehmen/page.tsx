@@ -115,7 +115,7 @@ export default function Unternehmen() {
         items={cards}
         carouselTitle="Title"
         h2Styles="flex justify-center items-center"
-        showButton={false}
+       showButton={false}
       />
       <NewsTeaser />
       <Subscribe />
