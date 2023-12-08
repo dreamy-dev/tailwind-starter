@@ -5,7 +5,62 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import HeroText from "@/components/sections/HeroText";
 import Link from "@/components/typography/Link";
 import ServiceTeasers from "./ServiceTeasers";
-
+const daten = [
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // suffix: "%",
+    // prefix: "&gt;",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    // duration: 3,
+  },
+];
+const fakten = [
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // suffix: "%",
+    // prefix: "&gt;",
+    // duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    // separator: " ",
+    // decimals: 3,
+    // decimal: "'",
+    duration: 3,
+  },
+];
 export default function Service() {
   return (
     <>
@@ -18,11 +73,11 @@ export default function Service() {
       <img
         width={"100%"}
         className="h-700"
-        src="/header_service2.jpg"
+        src="/teaser_service.jpeg"
         alt="hero product image"
       />
       <ServiceTeasers />
-      <FactsAndFigures title="Daten und Fakten" />
+      <FactsAndFigures data1={daten } data2={fakten } title="Title"/>
     </>
   );
 }

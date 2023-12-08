@@ -5,11 +5,14 @@ import H2 from "../typography/H2";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
+import ButtonPrimary from "../elements/ButtonPrimary";
 
 interface Cards {
   title: string;
   text: string;
   img: string;
+  date?: string;
+ 
 }
 
 interface TestimonialMotionProps extends MotionProps {
@@ -17,42 +20,31 @@ interface TestimonialMotionProps extends MotionProps {
   ref?: any;
 }
 
+interface CarouselProps {
+  items: Cards[];
+  carouselTitle: string;
+  showButton?: boolean;
+  showDate?: boolean;
+  h2Styles?: string;
+}
+
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
-const cards = [
-  {
-    title: "FLIRT bewegt die Welt",
-    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/Card2.jpg",
-  },
-  {
-    title: "Der Weltrekord-Zug: FLIRT Akku",
-    text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/card-2-carousel.jpg",
-  },
-  {
-    title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Card2.jpg",
-  },
-  {
-    title: "Der Weltrekord-Zug: FLIRT Akku",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/card-2-carousel.jpg",
-  },
-  {
-    title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Card2.jpg",
-  },
-];
 
-const HomePageCaroucel: React.FC = () => {
+
+
+const HomePageCaroucel: React.FC<CarouselProps> = ({
+  items,
+  carouselTitle,
+ h2Styles 
+}) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+  const [showButton, setShowButton] = useState(true);
+  const [showDate, setShowDate] = useState(true);
+console.log("showButton value:", showButton);
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +64,7 @@ const HomePageCaroucel: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleSwipe = (direction: "left" | "right") => {
-    const totalImages = cards.length;
+    const totalImages = items.length;
     if (direction === "left" && current > 0) {
       setCurrent(current - 1);
     } else if (direction === "right" && current < totalImages - 1) {
@@ -137,7 +129,7 @@ const HomePageCaroucel: React.FC = () => {
   };
 
   const onNextClick = () => {
-    if (current < cards.length - 1) {
+    if (current < items.length - 1) {
       setCurrent(current + 1);
     }
   };
@@ -175,13 +167,13 @@ const HomePageCaroucel: React.FC = () => {
       <FullWidth>
         <div className="col-span-12">
           <div className="relative">
-            <div className="flex justify-center items-center mb-4">
-              <H2>Erfolgsgeschichten</H2>
+            <div className="lg:pl-20 2xl:pl-0 mb-4">
+              <H2 styles={h2Styles}>{carouselTitle}</H2>
             </div>
             {isMobile && (
               <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
                 <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
-                  {cards.map((_, idx) => (
+                  {items.map((_, idx) => (
                     <button key={idx} onClick={() => setCurrent(idx)}>
                       <div
                         className={` w-8 h-1 ${
@@ -202,8 +194,8 @@ const HomePageCaroucel: React.FC = () => {
                 className="relative w-full max-w-[100%] flex items-center"
                 ref={containerRef}
               >
-                <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px] pr-1 mr-1">
-                  {cards.map((card, idx) => (
+                <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
+                  {items.map((card, idx) => (
                     <TestimonialMotionDiv
                       key={idx}
                       ref={(el: any) => (cardContentRef.current[idx] = el)}
@@ -226,6 +218,12 @@ const HomePageCaroucel: React.FC = () => {
                         <div className="mb-4">
                           <H3>{card.title}</H3>
                         </div>
+                        {showDate && (
+                          <div className="mb-4 text-primary">
+                            <p>{card.date}</p>
+                          </div>
+                        )}
+
                         <div className="mb-4">
                           <Text>{card.text}</Text>
                         </div>
@@ -299,6 +297,37 @@ const HomePageCaroucel: React.FC = () => {
               </motion.div>
             </div>
           </div>
+          {showButton !== false && (
+            <div className="mt-10 lg:pl-20 2xl:pl-0">
+              <ButtonPrimary position="left">
+                Alle News{" "}
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
+            </div>
+          )}
         </div>
       </FullWidth>
     </section>

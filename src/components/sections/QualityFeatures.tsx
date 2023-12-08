@@ -8,7 +8,7 @@ export default function QualityFeatures() {
       <section className="py-24 bg-stadlergradient">
         <ContentWidth>
           <div className="col-span-12 max-w-full mx-auto">
-            <H2>Qualitätsmerkmale</H2>
+            <H2 styles="text-white">Qualitätsmerkmale</H2>
             <div className="mt-8 lg:mt-16">
               <div className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24">
                 <div className="flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">

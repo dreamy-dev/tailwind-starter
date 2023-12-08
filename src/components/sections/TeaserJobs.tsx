@@ -33,9 +33,9 @@ export default function Jobs() {
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Anlagenbauer</p>
+                  <p className="text-xl font-bold text-white">Monteur:in</p>
                   <p className="text-base font-medium text-gray-300">
-                    Engineering
+                    Produktion
                   </p>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function Jobs() {
                 <div className="text-center">
                   <p className="text-xl font-bold text-white">Schweisser</p>
                   <p className="text-base font-medium text-gray-300">
-                    Engineering
+                    Produktion
                   </p>
                 </div>
               </div>
@@ -65,7 +65,9 @@ export default function Jobs() {
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Anlagenbauer</p>
+                  <p className="text-xl font-bold text-white">
+                    Entwicklungsingenieur
+                  </p>
                   <p className="text-base font-medium text-gray-300">
                     Engineering
                   </p>
@@ -81,9 +83,11 @@ export default function Jobs() {
               />
               <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                 <div className="text-center">
-                  <p className="text-xl font-bold text-white">Anlagenbauer</p>
+                  <p className="text-xl font-bold text-white">
+                    Logistikmitarbeiter
+                  </p>
                   <p className="text-base font-medium text-gray-300">
-                    Transport
+                    Logistik
                   </p>
                 </div>
               </div>
@@ -101,7 +105,7 @@ export default function Jobs() {
                     Elektro Vormontage
                   </p>
                   <p className="text-base font-medium text-gray-300">
-                    Engineering
+                    Produktion
                   </p>
                 </div>
               </div>
@@ -117,7 +121,7 @@ export default function Jobs() {
                 <div className="text-center">
                   <p className="text-xl font-bold text-white">Schreiner</p>
                   <p className="text-base font-medium text-gray-300">
-                    Engineering
+                    Produktion
                   </p>
                 </div>
               </div>
