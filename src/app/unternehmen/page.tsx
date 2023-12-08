@@ -13,6 +13,7 @@ import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
+import Map from "@/components/sections/Map";
 
 const cards = [
   {
@@ -47,7 +48,7 @@ export default function Unternehmen() {
       text: "Nettoerlös in CHF",
       start: 0,
       end: 3.8,
-      suffix: "Mrd.",
+      suffix: " Mrd.",
       duration: 3,
       separator: " ",
       decimals: 1,
@@ -57,7 +58,7 @@ export default function Unternehmen() {
       text: "Auftragsbestand in CHF",
       start: 0,
       end: 22,
-      suffix: "Mrd.",
+      suffix: " Mrd.",
       duration: 3,
     },
     {
@@ -106,7 +107,7 @@ export default function Unternehmen() {
         title="Daten & Facten"
         showTwoRows={false}
       ></FactsAndFigures>
-      <Land />
+      <Map />
       <CorporateGorvernance />
       {/* <Nachhaltigkeit /> */}
       <History />
@@ -114,6 +115,7 @@ export default function Unternehmen() {
         items={cards}
         carouselTitle="Title"
         h2Styles="flex justify-center items-center"
+        showButton={false}
       />
       <NewsTeaser />
       <Subscribe />
