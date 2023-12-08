@@ -16,7 +16,7 @@ export default function Karriere() {
       <Testimonials />
       {/* <FactsAndFigures /> */}
       <Jobs />
-      <ApplicationProcess />
+      {/* <ApplicationProcess /> */}
       <TeaserSuccessStories />
 
       <CTASection />

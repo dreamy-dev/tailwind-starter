@@ -47,7 +47,7 @@ const facts = [
     text: "Nettoerlös in CHF",
     start: 0,
     end: 3.8,
-    suffix: "Mrd.",
+    suffix: " Mrd.",
     duration: 3,
     separator: " ",
     decimals: 1,
@@ -57,7 +57,7 @@ const facts = [
     text: "Auftragsbestand in CHF",
     start: 0,
     end: 22,
-    suffix: "Mrd.",
+    suffix: " Mrd.",
     duration: 3,
   },
   {

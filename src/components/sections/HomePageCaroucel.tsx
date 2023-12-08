@@ -44,7 +44,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [showButton, setShowButton] = useState(true);
   const [showDate, setShowDate] = useState(true);
-
+console.log("showButton value:", showButton);
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
@@ -297,7 +297,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
               </motion.div>
             </div>
           </div>
-          {showButton && (
+          {showButton !== false && (
             <div className="mt-10 lg:pl-20 2xl:pl-0">
               <ButtonPrimary position="left">
                 Alle News{" "}
