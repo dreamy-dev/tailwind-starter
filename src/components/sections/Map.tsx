@@ -20,7 +20,12 @@ const countries = [
 ];
 const statsData = [
   {
-    text: "Produktionsorte",
+    text: "Terminus",
+    end: 7,
+    suffix: "",
+  },
+  {
+    text: "Komponentenwerke",
     end: 7,
     suffix: "",
   },
@@ -29,11 +34,7 @@ const statsData = [
     end: 5,
     suffix: "",
   },
-  {
-    text: "Komponentenwerke",
-    end: 7,
-    suffix: "",
-  },
+
   {
     text: "Service-Standorte",
     end: 80,

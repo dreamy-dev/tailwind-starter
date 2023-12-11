@@ -44,9 +44,8 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
   const [showDate, setShowDate] = useState(true);
-console.log("showButton value:", showButton);
+
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
