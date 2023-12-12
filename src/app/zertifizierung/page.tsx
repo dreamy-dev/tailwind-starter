@@ -99,7 +99,11 @@ console.log(sectionsState);
               )}
             </H3>
             {sectionsState.rollingStock && (
-              <List items={schweizItems} listTitle="Schweiz" />
+              <>
+                <List items={schweizItems} listTitle="Schweiz" />
+                <List items={deutschlandItems} listTitle="DeutschlandItems" />
+                <List items={spanienItems} listTitle="SpanienItems" />
+              </>
             )}
           </div>
           <div>
