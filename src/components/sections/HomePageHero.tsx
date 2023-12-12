@@ -11,7 +11,7 @@ export default function HomePageHero() {
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="z-[10000] w-full md:w-[550px] lg:w-[680px] 2xl:w-[744px] top-[7%] 2xl:top-[9%] bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
+          className=" w-full md:w-[550px] lg:w-[680px] 2xl:w-[744px] top-[7%] 2xl:top-[9%] bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
         >
           <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
             <img src="/Graph.svg" className="block h-auto w-full" alt="" />
