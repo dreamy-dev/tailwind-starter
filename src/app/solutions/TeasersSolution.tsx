@@ -9,7 +9,7 @@ export default function TeasersSolution() {
           <div className="hidden lg:block">
             <img
               src="news-1.jpg"
-              className="dark:hidden object-cover object-right h-full h-[572px]"
+              className="dark:hidden object-cover object-right  h-[572px]"
               alt=""
             />
             <img
@@ -57,7 +57,7 @@ export default function TeasersSolution() {
           <div className="hidden lg:block">
             <img
               src="Referenzen_TSSSA_Bild-VR.jpg"
-              className="dark:hidden object-cover object-left h-full h-[572px]"
+              className="dark:hidden object-cover object-left  h-[572px]"
               alt=""
             />
           </div>
@@ -67,7 +67,7 @@ export default function TeasersSolution() {
           <div className="hidden lg:block">
             <img
               src="news-1.jpg"
-              className="dark:hidden object-cover object-right h-full h-[572px]"
+              className="dark:hidden object-cover object-right  h-[572px]"
               alt=""
             />
             <img

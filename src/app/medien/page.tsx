@@ -10,6 +10,20 @@ import EventCalendar from "@/components/sections/EventCalendar";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
 
+const listMedienmitteilungen = [
+  {
+    text: "05.12.2023 Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet starkes Wachstum.",
+  },
+  {
+    text: "07.11.2023 Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow.",
+  },
+  {
+    text: "09.11.2023 Stadler macht Lokomotiven für das ETCS fit und ermöglicht damit schnelleren ETCS-Roll-Out in Deutschland.",
+  },
+  {
+    text: "31.10.2023 TRAMLINK startet Linienverkehr in Bern.",
+  },
+];
 
 const newsCards = [
   {
@@ -45,61 +59,7 @@ const newsCards = [
     text: "Die neuen Strassenbahnen der Baureihe TINA öffnen ihre Türen: Seit dem 9. Oktober 2023&nbsp;können Fahrgäste im Rahme...",
     img: "https://www.stadlerrail.com/media/img/800x/tina_darmstadt.jpg",
   },
-  // {
-  //   title: "Neue S-Bahn-Fahrzeuge für Berlin jetzt komplett im Einsatz",
-  //   text: "106 neue Fahrzeuge planmäßig geliefert und in den Fahrgastbetrieb überführt · Neue Züge bieten hohen Kom...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/neue-s-bahn-berlin-komplett-1-lr.jpg",
-  // },
-  // {
-  //   title:
-  //     "Grüner Bahnverkehr in Österreich: Stadler erhält Zuschlag für Batteriezüge	",
-  //   text: "Die Österreichischen Bundesbahnen (ÖBB) erteilen Stadler den Zuschlag für eine Rahmen-vereinbarung über bis zu 120 Ba...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/flirt%20akku%20prototype.jpg",
-  // },
-  // {
-  //   title: "Stadler liefert die ersten Schmalspur-Wasserstoffzüge für Italien",
-  //   text: "Die italienischen Bahnbetreiber Azienda Regionale Sarda Trasporti (ARST) und Ferrovie della Calabria (FdC) haben Stadler den Zuschlag &uu...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/01_hmu-arst-ext-fronta.jpg",
-  // },
-  // {
-  //   title:
-  //     "Weiterer Erfolg in Italien: Stadler liefert Züge für den Regionalverkehr um den Vesuv",
-  //   text: "Stadler und EAV haben &nbsp;einen neuen Vertrag über elektrische Triebzüge für den Regionalverkehr rund um den Vesuv unter...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/220513_napoles_ext_persp%20copia.jpg",
-  // },
-  // {
-  //   title:
-  //     "Mehr Kapazität im Nah- und Fernverkehr: ÖBB bestellen erneut 35 neue Doppelstock-Triebzüge bei Stadler",
-  //   text: "Die Österreichischen Bundesbahnen (ÖBB) bestellen erneut 35 neue Doppelstock-Triebzüge vom Typ KISS bei Stadler. Neben 14 ...",
-  //   img: "	https://www.stadlerrail.com/media/img/800x/oebb_railjet_kiss.jpg",
-  // },
-  // {
-  //   title: "Stadler erhält Zuschlag für neue Strassenbahnen für Mailand",
-  //   text: "Stadler gewinnt die jüngste Ausschreibung von ATM über die Lieferung von neuen Strassenbahnen für Mailand. Die neue Rahmen...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/01_tramlink_atm.jpg",
-  // },
-  // {
-  //   title: "Stadlers FLIRT erobert neuen Markt: Erster Auftrag aus Litauen",
-  //   text: "Die Erfolgsgeschichte des FLIRT setzt sich fort: Nach mehr als weltweit 2500 verkauften FLIRT-Triebzügen hat Stadler nun den ersten ...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/flirt%20bemu%20ltg%20link%202.jpg",
-  // },
-  // {
-  //   title: "Internationaler Bestseller: FLIRT Triebzug zum 2500. Mal verkauft",
-  //   text: "Stadler feiert Jubiläum: 2500 verkaufte FLIRT. Rund 20 Jahre nach dem ersten Auftrag hat Stadler nun in Italien den 2500. Triebzug d...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/first%20flirt_%20s-bahn%20zug.jpg",
-  // },
-  // {
-  //   title:
-  //     "HEAG mobilo und Stadler schließen Servicevertrag zur Ersatzteilversorgung der neuesten Straßenbahngeneration vom Typ «TINA» in Darmstadt",
-  //   text: "Am 25.05.2023 haben Stadler und die HEAG mobilo in Darmstadt einen Servicevertrag über die Ersatzteilversorgung sowie die technische...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/heag-mobilo_stadler-tina_aussen.jpg",
-  // },
-  // {
-  //   title:
-  //     "HEAG mobilo und Stadler schließen Servicevertrag zur Ersatzteilversorgung der neuesten Straßenbahngeneration vom Typ «TINA» in Darmstadt",
-  //   text: "Am 25.05.2023 haben Stadler und die HEAG mobilo in Darmstadt einen Servicevertrag über die Ersatzteilversorgung sowie die technische...",
-  //   img: "https://www.stadlerrail.com/media/img/800x/heag-mobilo_stadler-tina_aussen.jpg",
-  // },
+ 
 ];
 
 export default function Medien() {
@@ -117,10 +77,21 @@ export default function Medien() {
         h2Styles="flex justify-left items-left"
       ></HomePageCaroucel>
 
-      <TeaserDownload></TeaserDownload>
+      <TeaserDownload
+        title="Medienmitteilungen"
+        leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        buttonLink="/downloadcenter"
+        buttonText="Alle Medienmitteilungen"
+        showList={true}
+        showButton={true}
+        listData={listMedienmitteilungen}
+      ></TeaserDownload>
       <Publicationen></Publicationen>
       <EventCalendar></EventCalendar>
-      <TeaserGeneral title="Mediathek" ctaText="Download center"></TeaserGeneral>
+      <TeaserGeneral
+        title="Mediathek"
+        ctaText="Download center"
+      ></TeaserGeneral>
       <Contact></Contact>
 
       <Subscribe />

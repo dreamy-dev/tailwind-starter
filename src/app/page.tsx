@@ -6,8 +6,8 @@ import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TrainCarousel from "@/components/sections/TrainCarousel";
 import Map from "@/components/sections/Map";
 import HomePageHero from "../components/sections/HomePageHero";
-import MobileModal from "@/components/elements/MobileModal";
-import { useEffect, useState } from "react";
+//import MobileModal from "@/components/elements/MobileModal";
+//import { useEffect, useState } from "react";
 
 const cards = [
   {
@@ -102,24 +102,24 @@ const figures = [
 ];
 
 export default function HomePage() {
-  const [showMobileModal, setShowMobileModal] = useState(false);
+  // const [showMobileModal, setShowMobileModal] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setShowMobileModal(window.innerWidth <= 1284);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setShowMobileModal(window.innerWidth <= 1284);
+  //   };
 
-    handleResize();
+  //   handleResize();
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
   return (
     <>
-      {showMobileModal && <MobileModal />}
+      {/* {showMobileModal && <MobileModal />} */} 
       <HomePageHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <TrainCarousel />
@@ -129,7 +129,7 @@ export default function HomePage() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-      <Map></Map>
+       <Map></Map>
       <Video></Video>
     </>
   );
