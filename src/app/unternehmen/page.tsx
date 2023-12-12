@@ -1,8 +1,10 @@
 "use client";
+import SubHero from "@/components/sections/SubHero";
 import Hero from "./Hero";
 import DNA from "./DNA";
 import Land from "./Land";
 import WertePrinzipen from "./WertePrinzipen";
+import SustainableProcurement from "../zulieferer/SustainableProcurement";
 import Nachhaltigkeit from "./Nachhaltigkeit";
 import History from "./History";
 import SuccessStories from "./SuccessStories";
@@ -15,6 +17,7 @@ import HomePageCarousel from "../../components/sections/HomePageCaroucel";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
+import EventCalendar from "@/components/sections/EventCalendar";
 
 const cards = [
   {
@@ -99,6 +102,7 @@ export default function Unternehmen() {
   ];
   return (
     <>
+      <SubHero></SubHero>
       <Hero />
       <DNA />
       {/* <WertePrinzipen /> */}
@@ -110,16 +114,21 @@ export default function Unternehmen() {
       ></FactsAndFigures>
       <Map />
       <CorporateGorvernance />
+      <SustainableProcurement />
       {/* <Nachhaltigkeit /> */}
       <History />
       <HomePageCarousel
         items={cards}
-        carouselTitle="Title"
+        carouselTitle="Erfolgsgschichten"
         h2Styles="flex justify-center items-center"
-       showButton={false}
+        showButton={false}
       />
-      <TeaserGeneral title="News zu Stadler" ctaText="Mehr erfahren"></TeaserGeneral>
-      <NewsTeaser />
+      <TeaserGeneral
+        title="News zu Stadler"
+        ctaText="Zu allen News"
+      ></TeaserGeneral>
+      <EventCalendar></EventCalendar>
+      {/* <NewsTeaser /> */}
       <Subscribe />
     </>
   );
