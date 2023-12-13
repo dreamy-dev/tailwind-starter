@@ -46,6 +46,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [showDate, setShowDate] = useState(true);
 
+console.log("showButton value:", showButton);
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
@@ -202,7 +203,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
                       ref={(el: any) => (cardContentRef.current[idx] = el)}
                       className="min-w-[100%]  lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                       animate={{
-                        translateX: `calc(-${current * 102}% - ${current}rem) `,
+                        translateX: `calc(-${current * 100}% - ${current}rem) `,
 
                         opacity:
                           idx === current || idx === current + 1 ? 1 : 0.3,
