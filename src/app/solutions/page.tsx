@@ -6,11 +6,12 @@ import Lead from "@/components/typography/Lead";
 import TeasersSolution from "./TeasersSolution";
 import ReferenzenCarousel from "../../components/sections/ReferenzenCarousel";
 import HeroText from "@/components/sections/HeroText";
+import SubHero from "@/components/sections/SubHero";
 
 export default function Solutions() {
   return (
     <>
-
+      <SubHero imageUrl="/subhero.jpg"></SubHero>
       <HeroText></HeroText>
       <SmallWidth>
         <Lead>
