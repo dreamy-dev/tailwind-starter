@@ -10,6 +10,7 @@ import CorporateGorvernance from "../unternehmen/CorporateGovernance";
 import InvestorHero from "./Hero";
 import Publications from "./Publications";
 import TextBlock from "./TextBlock";
+import SubHero from "@/components/sections/SubHero";
 const daten = [
   {
     text: "Lorem ipsum",
@@ -69,6 +70,7 @@ const fakten = [
 export default function Investors() {
   return (
     <section>
+      <SubHero imageUrl="/subhero.jpg"></SubHero>
       {/* Header kann reiner TextHero sein mit Button der auf die letzte Publikation verweist, alle Publikationen zusammen, vlt ein Bild von publikation? */}
       <InvestorHero />
       {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
@@ -77,7 +79,12 @@ export default function Investors() {
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen
        */}
-      <FactsAndFigures data1={daten} data2={fakten} showTwoRows={false} title="Daten & Facten"/>
+      <FactsAndFigures
+        data1={daten}
+        data2={fakten}
+        showTwoRows={false}
+        title="Daten & Facten"
+      />
       {/* Warum investieren -> Text */}
       {/* Geschätsmodell -> Text */}
       <TextBlock />

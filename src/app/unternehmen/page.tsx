@@ -102,7 +102,7 @@ export default function Unternehmen() {
   ];
   return (
     <>
-      <SubHero></SubHero>
+      <SubHero imageUrl="/subhero.jpg"></SubHero>
       <Hero />
       <DNA />
       {/* <WertePrinzipen /> */}
@@ -123,11 +123,12 @@ export default function Unternehmen() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
+      <EventCalendar></EventCalendar>
       <TeaserGeneral
         title="News zu Stadler"
         ctaText="Zu allen News"
       ></TeaserGeneral>
-      <EventCalendar></EventCalendar>
+
       {/* <NewsTeaser /> */}
       <Subscribe />
     </>
