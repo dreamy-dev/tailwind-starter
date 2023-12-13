@@ -85,17 +85,29 @@ export default function NavBar() {
           <div className="w-full lg:w-auto" id="navbar-solid-bg">
             <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
               {navigationMain.topNav.map((item) => (
-                <li key={item.title} className="lg:px-5">
+                <li key={item.title} className="lg:px-5 ">
                   {item.href == "/solutions" ? (
                     <motion.div
                       onClick={() => {
                         toggleSubmenu();
                         toggleMainMenu();
                       }}
-                      className="flex gap-2 justify-center items-start cursor-pointer pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                   
+                      className="flex gap-2 justify-center items-center cursor-pointer pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >
                       {item.title}
+                      <svg
+                        className="lg:hidden"
+                        width="10"
+                        height="10"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
+                          fill="#005893"
+                        />
+                      </svg>
                       <motion.span></motion.span>
                     </motion.div>
                   ) : (
