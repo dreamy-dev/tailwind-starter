@@ -12,7 +12,7 @@ const H3: React.FC<H3Props> = ({ styles, children, resetStyles, onClick }) => {
     ? defaultStyles
     : `${defaultStyles} ${styles || ""}`;
   return (
-    <h3 className={H3Styles} onClick={onClick}>
+    <h3 lang="de" className={H3Styles} onClick={onClick}>
       {children}
     </h3>
   );

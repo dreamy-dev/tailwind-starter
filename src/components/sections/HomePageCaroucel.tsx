@@ -12,7 +12,6 @@ interface Cards {
   text: string;
   img: string;
   date?: string;
- 
 }
 
 interface TestimonialMotionProps extends MotionProps {
@@ -26,19 +25,15 @@ interface CarouselProps {
   showButton?: boolean;
   showDate?: boolean;
   h2Styles?: string;
-
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
-
-
-
 
 const HomePageCaroucel: React.FC<CarouselProps> = ({
   items,
   carouselTitle,
   h2Styles,
- showButton = true,
+  showButton = true,
 }) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -46,12 +41,12 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [showDate, setShowDate] = useState(true);
 
-console.log("showButton value:", showButton);
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 768);
     };
+
     handleResize();
 
     window.addEventListener("resize", handleResize);
@@ -62,65 +57,6 @@ console.log("showButton value:", showButton);
   }, []);
 
   /*  swipe logic starts here */
-
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const handleSwipe = (direction: "left" | "right") => {
-    const totalImages = items.length;
-    if (direction === "left" && current > 0) {
-      setCurrent(current - 1);
-    } else if (direction === "right" && current < totalImages - 1) {
-      setCurrent(current + 1);
-    }
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (!container) return;
-
-    const handleSwipeStart = (e: TouchEvent | MouseEvent) => {
-      setStartX(e instanceof TouchEvent ? e.touches[0].clientX : e.clientX);
-      setIsDragging(true);
-    };
-
-    const handleSwipeMove = (e: TouchEvent | MouseEvent) => {
-      if (!isDragging) return;
-
-      const clientX =
-        e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
-
-      const distanceX = clientX - startX;
-
-      if (Math.abs(distanceX) > 50) {
-        const direction = distanceX > 0 ? "left" : "right";
-        handleSwipe(direction);
-        setStartX(clientX);
-      }
-    };
-
-    const handleSwipeEnd = () => {
-      setIsDragging(false);
-    };
-
-    container.addEventListener("touchstart", handleSwipeStart);
-    container.addEventListener("touchmove", handleSwipeMove);
-    container.addEventListener("touchend", handleSwipeEnd);
-
-    container.addEventListener("mousedown", handleSwipeStart);
-    container.addEventListener("mousemove", handleSwipeMove);
-    container.addEventListener("mouseup", handleSwipeEnd);
-
-    return () => {
-      container.removeEventListener("touchstart", handleSwipeStart);
-      container.removeEventListener("touchmove", handleSwipeMove);
-      container.removeEventListener("touchend", handleSwipeEnd);
-
-      container.removeEventListener("mousedown", handleSwipeStart);
-      container.removeEventListener("mousemove", handleSwipeMove);
-      container.removeEventListener("mouseup", handleSwipeEnd);
-    };
-  }, [isDragging, startX]);
 
   /*   swipe logic ends here */
 
@@ -136,36 +72,8 @@ console.log("showButton value:", showButton);
     }
   };
 
-  const cardContentRef = useRef<Array<HTMLDivElement | null>>([]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const maxCardHeight = Math.max(
-        ...cardContentRef.current.map((ref) =>
-          ref instanceof HTMLElement ? ref.clientHeight : 0
-        )
-      );
-
-      cardContentRef.current.forEach((ref) => {
-        if (ref instanceof HTMLElement) {
-          const container = ref.closest(
-            ".testimonial-motion-div"
-          ) as HTMLDivElement | null;
-          if (container) {
-            container.style.height = `${maxCardHeight}px`;
-          }
-        }
-      });
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [cardContentRef]);
-
   return (
-    <section className=" py-24 bg-white ">
+    <section className=" py-24 bg-white overflow-hidden">
       <FullWidth>
         <div className="col-span-12">
           <div className="relative">
@@ -192,30 +100,26 @@ console.log("showButton value:", showButton);
             <MotionConfig
               transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             >
-              <div
-                className="relative w-full max-w-[100%] flex items-center"
-                ref={containerRef}
-              >
-                <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
+              <div className="relative w-full max-w-[100%] flex items-center">
+                <motion.div className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
                   {items.map((card, idx) => (
                     <TestimonialMotionDiv
                       key={idx}
-                      ref={(el: any) => (cardContentRef.current[idx] = el)}
-                      className="min-w-[100%]  lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
+                      className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                       animate={{
-                        translateX: `calc(-${current * 100}% - ${current}rem) `,
+                        translateX: `calc(-${current * 100}% - ${current *
+                          2}rem)`,
 
                         opacity:
                           idx === current || idx === current + 1 ? 1 : 0.3,
                       }}
                     >
-                      {/* <a href="#"> */}
                       <img
                         className="w-full max-h-[430px] object-cover"
                         src={card.img}
                         alt=""
                       />
-                      {/* </a> */}
+
                       <div className="p-5 ">
                         <div className="mb-4">
                           <H3>{card.title}</H3>
@@ -226,12 +130,12 @@ console.log("showButton value:", showButton);
                           </div>
                         )}
 
-                        <div className="mb-4">
+                        <div className="mb-14">
                           <Text>{card.text}</Text>
                         </div>
                         <Link
                           href="#"
-                          className="inline-flex items-center py-2 text-sm font-medium text-center"
+                          className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-sm font-medium text-center"
                         >
                           <svg
                             width="20"

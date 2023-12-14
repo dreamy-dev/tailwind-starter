@@ -92,7 +92,11 @@ export default function TeaserDouble() {
                     </h3>
                   </div>
 
-                  <ButtonPrimary position="left" buttonText="Mehr dazu" />
+                  <ButtonPrimary
+                    position="left"
+                    buttonText="Mehr dazu"
+                    href="/procurement"
+                  />
                 </div>
               </div>
             </div>
@@ -239,7 +243,11 @@ export default function TeaserDouble() {
               </ul>
             </div>
 
-            <ButtonPrimary position="left" buttonText="Jetzt Partner werden" />
+            <ButtonPrimary
+              position="left"
+              buttonText="Jetzt Partner werden"
+              href="/cooperation"
+            />
           </div>
         </div>
       </div>

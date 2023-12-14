@@ -1,8 +1,8 @@
 "use client";
 
 import Table from "@/components/sections/Table";
-import H2 from "@/components/typography/H2";
-import ContentWidth from "@/components/layouts/ContentWidth";
+import H1 from "@/components/typography/H1";
+import SmallWidth from "@/components/layouts/SmallWidth";
 import Text from "@/components/typography/Text";
 
 const customTableHeaders = [
@@ -66,9 +66,9 @@ export default function Cookies() {
 
   return (
     <>
-      <ContentWidth>
-        <div className="col-span-12 max-w-full">
-          <H2>Cookies</H2>
+      <SmallWidth>
+        <div className="col-span-12 max-w-full mt-20">
+          <H1>Cookies</H1>
           <div className="mb-20">
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -99,7 +99,7 @@ export default function Cookies() {
             tableData={customTableData}
           />
         </div>
-      </ContentWidth>
+      </SmallWidth>
     </>
   );
 }
