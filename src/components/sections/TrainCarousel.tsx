@@ -205,7 +205,7 @@ const TrainCarousel = (props?: any) => {
     <section className="bg-stadlergradient">
       <TeaserMobilitySolutions></TeaserMobilitySolutions>
       <ContentWidth>
-        <div className="col-span-6 ml-8 text-white">
+        <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
           <H3>Schienenfahrzeuge</H3>
           <Text>
             Höchste Qualität und Zuverlässigkeit sind bei unseren
