@@ -107,7 +107,7 @@ export default function HomePage() {
     
       <HomePageHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
-      <TrainCarousel />
+      {/* <TrainCarousel /> */}
       <HomePageCaroucel
         items={cards}
         carouselTitle="Erfolgsgeschichten"

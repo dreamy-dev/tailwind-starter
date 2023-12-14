@@ -46,7 +46,7 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
 const trains = [
   {
-    name: "Hybrider FLIRT 160 für Flughafen'Transit",
+    name: "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
     image: "/train-c.jpg",
   },
   {
@@ -122,74 +122,14 @@ const responsive: ResponsiveObject = {
   },
 };
 
+
+
+
+
+
 const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [showTrains, setShowTrains] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-
-  /*  swipe logic starts here */
-
-  // const containerRef = useRef<HTMLDivElement | null>(null);
-
-  // const handleSwipe = (direction: "left" | "right") => {
-  //   const totalImages = images.length;
-  //   if (direction === "left" && current > 0) {
-  //     setCurrent(current - 1);
-  //   } else if (direction === "right" && current < totalImages - 1) {
-  //     setCurrent(current + 1);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const container = containerRef.current;
-
-  //   if (!container) return;
-
-  //   const handleSwipeStart = (e: TouchEvent | MouseEvent) => {
-  //     setStartX(e instanceof TouchEvent ? e.touches[0].clientX : e.clientX);
-  //     setIsDragging(true);
-  //   };
-
-  //   const handleSwipeMove = (e: TouchEvent | MouseEvent) => {
-  //     if (!isDragging) return;
-
-  //     const clientX =
-  //       e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
-
-  //     const distanceX = clientX - startX;
-
-  //     if (Math.abs(distanceX) > 50) {
-  //       const direction = distanceX > 0 ? "left" : "right";
-  //       handleSwipe(direction);
-  //       setStartX(clientX);
-  //     }
-  //   };
-
-  //   const handleSwipeEnd = () => {
-  //     setIsDragging(false);
-  //   };
-
-  //   container.addEventListener("touchstart", handleSwipeStart);
-  //   container.addEventListener("touchmove", handleSwipeMove);
-  //   container.addEventListener("touchend", handleSwipeEnd);
-
-  //   container.addEventListener("mousedown", handleSwipeStart);
-  //   container.addEventListener("mousemove", handleSwipeMove);
-  //   container.addEventListener("mouseup", handleSwipeEnd);
-
-  //   return () => {
-  //     container.removeEventListener("touchstart", handleSwipeStart);
-  //     container.removeEventListener("touchmove", handleSwipeMove);
-  //     container.removeEventListener("touchend", handleSwipeEnd);
-
-  //     container.removeEventListener("mousedown", handleSwipeStart);
-  //     container.removeEventListener("mousemove", handleSwipeMove);
-  //     container.removeEventListener("mouseup", handleSwipeEnd);
-  //   };
-  // }, [isDragging, startX]);
-
-  /*   swipe logic ends here */
 
   const onPrevClick = () => {
     if (current > 0) {
@@ -229,6 +169,7 @@ const TestimonialsCarousel: React.FC = () => {
                         opacity: idx === current ? 1 : 0.3,
                       }}
                       responsive={responsive}
+                      
                     >
                       <img
                         src={image.img}
@@ -362,18 +303,18 @@ const TestimonialsCarousel: React.FC = () => {
               {trains.map((train, idx) => (
                 <div
                   key={idx}
-                  className="max-full justify-center mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                  className="relative max-full items-stretch justify-center mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                 >
                   <a href="#">
                     <img className="w-full" src={train.image} alt="" />
                   </a>
                   <div className="p-5">
-                    <a href="#">
+                    <div className="mb-8">
                       <H3>{train.name}</H3>
-                    </a>
+                    </div>
                     <Link
                       href="#"
-                      className="inline-flex items-center py-2 text-sm font-medium text-center"
+                      className="block absolute bottom-[20px] left-[22px]"
                     >
                       <svg
                         width="20"
