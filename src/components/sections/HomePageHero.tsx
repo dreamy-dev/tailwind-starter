@@ -20,9 +20,9 @@ export default function HomePageHero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 40 }}
             transition={{ duration: 0.5, delay: 1.5 }}
-            className="z-1 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-40 h-4/5 top-4 md:w-3/5 md:top-8  md:left-0 transform -translate-y-1/2 translate-x-1/2 w-3/6 max-w-[270px] md:max-w-[330px]"
+            className="z-1 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-40 h-4/5 top-4 md:w-3/5 md:top-8  md:left-0 transform -translate-y-1/2 translate-x-1/2 w-3/6 max-w-[300px] md:max-w-[330px]"
           >
-            <H1 styles="max-w-min lg:mt-0 text-3xl md:text-7xl lg:text-7xl">
+            <H1 styles="lg:mt-0 text-3xl md:text-7xl lg:text-7xl">
               Driven to lead.
             </H1>
             <Text styles="text-md lg:text-3xl md:mt-4 xl:mt-4">

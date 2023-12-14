@@ -15,7 +15,7 @@ interface TeaserProps {
   listData: ListItem[];
 }
 interface TeaserDownloadProps extends TeaserProps {
-  title: string;
+  title?: string;
   leadText: string;
   buttonLink: string;
   buttonText: string;
