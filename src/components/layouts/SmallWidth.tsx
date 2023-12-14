@@ -7,7 +7,7 @@ type Props = {
 export default function SmallWidth({ children }: Props) {
   return (
     <ContentWidth>
-      <div className="col-start-2 col-span-10">{children}</div>
+      <div className="col-span-12 lg:col-start-2 lg:col-span-10">{children}</div>
     </ContentWidth>
   );
 }
