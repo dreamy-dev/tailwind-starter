@@ -57,17 +57,17 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
-    const toggleSubmenu = () => {
-      setIsSubmenuOpen((prev) => !prev);
-    };
+  const toggleSubmenu = () => {
+    setIsSubmenuOpen((prev) => !prev);
+  };
 
-    const closeSubmenu = () => {
-      setIsSubmenuOpen(false);
-    };
+  const closeSubmenu = () => {
+    setIsSubmenuOpen(false);
+  };
 
-    const toggleMainMenu = () => {
-      setIsOpen((prev) => !prev);
-    };
+  const toggleMainMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
@@ -121,6 +121,7 @@ export default function NavBar() {
 
                   {item.submenu && item.submenuItems && (
                     <motion.div
+                      initial={"closed"}
                       animate={isOpen ? "open" : "closed"}
                       variants={variants}
                       style={{

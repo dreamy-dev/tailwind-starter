@@ -7,7 +7,6 @@ import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
 import ContentWidth from "../layouts/ContentWidth";
 
-
 interface PaginationProps {
   total: number;
   current: number;
@@ -46,7 +45,8 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
 const trains = [
   {
-    name: "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
+    name:
+      "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
     image: "/train-c.jpg",
   },
   {
@@ -63,31 +63,36 @@ const images = [
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "FLIRT bewegt die Welt",
-    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
+    text:
+      "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Der Weltrekord-Zug: FLIRT Akku",
-    text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
+    text:
+      "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text:
+      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text:
+      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text:
+      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/train-c.jpg",
   },
 ];
@@ -122,11 +127,6 @@ const responsive: ResponsiveObject = {
   },
 };
 
-
-
-
-
-
 const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [showTrains, setShowTrains] = useState(false);
@@ -159,17 +159,17 @@ const TestimonialsCarousel: React.FC = () => {
               transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             >
               <div className="relative w-full max-w-[100%] flex items-center ">
-                <motion.div className="flex gap-6 flex-nowrap mx-[-10px] px-[10px] my-[-10px] py-[10px]">
+                <motion.div className="max-w-[100%] flex gap-6 flex-nowrap lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
                   {images.map((image, idx) => (
                     <TestimonialMotionDiv
                       key={image.title}
                       className="flex flex-col items-stretch min-w-[100%] overflow-hidden shadow-md shadow-greyDarken-200  lg:min-w-[90%] bg-white lg:flex-row "
                       animate={{
-                        translateX: `calc(-${current * 100}% - ${current}rem)`,
+                        translateX: `calc(-${current * 100}% - ${current *
+                          1.5}rem)`,
                         opacity: idx === current ? 1 : 0.3,
                       }}
                       responsive={responsive}
-                      
                     >
                       <img
                         src={image.img}
