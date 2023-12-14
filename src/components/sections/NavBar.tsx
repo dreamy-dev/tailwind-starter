@@ -73,10 +73,10 @@ export default function NavBar() {
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
       <ContentWidth>
         <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between  lg:flex-row pt-5 pb-12 lg:min-h-fit min-h-[60vh] lg:w-auto left-0 top-[10%] absolut lg:static">
-          <div>
+          <div className="hidden lg:block">
             <Link
               href="/"
-              className="flex justify-start items-start lg:justify-center lg:items-center mb-10 lg:mb-0"
+              className="flex justify-start items-start lg:justify-center lg:items-center mb-10 lg:mb-0 "
             >
               <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
             </Link>
