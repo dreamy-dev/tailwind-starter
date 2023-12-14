@@ -116,7 +116,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
                       key={idx}
                       className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                       animate={{
-                        translateX: `calc(-${current * 100}% - ${current}rem) `,
+                        translateX: `calc(-${current * 100}%  `,
 
                         opacity:
                           idx === current || idx === current + 1 ? 1 : 0.3,
