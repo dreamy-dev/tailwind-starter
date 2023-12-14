@@ -12,7 +12,6 @@ interface Cards {
   text: string;
   img: string;
   date?: string;
- 
 }
 
 interface TestimonialMotionProps extends MotionProps {
@@ -26,19 +25,15 @@ interface CarouselProps {
   showButton?: boolean;
   showDate?: boolean;
   h2Styles?: string;
-
 }
 
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
-
-
-
 
 const HomePageCaroucel: React.FC<CarouselProps> = ({
   items,
   carouselTitle,
   h2Styles,
- showButton = true,
+  showButton = true,
 }) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -46,14 +41,13 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [showDate, setShowDate] = useState(true);
 
-
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); 
+    handleResize();
 
     window.addEventListener("resize", handleResize);
 
@@ -63,8 +57,6 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   }, []);
 
   /*  swipe logic starts here */
-
- 
 
   /*   swipe logic ends here */
 
@@ -79,7 +71,6 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
       setCurrent(current + 1);
     }
   };
-
 
   return (
     <section className=" py-24 bg-white overflow-hidden">
@@ -116,7 +107,8 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
                       key={idx}
                       className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                       animate={{
-                        translateX: `calc(-${current * 100}%  `,
+                        translateX: `calc(-${current * 100}% - ${current *
+                          2}rem)`,
 
                         opacity:
                           idx === current || idx === current + 1 ? 1 : 0.3,
