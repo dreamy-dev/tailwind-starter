@@ -15,11 +15,6 @@ export default function Standorte() {
       />
       <ContentWidth>
         <div className="col-span-12 py-8">
-          <img
-            className="w-full h-auto"
-            src="/stadler-world-map-home.svg"
-            alt=""
-          />
         </div>
         <div className="col-span-12 pt-8">
           <StandorteFilters />

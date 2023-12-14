@@ -175,7 +175,7 @@ export default function Slider() {
                 >
                   <path
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     strokeWidth="2"
                     d="M9 5l7 7-7 7"
                   ></path>

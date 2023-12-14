@@ -1,17 +1,5 @@
 import { useState } from "react";
-interface Location {
-  id: string;
-  location: string;
-  division: string;
-  name: string;
-  type: [];
-  contactPerson: { title: string; name: string };
-  phone: string;
-  email: string;
-  img: string;
-  description: string;
-  fax: string;
-}
+
 
  const locations = [
    {
@@ -56,9 +44,7 @@ interface Location {
    },
  ];
 
-interface StandorteAccordionProps {
-  location: Location[];
-}
+
 
 interface ShowAccordionState {
   [key: string]: boolean;
@@ -66,7 +52,7 @@ interface ShowAccordionState {
 
 
 
-export default function StandorteAccordion({ location }: StandorteAccordionProps) {
+export default function StandorteAccordion() {
   const [showAccordion, setShowAccordion] = useState<ShowAccordionState>({});
 
   const toggleAccordion = (id: string) => {
@@ -77,143 +63,142 @@ export default function StandorteAccordion({ location }: StandorteAccordionProps
   };
   return (
     <>
-      {
-        locations.map((item) => (
-          <div
-            key={item.id}
-            className="text-gray-500 mb-8 border bg-white border-gray-200 shadow-md"
-          >
-            <div className="flex items-start justify-between w-full p-5 font-medium rtl:text-right text-gray-500">
-              <div className="pt-4">
-                <div className="flex">
-                  <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs rounded-full font-light bg-primaryTrans-100 tracking-tight text-gray-900">
-                    {item.division}
-                  </p>
-                  <p className="mb-3 py-1 px-2 text-xs tracking-tight rounded-full  font-light bg-greenBright text-gray-900">
-                    {item.location}
-                  </p>
-                </div>
-                <h3 className="mb-2 text-4xl font-semibold tracking-tight text-gray-900">
-                  {item.name}
-                </h3>
-
-                <div className="items-start space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                  <div className="-ml-2 mr-3 w-full flex">
-                    {item.type.map((type, key) => (
-                      <a
-                        key={key}
-                        href="#"
-                        className="inline-block px-4 py-2 mr-4 border rounded-full text-xs"
-                      >
-                        {type}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+      {locations.map((item) => (
+        <div
+          key={item.id}
+          className="text-gray-500 mb-8 border bg-white border-gray-200 shadow-md"
+        >
+          <div className="flex items-start justify-between w-full p-5 font-medium rtl:text-right text-gray-500">
+            <div className="pt-4">
+              <div className="flex">
+                <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs rounded-full font-light bg-primaryTrans-100 tracking-tight text-gray-900">
+                  {item.division}
+                </p>
+                <p className="mb-3 py-1 px-2 text-xs tracking-tight rounded-full  font-light bg-greenBright text-gray-900">
+                  {item.location}
+                </p>
               </div>
-              <div
-                onClick={() => toggleAccordion(item.id)}
-                className={`cursor-pointer py-2.5 leading-6 font-medium  rounded flex items-center gap-2 ${
-                  showAccordion[item.id] ? "rotate-90" : "-rotate-90"
-                }`}
-              >
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                    fill="#6b7280"
-                  />
-                </svg>
+              <h3 className="mb-2 text-4xl font-semibold tracking-tight text-gray-900">
+                {item.name}
+              </h3>
+
+              <div className="items-start space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+                <div className="-ml-2 mr-3 w-full flex">
+                  {item.type.map((type, key) => (
+                    <a
+                      key={key}
+                      href="#"
+                      className="inline-block px-4 py-2 mr-4 border rounded-full text-xs"
+                    >
+                      {type}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
-            {showAccordion[item.id] && (
-              <div className="p-6">
-                <div className="flex justify-start items-start">
-                  <div className="w-9/12">
-                    {item.contactPerson && (
-                      <>
-                        <p className="mb-1 text-base font-semibold leading-relaxed text-gray-900">
-                          {item.contactPerson.title}
-                        </p>
-                        <p className="mb-8 text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                          {item.contactPerson.name}
-                        </p>
-                      </>
-                    )}
-                    {item.phone && (
-                      <>
-                        <div className="mb-4 flex justify-start items-center">
-                          <img
-                            src="./icons/phone-outline-black.svg"
-                            className="mr-4 flex w-6"
-                            alt="office"
-                          />
-                          {item.phone}
-                        </div>
-                      </>
-                    )}
-                    {item.fax && (
-                      <>
-                        <div className="mb-4 flex justify-start items-center">
-                          <svg
-                            className="-mt-1 mr-4 flex w-6"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 18 20"
-                          >
-                            <path
-                              stroke="#3379A9"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              strokeWidth="2"
-                              d="M4 4H1m3 4H1m3 4H1m3 4H1m6.071.286a3.429 3.429 0 1 1 6.858 0M4 1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
-                            />
-                          </svg>
-                          {item.fax}
-                        </div>
-                      </>
-                    )}
-                    {item.email && (
-                      <>
-                        <div className="flex mb-4 justify-start items-center">
-                          <img
-                            src="./icons/mail-blue.svg"
-                            className="mr-4 flex w-6"
-                            alt="office"
-                          />
-                          {item.email}
-                        </div>
-                      </>
-                    )}
-
-                    <div className="flex justify-start items-center text-primary">
-                      <img
-                        src="./icons/map-pin-blue.svg"
-                        className="mr-2 flex w-6"
-                        alt="office"
-                      />{" "}
-                      <a className="" href="#">
-                        Open in Google Maps
-                      </a>
-                    </div>
-                  </div>
-                  <img src={item.img} className="flex w-3/12" alt="office" />
-                </div>
-                <div className="pt-8">
-                  <p className="mb-2 text-gray-500 dark:text-gray-400">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            )}
+            <div
+              onClick={() => toggleAccordion(item.id)}
+              className={`cursor-pointer py-2.5 leading-6 font-medium  rounded flex items-center gap-2 ${
+                showAccordion[item.id] ? "rotate-90" : "-rotate-90"
+              }`}
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
+                  fill="#6b7280"
+                />
+              </svg>
+            </div>
           </div>
-        ))}
+          {showAccordion[item.id] && (
+            <div className="p-6">
+              <div className="flex justify-start items-start">
+                <div className="w-9/12">
+                  {item.contactPerson && (
+                    <>
+                      <p className="mb-1 text-base font-semibold leading-relaxed text-gray-900">
+                        {item.contactPerson.title}
+                      </p>
+                      <p className="mb-8 text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        {item.contactPerson.name}
+                      </p>
+                    </>
+                  )}
+                  {item.phone && (
+                    <>
+                      <div className="mb-4 flex justify-start items-center">
+                        <img
+                          src="./icons/phone-outline-black.svg"
+                          className="mr-4 flex w-6"
+                          alt="office"
+                        />
+                        {item.phone}
+                      </div>
+                    </>
+                  )}
+                  {item.fax && (
+                    <>
+                      <div className="mb-4 flex justify-start items-center">
+                        <svg
+                          className="-mt-1 mr-4 flex w-6"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 20"
+                        >
+                          <path
+                            stroke="#3379A9"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M4 4H1m3 4H1m3 4H1m3 4H1m6.071.286a3.429 3.429 0 1 1 6.858 0M4 1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
+                          />
+                        </svg>
+                        {item.fax}
+                      </div>
+                    </>
+                  )}
+                  {item.email && (
+                    <>
+                      <div className="flex mb-4 justify-start items-center">
+                        <img
+                          src="./icons/mail-blue.svg"
+                          className="mr-4 flex w-6"
+                          alt="office"
+                        />
+                        {item.email}
+                      </div>
+                    </>
+                  )}
+
+                  <div className="flex justify-start items-center text-primary">
+                    <img
+                      src="./icons/map-pin-blue.svg"
+                      className="mr-2 flex w-6"
+                      alt="office"
+                    />{" "}
+                    <a className="" href="#">
+                      Open in Google Maps
+                    </a>
+                  </div>
+                </div>
+                <img src={item.img} className="flex w-3/12" alt="office" />
+              </div>
+              <div className="pt-8">
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
     </>
   );
 }
