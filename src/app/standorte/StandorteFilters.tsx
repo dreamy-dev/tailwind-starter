@@ -52,13 +52,20 @@ const options = ["Produktion / Komponenten", "Signaling", "Service"];
 
 export default function StandorteFilters() {
   const [selectedOption, setSelectedOption] = useState("");
+   const [selectedRadio, setSelectedRadio] = useState("");
 
   const handleOptionChange = (event: ChangeEvent<{ value: string }>) => {
     setSelectedOption(event.target.value);
+    setSelectedRadio(""); // Reset radio selection when changing the select
+  };
+
+  const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSelectedRadio(event.target.value);
+    setSelectedOption(""); // Reset select when changing the radio
   };
 
   const renderImage = () => {
-    switch (selectedOption) {
+    switch (selectedOption || selectedRadio) {
       case "Produktion / Komponenten":
         return (
           <img
@@ -93,6 +100,43 @@ export default function StandorteFilters() {
         );
     }
   };
+
+  // const renderImage = () => {
+  //   switch (selectedOption) {
+  //     case "Produktion / Komponenten":
+  //       return (
+  //         <img
+  //           className="w-full h-auto"
+  //           src="/icons/map-grey.svg"
+  //           alt="Map image"
+  //         />
+  //       );
+  //     case "Signaling":
+  //       return (
+  //         <img
+  //           className="w-full h-auto"
+  //           src="/icons/map-blue.svg"
+  //           alt="Map image"
+  //         />
+  //       );
+  //     case "Service":
+  //       return (
+  //         <img
+  //           className="w-full h-auto"
+  //           src="/icons/map-light-blue.svg"
+  //           alt="Map image"
+  //         />
+  //       );
+  //     default:
+  //       return (
+  //         <img
+  //           className="w-full h-auto"
+  //           src="/stadler-world-map-home.svg"
+  //           alt="Default Image"
+  //         />
+  //       );
+  //   }
+  // };
   return (
     <>
       <div>
@@ -104,7 +148,7 @@ export default function StandorteFilters() {
             <select
               className=" px-4 py-2 text-base border rounded-full block"
               value={selectedOption}
-               onChange={handleOptionChange}
+              onChange={handleOptionChange}
             >
               <option disabled value="">
                 Land
@@ -123,13 +167,13 @@ export default function StandorteFilters() {
                 <input
                   type="radio"
                   value={option}
-                  checked={selectedOption === option}
-                  onChange={handleOptionChange}
+                  checked={selectedRadio === option}
+                  onChange={handleRadioChange}
                   className="hidden"
                 />
                 <div
                   className={`inline-block px-4 py-2 text-base border rounded-full ${
-                    selectedOption === option
+                    selectedRadio === option
                       ? "dark:bg-gray-700 dark:border-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                       : "dark:bg-gray-700 dark:border-gray-600 hover:text-gray-900 hover:bg-gray-100"
                   }`}
