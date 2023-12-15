@@ -83,12 +83,12 @@ export default function StandorteAccordion() {
               </h3>
 
               <div className="items-start space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                <div className="-ml-2 mr-3 w-full flex">
+                <div className="-ml-2 w-full flex items-start flex-wrap">
                   {item.type.map((type, key) => (
                     <a
                       key={key}
                       href="#"
-                      className="inline-block px-4 py-2 mr-4 border rounded-full text-xs"
+                      className="inline-block px-4 py-2 mr-4 border rounded-full text-xs last-of-type:mr-0 mb-2"
                     >
                       {type}
                     </a>

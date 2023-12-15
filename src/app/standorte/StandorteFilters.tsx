@@ -53,7 +53,7 @@ const options = ["Produktion / Komponenten", "Signaling", "Service"];
 export default function StandorteFilters() {
   const [selectedOption, setSelectedOption] = useState("");
 
-  const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleOptionChange = (event: ChangeEvent<{ value: string }>) => {
     setSelectedOption(event.target.value);
   };
 
@@ -96,16 +96,17 @@ export default function StandorteFilters() {
   return (
     <>
       <div>
-        <ul>
-          {renderImage()}
-   
-        </ul>
+        <ul>{renderImage()}</ul>
       </div>
       <div className="flex flex-col items-center justify-center pb-4 space-y-3 md:pb-0 md:mt-4 dark:bg-gray-800 md:flex-row md:space-y-0 md:space-x-4">
         <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
           <li className="mb-4 mr-2 lg:mr-4">
-            <select className=" px-4 py-2 text-base border rounded-full block">
-              <option value="" disabled defaultValue="">
+            <select
+              className=" px-4 py-2 text-base border rounded-full block"
+              value={selectedOption}
+               onChange={handleOptionChange}
+            >
+              <option disabled value="">
                 Land
               </option>
               {countries.map((country, index) => (
