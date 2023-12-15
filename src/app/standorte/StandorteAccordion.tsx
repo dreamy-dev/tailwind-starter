@@ -1,65 +1,80 @@
 import { useState } from "react";
 
+
+ const locations = [
+   {
+     id: "1",
+     division: "Division Schweiz",
+     location: "Chemnitz",
+     name: "Stadler Chemnitz Gmbh",
+     type: ["Service", "Production"],
+     contactPerson: { title: "Geschäftsleiter", name: "Albrecht Teich" },
+     phone: "+41 71 626 21 20",
+     email: "stadler.rail@stadlerrail.com",
+     img: "./chemnitz-standortfoto.jpg",
+     description:
+       "Am Standort Chemnitz unterhält Stadler ein flexibles, schlagkräftiges Team von rund 160 Ingenieuren und Ingenieurinnen sowie Entwicklern und Entwicklerinnen. Die Mitarbeitenden erbringen für die Stadler-Gruppe Engineering-Leistungen in den Bereichen Konstruktion, Berechnung, Elektrik, Pneumatik und der Mehrkörpersimulation.",
+   },
+   {
+     id: "2",
+     division: "Division Components",
+     location: "Biel",
+     name: "Stadler Stahlguss AG",
+     type: ["Service", "Production", "Signaling"],
+     contactPerson: { title: "CEO", name: "Michael Schmitz" },
+     phone: "+41 (0)32 344 45 00",
+     fax: "+41 (0)32 344 45 10",
+     email: "info@stadlerstahlguss.ch",
+     img: "./stadler_stahlguss.jpg",
+     description:
+       "Die Stadler Stahlguss AG bietet vom Engineering, über den Guss und die mechanische Fertigbearbeitung, bis hin zur Röntgenprüfung alles, was man von einer modernen und zukunftsorientierten Giesserei erwartet. Neben der Produktion für andere Standorte von Stadler werden auch Unternehmen aus den verschiedensten Industriebereichen beliefert. Die SSG gehört seit 2004 zu Stadler. In diesem Jahr übernahm Stadler die frühere Von Roll Stahlgiesserei Biel AG.",
+   },
+   {
+     id: "3",
+     division: "Division Signaling",
+     location: "Wallisellen",
+     name: "Stadler Signalling",
+     type: ["Signaling"],
+     contactPerson: { title: "CEO", name: "Marc Trippel" },
+     phone: "+41 (0)32 344 45 00",
+     email: "stadler.signalling@stadlerrail.com",
+     img: "./officewallisellen2_skaliert.jpg",
+     description:
+       "Seit 2017 hat Stadler ein unabhängiges, internationales Kompetenzzentrum für Signaltechnik aufgebaut, welches Ende 2021 um die ehemalige BÄR Bahnsicherung AG erweitert wurde. Heute hat der Bereich Signalling von Stadler den Hauptsitz in Wallisellen mit weiteren Standorten in der Schweiz und Deutschland. Das breite Signalling-Portfolio umfasst sämtliche Lösungen in den Bereichen automatisiertes Fahren (ATO), Zugsicherung (ETCS und Class-B), CBTC-Lösungen für führerloses Fahren sowie Stellwerkstechnik (ESTW und RSTW). Wir bieten unseren Kunden massgeschneiderte Signalling-Lösungen in allen Segmenten (Vollbahnen, Nebenbahnen, LRV, Metro) um einen effizienten, digitalen und nachhaltigen Bahnbetrieb zu sichern.",
+   },
+ ];
+
+
+
+interface ShowAccordionState {
+  [key: string]: boolean;
+}
+
+
+
 export default function StandorteAccordion() {
-  const locations = [
-    {
-      division: "Division Schweiz",
-      location: "Chemnitz",
-      name: "Stadler Chemnitz Gmbh",
-      type: ["Service", "Production"],
-      contactPerson: { title: "Geschäftsleiter", name: "Albrecht Teich" },
-      phone: "+41 71 626 21 20",
-      email: "stadler.rail@stadlerrail.com",
-      img: "./chemnitz-standortfoto.jpg",
-      description:
-        "Am Standort Chemnitz unterhält Stadler ein flexibles, schlagkräftiges Team von rund 160 Ingenieuren und Ingenieurinnen sowie Entwicklern und Entwicklerinnen. Die Mitarbeitenden erbringen für die Stadler-Gruppe Engineering-Leistungen in den Bereichen Konstruktion, Berechnung, Elektrik, Pneumatik und der Mehrkörpersimulation.",
-    },
-    {
-      division: "Division Components",
-      location: "Biel",
-      name: "Stadler Stahlguss AG",
-      type: ["Service", "Production", "Signaling"],
-      contactPerson: { title: "CEO", name: "Michael Schmitz" },
-      phone: "+41 (0)32 344 45 00",
-      fax: "+41 (0)32 344 45 10",
-      email: "info@stadlerstahlguss.ch",
-      img: "./stadler_stahlguss.jpg",
-      description:
-        "Die Stadler Stahlguss AG bietet vom Engineering, über den Guss und die mechanische Fertigbearbeitung, bis hin zur Röntgenprüfung alles, was man von einer modernen und zukunftsorientierten Giesserei erwartet. Neben der Produktion für andere Standorte von Stadler werden auch Unternehmen aus den verschiedensten Industriebereichen beliefert. Die SSG gehört seit 2004 zu Stadler. In diesem Jahr übernahm Stadler die frühere Von Roll Stahlgiesserei Biel AG.",
-    },
-    {
-      division: "Division Signaling",
-      location: "Wallisellen",
-      name: "Stadler Signalling",
-      type: ["Signaling"],
-      contactPerson: { title: "CEO", name: "Marc Trippel" },
-      phone: "+41 (0)32 344 45 00",
-      email: "stadler.signalling@stadlerrail.com",
-      img: "./officewallisellen2_skaliert.jpg",
-      description:
-        "Seit 2017 hat Stadler ein unabhängiges, internationales Kompetenzzentrum für Signaltechnik aufgebaut, welches Ende 2021 um die ehemalige BÄR Bahnsicherung AG erweitert wurde. Heute hat der Bereich Signalling von Stadler den Hauptsitz in Wallisellen mit weiteren Standorten in der Schweiz und Deutschland. Das breite Signalling-Portfolio umfasst sämtliche Lösungen in den Bereichen automatisiertes Fahren (ATO), Zugsicherung (ETCS und Class-B), CBTC-Lösungen für führerloses Fahren sowie Stellwerkstechnik (ESTW und RSTW). Wir bieten unseren Kunden massgeschneiderte Signalling-Lösungen in allen Segmenten (Vollbahnen, Nebenbahnen, LRV, Metro) um einen effizienten, digitalen und nachhaltigen Bahnbetrieb zu sichern.",
-    },
-  ];
-  const [showAccordion, setShowAccordion] = useState(false);
+  const [showAccordion, setShowAccordion] = useState<ShowAccordionState>({});
 
-  const toggleAccordion = () => {
-    setShowAccordion(!showAccordion);
+  const toggleAccordion = (id: string) => {
+    setShowAccordion((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
-
   return (
     <>
-      {locations.map((item, key) => (
+      {locations.map((item) => (
         <div
-          key={key}
-          className="text-gray-500 mb-8 border bg-white border border-gray-200 shadow-md"
+          key={item.id}
+          className="text-gray-500 mb-8 border bg-white border-gray-200 shadow-md"
         >
           <div className="flex items-start justify-between w-full p-5 font-medium rtl:text-right text-gray-500">
             <div className="pt-4">
               <div className="flex">
-                <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs rounded-full rounded font-light bg-primaryTrans-100 tracking-tight text-gray-900">
+                <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs rounded-full font-light bg-primaryTrans-100 tracking-tight text-gray-900">
                   {item.division}
                 </p>
-                <p className="mb-3 py-1 px-2 text-xs font-light tracking-tight rounded-full rounded font-light bg-greenBright text-gray-900">
+                <p className="mb-3 py-1 px-2 text-xs tracking-tight rounded-full  font-light bg-greenBright text-gray-900">
                   {item.location}
                 </p>
               </div>
@@ -68,12 +83,12 @@ export default function StandorteAccordion() {
               </h3>
 
               <div className="items-start space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                <div className="-ml-2 mr-3 w-full flex">
+                <div className="-ml-2 w-full flex items-start flex-wrap">
                   {item.type.map((type, key) => (
                     <a
                       key={key}
                       href="#"
-                      className="inline-block px-4 py-2 mr-4 border rounded-full text-xs"
+                      className="inline-block px-4 py-2 mr-4 border rounded-full text-xs last-of-type:mr-0 mb-2"
                     >
                       {type}
                     </a>
@@ -82,9 +97,9 @@ export default function StandorteAccordion() {
               </div>
             </div>
             <div
-              onClick={toggleAccordion}
+              onClick={() => toggleAccordion(item.id)}
               className={`cursor-pointer py-2.5 leading-6 font-medium  rounded flex items-center gap-2 ${
-                showAccordion ? "rotate-90" : "-rotate-90"
+                showAccordion[item.id] ? "rotate-90" : "-rotate-90"
               }`}
             >
               <svg
@@ -101,7 +116,7 @@ export default function StandorteAccordion() {
               </svg>
             </div>
           </div>
-          {showAccordion && (
+          {showAccordion[item.id] && (
             <div className="p-6">
               <div className="flex justify-start items-start">
                 <div className="w-9/12">
@@ -139,9 +154,9 @@ export default function StandorteAccordion() {
                         >
                           <path
                             stroke="#3379A9"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M4 4H1m3 4H1m3 4H1m3 4H1m6.071.286a3.429 3.429 0 1 1 6.858 0M4 1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
                           />
                         </svg>

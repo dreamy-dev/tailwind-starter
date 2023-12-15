@@ -17,7 +17,7 @@ export default function Header() {
       className={`bg-darkBlue ${isMobileNavOpen ? "mobile-nav-open" : ""}`}
     >
       <ContentWidth>
-        <div className="flex justify-between items-center col-span-12 w-full  pt-5 ">
+        <div className="flex justify-between items-center col-span-12 w-full  pt-5 pb-5">
           <div className="lg:hidden">
             <Link
               href="/"
