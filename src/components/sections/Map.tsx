@@ -49,11 +49,11 @@ export default function Map() {
         <MapTextTitle />
         <Stats data={statsData} backgroundColor="bg-white" />
         <div className="relative">
-          <div className="pl-20 py-8 relative w-[24%] bg-greyBrighten-600 z-10">
-            <div>
-              <ul className="text-primary ">
+          <div className="pl-20 py-8 relative w-full lg:w-[24%] bg-greyBrighten-600 z-10">
+            <div className="relative">
+              <ul className="text-primary flex flex-wrap lg:flex-col ">
                 {countries.map((country, index) => (
-                  <li className="mb-3 whitespace-no-wrap w-[250px]" key={index}>
+                  <li className="mb-3 whitespace-no-wrap mr-16 lg:mr-0" key={index}>
                     <a href="#">{country}</a>
                   </li>
                 ))}
