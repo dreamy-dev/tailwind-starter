@@ -3,12 +3,11 @@ import SubHero from "@/components/sections/SubHero";
 import HeroText from "../../components/sections/HeroText"
 import DNA from "./DNA";
 import SustainableProcurement from "../zulieferer/SustainableProcurement";
-import History from "./History";
+import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
-import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import EventCalendar from "@/components/sections/EventCalendar";
 import Hero from "./Hero";
 
@@ -115,7 +114,13 @@ export default function Unternehmen() {
 
       <SustainableProcurement title="Nachhaltigkeit" />
       {/* <Nachhaltigkeit /> */}
-      <History />
+      <TeaserGeneral
+        title="Stadler History"
+        customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ctaText="Zu history"
+        href="/history"
+      ></TeaserGeneral>
+      {/* <History /> */}
       <HomePageCarousel
         items={cards}
         carouselTitle="Erfolgsgeschichten"
