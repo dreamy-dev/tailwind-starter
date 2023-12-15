@@ -39,7 +39,7 @@ export default function Quote() {
                 Peter Spuhler
               </div>
               <div className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                CEO
+                Verwaltungsratspräsident
               </div>
             </div>
           </figcaption>

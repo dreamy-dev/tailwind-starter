@@ -1,23 +1,16 @@
 "use client";
 import SubHero from "@/components/sections/SubHero";
-import Hero from "./Hero";
+import HeroText from "../../components/sections/HeroText"
 import DNA from "./DNA";
-import Land from "./Land";
-import WertePrinzipen from "./WertePrinzipen";
 import SustainableProcurement from "../zulieferer/SustainableProcurement";
-import Nachhaltigkeit from "./Nachhaltigkeit";
 import History from "./History";
-import SuccessStories from "./SuccessStories";
-import Subscribe from "../../components/sections/Subscribe";
-import Stats from "../../components/sections/Stats";
-import NewsTeaser from "./NewsTeaser";
-import ContentWidth from "@/components/layouts/ContentWidth";
 import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import EventCalendar from "@/components/sections/EventCalendar";
+import Hero from "./Hero";
 
 const cards = [
   {
@@ -103,23 +96,29 @@ export default function Unternehmen() {
   return (
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
-      <Hero />
+
+      <HeroText
+        title="Das ist Stadler"
+        leadText="Stadler baut Schienenfahrzeuge, die sich rechnen und auf die Bedürfnisse der Kunden zugeschnitten sind. Unsere Züge sind zuverlässig und betriebssicher – bei maximalem Reisekomfort für die Fahrgäste."
+      ></HeroText>
+      <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}
       <FactsAndFigures
         data1={statistics}
         data2={daten}
-        title="Daten & Facten"
+        title="Daten & Fakten"
         showTwoRows={false}
       ></FactsAndFigures>
-      <Map />
       <CorporateGorvernance />
-      <SustainableProcurement />
+      <Map />
+
+      <SustainableProcurement title="Nachhaltigkeit" />
       {/* <Nachhaltigkeit /> */}
       <History />
       <HomePageCarousel
         items={cards}
-        carouselTitle="Erfolgsgschichten"
+        carouselTitle="Erfolgsgeschichten"
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
@@ -128,9 +127,6 @@ export default function Unternehmen() {
         title="News zu Stadler"
         ctaText="Zu allen News"
       ></TeaserGeneral>
-
-      {/* <NewsTeaser /> */}
-      <Subscribe />
     </>
   );
 }

@@ -42,6 +42,47 @@ import { useState } from "react";
      description:
        "Seit 2017 hat Stadler ein unabhängiges, internationales Kompetenzzentrum für Signaltechnik aufgebaut, welches Ende 2021 um die ehemalige BÄR Bahnsicherung AG erweitert wurde. Heute hat der Bereich Signalling von Stadler den Hauptsitz in Wallisellen mit weiteren Standorten in der Schweiz und Deutschland. Das breite Signalling-Portfolio umfasst sämtliche Lösungen in den Bereichen automatisiertes Fahren (ATO), Zugsicherung (ETCS und Class-B), CBTC-Lösungen für führerloses Fahren sowie Stellwerkstechnik (ESTW und RSTW). Wir bieten unseren Kunden massgeschneiderte Signalling-Lösungen in allen Segmenten (Vollbahnen, Nebenbahnen, LRV, Metro) um einen effizienten, digitalen und nachhaltigen Bahnbetrieb zu sichern.",
    },
+   {
+     id: "4",
+     division: "Division Service",
+     location: "Frauenfeld",
+     name: "Stadler Service",
+     type: ["Service"],
+     contactPerson: { title: "CEO", name: "Martin Zurgilgen" },
+     phone: "+41 71 626 20 20",
+     email: "stadler.service@stadlerrail.com",
+     img: "https://www.stadlerrail.com/media/img/c/standort_webseite.jpg",
+     description:
+       "Stadler officially opened its Frauenfeld location at the beginning of 2022. At the centre of expertise in Frauenfeld, which comprises over 6,000 square metres of production space and 110 metres of pit track, Stadler offers Swiss and foreign customers an extensive portfolio of services, ranging from classic bogie and gearbox overhauls to complex accident repairs and demanding refit projects.",
+   },
+   {
+     id: "5",
+     division: "Division Germany",
+     location: "Chemnitz",
+     name: "Stadler Chemnitz GMBH",
+     type: ["Service", "Production"],
+     contactPerson: { title: "Managing Director", name: "Michael Schmidt" },
+     phone: "+49 371 24 35 50 00",
+     img: "https://www.stadlerrail.com/media/img/c/chemnitz-standortfoto.jpg",
+     description:
+       "At its site in Chemnitz, Stadler employs a flexible and effective team of engineers and developers. Around 160 employees provide engineering services for the Stadler group in the areas of construction, electronics, pneumatics and multi-body simulation.",
+   },
+   {
+     id: "6",
+     division: "Division Central Europe",
+     location: "Astana",
+     name: "Stadler Kazakhstan LLP",
+     type: ["Signaling"],
+     contactPerson: {
+       title: "Chief executive officer",
+       name: "Vladimir Rusak",
+     },
+     phone: "+7 771 085 1527",
+     email: "stadler.kazakhstan@stadlerrail.com",
+     img: "https://www.stadlerrail.com/media/img/c/dji_0310.jpg",
+     description:
+       "The strategic partner of «Stadler Kazakhstan» LLP is JSC «NC «Kazakhstan Temir Zholy», with whom the contract was signed for the supply of modern comfortable and new generation passenger coaches. The coaches are designed to move at speeds up to 160 km/h, with useful life of 40 years.",
+   },
  ];
 
 
