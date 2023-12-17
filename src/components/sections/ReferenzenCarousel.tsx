@@ -63,37 +63,110 @@ const images = [
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "FLIRT bewegt die Welt",
-    text:
-      "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/train-c.jpg",
+    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
+    img: "/Flirt-160/f3nsreiz0715e-1.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Der Weltrekord-Zug: FLIRT Akku",
-    text:
-      "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/train-c.jpg",
+    text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
+    img: "/Flirt-160/f3vd0716_pic.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/fab0516_pic.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/fbzd0814ir_pic.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/train-c.jpg",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/fga0816d_pic.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/flirt_abellio_gauda-alphen_nl.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/flirt_city_ru.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/flirt_finnland_ru.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/flirt_mav_2serie_2014_presse2.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/flirt_region_lodz_polen.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/flirt3-arriva-bahnhof-dreisystem.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/frex0711d-1.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/front-designbild_dynamisch_bmu.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/frontbild_dynamisch_flirt_texrail.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/fsta0416_pic_klein.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/fwfb0615_pic_klein.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/perpektive_02_white.jpg",
+  },
+  {
+    name: "Dallas Area Rapid Transit (DART) USA",
+    title: "Im Land der längsten Zugstrecken",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    img: "/Flirt-160/sob-gp1_0905b.jpg",
   },
 ];
 
