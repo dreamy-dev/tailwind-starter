@@ -4,6 +4,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import H1 from "../../components/typography/H1";
+import Text from "@/components/typography/Text";
 
 export default function CareerHero() {
   return (
@@ -12,13 +13,11 @@ export default function CareerHero() {
         <div className="mb-6 max-w-screen-md lg:mb-0">
           <br />
           <br />
-          <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-tight text-white md:text-5xl lg:text-6xl">
-            Wir bewegen die Welt jeden Tag
-          </h1>
-          <p className="my-8 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl">
+          <H1 styles=" text-white ">Wir bewegen die Welt jeden Tag</H1>
+          <Text styles="my-8 text-white lg:mb-8 text-xl">
             Join us on our mission to help millions of people to reach their
             destination
-          </p>
+          </Text>
         </div>
         <form
           action="#"

@@ -45,17 +45,76 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
 const trains = [
   {
-    name:
-      "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
-    image: "/train-c.jpg",
+    name: "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
+    image: "/Flirt-160/f3nsreiz0715e-1.jpg",
   },
   {
     name: "Ein vollelektrischer FLIRT ywischen DE und NL",
-    image: "/train-c.jpg",
+    image: "/Flirt-160/f3vd0716_pic.jpg",
   },
   {
     name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
-    image: "/train-c.jpg",
+    image: "/Flirt-160/fab0516_pic.jpg",
+  },
+  {
+    name: "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
+    image: "/Flirt-160/fbzd0814ir_pic.jpg",
+  },
+  {
+    name: "Ein vollelektrischer FLIRT ywischen DE und NL",
+    image: "/Flirt-160/fga0816d_pic.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt_abellio_gauda-alphen_nl.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt_city_ru.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt_finnland_ru.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt_mav_2serie_2014_presse2.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt_region_lodz_polen.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt_region_lodz_polen.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/flirt3-arriva-bahnhof-dreisystem.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/frex0711d-1.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/front-designbild_dynamisch_bmu.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/frontbild_dynamisch_flirt_texrail.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/fsta0416_pic_klein.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/fwfb0615_pic_klein.jpg",
+  },
+  {
+    name: "Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT",
+    image: "/Flirt-160/sob-gp1_0905b.jpg",
   },
 ];
 
@@ -63,36 +122,31 @@ const images = [
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "FLIRT bewegt die Welt",
-    text:
-      "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
+    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Der Weltrekord-Zug: FLIRT Akku",
-    text:
-      "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
+    text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/train-c.jpg",
   },
   {
     name: "Dallas Area Rapid Transit (DART) USA",
     title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/train-c.jpg",
   },
 ];
