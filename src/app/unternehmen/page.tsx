@@ -98,7 +98,7 @@ export default function Unternehmen() {
 
       <HeroText
         title="Das ist Stadler"
-        leadText="Stadler baut Schienenfahrzeuge, die sich rechnen und auf die Bedürfnisse der Kunden zugeschnitten sind. Unsere Züge sind zuverlässig und betriebssicher – bei maximalem Reisekomfort für die Fahrgäste."
+        leadText=""
       ></HeroText>
       <Hero></Hero>
       <DNA />
