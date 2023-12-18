@@ -259,12 +259,12 @@ const TrainCarousel = (props?: any) => {
         <motion.div
           className={`${
             isOpen ? "grid" : "hidden"
-          } col-span-12 grid-cols-4 grid-rows-2 gap-2`}
+          } col-span-12 lg:grid-cols-4 lg:grid-rows-2 gap-2`}
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
           {tabs.categories[selectedCategory].trains.map((item) => (
-            <div key={item.name} className="bg-white text-black flex flex-col">
+            <div key={item.name} className="bg-white text-black flexflex-row lg:flex-col">
               <img className="w-full" src={item.img} />
               <div className="p-6">
                 <small className="text-greySolid-600 flex mb-2">

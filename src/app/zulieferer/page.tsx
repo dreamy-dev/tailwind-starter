@@ -70,10 +70,15 @@ export default function Lieferanten() {
   return (
     <>
       <Hero />
-      <FactsAndFigures data1={facts} data2={figures} title="Supply Chain Management in Zahlen" showTwoRows={false} />
+      <FactsAndFigures
+        data1={facts}
+        data2={figures}
+        title="Supply Chain Management in Zahlen"
+        showTwoRows={false}
+      />
       <Quote />
       <TeaserDouble />
-      <SustainableProcurement />
+      <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" />
       <FAQ />
       <Contact
         title="Ihr Kontakt"
