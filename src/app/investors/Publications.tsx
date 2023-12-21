@@ -1,5 +1,4 @@
 import ContentWidth from "@/components/layouts/ContentWidth";
-import HeroText from "@/components/sections/HeroText";
 import Text from "@/components/typography/Text";
 import H2 from "@/components/typography/H2";
 
@@ -8,6 +7,7 @@ export default function Publications() {
     <section>
       <ContentWidth>
         <div className="col-span-12 py-8">
+         
           <H2>Publikationen</H2>
           <br />
           <Text>

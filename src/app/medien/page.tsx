@@ -66,9 +66,17 @@ export default function Medien() {
   return (
     <div>
       <HeroText
-        title={<>Medienbereich</>}
-        leadText="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/page" },
+        //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+        //   { text: "Product", link: "/product" },
+        // ]}
+        title="Medienbereich"
+         leadText="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
+   
       <HomePageCaroucel
         items={newsCards}
         carouselTitle="News"

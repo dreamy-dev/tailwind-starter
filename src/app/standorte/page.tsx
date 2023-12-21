@@ -9,13 +9,18 @@ export default function Standorte() {
   return (
     <div>
       <HeroText
-        category="Standorte"
+        breadcrumbs={[
+          { text: "Lösungen", link: "/page" },
+          { text: "Standorte", link: "/Standorte" }
+        ]}
         title="Weltweit für Sie da"
         leadText="Sie sind am Zug: Entdecken Sie alle Standorte und Divisionen von Stadler auf einen Blick. Senden Sie uns eine Nachricht oder rufen Sie uns einfach an – wir freuen uns, von Ihnen zu hören."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
+    
       <ContentWidth>
-        <div className="col-span-12 py-8">
-        </div>
+        <div className="col-span-12 py-8"></div>
         <div className="col-span-12 pt-8">
           <StandorteFilters />
         </div>
