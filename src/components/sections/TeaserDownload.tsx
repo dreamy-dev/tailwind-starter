@@ -16,12 +16,11 @@ interface TeaserProps {
 }
 interface TeaserDownloadProps extends TeaserProps {
   title?: string;
-  leadText: string;
+  leadText?: string;
   buttonLink: string;
   buttonText: string;
   listData: ListItem[];
 }
-
 
 const TeaserDownload: React.FC<TeaserDownloadProps> = ({
   title,
@@ -33,13 +32,11 @@ const TeaserDownload: React.FC<TeaserDownloadProps> = ({
   showButton = true,
 }) => {
   return (
-    <section className="bg-white pb-20">
+    <section className="bg-white py-12">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>{title}</H2>
-          <Lead>
-          {leadText}
-          </Lead>
+          <Lead>{leadText}</Lead>
           {showList && (
             <ul className="mb-8">
               {listData.map((item, index) => (
