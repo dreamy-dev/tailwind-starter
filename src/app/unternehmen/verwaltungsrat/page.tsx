@@ -49,9 +49,16 @@ export default function Verwaltungsrat() {
   return (
     <>
       <HeroText
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/solutions" },
+        //   { text: "Full service", link: "/full-service" },
+        // ]}
         title="Stadler Verwaltungsrat"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
+     
       <SmallWidth>
         <div className="grid grid-cols-2 gap-3 mb-8">
           {team.map((item) => (

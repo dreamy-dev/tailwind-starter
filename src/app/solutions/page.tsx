@@ -12,7 +12,17 @@ export default function Solutions() {
   return (
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
-      <HeroText></HeroText>
+      <HeroText
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/page" },
+        //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+        //   { text: "Product", link: "/product" },
+        // ]}
+        title="Lorem ipsum dolor sit amet"
+        // leadText="Your lead text here."
+        // withCTA={true}
+        // buttonText="CTA Button"
+      />
       <SmallWidth>
         <Lead>
           Für Stadler endet Kundennähe nicht mit der Auslieferung der Züge.

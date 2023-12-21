@@ -95,11 +95,17 @@ export default function Unternehmen() {
   return (
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
-
       <HeroText
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/solutions" },
+        //   { text: "Full service", link: "/full-service" },
+        // ]}
         title="Das ist Stadler"
-        leadText=""
-      ></HeroText>
+        //leadText="Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst."
+        // withCTA={true}
+        // buttonText="CTA Button"
+      />
+     
       <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}

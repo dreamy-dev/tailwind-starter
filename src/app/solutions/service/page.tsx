@@ -65,10 +65,14 @@ export default function Service() {
   return (
     <>
       <HeroText
-        solution
-        category="Service"
+        breadcrumbs={[
+          { text: "Lösungen", link: "/solutions" },
+          { text: "Service", link: "/service" },
+        ]}
         title="Service Angebot"
         leadText="Für Stadler endet Kundennähe nicht mit der Auslieferung der Züge. Unsere Mitarbeitenden stehen unseren Kunden als Servicepartner rund um die Uhr mit Rat und Tat zur Seite, um höchste Qualität zu garantieren. Dadurch gewährleisten wir die Zuverlässigkeit und Verfügbarkeit unserer Schienenfahrzeuge über die gesamte Lebensdauer."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
       <img
         width={"100%"}
@@ -77,7 +81,7 @@ export default function Service() {
         alt="hero product image"
       />
       <ServiceTeasers />
-      <FactsAndFigures data1={daten } data2={fakten } title="Title"/>
+      <FactsAndFigures data1={daten} data2={fakten} title="Title" />
     </>
   );
 }

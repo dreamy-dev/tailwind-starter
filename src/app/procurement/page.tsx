@@ -10,9 +10,17 @@ export default function Procurement() {
   return (
     <>
       <HeroText
-        title="Unsere Standards & Geschäftsbedingungen "
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/page" },
+        //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+        //   { text: "Product", link: "/product" },
+        // ]}
+        title="Unsere Standards & Geschäftsbedingungen"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      ></HeroText>
+        // withCTA={true}
+        // buttonText="CTA Button"
+      />
+
       <ProductHero />
       <Values></Values>
       <TeaserGeneral

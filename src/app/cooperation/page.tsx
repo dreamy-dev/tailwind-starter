@@ -13,9 +13,17 @@ export default function Cooperation() {
       <ContentWidth>
         <div className="col-span-12">
           <HeroText
+            // breadcrumbs={[
+            //   { text: "Lösungen", link: "/page" },
+            //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+            //   { text: "Product", link: "/product" },
+            // ]}
             title="Lieferanten-Netzwerk: Werden Sie unser Partner!"
-            leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          ></HeroText>
+             leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            // withCTA={true}
+            // buttonText="CTA Button"
+          />
+        
           <ProductHero></ProductHero>
           <TeaserGeneral
             title="Unsere Geschäftsbedingungen"
