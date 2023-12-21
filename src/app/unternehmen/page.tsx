@@ -95,11 +95,17 @@ export default function Unternehmen() {
   return (
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
-
       <HeroText
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/solutions" },
+        //   { text: "Full service", link: "/full-service" },
+        // ]}
         title="Das ist Stadler"
-        leadText="Stadler baut Schienenfahrzeuge, die sich rechnen und auf die Bedürfnisse der Kunden zugeschnitten sind. Unsere Züge sind zuverlässig und betriebssicher – bei maximalem Reisekomfort für die Fahrgäste."
-      ></HeroText>
+        //leadText="Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst."
+        // withCTA={true}
+        // buttonText="CTA Button"
+      />
+     
       <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}

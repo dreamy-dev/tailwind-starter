@@ -16,7 +16,7 @@ export default function Verwaltungsrat() {
       img: "https://www.stadlerrail.com/media/img/c/schwald-hans-peter-2023.jpg",
     },
     {
-      label: "Stefan AseNnkerschbaummer",
+      label: "Stefan Asennkerschbaummer",
       job: "Mitglied Verwaltungsrat, Aufsichtsratsvorsitzender der Robert Bosch GmbH",
       img: "https://www.stadlerrail.com/media/img/c/stefan-asenkerschbaumer-2023.jpg",
     },
@@ -49,9 +49,16 @@ export default function Verwaltungsrat() {
   return (
     <>
       <HeroText
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/solutions" },
+        //   { text: "Full service", link: "/full-service" },
+        // ]}
         title="Stadler Verwaltungsrat"
-        leadText="Der Verwaltungsrat der Stadler Rail AG wird von Peter Spuhler präsidiert. Ein Team mit acht Persönlichkeiten aus Wirtschaft und Politik nimmt gemeinsam die Aufgaben des Gremiums wahr."
+        leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
+     
       <SmallWidth>
         <div className="grid grid-cols-2 gap-3 mb-8">
           {team.map((item) => (

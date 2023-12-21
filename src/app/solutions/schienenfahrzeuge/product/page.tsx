@@ -15,11 +15,17 @@ export default function Product() {
   return (
     <>
       <HeroText
-        category="Schienenfahrzeuge"
-        solution
-        title={<>Leicht und flexibel: Flirt 160</>}
+        breadcrumbs={[
+          { text: "Lösungen", link: "/solutions" },
+          { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+        
+        ]}
+        title="Leicht und flexibel: Flirt 160"
         leadText="Der Flirt 160 setzt Massstäbe: Leichte Bauweise aus Aluminium, markantes Design, höchster Passagierkomfort und einfache Wartung. Erfahren Sie, was dieses Modell so unverwechselbar macht."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
+  
       <ProductHero />
       <TextSection></TextSection>
       <QualityFeatures />
