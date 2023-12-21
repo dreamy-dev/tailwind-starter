@@ -7,14 +7,19 @@ import ButtonPrimary from "../elements/ButtonPrimary";
 
 interface TeaserDownloadProps {
   title?: string;
-    customText?: string;
+  customText?: string;
   ctaText?: string;
   href?: string;
 }
 
-function TeaserGeneral({ title, customText, ctaText, href }: TeaserDownloadProps) {
+function TeaserGeneral({
+  title,
+  customText,
+  ctaText,
+  href,
+}: TeaserDownloadProps) {
   return (
-    <section className="bg-white pb-20">
+    <section className="bg-white py-12">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>{title}</H2>

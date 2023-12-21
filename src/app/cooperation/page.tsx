@@ -6,6 +6,25 @@ import HeroText from "@/components/sections/HeroText";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import ProductHero from "../solutions/schienenfahrzeuge/product/Hero";
+import Contact from "@/components/sections/Contact";
+import TeaserDownload from "../../components/sections/TeaserDownload";
+
+const downloads = [
+  {
+    text:
+      "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
+  },
+  {
+    text:
+      "Ergänzende Einkaufsbedingungen für EU-Zulassungsprozesse Stadler Rheintal AG",
+  },
+  {
+    text: "Kurzanleitung Zeitfensterbuchung",
+  },
+  {
+    text: "Stadler Bussnang AG & Stadler Service AG Logistikspezifikation",
+  },
+];
 
 export default function Cooperation() {
   return (
@@ -24,14 +43,27 @@ export default function Cooperation() {
             // buttonText="CTA Button"
           />
         
-          <ProductHero></ProductHero>
-          <TeaserGeneral
-            title="Unsere Geschäftsbedingungen"
-            customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "
-            ctaText="Download Geschäftsbedingungen"
-          ></TeaserGeneral>
+         
         </div>
       </ContentWidth>
+      <ProductHero></ProductHero>
+      <TeaserGeneral
+        title="Unsere Geschäftsbedingungen"
+        customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "
+        ctaText="Download Geschäftsbedingungen"
+      ></TeaserGeneral>
+      <CooperationInfo></CooperationInfo>
+      <CooperationBecome></CooperationBecome>
+
+      <Contact />
+      <TeaserDownload
+        title="Allgemeine Downloads"
+        buttonLink="/downloadcenter"
+        buttonText="Alle Medienmitteilungen"
+        showList={true}
+        showButton={false}
+        listData={downloads}
+      ></TeaserDownload>
     </>
   );
 }
