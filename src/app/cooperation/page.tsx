@@ -52,8 +52,8 @@ export default function Cooperation() {
         customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "
         ctaText="Download Geschäftsbedingungen"
       ></TeaserGeneral>
-      <CooperationInfo></CooperationInfo>
       <CooperationBecome></CooperationBecome>
+      <CooperationInfo></CooperationInfo>
 
       <Contact />
       <TeaserDownload
