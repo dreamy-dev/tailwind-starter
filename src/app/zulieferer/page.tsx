@@ -7,6 +7,8 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Quote from "@/components/sections/Quote";
 import Contact from "@/components/sections/Contact";
 import TeaserDouble from "@/components/sections/TeaserDouble";
+import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
+import TeaserImageRight from "@/components/sections/TeaserImageright";
 
 const facts = [
   {
@@ -77,7 +79,32 @@ export default function Lieferanten() {
         showTwoRows={false}
       />
       <Quote />
-      <TeaserDouble />
+      <TeaserImageRight
+        imageSrc="Referenzen_TSSSA_Bild-VR.jpg"
+        title="Geschäftsbedingungen in der Beschaffung"
+        description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+        listItems={["Lorem ipusm", "Dolor sit amet", "Stet clita"]}
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+        buttonText="Mehr dazu"
+        buttonHref="/procurement"
+        backgroundColor="primaryTrans-50"
+      ></TeaserImageRight>
+      <TeaserImageLeft
+        imageSrc="news-1.jpg"
+        title="Werden Sie Partner von Stadler"
+        description="  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+        listItems={[
+          "Lorem ipusm",
+          "Dolor sit amet",
+          "Stet clita",
+          "Dolore magna",
+          "Consetetur sadip",
+        ]}
+        buttonText="Jetzt Partner werden"
+        buttonHref="/cooperation"
+        backgroundColor="primaryTrans-50"
+      ></TeaserImageLeft>
+      {/* <TeaserDouble /> */}
       <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" />
       <FAQ />
       <Contact

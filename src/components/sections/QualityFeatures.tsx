@@ -6,14 +6,14 @@ import ContentWidth from "../layouts/ContentWidth";
 
 
 interface Feature {
-  title: string;
-  text: string;
-  svg: React.ReactNode; 
+  title?: string;
+  text?: string;
+  svg?: React.ReactNode; 
 }
 
 interface QualityFeaturesProps {
   features: Feature[];
-  mainTitle: string;
+  mainTitle?: string;
 }
 
 const QualityFeatures: React.FC<QualityFeaturesProps> = ({ features, mainTitle }) => {
