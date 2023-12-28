@@ -191,6 +191,7 @@ const TestimonialsCarousel: React.FC = () => {
  useEffect(() => {
    const handleTouchStart = (e: TouchEvent) => {
      setTouchStartX(e.touches[0].clientX);
+      e.preventDefault();
    };
 
    const handleTouchMove = (e: TouchEvent) => {
@@ -217,8 +218,10 @@ const TestimonialsCarousel: React.FC = () => {
      setTouchStartX(null);
    };
 
-   document.addEventListener("touchstart", handleTouchStart);
-   document.addEventListener("touchmove", handleTouchMove);
+   document.addEventListener("touchstart", handleTouchStart, {
+     passive: false,
+   });
+   document.addEventListener("touchmove", handleTouchMove, { passive: false });
    document.addEventListener("touchend", handleTouchEnd);
 
    return () => {
