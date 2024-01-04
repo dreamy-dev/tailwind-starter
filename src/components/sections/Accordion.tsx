@@ -3,67 +3,29 @@ import { useState } from "react";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import H2 from "@/components/typography/H2";
 
+
 interface FAQItem {
-  question: string;
-  answer: string;
+  title?: string;
+  description?: string;
 }
-const answers: FAQItem[] = [
-  {
-    question:
-      "1-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "1-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question:
-      "2-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "2-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question:
-      "3-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "3-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question:
-      "4-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "4-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question:
-      "5-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "5-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question:
-      "6-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "6-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question:
-      "7-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
-    answer:
-      "7-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-];
 
-export default function FAQ() {
+interface FAQProps {
+  faqs: FAQItem[];
+  mainTitle?: string;
+}
 
-    const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
-    const handleAccordionClick = (index: number) => {
-      setActiveAccordion(activeAccordion === index ? null : index);
-    };
+const Accordion: React.FC<FAQProps> = ({ faqs, mainTitle }) => {
+  const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+
+  const handleAccordionClick = (index: number) => {
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
   return (
     <section className="bg-white dark:bg-gray-900">
       <SmallWidth>
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-          <H2>Frequently asked questions</H2>
+          <H2>{ mainTitle}</H2>
           <p className="my-6">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -72,7 +34,7 @@ export default function FAQ() {
           </p>
           <div className="">
             <div id="accordion-flush">
-              {answers.map((item, index) => (
+              {faqs.map((item, index) => (
                 <div key={index}>
                   <h2 id={`accordion-flush-heading-${index}`} className="mb-2">
                     <button
@@ -86,7 +48,7 @@ export default function FAQ() {
                       aria-expanded={activeAccordion === index}
                       aria-controls={`accordion-flush-body-${index}`}
                     >
-                      <span>{item.question}</span>
+                      <span>{item.title}</span>
                       <svg
                         data-accordion-icon=""
                         className={`w-6 h-6 ${
@@ -111,7 +73,7 @@ export default function FAQ() {
                   >
                     <div className="py-5 border-b border-gray-200 dark:border-gray-700">
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        {item.answer}
+                        {item.description}
                       </p>
                     </div>
                   </div>
@@ -119,14 +81,10 @@ export default function FAQ() {
               ))}
             </div>
           </div>
-          <p className=" mt-12">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
-          </p>
         </div>
       </SmallWidth>
     </section>
   );
-}
+};
+
+export default Accordion;

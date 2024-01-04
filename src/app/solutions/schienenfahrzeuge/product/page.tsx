@@ -3,7 +3,7 @@
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
 import Features from "@/components/sections/Features";
-import ProductHero from "./Hero";
+import ProductHero from "../../../../components/sections/HeroImageFullWidth";
 import QualityFeatures from "@/components/sections/QualityFeatures";
 import Specification from "@/components/sections/Specification";
 import HeroText from "@/components/sections/HeroText";
@@ -144,6 +144,19 @@ const features = [
     ),
   },
 ];
+
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "Signalling",
+    href: "/signalling",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: " Service",
+    href: "/service",
+  },
+];
 export default function Product() {
   return (
     <>
@@ -158,14 +171,14 @@ export default function Product() {
         // buttonText="CTA Button"
       />
 
-      <ProductHero />
+      <ProductHero imageUrl="/AdobeStock.jpg" />
       <TextSection></TextSection>
       <QualityFeatures features={features} mainTitle="Qualitätsmerkmale" />
       <ProductCarousel />
       <Specification />
 
       <TestimonialsCarousel></TestimonialsCarousel>
-      <Features />
+      <Features mainTitle="Für einen effizienten und modernen Bahnbetrieb" featuresData={featuresData} />
       <Contact />
       <Career />
     </>

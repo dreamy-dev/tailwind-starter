@@ -5,18 +5,16 @@ import CooperationBecome from "./CooperationBecome";
 import HeroText from "@/components/sections/HeroText";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import ContentWidth from "@/components/layouts/ContentWidth";
-import ProductHero from "../solutions/schienenfahrzeuge/product/Hero";
+import ProductHero from "../../components/sections/HeroImageFullWidth";
 import Contact from "@/components/sections/Contact";
 import TeaserDownload from "../../components/sections/TeaserDownload";
 
 const downloads = [
   {
-    text:
-      "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
+    text: "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
   },
   {
-    text:
-      "Ergänzende Einkaufsbedingungen für EU-Zulassungsprozesse Stadler Rheintal AG",
+    text: "Ergänzende Einkaufsbedingungen für EU-Zulassungsprozesse Stadler Rheintal AG",
   },
   {
     text: "Kurzanleitung Zeitfensterbuchung",
@@ -38,12 +36,10 @@ export default function Cooperation() {
             //   { text: "Product", link: "/product" },
             // ]}
             title="Lieferanten-Netzwerk: Werden Sie unser Partner!"
-             leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             // withCTA={true}
             // buttonText="CTA Button"
           />
-        
-         
         </div>
       </ContentWidth>
       <ProductHero></ProductHero>
