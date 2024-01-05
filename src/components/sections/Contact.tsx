@@ -7,7 +7,7 @@ export default function Contact(props?: any) {
     <section className="py-20 my-20 bg-stadlergradient">
       <SmallWidth>
         <div className="flex items-center flex-col gap-8 sm:gap-12 xl:gap-20 xl:flex-row ">
-          <div className="w-1/3">
+          <div className="w-full">
             <img
               width={320}
               height={369}
@@ -16,7 +16,7 @@ export default function Contact(props?: any) {
               alt="contact"
             />
           </div>
-          <div className="w-2/3">
+          <div className="w-full ">
             <div className=" tracking-tight">
               <H2 styles="mb-8 text-white">{props.title ?? "Ihr Kontakt"}</H2>
             </div>
