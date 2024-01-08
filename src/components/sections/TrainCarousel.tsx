@@ -226,7 +226,6 @@ const TrainCarousel = (props?: any) => {
           <canvas id="train-sequence" style={{height:'50vh', transform: 'translate(-50%, -50%)', maxWidth: '100vw', maxHeight: '50vh'}} className="fixed bottom-[50%] left-[50%]" />
       </div> */}
         <TrainSequence></TrainSequence>
-
       <ContentWidth>
         <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
           <div className="flex flex-row items-start justify-center">

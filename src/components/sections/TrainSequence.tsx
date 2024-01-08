@@ -39,9 +39,9 @@ const ImageSequence = () => {
     () =>
       [...new Array(215)].map((_, i) =>
         createImage(
-          `https://www.polestar.com/www-images/home-car-carousel/car-sequence/desktop/ps2-ps1-precept-o2/${i
+          `/trainsequence/${i
             .toString()
-            .padStart(3, '0')}.jpg`,
+            .padStart(4, '0')}.png`,
         ),
       ),
     [],
