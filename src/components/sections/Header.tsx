@@ -6,12 +6,12 @@ import TopNav from "./TopNav";
 import Link from "next/link";
 import ContentWidth from "../layouts/ContentWidth";
 
-type HeaderProps = {
-  isMobileOpen: boolean;
-  setIsMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+// type HeaderProps = {
+//   isMobileOpen: boolean;
+//   setIsMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+// };
 
-const Header: React.FC<HeaderProps> = ({ isMobileOpen, setIsMobileOpen }) => {
+const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleMobileNav = () => {
