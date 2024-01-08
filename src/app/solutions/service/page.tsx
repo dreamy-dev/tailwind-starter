@@ -61,6 +61,58 @@ const fakten = [
     duration: 3,
   },
 ];
+
+ const services = [
+    {
+      label: "Full Service",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icon_Full_Service.jpg",
+      href: "/solutions/service/full-service",
+    },
+    {
+      label: "TSSSA",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icon_TSSSA.jpg",
+      href: "/solutions/service/tsssc",
+    },
+    {
+      label: "Ersatzteile",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icon_Spare_Parts.jpg",
+      href: "/solutions/service/spare",
+    },
+    {
+      label: "Modernisation",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icon_Modernisierung.jpg",
+      href: "/solutions/service/refit",
+    },
+    {
+      label: "Revisionen",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icon_Revision.jpg",
+      href: "/solutions/service/overhaul",
+    },
+    {
+      label: "Reparaturen",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icons_Repair.jpg",
+      href: "/solutions/service/repair",
+    },
+    {
+      label: "ECM",
+      description:
+        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+      img: "https://www.stadlerrail.com/service/Icon_ECM.jpg",
+      href: "/solutions/service/ecm",
+    },
+  ];
 export default function Service() {
   return (
     <>
@@ -80,7 +132,11 @@ export default function Service() {
         src="/teaser_service.jpeg"
         alt="hero product image"
       />
-      <ServiceTeasers />
+      <ServiceTeasers
+        mainTitle="Alle Services auf einen Blick"
+        text=" Hier finden Sie eine Übersicht aller unser Service Angebote."
+        services={services}
+      />
       <FactsAndFigures data1={daten} data2={fakten} title="Title" />
     </>
   );

@@ -12,7 +12,7 @@ interface ReusableSubHeroProps {
    return (
      <FullWidth>
        <div className="col-span-12 lg:pr-20 2xl:pr-0 max-w-full bg-white relative">
-         <div className="max-w-[1500px] w-[90%]   lg:max-h-[750px] 2xl:w-full relative inset-0 flex flex-row items-center justify-start">
+         <div className="max-w-[1500px] w-[90%] lg:max-h-[750px] 2xl:max-w-[1760px] relative inset-0 flex flex-row items-center justify-start">
            <motion.div
              initial={{ x: 0, opacity: 0.4 }}
              animate={{ x: 0, opacity: 0.4 }}
@@ -35,7 +35,7 @@ interface ReusableSubHeroProps {
            >
              <img
                src={imageUrl}
-               className="w-full h-96 md:h-full object-cover"
+               className="w-full h-96 md:h-full object-cover object-right"
                alt=""
              />
            </div>

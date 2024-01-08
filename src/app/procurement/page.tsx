@@ -2,7 +2,7 @@
 
 import HeroText from "@/components/sections/HeroText";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
-import ProductHero from "../solutions/schienenfahrzeuge/product/Hero";
+import ProductHero from "../../components/sections/HeroImageFullWidth";
 import QualityFeatures from "@/components/sections/QualityFeatures";
 import TeaserDownload from "../../components/sections/TeaserDownload";
 
@@ -162,7 +162,7 @@ export default function Procurement() {
         // buttonText="CTA Button"
       />
 
-      <ProductHero />
+      <ProductHero imageUrl="/AdobeStock.jpg" />
       <QualityFeatures features={features} mainTitle="QualityFeatures" />
       <TeaserDownload
         title="Code of Conduct"
