@@ -1,15 +1,10 @@
 "use client";
-
+import HeroText from "@/components/sections/HeroText";
+import ProductHero from "@/components/sections/HeroImageFullWidth";
+import QualityFeatures from "@/components/sections/QualityFeatures";
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
 import Features from "@/components/sections/Features";
-import ProductHero from "../../../../components/sections/HeroImageFullWidth";
-import QualityFeatures from "@/components/sections/QualityFeatures";
-import Specification from "@/components/sections/Specification";
-import HeroText from "@/components/sections/HeroText";
-import TextSection from "@/components/sections/TextSection";
-import ProductCarousel from "@/components/sections/ProductCarousel";
-import TestimonialsCarousel from "@/components/sections/ReferenzenCarousel";
 const features = [
   {
     title: "Leichtbauweise",
@@ -148,8 +143,8 @@ const features = [
 const featuresData = [
   {
     imageSrc: "/teaser_signalling-2.jpg",
-    title: "Signalling",
-    href: "/signalling",
+    title: "Schienenfahrzeuge",
+    href: "/schienenfahrzeuge",
   },
   {
     imageSrc: "/teaser_service.jpeg",
@@ -157,28 +152,26 @@ const featuresData = [
     href: "/service",
   },
 ];
-export default function Product() {
+export default function Mainline() {
   return (
     <>
       <HeroText
         breadcrumbs={[
           { text: "Lösungen", link: "/solutions" },
-          { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+          { text: "Signalling", link: "/signalling" },
+          { text: "Mainline" },
         ]}
-        title="Leicht und flexibel: Flirt 160"
-        leadText="Der Flirt 160 setzt Massstäbe: Leichte Bauweise aus Aluminium, markantes Design, höchster Passagierkomfort und einfache Wartung. Erfahren Sie, was dieses Modell so unverwechselbar macht."
+        title="Signalling bei Mainline"
+        leadText="Damit Fahrgäste weltweit sicher und pünktlich ans Ziel kommen, hat Stadler die passenden Lösungen für den Bereich Mainline. Für Kunden, die sich auf Zuverlässigkeit, Präzision und höchste Sicherheit verlassen möchten."
         // withCTA={true}
         // buttonText="CTA Button"
       />
-
-      <ProductHero imageUrl="/AdobeStock.jpg" />
-      <TextSection></TextSection>
-      <QualityFeatures features={features} mainTitle="Qualitätsmerkmale" />
-      <ProductCarousel />
-      <Specification />
-
-      <TestimonialsCarousel></TestimonialsCarousel>
-      <Features mainTitle="Für einen effizienten und modernen Bahnbetrieb" featuresData={featuresData} />
+      <ProductHero imageUrl="/hero-mainline.jpg"></ProductHero>
+      <QualityFeatures
+        features={features}
+        mainTitle="Die Vorteile auf einen Blick"
+      />
+      <Features mainTitle="Weitere Produkte und Dienstleistungen " featuresData={featuresData}/>
       <Contact />
       <Career />
     </>

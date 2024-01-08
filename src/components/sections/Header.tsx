@@ -1,17 +1,26 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import TopNav from "./TopNav";
 import Link from "next/link";
 import ContentWidth from "../layouts/ContentWidth";
 
-export default function Header() {
+// type HeaderProps = {
+//   isMobileOpen: boolean;
+//   setIsMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+// };
+
+const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   };
+
+
+
+  
   return (
     <header
       className={`bg-darkBlue ${isMobileNavOpen ? "mobile-nav-open" : ""}`}
@@ -47,18 +56,24 @@ export default function Header() {
       </ContentWidth>
       <div className="hidden lg:flex flex-col-reverse w-full lg:flex-col">
         <>
-          <TopNav />
-          <NavBar />
+          <TopNav  />
+          <NavBar  />
         </>
       </div>
       <div className="flex flex-col-reverse w-full lg:flex-col lg:hidden">
         {isMobileNavOpen && (
           <>
-            <TopNav />
-            <NavBar />
+            <TopNav
+            
+            />
+            <NavBar
+          
+            />
           </>
         )}
       </div>
     </header>
   );
-}
+};
+
+export default Header;

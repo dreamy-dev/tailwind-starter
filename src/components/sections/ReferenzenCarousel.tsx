@@ -18,26 +18,26 @@ interface Image {
   img: string;
 }
 
-interface ResponsiveObject {
-  desktop: {
-    breakpoint: { max: number; min: number };
-    items: number;
-    paritialVisibilityGutter: number;
-  };
-  tablet: {
-    breakpoint: { max: number; min: number };
-    items: number;
-    paritialVisibilityGutter: number;
-  };
-  mobile: {
-    breakpoint: { max: number; min: number };
-    items: number;
-    paritialVisibilityGutter: number;
-  };
-}
+// interface ResponsiveObject {
+//   desktop: {
+//     breakpoint: { max: number; min: number };
+//     items: number;
+//     paritialVisibilityGutter: number;
+//   };
+//   tablet: {
+//     breakpoint: { max: number; min: number };
+//     items: number;
+//     paritialVisibilityGutter: number;
+//   };
+//   mobile: {
+//     breakpoint: { max: number; min: number };
+//     items: number;
+//     paritialVisibilityGutter: number;
+//   };
+// }
 
 interface TestimonialMotionProps extends MotionProps {
-  responsive: ResponsiveObject;
+  // responsive: ResponsiveObject;
   className?: string;
 }
 
@@ -163,23 +163,23 @@ const Pagination: React.FC<PaginationProps> = ({ total, current }) => {
   );
 };
 
-const responsive: ResponsiveObject = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    paritialVisibilityGutter: 60,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    paritialVisibilityGutter: 50,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    paritialVisibilityGutter: 30,
-  },
-};
+// const responsive: ResponsiveObject = {
+//   desktop: {
+//     breakpoint: { max: 3000, min: 1024 },
+//     items: 3,
+//     paritialVisibilityGutter: 60,
+//   },
+//   tablet: {
+//     breakpoint: { max: 1024, min: 464 },
+//     items: 2,
+//     paritialVisibilityGutter: 50,
+//   },
+//   mobile: {
+//     breakpoint: { max: 464, min: 0 },
+//     items: 1,
+//     paritialVisibilityGutter: 30,
+//   },
+// };
 
 const TestimonialsCarousel: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -262,7 +262,7 @@ const TestimonialsCarousel: React.FC = () => {
                 <motion.div className="max-w-[100%] flex gap-6 flex-nowrap lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
                   {images.map((image, idx) => (
                     <TestimonialMotionDiv
-                      key={image.title}
+                      key={idx}
                       className="flex flex-col items-stretch min-w-[100%] overflow-hidden shadow-md shadow-greyDarken-200  lg:min-w-[90%] bg-white lg:flex-row "
                       animate={{
                         translateX: `calc(-${current * 100}% - ${
@@ -270,7 +270,7 @@ const TestimonialsCarousel: React.FC = () => {
                         }rem)`,
                         opacity: idx === current ? 1 : 0.3,
                       }}
-                      responsive={responsive}
+                      // responsive={responsive}
                     >
                       <img
                         src={image.img}

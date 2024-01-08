@@ -2,7 +2,7 @@
 import ContentWidth from "../layouts/ContentWidth";
 import Link from "next/link";
 import IconNav from "../elements/IconNav";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const variants = {
@@ -25,7 +25,10 @@ type SubNavItem = {
 
 type NavItems = {
   topNav: NavItem[];
+
 };
+
+
 
 const navigationMain: NavItems = {
   topNav: [
@@ -53,7 +56,7 @@ const navigationMain: NavItems = {
   ],
 };
 
-export default function NavBar() {
+const NavBar = () =>{
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
@@ -68,6 +71,27 @@ export default function NavBar() {
   const toggleMainMenu = () => {
     setIsOpen((prev) => !prev);
   };
+
+
+  useEffect(() => {
+    const handleOutsideClick = (event: any) => {
+      if (isSubmenuOpen) {
+        const isClickInside = event.target.closest("#navbar-solid-bg") !== null;
+        if (!isClickInside) {
+          closeSubmenu();
+       
+        }
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isSubmenuOpen]);
+
+ 
 
   return (
     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
@@ -91,6 +115,7 @@ export default function NavBar() {
                       onClick={() => {
                         toggleSubmenu();
                         toggleMainMenu();
+                     
                       }}
                       className="flex gap-2 justify-center items-center cursor-pointer pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >
@@ -217,3 +242,5 @@ export default function NavBar() {
     </nav>
   );
 }
+
+export default NavBar;

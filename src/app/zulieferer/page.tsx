@@ -2,7 +2,7 @@
 
 import Hero from "./Hero";
 import SustainableProcurement from "./SustainableProcurement";
-import FAQ from "../../components/sections/FAQ";
+import FAQ from "../../components/sections/Accordion";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Quote from "@/components/sections/Quote";
 import Contact from "@/components/sections/Contact";
@@ -68,6 +68,51 @@ const figures = [
     duration: 3,
   },
 ];
+
+const data = [
+  {
+    title:
+      "1-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "1-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title:
+      "2-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "2-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title:
+      "3-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "3-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title:
+      "4-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "4-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title:
+      "5-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "5-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title:
+      "6-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "6-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title:
+      "7-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    description:
+      "7-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];
 export default function Lieferanten() {
   return (
     <>
@@ -106,7 +151,7 @@ export default function Lieferanten() {
       ></TeaserImageLeft>
       {/* <TeaserDouble /> */}
       <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" />
-      <FAQ />
+      <FAQ mainTitle="Frequently asked questions" faqs={data}/>
       <Contact
         title="Ihr Kontakt"
         contactname="Supply Management"
