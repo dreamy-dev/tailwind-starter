@@ -42,7 +42,7 @@ export default function Cooperation() {
           />
         </div>
       </ContentWidth>
-      <ProductHero></ProductHero>
+      <ProductHero imageUrl="/AdobeStock.jpg"></ProductHero>
       <TeaserGeneral
         title="Unsere Geschäftsbedingungen"
         customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "

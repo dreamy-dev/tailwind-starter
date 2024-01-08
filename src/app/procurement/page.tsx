@@ -162,7 +162,7 @@ export default function Procurement() {
         // buttonText="CTA Button"
       />
 
-      <ProductHero />
+      <ProductHero imageUrl="/AdobeStock.jpg" />
       <QualityFeatures features={features} mainTitle="QualityFeatures" />
       <TeaserDownload
         title="Code of Conduct"
