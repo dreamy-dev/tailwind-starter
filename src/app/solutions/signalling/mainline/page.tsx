@@ -1,10 +1,10 @@
 "use client";
 import HeroText from "@/components/sections/HeroText";
-import ProductHero from "@/components/sections/HeroImageFullWidth";
 import QualityFeatures from "@/components/sections/QualityFeatures";
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
 import Features from "@/components/sections/Features";
+import ImageFullWidth from "@/components/sections/ImageFullWidth";
 const features = [
   {
     title: "Leichtbauweise",
@@ -166,7 +166,7 @@ export default function Mainline() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-      <ProductHero imageUrl="/hero-mainline.jpg"></ProductHero>
+      <ImageFullWidth imgSrc="/hero-mainline.jpg" />
       <QualityFeatures
         features={features}
         mainTitle="Die Vorteile auf einen Blick"

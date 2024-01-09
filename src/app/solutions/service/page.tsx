@@ -5,59 +5,67 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import HeroText from "@/components/sections/HeroText";
 import Link from "@/components/typography/Link";
 import ServiceTeasers from "./ServiceTeasers";
-const daten = [
+import FullWidth from "@/components/layouts/FullWidth";
+import ImageFullWidth from "@/components/sections/ImageFullWidth";
+
+
+
+
+const facts = [
   {
-    text: "Lorem ipsum",
+    text: "Nettoerlös in CHF",
     start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
-    // duration: 3,
+    end: 3.8,
+    suffix: " Mrd.",
+    duration: 3,
+    separator: " ",
+    decimals: 1,
+    decimal: ".",
   },
   {
-    text: "Lorem ipsum",
+    text: "Auftragsbestand in CHF",
     start: 0,
-    end: 100,
-    // suffix: "%",
-    // prefix: "&gt;",
-    // duration: 3,
+    end: 22,
+    suffix: " Mrd.",
+    duration: 3,
   },
   {
-    text: "Lorem ipsum",
-    start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
-    // duration: 3,
-  },
+    text: "Auftragseingang in CHF",
+      start: 0,
+      end:8.6,
+      suffix:" Mrd.",
+      separator:" ",
+      decimals:1,
+      decimal:".",
+      duration:3,
+  }
 ];
-const fakten = [
+
+const figures = [
   {
-    text: "Lorem ipsum",
+    text: "Anzahl Mitarbeitende",
     start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
-    // duration: 3,
+    end: 13.743,
+    separator: " ",
+    decimals: 3,
+    decimal: "'",
+    duration: 3,
   },
   {
-    text: "Lorem ipsum",
+    text: "Durchschnittliche Verfügbarkeit von Schienenfahrzeugen",
     start: 0,
-    end: 100,
-    // suffix: "%",
-    // prefix: "&gt;",
-    // duration: 3,
+    end: 98,
+    suffix: "%",
+    prefix: "&gt;",
+    duration: 3,
   },
   {
-    text: "Lorem ipsum",
-    start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
+    text: "Anzahl ausgelieferte Schienenfahrzeuge",
+    start:0,
+    end: 11.749,
+    separator:" ",
+    decimals:3,
+    decimal:"'",
     duration: 3,
   },
 ];
@@ -126,18 +134,13 @@ export default function Service() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-      <img
-        width={"100%"}
-        className="h-700"
-        src="/teaser_service.jpeg"
-        alt="hero product image"
-      />
+      <ImageFullWidth imgSrc="/teaser_service.jpeg" />
       <ServiceTeasers
         mainTitle="Alle Services auf einen Blick"
-        text=" Hier finden Sie eine Übersicht aller unser Service Angebote."
+        text="Hier finden Sie eine Übersicht aller unser Service Angebote."
         services={services}
       />
-      <FactsAndFigures data1={daten} data2={fakten} title="Title" />
+      <FactsAndFigures data1={facts} data2={figures} title="Daten und Fakten" />
     </>
   );
 }

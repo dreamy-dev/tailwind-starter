@@ -19,22 +19,19 @@ interface ServiceTeasersProps {
 }
 
 const ServiceTeasers: React.FC<ServiceTeasersProps> = ({ services, mainTitle, text }) => {
- 
 
   return (
     <section className="bg-white dark:bg-gray-900 antialiased my-20">
       <ContentWidth>
-        <div className="col-span-12">
+        <div className="col-span-12 mb-12">
           <H2>{mainTitle }</H2>
-          <Text>{text}
-           
-          </Text>
+          <Text>{text}</Text>
         </div>
       </ContentWidth>
       <ContentWidth>
         {services.map((item) => (
           <div
-            className="col-span-4 max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+            className="col-span-4 max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
             key={item.label}
           >
             <a href={item.href}>
