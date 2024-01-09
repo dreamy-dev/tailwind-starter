@@ -24,8 +24,8 @@ const fontFamily = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
-// To Do metadata 
-//  const metadata: Metadata = {
+
+// export const metadata: Metadata = {
 //   title: "Stadler Website Prototype",
 //   description: "Technical analysis phase",
 // };

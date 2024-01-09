@@ -109,10 +109,10 @@ const figures = [
   //     <Hero />
   //     <Stats />
 export default async function HomePage() {
-   const { data } = await fetchData();
+const { data } = await fetchData();
   return (
     <>
-    
+      <h2>Story: {data.story.name}</h2>
       <HomePageHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <TrainCarousel />
@@ -122,18 +122,19 @@ export default async function HomePage() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-       <Map></Map>
+      <Map></Map>
       <Video></Video>
     </>
   );
 }
 
- async function fetchData() {
+export async function fetchData() {
   type SBParams = {
     version: "draft"; 
   };
   let sbParams: SBParams = { version: "draft" };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams);
+  return storyblokApi.get(`cdn/stories/home`, sbParams)
+  
 }
