@@ -6,15 +6,15 @@ export default function Contact(props?: any) {
   return (
     <section className="py-20 bg-stadlergradient">
       <SmallWidth>
-        <div className="flex items-center flex-col gap-8 sm:gap-12 xl:gap-20 xl:flex-row ">
-          <div className="w-full xl:w-[320px]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
+          <div className="w-full xl:col-span-4">
             <img
-              className="object-cover max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
+              className="object-cover object-right max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
               src="/thumbnail1.jpg"
               alt="contact"
             />
           </div>
-          <div className="w-full xl:w-1/2">
+          <div className="w-full xl:col-span-8">
             <div className=" tracking-tight">
               <H2 styles="mb-8 text-white">{props.title ?? "Ihr Kontakt"}</H2>
             </div>
