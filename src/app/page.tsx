@@ -1,4 +1,4 @@
-"use client";
+ "use client";
  import { getStoryblokApi } from "@storyblok/react";
 
 import Video from "../components/sections/Video";
@@ -108,8 +108,8 @@ const figures = [
   //     <h2>Story: {data.story.name}</h2>
   //     <Hero />
   //     <Stats />
-export default function HomePage() {
-
+export default async function HomePage() {
+   const { data } = await fetchData();
   return (
     <>
     
@@ -130,7 +130,7 @@ export default function HomePage() {
 
 export async function fetchData() {
   type SBParams = {
-    version: "draft"; // You can specify the allowed values here
+    version: "draft"; 
   };
   let sbParams: SBParams = { version: "draft" };
 
