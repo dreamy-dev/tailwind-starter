@@ -1,9 +1,11 @@
 "use client";
 
+import HeroText from "@/components/sections/HeroText";
+
 export default function Downloadcenter() {
   return (
     <>
-      <div>Downloadcenter page</div>
+      <HeroText title="Download Center" />
     </>
   );
 }
