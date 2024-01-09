@@ -30,27 +30,24 @@ export default function Solutions() {
         title="Schienenfahrzeuge"
         description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
         buttonText="Mehr dazu"
-        buttonHref="/schienenfahrzeuge"
+        buttonHref="/solutions/schienenfahrzeuge"
         backgroundColor="primaryTrans-50"
-      
       ></TeaserImageRight>
       <TeaserImageLeft
         imageSrc="news-1.jpg"
         title="Signalling"
         description="  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
         buttonText="Mehr dazu"
-        buttonHref="/signalling"
+        buttonHref="/solutions/signalling"
         backgroundColor="primaryTrans-50"
-      
       ></TeaserImageLeft>
       <TeaserImageRight
         imageSrc="Referenzen_TSSSA_Bild-VR.jpg"
         title="Service"
         description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
         buttonText="Mehr dazu"
-        buttonHref="/service"
+        buttonHref="/solutions/service"
         backgroundColor="primaryTrans-50"
-      
       ></TeaserImageRight>
 
       {/* <TeasersSolution /> */}
