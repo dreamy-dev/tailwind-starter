@@ -9,60 +9,57 @@ import FullWidth from "@/components/layouts/FullWidth";
 import ImageFullWidth from "@/components/sections/ImageFullWidth";
 
 
-
-
 const facts = [
   {
-    text: "Nettoerlös in CHF",
+    text: "Lorem ipsum",
     start: 0,
-    end: 3.8,
-    suffix: " Mrd.",
-    duration: 3,
+    end: 130,
     separator: " ",
-    decimals: 1,
-    decimal: ".",
-  },
-  {
-    text: "Auftragsbestand in CHF",
-    start: 0,
-    end: 22,
-    suffix: " Mrd.",
-    duration: 3,
-  },
-  {
-    text: "Auftragseingang in CHF",
-      start: 0,
-      end:8.6,
-      suffix:" Mrd.",
-      separator:" ",
-      decimals:1,
-      decimal:".",
-      duration:3,
-  }
-];
-
-const figures = [
-  {
-    text: "Anzahl Mitarbeitende",
-    start: 0,
-    end: 13.743,
-    separator: " ",
-    decimals: 3,
+    decimals: 0,
     decimal: "'",
     duration: 3,
   },
   {
-    text: "Durchschnittliche Verfügbarkeit von Schienenfahrzeugen",
+    text: "Lorem ipsum",
     start: 0,
     end: 98,
-    suffix: "%",
-    prefix: "&gt;",
+    suffix: "",
+    prefix: " ",
     duration: 3,
   },
   {
-    text: "Anzahl ausgelieferte Schienenfahrzeuge",
+    text: "Lorem ipsum",
     start:0,
-    end: 11.749,
+    end: 1749,
+    separator:" ",
+    decimals: 0,
+    decimal:"'",
+    duration: 3,
+  },
+];
+
+const figures = [
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 100,
+    separator: " ",
+    decimals: 0,
+    decimal: "'",
+    duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start: 0,
+    end: 98,
+    suffix: "",
+    prefix: " ",
+    duration: 3,
+  },
+  {
+    text: "Lorem ipsum",
+    start:0,
+    end: 1000,
     separator:" ",
     decimals:3,
     decimal:"'",
