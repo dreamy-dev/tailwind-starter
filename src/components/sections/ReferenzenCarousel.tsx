@@ -187,50 +187,50 @@ const TestimonialsCarousel: React.FC = () => {
   const [showTrains, setShowTrains] = useState(false);
  
 
- const [touchStartX, setTouchStartX] = useState<number | null>(null);
+//  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
- useEffect(() => {
-   const handleTouchStart = (e: TouchEvent) => {
-     setTouchStartX(e.touches[0].clientX);
-      e.preventDefault();
-   };
+//  useEffect(() => {
+//    const handleTouchStart = (e: TouchEvent) => {
+//      setTouchStartX(e.touches[0].clientX);
+//       e.preventDefault();
+//    };
 
-   const handleTouchMove = (e: TouchEvent) => {
-     if (touchStartX !== null) {
-       const touchEndX = e.touches[0].clientX;
-       const deltaX = touchEndX - touchStartX;
+//    const handleTouchMove = (e: TouchEvent) => {
+//      if (touchStartX !== null) {
+//        const touchEndX = e.touches[0].clientX;
+//        const deltaX = touchEndX - touchStartX;
 
     
-       const swipeThreshold = window.innerWidth / 4;
+//        const swipeThreshold = window.innerWidth / 4;
 
-       if (deltaX > swipeThreshold) {
+//        if (deltaX > swipeThreshold) {
      
-         onPrevClick();
-         setTouchStartX(null);
-       } else if (deltaX < -swipeThreshold) {
+//          onPrevClick();
+//          setTouchStartX(null);
+//        } else if (deltaX < -swipeThreshold) {
       
-         onNextClick();
-         setTouchStartX(null);
-       }
-     }
-   };
+//          onNextClick();
+//          setTouchStartX(null);
+//        }
+//      }
+//    };
 
-   const handleTouchEnd = () => {
-     setTouchStartX(null);
-   };
+//    const handleTouchEnd = () => {
+//      setTouchStartX(null);
+//    };
 
-   document.addEventListener("touchstart", handleTouchStart, {
-     passive: false,
-   });
-   document.addEventListener("touchmove", handleTouchMove, { passive: false });
-   document.addEventListener("touchend", handleTouchEnd);
+//    document.addEventListener("touchstart", handleTouchStart, {
+//      passive: false,
+//    });
+//    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+//    document.addEventListener("touchend", handleTouchEnd);
 
-   return () => {
-     document.removeEventListener("touchstart", handleTouchStart);
-     document.removeEventListener("touchmove", handleTouchMove);
-     document.removeEventListener("touchend", handleTouchEnd);
-   };
- }, [touchStartX]);
+//    return () => {
+//      document.removeEventListener("touchstart", handleTouchStart);
+//      document.removeEventListener("touchmove", handleTouchMove);
+//      document.removeEventListener("touchend", handleTouchEnd);
+//    };
+//  }, [touchStartX]);
 
   const onPrevClick = () => {
     if (current > 0) {

@@ -29,6 +29,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({ services, mainTitle, te
         </div>
       </ContentWidth>
       <ContentWidth>
+        
         {services.map((item) => (
           <div
             className="col-span-4 max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
