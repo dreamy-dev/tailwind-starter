@@ -1,18 +1,17 @@
+import { motion, useTransform } from "framer-motion";
+import { useMemo, useRef } from "react";
 
-import { motion, useTransform } from 'framer-motion';
-import { useMemo, useRef } from 'react';
-
-import { useScrollImageSequenceFramerCanvas } from '../../hooks';
+import { useScrollImageSequenceFramerCanvas } from "../../hooks";
 
 const createImage = (src: string) => {
-  const img = document.createElement('img');
+  const img = document.createElement("img");
   img.src = src;
   return img;
 };
 
 const handleDrawCanvas = (
   img: HTMLImageElement,
-  ctx: CanvasRenderingContext2D,
+  ctx: CanvasRenderingContext2D
 ) => {
   const canvas = ctx.canvas;
   const widthRatio = canvas.width / img.width;
@@ -30,7 +29,7 @@ const handleDrawCanvas = (
     centerX,
     centerY,
     img.width * ratio,
-    img.height * ratio,
+    img.height * ratio
   );
 };
 
@@ -39,12 +38,12 @@ const ImageSequence = () => {
     () =>
       [...new Array(215)].map((_, i) =>
         createImage(
-          `/trainsequence/${i
+          `/trainsequence-jpg/test_stadler_rail_train_carousel_0${i
             .toString()
-            .padStart(4, '0')}.png`,
-        ),
+            .padStart(4, "0")}.jpg`
+        )
       ),
-    [],
+    []
   );
 
   const containerRef = useRef<HTMLElement>(null);
@@ -53,7 +52,7 @@ const ImageSequence = () => {
     keyframes: keyframes,
     scrollOptions: {
       target: containerRef,
-      offset: ['start', 'end'],
+      offset: ["start", "end"],
     },
   });
 
@@ -89,12 +88,10 @@ const ImageSequence = () => {
   );
 };
 
-
-
 const TrainSequence = () => (
-    <div className="overflow-clip">
-      <ImageSequence />
-    </div>
+  <div className="overflow-clip">
+    <ImageSequence />
+  </div>
 );
 
 export default TrainSequence;
