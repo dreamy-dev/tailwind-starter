@@ -1,5 +1,5 @@
 "use client";
-import { getStoryblokApi } from "@storyblok/react";
+ import { getStoryblokApi } from "@storyblok/react";
 
 import Video from "../components/sections/Video";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
