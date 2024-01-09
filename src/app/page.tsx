@@ -128,7 +128,7 @@ export default async function HomePage() {
   );
 }
 
-export async function fetchData() {
+ async function fetchData() {
   type SBParams = {
     version: "draft"; 
   };
