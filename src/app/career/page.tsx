@@ -1,24 +1,36 @@
 "use client";
-import ApplicationProcess from "@/components/ApplicationProcess";
-import Application from "@/components/ApplicationProcess";
-import Benefits from "@/components/Benefits";
-import CTASection from "@/components/CTASection";
-import Figures from "@/components/Figures";
-import Jobs from "@/components/Jobs";
-import Nav from "@/components/Nav";
-import Testimonial from "@/components/Testimonial";
-import CareerHero from "../../components/Hero";
+import ApplicationProcess from "@/app/career/ApplicationProcess";
+import CTASection from "@/components/sections/CTASection";
+import FactsAndFigures from "@/components/sections/FactsAndFigures";
+import Jobs from "@/components/sections/TeaserJobs";
+import Intro from "@/components/sections/Intro";
+import Testimonials from "@/components/sections/Testimonials";
+import CareerHero from "./HeroCareer";
+import TeaserSuccessStories from "@/components/sections/TeaserSuccessStories";
+import ContentWidth from "@/components/layouts/ContentWidth";
 
 export default function Karriere() {
   return (
     <>
       <CareerHero></CareerHero>
-      <Nav />
-      <Benefits />
-      <Testimonial />
-      <Figures />
+      <Intro />
+      <ContentWidth>
+        {" "}
+        <div className="mt-20 col-span-12 max-w-full">
+          <img
+            className="w-full h-auto "
+            src="/stadler-world-map-home.svg"
+            alt=""
+          />
+        </div>
+      </ContentWidth>
+
+      <Testimonials />
+      {/* <FactsAndFigures /> */}
       <Jobs />
-      <ApplicationProcess />
+      {/* <ApplicationProcess /> */}
+      <TeaserSuccessStories />
+
       <CTASection />
     </>
   );

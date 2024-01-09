@@ -3,9 +3,10 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import NavBar from "./NavBar";
-import Footer from "../components/Footer";
+import { Montserrat } from "next/font/google";
+import NavBar from "../components/sections/NavBar";
+import Header from "@/components/sections/Header";
+import Footer from "../components/sections/Footer";
 import StoryblokProvider from "../components/StoryblockProvider";
 
 import { storyblokInit, apiPlugin } from "@storyblok/react";
@@ -18,7 +19,11 @@ storyblokInit({
   },
 });
 
-const inter = Inter({ subsets: ["latin"] });
+
+const fontFamily = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Stadler Website Prototype",
@@ -33,8 +38,8 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang="en">
-        <body className={inter.className}>
-          <NavBar />
+        <body className={fontFamily.className}>
+          <Header />
           <main>{children}</main>
           <Footer />
           <script
