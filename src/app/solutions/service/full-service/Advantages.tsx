@@ -75,7 +75,7 @@ export default function Advantages() {
               Zusatzarbeit sorgen für Kostensicherheit
             </p>
           </div>
-          <div>
+          {/* <div>
             <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primaryTrans-100 lg:h-12 lg:w-12 dark:bg-primary-900">
               <svg
                 className="w-5 h-5 text-primary lg:w-6 lg:h-6 dark:text-primary-300"
@@ -142,7 +142,7 @@ export default function Advantages() {
               verfügbarer und sicherer. Fixe Kilometerpauschale und definierte
               Zusatzarbeit sorgen für Kostensicherheit
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
