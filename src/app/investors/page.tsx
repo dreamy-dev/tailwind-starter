@@ -4,66 +4,68 @@ import ContentWidth from "@/components/layouts/ContentWidth";
 import Contact from "@/components/sections/Contact";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Subscribe from "@/components/sections/Subscribe";
-import H2 from "@/components/typography/H2";
-import Text from "@/components/typography/Text";
+import Publikationen from "@/components/sections/Publikationen";
 import CorporateGorvernance from "../unternehmen/CorporateGovernance";
 import InvestorHero from "./Hero";
 import Publications from "./Publications";
 import TextBlock from "./TextBlock";
 import SubHero from "@/components/sections/SubHero";
-const daten = [
+
+const facts = [
   {
-    text: "Lorem ipsum",
+    text: "Nettoerlös in CHF",
     start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
-    // duration: 3,
+    end: 3.8,
+    suffix: " Mrd.",
+    duration: 3,
+    separator: " ",
+    decimals: 1,
+    decimal: ".",
   },
   {
-    text: "Lorem ipsum",
+    text: "Auftragsbestand in CHF",
     start: 0,
-    end: 100,
-    // suffix: "%",
-    // prefix: "&gt;",
-    // duration: 3,
+    end: 22,
+    suffix: " Mrd.",
+    duration: 3,
   },
   {
-    text: "Lorem ipsum",
+    text: "Auftragseingang in CHF",
     start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
-    // duration: 3,
+    end: 8.6,
+    suffix: " Mrd.",
+    separator: " ",
+    decimals: 1,
+    decimal: ".",
+    duration: 3,
   },
 ];
-const fakten = [
+
+const figures = [
   {
-    text: "Lorem ipsum",
+    text: "Anzahl Mitarbeitende",
     start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
-    // duration: 3,
+    end: 13.743,
+    separator: " ",
+    decimals: 3,
+    decimal: "'",
+    duration: 3,
   },
   {
-    text: "Lorem ipsum",
+    text: "Durchschnittliche Verfügbarkeit von Schienenfahrzeugen",
     start: 0,
-    end: 100,
-    // suffix: "%",
-    // prefix: "&gt;",
-    // duration: 3,
+    end: 98,
+    suffix: "%",
+    prefix: "&gt;",
+    duration: 3,
   },
   {
-    text: "Lorem ipsum",
+    text: "Anzahl ausgelieferte Schienenfahrzeuge",
     start: 0,
-    end: 100,
-    // separator: " ",
-    // decimals: 3,
-    // decimal: "'",
+    end: 11.749,
+    separator: " ",
+    decimals: 3,
+    decimal: "'",
     duration: 3,
   },
 ];
@@ -74,17 +76,12 @@ export default function Investors() {
       {/* Header kann reiner TextHero sein mit Button der auf die letzte Publikation verweist, alle Publikationen zusammen, vlt ein Bild von publikation? */}
       <InvestorHero />
       {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
-      <Publications />
-      {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen 
+      <Publikationen></Publikationen>
+      {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen
        */}
-      <FactsAndFigures
-        data1={daten}
-        data2={fakten}
-        showTwoRows={false}
-        title="Daten & Facten"
-      />
+      <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       {/* Warum investieren -> Text */}
       {/* Geschätsmodell -> Text */}
       <TextBlock />

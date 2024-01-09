@@ -10,19 +10,22 @@ const publications = [
     img: "/publications/publ-card-1.png",
     title: "Halbjahresbericht 2023",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
     img: "/publications/publ-card-2.png",
     title: "Geschäftsbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
     img: "/publications/publ-card-4.png",
     title: "Nachhaltigkeitsbericht 2021",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich.",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
   },
 ];
 
@@ -35,17 +38,20 @@ const tableData = [
   {
     publication: " Halbjahresbericht 2021",
     date: "13. May 2021",
-    link: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
   },
   {
     publication: "Geschäftsbericht 2020",
     date: "22. May 2020",
-    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
   },
   {
     publication: "Halbjahresbericht 2020",
     date: "24. December 2020",
-    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
   },
   {
     publication: " Geschäftsbericht 2019",
@@ -55,7 +61,8 @@ const tableData = [
   {
     publication: "Halbjahresbericht 2019",
     date: "1. January 2019",
-    link: "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
   },
   {
     publication: "Finanzbericht 2018",
@@ -65,16 +72,16 @@ const tableData = [
 ];
 
 export default function Publicationen() {
-      const [showPublications, setShowPublications] = useState(false);
+  const [showPublications, setShowPublications] = useState(false);
 
-      const toggleTrainsVisibility = () => {
-        setShowPublications(!showPublications);
-    };
-    
+  const toggleTrainsVisibility = () => {
+    setShowPublications(!showPublications);
+  };
+
   return (
-    <section className="bg-white z-[10000]">
+    <section className="bg-white py-20 z-[10000]">
       <ContentWidth>
-        <div className="col-span-12  w-full">
+        <div className="col-span-12 w-full">
           <div className="text-start">
             <H2>Publikationen</H2>
           </div>
@@ -84,7 +91,7 @@ export default function Publicationen() {
                 key={publication.title}
                 className="max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
               >
-                <a href="#">
+                <a href={publication.href}>
                   <img
                     className="object-contain max-h-auto w-full"
                     src={publication.img}
@@ -92,14 +99,13 @@ export default function Publicationen() {
                   />
                 </a>
                 <div className="p-5">
-                  <a href="#">
+                  <a href={publication.href}>
                     <H3>{publication.title}</H3>
                   </a>
-                  <Text>{publication.text}</Text>
                   <Link
                     href={publication.href}
                     target="_blank"
-                    className="inline-flex items-center pt-6 text-sm font-medium text-center"
+                    className="inline-flex items-center pt-2 text-sm font-medium text-center"
                   >
                     <svg
                       width="20"
