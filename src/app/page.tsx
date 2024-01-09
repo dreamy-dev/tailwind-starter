@@ -112,7 +112,7 @@ export default async function HomePage() {
 const { data } = await fetchData();
   return (
     <>
-      <h2>Story: {data.story.name}</h2>
+      {/* <h2>Story: {data.story.name}</h2> */}
       <HomePageHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <TrainCarousel />
@@ -128,7 +128,7 @@ const { data } = await fetchData();
   );
 }
 
-export async function fetchData() {
+ async function fetchData() {
   type SBParams = {
     version: "draft"; 
   };
