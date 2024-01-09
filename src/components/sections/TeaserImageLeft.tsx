@@ -52,7 +52,7 @@ const TeaserImageLeft: React.FC<TeaserImageLeftProps> = ({
               </Text>
             </div>
 
-            <div className="pt-4 border-t border-gray-200 sm:pt-6 lg:pt-8 dark:border-gray-800">
+            <div className="pt-4 sm:pt-6 lg:pt-8">
               <ul className="space-y-4">
                 {listItems &&
                   listItems.map((item, index) => (
