@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 
 import "./globals.css";
 
@@ -24,11 +24,11 @@ const fontFamily = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
-
-export const metadata: Metadata = {
-  title: "Stadler Website Prototype",
-  description: "Technical analysis phase",
-};
+// To Do metadata 
+//  const metadata: Metadata = {
+//   title: "Stadler Website Prototype",
+//   description: "Technical analysis phase",
+// };
 
 export default function RootLayout({
   children,
