@@ -70,8 +70,27 @@ const tableData = [
     link: "https://www.stadlerrail.com/media/pdf/finanzbericht_2018_de.pdf",
   },
 ];
-
-export default function Publicationen() {
+interface StatsProps {
+  publications: {
+    img?: string;
+    title?: string;
+    text?: string;
+    href?: string;
+  }[];
+  tableData: {
+    publication?: string;
+    date?: string;
+    link?: string;
+  }[];
+  title: string;
+  showTable?: boolean;
+}
+const Publicationen: React.FC<StatsProps> = ({
+  publications,
+  tableData,
+  title,
+  showTable = true,
+}) => {
   const [showPublications, setShowPublications] = useState(false);
 
   const toggleTrainsVisibility = () => {
@@ -83,7 +102,7 @@ export default function Publicationen() {
       <ContentWidth>
         <div className="col-span-12 w-full">
           <div className="text-start">
-            <H2>Publikationen</H2>
+            <H2>{title}</H2>
           </div>
           <div className="w-full mx-auto justify-center items-center grid grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-3">
             {publications.map((publication) => (
@@ -102,7 +121,7 @@ export default function Publicationen() {
                   <a href={publication.href}>
                     <H3>{publication.title}</H3>
                   </a>
-                  <Link
+                  <a
                     href={publication.href}
                     target="_blank"
                     className="inline-flex items-center pt-2 text-sm font-medium text-center"
@@ -126,55 +145,57 @@ export default function Publicationen() {
                         </clipPath>
                       </defs>
                     </svg>
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative flex flex-row w-full mt-8 justify-beetween items-center ">
-          <button
-            type="button"
-            onClick={toggleTrainsVisibility}
-            className="text-primary items-center text-base flex flex-row gap-2 whitespace-nowrap"
-          >
-            {!showPublications ? (
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clipPath="url(#clip0_4995_6652)">
+        {showTable && (
+          <div className="relative flex flex-row w-full mt-8 justify-beetween items-center ">
+            <button
+              type="button"
+              onClick={toggleTrainsVisibility}
+              className="text-primary items-center text-base flex flex-row gap-2 whitespace-nowrap"
+            >
+              {!showPublications ? (
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_4995_6652)">
+                    <path
+                      d="M20 8.88889H11.1111V0H8.88889V8.88889H0V11.1111H8.88889V20H11.1111V11.1111H20V8.88889Z"
+                      fill="#005893"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_4995_6652">
+                      <rect width="20" height="20" fill="#005893" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              ) : (
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
-                    d="M20 8.88889H11.1111V0H8.88889V8.88889H0V11.1111H8.88889V20H11.1111V11.1111H20V8.88889Z"
+                    d="M20 8.88892H11.1111H8.88889H0V11.1111H8.88889H11.1111H20V8.88892Z"
                     fill="#005893"
                   />
-                </g>
-                <defs>
-                  <clipPath id="clip0_4995_6652">
-                    <rect width="20" height="20" fill="#005893" />
-                  </clipPath>
-                </defs>
-              </svg>
-            ) : (
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 8.88892H11.1111H8.88889H0V11.1111H8.88889H11.1111H20V8.88892Z"
-                  fill="#005893"
-                />
-              </svg>
-            )}
-            alle einblenden
-          </button>
-        </div>
+                </svg>
+              )}
+              alle einblenden
+            </button>
+          </div>
+        )}
         {showPublications && (
           <div className="col-span-12">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -218,4 +239,6 @@ export default function Publicationen() {
       </ContentWidth>
     </section>
   );
-}
+};
+
+export default Publicationen;
