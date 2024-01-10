@@ -66,7 +66,7 @@ export default function Contact(props?: any) {
                     stroke="white"
                   />
                 </svg>
-                {props.email ?? "stadler.rail@stadlerrail.com"}
+                {props.email ?? "ir@stadlerrail.com"}
               </li>
             </ul>
           </div>

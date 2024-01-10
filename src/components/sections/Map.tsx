@@ -20,18 +20,18 @@ const countries = [
 ];
 const statsData = [
   {
-    text: "Terminus",
-    end: 7,
-    suffix: "",
-  },
-  {
-    text: "Komponentenwerke",
+    text: "Produktionsstandorte",
     end: 7,
     suffix: "",
   },
   {
     text: "Signalling-Kompetenzcenter",
     end: 5,
+    suffix: "",
+  },
+  {
+    text: "Komponentenwerke",
+    end: 7,
     suffix: "",
   },
 

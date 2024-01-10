@@ -11,28 +11,26 @@ import TextBlock from "./TextBlock";
 import SubHero from "@/components/sections/SubHero";
 import Text from "@/components/typography/Text";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import EventCalendar from "@/components/sections/EventCalendar";
 
 const publications = [
   {
     img: "/publications/publ-card-1.png",
     title: "Halbjahresbericht 2023",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href:
-      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
     img: "/publications/publ-card-2.png",
     title: "Geschäftsbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href:
-      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
     img: "/publications/publ-card-4.png",
     title: "Nachhaltigkeitsbericht 2021",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich.",
-    href:
-      "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
+    href: "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
   },
 ];
 
@@ -45,20 +43,17 @@ const tableData = [
   {
     publication: " Halbjahresbericht 2021",
     date: "13. May 2021",
-    link:
-      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
+    link: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
   },
   {
     publication: "Geschäftsbericht 2020",
     date: "22. May 2020",
-    link:
-      "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
   },
   {
     publication: "Halbjahresbericht 2020",
     date: "24. December 2020",
-    link:
-      "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
   },
   {
     publication: " Geschäftsbericht 2019",
@@ -68,8 +63,7 @@ const tableData = [
   {
     publication: "Halbjahresbericht 2019",
     date: "1. January 2019",
-    link:
-      "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
+    link: "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
   },
   {
     publication: "Finanzbericht 2018",
@@ -82,20 +76,17 @@ const presentations = [
   {
     img: "/presentation.png",
     title: "Präsentation Halbjahresergebnisse 2023",
-    href:
-      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+    href: "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
   {
     img: "/presentation.png",
     title: "Presentation Full Year Results 2022",
-    href:
-      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+    href: "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
   {
     img: "/presentation.png",
     title: "Präsentation Capital Markets Day 2022",
-    href:
-      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+    href: "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
 ];
 
@@ -190,6 +181,19 @@ const figures = [
 //     href: "/",
 //   },
 // ];
+
+const customEventData = [
+  {
+    event: "Jahresbericht 2023",
+    date: "13. März 2024",
+    link: "#",
+  },
+  {
+    event: "Generalversammlung 2024",
+    date: "22. Mai 2024",
+    link: "#",
+  },
+];
 export default function Investors() {
   return (
     <section>
@@ -197,6 +201,10 @@ export default function Investors() {
       {/* Header kann reiner TextHero sein mit Button der auf die letzte Publikation verweist, alle Publikationen zusammen, vlt ein Bild von publikation? */}
       <InvestorHero />
       {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
+      <EventCalendar
+        mainTitle="Events"
+        eventsData={customEventData}
+      ></EventCalendar>
       <Publikationen
         tableData={tableData}
         publications={publications}
@@ -210,13 +218,15 @@ export default function Investors() {
       ></Publikationen>
       <ContentWidth>
         <div className="col-span-12 flex flex-col">
-        <Text>Alle Publikationen und Präsentationen finden Sie im Downloadcenter</Text>
-        <div className="mb-6"></div>
-      <ButtonPrimary position="left" buttonText="Zum Downloadcenter" />
-      <div className="mb-20"></div>
+          <Text>
+            Alle Publikationen und Präsentationen finden Sie im Downloadcenter
+          </Text>
+          <div className="mb-6"></div>
+          <ButtonPrimary position="left" buttonText="Zum Downloadcenter" />
+          <div className="mb-20"></div>
         </div>
       </ContentWidth>
-      
+
       {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen
@@ -231,7 +241,11 @@ export default function Investors() {
       {/* Geschätsmodell -> Text */}
       <TextBlock />
       {/* Kultur & Mission -> hier wieder mit diesen interaktiven Cards */}
-      <CorporateGorvernance />
+      <CorporateGorvernance
+        mainTitle="Corporate Governance"
+        showThirdCard={true}
+        numberOfColumns={3}
+      />
       <Contact
         title="Investorenkontakt"
         contactname="Daniel Strickler"

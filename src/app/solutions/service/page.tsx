@@ -4,10 +4,9 @@ import ContentWidth from "@/components/layouts/ContentWidth";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import HeroText from "@/components/sections/HeroText";
 import Link from "@/components/typography/Link";
-import ServiceTeasers from "./ServiceTeasers";
+import ServiceTeasers from "../../../components/sections/ServiceTeasers";
 import FullWidth from "@/components/layouts/FullWidth";
 import ImageFullWidth from "@/components/sections/ImageFullWidth";
-
 
 const facts = [
   {
@@ -29,11 +28,11 @@ const facts = [
   },
   {
     text: "Lorem ipsum",
-    start:0,
+    start: 0,
     end: 1749,
-    separator:" ",
+    separator: " ",
     decimals: 0,
-    decimal:"'",
+    decimal: "'",
     duration: 3,
   },
 ];
@@ -58,67 +57,66 @@ const figures = [
   },
   {
     text: "Lorem ipsum",
-    start:0,
+    start: 0,
     end: 1000,
-    separator:" ",
-    decimals:3,
-    decimal:"'",
+    separator: " ",
+    decimals: 3,
+    decimal: "'",
     duration: 3,
   },
 ];
 
- const services = [
-    {
-      label: "Full Service",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Full_Service.jpg",
-     href: "/solutions/service/full-service",
-      
-    },
-    {
-      label: "TSSSA",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_TSSSA.jpg",
-      href: "/solutions/service/tsssc",
-    },
-    {
-      label: "Ersatzteile",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Spare_Parts.jpg",
-      href: "/solutions/service/spare",
-    },
-    {
-      label: "Modernisation",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Modernisierung.jpg",
-      href: "/solutions/service/refit",
-    },
-    {
-      label: "Revisionen",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Revision.jpg",
-      href: "/solutions/service/overhaul",
-    },
-    {
-      label: "Reparaturen",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icons_Repair.jpg",
-      href: "/solutions/service/repair",
-    },
-    {
-      label: "ECM",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_ECM.jpg",
-      href: "/solutions/service/ecm",
-    },
-  ];
+const services = [
+  {
+    label: "Full Service",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icon_Full_Service.jpg",
+    href: "/solutions/service/full-service",
+  },
+  {
+    label: "TSSSA",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icon_TSSSA.jpg",
+    href: "/solutions/service/tsssc",
+  },
+  {
+    label: "Ersatzteile",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icon_Spare_Parts.jpg",
+    href: "/solutions/service/spare",
+  },
+  {
+    label: "Modernisation",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icon_Modernisierung.jpg",
+    href: "/solutions/service/refit",
+  },
+  {
+    label: "Revisionen",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icon_Revision.jpg",
+    href: "/solutions/service/overhaul",
+  },
+  {
+    label: "Reparaturen",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icons_Repair.jpg",
+    href: "/solutions/service/repair",
+  },
+  {
+    label: "ECM",
+    description:
+      "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
+    img: "https://www.stadlerrail.com/service/Icon_ECM.jpg",
+    href: "/solutions/service/ecm",
+  },
+];
 export default function Service() {
   return (
     <>

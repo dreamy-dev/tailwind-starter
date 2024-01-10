@@ -229,7 +229,7 @@ export default function Lieferanten() {
         </TeaserImageLeft>
       </div>
       {/* <TeaserDouble /> */}
-      <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" />
+      <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" showButton={ false} />
       <FAQ mainTitle="Frequently asked questions" faqs={data} />
       <Contact
         title="Ihr Kontakt"

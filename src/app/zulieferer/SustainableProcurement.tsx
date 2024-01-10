@@ -1,13 +1,14 @@
 "use client";
 
 import H2 from "@/components/typography/H2";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 interface SectonProps {
   title: string;
-
+  showButton?: boolean;
 }
 
-const SustainableProcurement:React.FC<SectonProps> = ({title}) => {
+const SustainableProcurement:React.FC<SectonProps> = ({title, showButton}) => {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 sm:py-16 lg:px-6 ">
@@ -25,7 +26,7 @@ const SustainableProcurement:React.FC<SectonProps> = ({title}) => {
             ultricies elit. Interdum et malesuada fames ac ante ipsum primis in
             faucibus. Phasellus a dapibus dolor.
           </p>
-          <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
+          <div className="py-8 border-t border-gray-200 dark:border-gray-700">
             <div className="flex">
               <div className="flex justify-center items-center mr-4 w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900 shrink-0">
                 <svg
@@ -77,6 +78,35 @@ const SustainableProcurement:React.FC<SectonProps> = ({title}) => {
               </div>
             </div>
           </div>
+          {showButton && (
+            <ButtonPrimary position="left" href="/nachhaltigkeit">
+              Nachhaltigkeit
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clipPath="url(#clip0_5650_6261)">
+                  <path
+                    d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_5650_6261">
+                    <rect
+                      width="14"
+                      height="14"
+                      fill="white"
+                      transform="translate(0.5 0.517578)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </ButtonPrimary>
+          )}
         </div>
       </div>
     </section>
