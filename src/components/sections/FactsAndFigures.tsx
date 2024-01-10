@@ -54,18 +54,18 @@ const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRow
                       key={index}
                     >
                       <dt className="text-xl leading-7 text-black">
-                        {stat.text}
+                        {stat.text ?? 'Lorem ipsum'}
                       </dt>
                       <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                         <CountUp
-                          start={stat.start}
-                          end={stat.end}
-                          suffix={stat.suffix}
-                          prefix={stat.prefix}
-                          duration={stat.duration}
-                          separator={stat.separator}
-                          decimals={stat.decimals}
-                          decimal={stat.decimal}
+                          start={stat.start ?? 0}
+                          end={stat.end ?? ''}
+                          suffix={stat.suffix ?? ' '}
+                          prefix={stat.prefix ?? ' '}
+                          duration={stat.duration ?? 2}
+                          separator={stat.separator ?? ' '}
+                          decimals={stat.decimals ?? 0}
+                          decimal={stat.decimal ?? "'"}
                           enableScrollSpy
                         ></CountUp>
                       </dd>

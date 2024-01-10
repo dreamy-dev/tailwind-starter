@@ -5,9 +5,9 @@ import CooperationBecome from "./CooperationBecome";
 import HeroText from "@/components/sections/HeroText";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import ContentWidth from "@/components/layouts/ContentWidth";
-import ProductHero from "../../components/sections/HeroImageFullWidth";
 import Contact from "@/components/sections/Contact";
 import TeaserDownload from "../../components/sections/TeaserDownload";
+import ImageFullWidth from "@/components/sections/ImageFullWidth";
 
 const downloads = [
   {
@@ -42,7 +42,7 @@ export default function Cooperation() {
           />
         </div>
       </ContentWidth>
-      <ProductHero imageUrl="/AdobeStock.jpg"></ProductHero>
+      <ImageFullWidth imgSrc="/AdobeStock.jpg" />
       <TeaserGeneral
         title="Unsere Geschäftsbedingungen"
         customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "

@@ -3,13 +3,13 @@
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
 import Features from "@/components/sections/Features";
-import ProductHero from "../../../../components/sections/HeroImageFullWidth";
 import QualityFeatures from "@/components/sections/QualityFeatures";
 import Specification from "@/components/sections/Specification";
 import HeroText from "@/components/sections/HeroText";
 import TextSection from "@/components/sections/TextSection";
 import ProductCarousel from "@/components/sections/ProductCarousel";
 import TestimonialsCarousel from "@/components/sections/ReferenzenCarousel";
+import ImageFullWidth from "@/components/sections/ImageFullWidth";
 const features = [
   {
     title: "Leichtbauweise",
@@ -170,13 +170,11 @@ export default function Product() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-
-      <ProductHero imageUrl="/AdobeStock.jpg" />
+      <ImageFullWidth imgSrc="/AdobeStock.jpg" />
       <TextSection></TextSection>
       <QualityFeatures features={features} mainTitle="Qualitätsmerkmale" />
       <ProductCarousel />
       <Specification />
-
       <TestimonialsCarousel></TestimonialsCarousel>
       <Features mainTitle="Für einen effizienten und modernen Bahnbetrieb" featuresData={featuresData} />
       <Contact />
