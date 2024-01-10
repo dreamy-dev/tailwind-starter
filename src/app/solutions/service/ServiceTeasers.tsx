@@ -5,77 +5,43 @@ import ContentWidth from "@/components/layouts/ContentWidth";
 import H2 from "@/components/typography/H2";
 import Text from "@/components/typography/Text";
 
-const ServiceTeasers = (props?: any) => {
-  const services = [
-    {
-      label: "Full Service",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Full_Service.jpg",
-      href: "/solutions/service/full-service",
-    },
-    {
-      label: "TSSSA",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_TSSSA.jpg",
-      href: "/solutions/service/tsssc",
-    },
-    {
-      label: "Ersatzteile",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Spare_Parts.jpg",
-      href: "/solutions/service/spare",
-    },
-    {
-      label: "Modernisation",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Modernisierung.jpg",
-      href: "/solutions/service/refit",
-    },
-    {
-      label: "Revisionen",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_Revision.jpg",
-      href: "/solutions/service/overhaul",
-    },
-    {
-      label: "Reparaturen",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icons_Repair.jpg",
-      href: "/solutions/service/repair",
-    },
-    {
-      label: "ECM",
-      description:
-        "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
-      img: "https://www.stadlerrail.com/service/Icon_ECM.jpg",
-      href: "/solutions/service/ecm",
-    },
-  ];
+interface ServiceItem {
+  label?: string;
+  description?: string;
+  img?: string;
+  href?: string;
+ 
+}
 
+interface ServiceTeasersProps {
+  services: ServiceItem[];
+  mainTitle?: string;
+  text?: string;
+  imageStyles?: string;
+}
+
+const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
+  services,
+  mainTitle,
+  text,
+  imageStyles,
+}) => {
   return (
-    <section className="bg-white dark:bg-gray-900 antialiased my-8">
+    <section className="bg-white dark:bg-gray-900 antialiased my-20">
       <ContentWidth>
-        <div className="col-span-12 my-8 ">
-          <H2>Alle Services auf einen Blick</H2>
-          <Text>
-            Hier finden Sie eine Übersicht aller unser Service Angebote.
-          </Text>
+        <div className="col-span-12 mb-12">
+          <H2>{mainTitle}</H2>
+          <Text>{text}</Text>
         </div>
       </ContentWidth>
       <ContentWidth>
         {services.map((item) => (
           <div
-            className="col-span-4 max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+            className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
             key={item.label}
           >
             <a href={item.href}>
-              <img className="w-24 pl-5 pt-5" src={item.img} alt="" />
+              <img className={` ${imageStyles}`} src={item.img} alt="" />
             </a>
             <div className="p-5">
               <a href={item.href}>

@@ -2,12 +2,64 @@
 
 import CooperationInfo from "./CooperationInfo";
 import CooperationBecome from "./CooperationBecome";
+import HeroText from "@/components/sections/HeroText";
+import TeaserGeneral from "@/components/sections/TeaserGeneral";
+import ContentWidth from "@/components/layouts/ContentWidth";
+import Contact from "@/components/sections/Contact";
+import TeaserDownload from "../../components/sections/TeaserDownload";
+import ImageFullWidth from "@/components/sections/ImageFullWidth";
+
+const downloads = [
+  {
+    text: "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
+  },
+  {
+    text: "Ergänzende Einkaufsbedingungen für EU-Zulassungsprozesse Stadler Rheintal AG",
+  },
+  {
+    text: "Kurzanleitung Zeitfensterbuchung",
+  },
+  {
+    text: "Stadler Bussnang AG & Stadler Service AG Logistikspezifikation",
+  },
+];
 
 export default function Cooperation() {
   return (
     <>
-      <CooperationInfo />
-      <CooperationBecome />
+      <ContentWidth>
+        <div className="col-span-12">
+          <HeroText
+            // breadcrumbs={[
+            //   { text: "Lösungen", link: "/page" },
+            //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
+            //   { text: "Product", link: "/product" },
+            // ]}
+            title="Lieferanten-Netzwerk: Werden Sie unser Partner!"
+            leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            // withCTA={true}
+            // buttonText="CTA Button"
+          />
+        </div>
+      </ContentWidth>
+      <ImageFullWidth imgSrc="/AdobeStock.jpg" />
+      <TeaserGeneral
+        title="Unsere Geschäftsbedingungen"
+        customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "
+        ctaText="Download Geschäftsbedingungen"
+      ></TeaserGeneral>
+      <CooperationBecome></CooperationBecome>
+      <CooperationInfo></CooperationInfo>
+
+      <Contact />
+      <TeaserDownload
+        title="Allgemeine Downloads"
+        buttonLink="/downloadcenter"
+        buttonText="Alle Medienmitteilungen"
+        showList={true}
+        showButton={false}
+        listData={downloads}
+      ></TeaserDownload>
     </>
   );
 }

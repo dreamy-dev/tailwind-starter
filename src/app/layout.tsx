@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={fontFamily.className}>
+      <body className={fontFamily.className + ' ' + 'overflow-x-hidden'}>
         <Header />
         <main>{children}</main>
         <Footer />

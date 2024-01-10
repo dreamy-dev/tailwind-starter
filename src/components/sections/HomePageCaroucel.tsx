@@ -5,11 +5,13 @@ import H2 from "../typography/H2";
 import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
+import ButtonPrimary from "../elements/ButtonPrimary";
 
 interface Cards {
   title: string;
   text: string;
   img: string;
+  date?: string;
 }
 
 interface TestimonialMotionProps extends MotionProps {
@@ -17,52 +19,34 @@ interface TestimonialMotionProps extends MotionProps {
   ref?: any;
 }
 
+interface CarouselProps {
+  items: Cards[];
+  carouselTitle: string;
+  showButton?: boolean;
+  showDate?: boolean;
+  h2Styles?: string;
+}
+
 const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
-const cards = [
-  {
-    title: "FLIRT bewegt die Welt",
-    text:
-      "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
-    img: "/Card2.jpg",
-  },
-  {
-    title: "Der Weltrekord-Zug: FLIRT Akku",
-    text:
-      "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
-    img: "/card-2-carousel-2.jpg",
-  },
-  {
-    title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Card2.jpg",
-  },
-  {
-    title: "Der Weltrekord-Zug: FLIRT Akku",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/card-2-carousel-2.jpg",
-  },
-  {
-    title: "Im Land der längsten Zugstrecken",
-    text:
-      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
-    img: "/Card2.jpg",
-  },
-];
-
-const HomePageCaroucel: React.FC = () => {
+const HomePageCaroucel: React.FC<CarouselProps> = ({
+  items,
+  carouselTitle,
+  h2Styles,
+  showButton = true,
+}) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showDate, setShowDate] = useState(true);
 
   //Show dots on mobile
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 768);
     };
+
     handleResize();
 
     window.addEventListener("resize", handleResize);
@@ -74,65 +58,6 @@ const HomePageCaroucel: React.FC = () => {
 
   /*  swipe logic starts here */
 
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const handleSwipe = (direction: "left" | "right") => {
-    const totalImages = cards.length;
-    if (direction === "left" && current > 0) {
-      setCurrent(current - 1);
-    } else if (direction === "right" && current < totalImages - 1) {
-      setCurrent(current + 1);
-    }
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (!container) return;
-
-    const handleSwipeStart = (e: TouchEvent | MouseEvent) => {
-      setStartX(e instanceof TouchEvent ? e.touches[0].clientX : e.clientX);
-      setIsDragging(true);
-    };
-
-    const handleSwipeMove = (e: TouchEvent | MouseEvent) => {
-      if (!isDragging) return;
-
-      const clientX =
-        e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
-
-      const distanceX = clientX - startX;
-
-      if (Math.abs(distanceX) > 50) {
-        const direction = distanceX > 0 ? "left" : "right";
-        handleSwipe(direction);
-        setStartX(clientX);
-      }
-    };
-
-    const handleSwipeEnd = () => {
-      setIsDragging(false);
-    };
-
-    container.addEventListener("touchstart", handleSwipeStart);
-    container.addEventListener("touchmove", handleSwipeMove);
-    container.addEventListener("touchend", handleSwipeEnd);
-
-    container.addEventListener("mousedown", handleSwipeStart);
-    container.addEventListener("mousemove", handleSwipeMove);
-    container.addEventListener("mouseup", handleSwipeEnd);
-
-    return () => {
-      container.removeEventListener("touchstart", handleSwipeStart);
-      container.removeEventListener("touchmove", handleSwipeMove);
-      container.removeEventListener("touchend", handleSwipeEnd);
-
-      container.removeEventListener("mousedown", handleSwipeStart);
-      container.removeEventListener("mousemove", handleSwipeMove);
-      container.removeEventListener("mouseup", handleSwipeEnd);
-    };
-  }, [isDragging, startX]);
-
   /*   swipe logic ends here */
 
   const onPrevClick = () => {
@@ -142,51 +67,23 @@ const HomePageCaroucel: React.FC = () => {
   };
 
   const onNextClick = () => {
-    if (current < cards.length - 1) {
+    if (current < items.length - 1) {
       setCurrent(current + 1);
     }
   };
 
-  const cardContentRef = useRef<Array<HTMLDivElement | null>>([]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const maxCardHeight = Math.max(
-        ...cardContentRef.current.map((ref) =>
-          ref instanceof HTMLElement ? ref.clientHeight : 0
-        )
-      );
-
-      cardContentRef.current.forEach((ref) => {
-        if (ref instanceof HTMLElement) {
-          const container = ref.closest(
-            ".testimonial-motion-div"
-          ) as HTMLDivElement | null;
-          if (container) {
-            container.style.height = `${maxCardHeight}px`;
-          }
-        }
-      });
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [cardContentRef]);
-
   return (
-    <section className=" py-24 bg-white ">
+    <section className=" py-24 bg-white overflow-hidden">
       <FullWidth>
         <div className="col-span-12">
           <div className="relative">
-            <div className="flex justify-center items-center mb-4">
-              <H2>Erfolgsgeschichten</H2>
+            <div className="lg:pl-20 2xl:pl-0 mb-4">
+              <H2 styles={h2Styles}>{carouselTitle}</H2>
             </div>
             {isMobile && (
               <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
                 <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
-                  {cards.map((_, idx) => (
+                  {items.map((_, idx) => (
                     <button key={idx} onClick={() => setCurrent(idx)}>
                       <div
                         className={` w-8 h-1 ${
@@ -203,40 +100,42 @@ const HomePageCaroucel: React.FC = () => {
             <MotionConfig
               transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             >
-              <div
-                className="relative w-full max-w-[100%] flex items-center"
-                ref={containerRef}
-              >
-                <motion.div className="flex gap-8 flex-nowrap overflow-hidden  ml-1 pl-1 my-[-32px] py-[32px] pr-1 mr-1">
-                  {cards.map((card, idx) => (
+              <div className="relative w-full max-w-[100%] flex items-center">
+                <motion.div className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
+                  {items.map((card, idx) => (
                     <TestimonialMotionDiv
                       key={idx}
-                      ref={(el: any) => (cardContentRef.current[idx] = el)}
-                      className="min-w-[100%]  lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
+                      className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                       animate={{
-                        translateX: `calc(-${current * 102}% - ${current}rem) `,
+                        translateX: `calc(-${current * 100}% - ${current *
+                          2}rem)`,
 
                         opacity:
                           idx === current || idx === current + 1 ? 1 : 0.3,
                       }}
                     >
-                      {/* <a href="#"> */}
                       <img
                         className="w-full max-h-[430px] object-cover"
                         src={card.img}
                         alt=""
                       />
-                      {/* </a> */}
+
                       <div className="p-5 ">
                         <div className="mb-4">
                           <H3>{card.title}</H3>
                         </div>
-                        <div className="mb-4">
+                        {showDate && (
+                          <div className="mb-4 text-primary">
+                            <p>{card.date}</p>
+                          </div>
+                        )}
+
+                        <div className="mb-14">
                           <Text>{card.text}</Text>
                         </div>
                         <Link
                           href="#"
-                          className="inline-flex items-center py-2 text-sm font-medium text-center"
+                          className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-sm font-medium text-center"
                         >
                           <svg
                             width="20"
@@ -304,6 +203,37 @@ const HomePageCaroucel: React.FC = () => {
               </motion.div>
             </div>
           </div>
+          {showButton && (
+            <div className="mt-10 lg:pl-20 2xl:pl-0">
+              <ButtonPrimary position="left">
+                Alle News{" "}
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
+            </div>
+          )}
         </div>
       </FullWidth>
     </section>

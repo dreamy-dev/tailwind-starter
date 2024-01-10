@@ -14,7 +14,11 @@ const H4: React.FC<H4Props> = ({
   const H4Styles = resetStyles
     ? defaultStyles
     : `${defaultStyles} text-${textColor || "black"} ${styles || ""}`;
-  return <h4 className={H4Styles}>{children}</h4>;
+  return (
+    <h4 lang="de" className={H4Styles}>
+      {children}
+    </h4>
+  );
 };
 
 export default H4;

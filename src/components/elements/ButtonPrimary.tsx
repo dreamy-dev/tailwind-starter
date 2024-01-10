@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+
 type ButtonPrimaryProps = {
   children?: React.ReactNode;
   position?: "left" | "center" | "right";
@@ -25,7 +28,7 @@ export default function ButtonPrimary({
 
   return (
     <div style={containerStyles}>
-      <a className={primaryButtonStyles} href={href ?? "#"}>
+      <Link className={primaryButtonStyles} href={href ?? "#"}>
         {children ?? (
           <>
             {buttonText ? buttonText : "Jetzt bewerben"}
@@ -55,7 +58,7 @@ export default function ButtonPrimary({
             </svg>
           </>
         )}
-      </a>
+      </Link>
     </div>
   );
 }

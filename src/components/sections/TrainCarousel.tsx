@@ -15,43 +15,43 @@ const tabs = {
       image: "/trains-1-narrow.png",
       trains: [
         {
-          img: "train-models/mainline/smile.jpeg",
+          img: "/train-models/mainline/smile.jpeg",
           category: "Highspeed",
           name: "Smile",
           href: "/#",
         },
         {
-          img: "train-models/mainline/flirt200.jpeg",
+          img: "/train-models/mainline/flirt200.jpeg",
           category: "Intercity",
           name: "Flirt 200",
           href: "/#",
         },
         {
-          img: "train-models/mainline/kiss200.jpeg",
+          img: "/train-models/mainline/kiss200.jpeg",
           category: "Intercity",
           name: "Kiss 200",
           href: "/#",
         },
         {
-          img: "train-models/mainline/flirt160.jpeg",
+          img: "/train-models/mainline/flirt160.jpeg",
           category: "Regional",
           name: "Flirt 160",
           href: "/#",
         },
         {
-          img: "train-models/mainline/kiss160.jpeg",
+          img: "/train-models/mainline/kiss160.jpeg",
           category: "Regional",
           name: "Kiss 160",
           href: "/#",
         },
         {
-          img: "train-models/mainline/wink.jpeg",
+          img: "/train-models/mainline/wink.jpeg",
           category: "Regional",
           name: "Wink",
           href: "/#",
         },
         {
-          img: "train-models/mainline/gtw.jpeg",
+          img: "/train-models/mainline/gtw.jpeg",
           category: "Regional",
           name: "GTW",
           href: "/#",
@@ -63,43 +63,43 @@ const tabs = {
       image: "/trains-narrow.png",
       trains: [
         {
-          img: "train-models/urban/tina.jpeg",
+          img: "/train-models/urban/tina.jpeg",
           category: "Highspeed",
           name: "Tina",
           href: "/#",
         },
         {
-          img: "train-models/urban/tango.jpeg",
+          img: "/train-models/urban/tango.jpeg",
           category: "Intercity",
           name: "Tango",
           href: "/#",
         },
         {
-          img: "train-models/urban/tramlink.jpeg",
+          img: "/train-models/urban/tramlink.jpeg",
           category: "Tram",
           name: "Tramlink",
           href: "/#",
         },
         {
-          img: "train-models/urban/variobahn.jpeg",
+          img: "/train-models/urban/variobahn.jpeg",
           category: "Regional",
           name: "Variobahn",
           href: "/#",
         },
         {
-          img: "train-models/urban/metelitsa.jpeg",
+          img: "/train-models/urban/metelitsa.jpeg",
           category: "Regional",
           name: "Metelitsa",
           href: "/#",
         },
         {
-          img: "train-models/urban/citylink.jpeg",
+          img: "/train-models/urban/citylink.jpeg",
           category: "Regional",
           name: "Citylink",
           href: "/#",
         },
         {
-          img: "train-models/urban/metro.jpeg",
+          img: "/train-models/urban/metro.jpeg",
           category: "Regional",
           name: "Metro",
           href: "/#",
@@ -111,43 +111,43 @@ const tabs = {
       image: "/trains-2-narrow.png",
       trains: [
         {
-          img: "train-models/locomotive/euro9000.jpeg",
+          img: "/train-models/locomotive/euro9000.jpeg",
           category: "Highspeed",
           name: "EURO9000",
           href: "/#",
         },
         {
-          img: "train-models/locomotive/eurodual.jpeg",
+          img: "/train-models/locomotive/eurodual.jpeg",
           category: "EURODUAL",
           name: "Smile",
           href: "/#",
         },
         {
-          img: "train-models/locomotive/euro6000.jpeg",
+          img: "/train-models/locomotive/euro6000.jpeg",
           category: "Highspeed",
           name: "EURO6000",
           href: "/#",
         },
         {
-          img: "train-models/locomotive/euro4001.jpeg",
+          img: "/train-models/locomotive/euro4001.jpeg",
           category: "Highspeed",
           name: "EURO4001",
           href: "/#",
         },
         {
-          img: "train-models/locomotive/eurolight.jpeg",
+          img: "/train-models/locomotive/eurolight.jpeg",
           category: "Highspeed",
           name: "EUROLIGHT",
           href: "/#",
         },
         {
-          img: "train-models/locomotive/sali.jpeg",
+          img: "/train-models/locomotive/sali.jpeg",
           category: "Highspeed",
           name: "SALI",
           href: "/#",
         },
         {
-          img: "train-models/locomotive/central-cab.jpeg",
+          img: "/train-models/locomotive/central-cab.jpeg",
           category: "Highspeed",
           name: "Central Cab",
           href: "/#",
@@ -159,25 +159,25 @@ const tabs = {
       image: "/trains-3-narrow.png",
       trains: [
         {
-          img: "train-models/tailormade/triebzug.jpeg",
+          img: "/train-models/tailormade/triebzug.jpeg",
           category: "Highspeed",
           name: "Triebzüge",
           href: "/#",
         },
         {
-          img: "train-models/tailormade/zahnradbahn.jpeg",
+          img: "/train-models/tailormade/zahnradbahn.jpeg",
           category: "Highspeed",
           name: "Zahnradbahnen",
           href: "/#",
         },
         {
-          img: "train-models/tailormade/schlafwagen.jpeg",
+          img: "/train-models/tailormade/schlafwagen.jpeg",
           category: "Highspeed",
           name: "Schlafwagen",
           href: "/#",
         },
         {
-          img: "train-models/tailormade/rangierlok.jpeg",
+          img: "/train-models/tailormade/rangierlok.jpeg",
           category: "Highspeed",
           name: "Lokomotiven",
           href: "/#",
@@ -205,7 +205,7 @@ const TrainCarousel = (props?: any) => {
     <section className="bg-stadlergradient">
       <TeaserMobilitySolutions></TeaserMobilitySolutions>
       <ContentWidth>
-        <div className="col-span-6 ml-8 text-white">
+        <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
           <H3>Schienenfahrzeuge</H3>
           <Text>
             Höchste Qualität und Zuverlässigkeit sind bei unseren
@@ -259,12 +259,12 @@ const TrainCarousel = (props?: any) => {
         <motion.div
           className={`${
             isOpen ? "grid" : "hidden"
-          } col-span-12 grid-cols-4 grid-rows-2 gap-2`}
+          } col-span-12 lg:grid-cols-4 lg:grid-rows-2 gap-2`}
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
           {tabs.categories[selectedCategory].trains.map((item) => (
-            <div key={item.name} className="bg-white text-black flex flex-col">
+            <div key={item.name} className="bg-white text-black flexflex-row lg:flex-col">
               <img className="w-full" src={item.img} />
               <div className="p-6">
                 <small className="text-greySolid-600 flex mb-2">

@@ -2,7 +2,12 @@
 
 import H2 from "@/components/typography/H2";
 
-export default function SustainableProcurement() {
+interface SectonProps {
+  title: string;
+
+}
+
+const SustainableProcurement:React.FC<SectonProps> = ({title}) => {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 sm:py-16 lg:px-6 ">
@@ -12,7 +17,8 @@ export default function SustainableProcurement() {
           alt="feature image"
         />
         <div className=" sm:text-lg">
-          <H2>Nachhaltigkeit in der Lieferkette</H2>
+          {/* Nachhaltigkeit in der Lieferkette */}
+          <H2>{title}</H2>
           <p className="my-4 font-normal lg:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             sit amet eros pulvinar, commodo augue ac, viverra justo. Vivamus a
@@ -76,3 +82,4 @@ export default function SustainableProcurement() {
     </section>
   );
 }
+export default SustainableProcurement;

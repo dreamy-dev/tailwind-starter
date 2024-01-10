@@ -26,32 +26,32 @@ export default function Leitungsteam() {
       img: "https://www.stadlerrail.com/media/img/c/daniel-baer.jpg",
     },
     {
-      label: "Philipp brunner",
+      label: "Philipp Brunner",
       job: "Divisionsleiter Zentraleuropa",
       img: "https://www.stadlerrail.com/media/img/c/philipp-brunner.jpg",
     },
     {
-      label: "Lucius gerig",
+      label: "Lucius Gerig",
       job: "Divisionsleiter Schweiz",
       img: "https://www.stadlerrail.com/media/img/c/lucius-gerig.jpg",
     },
     {
-      label: "Jure mikolčić",
+      label: "Jure Mikolčić",
       job: "Divisionsleiter Deutschland",
       img: "https://www.stadlerrail.com/media/img/c/jure-mikolc%CC%8Cic%CC%81.jpg",
     },
     {
-      label: "Iñigo parra",
+      label: "Iñigo Parra",
       job: "Divisionsleiter Spanien",
       img: "https://www.stadlerrail.com/media/img/c/in%CC%83igo-parra.jpg",
     },
     {
-      label: "Benjamin niederhauser",
+      label: "Benjamin Niederhauser",
       job: "Divisionsleiter Components",
       img: "https://www.stadlerrail.com/media/img/c/f%C3%BCr%20website_niderhauser_1800x1090.jpg",
     },
     {
-      label: "Marc trippel",
+      label: "Marc Trippel",
       job: "Divisionsleiter Signalling",
       img: "https://www.stadlerrail.com/media/img/c/marc-trippel.jpg",
     },
@@ -59,9 +59,16 @@ export default function Leitungsteam() {
   return (
     <>
       <HeroText
+        // breadcrumbs={[
+        //   { text: "Lösungen", link: "/solutions" },
+        //   { text: "Full service", link: "/full-service" },
+        // ]}
         title="Stadler Konzernleitung"
-        leadText="Sie bringen Stadler voll in Fahrt."
+        leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        // withCTA={true}
+        // buttonText="CTA Button"
       />
+    
       <SmallWidth>
         <div className="grid grid-cols-2 gap-3 mb-8">
           {team.map((item) => (

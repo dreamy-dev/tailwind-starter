@@ -7,7 +7,7 @@ export default function TeaserMobilitySolutions(props?: any) {
   return (
     <section className="pt-24 pb-12 dark:bg-gray-900 ">
       <ContentWidth>
-        <div className="col-span-12 max-w-4xl mx-auto">
+        <div className="col-span-12 max-w-4xl lg:mx-auto">
           <H2 styles="text-center leading-tight text-white break-words">
             Die Mobilitätslösungen von Stadler stehen für hohe Effizienz und
             Zuverlässigkeit

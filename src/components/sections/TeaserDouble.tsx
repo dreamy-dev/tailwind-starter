@@ -92,7 +92,11 @@ export default function TeaserDouble() {
                     </h3>
                   </div>
 
-                  <ButtonPrimary position="left" buttonText="Mehr dazu" />
+                  <ButtonPrimary
+                    position="left"
+                    buttonText="Mehr dazu"
+                    href="/procurement"
+                  />
                 </div>
               </div>
             </div>
@@ -101,7 +105,7 @@ export default function TeaserDouble() {
           <div className="hidden lg:block">
             <img
               src="Referenzen_TSSSA_Bild-VR.jpg"
-              className="dark:hidden object-cover object-left h-full h-[572px]"
+              className="dark:hidden object-cover object-left h-[572px]"
               alt=""
             />
           </div>
@@ -111,7 +115,7 @@ export default function TeaserDouble() {
           <div className="hidden lg:block">
             <img
               src="news-1.jpg"
-              className="dark:hidden object-cover object-right h-full h-[572px]"
+              className="dark:hidden object-cover object-right h-[572px]"
               alt=""
             />
             <img
@@ -239,7 +243,11 @@ export default function TeaserDouble() {
               </ul>
             </div>
 
-            <ButtonPrimary position="left" buttonText="Jetzt Partner werden" />
+            <ButtonPrimary
+              position="left"
+              buttonText="Jetzt Partner werden"
+              href="/cooperation"
+            />
           </div>
         </div>
       </div>
