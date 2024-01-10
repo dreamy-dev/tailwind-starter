@@ -7,6 +7,7 @@ import TeaserMobilitySolutions from "./TeaserMobilitySolutions";
 import H3 from "../typography/H3";
 import Text from "../typography/Text";
 import Link from "../typography/Link";
+import TrainSequence from "./TrainSequence";
 
 const tabs = {
   categories: [
@@ -217,12 +218,14 @@ const TrainCarousel = (props?: any) => {
           </a>
         </div>
       </ContentWidth>
-      <FullWidth>
-        <img
+        {/* <img
           src={tabs.categories[selectedCategory].image}
           className="col-span-12 w-full"
-        />
-      </FullWidth>
+        /> */}
+        {/* <div className="train-sequence">
+          <canvas id="train-sequence" style={{height:'50vh', transform: 'translate(-50%, -50%)', maxWidth: '100vw', maxHeight: '50vh'}} className="fixed bottom-[50%] left-[50%]" />
+      </div> */}
+        <TrainSequence></TrainSequence>
       <ContentWidth>
         <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
           <div className="flex flex-row items-start justify-center">
