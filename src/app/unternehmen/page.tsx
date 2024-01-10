@@ -92,6 +92,34 @@ export default function Unternehmen() {
       suffix: " Mio.",
     },
   ];
+
+  const customEventData = [
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+  ];
   return (
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
@@ -125,11 +153,7 @@ export default function Unternehmen() {
       />
       <Map />
 
-      <SustainableProcurement
-        title="Nachhaltigkeit"
-        showButton={true}
-    
-      />
+      <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
 
       <TeaserGeneral
         title="Stadler History"
@@ -144,7 +168,10 @@ export default function Unternehmen() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-      <EventCalendar></EventCalendar>
+      <EventCalendar
+        mainTitle="Events"
+        eventsData={customEventData}
+      ></EventCalendar>
       <TeaserGeneral
         title="News zu Stadler"
         ctaText="Zu allen News"
