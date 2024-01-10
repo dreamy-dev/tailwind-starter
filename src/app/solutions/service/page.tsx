@@ -73,7 +73,8 @@ const figures = [
       description:
         "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
       img: "https://www.stadlerrail.com/service/Icon_Full_Service.jpg",
-      href: "/solutions/service/full-service",
+     href: "/solutions/service/full-service",
+      
     },
     {
       label: "TSSSA",
@@ -136,6 +137,7 @@ export default function Service() {
         mainTitle="Alle Services auf einen Blick"
         text="Hier finden Sie eine Übersicht aller unser Service Angebote."
         services={services}
+        imageStyles="w-24 pl-5 pt-5"
       />
       <FactsAndFigures data1={facts} data2={figures} title="Daten und Fakten" />
     </>
