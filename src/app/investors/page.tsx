@@ -203,7 +203,7 @@ export default function Investors() {
       <Publikationen
         tableData={tableData}
         publications={presentations}
-        title="Präsentation"
+        title="Präsentationen"
         showTable={false}
       ></Publikationen>
       {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen

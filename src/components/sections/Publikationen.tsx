@@ -98,11 +98,13 @@ const Publicationen: React.FC<StatsProps> = ({
   };
 
   return (
-    <section className="bg-white py-20 z-[10000]">
+    <section className="bg-white py-20 ">
       <ContentWidth>
-        <div className="col-span-12 w-full">
-          <div className="text-start">
+        <div className="col-span-12">
+          <div className="text-start mb-8">
             <H2>{title}</H2>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
           </div>
           <div className="w-full mx-auto justify-center items-center grid grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-3">
             {publications.map((publication) => (
@@ -152,7 +154,7 @@ const Publicationen: React.FC<StatsProps> = ({
           </div>
         </div>
         {showTable && (
-          <div className="relative flex flex-row w-full mt-8 justify-beetween items-center ">
+          <div className="col-span-12 relative flex flex-row w-full mt-8 justify-beetween items-center ">
             <button
               type="button"
               onClick={toggleTrainsVisibility}

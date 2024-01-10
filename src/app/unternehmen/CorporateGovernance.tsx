@@ -1,13 +1,18 @@
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import SmallWidth from "@/components/layouts/SmallWidth";
+import SuperSmallWidth from "@/components/layouts/SuperSmallWidth";
 import H2 from "@/components/typography/H2";
 import Text from "@/components/typography/Text";
 
 export default function CorporateGorvernance() {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+      <SuperSmallWidth>
+      <div className="py-8 lg:py-16">
+        <div className="mx-auto text-center mb-2 lg:mb-4">
           <H2>Verwaltungsrat und Konzernleitung</H2>
+        </div>
+        <div className="mx-auto text-left mb-8 lg:mb-16">
           <Text>
             Als weltweit agierender Schienenfahrzeughersteller strebt Stadler
             nachhaltiges Wachstum an. Dabei setzen wir uns hohe Standards im
@@ -54,6 +59,7 @@ export default function CorporateGorvernance() {
           </a> */}
         </div>
       </div>
+      </SuperSmallWidth>
     </section>
   );
 }
