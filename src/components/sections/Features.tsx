@@ -45,7 +45,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 
 const Features: React.FC<FeaturesProps> = ({ featuresData, mainTitle }) => {
   return (
-    <section className="bg-white py-24 sm:py-24">
+    <section className="bg-white pb-24 sm:pb-24">
       <ContentWidth>
         <div className="col-span-12  max-w-full mx-auto bg-white">
           <div className="mb-10 tracking-tight dark:text-white ">

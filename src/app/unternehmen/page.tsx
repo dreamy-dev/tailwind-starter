@@ -101,7 +101,10 @@ export default function Unternehmen() {
         //   { text: "Full service", link: "/full-service" },
         // ]}
         title="Das ist Stadler"
-        //leadText="Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst."
+        leadText="Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
+              Und mit Schweizer Werten, die das Standing von Stadler weltweit
+              fördern und prägen. Stadler steht für Zuverlässigkeit,
+              Flexibilität und Innovationskraft – seit 1942."
         // withCTA={true}
         // buttonText="CTA Button"
       />
@@ -118,8 +121,8 @@ export default function Unternehmen() {
       <CorporateGorvernance />
       <Map />
 
-      <SustainableProcurement title="Nachhaltigkeit" />
-      {/* <Nachhaltigkeit /> */}
+      <SustainableProcurement title="Nachhaltigkeit" showButton={ true} />
+   
       <TeaserGeneral
         title="Stadler History"
         customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."

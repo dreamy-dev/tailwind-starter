@@ -1,6 +1,6 @@
 "use client";
 import HeroText from "@/components/sections/HeroText";
-import ServiceTeasers from "../service/ServiceTeasers";
+import ServiceTeasers from "../../../components/sections/ServiceTeasers";
 
 const teaserData = [
   {
