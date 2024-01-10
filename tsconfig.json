@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/typography/H1.jsx"
-, "src/components/sections/TrainSequence.tsx"  ],
+  ],
   "exclude": ["node_modules"]
 }
