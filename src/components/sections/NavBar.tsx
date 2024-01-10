@@ -50,7 +50,7 @@ const navigationMain: NavItems = {
     { title: "Karriere", href: "/#", icon: false },
     {
       title: "Investor Relations",
-      href: "/#",
+      href: "/investors",
       icon: false,
     },
   ],
