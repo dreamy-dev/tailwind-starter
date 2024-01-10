@@ -106,7 +106,7 @@ const Publicationen: React.FC<StatsProps> = ({
             <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
           </div>
-          <div className="w-full mx-auto justify-center items-baseline items-stretch grid grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-3">
+          <div className="w-full mx-auto justify-center items-baseline items-stretch grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-3">
             {publications.map((publication) => (
               <div
                 key={publication.title}
