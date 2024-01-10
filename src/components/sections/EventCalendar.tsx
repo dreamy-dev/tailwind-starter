@@ -48,7 +48,7 @@ const eventData = [
          <ContentWidth>
            <div className="max-w-full col-span-12">
              <div className="text-start">
-               <H2>{mainTitle}Events</H2>
+               <H2>{mainTitle}</H2>
              </div>
              <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
