@@ -7,7 +7,6 @@ export default function Publications() {
     <section>
       <ContentWidth>
         <div className="col-span-12 py-8">
-         
           <H2>Publikationen</H2>
           <br />
           <Text>

@@ -2,14 +2,14 @@ import ContentWidth from "@/components/layouts/ContentWidth";
 import HeroText from "@/components/sections/HeroText";
 import Text from "@/components/typography/Text";
 import H2 from "@/components/typography/H2";
+import SmallWidth from "@/components/layouts/SmallWidth";
 
 export default function TextBlock() {
   return (
-    <section>
-      <ContentWidth>
+    <section className="my-8">
+      <SmallWidth>
         <div className="col-span-12 py-8">
           <H2>Lorem ipsum</H2>
-          <br />
           <Text>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -109,7 +109,7 @@ export default function TextBlock() {
             Lorem ipsum dolor sit amet.
           </Text>
         </div>
-      </ContentWidth>
+      </SmallWidth>
     </section>
   );
 }
