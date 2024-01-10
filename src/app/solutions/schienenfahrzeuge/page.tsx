@@ -88,11 +88,7 @@ export default function Schienenfahrzeuge() {
             </Button>
           </TeaserImageLeft>
         </div>
-        <div className="col-span-6" style={{ height: "80px", padding: "20px" }}>
-          <Link href="/solutions/schienenfahrzeuge/product">
-            <p>Product page</p>
-          </Link>
-        </div>
+        
       </div>
       {/* </ContentWidth> */}
     </section>
