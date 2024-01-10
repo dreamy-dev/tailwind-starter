@@ -108,7 +108,7 @@ export default function Unternehmen() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-     
+
       <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}
@@ -118,11 +118,19 @@ export default function Unternehmen() {
         title="Daten & Fakten"
         showTwoRows={false}
       ></FactsAndFigures>
-      <CorporateGorvernance />
+      <CorporateGorvernance
+        mainTitle="Verwaltungsrat und Konzernleitung"
+        showThirdCard={false}
+        numberOfColumns={2}
+      />
       <Map />
 
-      <SustainableProcurement title="Nachhaltigkeit" showButton={ true} />
-   
+      <SustainableProcurement
+        title="Nachhaltigkeit"
+        showButton={true}
+    
+      />
+
       <TeaserGeneral
         title="Stadler History"
         customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
