@@ -10,7 +10,6 @@ export default function TextBlock() {
       <SmallWidth>
         <div className="col-span-12 py-8">
           <H2>Lorem ipsum</H2>
-          <br />
           <Text>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam

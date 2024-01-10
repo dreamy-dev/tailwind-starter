@@ -9,6 +9,8 @@ import CorporateGorvernance from "../unternehmen/CorporateGovernance";
 import InvestorHero from "./Hero";
 import TextBlock from "./TextBlock";
 import SubHero from "@/components/sections/SubHero";
+import Text from "@/components/typography/Text";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 const publications = [
   {
@@ -204,8 +206,17 @@ export default function Investors() {
         tableData={tableData}
         publications={presentations}
         title="Präsentationen"
-        showTable={false}
+        showTable={true}
       ></Publikationen>
+      <ContentWidth>
+        <div className="col-span-12 flex flex-col">
+        <Text>Alle Publikationen und Präsentationen finden Sie im Downloadcenter</Text>
+        <div className="mb-6"></div>
+      <ButtonPrimary position="left" buttonText="Zum Downloadcenter" />
+      <div className="mb-20"></div>
+        </div>
+      </ContentWidth>
+      
       {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen

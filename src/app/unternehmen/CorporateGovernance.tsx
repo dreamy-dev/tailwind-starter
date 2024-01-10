@@ -6,7 +6,7 @@ import Text from "@/components/typography/Text";
 
 export default function CorporateGorvernance() {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white dark:bg-gray-900 mb-8">
       <SuperSmallWidth>
       <div className="py-8 lg:py-16">
         <div className="mx-auto text-center mb-2 lg:mb-4">
