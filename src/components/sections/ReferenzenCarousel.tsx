@@ -264,7 +264,7 @@ const TestimonialsCarousel: React.FC = () => {
                   {images.map((image, idx) => (
                     <TestimonialMotionDiv
                       key={idx}
-                      className="grid grid-cols-2 shadow  lg:min-w-[90%] bg-white lg:flex-row "
+                      className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
                       animate={{
                         translateX: `calc(-${current * 100}% - ${
                           current * 1.5
