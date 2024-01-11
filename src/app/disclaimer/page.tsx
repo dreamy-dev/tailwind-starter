@@ -8,6 +8,8 @@ import H4 from "@/components/typography/H4";
 import Lead from "@/components/typography/Lead";
 import HeroText from "@/components/sections/HeroText";
 import ContentWidth from "@/components/layouts/ContentWidth";
+import Text from "@/components/typography/Text";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 interface Data {
   title: string;
@@ -161,6 +163,12 @@ export default function Datenschutz() {
             showButton={false}
             listData={listDatenschutz}
           ></TeaserDownload>
+          <ContentWidth>
+            <div className="col-span-12 mb-14 flex justify-between align-baseline">
+              <Text>Please find all documents in all languages in the downloadcenter.</Text>
+              <ButtonPrimary buttonText="Zum Downloadcenter" />
+            </div>
+          </ContentWidth>
         </div>
     </>
   );
