@@ -156,14 +156,14 @@ const featuresData = [
 
 const teaserData = [
   {
-    label: "Zugbeinflussung",
+    label: "Zugbeeinflussung",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
     href: "/solutions/signalling/mainline/subpage",
   },
   {
-    label: "Stellwerk",
+    label: "Stellwerke",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
@@ -219,7 +219,7 @@ export default function Mainline() {
         mainTitle="Die Vorteile auf einen Blick"
       />
       <ServiceTeasers
-        mainTitle=""
+        mainTitle="Relevante Lösungen"
         services={teaserData}
         imageStyles="w-full "
       ></ServiceTeasers>
