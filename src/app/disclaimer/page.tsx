@@ -6,6 +6,8 @@ import H1 from "@/components/typography/H1";
 import H2 from "../../components/typography/H2";
 import H4 from "@/components/typography/H4";
 import Lead from "@/components/typography/Lead";
+import HeroText from "@/components/sections/HeroText";
+import ContentWidth from "@/components/layouts/ContentWidth";
 
 interface Data {
   title: string;
@@ -75,17 +77,15 @@ export default function Datenschutz() {
 
   return (
     <>
-      <SmallWidth>
         <div className="mt-20">
-          <H1>Datenschutz</H1>
-          <Lead>
-            Es freut uns, dass Sie sich für den Schutz Ihrer Daten
+          <HeroText title="Datenschutz" leadText="Es freut uns, dass Sie sich für den Schutz Ihrer Daten
             interessieren, denn das tun wir auch. Im Folgenden finden Sie die
             Datenschutzerklärungen für verschiedene Bearbeitungen. Falls Sie
             Fragen dazu haben, wenden Sie sich bitte an
-            compliance@stadlerrail.com. Vielen Dank!
-          </Lead>
-          <div className="pt-8  sm:pt-16 ">
+            compliance@stadlerrail.com." />
+          <ContentWidth>
+            <div className="col-span-12">
+            <div className="pt-8  sm:pt-16 ">
             <div className="z-1000">
               <div id="accordion-flush">
                 {accordionData.map((item, index) => (
@@ -150,7 +150,10 @@ export default function Datenschutz() {
                 ))}
               </div>
             </div>
-          </div>
+            </div>
+            </div>
+          </ContentWidth>
+          
           <TeaserDownload
             buttonLink="/downloadcenter"
             buttonText="Alle Medienmitteilungen"
@@ -159,7 +162,6 @@ export default function Datenschutz() {
             listData={listDatenschutz}
           ></TeaserDownload>
         </div>
-      </SmallWidth>
     </>
   );
 }
