@@ -27,7 +27,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
   imageStyles,
 }) => {
   return (
-    <section className="bg-white dark:bg-gray-900 antialiased my-20">
+    <section className="bg-white dark:bg-gray-900 antialiased pb-24">
       <ContentWidth>
         <div className="col-span-12 mb-12">
           <H2>{mainTitle}</H2>

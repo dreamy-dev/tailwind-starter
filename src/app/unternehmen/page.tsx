@@ -92,6 +92,34 @@ export default function Unternehmen() {
       suffix: " Mio.",
     },
   ];
+
+  const customEventData = [
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+    {
+      event: "Event",
+      date: "tt. mm. yyyy",
+      link: "#",
+    },
+  ];
   return (
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
@@ -101,11 +129,14 @@ export default function Unternehmen() {
         //   { text: "Full service", link: "/full-service" },
         // ]}
         title="Das ist Stadler"
-        //leadText="Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst."
+        leadText="Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
+              Und mit Schweizer Werten, die das Standing von Stadler weltweit
+              fördern und prägen. Stadler steht für Zuverlässigkeit,
+              Flexibilität und Innovationskraft – seit 1942."
         // withCTA={true}
         // buttonText="CTA Button"
       />
-     
+
       <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}
@@ -115,11 +146,15 @@ export default function Unternehmen() {
         title="Daten & Fakten"
         showTwoRows={false}
       ></FactsAndFigures>
-      <CorporateGorvernance />
+      <CorporateGorvernance
+        mainTitle="Verwaltungsrat und Konzernleitung"
+        showThirdCard={false}
+        numberOfColumns={2}
+      />
       <Map />
 
-      <SustainableProcurement title="Nachhaltigkeit" />
-      {/* <Nachhaltigkeit /> */}
+      <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
+
       <TeaserGeneral
         title="Stadler History"
         customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -133,7 +168,10 @@ export default function Unternehmen() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-      <EventCalendar></EventCalendar>
+      <EventCalendar
+        mainTitle="Events"
+        eventsData={customEventData}
+      ></EventCalendar>
       <TeaserGeneral
         title="News zu Stadler"
         ctaText="Zu allen News"

@@ -138,6 +138,34 @@ const newsCards = [
   },
 ];
 
+const customEventData = [
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+  {
+    event: "Event",
+    date: "tt. mm. yyyy",
+    link: "#",
+  },
+];
+
 export default function Medien() {
   return (
     <div>
@@ -175,7 +203,10 @@ export default function Medien() {
         publications={publications}
         title="Publikationen"
       ></Publikationen>
-      <EventCalendar></EventCalendar>
+      <EventCalendar
+        mainTitle="Events"
+        eventsData={customEventData}
+      ></EventCalendar>
       <TeaserGeneral
         title="Mediathek"
         ctaText="Download center"

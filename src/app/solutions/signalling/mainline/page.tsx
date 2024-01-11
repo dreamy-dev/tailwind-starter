@@ -5,6 +5,7 @@ import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
 import Features from "@/components/sections/Features";
 import ImageFullWidth from "@/components/sections/ImageFullWidth";
+import ServiceTeasers from "@/components/sections/ServiceTeasers";
 const features = [
   {
     title: "Leichtbauweise",
@@ -152,6 +153,52 @@ const featuresData = [
     href: "/service",
   },
 ];
+
+const teaserData = [
+  {
+    label: "Zugbeinflussung",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Stellwerk",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Gleisfreimeldung",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Weichensteuerungen",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Fahrsignalanlagen",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Signale",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+];
+
 export default function Mainline() {
   return (
     <>
@@ -171,7 +218,15 @@ export default function Mainline() {
         features={features}
         mainTitle="Die Vorteile auf einen Blick"
       />
-      <Features mainTitle="Weitere Produkte und Dienstleistungen " featuresData={featuresData}/>
+      <ServiceTeasers
+        mainTitle=""
+        services={teaserData}
+        imageStyles="w-full "
+      ></ServiceTeasers>
+      <Features
+        mainTitle="Weitere Produkte und Dienstleistungen "
+        featuresData={featuresData}
+      />
       <Contact />
       <Career />
     </>
