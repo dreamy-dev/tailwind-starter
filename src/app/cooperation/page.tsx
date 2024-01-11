@@ -11,10 +11,12 @@ import TeaserDownload from "../../components/sections/TeaserDownload";
 
 const downloads = [
   {
-    text: "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
+    text:
+      "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
   },
   {
-    text: "Ergänzende Einkaufsbedingungen für EU-Zulassungsprozesse Stadler Rheintal AG",
+    text:
+      "Ergänzende Einkaufsbedingungen für EU-Zulassungsprozesse Stadler Rheintal AG",
   },
   {
     text: "Kurzanleitung Zeitfensterbuchung",
@@ -44,13 +46,12 @@ export default function Cooperation() {
       </ContentWidth>
       <ProductHero imageUrl="/AdobeStock.jpg"></ProductHero>
       <TeaserGeneral
-        title="Unsere Geschäftsbedingungen"
-        customText="“Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "
-        ctaText="Download Geschäftsbedingungen"
+        title="Supplier Portal"
+        customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ctaText="Go to the Portal"
       ></TeaserGeneral>
       <CooperationBecome></CooperationBecome>
       <CooperationInfo></CooperationInfo>
-
       <Contact />
       <TeaserDownload
         title="Allgemeine Downloads"
@@ -59,7 +60,12 @@ export default function Cooperation() {
         showList={true}
         showButton={false}
         listData={downloads}
-      ></TeaserDownload>
+      ></TeaserDownload>{" "}
+      <TeaserGeneral
+        title=""
+        customText="Alle weiteren Dokumente und Downloads für Lieferanten finden Sie in unserem Downloadcenter"
+        ctaText="Zum Downloadcenter"
+      ></TeaserGeneral>
     </>
   );
 }
