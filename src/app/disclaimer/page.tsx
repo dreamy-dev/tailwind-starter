@@ -92,11 +92,11 @@ export default function Datenschutz() {
                   <div key={index}>
                     <h2
                       id={`accordion-flush-heading-${index}`}
-                      className="mb-2 text-xl font-bold break-words text-black"
+                      className="mb-2 text-xl font-medium break-words text-black"
                     >
                       <button
                         type="button"
-                        className={`flex justify-between items-center py-5 w-full font-bold text-left ${
+                        className={`flex justify-between items-center py-5 w-full font-medium text-left ${
                           activeAccordion === index
                             ? "text-black bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
                             : "text-black border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
