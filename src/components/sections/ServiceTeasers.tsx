@@ -29,7 +29,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
   return (
     <section className="bg-white dark:bg-gray-900 antialiased pb-24">
       <ContentWidth>
-        <div className="col-span-12 mb-12">
+        <div className="col-span-12 mt-12">
           <H2>{mainTitle}</H2>
           <Text>{text}</Text>
         </div>
