@@ -47,25 +47,27 @@ const TeaserDownload: React.FC<TeaserDownloadProps> = ({
                     key={index}
                   >
                     <p className="mr-10">{item.text}</p>
-                    <Button
-                      textColorClass="text-primary"
-                      borderColorClass="border-primary"
-                      styles="flex gap-2"
-                    >
-                      Zu Downloadcenter
-                      <svg
-                        width="10"
-                        height="10"
-                        viewBox="0 0 20 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <div className="min-w-[14rem]">
+                      <Button
+                        textColorClass="text-primary"
+                        borderColorClass="border-primary"
+                        styles="flex gap-2"
                       >
-                        <path
-                          d="M7.72573e-07 11.6804L16.338 11.6804L10.9296 19.1222L12.7324 20.5176L20 10.5176L12.7324 0.517577L10.9296 1.91293L16.338 9.35479L9.75882e-07 9.35479L7.72573e-07 11.6804Z"
-                          fill="#005893"
-                        />
-                      </svg>
-                    </Button>
+                        Zu Downloadcenter
+                        <svg
+                          width="10"
+                          height="10"
+                          viewBox="0 0 20 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.72573e-07 11.6804L16.338 11.6804L10.9296 19.1222L12.7324 20.5176L20 10.5176L12.7324 0.517577L10.9296 1.91293L16.338 9.35479L9.75882e-07 9.35479L7.72573e-07 11.6804Z"
+                            fill="#005893"
+                          />
+                        </svg>
+                      </Button>
+                    </div>
                   </li>
                   <div className="border-b mb-6"></div>
                 </>

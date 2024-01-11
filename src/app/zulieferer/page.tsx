@@ -126,7 +126,7 @@ export default function Lieferanten() {
       <Quote />
       <TeaserImageRight
         imageSrc="Referenzen_TSSSA_Bild-VR.jpg"
-        title="Geschäftsbedingungen in der Beschaffung"
+        title="Procurement"
         description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
         listItems={["Lorem ipusm", "Dolor sit amet", "Stet clita"]}
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
@@ -151,7 +151,7 @@ export default function Lieferanten() {
       ></TeaserImageLeft>
       {/* <TeaserDouble /> */}
       <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" />
-      <FAQ mainTitle="Frequently asked questions" faqs={data}/>
+      <FAQ mainTitle="Cooperation" faqs={data} />
       <Contact
         title="Ihr Kontakt"
         contactname="Supply Management"
