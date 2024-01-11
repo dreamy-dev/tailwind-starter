@@ -22,7 +22,7 @@ function TeaserGeneral({
     <section className="bg-white py-12">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
-          <H2>{title}</H2>
+          {title && <H2>{title}</H2>}
           <Text styles="mb-8 text-xl">
             {customText
               ? customText
