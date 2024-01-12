@@ -6,7 +6,7 @@ import { useState } from "react";
      id: "1",
      division: "Division Schweiz",
      location: "Chemnitz",
-     name: "Stadler Chemnitz Gmbh",
+     name: "Chemnitz, Stadler Chemnitz Gmbh",
      type: ["Service", "Production"],
      contactPerson: { title: "Geschäftsleiter", name: "Albrecht Teich" },
      phone: "+41 71 626 21 20",
@@ -103,49 +103,52 @@ export default function StandorteAccordion() {
     }));
   };
   return (
-    <>
+    <div className="pb-24">
       {locations.map((item) => (
         <div
           key={item.id}
-          className="text-gray-500 mb-8 border bg-white border-gray-200 shadow-md"
+          className="text-gray-900  bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
         >
-          <div className="flex items-start justify-between w-full p-5 font-medium rtl:text-right text-gray-500">
+          <div className="flex justify-between items-center w-full p-2 font-medium rtl:text-right text-gray-500">
             <div className="pt-4">
               <div className="flex">
-                <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs rounded-full font-light bg-primaryTrans-100 tracking-tight text-gray-900">
+                <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
                   {item.division}
                 </p>
-                <p className="mb-3 py-1 px-2 text-xs tracking-tight rounded-full  font-light bg-greenBright text-gray-900">
+                <p className="mb-3 py-1 px-2 text-xs tracking-tight font-light bg-greenBright text-gray-900">
                   {item.location}
                 </p>
               </div>
-              <h3 className="mb-2 text-4xl font-semibold tracking-tight text-gray-900">
-                {item.name}
-              </h3>
-
-              <div className="items-start space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                <div className="-ml-2 w-full flex items-start flex-wrap">
-                  {item.type.map((type, key) => (
-                    <a
-                      key={key}
-                      href="#"
-                      className="inline-block px-4 py-2 mr-4 border rounded-full text-xs last-of-type:mr-0 mb-2"
-                    >
-                      {type}
-                    </a>
-                  ))}
+              <div className="flex flex-row items-center">
+                <div className="mr-6">
+                  <h3 className="mb-2 text-xl font-semibold tracking-tight text-gray-900">
+                    {item.name}
+                  </h3>
+                </div>
+                <div className="items-start  max-w-screen-sm sm:flex ">
+                  <div className=" w-full flex items-start flex-wrap lg:flex-nowrap">
+                    {item.type.map((type, key) => (
+                      <a
+                        key={key}
+                        href="#"
+                        className="px-4 py-2 mr-4 border text-xs last-of-type:mr-0 mb-2"
+                      >
+                        {type}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
             <div
               onClick={() => toggleAccordion(item.id)}
-              className={`cursor-pointer py-2.5 leading-6 font-medium  rounded flex items-center gap-2 ${
+              className={`cursor-pointer py-2.5 ${
                 showAccordion[item.id] ? "rotate-90" : "-rotate-90"
               }`}
             >
               <svg
-                width="26"
-                height="26"
+                width="16"
+                height="16"
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +161,7 @@ export default function StandorteAccordion() {
             </div>
           </div>
           {showAccordion[item.id] && (
-            <div className="p-6">
+            <div className="p-5 border-t border-gray-200 dark:border-gray-700">
               <div className="flex justify-start items-start">
                 <div className="w-9/12">
                   {item.contactPerson && (
@@ -240,6 +243,6 @@ export default function StandorteAccordion() {
           )}
         </div>
       ))}
-    </>
+    </div>
   );
 }
