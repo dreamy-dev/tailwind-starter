@@ -102,14 +102,13 @@ const NavBar = () => {
   //   };
   // }, [isSubmenuOpen]);
 
-  let menuRef = useRef();
+  let menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let handler = (e: any) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
-      console.log("here", menuRef.current.contains(e.target));
     };
 
     document.addEventListener("mousedown", handler);
