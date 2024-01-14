@@ -6,6 +6,12 @@ import Career from "../../../../components/sections/Career";
 import Features from "@/components/sections/Features";
 import ImageFullWidth from "@/components/sections/ImageFullWidth";
 import ServiceTeasers from "@/components/sections/ServiceTeasers";
+import TextSection from "@/components/sections/TextSection";
+import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import Text from "@/components/typography/Text";
+import H2 from "@/components/typography/H2";
+import SmallWidth from "@/components/layouts/SmallWidth";
 const features = [
   {
     title: "Leichtbauweise",
@@ -155,27 +161,27 @@ const featuresData = [
 ];
 
 const teaserData = [
-  {
-    label: "Zugbeeinflussung",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: "/news-1.jpg",
-    href: "/solutions/signalling/mainline/subpage",
-  },
-  {
-    label: "Stellwerke",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: "/news-1.jpg",
-    href: "/solutions/signalling/mainline/subpage",
-  },
-  {
-    label: "Gleisfreimeldung",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: "/news-1.jpg",
-    href: "/solutions/signalling/mainline/subpage",
-  },
+  // {
+  //   label: "Zugbeeinflussung",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   img: "/news-1.jpg",
+  //   href: "/solutions/signalling/mainline/subpage",
+  // },
+  // {
+  //   label: "Stellwerke",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   img: "/news-1.jpg",
+  //   href: "/solutions/signalling/mainline/subpage",
+  // },
+  // {
+  //   label: "Gleisfreimeldung",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   img: "/news-1.jpg",
+  //   href: "/solutions/signalling/mainline/subpage",
+  // },
   {
     label: "Weichensteuerungen",
     description:
@@ -214,12 +220,64 @@ export default function Mainline() {
         // buttonText="CTA Button"
       />
       <ImageFullWidth imgSrc="/hero-mainline.jpg" />
-      <QualityFeatures
+      <TextSection></TextSection>
+      {/* <QualityFeatures
         features={features}
         mainTitle="Die Vorteile auf einen Blick"
-      />
+      /> */}
+      <SmallWidth>
+        <div className="col-span-12">
+          <H2>Relevante Lösungen</H2>
+        </div>
+      </SmallWidth>
+      <TeaserImageLeft imageSrc="/news-1.jpg">
+        <div>
+          <H2 styles="text-black">Zugbeeinflussung</H2>
+          <Text styles="mt-4 text-xl font-normal text-black">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor
+          </Text>
+        </div>
+        <ButtonPrimary
+          position="left"
+          href="/solutions/signalling/mainline/subpage"
+        >
+          Mehr dazu
+        </ButtonPrimary>
+      </TeaserImageLeft>
+      <TeaserImageLeft imageSrc="/news-1.jpg">
+        {" "}
+        <div>
+          <H2 styles="text-black">Stellwerke</H2>
+          <Text styles="mt-4 text-xl font-normal text-black">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor
+          </Text>
+        </div>
+        <ButtonPrimary
+          position="left"
+          href="/solutions/signalling/mainline/subpage"
+        >
+          Mehr dazu
+        </ButtonPrimary>
+      </TeaserImageLeft>
+      <TeaserImageLeft imageSrc="/news-1.jpg">
+        <div>
+          <H2 styles="text-black">Gleisfreimeldung</H2>
+          <Text styles="mt-4 text-xl font-normal text-black">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor
+          </Text>
+        </div>
+        <ButtonPrimary
+          position="left"
+          href="/solutions/signalling/mainline/subpage"
+        >
+          Mehr dazu
+        </ButtonPrimary>
+      </TeaserImageLeft>
       <ServiceTeasers
-        mainTitle="Relevante Lösungen"
+        // mainTitle="Relevante Lösungen"
         services={teaserData}
         imageStyles="w-full "
       ></ServiceTeasers>
