@@ -80,6 +80,7 @@ export default function Footer() {
                   textColorClass="text-white"
                   borderColorClass="border-white"
                   position="left"
+                  href="/contact"
                 >
                   Kontakt aufnehmen
                 </Button>

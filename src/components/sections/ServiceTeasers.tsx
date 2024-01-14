@@ -18,6 +18,7 @@ interface ServiceTeasersProps {
   mainTitle?: string;
   text?: string;
   imageStyles?: string;
+  children?: any;
 }
 
 const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
@@ -25,6 +26,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
   mainTitle,
   text,
   imageStyles,
+  children,
 }) => {
   return (
     <section className="bg-white dark:bg-gray-900 antialiased pb-24">
@@ -53,6 +55,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
             </div>
           </div>
         ))}
+        {children}
       </ContentWidth>
     </section>
   );
