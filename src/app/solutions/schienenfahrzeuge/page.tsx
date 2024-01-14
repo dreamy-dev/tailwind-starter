@@ -15,6 +15,10 @@ export default function Schienenfahrzeuge() {
       {/* <ContentWidth> */}
       <div className="col-span-12">
         <HeroText
+          breadcrumbs={[
+            { text: "Lösungen", link: "/solutions" },
+            { text: "Schienenfahrzeuge" },
+          ]}
           title="Schienenfahrzeuge"
           leadText="In enger Zusammenarbeit mit Kunden werden innovative, modulare oder massgeschneiderte Schienenfahrzeuge entwickelt."
         ></HeroText>
@@ -88,7 +92,6 @@ export default function Schienenfahrzeuge() {
             </Button>
           </TeaserImageLeft>
         </div>
-        
       </div>
       {/* </ContentWidth> */}
     </section>
