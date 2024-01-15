@@ -16,7 +16,7 @@ import H2 from "@/components/typography/H2";
 export default function Solutions() {
   return (
     <>
-      {/* <SubHero imageUrl="/subhero.jpg"></SubHero> */}
+      <SubHero imageUrl="/subhero.jpg"></SubHero>
       <HeroText
         // breadcrumbs={[
         //   { text: "Lösungen", link: "/page" },
@@ -29,7 +29,7 @@ export default function Solutions() {
         // buttonText="CTA Button"
       />
       <div className="bg-primaryTrans-50 py-12">
-        <TeaserImageRight imageSrc="Referenzen_TSSSA_Bild-VR.jpg">
+        <TeaserImageRight imageSrc="/hero-home-big-min.jpg">
           <div>
             <H2 styles="text-black">Schienenfahrzeuge</H2>
             <Text styles="mt-4 text-xl font-normal text-gray-800 text-black">
@@ -45,8 +45,8 @@ export default function Solutions() {
             href="/solutions/schienenfahrzeuge"
           />
         </TeaserImageRight>
-        <TeaserImageLeft imageSrc="news-1.jpg">
-          <div >
+        <TeaserImageLeft imageSrc="/teaser_signalling-2.jpg">
+          <div>
             <H2 styles="text-black">Signalling</H2>
             <Text styles="mt-4 text-xl font-normal text-black">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -59,7 +59,7 @@ export default function Solutions() {
             href="/solutions/signalling"
           />
         </TeaserImageLeft>
-        <TeaserImageRight imageSrc="Referenzen_TSSSA_Bild-VR.jpg">
+        <TeaserImageRight imageSrc="/teaser_service.jpeg">
           <div>
             <H2 styles="text-black">Service</H2>
             <Text styles="mt-4 text-xl font-normal text-gray-800 text-black">

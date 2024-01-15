@@ -3,7 +3,7 @@ import Text from "../typography/Text";
 
 export default function TextSection(props?: any, children?: any) {
   return (
-    <section className="bg-white dark:bg-gray-900 py-24">
+    <section className="bg-white dark:bg-gray-900 pb-24">
       <SmallWidth>
         <Text>
           Der einstöckige Intercity- und Regionalzug fährt mit einer maximalen
