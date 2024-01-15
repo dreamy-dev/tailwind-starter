@@ -77,6 +77,7 @@ export default function CooperationInfo() {
       <ContentWidth>
         <div className="w-full col-span-12 py-8 mx-auto lg:py-16">
           <div className="text-left">
+            <H2 styles="mb-2">Anlieferadressen</H2>
             <H3>Anlieferadressen der Stadler Bussnang AG</H3>
           </div>
           <div className="grid gap-8 mb-6 lg:mb-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
