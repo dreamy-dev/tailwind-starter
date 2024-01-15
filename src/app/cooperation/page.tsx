@@ -59,8 +59,8 @@ export default function Cooperation() {
         listData={downloads}
       ></TeaserDownload>{" "}
       <ContentWidth>
-        <div className="col-span-12 mb-14 flex justify-between align-baseline">
-          <Text>
+        <div className="col-span-12 mb-14 flex-col md:flex-row flex justify-start md:justify-between align-baseline">
+          <Text styles="mb-4 md:mb-0">
             Alle weiteren Dokumente und Downloads für Cooperation finden Sie in
             unserem Downloadcenter
           </Text>
