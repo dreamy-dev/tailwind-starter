@@ -187,7 +187,7 @@ export default function Procurement() {
         ctaText="Download Geschäftsbedingungen"
       ></TeaserGeneral> */}
       <ContentWidth>
-        <div className="col-span-12 mb-14 flex justify-between align-baseline">
+        <div className="col-span-12 mb-14 flex-col md:flex justify-between align-baseline">
           <Text>
             Please find all documents in all languages in the downloadcenter.
           </Text>

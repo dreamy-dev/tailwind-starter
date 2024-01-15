@@ -43,11 +43,13 @@ const TeaserDownload: React.FC<TeaserDownloadProps> = ({
               {listData.map((item, index) => (
                 <>
                   <li
-                    className="mb-6 text-xl flex justify-between items-center"
+                    className="mb-6 text-xl flex-col md:flex-row flex justify-start md:justify-between items-center"
                     key={index}
                   >
-                    <p className="mr-10">{item.text}</p>
-                    <div className="min-w-[14rem]">
+                    <p className="w-full md:w-auto mr-0 md:mr-10">
+                      {item.text}
+                    </p>
+                    <div className="w-full md:w-auto min-w-[14rem]">
                       <Button
                         textColorClass="text-primary"
                         borderColorClass="border-primary"
