@@ -155,7 +155,6 @@ export default function Datenschutz() {
             </div>
             </div>
           </ContentWidth>
-          
           <TeaserDownload
             buttonLink="/downloadcenter"
             buttonText="Alle Medienmitteilungen"
@@ -165,7 +164,7 @@ export default function Datenschutz() {
           ></TeaserDownload>
           <ContentWidth>
             <div className="col-span-12 mb-14 flex justify-between align-baseline">
-              <Text>Please find all documents in all languages in the downloadcenter.</Text>
+              <Text>Im Downloadcenter finden Sie alle Dokumente in allen Sprachen.</Text>
               <ButtonPrimary buttonText="Zum Downloadcenter" />
             </div>
           </ContentWidth>

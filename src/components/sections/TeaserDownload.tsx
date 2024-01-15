@@ -39,7 +39,7 @@ const TeaserDownload: React.FC<TeaserDownloadProps> = ({
           <H2>{title}</H2>
           <Lead>{leadText}</Lead>
           {showList && (
-            <ul className="mb-8" key={title}>
+            <ul className="mb-8" key={leadText}>
               {listData.map((item, index) => (
                 <>
                   <li
