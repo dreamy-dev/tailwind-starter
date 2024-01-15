@@ -183,7 +183,7 @@ export default function Lieferanten() {
         </TeaserImageRight>
         <TeaserImageLeft imageSrc="news-1.jpg">
           <div>
-            <H2 styles="text-black">Werden Sie Partner von Stadler</H2>
+            <H2 styles="text-black">Cooperation</H2>
             <Text styles="mt-4 text-xl font-normal text-black">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor
@@ -229,7 +229,7 @@ export default function Lieferanten() {
         title="Nachhaltigkeit in der Lieferkette"
         showButton={false}
       />
-      <FAQ mainTitle="Cooperation" faqs={data} />
+      <FAQ mainTitle="Frequently Asked Questions" faqs={data} />
       <Contact
         title="Ihr Kontakt"
         contactname="Supply Management"

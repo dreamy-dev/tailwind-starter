@@ -5,10 +5,16 @@ import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import QualityFeatures from "@/components/sections/QualityFeatures";
 import TeaserDownload from "../../components/sections/TeaserDownload";
 import Contact from "@/components/sections/Contact";
+import ContentWidth from "@/components/layouts/ContentWidth";
+import Text from "@/components/typography/Text";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 const list = [
   {
     text: "Code of Conduct",
+  },
+  {
+    text: "Geschäftsbedingungen",
   },
 ];
 
@@ -169,19 +175,27 @@ export default function Procurement() {
 
       <QualityFeatures features={features} mainTitle="Our values as partners" />
       <TeaserDownload
-        title="Code of Conduct"
+        title="Documents"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         buttonLink="/verhaltenskodex_für_geschäftspartner_de_dec_01, 2020.pdf"
         buttonText="Read the Code of Conduct"
         showList={true}
-        showButton={true}
+        showButton={false}
         listData={list}
       ></TeaserDownload>
-      <TeaserGeneral
+      {/* <TeaserGeneral
         title="Unsere Geschäftsbedingungen"
         customText="Hier können Sie unsere Geschäftsbedingungen als PDF herunterladen. "
         ctaText="Download Geschäftsbedingungen"
-      ></TeaserGeneral>
+      ></TeaserGeneral> */}
+      <ContentWidth>
+        <div className="col-span-12 mb-14 flex justify-between align-baseline">
+          <Text>
+            Please find all documents in all languages in the downloadcenter.
+          </Text>
+          <ButtonPrimary buttonText="Zum Downloadcenter" />
+        </div>
+      </ContentWidth>
       <Contact></Contact>
     </>
   );
