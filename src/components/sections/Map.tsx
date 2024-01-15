@@ -49,9 +49,9 @@ export default function Map() {
         <MapTextTitle />
         <Stats data={statsData} backgroundColor="bg-white" />
         <div className="relative flex flex-col-reverse lg:flex-none">
-          <div className="pl-6 lg:pl-20 py-8 relative w-full lg:w-[24%] bg-greyBrighten-600 z-10">
+          <div className="pl-6 lg:pl-20 py-8 relative w-full lg:w-[24%] z-10">
             <div className="relative">
-              <ul className="text-primary flex flex-wrap lg:flex-col ">
+              <ul className="text-primary grid grid-cols-2 lg:grid-cols-1 ">
                 {countries.map((country, index) => (
                   <li className="mb-3 whitespace-no-wrap mr-16 lg:mr-0" key={index}>
                     <a href="#">{country}</a>

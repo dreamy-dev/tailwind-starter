@@ -68,7 +68,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-blueDark" aria-labelledby="footer-heading">
+    <footer className="bg-blueDark mt-auto" aria-labelledby="footer-heading">
       <ContentWidth>
         <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
           <div className="pt-8 lg:flex lg:items-center lg:justify-between">
@@ -80,6 +80,7 @@ export default function Footer() {
                   textColorClass="text-white"
                   borderColorClass="border-white"
                   position="left"
+                  href="/contact"
                 >
                   Kontakt aufnehmen
                 </Button>

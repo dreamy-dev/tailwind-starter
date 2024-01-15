@@ -18,6 +18,7 @@ interface ServiceTeasersProps {
   mainTitle?: string;
   text?: string;
   imageStyles?: string;
+  children?: any;
 }
 
 const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
@@ -25,11 +26,12 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
   mainTitle,
   text,
   imageStyles,
+  children,
 }) => {
   return (
     <section className="bg-white dark:bg-gray-900 antialiased pb-24">
       <ContentWidth>
-        <div className="col-span-12 mb-12">
+        <div className="col-span-12 my-12">
           <H2>{mainTitle}</H2>
           <Text>{text}</Text>
         </div>
@@ -53,6 +55,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
             </div>
           </div>
         ))}
+        {children}
       </ContentWidth>
     </section>
   );
