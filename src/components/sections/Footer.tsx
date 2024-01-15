@@ -5,7 +5,7 @@ import ContentWidth from "../layouts/ContentWidth";
 const navigation = {
   legal: [
     { name: "Impressum", href: "/impressum" },
-    { name: "Disclaimer", href: "/#" },
+    { name: "Disclaimer", href: "/disclaimer" },
     { name: "Compliance", href: "/#" },
     { name: "Cookies", href: "/cookies" },
     { name: "Zertifizierung", href: "/#" },
