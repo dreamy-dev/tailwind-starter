@@ -129,12 +129,12 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-white z-10 ${isMobileNavOpen ? "mobile-nav-open" : ""} ${
+      className={`bg-white z-20 ${isMobileNavOpen ? "mobile-nav-open" : ""} ${
         isMobileNavOpen && isNarrowScreen ? "fixed w-full h-full" : ""
       }`}
     >
       <ContentWidth>
-        <div className="flex justify-between items-center col-span-12 w-full  pt-5 pb-5">
+        <div className="flex justify-between items-center col-span-12 w-full pt-5 pb-5">
           <div className="lg:hidden">
             <Link href="/">
               <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
@@ -280,7 +280,7 @@ const Header = () => {
                             variants={isNarrowScreen ? variantsSub : variants}
                             style={{
                               padding: "10px",
-                              zIndex: "9",
+                              zIndex: "99",
                               width: "100%",
                               left: "0",
                               top: "80px",
@@ -297,7 +297,7 @@ const Header = () => {
                                       closeSubmenu();
                                       toggleMainMenu();
                                     }}
-                                    className="text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
+                                    className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
                                   >
                                     <svg
                                       width="10"
@@ -316,7 +316,7 @@ const Header = () => {
                                 </div>
                                 <Link
                                   href="/solutions"
-                                  className=" lg:bg-primaryTrans-100 text-primarySolid-600 lg:text-primary px-0 py-4 lg:px-8 lg:py-24 lg:text-center"
+                                  className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primarySolid-600 lg:text-primary px-0 py-4 lg:px-8 lg:py-24 lg:text-center"
                                   onClick={() => {
                                     closeMobileNav();
                                     setIsOpen((isOpen) => !isOpen);
@@ -335,7 +335,7 @@ const Header = () => {
                                     >
                                       <Link
                                         href={subItem.href}
-                                        className="flex justify-between px-0 py-4 text-base text-primarySolid-600 hover:text-primary"
+                                        className="flex justify-between px-0 py-4 text-base text-primarySolid-800 lg:text-primarySolid-600 hover:text-primary"
                                         onClick={() => {
                                           closeMobileNav();
                                           setIsOpen((isOpen) => !isOpen);
