@@ -1,7 +1,6 @@
 "use client";
 
 import HeroText from "@/components/sections/HeroText";
-import TeaserGeneral from "@/components/sections/TeaserGeneral";
 import QualityFeatures from "@/components/sections/QualityFeatures";
 import TeaserDownload from "../../components/sections/TeaserDownload";
 import Contact from "@/components/sections/Contact";
@@ -162,11 +161,10 @@ export default function Procurement() {
   return (
     <>
       <HeroText
-        // breadcrumbs={[
-        //   { text: "Lösungen", link: "/page" },
-        //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
-        //   { text: "Product", link: "/product" },
-        // ]}
+        breadcrumbs={[
+          { text: "Lieferanten", link: "/zulieferer" },
+          { text: "Procurement" },
+        ]}
         title="Unsere Standards & Geschäftsbedingungen"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         // withCTA={true}
