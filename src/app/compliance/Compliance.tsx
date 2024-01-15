@@ -1,25 +1,27 @@
+import H1 from "@/components/typography/H1";
+import Text from "@/components/typography/Text";
+import ContentWidth from "@/components/layouts/ContentWidth";
+
 export default function Compliance() {
   return (
-    <section className="bg-white mb-12">
-      <div className="items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-16 lg:px-6">
-        <div className="col-span-2">
-          <h2 className="mt-3 mb-8 text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl dark:text-white">
-            Compliance
-          </h2>
-          <p className="font-light mb-6 text-gray-500 sm:text-xl dark:text-gray-400">
+    <ContentWidth>
+      <div className="col-span-12 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-5 lg:gap-16 xl:gap-24 lg:py-16 lg:px-6">
+        <div className="col-span-3">
+          <H1>Compliance</H1>
+          <Text styles="text-xl mb-4">
             Der Erfolg und der gute Ruf unseres Unternehmens basieren auf dem
             Vertrauen, das Aktionäre, Mitarbeitende, beziehungsweise die mit
             ihnen in Geschäftsbeziehungen stehenden Personen.
-          </p>
-          <p className="font-light text-gray-500 mb-6">
+          </Text>
+          <Text styles="text-xl mb-4">
             Dazu gehört auch das Vertrauen in unser Compliance Programm.
-          </p>
-          <p className="font-light text-gray-500 mb-6">
+          </Text>
+          <Text styles="text-xl mb-4">
             Mit dem Stadler Compliance-Programm möchten wir vorbeugend und aktiv
             sicherstellen, dass unsere Geschäftspraktiken und diejenigen unserer
             Dienstleister stets mit den geltenden Gesetzen sowie unseren
             internen Weisungen in Einklang stehen.
-          </p>
+          </Text>
         </div>
         <div className="col-span-2 space-y-8 md:grid md:grid-cols-1 md:gap-12 md:space-y-0">
           <div>
@@ -28,12 +30,8 @@ export default function Compliance() {
               src="/signature-spuhler.jpg"
               alt="office image"
             />
-            <h3 className="mb-2 text-2xl font-bold dark:text-white">
-              Peter Spuhler
-            </h3>
-            <p className="font-light text-gray-500 dark:text-gray-400">
-              Verwaltungsratspräsident
-            </p>
+            <Text styles="text-xl font-semibold">Peter Spuhler</Text>
+            <Text styles="mb-4">Verwaltungsratspräsident</Text>
           </div>
           <div>
             <img
@@ -41,15 +39,11 @@ export default function Compliance() {
               src="/signature-krapf.jpg"
               alt="office image"
             />
-            <h3 className="mb-2 text-2xl font-bold dark:text-white">
-              Maja Krapf
-            </h3>
-            <p className="font-light text-gray-500 dark:text-gray-400">
-              Chief Compliance Officer
-            </p>
+            <Text styles="text-xl font-semibold">Maja Krapf</Text>
+            <Text styles="mb-4">Chief Compliance Officer</Text>
           </div>
         </div>
       </div>
-    </section>
+    </ContentWidth>
   );
 }
