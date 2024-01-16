@@ -61,7 +61,7 @@ export default function FullService() {
     <HeroText 
     breadcrumbs={[
         { text: "Lösungen", link: "/solutions" },
-        { text: "Full Service", link: "/full-service" }
+        { text: "Service", link: "/solutions/service" }
        ]}
         title="Full Service – Integriertes Service-Konzept in der Nähe"
         leadText="Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst."

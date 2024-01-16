@@ -158,10 +158,6 @@ const newsCards = [
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
       <HeroText
-        // breadcrumbs={[
-        //   { text: "Lösungen", link: "/solutions" },
-        //   { text: "Full service", link: "/full-service" },
-        // ]}
         title="Das ist Stadler"
         leadText="Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
               Und mit Schweizer Werten, die das Standing von Stadler weltweit

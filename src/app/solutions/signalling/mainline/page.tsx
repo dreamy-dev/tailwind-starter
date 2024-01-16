@@ -211,8 +211,7 @@ export default function Mainline() {
       <HeroText
         breadcrumbs={[
           { text: "Lösungen", link: "/solutions" },
-          { text: "Signalling", link: "/signalling" },
-          { text: "Mainline" },
+          { text: "Signalling", link: "/solutions/signalling/" },
         ]}
         title="Signalling bei Mainline"
         leadText="Damit Fahrgäste weltweit sicher und pünktlich ans Ziel kommen, hat Stadler die passenden Lösungen für den Bereich Mainline. Für Kunden, die sich auf Zuverlässigkeit, Präzision und höchste Sicherheit verlassen möchten."
