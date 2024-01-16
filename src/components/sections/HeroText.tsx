@@ -28,7 +28,7 @@ export default function HeroText({
   return (
     <section className="bg-white dark:bg-gray-900 py-24">
       <SmallWidth>
-        <div className="mt-4 flex font-normal text-gray-600">
+        <div className="flex font-normal text-gray-600 pb-3">
           {breadcrumbs.map((breadcrumb, index) => (
             <div key={index}>
               {index !== breadcrumbs.length - 1 ? (
