@@ -16,12 +16,12 @@ export default function Intro() {
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
           <img
-            className="object-cover object-left h-96 scale-100 rounded-lg"
+            className="object-cover object-left h-96 scale-100"
             src="https://www.stadlerrail.com/media/img/c/industrielackierer_lernende.jpg"
             alt="office content 1"
           />
           <img
-            className="object-cover object-center h-96 scale-100 mt-4 h-full lg:mt-10 rounded-lg"
+            className="object-cover object-center h-96 scale-100 mt-4 h-full lg:mt-10"
             src="https://www.stadlerrail.com/media/img/c/schreiner_azubi_lernende.jpg"
             alt="office content 2"
           />
