@@ -10,8 +10,7 @@ export default function Standorte() {
     <div>
       <HeroText
         breadcrumbs={[
-          { text: "Lösungen", link: "/page" },
-          { text: "Standorte", link: "/Standorte" }
+          { text: "Lösungen", link: "/solutions" },
         ]}
         title="Weltweit für Sie da"
         leadText="Sie sind am Zug: Entdecken Sie alle Standorte und Divisionen von Stadler auf einen Blick. Senden Sie uns eine Nachricht oder rufen Sie uns einfach an – wir freuen uns, von Ihnen zu hören."

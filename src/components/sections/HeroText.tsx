@@ -37,7 +37,7 @@ export default function HeroText({
                   <span className="px-3">|</span>
                 </>
               ) : (
-                <>{breadcrumb.text}</>
+                <a href={breadcrumb.link}>{breadcrumb.text}</a>
               )}
             </div>
           ))}
