@@ -6,6 +6,7 @@ import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
 import ButtonPrimary from "../elements/ButtonPrimary";
+import ContentWidth from "../layouts/ContentWidth";
 
 interface Cards {
   title: string;
@@ -74,7 +75,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
 
   return (
     <section className=" py-24 bg-white overflow-hidden">
-      <FullWidth>
+      <ContentWidth>
         <div className="col-span-12">
           <div className="relative">
             <div className="lg:pl-20 2xl:pl-0 mb-4">
@@ -235,7 +236,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
             </div>
           )}
         </div>
-      </FullWidth>
+      </ContentWidth>
     </section>
   );
 };
