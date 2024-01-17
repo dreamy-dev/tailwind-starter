@@ -59,14 +59,11 @@ export default function Leitungsteam() {
   return (
     <>
       <HeroText
-        // breadcrumbs={[
-        //   { text: "Lösungen", link: "/solutions" },
-        //   { text: "Full service", link: "/full-service" },
-        // ]}
+         breadcrumbs={[
+           { text: "Unternehmen", link: "/unternehmen" }
+          ]}
         title="Stadler Konzernleitung"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        // withCTA={true}
-        // buttonText="CTA Button"
       />
     
       <SmallWidth>

@@ -18,11 +18,6 @@ export default function Solutions() {
     <>
       <SubHero imageUrl="/subhero.jpg"></SubHero>
       <HeroText
-        // breadcrumbs={[
-        //   { text: "Lösungen", link: "/page" },
-        //   { text: "Schienenfahrzeuge", link: "/schienenfahrzeuge" },
-        //   { text: "Product", link: "/product" },
-        // ]}
         title="Effiziente und zuverlässige Mobilitätslösungen"
         leadText="Die Mobilitätslösungen von Stadler sind mehr als die Summe ihrer Einzelteile. Wenn erstklassige Schienenfahrzeuge mit massgeschneiderten Signalling-Lösungen und einem integrierten Service kombiniert werden, dann ist ein effizienter Hochleistungsbahnbetrieb nachhaltig sichergestellt."
         // withCTA={true}

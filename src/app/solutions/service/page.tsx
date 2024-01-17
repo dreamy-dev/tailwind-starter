@@ -122,8 +122,7 @@ export default function Service() {
     <>
       <HeroText
         breadcrumbs={[
-          { text: "Lösungen", link: "/solutions" },
-          { text: "Service", link: "/service" },
+          { text: "Lösungen", link: "/solutions" }
         ]}
         title="Service Angebot"
         leadText="Für Stadler endet Kundennähe nicht mit der Auslieferung der Züge. Unsere Mitarbeitenden stehen unseren Kunden als Servicepartner rund um die Uhr mit Rat und Tat zur Seite, um höchste Qualität zu garantieren. Dadurch gewährleisten wir die Zuverlässigkeit und Verfügbarkeit unserer Schienenfahrzeuge über die gesamte Lebensdauer."

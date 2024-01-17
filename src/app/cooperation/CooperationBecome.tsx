@@ -10,16 +10,14 @@ export default function CooperationBecome() {
     <>
       <ContentWidth>
         <div className="col-span-12 py-8 mx-auto lg:py-16">
-          <div className="grid items-center gap-8 mb-8 lg:mb-16 lg:gap-12 lg:grid-cols-12">
-            <div className="col-span-12 text-center sm:mb-6 lg:text-left lg:mb-0">
-              <H2>How to become a supplier</H2>
-              <p className="mx-auto mb-6 font-light text-gray-500 lg:mx-0 xl:mb-8 md:text-lg xl:text-xl dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                justo tellus, faucibus ac diam viverra, volutpat dictum ante.
-                Duis mollis turpis ligula. Suspendisse sagittis eleifend
-                interdum. Nunc pharetra nisl nec tortor mollis tincidunt.
-              </p>
-            </div>
+          <div>
+            <H2>How to become a supplier</H2>
+            <p className="mx-auto mb-6 font-light text-gray-500 lg:mx-0 xl:mb-8 md:text-lg xl:text-xl dark:text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              justo tellus, faucibus ac diam viverra, volutpat dictum ante. Duis
+              mollis turpis ligula. Suspendisse sagittis eleifend interdum. Nunc
+              pharetra nisl nec tortor mollis tincidunt.
+            </p>
           </div>
           <div className="grid gap-8 sm:gap-12 md:grid-cols-3">
             <div className="flex justify-center">
