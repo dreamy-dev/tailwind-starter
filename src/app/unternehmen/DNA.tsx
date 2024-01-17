@@ -7,14 +7,7 @@ export default function DNA() {
     <section className="bg-white">
       <div className="py-8 px-4 mx-auto space-y-12 max-w-screen-xl lg:space-y-20 sm:py-16 lg:px-6">
         <div className="gap-8 items-center">
-          <div className="text-gray-500 sm:text-lg">
-            <Lead>
-              Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
-              Und mit Schweizer Werten, die das Standing von Stadler weltweit
-              fördern und prägen. Stadler steht für Zuverlässigkeit,
-              Flexibilität und Innovationskraft – seit 1942.
-            </Lead>
-          </div>
+         
           <div>
             <Text>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

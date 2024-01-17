@@ -10,35 +10,40 @@ interface ServiceItem {
   description?: string;
   img?: string;
   href?: string;
+ 
 }
 
 interface ServiceTeasersProps {
   services: ServiceItem[];
   mainTitle?: string;
   text?: string;
+  imageStyles?: string;
+  children?: any;
 }
 
-const ServiceTeasers: React.FC<ServiceTeasersProps> = ({ services, mainTitle, text }) => {
- 
-
+const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
+  services,
+  mainTitle,
+  text,
+  imageStyles,
+  children,
+}) => {
   return (
-    <section className="bg-white dark:bg-gray-900 antialiased my-20">
+    <section className="bg-white dark:bg-gray-900 antialiased pb-24">
       <ContentWidth>
-        <div className="col-span-12">
-          <H2>{mainTitle }</H2>
-          <Text>{text}
-           
-          </Text>
+        <div className="col-span-12 my-12">
+          <H2>{mainTitle}</H2>
+          <Text>{text}</Text>
         </div>
       </ContentWidth>
       <ContentWidth>
         {services.map((item) => (
           <div
-            className="col-span-4 max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+            className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
             key={item.label}
           >
             <a href={item.href}>
-              <img className="w-24 pl-5 pt-5" src={item.img} alt="" />
+              <img className={` ${imageStyles}`} src={item.img} alt="" />
             </a>
             <div className="p-5">
               <a href={item.href}>
@@ -50,6 +55,7 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({ services, mainTitle, te
             </div>
           </div>
         ))}
+        {children}
       </ContentWidth>
     </section>
   );

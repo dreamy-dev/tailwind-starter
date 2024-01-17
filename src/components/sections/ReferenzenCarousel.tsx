@@ -6,6 +6,7 @@ import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
 import ContentWidth from "../layouts/ContentWidth";
+import H4 from "../typography/H4";
 
 interface PaginationProps {
   total: number;
@@ -45,11 +46,11 @@ const TestimonialMotionDiv: React.FC<TestimonialMotionProps> = motion.div;
 
 const trains = [
   {
-    name: "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
+    name: "Hybrider FLIRT 160 für Flughafen-Transit",
     image: "/Flirt-160/f3nsreiz0715e-1.jpg",
   },
   {
-    name: "Ein vollelektrischer FLIRT ywischen DE und NL",
+    name: "Ein vollelektrischer FLIRT zwischen DE und NL",
     image: "/Flirt-160/f3vd0716_pic.jpg",
   },
   {
@@ -61,7 +62,7 @@ const trains = [
     image: "/Flirt-160/fbzd0814ir_pic.jpg",
   },
   {
-    name: "Ein vollelektrischer FLIRT ywischen DE und NL",
+    name: "Ein vollelektrischer FLIRT zwischen DE und NL",
     image: "/Flirt-160/fga0816d_pic.jpg",
   },
   {
@@ -121,8 +122,8 @@ const trains = [
 const images = [
   {
     name: "Dallas Area Rapid Transit (DART) USA",
-    title: "FLIRT bewegt die Welt",
-    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
+    title: "Ein Hybrid-FLIRT baut die Pendlerstrecke vom Flughafen Dallas aus ",
+    text: "Im Juni 2019 orderte  Dallas Area Rapid Transit bei Stadler acht bi-modale Niederflurtriebzüge vom Modell FLIRT 160 für ihr Silverline-Projekt. Die Züge werden auf der Pendlerstrecke im Korridor zwischen Plano und dem nördlichen Teil des internationalen Flughafens Fort Worth in Dallas verkehren.",
     img: "/train-c.jpg",
   },
   {
@@ -186,50 +187,50 @@ const TestimonialsCarousel: React.FC = () => {
   const [showTrains, setShowTrains] = useState(false);
  
 
- const [touchStartX, setTouchStartX] = useState<number | null>(null);
+//  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
- useEffect(() => {
-   const handleTouchStart = (e: TouchEvent) => {
-     setTouchStartX(e.touches[0].clientX);
-      e.preventDefault();
-   };
+//  useEffect(() => {
+//    const handleTouchStart = (e: TouchEvent) => {
+//      setTouchStartX(e.touches[0].clientX);
+//       e.preventDefault();
+//    };
 
-   const handleTouchMove = (e: TouchEvent) => {
-     if (touchStartX !== null) {
-       const touchEndX = e.touches[0].clientX;
-       const deltaX = touchEndX - touchStartX;
+//    const handleTouchMove = (e: TouchEvent) => {
+//      if (touchStartX !== null) {
+//        const touchEndX = e.touches[0].clientX;
+//        const deltaX = touchEndX - touchStartX;
 
     
-       const swipeThreshold = window.innerWidth / 4;
+//        const swipeThreshold = window.innerWidth / 4;
 
-       if (deltaX > swipeThreshold) {
+//        if (deltaX > swipeThreshold) {
      
-         onPrevClick();
-         setTouchStartX(null);
-       } else if (deltaX < -swipeThreshold) {
+//          onPrevClick();
+//          setTouchStartX(null);
+//        } else if (deltaX < -swipeThreshold) {
       
-         onNextClick();
-         setTouchStartX(null);
-       }
-     }
-   };
+//          onNextClick();
+//          setTouchStartX(null);
+//        }
+//      }
+//    };
 
-   const handleTouchEnd = () => {
-     setTouchStartX(null);
-   };
+//    const handleTouchEnd = () => {
+//      setTouchStartX(null);
+//    };
 
-   document.addEventListener("touchstart", handleTouchStart, {
-     passive: false,
-   });
-   document.addEventListener("touchmove", handleTouchMove, { passive: false });
-   document.addEventListener("touchend", handleTouchEnd);
+//    document.addEventListener("touchstart", handleTouchStart, {
+//      passive: false,
+//    });
+//    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+//    document.addEventListener("touchend", handleTouchEnd);
 
-   return () => {
-     document.removeEventListener("touchstart", handleTouchStart);
-     document.removeEventListener("touchmove", handleTouchMove);
-     document.removeEventListener("touchend", handleTouchEnd);
-   };
- }, [touchStartX]);
+//    return () => {
+//      document.removeEventListener("touchstart", handleTouchStart);
+//      document.removeEventListener("touchmove", handleTouchMove);
+//      document.removeEventListener("touchend", handleTouchEnd);
+//    };
+//  }, [touchStartX]);
 
   const onPrevClick = () => {
     if (current > 0) {
@@ -249,12 +250,12 @@ const TestimonialsCarousel: React.FC = () => {
 
   return (
     <section className="py-24 bg-primarySolid-50">
-      <FullWidth>
-        <div className="col-span-12 max-w-full lg:pl-20 2xl:pl-0">
-          <div className="flex justify-center items-center">
+      <ContentWidth>
+        <div className="col-span-12 max-w-full 2xl:pl-0">
+          <div className="flex justify-center items-center mb-4">
             <H2>Referenzen</H2>
           </div>
-          <div className="flex  flex-col items-center justify-between overflow-hidden">
+          <div className="flex flex-col items-center justify-between">
             <MotionConfig
               transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             >
@@ -263,7 +264,7 @@ const TestimonialsCarousel: React.FC = () => {
                   {images.map((image, idx) => (
                     <TestimonialMotionDiv
                       key={idx}
-                      className="flex flex-col items-stretch min-w-[100%] overflow-hidden shadow-md shadow-greyDarken-200  lg:min-w-[90%] bg-white lg:flex-row "
+                      className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
                       animate={{
                         translateX: `calc(-${current * 100}% - ${
                           current * 1.5
@@ -275,16 +276,16 @@ const TestimonialsCarousel: React.FC = () => {
                       <img
                         src={image.img}
                         alt={image.title}
-                        className="w-full lg:w-1/2 object-fit max-h-[350px] md:max-h-[400px] lg:max-h-[440px]"
+                        className="w-full h-full object-cover"
                       />
-
-                      <div className="flex flex-col m-auto p-4 leading-normal max-w-lg ">
+                      <div className="flex flex-col justify-between p-10 leading-normal">
                         <Text styles="mb-6 md:mb-10">{image.name}</Text>
+                        <div className="">
                         <H3>{image.title}</H3>
-
                         <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
                           {image.text}
                         </Text>
+                        </div>
                         <Link
                           href="#"
                           className="inline-flex items-center py-2 text-sm font-medium text-center"
@@ -316,7 +317,6 @@ const TestimonialsCarousel: React.FC = () => {
               </div>
             </MotionConfig>
           </div>
-          <ContentWidth>
             <div className="col-span-12 relative  flex flex-row w-full mt-8 justify-beetween items-center ">
               <button
                 type="button"
@@ -399,26 +399,21 @@ const TestimonialsCarousel: React.FC = () => {
                 </motion.div>
               </div>
             </div>
-          </ContentWidth>
-          <ContentWidth>
             <div className="col-span-12 max-w-full">
               {showTrains && (
-                <div className=" md:grid grid-cols-1 gap-6 md:gap-10 lg:grid-cols-3 xl:gap-28 mt-2 w-full">
+                <div className=" md:grid grid-cols-1 gap-6 md:gap-10 lg:grid-cols-3 xl:gap-6 mt-2 w-full">
                   {trains.map((train, idx) => (
                     <div
                       key={idx}
-                      className="mb-8 md:mb-0 relative max-full items-stretch justify-center mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                      className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                     >
                       <a href="#">
-                        <img className="w-full" src={train.image} alt="" />
+                        <img className="w-full aspect-[4/3]" src={train.image} alt="" />
                       </a>
-                      <div className="p-5">
-                        <div className="mb-8">
-                          <H3>{train.name}</H3>
-                        </div>
-                        <Link
+                      <div className="h-full flex flex-col justify-between p-8">
+                          <H4 styles="mb-4">{train.name}</H4>
+                          <Link
                           href="#"
-                          className="block absolute bottom-[20px] left-[22px]"
                         >
                           <svg
                             width="20"
@@ -439,16 +434,15 @@ const TestimonialsCarousel: React.FC = () => {
                               </clipPath>
                             </defs>
                           </svg>
-                        </Link>
+                        </Link>                        
                       </div>
                     </div>
                   ))}
                 </div>
               )}
             </div>
-          </ContentWidth>
         </div>
-      </FullWidth>
+      </ContentWidth>
     </section>
   );
 };

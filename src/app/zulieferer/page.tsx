@@ -9,6 +9,9 @@ import Contact from "@/components/sections/Contact";
 import TeaserDouble from "@/components/sections/TeaserDouble";
 import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
 import TeaserImageRight from "@/components/sections/TeaserImageright";
+import Text from "@/components/typography/Text";
+import H2 from "@/components/typography/H2";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 const facts = [
   {
@@ -113,6 +116,17 @@ const data = [
       "7-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
+
+const listItemsLeft = [
+  "Lorem ipusm",
+  "Dolor sit amet",
+  "Stet clita",
+  "Dolore magna",
+  "Consetetur sadip",
+];
+
+const listItemsRight = ["Lorem ipusm", "Dolor sit amet", "Stet clita"];
+
 export default function Lieferanten() {
   return (
     <>
@@ -124,34 +138,98 @@ export default function Lieferanten() {
         showTwoRows={false}
       />
       <Quote />
-      <TeaserImageRight
-        imageSrc="Referenzen_TSSSA_Bild-VR.jpg"
-        title="Geschäftsbedingungen in der Beschaffung"
-        description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
-        listItems={["Lorem ipusm", "Dolor sit amet", "Stet clita"]}
-        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-        buttonText="Mehr dazu"
-        buttonHref="/procurement"
-        backgroundColor="primaryTrans-50"
-      ></TeaserImageRight>
-      <TeaserImageLeft
-        imageSrc="news-1.jpg"
-        title="Werden Sie Partner von Stadler"
-        description="  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
-        listItems={[
-          "Lorem ipusm",
-          "Dolor sit amet",
-          "Stet clita",
-          "Dolore magna",
-          "Consetetur sadip",
-        ]}
-        buttonText="Jetzt Partner werden"
-        buttonHref="/cooperation"
-        backgroundColor="primaryTrans-50"
-      ></TeaserImageLeft>
+      <div className="py-12 bg-primaryTrans-50">
+        <TeaserImageRight imageSrc="Referenzen_TSSSA_Bild-VR.jpg">
+          <div>
+            <H2 styles="text-black">Procurement</H2>
+            <Text styles="mt-4 text-xl font-normal text-gray-800 text-black">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor.
+            </Text>
+          </div>
+          {listItemsRight && (
+            <ul className="space-y-4">
+              {listItemsRight.map((item, index) => (
+                <li key={index} className="flex items-center gap-2.5">
+                  <div
+                    className={`inline-flex items-center justify-center w-5 h-5 rounded-full`}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="w-3.5 h-3.5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-base font-medium text-gray-900 dark:text-white">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <ButtonPrimary
+            position="left"
+            buttonText="Mehr dazu"
+            href="/procurement"
+          />
+        </TeaserImageRight>
+        <TeaserImageLeft imageSrc="news-1.jpg">
+          <div>
+            <H2 styles="text-black">Cooperation</H2>
+            <Text styles="mt-4 text-xl font-normal text-black">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor
+            </Text>
+          </div>
+          {listItemsLeft && (
+            <ul className="space-y-4">
+              {listItemsLeft.map((item, index) => (
+                <li key={index} className="flex items-center gap-2.5">
+                  <div
+                    className={`inline-flex items-center justify-center w-5 h-5 rounded-full`}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="w-3.5 h-3.5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-base font-medium text-gray-900 dark:text-white">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <ButtonPrimary
+            position="left"
+            buttonText="Jetzt Partner werden"
+            href="/cooperation"
+          />
+        </TeaserImageLeft>
+      </div>
       {/* <TeaserDouble /> */}
-      <SustainableProcurement title="Nachhaltigkeit in der Lieferkette" />
-      <FAQ mainTitle="Frequently asked questions" faqs={data}/>
+      <SustainableProcurement
+        title="Nachhaltigkeit in der Lieferkette"
+        showButton={false}
+      />
+      <FAQ mainTitle="Frequently Asked Questions" faqs={data} />
       <Contact
         title="Ihr Kontakt"
         contactname="Supply Management"

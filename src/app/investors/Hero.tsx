@@ -4,13 +4,10 @@ export default function InvestorHero() {
   return (
     <section>
       <HeroText
-        breadcrumbs={[{ text: "Investor Relations", link: "/investors" }]}
-        title="Halbjahresbericht 2023"
-        leadText="Hier kommen Zahlen zum Zug. Erfahren Sie zeitnah und transparent alles Wissenswerte über Stadlers Businessaktivitäten."
-         withCTA={true}
-         buttonText="Download"
+        title="Investor Relations"
+        leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed enim convallis, bibendum augue vel, mollis lacus. Curabitur non vulputate risus. Suspendisse tellus orci, laoreet ac venenatis vitae, lacinia rhoncus neque."
+        withCTA={false}
       />
-
     </section>
   );
 }

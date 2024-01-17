@@ -4,7 +4,6 @@ export default function LieferantenHero(props?: any) {
   return (
     <div className="mb-20">
       <HeroText
-        breadcrumbs={[{ text: "Lieferanten", link: "/lieferanten" }]}
         title={
           <p>
             Unsere Lieferanten:

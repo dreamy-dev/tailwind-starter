@@ -6,6 +6,10 @@ import H1 from "@/components/typography/H1";
 import H2 from "../../components/typography/H2";
 import H4 from "@/components/typography/H4";
 import Lead from "@/components/typography/Lead";
+import HeroText from "@/components/sections/HeroText";
+import ContentWidth from "@/components/layouts/ContentWidth";
+import Text from "@/components/typography/Text";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 interface Data {
   title: string;
@@ -75,28 +79,26 @@ export default function Datenschutz() {
 
   return (
     <>
-      <SmallWidth>
         <div className="mt-20">
-          <H1>Datenschutz</H1>
-          <Lead>
-            Es freut uns, dass Sie sich für den Schutz Ihrer Daten
+          <HeroText title="Datenschutz" leadText="Es freut uns, dass Sie sich für den Schutz Ihrer Daten
             interessieren, denn das tun wir auch. Im Folgenden finden Sie die
             Datenschutzerklärungen für verschiedene Bearbeitungen. Falls Sie
             Fragen dazu haben, wenden Sie sich bitte an
-            compliance@stadlerrail.com. Vielen Dank!
-          </Lead>
-          <div className="pt-8  sm:pt-16 ">
+            compliance@stadlerrail.com." />
+          <ContentWidth>
+            <div className="col-span-12">
+            <div className="pt-8  sm:pt-16 ">
             <div className="z-1000">
               <div id="accordion-flush">
                 {accordionData.map((item, index) => (
                   <div key={index}>
                     <h2
                       id={`accordion-flush-heading-${index}`}
-                      className="mb-2 text-xl font-bold break-words text-black"
+                      className="mb-2 text-xl font-medium break-words text-black"
                     >
                       <button
                         type="button"
-                        className={`flex justify-between items-center py-5 w-full font-bold text-left ${
+                        className={`flex justify-between items-center py-5 w-full font-medium text-left ${
                           activeAccordion === index
                             ? "text-black bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
                             : "text-black border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
@@ -150,7 +152,9 @@ export default function Datenschutz() {
                 ))}
               </div>
             </div>
-          </div>
+            </div>
+            </div>
+          </ContentWidth>
           <TeaserDownload
             buttonLink="/downloadcenter"
             buttonText="Alle Medienmitteilungen"
@@ -158,8 +162,13 @@ export default function Datenschutz() {
             showButton={false}
             listData={listDatenschutz}
           ></TeaserDownload>
+          <ContentWidth>
+            <div className="col-span-12 mb-14 flex justify-between align-baseline">
+              <Text>Im Downloadcenter finden Sie alle Dokumente in allen Sprachen.</Text>
+              <ButtonPrimary buttonText="Zum Downloadcenter" />
+            </div>
+          </ContentWidth>
         </div>
-      </SmallWidth>
     </>
   );
 }

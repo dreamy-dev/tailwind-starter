@@ -1,6 +1,8 @@
 "use client";
 import HeroText from "@/components/sections/HeroText";
-import ServiceTeasers from "../service/ServiceTeasers";
+import ServiceTeasers from "../../../components/sections/ServiceTeasers";
+import TextSection from "@/components/sections/TextSection";
+import Contact from "@/components/sections/Contact";
 
 const teaserData = [
   {
@@ -52,13 +54,18 @@ export default function Signalling() {
     <>
       <HeroText
         breadcrumbs={[
-          { text: "Lösungen", link: "/solutions" },
-          { text: "Signalling", link: "/signalling" },
+          { text: "Lösungen", link: "/solutions" }
         ]}
         title="Signalling für unsere Schienenfahrzeuge"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       ></HeroText>
-      <ServiceTeasers mainTitle="" services={teaserData}></ServiceTeasers>
+      <TextSection></TextSection>
+      <ServiceTeasers
+        mainTitle=""
+        services={teaserData}
+        imageStyles="w-full "
+      ></ServiceTeasers>
+      <Contact></Contact>
     </>
   );
 }

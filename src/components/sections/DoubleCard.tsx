@@ -4,7 +4,7 @@ import Text from "../typography/Text";
 
 export default function DoubleCard() {
   return (
-    <section className="py-24 sm:py-24">
+    <section className="pb-24 sm:py-24">
       <ContentWidth>
         <div className="col-span-12 max-w-full mx-auto">
           <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>

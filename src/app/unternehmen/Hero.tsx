@@ -1,18 +1,21 @@
 import H1 from "@/components/typography/H1";
+import SmallWidth from "@/components/layouts/SmallWidth";
 
 export default function Hero() {
   return (
-    <section className="bg-white "> 
-      <div className="mx-auto max-w-screen-4xl text-center  ">
-        <iframe
-          className="mx-auto w-full max-w-4xl h-80 sm:h-96"
-          src="https://www.youtube.com/embed/RVIil82HKaA"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
+    <section className="bg-white ">
+      <SmallWidth>
+        <div className=" col-span-12 max-w-4xl mx-auto text-center  ">
+          <video
+            className="-mt-[1%] -mb-[1%]"
+            controls={false}
+            autoPlay={true}
+            muted={true}
+            src={"/videos/Movie-Stadler-Kurz-People-Focus-no-frame-1080.mp4"}
+            loop={true}
+          />
+        </div>
+      </SmallWidth>
     </section>
   );
 }
