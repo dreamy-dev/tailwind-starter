@@ -1,11 +1,14 @@
+import ContentWidth from "../layouts/ContentWidth";
 import H2 from "../typography/H2";
 
-export default function Intro() {
+export default function Intro(props?: any) {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+      <ContentWidth>
+        <div className="col-span-12">
+        <div className="gap-16 items-center py-8 max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16">
         <div className="font-normal sm:text-lg">
-          <H2>Unsere Kultur</H2>
+          <H2>{props.title}</H2>
           <p className="mb-4 mt-6">
             Wir sind Strategen, Designer und Entwickler. Innovatoren und
             Problemlöser. Klein genug, um einfach und schnell zu sein, aber
@@ -27,6 +30,8 @@ export default function Intro() {
           />
         </div>
       </div>
+        </div>
+      </ContentWidth>
     </section>
   );
 }

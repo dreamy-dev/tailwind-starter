@@ -5,8 +5,8 @@ export default function ImageFullWidth(props?: any) {
         <FullWidth>
         <div className="col-span-12 pb-24">
         <img
+        className="aspect-[2/1] object-cover"
         width={"100%"}
-        // className="h-700"
         src={props.imgSrc ?? '/teaser_service.jpeg'}
         alt="hero product image"
       />
