@@ -73,13 +73,12 @@ export default function Karriere() {
   return (
     <>
       <CareerHero></CareerHero>
-      <Intro />
+      <Intro title="Unsere Kultur" />
       <HeroText
         title="Karriere bei Uns"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
       <ContentWidth>
-        {" "}
         <div className="mt-20 col-span-12 max-w-full">
           <img
             className="w-full h-auto "
@@ -88,15 +87,12 @@ export default function Karriere() {
           />
         </div>
       </ContentWidth>
-
       <Testimonials />
-
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <Jobs />
       {/* <ApplicationProcess /> */}
       <TeaserSuccessStories />
-
-      <CTASection />
+      <CTASection title="Spontanbewerbung" />
     </>
   );
 }
