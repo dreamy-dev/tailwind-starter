@@ -1,7 +1,7 @@
 "use client";
 import HeroText from "@/components/sections/HeroText";
 import ServiceTeasers from "../../../components/sections/ServiceTeasers";
-import TextSection from "@/components/sections/TextSection";
+
 import Contact from "@/components/sections/Contact";
 
 const teaserData = [
@@ -66,7 +66,7 @@ export default function Signalling() {
         title="Signalling für unsere Schienenfahrzeuge"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       ></HeroText>
-      <TextSection></TextSection>
+   
       <ServiceTeasers
         mainTitle=""
         services={teaserData}
