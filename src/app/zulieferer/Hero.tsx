@@ -12,10 +12,8 @@ export default function LieferantenHero(props?: any) {
           </p>
         }
         leadText="Stadler sucht Zulieferer, die mit Innovationskraft, Zuverlässigkeit und hohem Qualitätsanspruch die Schienenmobilität der Zukunft mitgestalten."
-        withCTA={true}
-        buttonText="Login Lieferantenportal"
+        withCTA={false}
       />
- 
     </div>
   );
 }
