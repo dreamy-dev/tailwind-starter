@@ -1,18 +1,23 @@
 "use client";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
-import Page from "../components/Page";
 
-//import Testimonial from "./Testimonial";
+import H1 from "./typography/H1";
+import H2 from "./typography/H2";
+import Teaser from "./Teaser";
+
+const components = {
+  title_h1: H1,
+  title_h2: H2,
+  teaser: Teaser,
+};
 
 storyblokInit({
-  accessToken: "i20Q9ZZcD1z1cvrWLgX1zgtt",
+  accessToken: "r9bj1EQKQ2RBQpmI0LRxWQtt",
   use: [apiPlugin],
   apiOptions: {
     region: "eu",
   },
-  components: {
-    page: Page,
-  },
+  components
 });
 
 export default function StoryblokProvider({

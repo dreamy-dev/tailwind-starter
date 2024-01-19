@@ -35,7 +35,7 @@ interface StatsProps {
 const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRows = true, backgroundColor }) => {
   const renderData = showTwoRows ? [...data1, ...data2] : data1;
   return (
-    <section className="bg-primarySolid-50 dark:bg-gray-900 py-20">
+    <section className="bg-primarySolid-50 dark:bg-gray-900 py-24">
       <ContentWidth>
         <div className="col-span-12 my-auto  ">
           <div className="text-center mb-4">
