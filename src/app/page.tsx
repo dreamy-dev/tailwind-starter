@@ -121,7 +121,7 @@ export default async function HomePage() {
        */}
       {/* <StoryblokComponent blok={data.story} /> */}
   {/* <Teaser blok={data.headline}></Teaser> */}
-      <H2>Story: {data.story.name}</H2>
+      {/* <H2>Story: {data.story.name}</H2> */}
       <HomePageHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <TrainCarousel />
