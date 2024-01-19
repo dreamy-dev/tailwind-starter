@@ -9,6 +9,7 @@ import Header from "@/components/sections/Header";
 import Footer from "../components/sections/Footer";
 import StoryblokProvider from "../components/StoryblockProvider";
 
+
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 
 storyblokInit({
@@ -17,6 +18,7 @@ storyblokInit({
   apiOptions: {
     region: "eu",
   },
+ 
 });
 
 

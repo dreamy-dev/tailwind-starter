@@ -1,3 +1,5 @@
+"use client"
+
 import H3 from "../typography/H3";
 import Link from "next/link";
 import Text from "../typography/Text";

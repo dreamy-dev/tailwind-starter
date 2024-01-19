@@ -25,13 +25,13 @@ const statsData = [
     suffix: "",
   },
   {
-    text: "Signalling-Kompetenzcenter",
-    end: 5,
+    text: "Komponentenwerke",
+    end: 7,
     suffix: "",
   },
   {
-    text: "Komponentenwerke",
-    end: 7,
+    text: "Signalling-Kompetenzcenter",
+    end: 5,
     suffix: "",
   },
 
