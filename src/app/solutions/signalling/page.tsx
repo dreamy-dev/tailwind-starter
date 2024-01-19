@@ -6,6 +6,13 @@ import Contact from "@/components/sections/Contact";
 
 const teaserData = [
   {
+    label: "Qualität & Sicherheit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/siherheit",
+  },
+  {
     label: "Mainline",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -34,18 +41,18 @@ const teaserData = [
     href: "/solutions/signalling/depot",
   },
   {
-    label: " Overhaul and Revision",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: "/news-1.jpg",
-    href: "/solutions/signalling/overhaul",
-  },
-  {
     label: "Dienstleistungen",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
     href: "/solutions/signalling/dienstleistungen",
+  },
+  {
+    label: "After Sales & Services",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/sales",
   },
 ];
 

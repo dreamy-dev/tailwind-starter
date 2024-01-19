@@ -61,7 +61,7 @@ export default function Map() {
             </div>
 
             <div className="mt-8">
-              <ButtonPrimary position="left">Alle Standorte</ButtonPrimary>
+              <ButtonPrimary position="left" href="/standorte">Alle Standorte</ButtonPrimary>
             </div>
           </div>
           <div className="pl-6 static lg:absolute top-0 w-[84%] left-[16%] h-full">
