@@ -209,10 +209,7 @@ const newsCards = [
         showButton={true}
         h2Styles="flex justify-left items-left"
       ></HomePageCarousel>
-      <TeaserGeneral
-        title="News zu Stadler"
-        ctaText="Zu allen News"
-      ></TeaserGeneral>
+     
     </>
   );
 }
