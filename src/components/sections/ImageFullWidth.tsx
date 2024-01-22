@@ -3,7 +3,7 @@ import FullWidth from "../layouts/FullWidth";
 export default function ImageFullWidth(props?: any) {
     return (
         <FullWidth>
-        <div className="col-span-12 pb-24">
+        <div className="col-span-12">
         <img
         className="aspect-[2/1] object-cover"
         width={"100%"}
