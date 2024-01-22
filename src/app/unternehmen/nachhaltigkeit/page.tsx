@@ -63,12 +63,12 @@ export default function Nachhaltigkeit() {
             </div>
         </ContentWidth>
       </section>
-      <Intro title="Nachhaltigkeit liegt uns am Herzen" />
+      <Intro title="Wir arbeiten nachhaltig" />
       <CTASection title="Lorem ipsum" img='https://www.stadlerrail.com/media/img/800x/caltrans-coastline-16-9.jpg' img2='https://www.stadlerrail.com/media/img/c/heag-mobilo_stadler-tina_aussen.jpg' img3='https://www.stadlerrail.com/media/img/800x/01_flirt%20akku_aspire_small.jpg' />
       <CorporateGorvernance
         mainTitle="Verwaltungsrat und Konzernleitung"
-        showThirdCard={false}
-        numberOfColumns={2}
+        showThirdCard={true}
+        numberOfColumns={3}
       />
       <ContentWidth>
         <div className="col-span-12 mt-24">
