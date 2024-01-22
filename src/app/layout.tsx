@@ -8,7 +8,6 @@ import NavBar from "../components/sections/NavBar";
 import Header from "@/components/sections/Header";
 import Footer from "../components/sections/Footer";
 import StoryblokProvider from "../components/StoryblockProvider";
-// import Page from "../app/blok-tests/page"
 import H1 from "@/components/typography/H1";
 
 
@@ -17,7 +16,7 @@ import {
   apiPlugin,
 } from "@storyblok/react";
 
-import StoryblokBridgeLoader from "@storyblok/react";
+
 import SubHero from "@/components/sections/SubHero";
 
 storyblokInit({
@@ -60,7 +59,7 @@ export default function RootLayout({
         <Footer />
         <script src="../../node_modules/flowbite/dist/flowbite.min.js" async />
       </body>
-      {/* <StoryblokBridgeLoader options={{}} /> */}
+ 
     </html>
   );
 }
