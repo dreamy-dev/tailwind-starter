@@ -68,8 +68,7 @@ export default function SubPage() {
       <HeroText
         breadcrumbs={[
           { text: "Lösungen", link: "/solutions" },
-          { text: "Signalling", link: "/solutions/signalling" },
-          { text: "Mainline", link: "/solutions/signalling/mainline" }
+          { text: "Signalling", link: "/solutions/signalling" }
         ]}
         title="Zugbeeinflussungssystem ETCS"
         leadText="Die steigenden Anforderungen im Zugverkehr zwingen die Betreiber sich auf spezifische strategische Ziele zu konzentrieren: Erhöhung der Reisegeschwindigkeit, Interoperabilität, Weiterverwendung der bestehenden Infrastruktur und Kosteneffizienz unter Beibehaltung des bestehenden Sicherheitsniveaus."
