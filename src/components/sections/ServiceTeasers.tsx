@@ -31,15 +31,13 @@ const ServiceTeasers: React.FC<ServiceTeasersProps> = ({
   return (
     <section className="bg-white dark:bg-gray-900 antialiased pb-24">
       <ContentWidth>
-        <div className="col-span-12 my-12">
-          <H2>{mainTitle}</H2>
-          <Text>{text}</Text>
+        <div className="col-span-12 pt-24">
+          {mainTitle && <H2>{mainTitle}</H2>}
+          {text && <Text>{text}</Text>}
         </div>
-      </ContentWidth>
-      <ContentWidth>
         {services.map((item) => (
           <div
-            className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
+            className=" sm:col-span-6 md:col-span-4 lg:col-span-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
             key={item.label}
           >
             <a href={item.href}>

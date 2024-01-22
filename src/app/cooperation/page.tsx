@@ -13,6 +13,12 @@ import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 const downloads = [
   {
+    text: "Code of Conduct",
+  },
+  {
+    text: "Geschäftsbedingungen",
+  },
+  {
     text:
       "Allgemeine Einkaufsbedingungen Stadler Bussnang AG / Stadler Rheintal AG / Stadler Winterthur AG / Stadler Signalling AG / Stadler Service AG",
   },
@@ -32,24 +38,20 @@ export default function Cooperation() {
   return (
     <>
       <HeroText
-        breadcrumbs={[
-          { text: "Lieferanten", link: "/zulieferer" },
-          { text: "Cooperation" },
-        ]}
+        breadcrumbs={[{ text: "Lieferanten", link: "/zulieferer" }]}
         title="Lieferanten-Netzwerk: Werden Sie unser Partner!"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         // withCTA={true}
         // buttonText="CTA Button"
       />
-      <ImageFullWidth imgSrc="/AdobeStock.jpg" />
-      <TeaserGeneral
+      {/* <ImageFullWidth imgSrc="/AdobeStock.jpg" /> */}
+      {/* <TeaserGeneral
         title="Supplier Portal"
         customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         ctaText="Go to the Portal"
-      ></TeaserGeneral>
+      ></TeaserGeneral> */}
       <CooperationBecome></CooperationBecome>
       <CooperationInfo></CooperationInfo>
-      <Contact />
       <TeaserDownload
         title="Allgemeine Downloads"
         buttonLink="/downloadcenter"
@@ -66,6 +68,10 @@ export default function Cooperation() {
           </Text>
           <ButtonPrimary buttonText="Zum Downloadcenter" />
         </div>
+      </ContentWidth>
+      <Contact />
+      <ContentWidth>
+        <div className="col-span-12 flex flex-col mb-20"></div>
       </ContentWidth>
     </>
   );

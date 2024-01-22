@@ -5,9 +5,9 @@ import { useState } from "react";
    {
      id: "1",
      division: "Division Schweiz",
-     location: "Chemnitz",
+     //  location: "Chemnitz",
      name: "Chemnitz, Stadler Chemnitz Gmbh",
-     type: ["Service", "Production"],
+     type: ["Service", "Production / Komponenten"],
      contactPerson: { title: "Geschäftsleiter", name: "Albrecht Teich" },
      phone: "+41 71 626 21 20",
      email: "stadler.rail@stadlerrail.com",
@@ -18,9 +18,9 @@ import { useState } from "react";
    {
      id: "2",
      division: "Division Components",
-     location: "Biel",
-     name: "Stadler Stahlguss AG",
-     type: ["Service", "Production", "Signaling"],
+     //  location: "Biel",
+     name: "Biel, Stadler Stahlguss AG",
+     type: ["Service", "Production / Komponenten", "Signalling"],
      contactPerson: { title: "CEO", name: "Michael Schmitz" },
      phone: "+41 (0)32 344 45 00",
      fax: "+41 (0)32 344 45 10",
@@ -32,9 +32,9 @@ import { useState } from "react";
    {
      id: "3",
      division: "Division Signaling",
-     location: "Wallisellen",
-     name: "Stadler Signalling",
-     type: ["Signaling"],
+     //  location: "Wallisellen",
+     name: "Wallisellen, Stadler Signalling",
+     type: ["Signalling"],
      contactPerson: { title: "CEO", name: "Marc Trippel" },
      phone: "+41 (0)32 344 45 00",
      email: "stadler.signalling@stadlerrail.com",
@@ -45,8 +45,8 @@ import { useState } from "react";
    {
      id: "4",
      division: "Division Service",
-     location: "Frauenfeld",
-     name: "Stadler Service",
+     //  location: "Frauenfeld",
+     name: "Frauenfeld, Stadler Service",
      type: ["Service"],
      contactPerson: { title: "CEO", name: "Martin Zurgilgen" },
      phone: "+41 71 626 20 20",
@@ -58,9 +58,9 @@ import { useState } from "react";
    {
      id: "5",
      division: "Division Germany",
-     location: "Chemnitz",
-     name: "Stadler Chemnitz GMBH",
-     type: ["Service", "Production"],
+     //  location: "Chemnitz",
+     name: "Chemnitz, Stadler Chemnitz GMBH",
+     type: ["Service", "Production / Komponenten"],
      contactPerson: { title: "Managing Director", name: "Michael Schmidt" },
      phone: "+49 371 24 35 50 00",
      img: "https://www.stadlerrail.com/media/img/c/chemnitz-standortfoto.jpg",
@@ -70,9 +70,9 @@ import { useState } from "react";
    {
      id: "6",
      division: "Division Central Europe",
-     location: "Astana",
-     name: "Stadler Kazakhstan LLP",
-     type: ["Signaling"],
+    //  location: "Astana",
+     name: "Astana, Stadler Kazakhstan LLP",
+     type: ["Signalling"],
      contactPerson: {
        title: "Chief executive officer",
        name: "Vladimir Rusak",
@@ -115,9 +115,9 @@ export default function StandorteAccordion() {
                 <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
                   {item.division}
                 </p>
-                <p className="mb-3 py-1 px-2 text-xs tracking-tight font-light bg-greenBright text-gray-900">
+                {/* <p className="mb-3 py-1 px-2 text-xs tracking-tight font-light bg-greenBright text-gray-900">
                   {item.location}
-                </p>
+                </p> */}
               </div>
               <div className="flex flex-row items-center">
                 <div className="mr-6">

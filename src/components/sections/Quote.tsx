@@ -31,15 +31,15 @@ export default function Quote() {
           <figcaption className="flex items-center justify-center mt-8 space-x-3">
             <img
               className="w-20 h-20 rounded-full object-cover"
-              src="https://www.stadlerrail.com/media/img/c/peter-spuhler-2023-2.jpg"
+              src="markus-bernsteiner.jpg"
               alt="profile picture"
             />
             <div className="flex flex-col">
               <div className="font-medium text-gray-900 dark:text-white">
-                Peter Spuhler
+                Markus Bernsteiner
               </div>
               <div className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Verwaltungsratspräsident
+                CEO
               </div>
             </div>
           </figcaption>

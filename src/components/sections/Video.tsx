@@ -1,5 +1,5 @@
 import H2 from "../typography/H2";
-import Button from "../elements/ButtonSecondary";
+import ButtonPrimary from "../elements/ButtonPrimary";
 import Text from "../typography/Text";
 import FullWidth from "../layouts/FullWidth";
 
@@ -35,14 +35,33 @@ export default function Video() {
             </div>
 
             <div className="mt-6">
-              <Button
-                backgroundColorClass="bg-transparent"
-                textColorClass="text-primary"
-                borderColorClass="border-primary"
-                position="left"
-              >
+              <ButtonPrimary position="left">
                 Jetzt bewerben
-              </Button>
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_5650_6261)">
+                    <path
+                      d="M0.500001 8.33153L11.9366 8.33153L8.15071 13.5408L9.41267 14.5176L14.5 7.51758L9.41267 0.517578L8.15072 1.49432L11.9366 6.70362L0.500001 6.70362L0.500001 8.33153Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5650_6261">
+                      <rect
+                        width="14"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.5 0.517578)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </ButtonPrimary>
             </div>
           </div>
         </div>
