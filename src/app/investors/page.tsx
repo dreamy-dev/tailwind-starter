@@ -174,7 +174,6 @@ const customEventData = [
 export default function Investors() {
   return (
     <section>
-      <SubHero imageUrl="/subhero.jpg"></SubHero>
       {/* Header kann reiner TextHero sein mit Button der auf die letzte Publikation verweist, alle Publikationen zusammen, vlt ein Bild von publikation? */}
       <InvestorHero />
       {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
