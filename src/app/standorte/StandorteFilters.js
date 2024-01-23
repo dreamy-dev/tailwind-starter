@@ -54,12 +54,12 @@ export default function StandorteFilters() {
   const [selectedOption, setSelectedOption] = useState("");
    const [selectedRadio, setSelectedRadio] = useState("");
 
-  const handleOptionChange = (event: ChangeEvent<{ value: string }>) => {
+  const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
     setSelectedRadio(""); // Reset radio selection when changing the select
   };
 
-  const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleRadioChange = (event) => {
     setSelectedRadio(event.target.value);
     setSelectedOption(""); // Reset select when changing the radio
   };
