@@ -94,7 +94,7 @@ import { useState } from "react";
 export default function StandorteAccordion() {
   const [showAccordion, setShowAccordion] = useState({});
 
-  const toggleAccordion = (id: string) => {
+  const toggleAccordion = (id) => {
     setShowAccordion((prev) => ({
       ...prev,
       [id]: !prev[id],
