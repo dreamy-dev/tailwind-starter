@@ -1,9 +1,8 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/components/StoryblokProvider";
 import { Montserrat } from "next/font/google";
- import Header from "@/components/sections/Header";
- import Footer from "../components/sections/Footer";
-
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
 import "./globals.css";
 
 export const metadata = {
@@ -27,15 +26,9 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={fontFamily.className}>
           <Header />
-           <main>{children}</main>
-          <Footer />
-          <script
-             src="../../node_modules/flowbite/dist/flowbite.min.js"
-             async
-           />
+          <main>{children}</main>
         </body>
       </html>
     </StoryblokProvider>
   );
 }
-

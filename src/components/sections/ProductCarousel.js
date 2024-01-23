@@ -29,7 +29,7 @@ const data = [
   },
 ];
 const variants = {
-  enter: (direction: number) => {
+  enter: (direction) => {
     return {
       // x: direction > 0 ? 1000 : -1000,
       scale: 0.9,
@@ -42,7 +42,7 @@ const variants = {
     scale: 1,
     opacity: 1,
   },
-  exit: (direction: number) => {
+  exit: (direction) => {
     return {
       zIndex: 0,
       scale: 0.9,
@@ -53,7 +53,7 @@ const variants = {
 };
 
 const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
+const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
@@ -62,7 +62,7 @@ const ProductCarousel = () => {
 
   const imageIndex = wrap(0, data.length, page);
 
-  const paginate = (newDirection: number) => {
+  const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
 
