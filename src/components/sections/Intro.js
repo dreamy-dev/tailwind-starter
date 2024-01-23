@@ -1,0 +1,37 @@
+import ContentWidth from "../layouts/ContentWidth";
+import H2 from "../typography/H2";
+
+export default function Intro(props) {
+  return (
+    <section className="bg-white dark:bg-gray-900">
+      <ContentWidth>
+        <div className="col-span-12">
+        <div className="gap-16 items-center py-8 max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16">
+        <div className="font-normal sm:text-lg">
+          <H2>{props.title}</H2>
+          <p className="mb-4 mt-6">
+            Wir sind Strategen, Designer und Entwickler. Innovatoren und
+            Problemlöser. Klein genug, um einfach und schnell zu sein, aber
+            gross genug, um den von Ihnen gewünschten Umfang in dem von Ihnen
+            benötigten Tempo zu liefern. Wir sind Strategen, Designer und
+            Entwickler. Innovatoren und Problemlöser.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mt-8">
+          <img
+            className="object-cover object-left h-96 scale-100"
+            src="https://www.stadlerrail.com/media/img/c/industrielackierer_lernende.jpg"
+            alt="office content 1"
+          />
+          <img
+            className="object-cover object-center  scale-100 mt-4 h-full lg:mt-10"
+            src="https://www.stadlerrail.com/media/img/c/schreiner_azubi_lernende.jpg"
+            alt="office content 2"
+          />
+        </div>
+      </div>
+        </div>
+      </ContentWidth>
+    </section>
+  );
+}
