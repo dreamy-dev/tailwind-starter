@@ -1,3 +1,5 @@
+
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import Button from "../elements/ButtonSecondary";
 import Link from "next/link";
 import ContentWidth from "../layouts/ContentWidth";
@@ -66,9 +68,13 @@ const navigation = {
   ],
 };
 
-export default function Footer() {
+export default function Footer({ blok }) {
   return (
-    <footer className="bg-blueDark mt-auto" aria-labelledby="footer-heading">
+    <footer
+      {...storyblokEditable(blok)}
+      className="bg-blueDark mt-auto"
+      aria-labelledby="footer-heading"
+    >
       <ContentWidth>
         <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
           <div className="pt-8 lg:flex lg:items-center lg:justify-between">

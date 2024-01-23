@@ -3,7 +3,9 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
 /** 2. Import your components */
 import Page from "../components/sections/Page";
-import Teaser from "./Teaser";
+
+import Footer from "./sections/Footer";
+import HeroText from "./sections/HeroText";
 
 
 
@@ -12,10 +14,9 @@ storyblokInit({
   accessToken: "r9bj1EQKQ2RBQpmI0LRxWQtt",
   use: [apiPlugin],
   components: {
-    teaser: Teaser,
     page: Page,
-  
-  
+    footer: Footer,
+    "hero-subpage": HeroText,
   },
 });
 

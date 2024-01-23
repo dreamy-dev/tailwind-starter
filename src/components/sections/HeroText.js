@@ -1,19 +1,23 @@
+import { storyblokEditable } from "@storyblok/react/rsc";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import H1 from "@/components/typography/H1";
 import Lead from "@/components/typography/Lead";
-import { ReactNode } from "react";
 
 
-export default function HeroText({
+const HeroText = ({
   breadcrumbs = [],
   title = "Lorem ipsum dolor sit amet",
   leadText,
   withCTA,
   buttonText,
-}) {
+  blok
+}) => {
   return (
-    <section className="bg-white dark:bg-gray-900 py-24">
+    <section
+      {...storyblokEditable(blok)}
+      className="bg-white dark:bg-gray-900 py-24"
+    >
       <SmallWidth>
         <div className="flex font-normal text-gray-600 pb-3">
           {breadcrumbs.map((breadcrumb, index) => (
@@ -29,8 +33,8 @@ export default function HeroText({
             </div>
           ))}
         </div>
-        <H1>{title}</H1>
-        <Lead>{leadText}</Lead>
+        <H1>{blok.title}</H1>
+        <Lead>{blok.lead}</Lead>
         {withCTA ? (
           <ButtonPrimary position="left" buttonText={buttonText} />
         ) : (
@@ -40,3 +44,5 @@ export default function HeroText({
     </section>
   );
 }
+
+export default HeroText;
