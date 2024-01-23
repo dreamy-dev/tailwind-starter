@@ -87,7 +87,7 @@ const NavBar = () => {
   //   };
   // }, [isSubmenuOpen]);
 
-  let menuRef = useRef<HTMLDivElement>(null);
+  let menuRef = useRef(null);
 
   useEffect(() => {
     let handler = (e) => {
