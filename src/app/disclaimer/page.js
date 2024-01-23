@@ -60,7 +60,7 @@ import ButtonPrimary from "@/components/elements/ButtonPrimary";
 
 export default function Datenschutz() {
 
-    const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+    const [activeAccordion, setActiveAccordion] = useState(null);
 
     const handleAccordionClick = (index) => {
       setActiveAccordion(activeAccordion === index ? null : index);
