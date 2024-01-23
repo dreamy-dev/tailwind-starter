@@ -14,7 +14,7 @@ const navigation = {
     {
       name: "LinkedIn",
       href: "#",
-      icon: (props: any) => (
+      icon: (props) => (
         <svg
           width="22"
           height="20"
@@ -45,7 +45,7 @@ const navigation = {
     {
       name: "Twitter",
       href: "#",
-      icon: (props: any) => (
+      icon: (props) => (
         <svg
           {...props}
           width="26"

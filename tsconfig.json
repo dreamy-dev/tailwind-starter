@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/typography/H1.jsx"
-  ],
+, "src/components/StoryblokProvider.js", "src/components/Teaser.js", "src/components/sections/Page.js", "src/app/page.js", "src/app/layout.js", "src/components/sections/Header.js", "src/components/sections/Footer.js", "src/components/sections/NavBar.js", "src/components/sections/TopNav.js"  ],
   "exclude": ["node_modules"]
 }
