@@ -197,7 +197,7 @@ const plusAnimation = {
   close: { transform: "rotate(0deg)" },
 };
 
-const TrainCarousel = (props?: any) => {
+const TrainCarousel = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(0);
 

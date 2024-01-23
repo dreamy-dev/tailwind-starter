@@ -32,7 +32,7 @@ const slides = [
 ];
 
 const variants = {
-  initial: (direction: any) => {
+  initial: (direction) => {
     return {
       x: direction > 0 ? 100 : -100,
       opacity: 0,
@@ -49,7 +49,7 @@ const variants = {
       opacity: { duration: 0.2 },
     },
   },
-  exit: (direction: any) => {
+  exit: (direction) => {
     return {
       x: direction > 0 ? -100 : 100,
       opacity: 0,
@@ -62,7 +62,7 @@ const variants = {
     };
   },
 };
-const Slide = (slide: any) => {
+const Slide = (slide) => {
   return (
     <div className="text-black">
       <motion.h1

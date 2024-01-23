@@ -22,24 +22,9 @@ const variantsSub = {
   closed: { opacity: 0, y: 50, height: 0 },
 };
 
-type NavItem = {
-  title: string;
-  href: string;
-  icon?: React.ReactNode;
-  submenu?: boolean;
-  submenuItems?: SubNavItem[];
-};
 
-type SubNavItem = {
-  title: string;
-  href: string;
-};
 
-type NavItems = {
-  topNav: NavItem[];
-};
-
-const navigationMain: NavItems = {
+const navigationMain = {
   topNav: [
     { title: "Unternehmen", href: "/unternehmen", icon: false },
     {
@@ -105,7 +90,7 @@ const NavBar = () => {
   let menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let handler = (e: any) => {
+    let handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
@@ -119,7 +104,7 @@ const NavBar = () => {
     const mediaWatcher = window.matchMedia("(max-width: 1024px)");
     setIsNarrowScreen(mediaWatcher.matches);
 
-    function updateIsNarrowScreen(e: any) {
+    function updateIsNarrowScreen(e) {
       setIsNarrowScreen(e.matches);
     }
     if (mediaWatcher.addEventListener) {
