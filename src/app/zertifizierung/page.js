@@ -42,9 +42,9 @@ const spanienItems = [
 ];
 export default function Zertifizierung() {
 
-    type Section = "rollingStock" | "signalling" | "service";
+ 
 
-    const initialSectionsState: Record<Section, boolean> = {
+    const initialSectionsState = {
       rollingStock: false,
       signalling: false,
       service: false,
@@ -53,8 +53,8 @@ export default function Zertifizierung() {
         const [sectionsState, setSectionsState] =
           useState(initialSectionsState);
 console.log(sectionsState);
-        const toggleVisibility = (section: Section) => {
-          setSectionsState((prevState: Record<Section, boolean>) => ({
+        const toggleVisibility = (section) => {
+          setSectionsState((prevState) => ({
             ...prevState,
             [section]: !prevState[section],
           }));
