@@ -62,7 +62,7 @@ export default function Datenschutz() {
 
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
-    const handleAccordionClick = (index: number) => {
+    const handleAccordionClick = (index) => {
       setActiveAccordion(activeAccordion === index ? null : index);
     };
 
