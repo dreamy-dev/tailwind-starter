@@ -41,24 +41,20 @@ const spanienItems = [
   },
 ];
 export default function Zertifizierung() {
+  const initialSectionsState = {
+    rollingStock: false,
+    signalling: false,
+    service: false,
+  };
 
- 
-
-    const initialSectionsState = {
-      rollingStock: false,
-      signalling: false,
-      service: false,
-    };
-
-        const [sectionsState, setSectionsState] =
-          useState(initialSectionsState);
-console.log(sectionsState);
-        const toggleVisibility = (section) => {
-          setSectionsState((prevState) => ({
-            ...prevState,
-            [section]: !prevState[section],
-          }));
-        };
+  const [sectionsState, setSectionsState] = useState(initialSectionsState);
+  console.log(sectionsState);
+  const toggleVisibility = (section) => {
+    setSectionsState((prevState) => ({
+      ...prevState,
+      [section]: !prevState[section],
+    }));
+  };
   return (
     <>
       <ContentWidth>
