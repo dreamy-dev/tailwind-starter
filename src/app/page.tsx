@@ -112,8 +112,8 @@ const figures = [
   //     <h2>Story: {data.story.name}</h2>
   //     <Hero />
   //     <Stats />
-export default async function HomePage() {
-  const { data } = await fetchData();
+export default  function HomePage() {
+  // const { data } = await fetchData();
  
   return (
     <>
@@ -137,13 +137,13 @@ export default async function HomePage() {
   );
 }
 
- async function fetchData() {
-  type SBParams = {
-    version: "draft"; 
-  };
-  let sbParams: SBParams = { version: "draft" };
+//  async function fetchData() {
+//   type SBParams = {
+//     version: "draft"; 
+//   };
+//   let sbParams: SBParams = { version: "draft" };
 
-  const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/blok-tests`, sbParams)
+//   const storyblokApi = getStoryblokApi();
+//   return storyblokApi.get(`cdn/stories/home`, sbParams)
   
-}
+// }

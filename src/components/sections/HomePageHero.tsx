@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function HomePageHero() {
   return (
-    <div className="mx-auto w-full bg-white pb-16">
+    <div className="mx-auto w-full bg-white pb-5 lg:pb-24">
       <div className="w-full max-h-[1150px] overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
         <motion.div
           initial={{ x: -1000, opacity: 0 }}

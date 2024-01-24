@@ -248,6 +248,12 @@ export default function Mainline() {
       />
       <ImageFullWidth imgSrc="/hero-mainline.jpg" />
       <TextSection></TextSection>
+     
+      <SmallWidth>
+        <div className="col-span-12">
+          <H2>Relevante Lösungen</H2>
+        </div>
+      </SmallWidth>
       {/* <QualityFeatures
         features={features}
         mainTitle="Die Vorteile auf einen Blick"

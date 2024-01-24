@@ -43,7 +43,7 @@ const features = [
 
 export default function Specification() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-5 lg:py-24">
       <ContentWidth>
         <div className="col-span-12 max-w-full">
           <div className="mx-auto max-w-2xl mb-16 lg:mx-0">

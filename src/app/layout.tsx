@@ -8,9 +8,16 @@ import NavBar from "../components/sections/NavBar";
 import Header from "@/components/sections/Header";
 import Footer from "../components/sections/Footer";
 import StoryblokProvider from "../components/StoryblockProvider";
+import H1 from "@/components/typography/H1";
 
 
-import { storyblokInit, apiPlugin } from "@storyblok/react";
+import {
+  storyblokInit,
+  apiPlugin,
+} from "@storyblok/react";
+
+
+import SubHero from "@/components/sections/SubHero";
 
 storyblokInit({
   accessToken: "r9bj1EQKQ2RBQpmI0LRxWQtt",
@@ -18,6 +25,11 @@ storyblokInit({
   apiOptions: {
     region: "eu",
   },
+  components: {
+
+    title_h1: H1,
+    subhero: SubHero
+  }
  
 });
 
@@ -36,20 +48,18 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+  }) {
+  
+
   return (
-    <StoryblokProvider>
-      <html lang="en">
-        <body className={fontFamily.className}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <script
-            src="../../node_modules/flowbite/dist/flowbite.min.js"
-            async
-          />
-        </body>
-      </html>
-    </StoryblokProvider>
+    <html lang="en">
+      <body className={fontFamily.className}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <script src="../../node_modules/flowbite/dist/flowbite.min.js" async />
+      </body>
+ 
+    </html>
   );
 }

@@ -53,7 +53,7 @@ const ProductCards: React.FC = () => {
   ];
 
   return (
-    <section className="py-24">
+    <section className="py-5 lg:py-24">
       <ContentWidth>
         <div className="col-span-12 max-w-full mx-auto">
           <div className="mx-auto max-w-2xl mb-16 lg:mx-0">

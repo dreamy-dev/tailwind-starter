@@ -55,6 +55,7 @@ export default function Zertifizierung() {
     };
         const [sectionsState, setSectionsState] =
           useState(initialSectionsState);
+
         const toggleVisibility = (section: Section) => {
           setSectionsState((prevState: Record<Section, boolean>) => ({
             ...prevState,

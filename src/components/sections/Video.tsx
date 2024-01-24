@@ -5,7 +5,7 @@ import FullWidth from "../layouts/FullWidth";
 
 export default function Video() {
   return (
-    <div className="bg-white py-24  2xl:max-w-[1760px] 2xl:mx-auto">
+    <div className="bg-white pb-5 lg:pb-24  2xl:max-w-[1760px] 2xl:mx-auto">
       <FullWidth>
         <div className="col-span-12 flex flex-col lg:flex-row justify-between items-center">
           <div className="overflow-hidden w-full lg:w-2/3 ">

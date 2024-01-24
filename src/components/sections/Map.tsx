@@ -45,7 +45,7 @@ const statsData = [
 export default function Map() {
   return (
     <FullWidth>
-      <div className="col-span-12 w-full bg-white py-24">
+      <div className="col-span-12 w-full bg-white pb-5 lg:pb-24">
         <MapTextTitle />
         <Stats data={statsData} backgroundColor="bg-white" />
         <div className="relative flex flex-col-reverse lg:flex-none">
