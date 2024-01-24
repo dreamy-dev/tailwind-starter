@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
-import SmallWidth from "@/components/layouts/SmallWidth";
-import TeaserDownload from "@/components/sections/TeaserDownload";
-import H1 from "@/components/typography/H1";
+import SmallWidth from "../../components/layouts/SmallWidth";
+import TeaserDownload from "../../components/sections/TeaserDownload";
+import H1 from "../../components/typography/H1";
 import H2 from "../../components/typography/H2";
-import H4 from "@/components/typography/H4";
-import Lead from "@/components/typography/Lead";
-import HeroText from "@/components/sections/HeroText";
-import ContentWidth from "@/components/layouts/ContentWidth";
-import Text from "@/components/typography/Text";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import H4 from "../../components/typography/H4";
+import Lead from "../../components/typography/Lead";
+import HeroText from "../../components/sections/HeroText";
+import ContentWidth from "../../components/layouts/ContentWidth";
+import Text from "../../components/typography/Text";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
 
 
 

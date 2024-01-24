@@ -1,11 +1,11 @@
 "use client";
 
-import HeroText from "@/components/sections/HeroText";
+import HeroText from "../../components/sections/HeroText";
 import TeaserDownload from "../../components/sections/TeaserDownload";
-import Contact from "@/components/sections/Contact";
-import ContentWidth from "@/components/layouts/ContentWidth";
-import Text from "@/components/typography/Text";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import Contact from "../../components/sections/Contact";
+import ContentWidth from "../../components/layouts/ContentWidth";
+import Text from "../../components/typography/Text";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
 
 const list = [
   {

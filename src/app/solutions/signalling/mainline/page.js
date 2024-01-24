@@ -1,17 +1,17 @@
 "use client";
-import HeroText from "@/components/sections/HeroText";
-import QualityFeatures from "@/components/sections/QualityFeatures";
+import HeroText from "../../../../components/sections/HeroText";
+import QualityFeatures from "../../../../components/sections/QualityFeatures";
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
-import Features from "@/components/sections/Features";
-import ImageFullWidth from "@/components/sections/ImageFullWidth";
-import ServiceTeasers from "@/components/sections/ServiceTeasers";
-import TextSection from "@/components/sections/TextSection";
-import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import Text from "@/components/typography/Text";
-import H2 from "@/components/typography/H2";
-import SmallWidth from "@/components/layouts/SmallWidth";
+import Features from "../../../../components/sections/Features";
+import ImageFullWidth from "../../../../components/sections/ImageFullWidth";
+import ServiceTeasers from "../../../../components/sections/ServiceTeasers";
+import TextSection from "../../../../components/sections/TextSection";
+import TeaserImageLeft from "../../../../components/sections/TeaserImageLeft";
+import ButtonPrimary from "../../../../components/elements/ButtonPrimary";
+import Text from "../../../../components/typography/Text";
+import H2 from "../../../../components/typography/H2";
+import SmallWidth from "../../../../components/layouts/SmallWidth";
 const features = [
   {
     title: "Leichtbauweise",

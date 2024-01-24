@@ -1,4 +1,4 @@
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
 
 export default function SuccessStories() {
   return (

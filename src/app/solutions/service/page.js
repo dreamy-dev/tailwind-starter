@@ -1,12 +1,12 @@
 "use client";
 
-import ContentWidth from "@/components/layouts/ContentWidth";
-import FactsAndFigures from "@/components/sections/FactsAndFigures";
-import HeroText from "@/components/sections/HeroText";
-import Link from "@/components/typography/Link";
+import ContentWidth from "../../../components/layouts/ContentWidth";
+import FactsAndFigures from "../../../components/sections/FactsAndFigures";
+import HeroText from "../../../components/sections/HeroText";
+import Link from "../../../components/typography/Link";
 import ServiceTeasers from "../../../components/sections/ServiceTeasers";
-import FullWidth from "@/components/layouts/FullWidth";
-import ImageFullWidth from "@/components/sections/ImageFullWidth";
+import FullWidth from "../../../components/layouts/FullWidth";
+import ImageFullWidth from "../../../components/sections/ImageFullWidth";
 
 const facts = [
   {

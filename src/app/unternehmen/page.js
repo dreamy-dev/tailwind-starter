@@ -1,14 +1,14 @@
 "use client";
-import SubHero from "@/components/sections/SubHero";
+import SubHero from "../../components/sections/SubHero";
 import HeroText from "../../components/sections/HeroText"
 import DNA from "./DNA";
 import SustainableProcurement from "../zulieferer/SustainableProcurement";
-import TeaserGeneral from "@/components/sections/TeaserGeneral";
+import TeaserGeneral from "../../components/sections/TeaserGeneral";
 import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
-import FactsAndFigures from "@/components/sections/FactsAndFigures";
-import Map from "@/components/sections/Map";
-import EventCalendar from "@/components/sections/EventCalendar";
+import FactsAndFigures from "../../components/sections/FactsAndFigures";
+import Map from "../../components/sections/Map";
+import EventCalendar from "../../components/sections/EventCalendar";
 import Hero from "./Hero";
 
 const cards = [

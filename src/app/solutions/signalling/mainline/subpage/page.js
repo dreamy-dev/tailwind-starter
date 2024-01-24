@@ -1,10 +1,10 @@
 "use client";
-import HeroText from "@/components/sections/HeroText";
-import ImageFullWidth from "@/components/sections/ImageFullWidth";
-import Text from "@/components/typography/Text";
-import SmallWidth from "@/components/layouts/SmallWidth";
-import Contact from "@/components/sections/Contact";
-import Advantages from "@/components/sections/Advantages";
+import HeroText from "../../../../../components/sections/HeroText";
+import ImageFullWidth from "../../../../../components/sections/ImageFullWidth";
+import Text from "../../../../../components/typography/Text";
+import SmallWidth from "../../../../../components/layouts/SmallWidth";
+import Contact from "../../../../../components/sections/Contact";
+import Advantages from "../../../../../components/sections/Advantages";
 
 const advantageItems = [
   {

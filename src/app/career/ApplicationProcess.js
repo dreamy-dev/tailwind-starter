@@ -1,6 +1,6 @@
 "use client";
 
-import H2 from "@/components/typography/H2";
+import H2 from "../../components/typography/H2";
 import Stepper from "../../components/sections/Stepper";
 
 export default function ApplicationProcess() {

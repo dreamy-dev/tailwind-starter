@@ -1,8 +1,8 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import StoryblokProvider from "@/components/StoryblokProvider";
+import StoryblokProvider from "../components/StoryblokProvider";
 import { Montserrat } from "next/font/google";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
+import Header from "../components/sections/Header";
+import Footer from "../components/sections/Footer";
 import "./globals.css";
 
 export const metadata = {

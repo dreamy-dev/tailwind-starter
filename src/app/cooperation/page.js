@@ -2,14 +2,14 @@
 
 import CooperationInfo from "./CooperationInfo";
 import CooperationBecome from "./CooperationBecome";
-import HeroText from "@/components/sections/HeroText";
-import TeaserGeneral from "@/components/sections/TeaserGeneral";
-import ContentWidth from "@/components/layouts/ContentWidth";
-import Contact from "@/components/sections/Contact";
+import HeroText from "../../components/sections/HeroText";
+import TeaserGeneral from "../../components/sections/TeaserGeneral";
+import ContentWidth from "../../components/layouts/ContentWidth";
+import Contact from "../../components/sections/Contact";
 import TeaserDownload from "../../components/sections/TeaserDownload";
-import ImageFullWidth from "@/components/sections/ImageFullWidth";
-import Text from "@/components/typography/Text";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import ImageFullWidth from "../../components/sections/ImageFullWidth";
+import Text from "../../components/typography/Text";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
 
 const downloads = [
   {

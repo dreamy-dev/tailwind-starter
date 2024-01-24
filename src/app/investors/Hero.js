@@ -1,4 +1,4 @@
-import HeroText from "@/components/sections/HeroText";
+import HeroText from "../../components/sections/HeroText";
 
 export default function InvestorHero() {
   return (

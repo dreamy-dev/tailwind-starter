@@ -1,7 +1,7 @@
 "use client";
-import H1 from "@/components/typography/H1";
-import Text from "@/components/typography/Text";
-import SmalltWidth from "@/components/layouts/SmallWidth";
+import H1 from "../../components/typography/H1";
+import Text from "../../components/typography/Text";
+import SmalltWidth from "../../components/layouts/SmallWidth";
 import Link from "next/link";
 
 export default function Impressum() {

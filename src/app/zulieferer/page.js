@@ -3,15 +3,15 @@
 import Hero from "./Hero";
 import SustainableProcurement from "./SustainableProcurement";
 import FAQ from "../../components/sections/Accordion";
-import FactsAndFigures from "@/components/sections/FactsAndFigures";
-import Quote from "@/components/sections/Quote";
+import FactsAndFigures from "../../components/sections/FactsAndFigures";
+import Quote from "../../components/sections/Quote";
 
-import QualityFeatures from "@/components/sections/QualityFeatures";
-import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
-import TeaserImageRight from "@/components/sections/TeaserImageright";
-import Text from "@/components/typography/Text";
-import H2 from "@/components/typography/H2";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import QualityFeatures from "../../components/sections/QualityFeatures";
+import TeaserImageLeft from "../../components/sections/TeaserImageLeft";
+import TeaserImageRight from "../../components/sections/TeaserImageright";
+import Text from "../../components/typography/Text";
+import H2 from "../../components/typography/H2";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
 
 const facts = [
   {

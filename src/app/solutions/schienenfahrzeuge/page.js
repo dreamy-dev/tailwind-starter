@@ -1,14 +1,14 @@
 "use client";
 
-import ContentWidth from "@/components/layouts/ContentWidth";
-import Link from "@/components/typography/Link";
-import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
-import TeaserImageRight from "@/components/sections/TeaserImageright";
-import HeroText from "@/components/sections/HeroText";
-import Text from "@/components/typography/Text";
-import Button from "@/components/elements/ButtonSecondary";
-import H2 from "@/components/typography/H2";
-import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
+import ContentWidth from "../../../components/layouts/ContentWidth";
+import Link from "../../../components/typography/Link";
+import TeaserImageLeft from "../../../components/sections/TeaserImageLeft";
+import TeaserImageRight from "../../../components/sections/TeaserImageright";
+import HeroText from "../../../components/sections/HeroText";
+import Text from "../../../components/typography/Text";
+import Button from "../../../components/elements/ButtonSecondary";
+import H2 from "../../../components/typography/H2";
+import HomePageCaroucel from "../../../components/sections/HomePageCaroucel";
 
 const newsCards = [
   {

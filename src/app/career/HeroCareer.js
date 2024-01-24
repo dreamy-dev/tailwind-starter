@@ -4,7 +4,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import H1 from "../../components/typography/H1";
-import Text from "@/components/typography/Text";
+import Text from "../../components/typography/Text";
 
 export default function CareerHero() {
   return (

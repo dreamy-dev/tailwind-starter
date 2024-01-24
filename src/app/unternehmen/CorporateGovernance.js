@@ -1,8 +1,8 @@
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import SmallWidth from "@/components/layouts/SmallWidth";
-import SuperSmallWidth from "@/components/layouts/SuperSmallWidth";
-import H2 from "@/components/typography/H2";
-import Text from "@/components/typography/Text";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
+import SmallWidth from "../../components/layouts/SmallWidth";
+import SuperSmallWidth from "../../components/layouts/SuperSmallWidth";
+import H2 from "../../components/typography/H2";
+import Text from "../../components/typography/Text";
 
 const CorporateGorvernance = ({ mainTitle, showThirdCard, numberOfColumns}) => {
   return (

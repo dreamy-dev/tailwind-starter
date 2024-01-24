@@ -1,4 +1,4 @@
-import Quote from "@/components/sections/Quote";
+import Quote from "../../components/sections/Quote";
 import Lead from "../../components/typography/Lead";
 import Text from "../../components/typography/Text";
 

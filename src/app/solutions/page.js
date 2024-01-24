@@ -1,17 +1,17 @@
 "use client";
 
 
-import SmallWidth from "@/components/layouts/SmallWidth";
-import Lead from "@/components/typography/Lead";
+import SmallWidth from "../../components/layouts/SmallWidth";
+import Lead from "../../components/typography/Lead";
 import TeasersSolution from "./TeasersSolution";
 import ReferenzenCarousel from "../../components/sections/ReferenzenCarousel";
-import HeroText from "@/components/sections/HeroText";
-import SubHero from "@/components/sections/SubHero";
-import TeaserImageLeft from "@/components/sections/TeaserImageLeft";
-import TeaserImageRight from "@/components/sections/TeaserImageright";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import Text from "@/components/typography/Text";
-import H2 from "@/components/typography/H2";
+import HeroText from "../../components/sections/HeroText";
+import SubHero from "../../components/sections/SubHero";
+import TeaserImageLeft from "../../components/sections/TeaserImageLeft";
+import TeaserImageRight from "../../components/sections/TeaserImageright";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
+import Text from "../../components/typography/Text";
+import H2 from "../../components/typography/H2";
 
 export default function Solutions() {
   return (

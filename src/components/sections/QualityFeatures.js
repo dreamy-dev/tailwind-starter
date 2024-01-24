@@ -1,5 +1,5 @@
-import H2 from "@/components/typography/H2";
-import H4 from "@/components/typography/H4";
+import H2 from "../../components/typography/H2";
+import H4 from "../../components/typography/H4";
 import Text from "../typography/Text";
 import ContentWidth from "../layouts/ContentWidth";
 

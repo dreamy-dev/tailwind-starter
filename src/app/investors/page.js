@@ -1,17 +1,17 @@
 "use client";
 
-import ContentWidth from "@/components/layouts/ContentWidth";
-import Contact from "@/components/sections/Contact";
-import FactsAndFigures from "@/components/sections/FactsAndFigures";
-import Subscribe from "@/components/sections/Subscribe";
-import Publikationen from "@/components/sections/Publikationen";
+import ContentWidth from "../../components/layouts/ContentWidth";
+import Contact from "../../components/sections/Contact";
+import FactsAndFigures from "../../components/sections/FactsAndFigures";
+import Subscribe from "../../components/sections/Subscribe";
+import Publikationen from "../../components/sections/Publikationen";
 import CorporateGorvernance from "../unternehmen/CorporateGovernance";
 import InvestorHero from "./Hero";
 import TextBlock from "./TextBlock";
-import SubHero from "@/components/sections/SubHero";
-import Text from "@/components/typography/Text";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import EventCalendar from "@/components/sections/EventCalendar";
+import SubHero from "../../components/sections/SubHero";
+import Text from "../../components/typography/Text";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
+import EventCalendar from "../../components/sections/EventCalendar";
 
 const publications = [
   {

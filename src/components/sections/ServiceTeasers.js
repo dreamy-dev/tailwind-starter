@@ -1,9 +1,9 @@
 "use client";
 
-import Button from "@/components/elements/ButtonSecondary";
-import ContentWidth from "@/components/layouts/ContentWidth";
-import H2 from "@/components/typography/H2";
-import Text from "@/components/typography/Text";
+import Button from "../../components/elements/ButtonSecondary";
+import ContentWidth from "../../components/layouts/ContentWidth";
+import H2 from "../../components/typography/H2";
+import Text from "../../components/typography/Text";
 
 
 

@@ -1,9 +1,9 @@
 "use client";
 
-import Table from "@/components/sections/Table";
-import H1 from "@/components/typography/H1";
-import SmallWidth from "@/components/layouts/SmallWidth";
-import Text from "@/components/typography/Text";
+import Table from "../../components/sections/Table";
+import H1 from "../../components/typography/H1";
+import SmallWidth from "../../components/layouts/SmallWidth";
+import Text from "../../components/typography/Text";
 
 const customTableHeaders = [
   {

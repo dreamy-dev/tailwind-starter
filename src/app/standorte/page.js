@@ -1,7 +1,7 @@
 "use client";
 
-import ContentWidth from "@/components/layouts/ContentWidth";
-import HeroText from "@/components/sections/HeroText";
+import ContentWidth from "../../components/layouts/ContentWidth";
+import HeroText from "../../components/sections/HeroText";
 import StandorteAccordion from "./StandorteAccordion";
 import StandorteFilters from "./StandorteFilters";
 

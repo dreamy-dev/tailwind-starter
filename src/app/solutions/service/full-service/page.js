@@ -5,8 +5,8 @@ import Advantages from "../../../../components/sections/Advantages";
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
 import ReferenzenCarousel from "../../../../components/sections/ReferenzenCarousel";
-import HeroText from "@/components/sections/HeroText";
-import FullWidth from "@/components/layouts/FullWidth";
+import HeroText from "../../../../components/sections/HeroText";
+import FullWidth from "../../../../components/layouts/FullWidth";
 const advantageItems = [
   {
     icon: ( <svg

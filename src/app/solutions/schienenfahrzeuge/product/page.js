@@ -2,15 +2,15 @@
 
 import Contact from "../../../../components/sections/Contact";
 import Career from "../../../../components/sections/Career";
-import Features from "@/components/sections/Features";
-import QualityFeatures from "@/components/sections/QualityFeatures";
-import Specification from "@/components/sections/Specification";
-import HeroText from "@/components/sections/HeroText";
-import TextSection from "@/components/sections/TextSection";
-import ProductCarousel from "@/components/sections/ProductCarousel";
-import TestimonialsCarousel from "@/components/sections/ReferenzenCarousel";
-import ImageFullWidth from "@/components/sections/ImageFullWidth";
-import ProductCards from "@/components/sections/ProductCards";
+import Features from "../../../../components/sections/Features";
+import QualityFeatures from "../../../../components/sections/QualityFeatures";
+import Specification from "../../../../components/sections/Specification";
+import HeroText from "../../../../components/sections/HeroText";
+import TextSection from "../../../../components/sections/TextSection";
+import ProductCarousel from "../../../../components/sections/ProductCarousel";
+import TestimonialsCarousel from "../../../../components/sections/ReferenzenCarousel";
+import ImageFullWidth from "../../../../components/sections/ImageFullWidth";
+import ProductCards from "../../../../components/sections/ProductCards";
 const features = [
   {
     title: "Leichtbauweise",

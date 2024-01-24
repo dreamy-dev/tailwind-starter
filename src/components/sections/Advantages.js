@@ -1,6 +1,6 @@
-import H2 from "@/components/typography/H2";
-import H3 from "@/components/typography/H3";
-import H4 from "@/components/typography/H4";
+import H2 from "../../components/typography/H2";
+import H3 from "../../components/typography/H3";
+import H4 from "../../components/typography/H4";
 
 
 

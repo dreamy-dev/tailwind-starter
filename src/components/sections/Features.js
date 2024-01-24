@@ -1,4 +1,4 @@
-import H3 from "@/components/typography/H3";
+import H3 from "../../components/typography/H3";
 import ContentWidth from "../layouts/ContentWidth";
 
 

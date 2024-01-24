@@ -1,14 +1,14 @@
 "use client";
 
-import Contact from "@/components/sections/Contact";
-import Subscribe from "@/components/sections/Subscribe";
-import Publikationen from "@/components/sections/Publikationen";
-import HeroText from "@/components/sections/HeroText";
-import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
+import Contact from "../../components/sections/Contact";
+import Subscribe from "../../components/sections/Subscribe";
+import Publikationen from "../../components/sections/Publikationen";
+import HeroText from "../../components/sections/HeroText";
+import HomePageCaroucel from "../../components/sections/HomePageCaroucel";
 import TeaserDownload from "../../components/sections/TeaserDownload";
-import EventCalendar from "@/components/sections/EventCalendar";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import TeaserGeneral from "@/components/sections/TeaserGeneral";
+import EventCalendar from "../../components/sections/EventCalendar";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
+import TeaserGeneral from "../../components/sections/TeaserGeneral";
 
 const publications = [
   {

@@ -1,4 +1,4 @@
-import H2 from "@/components/typography/H2";
+import H2 from "../../components/typography/H2";
 import ContentWidth from "../layouts/ContentWidth";
 import Text from "../typography/Text";
 

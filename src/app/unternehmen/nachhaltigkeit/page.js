@@ -1,20 +1,20 @@
 "use client";
 
-import HeroText from "@/components/sections/HeroText";
+import HeroText from "../../../components/sections/HeroText";
 import CorporateGorvernance from "../CorporateGovernance";
-import Intro from "@/components/sections/Intro";
-import CTASection from "@/components/sections/CTASection";
-import TeaserMobilitySolutions from "@/components/sections/TeaserMobilitySolutions";
-import ContentWidth from "@/components/layouts/ContentWidth";
-import Text from "@/components/typography/Text";
-import H1 from "@/components/typography/H1";
-import H2 from "@/components/typography/H2";
-import TeaserDownload from "@/components/sections/TeaserDownload";
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import ProductCarousel from "@/components/sections/ProductCarousel";
-import ImageFullWidth from "@/components/sections/ImageFullWidth";
-import TextSection from "@/components/sections/TextSection";
-import H4 from "@/components/typography/H4";
+import Intro from "../../../components/sections/Intro";
+import CTASection from "../../../components/sections/CTASection";
+import TeaserMobilitySolutions from "../../../components/sections/TeaserMobilitySolutions";
+import ContentWidth from "../../../components/layouts/ContentWidth";
+import Text from "../../../components/typography/Text";
+import H1 from "../../../components/typography/H1";
+import H2 from "../../../components/typography/H2";
+import TeaserDownload from "../../../components/sections/TeaserDownload";
+import ButtonPrimary from "../../../components/elements/ButtonPrimary";
+import ProductCarousel from "../../../components/sections/ProductCarousel";
+import ImageFullWidth from "../../../components/sections/ImageFullWidth";
+import TextSection from "../../../components/sections/TextSection";
+import H4 from "../../../components/typography/H4";
 
 
 

@@ -1,7 +1,7 @@
 "use client";
 
-import SmallWidth from "@/components/layouts/SmallWidth";
-import HeroText from "@/components/sections/HeroText";
+import SmallWidth from "../../../components/layouts/SmallWidth";
+import HeroText from "../../../components/sections/HeroText";
 
 export default function Leitungsteam() {
   const team = [

@@ -1,5 +1,5 @@
-import H1 from "@/components/typography/H1";
-import SmallWidth from "@/components/layouts/SmallWidth";
+import H1 from "../../components/typography/H1";
+import SmallWidth from "../../components/layouts/SmallWidth";
 
 export default function Hero() {
   return (

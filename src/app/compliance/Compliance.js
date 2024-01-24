@@ -1,6 +1,6 @@
-import H1 from "@/components/typography/H1";
-import Text from "@/components/typography/Text";
-import ContentWidth from "@/components/layouts/ContentWidth";
+import H1 from "../../components/typography/H1";
+import Text from "../../components/typography/Text";
+import ContentWidth from "../../components/layouts/ContentWidth";
 
 export default function Compliance() {
   return (

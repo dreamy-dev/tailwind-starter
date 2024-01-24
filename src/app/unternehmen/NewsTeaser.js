@@ -1,5 +1,5 @@
-import ButtonPrimary from "@/components/elements/ButtonPrimary";
-import H2 from "@/components/typography/H2";
+import ButtonPrimary from "../../components/elements/ButtonPrimary";
+import H2 from "../../components/typography/H2";
 
 export default function NewsTeaser() {
   return (

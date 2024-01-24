@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import SmallWidth from "@/components/layouts/SmallWidth";
-import H2 from "@/components/typography/H2";
+import SmallWidth from "../../components/layouts/SmallWidth";
+import H2 from "../../components/typography/H2";
 
 
 
