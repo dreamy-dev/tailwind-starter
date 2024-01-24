@@ -7,7 +7,7 @@ import ButtonPrimary from "../elements/ButtonPrimary";
 
 export default function ContactForm(props?: any) {
   return (
-    <section className="pb-24 bg-white">
+    <section className="pb-5 lg:pb-24 bg-white">
       <SmallWidth>
         <div className="col-span-12">
           <form className="max-w-lg">

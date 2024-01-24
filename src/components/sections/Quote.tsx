@@ -4,7 +4,7 @@ import SmallWidth from "../layouts/SmallWidth";
 
 export default function Quote() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-5 lg:py-24">
       <SmallWidth>
         <figure className="max-w-screen-lg mx-auto">
           <svg

@@ -3,7 +3,7 @@ import H2 from "../typography/H2";
 
 export default function Subscribe() {
   return (
-    <section className="bg-white my-20 ">
+    <section className="bg-white py-5 lg:py-24 ">
       <div className="px-4 mx-auto max-w-screen-xl lg:px-6">
         <div className="gap-16 justify-between items-center p-6 text-white bg-primary lg:flex lg:gap-24 md:p-12">
           <div className="w-full">

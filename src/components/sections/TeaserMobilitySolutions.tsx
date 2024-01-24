@@ -5,7 +5,7 @@ import Button from "../elements/ButtonSecondary";
 
 export default function TeaserMobilitySolutions(props?: any) {
   return (
-    <section className="pt-24 pb-12 dark:bg-gray-900 ">
+    <section className="pb-5 pt-5 lg:pt-24 lg:pb-12 dark:bg-gray-900 ">
       <ContentWidth>
         <div className="col-span-12 max-w-4xl lg:mx-auto">
           <H2 styles="text-center leading-tight text-white break-words">

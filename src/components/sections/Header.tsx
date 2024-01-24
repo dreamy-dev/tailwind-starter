@@ -133,32 +133,38 @@ const Header = () => {
         isMobileNavOpen && isNarrowScreen ? "fixed w-full h-full" : ""
       }`}
     >
-      <ContentWidth>
-        <div className="flex justify-between items-center col-span-12 w-full pt-5 pb-5">
-          <div className="lg:hidden">
-            <Link href="/">
-              <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
-            </Link>
+      <div className="lg:hidden">
+        <ContentWidth>
+          <div className="flex justify-between items-center col-span-12 w-full py-5">
+         
+              <Link href="/">
+                <img
+                  src="/logo.svg"
+                  className="h-4 sm:h-6"
+                  alt="Stadler Logo"
+                />
+              </Link>
+            </div>
+            <div className="lg:hidden">
+              {isMobileNavOpen ? (
+                <img
+                  src="/icons/times.svg"
+                  alt="close icon"
+                  onClick={toggleMobileNav}
+                  className="cursor-pointer"
+                />
+              ) : (
+                <img
+                  src="/icons/equal.svg"
+                  alt="burger menu icon"
+                  onClick={toggleMobileNav}
+                  className="cursor-pointer"
+                />
+              )}
+        
           </div>
-          <div className="lg:hidden">
-            {isMobileNavOpen ? (
-              <img
-                src="/icons/times.svg"
-                alt="close icon"
-                onClick={toggleMobileNav}
-                className="cursor-pointer"
-              />
-            ) : (
-              <img
-                src="/icons/equal.svg"
-                alt="burger menu icon"
-                onClick={toggleMobileNav}
-                className="cursor-pointer"
-              />
-            )}
-          </div>
-        </div>
-      </ContentWidth>
+        </ContentWidth>
+      </div>
       <div
         className={`${
           isMobileNavOpen && isNarrowScreen ? "visible" : "hidden"
@@ -168,7 +174,7 @@ const Header = () => {
           <section className="bg-white">
             <ContentWidth>
               <div className="col-span-12 ">
-                <div className="py-2 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center  gap-8 lg:gap-4">
+                <div className="pt-5 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center  gap-8 lg:gap-4">
                   <ul
                     role="list"
                     className=" flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-8 lg:gap-4"
@@ -216,7 +222,7 @@ const Header = () => {
           </section>
           <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
             <ContentWidth>
-              <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row pt-5 pb-6 lg:pb-12 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
+              <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5  lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                 <div className="hidden lg:block">
                   <Link
                     href="/"

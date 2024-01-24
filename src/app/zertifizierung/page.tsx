@@ -4,6 +4,7 @@ import H2 from "@/components/typography/H2";
 import H3 from "@/components/typography/H3";
 import List from "../../components/sections/List";
 import ContentWidth from "@/components/layouts/ContentWidth";
+
 const schweizItems = [
   {
     text: "Stadler Rail AG, Stadler Bussnang AG, Stadler Rheintal AG, Stadler Winterthur AG, Stadler Signalling AG",
@@ -52,7 +53,7 @@ export default function Zertifizierung() {
 
         const [sectionsState, setSectionsState] =
           useState(initialSectionsState);
-console.log(sectionsState);
+
         const toggleVisibility = (section: Section) => {
           setSectionsState((prevState: Record<Section, boolean>) => ({
             ...prevState,

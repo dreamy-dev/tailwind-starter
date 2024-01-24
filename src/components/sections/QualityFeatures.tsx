@@ -20,7 +20,7 @@ interface QualityFeaturesProps {
 const QualityFeatures: React.FC<QualityFeaturesProps> = ({ features, mainTitle, isVisible }) => {
  return (
    <>
-     <section className="py-24 bg-stadlergradient">
+     <section className="py-5 lg:py-24 bg-stadlergradient">
        <ContentWidth>
          <div className="col-span-12 max-w-full mx-auto">
            <H2 styles="text-white">{mainTitle}</H2>
