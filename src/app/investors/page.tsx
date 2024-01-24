@@ -12,6 +12,8 @@ import SubHero from "@/components/sections/SubHero";
 import Text from "@/components/typography/Text";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import EventCalendar from "@/components/sections/EventCalendar";
+import NewsTeaser from "../unternehmen/NewsTeaser";
+import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 
 const publications = [
   {
@@ -34,6 +36,24 @@ const publications = [
     text: "Unser Erfolgsmodell FLIRT bewegt täglich.",
     href:
       "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
+  },
+  {
+    img: "/presentation.png",
+    title: "Präsentation Halbjahresergebnisse 2023",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+  },
+  {
+    img: "/presentation.png",
+    title: "Presentation Full Year Results 2022",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+  },
+  {
+    img: "/presentation.png",
+    title: "Präsentation Capital Markets Day 2022",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
 ];
 
@@ -171,15 +191,66 @@ const customEventData = [
     link: "#",
   },
 ];
+
+const newsCards = [
+  {
+    title: "Stadler bleibt Premium Partner der Eisbären",
+    date: "28.11.2023",
+    text:
+      "Die Eisbären Berlin freuen sich, den Schienenfahrzeughersteller Stadler weiterhin zu ihren Premium Partnern zu zählen. Stadler ...",
+    img:
+      "https://www.stadlerrail.com/media/img/800x/gruppenfoto%202%20nah-sh-optimiert.jpg",
+  },
+  {
+    title:
+      "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow",
+    date: "07.11.2023",
+    text:
+      "Gemeinsam mit Berlins Regierendem Bürgermeister, Kai Wegner, sowie der Senatorin für Wirtschaft, Energie und Betriebe, Franzisk...",
+    img: "/pressefoto-einweihung.jpg",
+  },
+  {
+    title:
+      "Neue Akkuzüge sind jetzt auch zwischen Kiel, Lübeck und Lüneburg unterwegs",
+    date: "23.10.2023",
+    text:
+      "In Schleswig-Holstein ist die weltweit erste batterieelektrische Zugflotte im regelmäßigen Linienbetrieb unterwegs. Damit ha...",
+    img:
+      "https://www.stadlerrail.com/media/img/800x/mwe_0920%20-%20cropped.jpg",
+  },
+  {
+    title: "Weitere neue Wasserstoffzüge für Kalifornien",
+    date: "16.10.2023",
+    text:
+      "Der Bundesstaat Kalifornien und Stadler haben am 12. Oktober 2023 eine wegweisende Vereinbarung unterzeichnet, die einen bedeutenden Schr...",
+    img:
+      "https://www.stadlerrail.com/media/img/800x/caltrans-coastline-16-9.jpg",
+  },
+  {
+    title:
+      "Erste TINA-Strassenbahnen starten in den Probebetrieb mit Fahrgästen",
+    date: "16.10.2023",
+    text:
+      "Die neuen Strassenbahnen der Baureihe TINA öffnen ihre Türen: Seit dem 9. Oktober 2023&nbsp;können Fahrgäste im Rahme...",
+    img: "https://www.stadlerrail.com/media/img/800x/tina_darmstadt.jpg",
+  },
+];
+
 export default function Investors() {
   return (
     <section>
       <InvestorHero />
-      {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
-      <ContentWidth>
+      <HomePageCaroucel
+        items={newsCards}
+        carouselTitle="News"
+        showDate={true}
+        showButton={true}
+        h2Styles="flex justify-left items-left"
+      ></HomePageCaroucel>
+      {/* <ContentWidth>
         <div className="col-span-12 flex flex-col mb-20"></div>
-      </ContentWidth>
+      </ContentWidth> */}
       <EventCalendar
         mainTitle="Events"
         eventsData={customEventData}
@@ -190,12 +261,12 @@ export default function Investors() {
         publications={publications}
         title="Publikationen"
       ></Publikationen>
-      <Publikationen
+      {/* <Publikationen
         tableData={tableData}
         publications={presentations}
         title="Präsentationen"
         showTable={true}
-      ></Publikationen>
+      ></Publikationen> */}
       <ContentWidth>
         <div className="col-span-12 flex flex-col">
           <Text>
