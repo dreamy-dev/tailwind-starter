@@ -19,7 +19,6 @@ interface ListProps {
 const List: React.FC<ListProps> = ({ items, onItemClick, listTitle }) => {
     return (
       <div>
-        <ContentWidth>
           <div className="max-w-full col-span-12">
             <div className=" border-b-2 border-primary">
               <H4 styles="mb-6">{listTitle}</H4>
@@ -63,7 +62,6 @@ const List: React.FC<ListProps> = ({ items, onItemClick, listTitle }) => {
               ))}
             </ul>
           </div>
-        </ContentWidth>
       </div>
     );
 };

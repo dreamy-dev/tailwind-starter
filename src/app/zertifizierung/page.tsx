@@ -4,6 +4,9 @@ import H2 from "@/components/typography/H2";
 import H3 from "@/components/typography/H3";
 import List from "../../components/sections/List";
 import ContentWidth from "@/components/layouts/ContentWidth";
+import H1 from "@/components/typography/H1";
+import HeroText from "@/components/sections/HeroText";
+import SmallWidth from "@/components/layouts/SmallWidth";
 const schweizItems = [
   {
     text: "Stadler Rail AG, Stadler Bussnang AG, Stadler Rheintal AG, Stadler Winterthur AG, Stadler Signalling AG",
@@ -40,6 +43,7 @@ const spanienItems = [
     href: "/downloadcenter",
   },
 ];
+
 export default function Zertifizierung() {
 
     type Section = "rollingStock" | "signalling" | "service";
@@ -49,10 +53,8 @@ export default function Zertifizierung() {
       signalling: false,
       service: false,
     };
-
         const [sectionsState, setSectionsState] =
           useState(initialSectionsState);
-console.log(sectionsState);
         const toggleVisibility = (section: Section) => {
           setSectionsState((prevState: Record<Section, boolean>) => ({
             ...prevState,
@@ -61,9 +63,9 @@ console.log(sectionsState);
         };
   return (
     <>
-      <ContentWidth>
+    <HeroText title="Zertifizierungen" />
+      <SmallWidth>
         <div className="col-span-12 max-w-full z-50">
-          <H2>Zertifizierung</H2>
           <div>
             <H3
               styles="flex items-center gap-2 cursor-pointer"
@@ -101,8 +103,8 @@ console.log(sectionsState);
             {sectionsState.rollingStock && (
               <>
                 <List items={schweizItems} listTitle="Schweiz" />
-                <List items={deutschlandItems} listTitle="DeutschlandItems" />
-                <List items={spanienItems} listTitle="SpanienItems" />
+                <List items={deutschlandItems} listTitle="Deutschland" />
+                <List items={spanienItems} listTitle="Spanien" />
               </>
             )}
           </div>
@@ -183,7 +185,7 @@ console.log(sectionsState);
             )}
           </div>
         </div>
-      </ContentWidth>
+      </SmallWidth>
     </>
   );
 }
