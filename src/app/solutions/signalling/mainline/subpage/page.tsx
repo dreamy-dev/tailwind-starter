@@ -5,6 +5,7 @@ import Text from "@/components/typography/Text";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import Contact from "@/components/sections/Contact";
 import Advantages from "@/components/sections/Advantages";
+import TextSection from "@/components/sections/TextSection";
 
 const advantageItems = [
   {
@@ -68,24 +69,20 @@ export default function SubPage() {
       <HeroText
         breadcrumbs={[
           { text: "Lösungen", link: "/solutions" },
-          { text: "Signalling", link: "/solutions/signalling" },
-          { text: "Mainline", link: "/solutions/signalling/mainline" }
+          { text: "Signalling", link: "/solutions/signalling" }
         ]}
         title="Zugbeeinflussungssystem ETCS"
         leadText="Die steigenden Anforderungen im Zugverkehr zwingen die Betreiber sich auf spezifische strategische Ziele zu konzentrieren: Erhöhung der Reisegeschwindigkeit, Interoperabilität, Weiterverwendung der bestehenden Infrastruktur und Kosteneffizienz unter Beibehaltung des bestehenden Sicherheitsniveaus."
       />
 
       <ImageFullWidth imgSrc="/ETCS-pano.jpg" />
+      <section className="bg-white dark:bg-gray-900 py-24">
       <SmallWidth>
-        <div className="col-span-12 flex flex-col pb-24">
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Text>
-        </div>
+        <Text>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </Text>
       </SmallWidth>
+      </section>
       <Advantages items={advantageItems}></Advantages>
       <Contact></Contact>
     </>

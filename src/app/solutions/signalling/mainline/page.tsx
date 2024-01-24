@@ -254,6 +254,10 @@ export default function Mainline() {
           <H2>Relevante Lösungen</H2>
         </div>
       </SmallWidth>
+      {/* <QualityFeatures
+        features={features}
+        mainTitle="Die Vorteile auf einen Blick"
+      /> */}
       {/* <TeaserImageLeft imageSrc="/news-1.jpg">
         <div>
           <H2 styles="text-black">Zugbeeinflussung</H2>
@@ -301,7 +305,7 @@ export default function Mainline() {
         </ButtonPrimary>
       </TeaserImageLeft> */}
       <ServiceTeasers
-        // mainTitle="Relevante Lösungen"
+         mainTitle="Relevante Lösungen"
         services={teaserData}
         imageStyles="w-full "
       ></ServiceTeasers>
