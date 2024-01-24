@@ -7,6 +7,8 @@ import Page from "../components/sections/Page";
 import Footer from "./sections/Footer";
 import HeroText from "./sections/HeroText";
 import FactsAndFigures from "./sections/FactsAndFigures";
+import Video from "./sections/Video";
+import HomePageHero from "./sections/HomePageHero";
 
 
 
@@ -19,6 +21,8 @@ storyblokInit({
     footer: Footer,
     "hero-subpage": HeroText,
     "facts-figures": FactsAndFigures,
+    "video-teaser": Video,
+    "hero-home": HomePageHero,
   },
 });
 

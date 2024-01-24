@@ -1,11 +1,12 @@
 "use client";
+import { storyblokEditable } from "@storyblok/react/rsc";
 import H1 from "../typography/H1";
 import Text from "../typography/Text";
 import { motion } from "framer-motion";
 
-export default function HomePageHero() {
+export default function HomePageHero({blok}) {
   return (
-    <div className="mx-auto w-full bg-white pb-16">
+    <div {...storyblokEditable(blok)} className="mx-auto w-full bg-white pb-16">
       <div className="w-full max-h-[1150px] overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
         <motion.div
           initial={{ x: -1000, opacity: 0 }}
@@ -22,11 +23,11 @@ export default function HomePageHero() {
             transition={{ duration: 0.5, delay: 1.5 }}
             className="z-1 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-40 h-4/5 top-4 md:w-3/5 md:top-8  md:left-0 transform -translate-y-1/2 translate-x-1/2 w-3/6 max-w-[300px] md:max-w-[330px]"
           >
-            <H1 styles="lg:mt-0 text-3xl md:text-7xl lg:text-7xl">
-              Driven to lead
+            <H1 styles="lg:mt-0 text-3xl md:text-7xl lg:text-7xl text-black">
+             {blok.title}
             </H1>
-            <Text styles="text-md lg:text-3xl md:mt-4 xl:mt-4">
-              Alles für die besten Schienenfahrzeuge der Welt.
+            <Text styles="text-md lg:text-3xl md:mt-4 xl:mt-4 text-black">
+             {blok.lead}
             </Text>
           </motion.div>
         </motion.div>
@@ -36,7 +37,7 @@ export default function HomePageHero() {
           transition={{ duration: 1 }}
           className="w-full bg-center bg-cover bg-no-repeat"
         >
-          <img src="/hero-home-big-min.jpg" className="w-full" alt="" />
+          <img src={blok.image.filename} className="w-full" alt="" />
         </motion.div>
       </div>
     </div>
