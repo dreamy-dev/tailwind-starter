@@ -8,12 +8,12 @@ export default function DoubleCard() {
       <ContentWidth>
         <div className="col-span-12 max-w-full mx-auto">
           <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
-          <ul className="grid grid-cols-1 lg:grid-cols-2 sm:gap-12 md:gap-20 lg:gap-y-40">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 md:gap-20 lg:gap-y-40">
             <li>
               <img
                 src="/teaser_signalling-2.jpg"
                 alt="Image"
-                className="max-w-[90%] max-h-[400px]"
+                className="max-w-full lg:max-w-[90%] max-h-[400px]"
               />
               <div className="pr-0">
                 <a
@@ -53,7 +53,7 @@ export default function DoubleCard() {
               <img
                 src="/teaser_service.jpeg"
                 alt="Image"
-                className="max-w-[90%] max-h-[400px]"
+                className="max-w-full lg:max-w-[90%] max-h-[400px]"
               />
               <div className="pr-0">
                 <a

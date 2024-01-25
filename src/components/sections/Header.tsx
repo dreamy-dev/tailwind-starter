@@ -133,18 +133,13 @@ const Header = () => {
         isMobileNavOpen && isNarrowScreen ? "fixed w-full h-full" : ""
       }`}
     >
-      <div className="lg:hidden">
-        <ContentWidth>
+      <ContentWidth>
+        <div className="lg:hidden col-span-12">
           <div className="flex justify-between items-center col-span-12 w-full py-5">
-         
-              <Link href="/">
-                <img
-                  src="/logo.svg"
-                  className="h-4 sm:h-6"
-                  alt="Stadler Logo"
-                />
-              </Link>
-            </div>
+            <Link href="/">
+              <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
+            </Link>
+
             <div className="lg:hidden">
               {isMobileNavOpen ? (
                 <img
@@ -161,10 +156,11 @@ const Header = () => {
                   className="cursor-pointer"
                 />
               )}
-        
+            </div>
           </div>
-        </ContentWidth>
-      </div>
+        </div>
+      </ContentWidth>
+
       <div
         className={`${
           isMobileNavOpen && isNarrowScreen ? "visible" : "hidden"
