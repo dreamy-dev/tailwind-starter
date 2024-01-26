@@ -1,5 +1,5 @@
 "use client"
-
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import H3 from "../typography/H3";
 import Link from "next/link";
 import Text from "../typography/Text";
@@ -20,6 +20,7 @@ const HomePageCaroucel = ({
   carouselTitle,
   h2Styles,
   showButton = true,
+  blok
 }) => {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -59,7 +60,10 @@ const HomePageCaroucel = ({
   };
 
   return (
-    <section className=" py-24 bg-white overflow-hidden">
+    <section
+      {...storyblokEditable(blok)}
+      className=" py-24 bg-white overflow-hidden"
+    >
       <ContentWidth>
         <div className="col-span-12">
           <div className="relative">
@@ -93,8 +97,9 @@ const HomePageCaroucel = ({
                       key={idx}
                       className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                       animate={{
-                        translateX: `calc(-${current * 100}% - ${current *
-                          2}rem)`,
+                        translateX: `calc(-${current * 100}% - ${
+                          current * 2
+                        }rem)`,
 
                         opacity:
                           idx === current || idx === current + 1 ? 1 : 0.3,

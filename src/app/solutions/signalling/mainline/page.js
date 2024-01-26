@@ -248,56 +248,7 @@ export default function Mainline() {
       />
       <ImageFullWidth imgSrc="/hero-mainline.jpg" />
       <TextSection></TextSection>
-      {/* <QualityFeatures
-        features={features}
-        mainTitle="Die Vorteile auf einen Blick"
-      /> */}
-      {/* <TeaserImageLeft imageSrc="/news-1.jpg">
-        <div>
-          <H2 styles="text-black">Zugbeeinflussung</H2>
-          <Text styles="mt-4 text-xl font-normal text-black">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor
-          </Text>
-        </div>
-        <ButtonPrimary
-          position="left"
-          href="/solutions/signalling/mainline/subpage"
-        >
-          Mehr dazu
-        </ButtonPrimary>
-      </TeaserImageLeft>
-      <TeaserImageLeft imageSrc="/news-1.jpg">
-        {" "}
-        <div>
-          <H2 styles="text-black">Stellwerke</H2>
-          <Text styles="mt-4 text-xl font-normal text-black">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor
-          </Text>
-        </div>
-        <ButtonPrimary
-          position="left"
-          href="/solutions/signalling/mainline/subpage"
-        >
-          Mehr dazu
-        </ButtonPrimary>
-      </TeaserImageLeft>
-      <TeaserImageLeft imageSrc="/news-1.jpg">
-        <div>
-          <H2 styles="text-black">Gleisfreimeldung</H2>
-          <Text styles="mt-4 text-xl font-normal text-black">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor
-          </Text>
-        </div>
-        <ButtonPrimary
-          position="left"
-          href="/solutions/signalling/mainline/subpage"
-        >
-          Mehr dazu
-        </ButtonPrimary>
-      </TeaserImageLeft> */}
+  
       <ServiceTeasers
          mainTitle="Relevante Lösungen"
         services={teaserData}

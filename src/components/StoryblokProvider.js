@@ -9,8 +9,9 @@ import HeroText from "./sections/HeroText";
 import FactsAndFigures from "./sections/FactsAndFigures";
 import Video from "./sections/Video";
 import HomePageHero from "./sections/HomePageHero";
-
-
+  import TeaserImageLeft from "./sections/TeaserImageLeft";
+import TeaserImageRight from "./sections/TeaserImageright";
+ //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 /** 3. Initialize it as usual */
 storyblokInit({
@@ -23,6 +24,9 @@ storyblokInit({
     "facts-figures": FactsAndFigures,
     "video-teaser": Video,
     "hero-home": HomePageHero,
+    "teaser-image-left": TeaserImageLeft,
+    "teaser-image-right": TeaserImageRight,
+    //"success-stories": HomePageCaroucel,
   },
 });
 

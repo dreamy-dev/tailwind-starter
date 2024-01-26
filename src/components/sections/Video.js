@@ -18,7 +18,7 @@ export default function Video({blok}) {
               controls={false}
               autoPlay={true}
               muted={true}
-              src={"/videos/Movie-Stadler-Kurz-People-Focus-no-frame-1080.mp4"}
+              src={blok.video.filename}
               loop={true}
             />
           </div>

@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
         <body className={fontFamily.className}>
           <Header />
           <main>{children}</main>
+          <Footer/>
         </body>
       </html>
     </StoryblokProvider>
