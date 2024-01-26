@@ -70,11 +70,11 @@ export default function Footer() {
   return (
     <footer className="bg-blueDark mt-auto" aria-labelledby="footer-heading">
       <ContentWidth>
-        <div className="col-span-12 py-5 lg:py-10 mx-auto w-full">
-          <div className="pt-8 lg:flex lg:items-center lg:justify-between">
-            <img className="h-7" src="/Logo-white.svg" alt="Company name" />
+        <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
+          <div className="lg:flex lg:items-center lg:justify-between">
+            <img className="h-6" src="/Logo-white.svg" alt="Company name" />
             <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
-              <div className=" mb-6 mt-12 lg:mt-6 lg:mr-14 ">
+              <div className=" mb-6 mt-12 lg:mt-0 lg:mb-0 lg:mr-14 ">
                 <Button
                   backgroundColorClass="bg-transparent"
                   textColorClass="text-white"
