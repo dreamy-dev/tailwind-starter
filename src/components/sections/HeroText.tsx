@@ -7,7 +7,6 @@ import { ReactNode } from "react";
 type Breadcrumb = {
   text: string;
   link?: string;
-
 };
 
 type HeroTextProps = {
@@ -26,9 +25,9 @@ export default function HeroText({
   buttonText,
 }: HeroTextProps) {
   return (
-    <section className="bg-white dark:bg-gray-900 py-24">
+    <section className="bg-white dark:bg-gray-900 py-5 lg:py-24">
       <SmallWidth>
-        <div className="mt-4 flex font-normal text-gray-600">
+        <div className="flex font-normal text-gray-600 pb-3">
           {breadcrumbs.map((breadcrumb, index) => (
             <div key={index}>
               {index !== breadcrumbs.length - 1 ? (
@@ -37,7 +36,7 @@ export default function HeroText({
                   <span className="px-3">|</span>
                 </>
               ) : (
-                <>{breadcrumb.text}</>
+                <a href={breadcrumb.link}>{breadcrumb.text}</a>
               )}
             </div>
           ))}

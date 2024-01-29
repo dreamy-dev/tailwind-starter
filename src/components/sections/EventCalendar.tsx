@@ -1,5 +1,17 @@
 import ContentWidth from "../layouts/ContentWidth";
 import H2 from "../typography/H2";
+type EventData = {
+  event: string;
+  date: string;
+  link?: string;
+};
+
+type EventCalendarProps = {
+  mainTitle?: string;
+  eventsData: EventData[];
+  withoutEventLink?: Boolean;
+};
+
 const eventData = [
   {
     event: "Event",
@@ -27,14 +39,18 @@ const eventData = [
     link: "#",
   },
 ];
-export default function EventCalendar() {
+const EventCalendar: React.FC<EventCalendarProps> = ({
+  mainTitle,
+  eventsData,
+  withoutEventLink,
+}) => {
   return (
     <>
-      <section className="bg-white py-20">
+      <section className="bg-white pb-5 lg:pb-24">
         <ContentWidth>
           <div className="max-w-full col-span-12">
             <div className="text-start">
-              <H2>Events</H2>
+              <H2>{mainTitle}</H2>
             </div>
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
@@ -45,13 +61,15 @@ export default function EventCalendar() {
                   <th scope="col" className="px-6 py-3 w-1/3">
                     Date
                   </th>
-                  <th scope="col" className="px-6 py-3 w-1/3">
-                    Event ansehen
-                  </th>
+                  {!withoutEventLink && (
+                    <th scope="col" className="px-6 py-3 w-1/3">
+                      Event ansehen
+                    </th>
+                  )}
                 </tr>
               </thead>
               <tbody>
-                {eventData.map((item, index) => (
+                {eventsData.map((item, index) => (
                   <tr
                     key={index}
                     className="bg-white border-b dark:bg-black dark:border-gray-700"
@@ -63,11 +81,13 @@ export default function EventCalendar() {
                       {item.event}
                     </th>
                     <td className="px-6 py-4">{item.date}</td>
-                    <td className="px-6 py-4 text-primary">
-                      <a href={item.link} target="_blank">
-                        Event ansehen
-                      </a>
-                    </td>
+                    {!withoutEventLink && (
+                      <td className="px-6 py-4 text-primary">
+                        <a href={item.link} target="_blank">
+                          Event ansehen
+                        </a>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
@@ -77,4 +97,5 @@ export default function EventCalendar() {
       </section>
     </>
   );
-}
+};
+export default EventCalendar;

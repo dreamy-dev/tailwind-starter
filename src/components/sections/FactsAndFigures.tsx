@@ -2,6 +2,7 @@ import H2 from "../typography/H2";
 
 import CountUp from "react-countup";
 import ContentWidth from "../layouts/ContentWidth";
+import Text from "../typography/Text";
 
 interface StatsProps {
   data1: {
@@ -29,15 +30,16 @@ interface StatsProps {
   backgroundColor?: string;
   title?: string;
   showTwoRows?: boolean;
+  textBottom?: string;
 }
 
 
-const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRows = true, backgroundColor }) => {
+const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRows = true, backgroundColor, textBottom  = "Stand: HY 2023" }) => {
   const renderData = showTwoRows ? [...data1, ...data2] : data1;
   return (
-    <section className="bg-primarySolid-50 dark:bg-gray-900 antialiased">
+    <section className="bg-primarySolid-50 dark:bg-gray-900 py-5 lg:py-24">
       <ContentWidth>
-        <div className="col-span-12 px-4 py-8 mx-auto lg:px-20 sm:py-16 lg:py-20">
+        <div className="col-span-12 my-auto  ">
           <div className="text-center mb-4">
             <H2>{title}</H2>
           </div>
@@ -50,22 +52,22 @@ const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRow
                 <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                   {renderData.map((stat, index) => (
                     <div
-                      className="mx-auto flex max-w-[400]  flex-col gap-y-2"
+                      className="flex flex-col gap-y-2 col-span-1 max-w-[400px]"
                       key={index}
                     >
                       <dt className="text-xl leading-7 text-black">
-                        {stat.text}
+                        {stat.text ?? "Lorem ipsum"}
                       </dt>
                       <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                         <CountUp
-                          start={stat.start}
-                          end={stat.end}
-                          suffix={stat.suffix}
-                          prefix={stat.prefix}
-                          duration={stat.duration}
-                          separator={stat.separator}
-                          decimals={stat.decimals}
-                          decimal={stat.decimal}
+                          start={stat.start ?? 0}
+                          end={stat.end ?? ""}
+                          suffix={stat.suffix ?? " "}
+                          prefix={stat.prefix ?? " "}
+                          duration={stat.duration ?? 2}
+                          separator={stat.separator ?? " "}
+                          decimals={stat.decimals ?? 0}
+                          decimal={stat.decimal ?? "'"}
                           enableScrollSpy
                         ></CountUp>
                       </dd>
@@ -75,7 +77,7 @@ const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRow
               </div>
             </div>
           </div>
-         
+          <Text styles="text-black text-xl text-right">{textBottom}</Text>
         </div>
       </ContentWidth>
     </section>

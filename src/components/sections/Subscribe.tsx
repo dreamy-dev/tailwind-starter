@@ -1,14 +1,15 @@
 import Button from "../elements/ButtonSecondary";
+import H2 from "../typography/H2";
 
 export default function Subscribe() {
   return (
-    <section className="bg-white mb-20">
+    <section className="bg-white py-5 lg:py-24 ">
       <div className="px-4 mx-auto max-w-screen-xl lg:px-6">
-        <div className="gap-16 justify-between items-center p-6 text-white bg-primary rounded-lg lg:flex lg:gap-24 md:p-12">
+        <div className="gap-16 justify-between items-center p-6 text-white bg-primary lg:flex lg:gap-24 md:p-12">
           <div className="w-full">
-            <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl">
+            <H2 styles="mb-4">
               Sign up for our newsletter
-            </h2>
+            </H2>
             <p className="font-light text-white sm:text-xl">
               Stay up to date with the roadmap progress, announcements and
               exclusive discounts feel free to sign up with your email.

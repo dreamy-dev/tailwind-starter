@@ -33,39 +33,49 @@ const TeaserDownload: React.FC<TeaserDownloadProps> = ({
   showButton = true,
 }) => {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-5 lg:py-12">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>{title}</H2>
           <Lead>{leadText}</Lead>
           {showList && (
-            <ul className="mb-8">
+            <ul className="mb-8" key={leadText}>
               {listData.map((item, index) => (
                 <>
                   <li
-                    className="mb-6 text-xl flex justify-between items-center"
+                    className="mb-6 text-xl flex-col md:flex-row flex justify-start md:justify-between items-center"
                     key={index}
                   >
-                    <p className="mr-10">{item.text}</p>
-                    <Button
-                      textColorClass="text-primary"
-                      borderColorClass="border-primary"
-                      styles="flex gap-2"
-                    >
-                      Zu Downloadcenter
-                      <svg
-                        width="10"
-                        height="10"
-                        viewBox="0 0 20 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <p className="w-full md:w-auto mr-0 md:mr-10">
+                      {item.text}
+                    </p>
+                    <div className="w-full md:w-auto min-w-[14rem]">
+                      <Button
+                        textColorClass="text-primary"
+                        borderColorClass="border-primary"
+                        styles="flex gap-2"
+                        iconAfter={
+                          <svg
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.2257 12.6027V14.8206H1.77433V12.6027H0V16.5949H16V12.6027H14.2257Z"
+                              fill="#005893"
+                            />
+                            <path
+                              d="M14.2878 7.54142L13.2099 6.13083L8.87164 9.44882V0.625977H7.09731V9.44882L2.75465 6.13083L1.67675 7.54142L7.98447 12.3632L14.2878 7.54142Z"
+                              fill="#005893"
+                            />
+                          </svg>
+                        }
                       >
-                        <path
-                          d="M7.72573e-07 11.6804L16.338 11.6804L10.9296 19.1222L12.7324 20.5176L20 10.5176L12.7324 0.517577L10.9296 1.91293L16.338 9.35479L9.75882e-07 9.35479L7.72573e-07 11.6804Z"
-                          fill="#005893"
-                        />
-                      </svg>
-                    </Button>
+                        Download
+                      </Button>
+                    </div>
                   </li>
                   <div className="border-b mb-6"></div>
                 </>

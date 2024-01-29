@@ -4,7 +4,7 @@ import ContentWidth from "../layouts/ContentWidth";
 
 export default function Career() {
   return (
-    <section className="bg-white mt-16 mb-16">
+    <section className="bg-white py-5 lg:py-16">
       <ContentWidth>
         <div className="col-span-12 w-full  py-20 bg-primarySolid-50">
           <div className="mb-4 text-center tracking-tight dark:text-white ">
