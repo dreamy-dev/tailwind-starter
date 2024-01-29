@@ -15,6 +15,7 @@ import EventCalendar from "@/components/sections/EventCalendar";
 import NewsTeaser from "../unternehmen/NewsTeaser";
 import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TabsPublikationen from "./TabSection";
+import Features from "@/components/sections/Features";
 
 const publications = [
   {
@@ -237,6 +238,20 @@ const newsCards = [
   },
 ];
 
+
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: " News",
+    href: "/news",
+  },
+];
+
 export default function Investors() {
   return (
     <section>
@@ -302,6 +317,7 @@ export default function Investors() {
       <ContentWidth>
         <div className="col-span-12 flex flex-col mb-20"></div>
       </ContentWidth>
+      <Features mainTitle="Möchten Sie gerne mehr über uns erfahren?" featuresData={featuresData} />
       {/* <Subscribe /> */}
     </section>
   );
