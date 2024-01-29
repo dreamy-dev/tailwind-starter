@@ -201,14 +201,14 @@ export default function Product() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-      <ImageFullWidth imgSrc="/AdobeStock.jpg" />
+      <ImageFullWidth  />
       <TextSection></TextSection>
       <QualityFeatures features={features} mainTitle="Qualitätsmerkmale" />
       <ProductCards></ProductCards>
       <ProductCarousel />
       <Specification />
       {/* <TestimonialsCarousel></TestimonialsCarousel> */}
-      <Features mainTitle="Für einen effizienten und modernen Bahnbetrieb" featuresData={featuresData} />
+      <Features  />
       <Contact />
       <Career />
     </>

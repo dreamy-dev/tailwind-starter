@@ -1,5 +1,5 @@
 "use client";
-
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import React, { useState, useEffect, useRef } from "react";
 import IconNav from "../elements/IconNav";
 import Link from "next/link";
@@ -51,7 +51,7 @@ const navigationMain = {
   ],
 };
 
-const Header = () => {
+const Header = ({blok}) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -114,6 +114,7 @@ const Header = () => {
 
   return (
     <header
+      {...storyblokEditable(blok)}
       className={`bg-white z-20 ${isMobileNavOpen ? "mobile-nav-open" : ""} ${
         isMobileNavOpen && isNarrowScreen ? "fixed w-full h-full" : ""
       }`}

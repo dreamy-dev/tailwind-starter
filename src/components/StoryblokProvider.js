@@ -11,6 +11,10 @@ import Video from "./sections/Video";
 import HomePageHero from "./sections/HomePageHero";
   import TeaserImageLeft from "./sections/TeaserImageLeft";
 import TeaserImageRight from "./sections/TeaserImageright";
+import Header from "./sections/Header";
+import ImageFullWidth from "./sections/ImageFullWidth";
+import Career from "./sections/Career";
+import Features from "./sections/Features";
  //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 /** 3. Initialize it as usual */
@@ -20,6 +24,10 @@ storyblokInit({
   components: {
     page: Page,
     footer: Footer,
+    header: Header,
+    "double-page-teaser": Features,
+    "simple-page-teaser": Career,
+    "image-full-width": ImageFullWidth,
     "hero-subpage": HeroText,
     "facts-figures": FactsAndFigures,
     "video-teaser": Video,
