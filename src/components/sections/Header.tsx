@@ -285,7 +285,7 @@ const Header = () => {
                               zIndex: "99",
                               width: "100%",
                               left: "0",
-                              top: "80px",
+                              top: "63px",
                               overflow: "hidden",
                             }}
                             className="fixed lg:absolute bg-white h-screen lg:h-auto lg:bg-greySolid-50"
