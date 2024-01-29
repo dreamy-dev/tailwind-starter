@@ -77,7 +77,7 @@ const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRow
               </div>
             </div>
           </div>
-          <Text styles="text-black text-xl text-right">{textBottom}</Text>
+          <Text styles="text-black text-xl text-center">{textBottom}</Text>
         </div>
       </ContentWidth>
     </section>
