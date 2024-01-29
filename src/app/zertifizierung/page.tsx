@@ -2,11 +2,13 @@
 import { useState } from "react";
 import H2 from "@/components/typography/H2";
 import H3 from "@/components/typography/H3";
+import Text from "@/components/typography/Text";
 import List from "../../components/sections/List";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import H1 from "@/components/typography/H1";
 import HeroText from "@/components/sections/HeroText";
 import SmallWidth from "@/components/layouts/SmallWidth";
+import ButtonPrimary from "@/components/elements/ButtonPrimary";
 const schweizItems = [
   {
     text: "Stadler Rail AG, Stadler Bussnang AG, Stadler Rheintal AG, Stadler Winterthur AG, Stadler Signalling AG",
@@ -186,6 +188,12 @@ export default function Zertifizierung() {
             )}
           </div>
         </div>
+        <section>
+        <div className="col-span-12 mb-14 flex justify-between align-baseline">
+          <Text>Im Downloadcenter finden Sie alle Dokumente in allen Sprachen.</Text>
+          <ButtonPrimary buttonText="Zum Downloadcenter" />
+          </div>
+        </section>
       </SmallWidth>
     </>
   );

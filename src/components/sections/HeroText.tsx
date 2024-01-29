@@ -42,7 +42,7 @@ export default function HeroText({
           ))}
         </div>
         <H1>{title}</H1>
-        <Lead>{leadText}</Lead>
+        <Lead>{leadText ?? 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.'}</Lead>
         {withCTA ? (
           <ButtonPrimary position="left" buttonText={buttonText} />
         ) : (
@@ -52,3 +52,4 @@ export default function HeroText({
     </section>
   );
 }
+
