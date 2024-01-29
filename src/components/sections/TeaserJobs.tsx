@@ -25,7 +25,7 @@ export default function Jobs() {
           </div>
 
           <div className="grid w-full grid-cols-1 gap-4 xl:max-w-3xl shrink-0 sm:grid-cols-2 md:grid-cols-3">
-            <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden group">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/anlagenbauer_berufserfahrene.jpg"
@@ -41,7 +41,7 @@ export default function Jobs() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden group">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/schweisser_berufserfahrene.jpg"
@@ -57,7 +57,7 @@ export default function Jobs() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden group">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/bild_075.jpg"
@@ -75,7 +75,7 @@ export default function Jobs() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden group">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/interne_transporte_berufserfahrene.jpg"
@@ -93,7 +93,7 @@ export default function Jobs() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden group">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/elektro_vormontage_berufserfahrene.jpg"
@@ -111,7 +111,7 @@ export default function Jobs() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden group">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg"

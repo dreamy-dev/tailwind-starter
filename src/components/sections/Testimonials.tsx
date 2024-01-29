@@ -44,7 +44,7 @@ export default function Testimonials() {
             onClick={() => setSelectedTab(item)}
             className={`${
               selectedTab.label == item.label ? "bg-gray-100" : " "
-            } rounded-xl p-3 text-center md:p-5 md:text-left`}
+            } p-3 text-center md:p-5 md:text-left`}
             type="button"
             id="tabs-with-card-item-1"
             data-hs-tab="#tabs-with-card-1"

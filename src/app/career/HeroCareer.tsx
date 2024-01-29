@@ -21,7 +21,7 @@ export default function CareerHero() {
         </div>
         <form
           action="#"
-          className="grid gap-y-4 p-4 mt-8 w-full bg-white rounded lg:gap-x-4 lg:grid-cols-6 lg:mt-9 dark:bg-gray-800"
+          className="grid gap-y-4 p-4 mt-8 w-full bg-white lg:gap-x-4 lg:grid-cols-6 lg:mt-9 dark:bg-gray-800"
         >
           <div className="grid grid-cols-1 gap-x-4 lg:col-span-3">
             <div className="relative">
@@ -42,7 +42,7 @@ export default function CareerHero() {
               <input
                 name="end"
                 type="text"
-                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Berufsfeld"
               />
             </div>
@@ -67,7 +67,7 @@ export default function CareerHero() {
               <input
                 type="text"
                 id="location-form"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Land"
               />
             </div>
