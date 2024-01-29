@@ -49,10 +49,10 @@ const FactsAndFigures: React.FC<StatsProps> = ({ data1, data2, title, showTwoRow
           </div> */}
             <div className="bg-secondaryBgcGray py-8 sm:py-10">
               <div className="mx-auto max-w-full">
-                <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center items-center justify-center lg:grid-cols-3">
                   {renderData.map((stat, index) => (
                     <div
-                      className="flex flex-col gap-y-2 col-span-1 max-w-[400px]"
+                      className="flex mx-auto items-center justify-center flex-col gap-y-2 col-span-1 max-w-[400px]"
                       key={index}
                     >
                       <dt className="text-xl leading-7 text-black">
