@@ -36,7 +36,7 @@ export default function HomePageHero() {
           transition={{ duration: 1 }}
           className="w-full  bg-center bg-cover object-center bg-no-repeat"
         >
-          <img src="/hero-home-big-min.jpg" className="lg:h-screen w-full object-center object-cover" alt="" />
+          <img src="/hero-home-big-min.jpg" className="lg:h-[90vh] w-full object-center object-cover" alt="" />
         </motion.div>
       </div>
     </div>
