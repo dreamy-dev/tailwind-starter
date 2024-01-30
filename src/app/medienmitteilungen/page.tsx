@@ -10,22 +10,26 @@ import MedienmitteilungenList from "@/components/sections/MedienmitteilungenList
 const listMedienmitteilungen = [
   {
     link: "/medienmitteilungenSingle",
+    date: "05.12.2023",
     text:
-      "05.12.2023 Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet starkes Wachstum.",
+      "Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet starkes Wachstum.",
   },
   {
     link: "/medienmitteilungenSingle",
+    date: "07.11.2023",
     text:
-      "07.11.2023 Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow.",
+      "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow.",
   },
   {
     link: "/medienmitteilungenSingle",
+    date: "09.11.2023",
     text:
-      "09.11.2023 Stadler macht Lokomotiven für das ETCS fit und ermöglicht damit schnelleren ETCS-Roll-Out in Deutschland.",
+      "Stadler macht Lokomotiven für das ETCS fit und ermöglicht damit schnelleren ETCS-Roll-Out in Deutschland.",
   },
   {
     link: "/medienmitteilungenSingle",
-    text: "31.10.2023 TRAMLINK startet Linienverkehr in Bern.",
+    date: "31.10.2023",
+    text: "TRAMLINK startet Linienverkehr in Bern.",
   },
 ];
 
