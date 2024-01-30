@@ -7,8 +7,6 @@ import Lead from "../../components/typography/Lead";
 
 const HeroText = ({
   breadcrumbs = [],
-  title = blok.title ?? "Lorem Ipsum",
-  leadText,
   withCTA,
   buttonText,
   blok,
@@ -34,7 +32,7 @@ const HeroText = ({
           ))}
         </div>
         <H1>{blok.title ?? "Lorem Ipsum"}</H1>
-        <Lead>{blok.lead}</Lead>
+        <Lead>{blok.lead ?? "Lorem Ipsum"}</Lead>
         {withCTA ? (
           <ButtonPrimary position="left" buttonText={buttonText} />
         ) : (
