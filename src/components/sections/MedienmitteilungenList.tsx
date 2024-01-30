@@ -45,7 +45,7 @@ const MedienmitteilungenList: React.FC<MedienmitteilungenProps> = ({
                     Medienmitteilung
                   </th>
                   <th scope="col" className="px-6 py-3 w-2/12">
-                    Kategory
+                    Kategorie
                   </th>
                   <th scope="col" className="px-6 py-3 w-2/12">
                     <div className="flex justify-end">Dokumente</div>
