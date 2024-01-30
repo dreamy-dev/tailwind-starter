@@ -6,10 +6,10 @@ import HeroText from "../../components/sections/HeroText";
 export default function Contact() {
   return (
     <>
-      <HeroText
+      {/* <HeroText
         title="Weltweit für Sie da"
         leadText="Wir sind gerne für Sie da. Senden Sie uns eine Nachricht."
-      ></HeroText>
+      ></HeroText> */}
       <ContactForm></ContactForm>
     </>
   );

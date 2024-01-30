@@ -69,15 +69,15 @@ const figures = [
   },
 ];
 
-export default function Karriere({blok}) {
+export default function Karriere() {
   return (
     <>
       <CareerHero></CareerHero>
       <Intro title="Unsere Kultur" />
-      <HeroText
-        title={blok.title ?? "Karriere bei Uns"}
+      {/* <HeroText
+        title="Karriere bei Uns"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      />
+      /> */}
       <ContentWidth>
         <div className="mt-20 col-span-12 max-w-full">
           <img
