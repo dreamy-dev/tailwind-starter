@@ -6,6 +6,7 @@ import Lead from "../typography/Lead";
 
 interface ListItem {
   text: string;
+  date: string;
   link: string;
 }
 interface TeaserProps {
@@ -32,11 +33,12 @@ const TeaserMedienmitteilungen: React.FC<TeaserDownloadProps> = ({
             {listData.map((item, index) => (
               <>
                 <li
-                  className="text-xl flex-col md:flex-row flex justify-start md:justify-between items-center"
+                  className="text-xl flex md:flex-row flex justify-start md:justify-between items-center"
                   key={index}
                 >
-                  <a href={item.link} className="mb-6 w-full md:w-auto">
-                    {item.text}
+                  <a href={item.link} className="mb-6 w-full md:w-auto flex">
+                    <div className="min-w-[8rem] w-32"> {item.date}</div>
+                    <div className=""> {item.text}</div>
                   </a>
                 </li>
                 <div className="border-b mb-6"></div>
