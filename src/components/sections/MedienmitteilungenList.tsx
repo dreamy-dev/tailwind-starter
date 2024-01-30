@@ -74,8 +74,9 @@ const MedienmitteilungenList: React.FC<MedienmitteilungenProps> = ({
                       scope="row"
                       className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
                     >
-                      {item.categories.map((category) => (
+                      {item.categories.map((category, index) => (
                         <a
+                          key={index}
                           className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
                           href={category.link}
                         >
@@ -85,8 +86,9 @@ const MedienmitteilungenList: React.FC<MedienmitteilungenProps> = ({
                     </td>
                     <td className="px-6 py-4 text-primary">
                       <div className="flex justify-end">
-                        {item.links.map((itemLink) => (
+                        {item.links.map((itemLink, index) => (
                           <a
+                            key={index}
                             className="ml-3 pt-2 pb-2 inline-flex"
                             href={itemLink.link}
                           >

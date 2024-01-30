@@ -90,13 +90,16 @@ export default function NewsSection() {
         </div> */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {news.map((item, index) => (
-            <article className="max-w-xs">
+            <article className="max-w-xs" key={index}>
               <a href={item.link}>
                 <img src={item.image} className="mb-4" alt="Image 1" />
               </a>
               <div className="mb-3">
                 {item.tags.map((tag, index) => (
-                  <a className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0">
+                  <a
+                    key={index}
+                    className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                  >
                     {tag}
                   </a>
                 ))}
@@ -110,31 +113,6 @@ export default function NewsSection() {
               <Text styles="texl-lg mb-3 text-gray-500 dark:text-gray-400">
                 {item.lead}
               </Text>
-
-              {/* <a
-                href={item.link}
-                className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_4995_6662)">
-                    <path
-                      d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                      fill="#005893"
-                    ></path>
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_4995_6662">
-                      <rect width="20" height="20" fill="white"></rect>
-                    </clipPath>
-                  </defs>
-                </svg>
-              </a> */}
             </article>
           ))}
         </div>
