@@ -4,36 +4,39 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import H2 from "@/components/typography/H2";
 import ContentWidth from "@/components/layouts/ContentWidth";
+import MedienmitteilungenList from "@/components/sections/MedienmitteilungenList";
+import TableInvestorPublications from "./Table";
 
 export default function TabsPublikationen() {
   const tabs = [
     {
       label: "2023",
-      publication: "Lernender Automatiker",
+      publication: "FdC bestellt drei weitere Schmalspur-Wasserstoffzüge bei Stadler",
     },
     {
       label: "2022",
-      publication: "Lorem ipsum",
+      publication: "Offizielle Übergabe des Premierenfahrzeugs der nächsten Berliner U-Bahngeneration",
     },
     {
       label: "2021",
-      publication: "Schreiner",
+      publication: "Neuer Reisekomfort für Fahrgäste und Personal im Fernverkehr der Deutschen Bahn",
     },
     {
         label: "2020",
-        publication: "Schreiner",
+        publication: "Vertrag unterzeichnet: Stadler liefert sechs neue Straßenbahnen für Gera",
     },
     {
         label: "2019",
-        publication: "Schreiner",
+        publication: "TRAMLINK startet Linienverkehr in Bern",
     },
     {
         label: "2018",
-        publication: "Schreiner",
+        publication: "Weitere neue Wasserstoffzüge für Kalifornien",
     },
   ];
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
 
   return (
     <ContentWidth>
@@ -75,7 +78,6 @@ export default function TabsPublikationen() {
       <div className="mt-12 md:mt-16" id="myTabContent">
         <AnimatePresence mode="wait">
           <motion.div
-            id="europe"
             role="tabpanel"
             aria-labelledby="tabs-with-card-item-1"
             key={selectedTab ? selectedTab.label : "empty"}
@@ -84,12 +86,10 @@ export default function TabsPublikationen() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="relative max-w-[1140px] lg:pb-12">
-              <figure className="relative z-[1] ml-auto mr-20 h-auto w-[50rem] max-w-full rounded-b-lg">
+            <div className="relative lg:pb-12">
+              <figure className="relative z-[1] ml-auto h-auto max-w-full rounded-b-lg">
                 <div className="rounded-b-lg bg-white">
-                    <p className="text-xl font-medium leading-relaxed text-gray-900 dark:text-white">
-                      {selectedTab.publication}
-                    </p>
+                    <TableInvestorPublications name={selectedTab.publication} />
                 </div>
               </figure>
             </div>
