@@ -14,6 +14,8 @@ import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import EventCalendar from "@/components/sections/EventCalendar";
 import NewsTeaser from "../unternehmen/NewsTeaser";
 import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
+import TabsPublikationen from "./TabSection";
+import Features from "@/components/sections/Features";
 
 const publications = [
   {
@@ -236,6 +238,20 @@ const newsCards = [
   },
 ];
 
+
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: " News",
+    href: "/news",
+  },
+];
+
 export default function Investors() {
   return (
     <section>
@@ -260,7 +276,9 @@ export default function Investors() {
         tableData={tableData}
         publications={publications}
         title="Publikationen"
+        showTable={false}
       ></Publikationen>
+      <TabsPublikationen></TabsPublikationen>
       {/* <Publikationen
         tableData={tableData}
         publications={presentations}
@@ -268,15 +286,11 @@ export default function Investors() {
         showTable={true}
       ></Publikationen> */}
       <ContentWidth>
-        <div className="col-span-12 flex flex-col">
-          <Text>
-            Alle Publikationen und Präsentationen finden Sie im Downloadcenter
-          </Text>
-          <div className="mb-6"></div>
-          <ButtonPrimary position="left" buttonText="Zum Downloadcenter" />
-          <div className="mb-20"></div>
-        </div>
-      </ContentWidth>
+            <div className="col-span-12 mb-14 flex justify-between align-baseline">
+              <Text>Alle Publikationen und Präsentationen finden Sie im Downloadcenter</Text>
+              <ButtonPrimary buttonText="Zum Downloadcenter" />
+            </div>
+        </ContentWidth>
       {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen
       https://flowbite.com/docs/components/card/#horizontal-card
       und der Rest als Collapsible anzeigen mit den restlichen Publikationen
@@ -303,6 +317,7 @@ export default function Investors() {
       <ContentWidth>
         <div className="col-span-12 flex flex-col mb-20"></div>
       </ContentWidth>
+      <Features mainTitle="Möchten Sie gerne mehr über uns erfahren?" featuresData={featuresData} />
       {/* <Subscribe /> */}
     </section>
   );

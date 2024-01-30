@@ -7,7 +7,7 @@ import SmallWidth from "@/components/layouts/SmallWidth";
 export default function TextBlock() {
   return (
     <section className="my-8">
-      <SmallWidth>
+      <ContentWidth>
         <div className="col-span-12 py-8">
           <H2>Lorem ipsum</H2>
           <Text>
@@ -109,7 +109,7 @@ export default function TextBlock() {
             Lorem ipsum dolor sit amet.
           </Text>
         </div>
-      </SmallWidth>
+      </ContentWidth>
     </section>
   );
 }
