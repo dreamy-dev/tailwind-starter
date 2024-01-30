@@ -3,6 +3,7 @@
 import MedienmitteilungenBody from "./MedienmitteilungenBody";
 import Contact from "@/components/sections/Contact";
 import MedienmitteilungenList from "@/components/sections/MedienmitteilungenList";
+import Subscribe from "@/components/sections/Subscribe";
 
 const customMedienmitteilungen = [
   {
@@ -118,6 +119,7 @@ export default function NewsSingle() {
         mainTitle="Alle Medienmitteilungen"
         medienmitteilungenList={customMedienmitteilungen}
       />
+      <Subscribe />
       <Contact />
     </div>
   );

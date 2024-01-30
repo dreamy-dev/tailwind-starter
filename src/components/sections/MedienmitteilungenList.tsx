@@ -1,5 +1,4 @@
 import ContentWidth from "../layouts/ContentWidth";
-import Button from "../elements/ButtonSecondary";
 import H2 from "../typography/H2";
 
 type MedienmitteilungenCategories = {
