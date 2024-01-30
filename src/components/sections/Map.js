@@ -4,6 +4,8 @@ import MapTextTitle from "./MapTextTitle";
 import FullWidth from "../layouts/FullWidth";
 import ContentWidth from "../layouts/ContentWidth";
 import Stats from "./Stats";
+import CountUp from "react-countup";
+import { motion } from "framer-motion";
 
 const countries = [
   "Schweiz",
@@ -30,7 +32,7 @@ export default function Map({blok}) {
           {/* <Stats data={statsData} backgroundColor="bg-white" /> */}
           <ContentWidth>
             <div
-              className={`mt-16 mb-24 col-span-12 max-w-full  ${backgroundColor}`}
+              className="mt-16 mb-24 col-span-12 max-w-full  bg-white"
             >
               <div className="px-6 lg:px-8">
                 <dl className="grid grid-cols-1 gap-x-8 gap-y-12 lg:gap-y-24 text-center lg:grid-cols-4">

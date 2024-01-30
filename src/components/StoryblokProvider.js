@@ -16,6 +16,8 @@ import Career from "./sections/Career";
 import Features from "./sections/Features";
 import Map from "./sections/Map";
 import TextSection from "./sections/TextSection";
+import QualityFeatureGrid from "./sections/QualityFeatureGrid";
+import QualityFeatureItem from "./sections/QualityFeatureItem";
  //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 /** 3. Initialize it as usual */
@@ -27,6 +29,8 @@ storyblokInit({
     footer: Footer,
     header: Header,
     map: Map,
+    "feature-grid": QualityFeatureGrid,
+    "feature-item": QualityFeatureItem,
     "text-block": TextSection,
     "double-page-teaser": Features,
     "simple-page-teaser": Career,
