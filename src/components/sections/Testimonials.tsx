@@ -30,7 +30,7 @@ export default function Testimonials() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div className="mx-auto max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-24">
       <nav
         className="mx-auto grid max-w-6xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4"
         aria-label="Tabs"
@@ -44,7 +44,7 @@ export default function Testimonials() {
             onClick={() => setSelectedTab(item)}
             className={`${
               selectedTab.label == item.label ? "bg-gray-100" : " "
-            } rounded-xl p-3 text-center md:p-5 md:text-left`}
+            } p-3 text-center md:p-5 md:text-left`}
             type="button"
             id="tabs-with-card-item-1"
             data-hs-tab="#tabs-with-card-1"

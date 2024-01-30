@@ -85,22 +85,7 @@ const NavBar = () => {
     setIsOpen(false);
   };
 
-  // useEffect(() => {
-  //   const handleOutsideClick = (event: any) => {
-  //     if (isSubmenuOpen) {
-  //       const isClickInside = event.target.closest("#navbar-solid-bg") !== null;
-  //       if (!isClickInside) {
-  //         closeSubmenu();
-  //       }
-  //     }
-  //   };
 
-  //   document.addEventListener("click", handleOutsideClick);
-
-  //   return () => {
-  //     document.removeEventListener("click", handleOutsideClick);
-  //   };
-  // }, [isSubmenuOpen]);
 
   let menuRef = useRef<HTMLDivElement>(null);
 

@@ -5,6 +5,7 @@ import Text from "@/components/typography/Text";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import Contact from "@/components/sections/Contact";
 import Advantages from "@/components/sections/Advantages";
+import TextSection from "@/components/sections/TextSection";
 
 const advantageItems = [
   {
@@ -75,16 +76,8 @@ export default function SubPage() {
       />
 
       <ImageFullWidth imgSrc="/ETCS-pano.jpg" />
-      <SmallWidth>
-        <div className="col-span-12 flex flex-col pb-24">
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Text>
-        </div>
-      </SmallWidth>
+     
+    <TextSection></TextSection>
       <Advantages items={advantageItems}></Advantages>
       <Contact></Contact>
     </>

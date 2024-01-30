@@ -33,7 +33,7 @@ const TeaserDownload: React.FC<TeaserDownloadProps> = ({
   showButton = true,
 }) => {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-5 lg:py-12">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           <H2>{title}</H2>

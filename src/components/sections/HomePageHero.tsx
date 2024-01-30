@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 
 export default function HomePageHero() {
   return (
-    <div className="mx-auto w-full bg-white pb-16">
-      <div className="w-full max-h-[1150px] overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
+    <div className="mx-auto w-full bg-white">
+      <div className="w-full overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
         <motion.div
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className=" w-full md:w-[550px] lg:w-[680px] 2xl:w-[744px] top-[7%] 2xl:top-[9%] bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
+          className=" w-full md:w-[550px] lg:w-[680px] 2xl:w-[744px]  bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
         >
           <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
             <img src="/Graph.svg" className="block h-auto w-full" alt="" />
@@ -34,9 +34,9 @@ export default function HomePageHero() {
           initial={{ x: -1800 }}
           animate={{ x: 0 }}
           transition={{ duration: 1 }}
-          className="w-full bg-center bg-cover bg-no-repeat"
+          className="w-full  bg-center bg-cover object-center bg-no-repeat"
         >
-          <img src="/hero-home-big-min.jpg" className="w-full" alt="" />
+          <img src="/hero-home-big-min.jpg" className="lg:h-[90vh] w-full object-center object-cover" alt="" />
         </motion.div>
       </div>
     </div>

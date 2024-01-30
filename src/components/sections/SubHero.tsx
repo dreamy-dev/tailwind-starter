@@ -1,17 +1,21 @@
 "use client";
-
+import { storyblokEditable } from "@storyblok/react";
 import { motion } from "framer-motion";
 import FullWidth from "../layouts/FullWidth";
 
 interface ReusableSubHeroProps {
   imageUrl: string;
   children?: React.ReactNode;
+  blok?: any;
 }
 
-const SubHero: React.FC<ReusableSubHeroProps> = ({ imageUrl, children }) => {
+const SubHero: React.FC<ReusableSubHeroProps> = ({ imageUrl, children, blok }) => {
   return (
     <FullWidth>
-      <div className="col-span-12 lg:pr-20 2xl:pr-0 max-w-full bg-white relative">
+      <div
+        {...storyblokEditable(blok)}
+        className="col-span-12 lg:pr-20 2xl:pr-0 max-w-full bg-white relative"
+      >
         <div className="max-w-[1500px] w-[90%] lg:w-[94%] lg:max-h-[750px] 2xl:max-w-[1760px] relative inset-0 flex flex-row items-center justify-start">
           <motion.div
             initial={{ x: 0, opacity: 0.4 }}

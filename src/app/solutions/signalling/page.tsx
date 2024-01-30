@@ -10,7 +10,7 @@ const teaserData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
-    href: "/solutions/signalling/siherheit",
+    href: "/solutions/signalling/mainline",
   },
   {
     label: "Mainline",
@@ -24,35 +24,35 @@ const teaserData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
-    href: "/solutions/signalling/branchline",
+    href: "/solutions/signalling/mainline",
   },
   {
     label: "Metro",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
-    href: "/solutions/signalling/metro",
+    href: "/solutions/signalling/mainline",
   },
   {
     label: "Depot",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
-    href: "/solutions/signalling/depot",
+    href: "/solutions/signalling/mainline",
   },
   {
     label: "Dienstleistungen",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
-    href: "/solutions/signalling/dienstleistungen",
+    href: "/solutions/signalling/mainline",
   },
   {
     label: "After Sales & Services",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
-    href: "/solutions/signalling/sales",
+    href: "/solutions/signalling/mainline",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Signalling() {
       ></HeroText>
    
       <ServiceTeasers
-        mainTitle=""
+        mainTitle="Signalling Lösungen"
         services={teaserData}
         imageStyles="w-full "
       ></ServiceTeasers>

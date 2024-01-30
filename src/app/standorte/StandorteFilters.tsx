@@ -38,21 +38,21 @@ const countries = [
   },
   {
     name: "Norwegen",
-  }
+  },
 ];
 
 const options = ["Produktion / Komponenten", "Signalling", "Service"];
 
-  const images = [
-    "/stadler-world-map-home.svg",
-    "/icons/map-blue.svg",
-    "/icons/map-light-blue.svg",
-    "/icons/map-grey.svg",
-  ];
+const images = [
+  "/stadler-world-map-home.svg",
+  "/icons/map-blue.svg",
+  "/icons/map-light-blue.svg",
+  "/icons/map-grey.svg",
+];
 
 export default function StandorteFilters() {
   const [selectedOption, setSelectedOption] = useState("");
-   const [selectedRadio, setSelectedRadio] = useState("");
+  const [selectedRadio, setSelectedRadio] = useState("");
 
   const handleOptionChange = (event: ChangeEvent<{ value: string }>) => {
     setSelectedOption(event.target.value);
@@ -146,7 +146,7 @@ export default function StandorteFilters() {
         <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
           <li className="mb-4 mr-2 lg:mr-4">
             <select
-              className=" px-4 py-2 text-base border rounded-full block"
+              className=" px-4 py-2 text-base border rounded block"
               value={selectedOption}
               onChange={handleOptionChange}
             >
@@ -172,7 +172,7 @@ export default function StandorteFilters() {
                   className="hidden"
                 />
                 <div
-                  className={`inline-block px-4 py-2 text-base border rounded-full ${
+                  className={`inline-block px-4 py-2 text-base border rounded ${
                     selectedRadio === option
                       ? "dark:bg-gray-700 dark:border-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                       : "dark:bg-gray-700 dark:border-gray-600 hover:text-gray-900 hover:bg-gray-100"
@@ -203,7 +203,7 @@ export default function StandorteFilters() {
                 </svg>
               </div>
               <input
-                className="inline-block px-8 py-2 text-base border rounded-full hover:text-gray-900 hover:bg-gray-100"
+                className="inline-block px-8 py-2 text-base border rounded hover:text-gray-900 hover:bg-gray-100"
                 placeholder="Search "
               />
             </div>

@@ -14,12 +14,13 @@ interface Feature {
 interface QualityFeaturesProps {
   features: Feature[];
   mainTitle?: string;
+  isVisible?: boolean;
 }
 
-const QualityFeatures: React.FC<QualityFeaturesProps> = ({ features, mainTitle }) => {
+const QualityFeatures: React.FC<QualityFeaturesProps> = ({ features, mainTitle, isVisible }) => {
  return (
    <>
-     <section className="py-24 bg-stadlergradient">
+     <section className="py-5 lg:py-24 bg-stadlergradient">
        <ContentWidth>
          <div className="col-span-12 max-w-full mx-auto">
            <H2 styles="text-white">{mainTitle}</H2>
@@ -42,42 +43,52 @@ const QualityFeatures: React.FC<QualityFeaturesProps> = ({ features, mainTitle }
                  </div>
                ))}
              </div>
-             <div className="pt-24 grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24 ">
-               <div className=" flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">
-                 <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
-                 <div>
-                   <H4 textColor="white">Flexibles Kastensystem</H4>
-                   <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-                     Es stehen zwei Wagenkastenlängen und -breiten zur Wahl,
-                     sowie verschiedene Lichtraumprofile. Der FLIRT hat einen
-                     hohen Niederfluranteil und ist barrierefrei über die
-                     Wagengänge begehbar.
-                   </Text>
+             {isVisible && (
+               <>
+                 <div className="pt-24 grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24 ">
+                   <div className=" flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">
+                     <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
+                     <div>
+                       <H4 textColor="white">Flexibles Kastensystem</H4>
+                       <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
+                         Es stehen zwei Wagenkastenlängen und -breiten zur Wahl,
+                         sowie verschiedene Lichtraumprofile. Der FLIRT hat
+                         einen hohen Niederfluranteil und ist barrierefrei über
+                         die Wagengänge begehbar.
+                       </Text>
+                     </div>
+                   </div>
+                   <div className=" mt-8 sm:mt-0">
+                     <img
+                       src="/stadler-flit-kompositionen-sizes.png"
+                       alt="Sizes"
+                     />
+                   </div>
                  </div>
-               </div>
-               <div className=" mt-8 sm:mt-0">
-                 <img src="/stadler-flit-kompositionen-sizes.png" alt="Sizes" />
-               </div>
-             </div>
-             <div className="pt-24 flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">
-               <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
-               <div>
-                 <img src="/stadler-flit-kompositionen-1-8-Wagen.gif" alt="" />
-               </div>
-             </div>
-             <div className="pt-24 flex flex-col items-start gap-4 sm:gap-5 sm:flex-row ">
-               <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
-               <div>
-                 <H4 textColor="white">Kapazität à la carte</H4>
-                 <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-                   Die Modularität der FLIRT-Typen ermöglicht flexible
-                   Passagierkapazitäten. Triebzüge von 2 bis 8 Teilen bieten
-                   Platz für 100 bis 500 Passagiere. Kleinere Formationen sind
-                   erweiterbar, um mehr Fahrgäste aufzunehmen, und bis zu vier
-                   Züge können in Vielfachtraktion verkehren.
-                 </Text>
-               </div>
-             </div>
+                 <div className="pt-24 flex flex-col items-start gap-4 sm:gap-5 sm:flex-row ">
+                   <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
+                   <div>
+                     <H4 textColor="white">Kapazität à la carte</H4>
+                     <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
+                       Die Modularität der FLIRT-Typen ermöglicht flexible
+                       Passagierkapazitäten. Triebzüge von 2 bis 8 Teilen bieten
+                       Platz für 100 bis 500 Passagiere. Kleinere Formationen
+                       sind erweiterbar, um mehr Fahrgäste aufzunehmen, und bis
+                       zu vier Züge können in Vielfachtraktion verkehren.
+                     </Text>
+                   </div>
+                 </div>
+                 <div className="pt-24 flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">
+                   <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
+                   <div>
+                     <img
+                       src="/stadler-flit-kompositionen-1-8-Wagen.gif"
+                       alt=""
+                     />
+                   </div>
+                 </div>
+               </>
+             )}
            </div>
          </div>
        </ContentWidth>

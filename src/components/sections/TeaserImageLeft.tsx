@@ -16,7 +16,7 @@ const TeaserImageLeft: React.FC<TeaserImageLeftProps> = ({
  
 }) => {
   return (
-    <section className="antialiased py-12">
+    <section className="antialiased py-5 lg:py-12">
       <SmallWidth>
         <div className="grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
           <img

@@ -3,7 +3,7 @@ import ContentWidth from "../layouts/ContentWidth";
 
 export default function Values() {
   return (
-    <div className="bg-white py-24 ">
+    <div className="bg-white py-5 lg:py-24 ">
       <ContentWidth>
         <div className="col-span-12 flex flex-col lg:flex-row justify-between items-center">  
   <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">

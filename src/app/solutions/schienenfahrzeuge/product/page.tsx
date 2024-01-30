@@ -203,7 +203,7 @@ export default function Product() {
       />
       <ImageFullWidth imgSrc="/AdobeStock.jpg" />
       <TextSection></TextSection>
-      <QualityFeatures features={features} mainTitle="Qualitätsmerkmale" />
+      <QualityFeatures features={features} mainTitle="Qualitätsmerkmale" isVisible={ true} />
       <ProductCards></ProductCards>
       <ProductCarousel />
       <Specification />
