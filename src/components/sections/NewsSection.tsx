@@ -75,6 +75,78 @@ const news = [
     tags: ["Corporate", "TANGO"],
     link: "/newsSingle",
   },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Ad-Hoc", "Corporate"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Corporate"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Ad-Hoc"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Ad-Hoc", "KISS"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Corporate"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Ad-Hoc", "Corporate"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Ad-Hoc"],
+    link: "/newsSingle",
+  },
+  {
+    title: "Next Generation bei Stadler",
+    lead:
+      "Informationsnachmittage für eine zukunftsorientierte Lehre Stadler öffnet seine Türe für interessierte Schüle",
+    date: "19.01.2024",
+    image: "/news-1-1.jpg",
+    tags: ["Corporate", "TANGO"],
+    link: "/newsSingle",
+  },
 ];
 export default function NewsSection() {
   return (
@@ -90,30 +162,34 @@ export default function NewsSection() {
         </div> */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {news.map((item, index) => (
-            <article className="max-w-xs" key={index}>
-              <a href={item.link}>
-                <img src={item.image} className="mb-4" alt="Image 1" />
-              </a>
-              <div className="mb-3">
+            <a
+              href={item.link}
+              className="group mb-6 transition-all"
+              key={index}
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={item.image}
+                  className="group-hover:scale-110 transition-all"
+                  alt="Image 1"
+                />
+              </div>
+              <div className="mb-3 mt-4">
                 {item.tags.map((tag, index) => (
-                  <a
+                  <span
                     key={index}
                     className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
                   >
                     {tag}
-                  </a>
+                  </span>
                 ))}
               </div>
-              <Text styles="text-sm mb-1 text-gray-500 dark:text-gray-400">
-                {item.date}
-              </Text>
-              <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                <a href={item.link}>{item.title}</a>
+              <Text styles="text-sm mb-1 text-gray-500">{item.date}</Text>
+              <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-primary transition-all">
+                {item.title}
               </h2>
-              <Text styles="texl-lg mb-3 text-gray-500 dark:text-gray-400">
-                {item.lead}
-              </Text>
-            </article>
+              <Text styles="texl-lg mb-3 text-gray-500">{item.lead}</Text>
+            </a>
           ))}
         </div>
       </div>
