@@ -156,7 +156,6 @@ const newsCards = [
   ];
   return (
     <>
-      <SubHero imageUrl="/subhero.jpg"></SubHero>
       <HeroText
         title="Das ist Stadler"
         leadText="Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
@@ -209,10 +208,7 @@ const newsCards = [
         showButton={true}
         h2Styles="flex justify-left items-left"
       ></HomePageCarousel>
-      <TeaserGeneral
-        title="News zu Stadler"
-        ctaText="Zu allen News"
-      ></TeaserGeneral>
+     
     </>
   );
 }

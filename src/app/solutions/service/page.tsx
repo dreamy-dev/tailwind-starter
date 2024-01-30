@@ -79,64 +79,62 @@ const services = [
     description:
       "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
     img: "https://www.stadlerrail.com/service/Icon_TSSSA.jpg",
-    href: "/solutions/service/tsssc",
+    href: "/solutions/service/full-service",
   },
   {
     label: "Ersatzteile",
     description:
       "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
     img: "https://www.stadlerrail.com/service/Icon_Spare_Parts.jpg",
-    href: "/solutions/service/spare",
+    href: "/solutions/service/full-service",
   },
   {
     label: "Modernisation",
     description:
       "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
     img: "https://www.stadlerrail.com/service/Icon_Modernisierung.jpg",
-    href: "/solutions/service/refit",
+    href: "/solutions/service/full-service",
   },
   {
     label: "Revisionen",
     description:
       "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
     img: "https://www.stadlerrail.com/service/Icon_Revision.jpg",
-    href: "/solutions/service/overhaul",
+    href: "/solutions/service/full-service",
   },
   {
     label: "Reparaturen",
     description:
       "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
     img: "https://www.stadlerrail.com/service/Icons_Repair.jpg",
-    href: "/solutions/service/repair",
+    href: "/solutions/service/full-service",
   },
   {
     label: "ECM",
     description:
       "Der Full Service ist ein ganzheitliches Angebot, das die komplette Fahrzeuginstandhaltung umfasst. ",
     img: "https://www.stadlerrail.com/service/Icon_ECM.jpg",
-    href: "/solutions/service/ecm",
+    href: "/solutions/service/full-service",
   },
 ];
 export default function Service() {
   return (
     <>
       <HeroText
-        breadcrumbs={[
-          { text: "Lösungen", link: "/solutions" }
-        ]}
+        breadcrumbs={[{ text: "Lösungen", link: "/solutions" }]}
         title="Service Angebot"
         leadText="Für Stadler endet Kundennähe nicht mit der Auslieferung der Züge. Unsere Mitarbeitenden stehen unseren Kunden als Servicepartner rund um die Uhr mit Rat und Tat zur Seite, um höchste Qualität zu garantieren. Dadurch gewährleisten wir die Zuverlässigkeit und Verfügbarkeit unserer Schienenfahrzeuge über die gesamte Lebensdauer."
         // withCTA={true}
         // buttonText="CTA Button"
       />
       <ImageFullWidth imgSrc="/teaser_service.jpeg" />
+      <FactsAndFigures data1={facts} data2={figures} title="Daten und Fakten" />
       <ServiceTeasers
         mainTitle="Alle Services auf einen Blick"
         text="Hier finden Sie eine Übersicht aller unser Service Angebote."
         services={services}
         imageStyles="w-24 pl-5 pt-5"
       />
-      <FactsAndFigures data1={facts} data2={figures} title="Daten und Fakten" />
     </>
   );
 }

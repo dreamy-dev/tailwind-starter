@@ -41,7 +41,7 @@ const countries = [
   },
 ];
 
-const options = ["Produktion / Komponenten", "Signaling", "Service"];
+const options = ["Produktion / Komponenten", "Signalling", "Service"];
 
 const images = [
   "/stadler-world-map-home.svg",

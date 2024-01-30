@@ -5,7 +5,7 @@ export default function TeaserSuccessStories() {
   return (
     <section className="bg-white antialiased dark:bg-gray-900">
       <SmallWidth>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 lg:py-24">
+        <div className="mx-auto max-w-screen-xl px-4 py-5 lg:px-6 lg:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <H2>Unsere Mitarbeiter machen uns aus</H2>
             <p className="mt-4 text-base font-normal text-black dark:text-gray-400 sm:text-xl">
@@ -16,7 +16,7 @@ export default function TeaserSuccessStories() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:mt-16 xl:grid-cols-3">
-            <div className="group relative overflow-hidden rounded-lg">
+            <div className="group relative overflow-hidden">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/elektro_vormontage_berufserfahrene.jpg"
@@ -33,7 +33,7 @@ export default function TeaserSuccessStories() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-lg">
+            <div className="group relative overflow-hidden">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/produktionslogistik_studenten.jpg"
@@ -49,7 +49,7 @@ export default function TeaserSuccessStories() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-lg">
+            <div className="group relative overflow-hidden">
               <img
                 className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
                 src="https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg"

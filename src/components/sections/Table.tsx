@@ -17,8 +17,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ title, tableHeaders, tableData, mainText }) => {
   return (
-    <section className="bg-white pb-20">
-      <ContentWidth>
+    <section className="bg-white pb-5 lg:pb-24">
         <div className="max-w-full col-span-12">
           <div className="text-start mb-8">
             <H4>{title}</H4>
@@ -59,7 +58,6 @@ const Table: React.FC<TableProps> = ({ title, tableHeaders, tableData, mainText 
             </tbody>
           </table>
         </div>
-      </ContentWidth>
     </section>
   );
 };

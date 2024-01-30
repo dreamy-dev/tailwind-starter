@@ -1,3 +1,5 @@
+"use client"
+
 import H3 from "../typography/H3";
 import Link from "next/link";
 import Text from "../typography/Text";
@@ -6,6 +8,7 @@ import { MotionConfig, motion, MotionProps } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import FullWidth from "../layouts/FullWidth";
 import ButtonPrimary from "../elements/ButtonPrimary";
+import ContentWidth from "../layouts/ContentWidth";
 
 interface Cards {
   title: string;
@@ -73,11 +76,11 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
   };
 
   return (
-    <section className=" py-24 bg-white overflow-hidden">
-      <FullWidth>
+    <section className="py-5 lg:py-24 bg-white overflow-hidden">
+      <ContentWidth>
         <div className="col-span-12">
           <div className="relative">
-            <div className="lg:pl-20 2xl:pl-0 mb-4">
+            <div className="lg:pl-20 2xl:pl-0 mb-10">
               <H2 styles={h2Styles}>{carouselTitle}</H2>
             </div>
             {isMobile && (
@@ -235,7 +238,7 @@ const HomePageCaroucel: React.FC<CarouselProps> = ({
             </div>
           )}
         </div>
-      </FullWidth>
+      </ContentWidth>
     </section>
   );
 };
