@@ -7,11 +7,11 @@ import Lead from "../../components/typography/Lead";
 
 const HeroText = ({
   breadcrumbs = [],
-  title = "Lorem ipsum dolor sit amet",
+  title = blok.title ?? "Lorem Ipsum",
   leadText,
   withCTA,
   buttonText,
-  blok
+  blok,
 }) => {
   return (
     <section
@@ -33,7 +33,7 @@ const HeroText = ({
             </div>
           ))}
         </div>
-        <H1>{blok.title}</H1>
+        <H1>{blok.title ?? "Lorem Ipsum"}</H1>
         <Lead>{blok.lead}</Lead>
         {withCTA ? (
           <ButtonPrimary position="left" buttonText={buttonText} />
@@ -43,6 +43,6 @@ const HeroText = ({
       </SmallWidth>
     </section>
   );
-}
+};
 
 export default HeroText;
