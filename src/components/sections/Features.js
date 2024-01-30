@@ -38,7 +38,7 @@ const Features = ({blok}) => {
                 href={blok.link_1}
                 className="flex items-center gap-2 text-2xl font-bold mt-4"
               >
-                {blok.text}
+                {blok.text_2}
                 <svg
                   width="20"
                   height="20"
