@@ -5,33 +5,33 @@ import { motion, AnimatePresence } from "framer-motion";
 import H2 from "@/components/typography/H2";
 import ContentWidth from "@/components/layouts/ContentWidth";
 import MedienmitteilungenList from "@/components/sections/MedienmitteilungenList";
-import TableInvestorPublications from "./Table";
+import TableInvestorPublications from "./TableInvestorPublications";
 
 export default function TabsPublikationen() {
   const tabs = [
     {
       label: "2023",
-      publication: "FdC bestellt drei weitere Schmalspur-Wasserstoffzüge bei Stadler",
+      publication: "Halbjahresergebnisse 2023",
     },
     {
       label: "2022",
-      publication: "Offizielle Übergabe des Premierenfahrzeugs der nächsten Berliner U-Bahngeneration",
+      publication: "Halbjahresergebnisse 2022",
     },
     {
       label: "2021",
-      publication: "Neuer Reisekomfort für Fahrgäste und Personal im Fernverkehr der Deutschen Bahn",
+      publication: "Halbjahresergebnisse 2021",
     },
     {
         label: "2020",
-        publication: "Vertrag unterzeichnet: Stadler liefert sechs neue Straßenbahnen für Gera",
+        publication: "Halbjahresergebnisse 2020",
     },
     {
         label: "2019",
-        publication: "TRAMLINK startet Linienverkehr in Bern",
+        publication: "Halbjahresergebnisse 2019",
     },
     {
         label: "2018",
-        publication: "Weitere neue Wasserstoffzüge für Kalifornien",
+        publication: "Halbjahresbericht 2018",
     },
   ];
 
@@ -39,8 +39,9 @@ export default function TabsPublikationen() {
 
 
   return (
+    <section className="py-24">
     <ContentWidth>
-        <div className="mt-20 col-span-12 max-w-full">
+        <div className="col-span-12 max-w-full">
             <H2>Alle Publikationen nach Jahr</H2>
       <nav
         className="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-6 sm:gap-4"
@@ -98,5 +99,6 @@ export default function TabsPublikationen() {
       </div>
     </div>
     </ContentWidth>
+    </section>
   );
 }

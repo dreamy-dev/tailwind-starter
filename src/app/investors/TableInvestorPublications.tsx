@@ -9,13 +9,13 @@ return(
                     Datum
                   </th>
                   <th scope="col" className="px-6 py-3 w-7/12">
-                    Medienmitteilung
+                    Titel
+                  </th>
+                  <th scope="col" className="px-6 py-3 w-2/12 text-center">
+                    Publikation
                   </th>
                   <th scope="col" className="px-6 py-3 w-2/12">
-                    Kategorie
-                  </th>
-                  <th scope="col" className="px-6 py-3 w-2/12">
-                    <div className="flex justify-end">Dokumente</div>
+                    <div className="flex justify-center">Präsentation</div>
                   </th>
                 </tr>
               </thead>
@@ -27,7 +27,7 @@ return(
                       scope="row"
                       className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
                     >
-                      13. 4. 2023
+                      30. Aug 2023
                     </td>
                     <td
                       scope="row"
@@ -37,17 +37,19 @@ return(
                     </td>
                     <td
                       scope="row"
-                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                      className="px-6 py-4 font-medium text-primary whitespace-nowrap dark:text-white text-center"
                     >
-                        <p>Präsentation</p>
+                        <a className=" pt-2 pb-2 inline-flex font-medium" href="#">
+                          PDF
+                        </a>
                     </td>
-                    <td className="px-6 py-4 text-primary">
-                      <div className="flex justify-end">
+                    <td className="px-6 py-4 text-primary text-center">
+                      <div className="flex justify-center">
                           <a
-                            className="ml-3 pt-2 pb-2 inline-flex"
+                            className="pt-2 pb-2 inline-flex font-medium"
                             href="#"
                           >
-                            EN
+                            PDF
                           </a>
                       </div>
                     </td>
@@ -59,7 +61,7 @@ return(
                       scope="row"
                       className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
                     >
-                      13. 4. 2023
+                      30. Aug 2023
                     </td>
                     <td
                       scope="row"
@@ -69,24 +71,17 @@ return(
                     </td>
                     <td
                       scope="row"
-                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
-                    >
-                        <p>Präsentation</p>
+                      className="px-6 py-4 font-medium text-primary whitespace-nowrap text-center dark:text-white"
+                      >
+                        <a className="pt-2 pb-2 inline-flex " href="#">
+                          PDF
+                        </a>
                     </td>
                     <td className="px-6 py-4 text-primary">
-                      <div className="flex justify-end">
-                        <a
-                            className="ml-3 pt-2 pb-2 inline-flex"
-                            href="#"
-                          >
-                            DE
-                          </a>
-                          <a
-                            className="ml-3 pt-2 pb-2 inline-flex"
-                            href="#"
-                          >
-                            EN
-                          </a>
+                      <div className="flex justify-center">
+                        <a className=" pt-2 pb-2 inline-flex font-medium" href="#">
+                          PDF
+                        </a>
                       </div>
                     </td>
                   </tr>
