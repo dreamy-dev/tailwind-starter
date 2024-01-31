@@ -17,8 +17,8 @@ export default function Standorte() {
       />
 
       <ContentWidth>
-        <div className="col-span-12 py-8"></div>
-        <div className="col-span-12 pt-8">
+   
+        <div className="col-span-12">
           <StandorteFilters />
         </div>
         <div className="col-span-12 pb-8">

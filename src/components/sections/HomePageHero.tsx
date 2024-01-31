@@ -14,7 +14,7 @@ export default function HomePageHero() {
           className=" w-full md:w-[550px] lg:w-[550px] 2xl:w-[600px]  bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
         >
           <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
-            <img src="/Graph.svg" className="block h-auto 2xl:h-[60vh] w-full" alt="" />
+            <img src="/Graph.svg" className="block h-auto md:h-[60vh] w-full" alt="" />
           </div>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
