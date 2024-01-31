@@ -244,7 +244,7 @@ const TrainCarousel = (props?: any) => {
                 <p>{item.title}</p>
                 <motion.img
                   className={`${selectedCategory === key ? "w-4" : "w-0"} mt-2`}
-                  src="/plus-light.svg"
+                  src="/icons/plus-light.svg"
                   animate={
                     selectedCategory === key && isOpen ? "open" : "close"
                   }
