@@ -56,16 +56,16 @@ export default function StandorteFilters() {
 
   const handleOptionChange = (event: ChangeEvent<{ value: string }>) => {
     setSelectedOption(event.target.value);
-    setSelectedRadio(""); // Reset radio selection when changing the select
+ 
   };
 
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSelectedRadio(event.target.value);
-    setSelectedOption(""); // Reset select when changing the radio
+
   };
 
   const renderImage = () => {
-    switch (selectedOption || selectedRadio) {
+    switch (selectedRadio) {
       case "Produktion / Komponenten":
         return (
           <img
