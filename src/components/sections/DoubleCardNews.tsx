@@ -2,7 +2,15 @@ import H2 from "@/components/typography/H2";
 import ContentWidth from "../layouts/ContentWidth";
 import Text from "../typography/Text";
 
-export default function DoubleCardNews() {
+type DoubleCardsProps = {
+  titleOne?: string;
+  titleTwo?: string;
+};
+
+export default function DoubleCardNews({
+  titleOne = "Medien",
+  titleTwo = "Medienmitteilungen",
+}: DoubleCardsProps) {
   return (
     <section className="pb-24 sm:py-24">
       <ContentWidth>
@@ -21,7 +29,7 @@ export default function DoubleCardNews() {
                   className="flex flex-col items-start gap-2 text-xl font-bold text-gray-900 mt-5 mb-5"
                 >
                   <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
-                    Medien
+                    {titleOne}
                   </H2>
                   <Text styles="text-gray-900 mb-4">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -38,12 +46,12 @@ export default function DoubleCardNews() {
                     <g clipPath="url(#clip0_4995_6662)">
                       <path
                         d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                        fill="white"
+                        fill="#004170"
                       />
                     </g>
                     <defs>
                       <clipPath id="clip0_4995_6662">
-                        <rect width="20" height="20" fill="white" />
+                        <rect width="20" height="20" fill="#004170" />
                       </clipPath>
                     </defs>
                   </svg>
@@ -62,7 +70,7 @@ export default function DoubleCardNews() {
                   className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-gray-900 mb-5"
                 >
                   <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
-                    Medienmitteilungen
+                    {titleTwo}
                   </H2>
                   <Text styles="text-gray-900 mb-4">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -80,12 +88,12 @@ export default function DoubleCardNews() {
                     <g clipPath="url(#clip0_4995_6662)">
                       <path
                         d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                        fill="white"
+                        fill="#004170"
                       />
                     </g>
                     <defs>
                       <clipPath id="clip0_4995_6662">
-                        <rect width="20" height="20" fill="white" />
+                        <rect width="20" height="20" fill="#004170" />
                       </clipPath>
                     </defs>
                   </svg>

@@ -97,10 +97,15 @@ export default function StandorteAccordion() {
       [id]: !prev[id],
     }));
   };
+
+   const handleAccordionClick = (id: string) => {
+     toggleAccordion(id);
+   };
   return (
     <div className="pb-24">
       {locations.map((item) => (
         <div
+          onClick={() => handleAccordionClick(item.id)}
           key={item.id}
           className="text-gray-900  bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
         >

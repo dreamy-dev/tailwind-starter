@@ -203,7 +203,7 @@ export default function StandorteFilters() {
                 </svg>
               </div>
               <input
-                className="inline-block px-8 py-2 text-base border rounded hover:text-gray-900 hover:bg-gray-100"
+                className="inline-block px-8 py-2 text-base border hover:text-gray-900 hover:bg-gray-100"
                 placeholder="Search "
               />
             </div>

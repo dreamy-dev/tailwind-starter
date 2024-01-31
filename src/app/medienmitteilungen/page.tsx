@@ -1,32 +1,142 @@
 "use client";
 
-import ContentWidth from "@/components/layouts/ContentWidth";
 import HeroText from "@/components/sections/HeroText";
 import Contact from "@/components/sections/Contact";
 import MedienmitteilungenFilters from "./MedienmitteilungenFilters";
-import TeaserDownload from "../../components/sections/TeaserDownload";
+import TeaserMedienmitteilungen from "../../components/sections/TeaserMedienmitteilungen";
 import DoubleCardNews from "@/components/sections/DoubleCardNews";
 import MedienmitteilungenList from "@/components/sections/MedienmitteilungenList";
 
 const listMedienmitteilungen = [
   {
+    link: "/medienmitteilungenSingle",
+    date: "05.12.2023",
     text:
-      "05.12.2023 Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet starkes Wachstum.",
+      "Stadler Prag feiert 15-jähriges Jubiläum und verzeichnet starkes Wachstum.",
   },
   {
+    link: "/medienmitteilungenSingle",
+    date: "07.11.2023",
     text:
-      "07.11.2023 Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow.",
+      "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow.",
   },
   {
+    link: "/medienmitteilungenSingle",
+    date: "09.11.2023",
     text:
-      "09.11.2023 Stadler macht Lokomotiven für das ETCS fit und ermöglicht damit schnelleren ETCS-Roll-Out in Deutschland.",
+      "Stadler macht Lokomotiven für das ETCS fit und ermöglicht damit schnelleren ETCS-Roll-Out in Deutschland.",
   },
   {
-    text: "31.10.2023 TRAMLINK startet Linienverkehr in Bern.",
+    link: "/medienmitteilungenSingle",
+    date: "31.10.2023",
+    text: "TRAMLINK startet Linienverkehr in Bern.",
   },
 ];
 
 const customMedienmitteilungen = [
+  {
+    date: "18.01.2024",
+    medien: "FdC bestellt drei weitere Schmalspur-Wasserstoffzüge bei Stadler",
+    categories: [
+      {
+        category: "Ad-Hoc",
+        link: "#",
+      },
+    ],
+    links: [
+      {
+        text: "DE",
+        link: "#",
+      },
+      {
+        text: "EN",
+        link: "#",
+      },
+      {
+        text: "IT",
+        link: "#",
+      },
+      {
+        text: "PX",
+        link: "#",
+      },
+    ],
+  },
+  {
+    date: "11.01.2024",
+    medien:
+      "Offizielle Übergabe des Premierenfahrzeugs der nächsten Berliner U-Bahngeneration",
+    categories: [
+      {
+        category: "Corporate",
+        link: "#",
+      },
+    ],
+    links: [
+      {
+        text: "DE",
+        link: "#",
+      },
+      {
+        text: "EN",
+        link: "#",
+      },
+      {
+        text: "PX",
+        link: "#",
+      },
+    ],
+  },
+  {
+    date: "20.12.2023",
+    medien:
+      "EURO9000 erhält grünes Licht für den Betrieb in Belgien und den Niederlanden",
+    categories: [
+      {
+        category: "Produkt",
+        link: "#",
+      },
+    ],
+    links: [
+      {
+        text: "DE",
+        link: "#",
+      },
+      {
+        text: "EN",
+        link: "#",
+      },
+      {
+        text: "FR",
+        link: "#",
+      },
+      {
+        text: "PX",
+        link: "#",
+      },
+    ],
+  },
+  {
+    date: "12.12.2023",
+    medien:
+      "Neuer Reisekomfort für Fahrgäste und Personal im Fernverkehr der Deutschen Bahn",
+    categories: [
+      {
+        category: "Produkt",
+        link: "#",
+      },
+    ],
+    links: [
+      {
+        text: "DE",
+        link: "#",
+      },
+      {
+        text: "PX",
+        link: "#",
+      },
+    ],
+  },
   {
     date: "18.01.2024",
     medien: "FdC bestellt drei weitere Schmalspur-Wasserstoffzüge bei Stadler",
@@ -142,19 +252,17 @@ export default function Medienmitteilungen() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-      <TeaserDownload
+      <TeaserMedienmitteilungen
         title="Ad-Hoc Medienmitteilungen"
-        showList={true}
-        showButton={false}
         listData={listMedienmitteilungen}
-      ></TeaserDownload>
+      ></TeaserMedienmitteilungen>
 
       <MedienmitteilungenFilters />
       <MedienmitteilungenList
         mainTitle="Alle Medienmitteilungen"
         medienmitteilungenList={customMedienmitteilungen}
       />
-      <DoubleCardNews />
+      <DoubleCardNews titleTwo="News" />
       <Contact />
     </div>
   );

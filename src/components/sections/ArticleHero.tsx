@@ -3,12 +3,18 @@ import H1 from "@/components/typography/H1";
 import Text from "@/components/typography/Text";
 import { ReactNode } from "react";
 
+type Breadcrumb = {
+  text: string;
+  link?: string;
+};
+
 interface Tags {
   text: string;
   link: string;
 }
 
 type ArticleHeroProps = {
+  breadcrumbs?: Breadcrumb[];
   title?: string | ReactNode;
   leadText?: string;
   date?: string;
@@ -16,6 +22,7 @@ type ArticleHeroProps = {
 };
 
 export default function ArticleHero({
+  breadcrumbs = [],
   title = "Lorem ipsum dolor sit amet",
   leadText,
   date,
@@ -23,8 +30,22 @@ export default function ArticleHero({
 }: ArticleHeroProps) {
   return (
     <SuperSmallWidth>
-      <H1 styles="mt-20">{title}</H1>
-      <div className="grid grid-cols-12 gap-6 mb-8">
+      <div className="mt-20 flex font-normal text-gray-600">
+        {breadcrumbs.map((breadcrumb, index) => (
+          <div key={index}>
+            {index !== breadcrumbs.length - 1 ? (
+              <>
+                <a href={breadcrumb.link}>{breadcrumb.text}</a>
+                <span className="px-3">|</span>
+              </>
+            ) : (
+              <a href={breadcrumb.link}>{breadcrumb.text}</a>
+            )}
+          </div>
+        ))}
+      </div>
+      <H1 styles="mb-8">{title}</H1>
+      <div className="grid grid-cols-12 gap-6 mb-6">
         <div className="col-span-6">
           {tags?.map((tag, index) => (
             <a
@@ -40,7 +61,7 @@ export default function ArticleHero({
           <Text styles="text-md">{date}</Text>
         </div>
       </div>
-      <Text styles="text-lg">{leadText}</Text>
+      <Text styles="text-lg mt-12">{leadText}</Text>
     </SuperSmallWidth>
   );
 }

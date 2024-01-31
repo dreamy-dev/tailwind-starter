@@ -1,4 +1,5 @@
 import React, { ReactNode, useState } from "react";
+import H3 from "../typography/H3";
 
 
 interface AccordionItemProps {
@@ -26,10 +27,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   };
   return (
     <div key={index}>
-      <h2
-        id={`accordion-flush-heading-${index}`}
-        className="mb-2 text-xl font-medium break-words text-black"
-      >
+      <H3>
         <button
           type="button"
           className={`flex justify-between items-center py-5 w-full font-medium text-left ${
@@ -56,7 +54,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             ></path>
           </svg>
         </button>
-      </h2>
+      </H3>
       <div
         id={`accordion-flush-body-${index}`}
         className={`${isOpen ? "" : "hidden"}`}

@@ -1,17 +1,15 @@
 import SuperSmallWidth from "@/components/layouts/SuperSmallWidth";
-import H1 from "@/components/typography/H1";
-import Lead from "@/components/typography/Lead";
 import H2 from "@/components/typography/H2";
 import Text from "@/components/typography/Text";
 import ArticleHero from "@/components/sections/ArticleHero";
 
 const articleTags = [
   {
-    text: "Service",
+    text: "Ad-Hoc",
     link: "#",
   },
   {
-    text: "Service",
+    text: "Corporate",
     link: "#",
   },
 ];
@@ -19,6 +17,7 @@ export default function ArticleBody() {
   return (
     <>
       <ArticleHero
+        breadcrumbs={[{ text: "Medien", link: "/medien" }]}
         title="EURO9000 erhält grünes Licht für den Betrieb in Belgien und den Niederlanden"
         leadText="xDie EURO9000-Lokomotive von Stadler, die neue Generation der 6-achsigen Hybrid-Lokomotiven, hat erfolgreich die Typenzulassung für den Betrieb in den Niederlanden und Belgien erhalten. Diese Zulassung erweitert das Einsatzgebiet der EURO9000, die bereits in Deutschland, Österreich und der Schweiz zugelassen ist, und unterstreicht ihre Anpassungsfähigkeit an die Anforderungen internationaler Bahnkorridore. In Italien wird die Betriebszulassung voraussichtlich im Jahr 2024 erteilt werden."
         date="20.12.2023"
@@ -26,7 +25,7 @@ export default function ArticleBody() {
       />
 
       <SuperSmallWidth>
-        <article className="col-span-12">
+        <article className="col-span-12 mb-32">
           <img className="my-8" src="/article-image.jpg" alt="" />
           <Text styles="text-md mb-4">
             Die EURO9000 ist eine interoperable Lokomotive, die speziell für den
