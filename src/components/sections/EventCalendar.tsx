@@ -39,6 +39,7 @@ const eventData = [
     link: "#",
   },
 ];
+
 const EventCalendar: React.FC<EventCalendarProps> = ({
   mainTitle,
   eventsData,
@@ -46,7 +47,7 @@ const EventCalendar: React.FC<EventCalendarProps> = ({
 }) => {
   return (
     <>
-      <section className="bg-white pb-5 lg:pb-24">
+      <section className="bg-white py-24">
         <ContentWidth>
           <div className="max-w-full col-span-12">
             <div className="text-start">
@@ -72,7 +73,7 @@ const EventCalendar: React.FC<EventCalendarProps> = ({
                 {eventsData.map((item, index) => (
                   <tr
                     key={index}
-                    className="bg-white border-b dark:bg-black dark:border-gray-700"
+                    className="bg-white border-b text-black dark:bg-black dark:border-gray-700"
                   >
                     <th
                       scope="row"

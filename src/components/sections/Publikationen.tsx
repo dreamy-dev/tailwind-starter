@@ -98,7 +98,7 @@ const Publicationen: React.FC<StatsProps> = ({
   };
 
   return (
-    <section className="bg-white py-5 lg:py-24 ">
+    <section className="bg-primarySolid-50 py-5 lg:py-24 ">
       <ContentWidth>
         <div className="col-span-12">
           <div className="text-start mb-8">
