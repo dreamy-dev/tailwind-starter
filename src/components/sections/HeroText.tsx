@@ -7,7 +7,6 @@ import { ReactNode } from "react";
 type Breadcrumb = {
   text: string;
   link?: string;
-
 };
 
 type HeroTextProps = {
@@ -26,7 +25,7 @@ export default function HeroText({
   buttonText,
 }: HeroTextProps) {
   return (
-    <section className="bg-white dark:bg-gray-900 py-24">
+    <section className="bg-white dark:bg-gray-900 py-5 lg:py-24">
       <SmallWidth>
         <div className="flex font-normal text-gray-600 pb-3">
           {breadcrumbs.map((breadcrumb, index) => (
@@ -43,7 +42,7 @@ export default function HeroText({
           ))}
         </div>
         <H1>{title}</H1>
-        <Lead>{leadText}</Lead>
+        <Lead>{leadText ?? 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.'}</Lead>
         {withCTA ? (
           <ButtonPrimary position="left" buttonText={buttonText} />
         ) : (
@@ -54,20 +53,3 @@ export default function HeroText({
   );
 }
 
-// export default function HeroText(props?: any) {
-//   return (
-//     <section className="bg-white dark:bg-gray-900">
-//       <SmallWidth>
-//         <div className="mt-24 flex font-normal text-gray-600">
-//           {props.solution ? (
-//             <><p>Lösungen</p><span className="px-3">|</span></>
-//           ) : ''}
-//           <p>{props.category}</p>
-//         </div>
-//         <H1>{props.title ?? 'Lorem ipsum dolor sit amet'}</H1>
-//         <Lead>{props.leadText}</Lead>
-//         {props.withCTA ? <ButtonPrimary position="left" buttonText={props.buttonText} /> : ""}
-//       </SmallWidth>
-//     </section>
-//   );
-// }

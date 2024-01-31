@@ -12,25 +12,51 @@ import SubHero from "@/components/sections/SubHero";
 import Text from "@/components/typography/Text";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import EventCalendar from "@/components/sections/EventCalendar";
+import NewsTeaser from "../unternehmen/NewsTeaser";
+import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
+import TabsPublikationen from "./TabsPublikationen";
+import Features from "@/components/sections/Features";
+import TabsGeneralversammlung from "./TabsGeneralversammlung";
 
 const publications = [
   {
     img: "/publications/publ-card-1.png",
     title: "Halbjahresbericht 2023",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
     img: "/publications/publ-card-2.png",
     title: "Geschäftsbericht 2022",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. ",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202023_de_final.pdf",
   },
   {
     img: "/publications/publ-card-4.png",
     title: "Nachhaltigkeitsbericht 2021",
     text: "Unser Erfolgsmodell FLIRT bewegt täglich.",
-    href: "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler_nachhaltigkeitsbericht_2022_de_web_v5.pdf",
+  },
+  {
+    img: "/presentation.png",
+    title: "Präsentation Halbjahresergebnisse 2023",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+  },
+  {
+    img: "/presentation.png",
+    title: "Presentation Full Year Results 2022",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+  },
+  {
+    img: "/presentation.png",
+    title: "Präsentation Capital Markets Day 2022",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
 ];
 
@@ -43,17 +69,20 @@ const tableData = [
   {
     publication: " Halbjahresbericht 2021",
     date: "13. May 2021",
-    link: "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/stadler_halbjahresbericht%202021_de_final.pdf",
   },
   {
     publication: "Geschäftsbericht 2020",
     date: "22. May 2020",
-    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
   },
   {
     publication: "Halbjahresbericht 2020",
     date: "24. December 2020",
-    link: "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/halbjahresbericht%202020_de.pdf",
   },
   {
     publication: " Geschäftsbericht 2019",
@@ -63,7 +92,8 @@ const tableData = [
   {
     publication: "Halbjahresbericht 2019",
     date: "1. January 2019",
-    link: "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
+    link:
+      "https://www.stadlerrail.com/media/pdf/2019_0903_halbjahresbericht%202019_de.pdf",
   },
   {
     publication: "Finanzbericht 2018",
@@ -76,17 +106,20 @@ const presentations = [
   {
     img: "/presentation.png",
     title: "Präsentation Halbjahresergebnisse 2023",
-    href: "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
   {
     img: "/presentation.png",
     title: "Presentation Full Year Results 2022",
-    href: "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
   {
     img: "/presentation.png",
     title: "Präsentation Capital Markets Day 2022",
-    href: "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
+    href:
+      "https://www.stadlerrail.com/media/pdf/stadler%20rail%20-%20half-year%202023%20presentation_f_de.pdf",
   },
 ];
 
@@ -149,39 +182,6 @@ const figures = [
   },
 ];
 
-// const generalversammlungList = [
-//   {
-//     title: "Halbjahresbericht 2023",
-//     image: "/cover_thumbnail_web.jpg",
-//     download: "Download",
-//     href: "/",
-//   },
-//   {
-//     title: "Halbjahresbericht 2023",
-//     image: "/cover_thumbnail_web.jpg",
-//     download: "Download",
-//     href: "/",
-//   },
-//   {
-//     title: "Halbjahresbericht 2023",
-//     image: "/cover_thumbnail_web.jpg",
-//     download: "Download",
-//     href: "/",
-//   },
-//   {
-//     title: "Halbjahresbericht 2023",
-//     image: "/cover_thumbnail_web.jpg",
-//     download: "Download",
-//     href: "/",
-//   },
-//   {
-//     title: "Halbjahresbericht 2023",
-//     image: "/cover_thumbnail_web.jpg",
-//     download: "Download",
-//     href: "/",
-//   },
-// ];
-
 const customEventData = [
   {
     event: "Jahresbericht 2023",
@@ -194,53 +194,98 @@ const customEventData = [
     link: "#",
   },
 ];
+
+const newsCards = [
+  {
+    title: "Stadler bleibt Premium Partner der Eisbären",
+    date: "28.11.2023",
+    text:
+      "Die Eisbären Berlin freuen sich, den Schienenfahrzeughersteller Stadler weiterhin zu ihren Premium Partnern zu zählen. Stadler ...",
+    img:
+      "https://www.stadlerrail.com/media/img/800x/gruppenfoto%202%20nah-sh-optimiert.jpg",
+  },
+  {
+    title:
+      "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow",
+    date: "07.11.2023",
+    text:
+      "Gemeinsam mit Berlins Regierendem Bürgermeister, Kai Wegner, sowie der Senatorin für Wirtschaft, Energie und Betriebe, Franzisk...",
+    img: "/pressefoto-einweihung.jpg",
+  },
+  {
+    title:
+      "Neue Akkuzüge sind jetzt auch zwischen Kiel, Lübeck und Lüneburg unterwegs",
+    date: "23.10.2023",
+    text:
+      "In Schleswig-Holstein ist die weltweit erste batterieelektrische Zugflotte im regelmäßigen Linienbetrieb unterwegs. Damit ha...",
+    img:
+      "https://www.stadlerrail.com/media/img/800x/mwe_0920%20-%20cropped.jpg",
+  },
+  {
+    title: "Weitere neue Wasserstoffzüge für Kalifornien",
+    date: "16.10.2023",
+    text:
+      "Der Bundesstaat Kalifornien und Stadler haben am 12. Oktober 2023 eine wegweisende Vereinbarung unterzeichnet, die einen bedeutenden Schr...",
+    img:
+      "https://www.stadlerrail.com/media/img/800x/caltrans-coastline-16-9.jpg",
+  },
+  {
+    title:
+      "Erste TINA-Strassenbahnen starten in den Probebetrieb mit Fahrgästen",
+    date: "16.10.2023",
+    text:
+      "Die neuen Strassenbahnen der Baureihe TINA öffnen ihre Türen: Seit dem 9. Oktober 2023&nbsp;können Fahrgäste im Rahme...",
+    img: "https://www.stadlerrail.com/media/img/800x/tina_darmstadt.jpg",
+  },
+];
+
+
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: " News",
+    href: "/news",
+  },
+];
+
 export default function Investors() {
   return (
     <section>
-      <SubHero imageUrl="/subhero.jpg"></SubHero>
-      {/* Header kann reiner TextHero sein mit Button der auf die letzte Publikation verweist, alle Publikationen zusammen, vlt ein Bild von publikation? */}
       <InvestorHero />
-      {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
+      <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
+      <HomePageCaroucel
+        items={newsCards}
+        carouselTitle="News"
+        showDate={true}
+        showButton={true}
+        h2Styles="flex justify-left items-left"
+      ></HomePageCaroucel>
       <EventCalendar
         mainTitle="Events"
         eventsData={customEventData}
+        withoutEventLink={true}
       ></EventCalendar>
       <Publikationen
         tableData={tableData}
         publications={publications}
-        title="Publikationen"
+        title="Neuste Berichte"
+        showTable={false}
       ></Publikationen>
-      <Publikationen
-        tableData={tableData}
-        publications={presentations}
-        title="Präsentationen"
-        showTable={true}
-      ></Publikationen>
+      <TabsPublikationen></TabsPublikationen>
       <ContentWidth>
-        <div className="col-span-12 flex flex-col">
-          <Text>
-            Alle Publikationen und Präsentationen finden Sie im Downloadcenter
-          </Text>
-          <div className="mb-6"></div>
-          <ButtonPrimary position="left" buttonText="Zum Downloadcenter" />
-          <div className="mb-20"></div>
-        </div>
+          <div className="col-span-12 mb-14 flex justify-between align-baseline">
+            <Text>Alle Publikationen und Präsentationen finden Sie im Downloadcenter</Text>
+            <ButtonPrimary buttonText="Zum Downloadcenter" />
+          </div>
+        <hr className="col-span-12 h-px bg-gray-200 border-0 dark:bg-gray-700" />
       </ContentWidth>
-
-      {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen
-      https://flowbite.com/docs/components/card/#horizontal-card
-      und der Rest als Collapsible anzeigen mit den restlichen Publikationen
-       */}
-      {/* <Generalversammlung
-        title="Finanzberichte"
-        lead="Bitte beachten Sie die neuesten Finanzberichte und erfahren Sie mehr über kommende Anlässe."
-        list={generalversammlungList}
-      /> */}
-      <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
-      {/* Warum investieren -> Text */}
-      {/* Geschätsmodell -> Text */}
+      <TabsGeneralversammlung />
       <TextBlock />
-      {/* Kultur & Mission -> hier wieder mit diesen interaktiven Cards */}
       <CorporateGorvernance
         mainTitle="Corporate Governance"
         showThirdCard={true}
@@ -251,7 +296,10 @@ export default function Investors() {
         contactname="Daniel Strickler"
         contactlevel="Investor Relations Officer"
       />
-      <Subscribe />
+      {/* <ContentWidth>
+        <div className="col-span-12 flex flex-col mb-20"></div>
+      </ContentWidth> */}
+      <Features mainTitle="Möchten Sie gerne mehr über uns erfahren?" featuresData={featuresData} />
     </section>
   );
 }

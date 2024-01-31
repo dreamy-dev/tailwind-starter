@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../elements/ButtonSecondary";
 import H4 from "../typography/H4";
 import ContentWidth from "../layouts/ContentWidth";
+import Text from "../typography/Text";
 
 interface ListItem {
   id?: number;
@@ -19,10 +20,9 @@ interface ListProps {
 const List: React.FC<ListProps> = ({ items, onItemClick, listTitle }) => {
     return (
       <div>
-        <ContentWidth>
           <div className="max-w-full col-span-12">
             <div className=" border-b-2 border-primary">
-              <H4 styles="mb-6">{listTitle}</H4>
+              <H4 styles="my-6">{listTitle}</H4>
             </div>
             <ul>
               {items.map((item, index) => (
@@ -33,7 +33,7 @@ const List: React.FC<ListProps> = ({ items, onItemClick, listTitle }) => {
                   >
                     <p className="w-1/2">{item.text}</p>
                     <p className="w-1/3">{item.iso}</p>
-                    <Button
+                    {/* <Button
                       textColorClass="text-primary"
                       borderColorClass="border-primary"
                       styles="flex gap-2"
@@ -56,14 +56,15 @@ const List: React.FC<ListProps> = ({ items, onItemClick, listTitle }) => {
                         />
                       </svg>
                       Download
-                    </Button>
+                    </Button> */}
+                    <a className="text-primary" href="">EN</a>
+                    <a className="text-primary" href="">DE</a>
                   </li>
                   <div className="border-b mb-6"></div>
                 </div>
               ))}
             </ul>
           </div>
-        </ContentWidth>
       </div>
     );
 };

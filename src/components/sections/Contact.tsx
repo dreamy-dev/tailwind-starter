@@ -4,7 +4,7 @@ import H4 from "../typography/H4";
 import Text from "../typography/Text";
 export default function Contact(props?: any) {
   return (
-    <section className="py-20 bg-stadlergradient">
+    <section className="py-5 lg:py-24 bg-stadlergradient">
       <SmallWidth>
         <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
           <div className="w-full xl:col-span-4">

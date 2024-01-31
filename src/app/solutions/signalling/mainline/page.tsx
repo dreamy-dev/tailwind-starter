@@ -149,7 +149,7 @@ const features = [
 
 const featuresData = [
   {
-    imageSrc: "/teaser_signalling-2.jpg",
+    imageSrc: "/hero-home-big-min-small.jpg",
     title: "Schienenfahrzeuge",
     href: "/schienenfahrzeuge",
   },
@@ -161,27 +161,34 @@ const featuresData = [
 ];
 
 const teaserData = [
-  // {
-  //   label: "Zugbeeinflussung",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   img: "/news-1.jpg",
-  //   href: "/solutions/signalling/mainline/subpage",
-  // },
-  // {
-  //   label: "Stellwerke",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   img: "/news-1.jpg",
-  //   href: "/solutions/signalling/mainline/subpage",
-  // },
-  // {
-  //   label: "Gleisfreimeldung",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   img: "/news-1.jpg",
-  //   href: "/solutions/signalling/mainline/subpage",
-  // },
+  {
+    label: "Zugbeeinflussung ETCS",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Stellwerke",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Zugbeeinflussung",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Gleisfreimeldung",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
   {
     label: "Weichensteuerungen",
     description:
@@ -190,14 +197,35 @@ const teaserData = [
     href: "/solutions/signalling/mainline/subpage",
   },
   {
-    label: "Fahrsignalanlagen",
+    label: "Signale",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
     href: "/solutions/signalling/mainline/subpage",
   },
   {
-    label: "Signale",
+    label: "Fahrgastinformationssystem",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Digital Twin",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Automatischer Zugbetrieb (ATO)",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    img: "/news-1.jpg",
+    href: "/solutions/signalling/mainline/subpage",
+  },
+  {
+    label: "Tailored Solutions",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/news-1.jpg",
@@ -220,63 +248,9 @@ export default function Mainline() {
       />
       <ImageFullWidth imgSrc="/hero-mainline.jpg" />
       <TextSection></TextSection>
-      {/* <QualityFeatures
-        features={features}
-        mainTitle="Die Vorteile auf einen Blick"
-      /> */}
-      <SmallWidth>
-        <div className="col-span-12">
-          <H2>Relevante Lösungen</H2>
-        </div>
-      </SmallWidth>
-      <TeaserImageLeft imageSrc="/news-1.jpg">
-        <div>
-          <H2 styles="text-black">Zugbeeinflussung</H2>
-          <Text styles="mt-4 text-xl font-normal text-black">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor
-          </Text>
-        </div>
-        <ButtonPrimary
-          position="left"
-          href="/solutions/signalling/mainline/subpage"
-        >
-          Mehr dazu
-        </ButtonPrimary>
-      </TeaserImageLeft>
-      <TeaserImageLeft imageSrc="/news-1.jpg">
-        {" "}
-        <div>
-          <H2 styles="text-black">Stellwerke</H2>
-          <Text styles="mt-4 text-xl font-normal text-black">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor
-          </Text>
-        </div>
-        <ButtonPrimary
-          position="left"
-          href="/solutions/signalling/mainline/subpage"
-        >
-          Mehr dazu
-        </ButtonPrimary>
-      </TeaserImageLeft>
-      <TeaserImageLeft imageSrc="/news-1.jpg">
-        <div>
-          <H2 styles="text-black">Gleisfreimeldung</H2>
-          <Text styles="mt-4 text-xl font-normal text-black">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor
-          </Text>
-        </div>
-        <ButtonPrimary
-          position="left"
-          href="/solutions/signalling/mainline/subpage"
-        >
-          Mehr dazu
-        </ButtonPrimary>
-      </TeaserImageLeft>
+ 
       <ServiceTeasers
-        // mainTitle="Relevante Lösungen"
+         mainTitle="Relevante Lösungen"
         services={teaserData}
         imageStyles="w-full "
       ></ServiceTeasers>

@@ -1,4 +1,7 @@
-"use client";
+  "use client";
+ import { getStoryblokApi, StoryblokComponent } from "@storyblok/react";
+//import StoryblokStory from "@storyblok/react";
+import StoryblokStory from "@storyblok/react";
 
 import Video from "../components/sections/Video";
 import FactsAndFigures from "@/components/sections/FactsAndFigures";
@@ -6,6 +9,8 @@ import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TrainCarousel from "@/components/sections/TrainCarousel";
 import Map from "@/components/sections/Map";
 import HomePageHero from "../components/sections/HomePageHero";
+import H2 from "@/components/typography/H2";
+import Teaser from "@/components/Teaser";
 
 
 const cards = [
@@ -100,11 +105,23 @@ const figures = [
   },
 ];
 
-export default function HomePage() {
-
+// export default async function HomePage() {
+  // const { data } = await fetchData();
+  // return (
+  //   <>
+  //     <h2>Story: {data.story.name}</h2>
+  //     <Hero />
+  //     <Stats />
+export default  function HomePage() {
+  // const { data } = await fetchData();
+ 
   return (
     <>
-    
+      {/* <H1>Story: {data.story.name}</H1>
+       */}
+      {/* <StoryblokComponent blok={data.story} /> */}
+  {/* <Teaser blok={data.headline}></Teaser> */}
+      {/* <H2>Story: {data.story.name}</H2> */}
       <HomePageHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <TrainCarousel />
@@ -114,8 +131,19 @@ export default function HomePage() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-       <Map></Map>
+      <Map></Map>
       <Video></Video>
     </>
   );
 }
+
+//  async function fetchData() {
+//   type SBParams = {
+//     version: "draft"; 
+//   };
+//   let sbParams: SBParams = { version: "draft" };
+
+//   const storyblokApi = getStoryblokApi();
+//   return storyblokApi.get(`cdn/stories/home`, sbParams)
+  
+// }

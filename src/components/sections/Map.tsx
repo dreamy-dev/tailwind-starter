@@ -25,13 +25,13 @@ const statsData = [
     suffix: "",
   },
   {
-    text: "Signalling-Kompetenzcenter",
-    end: 5,
+    text: "Komponentenwerke",
+    end: 7,
     suffix: "",
   },
   {
-    text: "Komponentenwerke",
-    end: 7,
+    text: "Signalling-Kompetenzcenter",
+    end: 5,
     suffix: "",
   },
 
@@ -45,7 +45,7 @@ const statsData = [
 export default function Map() {
   return (
     <FullWidth>
-      <div className="col-span-12 w-full bg-white py-24">
+      <div className="col-span-12 w-full bg-white pb-5 lg:pb-24">
         <MapTextTitle />
         <Stats data={statsData} backgroundColor="bg-white" />
         <div className="relative flex flex-col-reverse lg:flex-none">
@@ -61,7 +61,7 @@ export default function Map() {
             </div>
 
             <div className="mt-8">
-              <ButtonPrimary position="left">Alle Standorte</ButtonPrimary>
+              <ButtonPrimary position="left" href="/standorte">Alle Standorte</ButtonPrimary>
             </div>
           </div>
           <div className="pl-6 static lg:absolute top-0 w-[84%] left-[16%] h-full">
