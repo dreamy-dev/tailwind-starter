@@ -318,7 +318,7 @@ const Header = () => {
                                 </div>
                                 <Link
                                   href="/solutions"
-                                  className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primarySolid-600 lg:text-primary px-0 py-4 lg:px-8 lg:py-24 lg:text-center"
+                                  className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 lg:px-8 lg:py-24 lg:text-center"
                                   onClick={() => {
                                     closeMobileNav();
                                     setIsOpen((isOpen) => !isOpen);
