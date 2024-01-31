@@ -162,10 +162,7 @@ const newsCards = [
               Und mit Schweizer Werten, die das Standing von Stadler weltweit
               fördern und prägen. Stadler steht für Zuverlässigkeit,
               Flexibilität und Innovationskraft – seit 1942."
-        // withCTA={true}
-        // buttonText="CTA Button"
       />
-
       <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}
