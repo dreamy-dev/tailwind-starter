@@ -53,7 +53,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={fontFamily.className}>
+      <body className={fontFamily.className + ' ' + 'overflow-x-hidden flex flex-col min-h-screen'}>
         <Header />
         <main>{children}</main>
         <Footer />

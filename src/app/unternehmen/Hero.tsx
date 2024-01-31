@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="bg-white ">
       <SmallWidth>
-        <div className=" col-span-12 max-w-4xl mx-auto text-center  ">
+        <div className="col-span-12 text-center  ">
           <video
             className="-mt-[1%] -mb-[1%]"
             controls={false}
