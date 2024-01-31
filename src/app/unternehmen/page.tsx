@@ -10,6 +10,7 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
 import EventCalendar from "@/components/sections/EventCalendar";
 import Hero from "./Hero";
+import History_Proposal from "./History_Proposal";
 
 const cards = [
   {
@@ -194,6 +195,7 @@ const newsCards = [
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
+      <History_Proposal />
       <EventCalendar
         mainTitle="Events"
         eventsData={customEventData}
