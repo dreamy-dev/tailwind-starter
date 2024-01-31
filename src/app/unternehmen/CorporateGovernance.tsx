@@ -10,9 +10,9 @@ type TitleProps = {
 };
 const CorporateGorvernance: React.FC<TitleProps> = ({ mainTitle, showThirdCard, numberOfColumns}) => {
   return (
-    <section className="bg-white dark:bg-gray-900 mb-8">
+    <section className="bg-white dark:bg-gray-900 py-24">
       <SuperSmallWidth>
-        <div className="py-8 lg:py-16">
+        <div className="">
           <div className="mx-auto text-center mb-2 lg:mb-4">
             <H2>{mainTitle}</H2>
           </div>
