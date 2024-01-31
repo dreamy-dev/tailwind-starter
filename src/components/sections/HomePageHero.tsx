@@ -11,16 +11,16 @@ export default function HomePageHero() {
           initial={{ x: -1000, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className=" w-full md:w-[550px] lg:w-[680px] 2xl:w-[744px]  bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
+          className=" w-full md:w-[550px] lg:w-[550px] 2xl:w-[600px]  bg-contain md:h-hero-bg-height-middle-screen xl:h-hero-bg-height-extralarge-screen bg-no-repeat relative md:absolute left-0 md:left-0 transform -translate-y-1/2 -translate-x-1/2 "
         >
           <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
-            <img src="/Graph.svg" className="block h-auto w-full" alt="" />
+            <img src="/Graph.svg" className="block h-auto 2xl:h-[60vh] w-full" alt="" />
           </div>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 40 }}
             transition={{ duration: 0.5, delay: 1.5 }}
-            className="z-1 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-40 h-4/5 top-4 md:w-3/5 md:top-8  md:left-0 transform -translate-y-1/2 translate-x-1/2 w-3/6 max-w-[300px] md:max-w-[330px]"
+            className="z-1 absolute flex flex-col justify-center pb-16 md:pb-0 md:ml-4 xl:ml-20 h-4/5 top-4 md:w-3/5 md:top-8  md:left-0 transform -translate-y-1/2 translate-x-1/2 w-3/6 max-w-[300px] md:max-w-[330px]"
           >
             <H1 styles="lg:mt-0 text-3xl md:text-7xl lg:text-7xl">
               Driven to lead
