@@ -141,12 +141,13 @@ export default function StandorteAccordion() {
               </div>
             </div>
             <div
-              onClick={() => toggleAccordion(item.id)}
+              onClick={() => handleAccordionClick(item.id)}
               className={`cursor-pointer py-2.5 ${
                 showAccordion[item.id] ? "rotate-90" : "-rotate-90"
               }`}
             >
               <svg
+                onClick={() => handleAccordionClick(item.id)}
                 width="16"
                 height="16"
                 viewBox="0 0 20 20"
