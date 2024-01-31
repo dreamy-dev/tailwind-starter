@@ -8,7 +8,7 @@ const navigation = {
     { name: "Disclaimer", href: "/disclaimer" },
     { name: "Compliance", href: "/#" },
     { name: "Cookies", href: "/cookies" },
-    { name: "Zertifizierung", href: "/#" },
+    { name: "Zertifizierung", href: "/zertifizierung" },
   ],
   social: [
     {
