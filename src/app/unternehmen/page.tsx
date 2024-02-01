@@ -10,6 +10,7 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
 import EventCalendar from "@/components/sections/EventCalendar";
 import Hero from "./Hero";
+import History_Proposal from "./History_Proposal";
 
 const cards = [
   {
@@ -180,14 +181,7 @@ const newsCards = [
       <Map />
 
       <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
-
-      <TeaserGeneral
-        title="Stadler History"
-        customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        ctaText="Zu history"
-        href="/history"
-      ></TeaserGeneral>
-      {/* <History /> */}
+      <History_Proposal />
       <HomePageCarousel
         items={cards}
         carouselTitle="Erfolgsgeschichten"
@@ -205,7 +199,6 @@ const newsCards = [
         showButton={true}
         h2Styles="flex justify-left items-left"
       ></HomePageCarousel>
-     
     </>
   );
 }
