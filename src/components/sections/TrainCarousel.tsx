@@ -16,43 +16,43 @@ const tabs = {
       image: "/trains-1-narrow.png",
       trains: [
         {
-          img: "/train-models/mainline/smile.jpeg",
+          img: "/images/train-models/mainline/smile.jpeg",
           category: "Highspeed",
           name: "Smile",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/mainline/flirt200.jpeg",
+          img: "/images/train-models/mainline/flirt200.jpeg",
           category: "Intercity",
           name: "Flirt 200",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/mainline/kiss200.jpeg",
+          img: "/images/train-models/mainline/kiss200.jpeg",
           category: "Intercity",
           name: "Kiss 200",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/mainline/flirt160.jpeg",
+          img: "/images/train-models/mainline/flirt160.jpeg",
           category: "Regional",
           name: "Flirt 160",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/mainline/kiss160.jpeg",
+          img: "/images/train-models/mainline/kiss160.jpeg",
           category: "Regional",
           name: "Kiss 160",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/mainline/wink.jpeg",
+          img: "/images/train-models/mainline/wink.jpeg",
           category: "Regional",
           name: "Wink",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/mainline/gtw.jpeg",
+          img: "/images/train-models/mainline/gtw.jpeg",
           category: "Regional",
           name: "GTW",
           href: "/solutions/schienenfahrzeuge/product",
@@ -64,43 +64,43 @@ const tabs = {
       image: "/trains-narrow.png",
       trains: [
         {
-          img: "/train-models/urban/tina.jpeg",
+          img: "/images/train-models/urban/tina.jpeg",
           category: "Highspeed",
           name: "Tina",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/urban/tango.jpeg",
+          img: "/images/train-models/urban/tango.jpeg",
           category: "Intercity",
           name: "Tango",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/urban/tramlink.jpeg",
+          img: "/images/train-models/urban/tramlink.jpeg",
           category: "Tram",
           name: "Tramlink",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/urban/variobahn.jpeg",
+          img: "/images/train-models/urban/variobahn.jpeg",
           category: "Regional",
           name: "Variobahn",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/urban/metelitsa.jpeg",
+          img: "/images/train-models/urban/metelitsa.jpeg",
           category: "Regional",
           name: "Metelitsa",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/urban/citylink.jpeg",
+          img: "/images/train-models/urban/citylink.jpeg",
           category: "Regional",
           name: "Citylink",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/urban/metro.jpeg",
+          img: "/images/train-models/urban/metro.jpeg",
           category: "Regional",
           name: "Metro",
           href: "/solutions/schienenfahrzeuge/product",
@@ -112,43 +112,43 @@ const tabs = {
       image: "/trains-2-narrow.png",
       trains: [
         {
-          img: "/train-models/locomotive/euro9000.jpeg",
+          img: "/images/train-models/locomotive/euro9000.jpeg",
           category: "Highspeed",
           name: "EURO9000",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/locomotive/eurodual.jpeg",
+          img: "/images/train-models/locomotive/eurodual.jpeg",
           category: "EURODUAL",
           name: "Smile",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/locomotive/euro6000.jpeg",
+          img: "/images/train-models/locomotive/euro6000.jpeg",
           category: "Highspeed",
           name: "EURO6000",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/locomotive/euro4001.jpeg",
+          img: "/images/train-models/locomotive/euro4001.jpeg",
           category: "Highspeed",
           name: "EURO4001",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/locomotive/eurolight.jpeg",
+          img: "/images/train-models/locomotive/eurolight.jpeg",
           category: "Highspeed",
           name: "EUROLIGHT",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/locomotive/sali.jpeg",
+          img: "/images/train-models/locomotive/sali.jpeg",
           category: "Highspeed",
           name: "SALI",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/locomotive/central-cab.jpeg",
+          img: "/images/train-models/locomotive/central-cab.jpeg",
           category: "Highspeed",
           name: "Central Cab",
           href: "/solutions/schienenfahrzeuge/product",
@@ -160,25 +160,25 @@ const tabs = {
       image: "/trains-3-narrow.png",
       trains: [
         {
-          img: "/train-models/tailormade/triebzug.jpeg",
+          img: "/images/train-models/tailormade/triebzug.jpeg",
           category: "Highspeed",
           name: "Triebzüge",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/tailormade/zahnradbahn.jpeg",
+          img: "/images/train-models/tailormade/zahnradbahn.jpeg",
           category: "Highspeed",
           name: "Zahnradbahnen",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/tailormade/schlafwagen.jpeg",
+          img: "/images/train-models/tailormade/schlafwagen.jpeg",
           category: "Highspeed",
           name: "Schlafwagen",
           href: "/solutions/schienenfahrzeuge/product",
         },
         {
-          img: "/train-models/tailormade/rangierlok.jpeg",
+          img: "/images/train-models/tailormade/rangierlok.jpeg",
           category: "Highspeed",
           name: "Lokomotiven",
           href: "/solutions/schienenfahrzeuge/product",
@@ -247,7 +247,7 @@ const TrainCarousel = (props?: any) => {
                 <p>{item.title}</p>
                 <motion.img
                   className={`${selectedCategory === key ? "w-4" : "w-0"} mt-2`}
-                  src="/plus-light.svg"
+                  src="/icons/plus-light.svg"
                   animate={
                     selectedCategory === key && isOpen ? "open" : "close"
                   }
