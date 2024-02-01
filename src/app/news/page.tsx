@@ -1,11 +1,24 @@
 "use client";
 
+import ContentWidth from "@/components/layouts/ContentWidth";
 import HeroText from "@/components/sections/HeroText";
 import NewsSection from "@/components/sections/NewsSection";
 import NewsFilters from "./NewsFilters";
 import Contact from "@/components/sections/Contact";
+import Features from "@/components/sections/Features";
 
-import DoubleCardNews from "@/components/sections/DoubleCardNews";
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "Medien",
+    href: "/medien",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: "Medienmitteilungen",
+    href: "/medienmitteilungen",
+  },
+];
 
 export default function News() {
   return (
@@ -19,8 +32,14 @@ export default function News() {
       />
       <NewsFilters />
       <NewsSection />
-      <DoubleCardNews />
+      <ContentWidth>
+        <div className="mt-32 col-span-12 max-w-full"></div>
+      </ContentWidth>
       <Contact />
+      <Features
+        mainTitle="Möchten Sie gerne mehr über uns erfahren?"
+        featuresData={featuresData}
+      />
     </div>
   );
 }
