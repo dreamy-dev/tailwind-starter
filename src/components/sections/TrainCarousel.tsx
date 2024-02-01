@@ -203,103 +203,109 @@ const TrainCarousel = (props?: any) => {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
-    <section className="bg-stadlergradient">
-      <TeaserMobilitySolutions></TeaserMobilitySolutions>
-      <ContentWidth>
-        <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
-          <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
-            Schienenfahrzeuge
-          </H2>
-          <Text>
-            Höchste Qualität und Zuverlässigkeit sind bei unseren
-            Schienenfahrzeugen Standard. Alles andere wird projekt-spezifisch
-            massgeschneidert.
-          </Text>
-          <a className="flex mt-4" href="/solutions/schienenfahrzeuge">
-            <img className="h-5" src="/stadler-arrow-foreward.svg" />
-          </a>
-        </div>
-      </ContentWidth>
-      <FullWidth>
-        <img
-          src={tabs.categories[selectedCategory].image}
-          className="col-span-12 w-full"
-        />
-      </FullWidth>
-      <ContentWidth>
-        <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
-          <div className="flex flex-row items-start justify-center">
-            {tabs.categories.map((item, key) => (
-              <div
-                key={item.title}
-                className={`${
-                  selectedCategory === key
-                    ? "text-white"
-                    : "text-greyBrighten-600"
-                } font-semibold text-center px-4 flex flex-col items-center cursor-pointer`}
-                onClick={() => (
-                  setIsOpen(
-                    selectedCategory === key && isOpen === false ? true : false
-                  ),
-                  setSelectedCategory(key)
-                )}
-              >
-                <p>{item.title}</p>
-                <motion.img
-                  className={`${selectedCategory === key ? "w-4" : "w-0"} mt-2`}
-                  src="/icons/plus-light.svg"
-                  animate={
-                    selectedCategory === key && isOpen ? "open" : "close"
-                  }
-                  variants={plusAnimation}
-                />
-              </div>
-            ))}
+    <div className="pb-5 lg:pb-24">
+      <section className="bg-stadlergradient ">
+        <TeaserMobilitySolutions></TeaserMobilitySolutions>
+        <ContentWidth>
+          <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
+            <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
+              Schienenfahrzeuge
+            </H2>
+            <Text>
+              Höchste Qualität und Zuverlässigkeit sind bei unseren
+              Schienenfahrzeugen Standard. Alles andere wird projekt-spezifisch
+              massgeschneidert.
+            </Text>
+            <a className="flex mt-4" href="/solutions/schienenfahrzeuge">
+              <img className="h-5" src="/stadler-arrow-foreward.svg" />
+            </a>
           </div>
-        </div>
-      </ContentWidth>
-      <ContentWidth>
-        <motion.div
-          className={`${
-            isOpen ? "grid" : "hidden"
-          } col-span-12 lg:grid-cols-4 lg:grid-rows-2 gap-2`}
-          animate={isOpen ? "open" : "closed"}
-          variants={variants}
-        >
-          {tabs.categories[selectedCategory].trains.map((item) => (
-            <div
-              key={item.name}
-              className="bg-white text-black flexflex-row lg:flex-col"
-            >
-              <img className="w-full" src={item.img} />
-              <div className="p-6">
-                <small className="text-greySolid-600 flex mb-2">
-                  {item.category}
-                </small>
-                <div className="flex flex-row items-center justify-between">
-                  <H3 styles="mb-0">{item.name}</H3>
-                  <a href="#">
-                    <img src="/icons/arrow-blue.svg" />
-                  </a>
+        </ContentWidth>
+        <FullWidth>
+          <img
+            src={tabs.categories[selectedCategory].image}
+            className="col-span-12 w-full"
+          />
+        </FullWidth>
+        <ContentWidth>
+          <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
+            <div className="flex flex-row items-start justify-center">
+              {tabs.categories.map((item, key) => (
+                <div
+                  key={item.title}
+                  className={`${
+                    selectedCategory === key
+                      ? "text-white"
+                      : "text-greyBrighten-600"
+                  } font-semibold text-center px-4 flex flex-col items-center cursor-pointer`}
+                  onClick={() => (
+                    setIsOpen(
+                      selectedCategory === key && isOpen === false
+                        ? true
+                        : false
+                    ),
+                    setSelectedCategory(key)
+                  )}
+                >
+                  <p>{item.title}</p>
+                  <motion.img
+                    className={`${
+                      selectedCategory === key ? "w-4" : "w-0"
+                    } mt-2`}
+                    src="/icons/plus-light.svg"
+                    animate={
+                      selectedCategory === key && isOpen ? "open" : "close"
+                    }
+                    variants={plusAnimation}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </ContentWidth>
+        <ContentWidth>
+          <motion.div
+            className={`${
+              isOpen ? "grid" : "hidden"
+            } col-span-12 lg:grid-cols-4 lg:grid-rows-2 gap-2`}
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+          >
+            {tabs.categories[selectedCategory].trains.map((item) => (
+              <div
+                key={item.name}
+                className="bg-white text-black flexflex-row lg:flex-col"
+              >
+                <img className="w-full" src={item.img} />
+                <div className="p-6">
+                  <small className="text-greySolid-600 flex mb-2">
+                    {item.category}
+                  </small>
+                  <div className="flex flex-row items-center justify-between">
+                    <H3 styles="mb-0">{item.name}</H3>
+                    <a href="#">
+                      <img src="/icons/arrow-blue.svg" />
+                    </a>
+                  </div>
                 </div>
               </div>
+            ))}
+            <div className="bg-transparent text-white border-solid border-2 border-white grid p-6">
+              <div className="self-center">
+                <small>Übersicht</small>
+                <H3>{tabs.categories[selectedCategory].title}</H3>
+              </div>
+              <div className="justify-self-end place-self-end">
+                <a href="#">
+                  <img className="w-5" src="/icons/arrow-white.svg" />
+                </a>
+              </div>
             </div>
-          ))}
-          <div className="bg-transparent text-white border-solid border-2 border-white grid p-6">
-            <div className="self-center">
-              <small>Übersicht</small>
-              <H3>{tabs.categories[selectedCategory].title}</H3>
-            </div>
-            <div className="justify-self-end place-self-end">
-              <a href="#">
-                <img className="w-5" src="/icons/arrow-white.svg" />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </ContentWidth>
-      <DoubleCard />
-    </section>
+          </motion.div>
+        </ContentWidth>
+        <DoubleCard />
+      </section>
+    </div>
   );
 };
 
