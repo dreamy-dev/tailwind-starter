@@ -1,5 +1,6 @@
 import H3 from "@/components/typography/H3";
 import ContentWidth from "../layouts/ContentWidth";
+import H2 from "../typography/H2";
 
 interface FeatureItemProps {
   imageSrc?: string;
@@ -49,7 +50,7 @@ const Features: React.FC<FeaturesProps> = ({ featuresData, mainTitle }) => {
       <ContentWidth>
         <div className="col-span-12  max-w-full mx-auto bg-white">
           <div className="mb-10 tracking-tight dark:text-white ">
-            <H3>{mainTitle}</H3>
+            <H2>{mainTitle}</H2>
           </div>
           <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 md:gap-16 md:flex-row">
             {featuresData.map((feature, index) => (

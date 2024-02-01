@@ -9,6 +9,7 @@ import H1 from "@/components/typography/H1";
 import HeroText from "@/components/sections/HeroText";
 import SmallWidth from "@/components/layouts/SmallWidth";
 import ButtonPrimary from "@/components/elements/ButtonPrimary";
+import AccordionItem from "@/components/sections/AccordionItem";
 const schweizItems = [
   {
     text: "Stadler Rail AG, Stadler Bussnang AG, Stadler Rheintal AG, Stadler Winterthur AG, Stadler Signalling AG",
@@ -68,128 +69,21 @@ export default function Zertifizierung() {
     <>
     <HeroText title="Zertifizierungen" />
       <SmallWidth>
-        <div className="col-span-12 max-w-full z-50">
-          <div>
-            <H3
-              styles="flex items-center gap-2 cursor-pointer"
-              onClick={() => toggleVisibility("rollingStock")}
-            >
-              Rolling Stock{" "}
-              {sectionsState.rollingStock ? (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
-                    fill="#005893"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                    fill="#005893"
-                  />
-                </svg>
-              )}
-            </H3>
-            {sectionsState.rollingStock && (
-              <>
-                <List items={schweizItems} listTitle="Schweiz" />
-                <List items={deutschlandItems} listTitle="Deutschland" />
-                <List items={spanienItems} listTitle="Spanien" />
-              </>
-            )}
-          </div>
-          <div>
-            <H3
-              styles="flex items-center gap-2 cursor-pointer"
-              onClick={() => toggleVisibility("signalling")}
-            >
-              Signalling{" "}
-              {sectionsState.rollingStock ? (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
-                    fill="#005893"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                    fill="#005893"
-                  />
-                </svg>
-              )}
-            </H3>
-            {sectionsState.signalling && (
-              <List items={deutschlandItems} listTitle="Deutschland" />
-            )}
-          </div>
-          <div>
-            <H3
-              styles="flex items-center gap-2 cursor-pointer"
-              onClick={() => toggleVisibility("service")}
-            >
-              Service{" "}
-              {sectionsState.rollingStock ? (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
-                    fill="#005893"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                    fill="#005893"
-                  />
-                </svg>
-              )}
-            </H3>
-            {sectionsState.service && (
-              <List items={spanienItems} listTitle="Spanien" />
-            )}
-          </div>
-        </div>
         <section>
-        <div className="col-span-12 mb-14 flex justify-between align-baseline">
+          <AccordionItem title="Rolling Stock">
+            <List items={schweizItems} listTitle="Schweiz" />
+            <List items={deutschlandItems} listTitle="Deutschland" />
+            <List items={spanienItems} listTitle="Spanien" />
+          </AccordionItem>
+          <AccordionItem title="Signalling">
+            <List items={deutschlandItems} listTitle="Deutschland" />
+          </AccordionItem>
+          <AccordionItem title="Service">
+            <List items={spanienItems} listTitle="Spanien" />
+          </AccordionItem>
+        </section>
+        <section>
+        <div className="col-span-12 my-14 flex justify-between align-baseline">
           <Text>Im Downloadcenter finden Sie alle Dokumente in allen Sprachen.</Text>
           <ButtonPrimary buttonText="Zum Downloadcenter" />
           </div>

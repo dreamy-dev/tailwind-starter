@@ -14,6 +14,9 @@ import ButtonPrimary from "@/components/elements/ButtonPrimary";
 import EventCalendar from "@/components/sections/EventCalendar";
 import NewsTeaser from "../unternehmen/NewsTeaser";
 import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
+import TabsPublikationen from "./TabsPublikationen";
+import Features from "@/components/sections/Features";
+import TabsGeneralversammlung from "./TabsGeneralversammlung";
 
 const publications = [
   {
@@ -236,6 +239,20 @@ const newsCards = [
   },
 ];
 
+
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: " News",
+    href: "/news",
+  },
+];
+
 export default function Investors() {
   return (
     <section>
@@ -248,9 +265,6 @@ export default function Investors() {
         showButton={true}
         h2Styles="flex justify-left items-left"
       ></HomePageCaroucel>
-      {/* <ContentWidth>
-        <div className="col-span-12 flex flex-col mb-20"></div>
-      </ContentWidth> */}
       <EventCalendar
         mainTitle="Events"
         eventsData={customEventData}
@@ -259,37 +273,19 @@ export default function Investors() {
       <Publikationen
         tableData={tableData}
         publications={publications}
-        title="Publikationen"
+        title="Neuste Berichte"
+        showTable={false}
       ></Publikationen>
-      {/* <Publikationen
-        tableData={tableData}
-        publications={presentations}
-        title="Präsentationen"
-        showTable={true}
-      ></Publikationen> */}
+      <TabsPublikationen></TabsPublikationen>
       <ContentWidth>
-        <div className="col-span-12 flex flex-col">
-          <Text>
-            Alle Publikationen und Präsentationen finden Sie im Downloadcenter
-          </Text>
-          <div className="mb-6"></div>
-          <ButtonPrimary position="left" buttonText="Zum Downloadcenter" />
-          <div className="mb-20"></div>
-        </div>
+          <div className="col-span-12 mb-14 flex justify-between align-baseline">
+            <Text>Alle Publikationen und Präsentationen finden Sie im Downloadcenter</Text>
+            <ButtonPrimary buttonText="Zum Downloadcenter" />
+          </div>
+        <hr className="col-span-12 h-px bg-gray-200 border-0 dark:bg-gray-700" />
       </ContentWidth>
-      {/* Letzte Publikationen -> 4 letzte Publikationen als Cards anzeigen
-      https://flowbite.com/docs/components/card/#horizontal-card
-      und der Rest als Collapsible anzeigen mit den restlichen Publikationen
-       */}
-      {/* <Generalversammlung
-        title="Finanzberichte"
-        lead="Bitte beachten Sie die neuesten Finanzberichte und erfahren Sie mehr über kommende Anlässe."
-        list={generalversammlungList}
-      /> */}
-      {/* Warum investieren -> Text */}
-      {/* Geschätsmodell -> Text */}
+      <TabsGeneralversammlung />
       <TextBlock />
-      {/* Kultur & Mission -> hier wieder mit diesen interaktiven Cards */}
       <CorporateGorvernance
         mainTitle="Corporate Governance"
         showThirdCard={true}
@@ -299,11 +295,11 @@ export default function Investors() {
         title="Investorenkontakt"
         contactname="Daniel Strickler"
         contactlevel="Investor Relations Officer"
-      />{" "}
-      <ContentWidth>
+      />
+      {/* <ContentWidth>
         <div className="col-span-12 flex flex-col mb-20"></div>
-      </ContentWidth>
-      {/* <Subscribe /> */}
+      </ContentWidth> */}
+      <Features mainTitle="Möchten Sie gerne mehr über uns erfahren?" featuresData={featuresData} />
     </section>
   );
 }

@@ -97,10 +97,15 @@ export default function StandorteAccordion() {
       [id]: !prev[id],
     }));
   };
+
+   const handleAccordionClick = (id: string) => {
+     toggleAccordion(id);
+   };
   return (
     <div className="pb-24">
       {locations.map((item) => (
         <div
+          onClick={() => handleAccordionClick(item.id)}
           key={item.id}
           className="text-gray-900  bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
         >
@@ -110,9 +115,6 @@ export default function StandorteAccordion() {
                 <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
                   {item.division}
                 </p>
-                {/* <p className="mb-3 py-1 px-2 text-xs tracking-tight font-light bg-greenBright text-gray-900">
-                  {item.location}
-                </p> */}
               </div>
               <div className="flex flex-row items-center">
                 <div className="mr-6">
@@ -136,12 +138,13 @@ export default function StandorteAccordion() {
               </div>
             </div>
             <div
-              onClick={() => toggleAccordion(item.id)}
+              onClick={() => handleAccordionClick(item.id)}
               className={`cursor-pointer py-2.5 ${
                 showAccordion[item.id] ? "rotate-90" : "-rotate-90"
               }`}
             >
               <svg
+                onClick={() => handleAccordionClick(item.id)}
                 width="16"
                 height="16"
                 viewBox="0 0 20 20"

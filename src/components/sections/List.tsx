@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../elements/ButtonSecondary";
 import H4 from "../typography/H4";
 import ContentWidth from "../layouts/ContentWidth";
+import Text from "../typography/Text";
 
 interface ListItem {
   id?: number;
@@ -21,7 +22,7 @@ const List: React.FC<ListProps> = ({ items, onItemClick, listTitle }) => {
       <div>
           <div className="max-w-full col-span-12">
             <div className=" border-b-2 border-primary">
-              <H4 styles="mb-6">{listTitle}</H4>
+              <H4 styles="my-6">{listTitle}</H4>
             </div>
             <ul>
               {items.map((item, index) => (
