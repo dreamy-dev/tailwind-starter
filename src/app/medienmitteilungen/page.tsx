@@ -246,7 +246,7 @@ export default function Medienmitteilungen() {
   return (
     <div className="mb-16">
       <HeroText
-        breadcrumbs={[{ text: "Medien" }]}
+        breadcrumbs={[{ text: "Medien", link: "/medien" }]}
         title="Medienmitteilungen"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem diam, volutpat tristique congue in, fermentum et arcu. Donec elementum ac dolor consectetur laoreet. Vestibulum augue elit, malesuada eu eros ut, consectetur placerat turpis. Aenean vel dapibus velit. Nulla dapibus sem est. Pellentesque nec lectus accumsan, rutrum ipsum ut, mattis quam. "
         // withCTA={true}
