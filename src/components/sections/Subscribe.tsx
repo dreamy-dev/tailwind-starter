@@ -80,9 +80,7 @@ export default function Subscribe() {
                   .
                 </label>
               </div>
-              <Button position="center" styles="mt-8">
-                Subscribe
-              </Button>
+              <Button position="center">Subscribe</Button>
             </div>
           </form>
         </div>
