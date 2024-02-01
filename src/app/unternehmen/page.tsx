@@ -181,21 +181,13 @@ const newsCards = [
       <Map />
 
       <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
-
-      <TeaserGeneral
-        title="Stadler History"
-        customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        ctaText="Zu history"
-        href="/history"
-      ></TeaserGeneral>
-      {/* <History /> */}
+      <History_Proposal />
       <HomePageCarousel
         items={cards}
         carouselTitle="Erfolgsgeschichten"
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-      <History_Proposal />
       <EventCalendar
         mainTitle="Events"
         eventsData={customEventData}
@@ -207,7 +199,6 @@ const newsCards = [
         showButton={true}
         h2Styles="flex justify-left items-left"
       ></HomePageCarousel>
-     
     </>
   );
 }

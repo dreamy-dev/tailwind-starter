@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CardSimple from "@/components/elements/CardSimple";
 import H2 from "@/components/typography/H2";
+import TeaserGeneral from "@/components/sections/TeaserGeneral";
 
 interface ShowCardsState {
   [year: string]: boolean;
@@ -43,15 +44,14 @@ const History_Proposal = () => {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 antialiased">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+    <section className="bg-white dark:bg-gray-900 antialiased sm:py-16 lg:py-24">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 ">
         <div className="max-w-3xl mx-auto space-y-4 text-center">
-          <H2>Our History</H2>
+          <H2>Unsere Geschichte</H2>
         </div>
-
         <div className="relative border-s border-gray-200 dark:border-gray-700">
           <div className="mb-10 ms-8">
-            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white rounded-full dark:border-gray-900 dark:bg-gray-700"></div>
             <span
               onClick={toggleCards2023}
               className="mb-4 bg-primarySolid-200 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 dark:bg-primary-900 dark:text-primary-300 cursor-pointer"
@@ -68,7 +68,7 @@ const History_Proposal = () => {
             )}
           </div>
           <div className="mb-6 ms-8">
-            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white rounded-full dark:border-gray-900 dark:bg-gray-700"></div>
             <span
               onClick={toggleCards2022}
               className="mb-4 bg-primarySolid-200 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 dark:bg-primary-900 dark:text-primary-300"
@@ -84,7 +84,7 @@ const History_Proposal = () => {
             )}
           </div>
           <div className="mb-6 ms-8">
-            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white rounded-full dark:border-gray-900 dark:bg-gray-700"></div>
             <span
               onClick={toggleCards2021}
               className="mb-4 bg-primarySolid-200 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 dark:bg-primary-900 dark:text-primary-300"
@@ -100,7 +100,7 @@ const History_Proposal = () => {
             )}
           </div>
           <div className="mb-10 ms-8">
-            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute w-3 h-3 bg-gray-200 mt-1.5 -start-1.5 border border-white rounded-full dark:border-gray-900 dark:bg-gray-700"></div>
             <span
               onClick={toggleCards2020}
               className="mb-4 bg-primarySolid-200 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 dark:bg-primary-900 dark:text-primary-300"
@@ -115,6 +115,11 @@ const History_Proposal = () => {
           </div>
         </div>
       </div>
+      <TeaserGeneral
+        customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ctaText="Zur ganzen Geschichte"
+        href="/history"
+      ></TeaserGeneral>
     </section>
   );
 };
