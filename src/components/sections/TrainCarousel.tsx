@@ -7,6 +7,7 @@ import TeaserMobilitySolutions from "./TeaserMobilitySolutions";
 import H3 from "../typography/H3";
 import Text from "../typography/Text";
 import Link from "../typography/Link";
+import H2 from "../typography/H2";
 
 const tabs = {
   categories: [
@@ -206,7 +207,9 @@ const TrainCarousel = (props?: any) => {
       <TeaserMobilitySolutions></TeaserMobilitySolutions>
       <ContentWidth>
         <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
-          <H3>Schienenfahrzeuge</H3>
+          <H2 resetStyles={true} styles="mb-4 text-4xl font-bold">
+            Schienenfahrzeuge
+          </H2>
           <Text>
             Höchste Qualität und Zuverlässigkeit sind bei unseren
             Schienenfahrzeugen Standard. Alles andere wird projekt-spezifisch
@@ -264,7 +267,10 @@ const TrainCarousel = (props?: any) => {
           variants={variants}
         >
           {tabs.categories[selectedCategory].trains.map((item) => (
-            <div key={item.name} className="bg-white text-black flexflex-row lg:flex-col">
+            <div
+              key={item.name}
+              className="bg-white text-black flexflex-row lg:flex-col"
+            >
               <img className="w-full" src={item.img} />
               <div className="p-6">
                 <small className="text-greySolid-600 flex mb-2">

@@ -7,9 +7,7 @@ export default function Subscribe() {
       <div className="px-4 mx-auto max-w-screen-xl lg:px-6">
         <div className="gap-16 justify-between items-center p-6 text-white bg-primary lg:flex lg:gap-24 md:p-12">
           <div className="w-full">
-            <H2 styles="mb-4">
-              Sign up for our newsletter
-            </H2>
+            <H2 styles="mb-4">Sign up for our newsletter</H2>
             <p className="font-light text-white sm:text-xl">
               Stay up to date with the roadmap progress, announcements and
               exclusive discounts feel free to sign up with your email.
@@ -67,7 +65,7 @@ export default function Subscribe() {
                     className="
         peer relative appearance-none shrink-0 w-6 h-6 border-2 border-white  bg-white
         focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-primary
-        checked:bg-white checked:border-0
+        checked:bg-white checked:border-white
         disabled:border-steel-400 disabled:bg-steel-400
       "
                     type="checkbox"
@@ -77,13 +75,15 @@ export default function Subscribe() {
                     className="ms-2 text-sm font-medium text-white dark:text-gray-300"
                   >
                     I agree to the{" "}
-                    <a href="#" className="text-white hover:underline ">
+                    <a href="#" className="text-white hover:underline cursor-pointer">
                       terms and conditions
                     </a>
                     .
                   </label>
                 </div>
-                <Button position="center" styles="mt-8">Subscribe</Button>
+                <Button position="center" styles="mt-8">
+                  Subscribe
+                </Button>
               </div>
             </form>
           </div>
