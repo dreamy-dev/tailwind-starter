@@ -9,6 +9,7 @@ export default function CardSimple() {
     >
       <img
         alt="Meaningful alt text for an image that is not purely decorative"
+
         src="/red-train.jpg"
       />
       <div className="p-5">
@@ -20,6 +21,7 @@ export default function CardSimple() {
             Stadler unterstützt die Rhätische Bahn (RhB) beim Weltrekord für den
             längsten Reisezug der Welt. 25 Capricorn-Triebzüge von Stadler
             bilden eine 1.9 Kilometer lange Komposition.
+
           </span>
         </p>
       </div>

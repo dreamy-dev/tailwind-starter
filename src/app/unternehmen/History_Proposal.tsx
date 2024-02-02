@@ -13,6 +13,7 @@ const History_Proposal = () => {
     "2022": false,
     "2021": false,
     "2020": false,
+
   });
 
   const toggleCards2023 = () => {
@@ -63,7 +64,7 @@ const History_Proposal = () => {
                 <CardSimple />
                 <CardSimple />
                 <CardSimple />
-          
+
               </div>
             )}
           </div>
