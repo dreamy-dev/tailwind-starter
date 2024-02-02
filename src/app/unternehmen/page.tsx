@@ -10,6 +10,7 @@ import FactsAndFigures from "@/components/sections/FactsAndFigures";
 import Map from "@/components/sections/Map";
 import EventCalendar from "@/components/sections/EventCalendar";
 import Hero from "./Hero";
+import History_Proposal from "./History_Proposal";
 
 const cards = [
   {
@@ -119,24 +120,22 @@ export default function Unternehmen() {
   ];
   const daten = [
     {
-      text: "Mitarbeitende",
-      end: 2400,
-      suffix: "+",
+      text: "Anzahl Mitarbeitende",
+      end: 14.0,
+      decimals: 3,
+      decimal: "'",
     },
     {
-      text: "Länder",
-      end: 22,
-      suffix: "",
+      text: "Durchschnittliche Verfügbarkeit",
+      end: 98,
+      suffix: "%",
+      prefix: "&gt;",
     },
     {
-      text: "Züge mit langfristigen Wartungsverträgen",
-      end: 1800,
-      suffix: "+",
-    },
-    {
-      text: "Kilometer pro Jahr",
-      end: 250,
-      suffix: " Mio.",
+      text: "Anzahl ausgelieferte Schienenfahrzeuge ",
+      end: 11.749,
+      decimals: 3,
+      decimal: "'",
     },
   ];
 
@@ -170,11 +169,8 @@ export default function Unternehmen() {
   return (
     <>
       <HeroText
-        title="Das ist Stadler"
-        leadText="Mit umfassenden Services, die Mehrwert auf die Schiene bringen.
-              Und mit Schweizer Werten, die das Standing von Stadler weltweit
-              fördern und prägen. Stadler steht für Zuverlässigkeit,
-              Flexibilität und Innovationskraft – seit 1942."
+        title="Über uns"
+        leadText="Wir tun alles für besten Schienenfahrzeuge der Welt. In unseren drei Geschäftsbereichen Rolling Stock, Service und Signalling setzen wir täglich neue Massstäbe in Bezug auf die Qualität und Zuverlässigkeit unserer Lösungen. Und wir arbeiten gemeinsam mit Leidenschaft jeden Tag aufs Neue daran, Spitzenleistungen zu liefern, um Menschen weltweit eine nachhaltige Mobilität zu ermöglichen. "
       />
       <Hero></Hero>
       <DNA />
@@ -182,25 +178,17 @@ export default function Unternehmen() {
       <FactsAndFigures
         data1={statistics}
         data2={daten}
-        title="Daten & Fakten"
-        showTwoRows={false}
+        title="Unternehmenskennzahlen "
       ></FactsAndFigures>
       <CorporateGorvernance
         mainTitle="Verwaltungsrat und Konzernleitung"
         showThirdCard={false}
         numberOfColumns={2}
       />
-      <Map />
+      <Map title="Global präsent – lokal verankert" />
 
       <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
-
-      <TeaserGeneral
-        title="Stadler History"
-        customText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        ctaText="Zu history"
-        href="/history"
-      ></TeaserGeneral>
-      {/* <History /> */}
+      <History_Proposal />
       <HomePageCarousel
         items={cards}
         carouselTitle="Erfolgsgeschichten"

@@ -9,7 +9,7 @@ export default function TextBlock() {
     <section className="py-24 bg-primarySolid-50">
       <ContentWidth>
         <div className="col-span-12">
-          <H2>Lorem ipsum</H2>
+          <H2> Investieren Sie in eine echte Schweizer Erfolgsgeschichte</H2>
           <Text>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam

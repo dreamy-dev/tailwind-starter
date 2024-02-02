@@ -131,7 +131,7 @@ export default  function HomePage() {
         h2Styles="flex justify-center items-center"
         showButton={false}
       />
-      <Map></Map>
+      <Map title="Standorte"></Map>
       <Video></Video>
     </>
   );

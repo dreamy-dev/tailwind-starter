@@ -47,168 +47,168 @@ const newsCards = [
   },
 ];
 
+const mainline = [
+  {
+    img: "/images/train-models/mainline/smile.jpeg",
+    category: "Highspeed",
+    name: "SMILE",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/mainline/kiss200.jpeg",
+    category: "Intercity",
+    name: "KISS",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/mainline/flirt200.jpeg",
+    category: "Intercity",
+    name: "FLIRT",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  // {
+  //   img: "/images/train-models/mainline/flirt160.jpeg",
+  //   category: "Regional",
+  //   name: "Flirt 160",
+  //   href: "/solutions/schienenfahrzeuge/product",
+  // },
+  // {
+  //   img: "/images/train-models/mainline/kiss160.jpeg",
+  //   category: "Regional",
+  //   name: "Kiss 160",
+  //   href: "/solutions/schienenfahrzeuge/product",
+  // },
+  {
+    img: "/images/train-models/mainline/wink.jpeg",
+    category: "Regional",
+    name: "WINK",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  // {
+  //   img: "/images/train-models/mainline/gtw.jpeg",
+  //   category: "Regional",
+  //   name: "GTW",
+  //   href: "/solutions/schienenfahrzeuge/product",
+  // },
+];
 
-    const mainline = [
-      {
-        img: "/images/train-models/mainline/smile.jpeg",
-        category: "Highspeed",
-        name: "Smile",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/mainline/flirt200.jpeg",
-        category: "Intercity",
-        name: "Flirt 200",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/mainline/kiss200.jpeg",
-        category: "Intercity",
-        name: "Kiss 200",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/mainline/flirt160.jpeg",
-        category: "Regional",
-        name: "Flirt 160",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/mainline/kiss160.jpeg",
-        category: "Regional",
-        name: "Kiss 160",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/mainline/wink.jpeg",
-        category: "Regional",
-        name: "Wink",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/mainline/gtw.jpeg",
-        category: "Regional",
-        name: "GTW",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-    ];
+const urban = [
+  {
+    img: "/images/train-models/urban/tina.jpeg",
+    category: "Highspeed",
+    name: "TINA",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/urban/tramlink.jpeg",
+    category: "Tram",
+    name: "TRAMLINK",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/urban/tango.jpeg",
+    category: "Intercity",
+    name: "TANGO",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/urban/variobahn.jpeg",
+    category: "Regional",
+    name: "VARIOBAHN",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/urban/citylink.jpeg",
+    category: "Regional",
+    name: "CITYLINK",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
 
-    const urban = [
-      {
-        img: "/images/train-models/urban/tina.jpeg",
-        category: "Highspeed",
-        name: "Tina",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/urban/tango.jpeg",
-        category: "Intercity",
-        name: "Tango",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/urban/tramlink.jpeg",
-        category: "Tram",
-        name: "Tramlink",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/urban/variobahn.jpeg",
-        category: "Regional",
-        name: "Variobahn",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/urban/metelitsa.jpeg",
-        category: "Regional",
-        name: "Metelitsa",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/urban/citylink.jpeg",
-        category: "Regional",
-        name: "Citylink",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/urban/metro.jpeg",
-        category: "Regional",
-        name: "Metro",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-    ];
+  {
+    img: "/images/train-models/urban/metro.jpeg",
+    category: "Regional",
+    name: "METRO",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  // {
+  //   img: "/images/train-models/urban/metelitsa.jpeg",
+  //   category: "Regional",
+  //   name: "Metelitsa",
+  //   href: "/solutions/schienenfahrzeuge/product",
+  // },
+];
 
-    const locomotive = [
-      {
-        img: "/images/train-models/locomotive/euro9000.jpeg",
-        category: "Highspeed",
-        name: "EURO9000",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/locomotive/eurodual.jpeg",
-        category: "EURODUAL",
-        name: "Smile",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/locomotive/euro6000.jpeg",
-        category: "Highspeed",
-        name: "EURO6000",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/locomotive/euro4001.jpeg",
-        category: "Highspeed",
-        name: "EURO4001",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/locomotive/eurolight.jpeg",
-        category: "Highspeed",
-        name: "EUROLIGHT",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/locomotive/sali.jpeg",
-        category: "Highspeed",
-        name: "SALI",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/locomotive/central-cab.jpeg",
-        category: "Highspeed",
-        name: "Central Cab",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-    ];
+const locomotive = [
+  {
+    img: "/images/train-models/locomotive/euro9000.jpeg",
+    category: "Highspeed",
+    name: "EURO9000",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/locomotive/eurodual.jpeg",
+    category: "EURODUAL",
+    name: "EURODUAL",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/locomotive/euro6000.jpeg",
+    category: "Highspeed",
+    name: "EURO6000",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/locomotive/euro4001.jpeg",
+    category: "Highspeed",
+    name: "EURO4001",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/locomotive/eurolight.jpeg",
+    category: "Highspeed",
+    name: "EUROLIGHT",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/locomotive/sali.jpeg",
+    category: "Highspeed",
+    name: "SALI",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/locomotive/central-cab.jpeg",
+    category: "Highspeed",
+    name: "CENTRAL CAB",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+];
 
-    const tailormade = [
-      {
-        img: "/images/train-models/tailormade/triebzug.jpeg",
-        category: "Highspeed",
-        name: "Triebzüge",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/tailormade/zahnradbahn.jpeg",
-        category: "Highspeed",
-        name: "Zahnradbahnen",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/tailormade/schlafwagen.jpeg",
-        category: "Highspeed",
-        name: "Schlafwagen",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-      {
-        img: "/images/train-models/tailormade/rangierlok.jpeg",
-        category: "Highspeed",
-        name: "Lokomotiven",
-        href: "/solutions/schienenfahrzeuge/product",
-      },
-    ];
+const tailormade = [
+  {
+    img: "/images/train-models/tailormade/triebzug.jpeg",
+    category: "Highspeed",
+    name: "TRIEBZÜGE",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/tailormade/zahnradbahn.jpeg",
+    category: "Highspeed",
+    name: "ZAHNRADBAHNEN",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/tailormade/schlafwagen.jpeg",
+    category: "Highspeed",
+    name: "SCHLAFWAGEN",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+  {
+    img: "/images/train-models/tailormade/rangierlok.jpeg",
+    category: "Highspeed",
+    name: "LOKOMOTIVEN",
+    href: "/solutions/schienenfahrzeuge/product",
+  },
+];
 
 export default function Schienenfahrzeuge() {
   return (
@@ -220,10 +220,10 @@ export default function Schienenfahrzeuge() {
           title="Schienenfahrzeuge"
           leadText="In enger Zusammenarbeit mit Kunden werden innovative, modulare oder massgeschneiderte Schienenfahrzeuge entwickelt."
         ></HeroText>
-        <div className="py-12 bg-stadlergradient">
-          <TeaserImageRight imageSrc="/test-img-1.png">
-            <div>
-              <H2 styles="text-white">Mainline</H2>
+        <div className="pt-24 bg-stadlergradient">
+          <ContentWidth>
+            <div className="col-span-6 pb-12">
+              <H2 styles="text-white">Vollbahnen</H2>
               <Text styles="mt-4 text-xl font-normal text-gray-800 text-white">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -231,10 +231,29 @@ export default function Schienenfahrzeuge() {
                 justo duo dolores et ea rebum.
               </Text>
             </div>
-            
-          </TeaserImageRight>
+          </ContentWidth>
+          {/* <TeaserImageRight >
+            <div>
+              <H2 styles="text-white">Vollbahnen</H2>
+              <Text styles="mt-4 text-xl font-normal text-gray-800 text-white">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum.
+              </Text>
+            </div>
+          </TeaserImageRight> */}
           <TrainCardList trains={mainline}></TrainCardList>
-          <TeaserImageLeft imageSrc="/test-img-1.png">
+          <ContentWidth>
+            <div className="col-span-6 pb-12">
+              <H2 styles="text-white">Urban</H2>
+              <Text styles="mt-4 text-xl font-normal text-white">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor
+              </Text>
+            </div>
+          </ContentWidth>
+          {/* <TeaserImageLeft >
             <div>
               <H2 styles="text-white">Urban</H2>
               <Text styles="mt-4 text-xl font-normal text-white">
@@ -242,12 +261,11 @@ export default function Schienenfahrzeuge() {
                 diam nonumy eirmod tempor
               </Text>
             </div>
-            
-          </TeaserImageLeft>
+          </TeaserImageLeft> */}
           <TrainCardList trains={urban}></TrainCardList>
-          <TeaserImageRight imageSrc="/test-img-1.png">
-            <div>
-              <H2 styles="text-white">Locomotive</H2>
+          <ContentWidth>
+            <div className="col-span-6 pb-12">
+              <H2 styles="text-white">Locomotiven</H2>
               <Text styles="mt-4 text-xl font-normal text-gray-800 text-white">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -255,10 +273,29 @@ export default function Schienenfahrzeuge() {
                 justo duo dolores et ea rebum.
               </Text>
             </div>
-           
-          </TeaserImageRight>
+          </ContentWidth>
+          {/* <TeaserImageRight >
+            <div>
+              <H2 styles="text-white">Locomotiven</H2>
+              <Text styles="mt-4 text-xl font-normal text-gray-800 text-white">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum.
+              </Text>
+            </div>
+          </TeaserImageRight> */}
           <TrainCardList trains={locomotive}></TrainCardList>
-          <TeaserImageLeft imageSrc="/test-img-1.png">
+          <ContentWidth>
+            <div className="col-span-6 pb-12">
+              <H2 styles="text-white">Tailor Made</H2>
+              <Text styles="mt-4 text-xl font-normal text-white">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor
+              </Text>
+            </div>
+          </ContentWidth>
+          {/* <TeaserImageLeft >
             <div>
               <H2 styles="text-white">Tailor Made</H2>
               <Text styles="mt-4 text-xl font-normal text-white">
@@ -266,17 +303,18 @@ export default function Schienenfahrzeuge() {
                 diam nonumy eirmod tempor
               </Text>
             </div>
-           
-          </TeaserImageLeft>
+          </TeaserImageLeft> */}
           <TrainCardList trains={tailormade}></TrainCardList>
         </div>
-        <HomePageCaroucel
-          items={newsCards}
-          carouselTitle="Schienenfahrzeuge News"
-          showDate={true}
-          showButton={true}
-          h2Styles="flex justify-left items-left"
-        ></HomePageCaroucel>
+        <div className="pt-24">
+          <HomePageCaroucel
+            items={newsCards}
+            carouselTitle="Schienenfahrzeuge News"
+            showDate={true}
+            showButton={true}
+            h2Styles="flex justify-left items-left"
+          ></HomePageCaroucel>
+        </div>
       </div>
       {/* </ContentWidth> */}
     </section>

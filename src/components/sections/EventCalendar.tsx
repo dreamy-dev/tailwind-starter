@@ -47,7 +47,7 @@ const EventCalendar: React.FC<EventCalendarProps> = ({
 }) => {
   return (
     <>
-      <section className="bg-white py-24">
+      <section className="bg-white pb-5 lg:pb-24">
         <ContentWidth>
           <div className="max-w-full col-span-12">
             <div className="text-start">

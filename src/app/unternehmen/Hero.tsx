@@ -3,15 +3,15 @@ import SmallWidth from "@/components/layouts/SmallWidth";
 
 export default function Hero() {
   return (
-    <section className="bg-white ">
+    <section className="bg-white pb-5 lg:pb-24">
       <SmallWidth>
         <div className="col-span-12 text-center  ">
           <video
             className="-mt-[1%] -mb-[1%]"
-            controls={false}
+            controls={true}
             autoPlay={true}
             muted={true}
-            src={"/videos/Movie-Stadler-Kurz-People-Focus-no-frame-1080.mp4"}
+             src={"/videos/Movie-Stadler-Kurz-People-Focus-no-frame-1080.mp4"}
             loop={true}
           />
         </div>
