@@ -2,6 +2,8 @@ import ButtonPrimary from "../elements/ButtonPrimary";
 import MapTextTitle from "../sections/MapTextTitle";
 import FullWidth from "../layouts/FullWidth";
 import Stats from "../sections/Stats";
+import SmallWidth from "../layouts/SmallWidth";
+import H2 from "../typography/H2";
 
 const countries = [
   "Schweiz",
@@ -42,18 +44,36 @@ const statsData = [
   },
 ];
 
-export default function Map() {
+interface MapProps {
+  title?: string;
+  props?: any;
+
+}
+
+const Map: React.FC<MapProps> = ({ props, title }) => {
   return (
     <FullWidth>
       <div className="col-span-12 w-full bg-white pb-5 lg:pb-24">
-        <MapTextTitle />
+        <SmallWidth>
+          <div className="max-w-4xl mx-auto">
+            <H2
+              styles="text-center mb-2 text-4xl font-bold "
+              resetStyles={true}
+            >
+              {title}
+            </H2>
+          </div>
+        </SmallWidth>
         <Stats data={statsData} backgroundColor="bg-white" />
         <div className="relative flex flex-col-reverse lg:flex-none">
           <div className="pl-6 lg:pl-20 py-8 relative w-full lg:w-[24%] z-10">
             <div className="relative">
               <ul className="text-primary grid grid-cols-2 lg:grid-cols-1 ">
                 {countries.map((country, index) => (
-                  <li className="mb-3 whitespace-no-wrap mr-16 lg:mr-0" key={index}>
+                  <li
+                    className="mb-3 whitespace-no-wrap mr-16 lg:mr-0"
+                    key={index}
+                  >
                     <a href="#">{country}</a>
                   </li>
                 ))}
@@ -61,7 +81,9 @@ export default function Map() {
             </div>
 
             <div className="mt-8">
-              <ButtonPrimary position="left" href="/standorte">Alle Standorte</ButtonPrimary>
+              <ButtonPrimary position="left" href="/standorte">
+                Alle Standorte
+              </ButtonPrimary>
             </div>
           </div>
           <div className="pl-6 static lg:absolute top-0 w-[84%] left-[16%] h-full">
@@ -75,4 +97,6 @@ export default function Map() {
       </div>
     </FullWidth>
   );
-}
+};
+
+export default Map;

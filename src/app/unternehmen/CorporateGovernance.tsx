@@ -24,15 +24,16 @@ const CorporateGorvernance: React.FC<TitleProps> = ({ mainTitle, showThirdCard, 
               unseren Stakeholdern.
             </Text>
           </div>
-          <div className={`grid gap-8 sm:grid-cols-2 lg:grid-cols-${numberOfColumns}`}>
+          <div
+            className={`grid gap-8 sm:grid-cols-2 lg:grid-cols-${numberOfColumns}`}
+          >
             <a href="unternehmen/verwaltungsrat">
               <article className="p-4 h-full flex flex-col flex-wrap justify-between content-start bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <h2 className="my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Verwaltungsrat
                 </h2>
                 <p className="mb-4 font-normal text-black dark:text-gray-400">
-                  Lernen Sie die Verwaltungsräte von Stadler mit einem Blick auf
-                  die Porträts kennen.
+                  Erfahren Sie mehr über den Verwaltungsrat von Stadler.
                 </p>
                 <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
               </article>
@@ -43,8 +44,7 @@ const CorporateGorvernance: React.FC<TitleProps> = ({ mainTitle, showThirdCard, 
                   Konzernleitung
                 </h2>
                 <p className="mb-4 font-normal text-black dark:text-gray-400">
-                  Entdecken Sie, wer in der Konzernleitung von Stadler
-                  zugkräftig am Werk ist.
+                  Erfahren Sie mehr über die Konzernleitung von Stadler.
                 </p>
                 <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
               </article>

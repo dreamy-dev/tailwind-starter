@@ -9,16 +9,19 @@ export default function CardSimple() {
     >
       <img
         alt="Meaningful alt text for an image that is not purely decorative"
-        src="/Card.jpg"
+
+        src="/red-train.jpg"
       />
       <div className="p-5">
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          <p>Noteworthy technology acquisitions 2021</p>
+          <p>Stadler history</p>
         </h5>
         <p className="font-normal text-gray-700 dark:text-gray-400">
           <span>
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+            Stadler unterstützt die Rhätische Bahn (RhB) beim Weltrekord für den
+            längsten Reisezug der Welt. 25 Capricorn-Triebzüge von Stadler
+            bilden eine 1.9 Kilometer lange Komposition.
+
           </span>
         </p>
       </div>

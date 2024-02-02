@@ -10,9 +10,10 @@ interface ShowCardsState {
 const History_Proposal = () => {
   const [showCards, setShowCards] = useState<ShowCardsState>({
     "2023": true,
-    "2022": true,
-    "2021": true,
-    "2020": true,
+    "2022": false,
+    "2021": false,
+    "2020": false,
+
   });
 
   const toggleCards2023 = () => {
@@ -63,7 +64,7 @@ const History_Proposal = () => {
                 <CardSimple />
                 <CardSimple />
                 <CardSimple />
-                <CardSimple />
+
               </div>
             )}
           </div>
