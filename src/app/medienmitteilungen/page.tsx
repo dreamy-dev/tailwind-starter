@@ -2,10 +2,11 @@
 
 import HeroText from "@/components/sections/HeroText";
 import Contact from "@/components/sections/Contact";
-import MedienmitteilungenFilters from "./MedienmitteilungenFilters";
 import TeaserMedienmitteilungen from "../../components/sections/TeaserMedienmitteilungen";
-import DoubleCardNews from "@/components/sections/DoubleCardNews";
 import MedienmitteilungenList from "@/components/sections/MedienmitteilungenList";
+import Features from "@/components/sections/Features";
+import ContentWidth from "@/components/layouts/ContentWidth";
+import Subscribe from "@/components/sections/Subscribe";
 
 const listMedienmitteilungen = [
   {
@@ -37,10 +38,10 @@ const customMedienmitteilungen = [
   {
     date: "18.01.2024",
     medien: "FdC bestellt drei weitere Schmalspur-Wasserstoffzüge bei Stadler",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Ad-Hoc",
-        link: "#",
       },
     ],
     links: [
@@ -66,10 +67,10 @@ const customMedienmitteilungen = [
     date: "11.01.2024",
     medien:
       "Offizielle Übergabe des Premierenfahrzeugs der nächsten Berliner U-Bahngeneration",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Corporate",
-        link: "#",
       },
     ],
     links: [
@@ -91,10 +92,10 @@ const customMedienmitteilungen = [
     date: "20.12.2023",
     medien:
       "EURO9000 erhält grünes Licht für den Betrieb in Belgien und den Niederlanden",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Produkt",
-        link: "#",
       },
     ],
     links: [
@@ -120,10 +121,10 @@ const customMedienmitteilungen = [
     date: "12.12.2023",
     medien:
       "Neuer Reisekomfort für Fahrgäste und Personal im Fernverkehr der Deutschen Bahn",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Produkt",
-        link: "#",
       },
     ],
     links: [
@@ -140,10 +141,10 @@ const customMedienmitteilungen = [
   {
     date: "18.01.2024",
     medien: "FdC bestellt drei weitere Schmalspur-Wasserstoffzüge bei Stadler",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Ad-Hoc",
-        link: "#",
       },
     ],
     links: [
@@ -169,10 +170,10 @@ const customMedienmitteilungen = [
     date: "11.01.2024",
     medien:
       "Offizielle Übergabe des Premierenfahrzeugs der nächsten Berliner U-Bahngeneration",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Corporate",
-        link: "#",
       },
     ],
     links: [
@@ -194,10 +195,10 @@ const customMedienmitteilungen = [
     date: "20.12.2023",
     medien:
       "EURO9000 erhält grünes Licht für den Betrieb in Belgien und den Niederlanden",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Produkt",
-        link: "#",
       },
     ],
     links: [
@@ -223,10 +224,10 @@ const customMedienmitteilungen = [
     date: "12.12.2023",
     medien:
       "Neuer Reisekomfort für Fahrgäste und Personal im Fernverkehr der Deutschen Bahn",
+    medienLink: "/medienmitteilungenSingle",
     categories: [
       {
         category: "Produkt",
-        link: "#",
       },
     ],
     links: [
@@ -242,11 +243,23 @@ const customMedienmitteilungen = [
   },
 ];
 
+const featuresData = [
+  {
+    imageSrc: "/teaser_signalling-2.jpg",
+    title: "Medien",
+    href: "/medien",
+  },
+  {
+    imageSrc: "/teaser_service.jpeg",
+    title: " News",
+    href: "/news",
+  },
+];
 export default function Medienmitteilungen() {
   return (
     <div className="mb-16">
       <HeroText
-        breadcrumbs={[{ text: "Medien" }]}
+        breadcrumbs={[{ text: "Medien", link: "/medien" }]}
         title="Medienmitteilungen"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem diam, volutpat tristique congue in, fermentum et arcu. Donec elementum ac dolor consectetur laoreet. Vestibulum augue elit, malesuada eu eros ut, consectetur placerat turpis. Aenean vel dapibus velit. Nulla dapibus sem est. Pellentesque nec lectus accumsan, rutrum ipsum ut, mattis quam. "
         // withCTA={true}
@@ -257,13 +270,17 @@ export default function Medienmitteilungen() {
         listData={listMedienmitteilungen}
       ></TeaserMedienmitteilungen>
 
-      <MedienmitteilungenFilters />
       <MedienmitteilungenList
         mainTitle="Alle Medienmitteilungen"
         medienmitteilungenList={customMedienmitteilungen}
       />
-      <DoubleCardNews titleTwo="News" />
+
+      <Subscribe />
       <Contact />
+      <Features
+        mainTitle="Möchten Sie gerne mehr über uns erfahren?"
+        featuresData={featuresData}
+      />
     </div>
   );
 }

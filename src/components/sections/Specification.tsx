@@ -4,40 +4,40 @@ import Button from "../elements/ButtonSecondary";
 import ContentWidth from "../layouts/ContentWidth";
 const features = [
   {
-    name: "Antrieb",
-    description: "Diesel / Vollelektrisch ",
+    name: "Max. Geschwindigkeit",
+    description: "160 – 200 km/h",
+  },
+  {
+    name: "Fahrzeughöhe",
+    description: "4120 – 4600 mm",
+  },
+  {
+    name: "Niederfluranteil",
+    description: "95 Prozent",
+  },
+  {
+    name: "Spurweite",
+    description: "1435 – 1520 mm",
+  },
+  {
+    name: "Einstiegsbreite",
+    description: "940 – 1300 mm",
   },
   {
     name: "Sitzplätze",
-    description: "bis zu 250 Sitzplätze",
+    description: "100 – 500",
   },
   {
-    name: "Leistungsaufnahme unter Vollast",
-    description: "230 kw/h",
+    name: "Fahrzeugbreite",
+    description: "2820 – 3480 mm",
   },
   {
-    name: "Sitzplätze",
-    description: "bis zu 250 Sitzplätze",
+    name: "Max. Leistung am Rad",
+    description: "1300 – 6000 kW",
   },
   {
-    name: "Leistung",
-    description: "1,5 kV / 3 kV / 10 kV",
-  },
-  {
-    name: "Leistungsaufnahme unter Vollast",
-    description: "230 kw/h",
-  },
-  {
-    name: "Leistungsaufnahme unter Vollast",
-    description: "230 kw/h",
-  },
-  {
-    name: "Sitzplätze",
-    description: "bis zu 250 Sitzplätze",
-  },
-  {
-    name: "Leistung",
-    description: "1,5 kV / 3 kV / 10 kV ",
+    name: "Beschleunigungswert",
+    description: "bis 1.2 m/s2",
   },
 ];
 

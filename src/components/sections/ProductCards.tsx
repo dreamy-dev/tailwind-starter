@@ -59,10 +59,9 @@ const ProductCards: React.FC = () => {
           <div className="mx-auto max-w-2xl mb-16 lg:mx-0">
             <H3>Der FLIRT – Meister der Flexibilität</H3>
             <Text styles="mt-6 text-lg leading-8 text-lightGray">
-              Der elektrische Triebzug KISS überzeugt mit hohem Innovationsgrad
-              und großzügigem Raumangebot: die komfortabel gestaltete,
-              umweltfreundliche Kapazitätssteigerung für den Schienenverkehr von
-              morgen.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua.
             </Text>
           </div>
           <div className=" mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>

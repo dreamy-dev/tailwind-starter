@@ -19,7 +19,7 @@ function TeaserGeneral({
   href,
 }: TeaserDownloadProps) {
   return (
-    <section className="bg-white py-5 lg:py-12">
+    <section className="bg-white pb-5 lg:pb-24">
       <ContentWidth>
         <div className="col-span-12 max-w-full flex flex-col justify-left">
           {title && <H2>{title}</H2>}

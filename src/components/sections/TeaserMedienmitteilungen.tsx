@@ -38,7 +38,7 @@ const TeaserMedienmitteilungen: React.FC<TeaserDownloadProps> = ({
                 >
                   <a href={item.link} className="mb-6 w-full md:w-auto flex">
                     <div className="min-w-[8rem] w-32"> {item.date}</div>
-                    <div className=""> {item.text}</div>
+                    <div className="">{item.text}</div>
                   </a>
                 </li>
                 <div className="border-b mb-6"></div>

@@ -196,14 +196,14 @@ const customEventData = [
 ];
 
 const newsCards = [
-  {
-    title: "Stadler bleibt Premium Partner der Eisbären",
-    date: "28.11.2023",
-    text:
-      "Die Eisbären Berlin freuen sich, den Schienenfahrzeughersteller Stadler weiterhin zu ihren Premium Partnern zu zählen. Stadler ...",
-    img:
-      "https://www.stadlerrail.com/media/img/800x/gruppenfoto%202%20nah-sh-optimiert.jpg",
-  },
+  // {
+  //   title: "Stadler bleibt Premium Partner der Eisbären",
+  //   date: "28.11.2023",
+  //   text:
+  //     "Die Eisbären Berlin freuen sich, den Schienenfahrzeughersteller Stadler weiterhin zu ihren Premium Partnern zu zählen. Stadler ...",
+  //   img:
+  //     "https://www.stadlerrail.com/media/img/800x/gruppenfoto%202%20nah-sh-optimiert.jpg",
+  // },
   {
     title:
       "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow",
@@ -243,8 +243,8 @@ const newsCards = [
 const featuresData = [
   {
     imageSrc: "/teaser_signalling-2.jpg",
-    title: "About Us",
-    href: "/about-us",
+    title: "Unternehmen",
+    href: "/unternehmen",
   },
   {
     imageSrc: "/teaser_service.jpeg",

@@ -89,7 +89,7 @@ export default function ContactForm(props?: any) {
                   type="text"
                   name="floating_last_name"
                   id="floating_last_name"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="Nachname *"
                   required
                 />
@@ -107,7 +107,7 @@ export default function ContactForm(props?: any) {
                   type="text"
                   name="floating_first_name"
                   id="floating_first_name"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="Strasse *"
                   required
                 />
@@ -123,7 +123,7 @@ export default function ContactForm(props?: any) {
                   type="text"
                   name="floating_last_name"
                   id="floating_last_name"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="Nr. *"
                   required
                 />
@@ -141,7 +141,7 @@ export default function ContactForm(props?: any) {
                   type="text"
                   name="floating_first_name"
                   id="floating_first_name"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="PLZ *"
                   required
                 />
@@ -157,7 +157,7 @@ export default function ContactForm(props?: any) {
                   type="text"
                   name="floating_last_name"
                   id="floating_last_name"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="Ort *"
                   required
                 />
@@ -177,7 +177,7 @@ export default function ContactForm(props?: any) {
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   name="floating_phone"
                   id="floating_phone"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="Email *"
                   required
                 />
@@ -193,7 +193,7 @@ export default function ContactForm(props?: any) {
                   type="tel"
                   name="floating_company"
                   id="floating_company"
-                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                  className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                   placeholder="Telefon *"
                   required
                 />
