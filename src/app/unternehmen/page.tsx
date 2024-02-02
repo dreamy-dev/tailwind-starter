@@ -1,6 +1,6 @@
 "use client";
 import SubHero from "@/components/sections/SubHero";
-import HeroText from "../../components/sections/HeroText"
+import HeroText from "../../components/sections/HeroText";
 import DNA from "./DNA";
 import SustainableProcurement from "../zulieferer/SustainableProcurement";
 import TeaserGeneral from "@/components/sections/TeaserGeneral";
@@ -15,27 +15,32 @@ import History_Proposal from "./History_Proposal";
 const cards = [
   {
     title: "FLIRT bewegt die Welt",
-    text: "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
+    text:
+      "Unser Erfolgsmodell FLIRT bewegt täglich Menschen und Länder. Erfahren Sie mehr über die unterschiedlichen FLIRT-Modelle und deren Einsatzgebiete.",
     img: "/Card2.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
-    text: "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
+    text:
+      "Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.",
     img: "/card-2-carousel-2.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text:
+      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/Card2.jpg",
   },
   {
     title: "Der Weltrekord-Zug: FLIRT Akku",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text:
+      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/card-2-carousel-2.jpg",
   },
   {
     title: "Im Land der längsten Zugstrecken",
-    text: "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
+    text:
+      "Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.",
     img: "/Card2.jpg",
   },
 ];
@@ -70,41 +75,49 @@ export default function Unternehmen() {
     },
   ];
 
-const newsCards = [
-  {
-    title: "Stadler bleibt Premium Partner der Eisbären",
-    date: "28.11.2023",
-    text: "Die Eisbären Berlin freuen sich, den Schienenfahrzeughersteller Stadler weiterhin zu ihren Premium Partnern zu zählen. Stadler ...",
-    img: "https://www.stadlerrail.com/media/img/800x/gruppenfoto%202%20nah-sh-optimiert.jpg",
-  },
-  {
-    title:
-      "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow",
-    date: "07.11.2023",
-    text: "Gemeinsam mit Berlins Regierendem Bürgermeister, Kai Wegner, sowie der Senatorin für Wirtschaft, Energie und Betriebe, Franzisk...",
-    img: "/pressefoto-einweihung.jpg",
-  },
-  {
-    title:
-      "Neue Akkuzüge sind jetzt auch zwischen Kiel, Lübeck und Lüneburg unterwegs",
-    date: "23.10.2023",
-    text: "In Schleswig-Holstein ist die weltweit erste batterieelektrische Zugflotte im regelmäßigen Linienbetrieb unterwegs. Damit ha...",
-    img: "https://www.stadlerrail.com/media/img/800x/mwe_0920%20-%20cropped.jpg",
-  },
-  {
-    title: "Weitere neue Wasserstoffzüge für Kalifornien",
-    date: "16.10.2023",
-    text: "Der Bundesstaat Kalifornien und Stadler haben am 12. Oktober 2023 eine wegweisende Vereinbarung unterzeichnet, die einen bedeutenden Schr...",
-    img: "https://www.stadlerrail.com/media/img/800x/caltrans-coastline-16-9.jpg",
-  },
-  {
-    title:
-      "Erste TINA-Strassenbahnen starten in den Probebetrieb mit Fahrgästen",
-    date: "16.10.2023",
-    text: "Die neuen Strassenbahnen der Baureihe TINA öffnen ihre Türen: Seit dem 9. Oktober 2023&nbsp;können Fahrgäste im Rahme...",
-    img: "https://www.stadlerrail.com/media/img/800x/tina_darmstadt.jpg",
-  },
-];
+  const newsCards = [
+    {
+      title: "Stadler bleibt Premium Partner der Eisbären",
+      date: "28.11.2023",
+      text:
+        "Die Eisbären Berlin freuen sich, den Schienenfahrzeughersteller Stadler weiterhin zu ihren Premium Partnern zu zählen. Stadler ...",
+      img:
+        "https://www.stadlerrail.com/media/img/800x/gruppenfoto%202%20nah-sh-optimiert.jpg",
+    },
+    {
+      title:
+        "Stadler eröffnet neues Logistikzentrum für den Schienenverkehr in Berlin Pankow",
+      date: "07.11.2023",
+      text:
+        "Gemeinsam mit Berlins Regierendem Bürgermeister, Kai Wegner, sowie der Senatorin für Wirtschaft, Energie und Betriebe, Franzisk...",
+      img: "/pressefoto-einweihung.jpg",
+    },
+    {
+      title:
+        "Neue Akkuzüge sind jetzt auch zwischen Kiel, Lübeck und Lüneburg unterwegs",
+      date: "23.10.2023",
+      text:
+        "In Schleswig-Holstein ist die weltweit erste batterieelektrische Zugflotte im regelmäßigen Linienbetrieb unterwegs. Damit ha...",
+      img:
+        "https://www.stadlerrail.com/media/img/800x/mwe_0920%20-%20cropped.jpg",
+    },
+    {
+      title: "Weitere neue Wasserstoffzüge für Kalifornien",
+      date: "16.10.2023",
+      text:
+        "Der Bundesstaat Kalifornien und Stadler haben am 12. Oktober 2023 eine wegweisende Vereinbarung unterzeichnet, die einen bedeutenden Schr...",
+      img:
+        "https://www.stadlerrail.com/media/img/800x/caltrans-coastline-16-9.jpg",
+    },
+    {
+      title:
+        "Erste TINA-Strassenbahnen starten in den Probebetrieb mit Fahrgästen",
+      date: "16.10.2023",
+      text:
+        "Die neuen Strassenbahnen der Baureihe TINA öffnen ihre Türen: Seit dem 9. Oktober 2023&nbsp;können Fahrgäste im Rahme...",
+      img: "https://www.stadlerrail.com/media/img/800x/tina_darmstadt.jpg",
+    },
+  ];
   const daten = [
     {
       text: "Anzahl Mitarbeitende",
@@ -124,7 +137,6 @@ const newsCards = [
       decimals: 3,
       decimal: "'",
     },
-  
   ];
 
   const customEventData = [
@@ -186,6 +198,7 @@ const newsCards = [
       <EventCalendar
         mainTitle="Events"
         eventsData={customEventData}
+        withoutEventLink={true}
       ></EventCalendar>
       <HomePageCarousel
         items={newsCards}
