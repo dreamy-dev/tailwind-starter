@@ -48,13 +48,12 @@ export default function ArticleHero({
       <div className="grid grid-cols-12 gap-6 mb-6">
         <div className="col-span-6">
           {tags?.map((tag, index) => (
-            <a
+            <span
               key={index}
-              href={tag.link}
               className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
             >
               {tag.text}
-            </a>
+            </span>
           ))}
         </div>
         <div className="col-span-6 align-right text-right">

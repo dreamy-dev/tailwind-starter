@@ -1,9 +1,10 @@
 import ContentWidth from "../layouts/ContentWidth";
+
+import MedienmitteilungenFilters from "./MedienmitteilungenFilters";
 import H2 from "../typography/H2";
 
 type MedienmitteilungenCategories = {
   category: string;
-  link: string;
 };
 
 type MedienmitteilungenItem = {
@@ -13,6 +14,7 @@ type MedienmitteilungenItem = {
 type MedienmitteilungenList = {
   date: string;
   medien: string;
+  medienLink: string;
   links: MedienmitteilungenItem[];
   categories: MedienmitteilungenCategories[];
 };
@@ -31,9 +33,10 @@ const MedienmitteilungenList: React.FC<MedienmitteilungenProps> = ({
       <section className="bg-white pb-24">
         <ContentWidth>
           <div className="max-w-full col-span-12">
-            <div className="text-start">
+            <div className="text-start mb-12">
               <H2>{mainTitle}</H2>
             </div>
+            <MedienmitteilungenFilters />
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -59,28 +62,27 @@ const MedienmitteilungenList: React.FC<MedienmitteilungenProps> = ({
                   >
                     <td
                       scope="row"
-                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap"
                     >
                       {item.date}
                     </td>
                     <td
                       scope="row"
-                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap"
                     >
-                      {item.medien}
+                      <a href={item.medienLink}>{item.medien}</a>
                     </td>
                     <td
                       scope="row"
-                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap"
                     >
                       {item.categories.map((category, index) => (
-                        <a
+                        <span
                           key={index}
                           className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                          href={category.link}
                         >
                           {category.category}
-                        </a>
+                        </span>
                       ))}
                     </td>
                     <td className="px-6 py-4 text-primary">
