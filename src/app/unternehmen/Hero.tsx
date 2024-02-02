@@ -11,7 +11,7 @@ export default function Hero() {
             controls={true}
             autoPlay={true}
             muted={true}
-            // src={"/videos/DE-Black-Bars.mp4"}
+             src={"/videos/Movie-Stadler-Kurz-People-Focus-no-frame-1080.mp4"}
             loop={true}
           />
         </div>
