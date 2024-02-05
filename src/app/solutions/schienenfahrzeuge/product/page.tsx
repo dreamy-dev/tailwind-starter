@@ -196,8 +196,8 @@ export default function Product() {
           { text: "Lösungen", link: "/solutions" },
           { text: "Schienenfahrzeuge", link: "/solutions/schienenfahrzeuge" },
         ]}
-        title="Leicht und flexibel: Flirt"
-        leadText="Der Flirt setzt Massstäbe: Leichte Bauweise aus Aluminium, markantes Design, höchster Passagierkomfort und einfache Wartung. Erfahren Sie, was dieses Modell so unverwechselbar macht."
+        title="Leicht und flexibel: FLIRT"
+        leadText="Der FLIRT setzt Massstäbe: Leichte Bauweise aus Aluminium, markantes Design, höchster Passagierkomfort und einfache Wartung. Erfahren Sie, was dieses Modell so unverwechselbar macht."
         // withCTA={true}
         // buttonText="CTA Button"
       />
