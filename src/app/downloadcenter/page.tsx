@@ -1,8 +1,13 @@
 "use client";
 
+import ContentWidth from "@/components/layouts/ContentWidth";
+import AccordionItem from "@/components/sections/AccordionItem";
 import HeroText from "@/components/sections/HeroText";
 import Publikationen from "@/components/sections/Publikationen";
 import TeaserDownload from "@/components/sections/TeaserDownload";
+import H2 from "@/components/typography/H2";
+import TabsPublikationen from "../investors/TabsPublikationen";
+import TabsGeneralversammlung from "../investors/TabsGeneralversammlung";
 
 const presentations = [
   {
@@ -94,12 +99,116 @@ export default function Downloadcenter() {
   return (
     <>
       <HeroText title="Download Center" />
-      <Publikationen
+      {/* <Publikationen
         tableData={tableData}
         publications={presentations}
         title="Präsentationen"
         showTable={true}
-      ></Publikationen>
+      ></Publikationen> */}
+      <TabsPublikationen />
+      <TabsGeneralversammlung />
+      <ContentWidth>
+      <div className="max-w-full col-span-12 my-24">
+        <H2>Mediathek</H2>
+        <AccordionItem title="Management">
+        <div className="max-w-full col-span-12">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" className="px-6 py-3 w-1/12">
+                    Datum
+                  </th>
+                  <th scope="col" className="px-6 py-3 w-7/12">
+                    Titel
+                  </th>
+                  <th scope="col" className="px-6 py-3 w-2/12 text-center">
+                    Publikation
+                  </th>
+                  <th scope="col" className="px-6 py-3 w-2/12">
+                    <div className="flex justify-center">Präsentation</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr
+                    className="bg-white border-b dark:bg-black dark:border-gray-700"
+                  >
+                    <td
+                      scope="row"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                    >
+                      30. Aug 2023
+                    </td>
+                    <td
+                      scope="row"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                    >
+                        XY
+                    </td>
+                    <td
+                      scope="row"
+                      className="px-6 py-4 font-medium text-primary whitespace-nowrap dark:text-white text-center"
+                    >
+                        <a className=" pt-2 pb-2 inline-flex font-medium" href="#">
+                          PDF
+                        </a>
+                    </td>
+                    <td className="px-6 py-4 text-primary text-center">
+                      <div className="flex justify-center">
+                          <a
+                            className="pt-2 pb-2 inline-flex font-medium"
+                            href="#"
+                          >
+                            PDF
+                          </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bg-white border-b dark:bg-black dark:border-gray-700"
+                  >
+                    <td
+                      scope="row"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                    >
+                      30. Aug 2023
+                    </td>
+                    <td
+                      scope="row"
+                      className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+                    >
+                        XY
+                    </td>
+                    <td
+                      scope="row"
+                      className="px-6 py-4 font-medium text-primary whitespace-nowrap text-center dark:text-white"
+                      >
+                        <a className="pt-2 pb-2 inline-flex " href="#">
+                          PDF
+                        </a>
+                    </td>
+                    <td className="px-6 py-4 text-primary">
+                      <div className="flex justify-center">
+                        <a className=" pt-2 pb-2 inline-flex font-medium" href="#">
+                          PDF
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </AccordionItem>
+        <AccordionItem title="Standort">
+        </AccordionItem>
+        <AccordionItem title="Produkte">
+        </AccordionItem>
+        <AccordionItem title="Image">
+        </AccordionItem>
+        <AccordionItem title="Logos">
+        </AccordionItem>
+        </div>
+      </ContentWidth>
       <TeaserDownload
         title="Allgemeine Downloads"
         buttonLink="/downloadcenter"
