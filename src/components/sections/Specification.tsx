@@ -94,7 +94,7 @@ export default function Specification() {
                 </svg>
               }
             >
-              Kontakt aufnehmen
+              Factsheet download
             </Button>
           </div>
         </div>
