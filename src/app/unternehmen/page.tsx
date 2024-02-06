@@ -218,7 +218,6 @@ export default function Unternehmen() {
       />
       <Hero></Hero>
       <DNA />
-      {/* <WertePrinzipen /> */}
       <FactsAndFigures
         data1={statistics}
         data2={daten}
@@ -229,11 +228,29 @@ export default function Unternehmen() {
         showThirdCard={false}
         numberOfColumns={2}
       />
+      <section>
+      <div className="gap-4 mt-8 sm:grid sm:grid-cols-4 sm:mt-12">
+        <img
+          className="object-cover h-80 w-full scale-100 col-span-2 mb-4 sm:block  "
+          src="https://www.stadlerrail.com/media/img/800x/mwe_0920%20-%20cropped.jpg"
+          alt="content gallery 1"
+        />
+        <img
+          className=" object-cover h-80 w-full scale-100 hidden col-span-1 sm:block  "
+          src="https://www.stadlerrail.com/media/img/744x606/drohnenaufnahme_star_quadratisch.jpg"
+          alt="content gallery 2"
+        />
+        <img
+          className="object-cover h-80 w-full scale-100 hidden col-span-1 sm:block  "
+          src="https://www.stadlerrail.com/media/img/744x606/jet_7487_quadratisch.jpg"
+          alt="content gallery 3"
+        />
+      </div>
+      </section>
       <div className="lg:py-24">
         {" "}
         <Map title="Global präsent – lokal verankert" />
       </div>
-
       <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
       <History_Proposal />
       <HomePageCarousel
