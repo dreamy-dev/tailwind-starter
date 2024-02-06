@@ -9,7 +9,7 @@ interface Tags {
   tag: string;
 }
 
-interface News {
+interface Medienmitteilungen {
   title: string;
   lead: string;
   image: string;
@@ -18,17 +18,16 @@ interface News {
   tags: Tags[];
 }
 
-interface NewsProps {
-  news: News[];
-  newsTitle: string;
+interface MedienmitteilungenProps {
+  medienmitteilungen: Medienmitteilungen[];
+  medienmitteilungenTitle: string;
   showButton?: boolean;
-  showDate?: boolean;
   h2Styles?: string;
 }
 
-const NewsShortSection: React.FC<NewsProps> = ({
-  news,
-  newsTitle,
+const MedienmitteilungenShortSection: React.FC<MedienmitteilungenProps> = ({
+  medienmitteilungen,
+  medienmitteilungenTitle,
   h2Styles,
   showButton = true,
 }) => {
@@ -38,11 +37,11 @@ const NewsShortSection: React.FC<NewsProps> = ({
         <div className="col-span-12">
           <div className="relative">
             <div className="lg:pl-20 2xl:pl-0 mb-10">
-              <H2 styles={h2Styles}>{newsTitle}</H2>
+              <H2 styles={h2Styles}>{medienmitteilungenTitle}</H2>
             </div>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {news.map((item, index) => (
+            {medienmitteilungen.map((item, index) => (
               <a
                 href={item.link}
                 className="group mb-6 transition-all"
@@ -75,8 +74,8 @@ const NewsShortSection: React.FC<NewsProps> = ({
           </div>
           {showButton && (
             <div className="mt-10 lg:pl-20 2xl:pl-0">
-              <ButtonPrimary position="left" href="/news">
-                Alle News{" "}
+              <ButtonPrimary position="left" href="/medienmitteilungen">
+                Alle Medienmitteilungen{" "}
                 <svg
                   width="15"
                   height="15"
@@ -110,4 +109,4 @@ const NewsShortSection: React.FC<NewsProps> = ({
   );
 };
 
-export default NewsShortSection;
+export default MedienmitteilungenShortSection;
