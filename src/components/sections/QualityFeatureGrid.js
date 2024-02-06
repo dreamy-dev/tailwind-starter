@@ -11,7 +11,7 @@ const QualityFeatureGrid = ({ blok }) => {
             <div className="mt-8 lg:mt-16">
               <div className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24" {...storyblokEditable(blok)}>
                 {blok.columns.map((nestedBlok) => (
-                  <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+                  <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
                 ))}
               </div>
             </div>

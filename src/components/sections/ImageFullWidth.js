@@ -9,7 +9,7 @@ export default function ImageFullWidth({blok}) {
           <img
             className="aspect-[2/1] object-cover"
             width={"100%"}
-            src={blok.image.filename}
+            src={blok?.image.filename}
             alt="hero product image"
           />
         </div>

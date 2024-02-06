@@ -23,11 +23,11 @@ const HeroText = ({
             <div key={index}>
               {index !== breadcrumbs.length - 1 ? (
                 <>
-                  <a href={breadcrumb.link}>{breadcrumb.text}</a>
+                  <a href={breadcrumb?.link}>{breadcrumb?.text}</a>
                   <span className="px-3">|</span>
                 </>
               ) : (
-                <a href={breadcrumb.link}>{breadcrumb.text}</a>
+                <a href={breadcrumb?.link}>{breadcrumb?.text}</a>
               )}
             </div>
           ))}

@@ -22,12 +22,12 @@ const QualityFeatures = ({ features, mainTitle }) => {
                    className="flex flex-col items-start gap-4 sm:gap-5 sm:flex-row"
                  >
                    <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0">
-                     {feature.svg}
+                     {feature?.svg}
                    </div>
                    <div>
-                     <H4 textColor="white">{feature.title}</H4>
+                     <H4 textColor="white">{feature?.title}</H4>
                      <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-                       {feature.text}
+                       {feature?.text}
                      </Text>
                    </div>
                  </div>

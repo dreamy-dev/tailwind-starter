@@ -8,16 +8,16 @@ const Features = ({blok}) => {
       <ContentWidth>
         <div className="col-span-12  max-w-full mx-auto bg-white">
           <div className="mb-10 tracking-tight dark:text-white ">
-            <H3>{blok.title}</H3>
+            <H3>{blok?.title}</H3>
           </div>
           <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 md:gap-16 md:flex-row">
             <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
-              <img src={blok.image_1.filename} alt="Image" />
+              <img src={blok?.image_1.filename} alt="Image" />
               <a
-                href={blok.link_1}
+                href={blok?.link_1}
                 className="flex items-center gap-2 text-2xl font-bold mt-4"
               >
-                {blok.text_1}
+                {blok?.text_1}
                 <svg
                   width="20"
                   height="20"
@@ -33,12 +33,12 @@ const Features = ({blok}) => {
               </a>
             </li>
             <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
-              <img src={blok.image_2.filename} alt="Image" />
+              <img src={blok?.image_2.filename} alt="Image" />
               <a
-                href={blok.link_1}
+                href={blok?.link_1}
                 className="flex items-center gap-2 text-2xl font-bold mt-4"
               >
-                {blok.text_2}
+                {blok?.text_2}
                 <svg
                   width="20"
                   height="20"

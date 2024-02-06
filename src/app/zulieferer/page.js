@@ -2,7 +2,7 @@
 
 import Hero from "./Hero";
 import SustainableProcurement from "./SustainableProcurement";
-import FAQ from "../../components/sections/Accordion";
+//import FAQ from "../../components/sections/Accordion";
 import FactsAndFigures from "../../components/sections/FactsAndFigures";
 import Quote from "../../components/sections/Quote";
 
@@ -364,7 +364,7 @@ export default function Lieferanten() {
         showTwoRows={false}
       />
       <Quote />
-      <FAQ mainTitle="Frequently Asked Questions" faqs={data} />
+      {/* <FAQ mainTitle="Frequently Asked Questions" faqs={data} /> */}
       {/* <Contact
         title="Ihr Kontakt"
         contactname="Supply Management"

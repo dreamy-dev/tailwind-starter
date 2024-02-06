@@ -22,7 +22,7 @@ const FactsAndFigures = ({
       <ContentWidth>
         <div className="col-span-12 my-auto  ">
           <div className="text-center mb-4">
-            <H2>{blok.title}</H2>
+            <H2>{blok?.title}</H2>
           </div>
           <div className="first-level">
             {/* <div className="border-b border-black border-solid">
@@ -37,18 +37,18 @@ const FactsAndFigures = ({
                       key={index}
                     >
                       <dt className="text-xl leading-7 text-black">
-                        {stat.text ?? "Lorem ipsum"}
+                        {stat?.text}
                       </dt>
                       <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                         <CountUp
-                          start={stat.start ?? 0}
-                          end={stat.end ?? ""}
-                          suffix={stat.suffix ?? " "}
-                          prefix={stat.prefix ?? " "}
-                          duration={stat.duration ?? 2}
-                          separator={stat.separator ?? " "}
-                          decimals={stat.decimals ?? 0}
-                          decimal={stat.decimal ?? "'"}
+                          start={stat?.start ?? 0}
+                          end={stat?.end ?? ""}
+                          suffix={stat?.suffix ?? " "}
+                          prefix={stat?.prefix ?? " "}
+                          duration={stat?.duration ?? 2}
+                          separator={stat?.separator ?? " "}
+                          decimals={stat?.decimals ?? 0}
+                          decimal={stat?.decimal ?? "'"}
                           enableScrollSpy
                         ></CountUp>
                       </dd>

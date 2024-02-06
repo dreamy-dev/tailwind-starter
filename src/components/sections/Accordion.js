@@ -39,7 +39,7 @@ const Accordion = ({ faqs, mainTitle }) => {
                       aria-expanded={activeAccordion === index}
                       aria-controls={`accordion-flush-body-${index}`}
                     >
-                      <span>{item.title}</span>
+                      <span>{item?.title}</span>
                       <svg
                         data-accordion-icon=""
                         className={`w-6 h-6 ${
@@ -64,7 +64,7 @@ const Accordion = ({ faqs, mainTitle }) => {
                   >
                     <div className="py-5 border-b border-gray-200 dark:border-gray-700">
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        {item.description}
+                        {item?.description}
                       </p>
                     </div>
                   </div>

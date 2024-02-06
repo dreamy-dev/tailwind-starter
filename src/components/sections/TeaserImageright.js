@@ -13,22 +13,22 @@ const TeaserImageRight = ({ imageSrc, children, blok }) => {
             <div className="">
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <div>
-                  <H2 styles="text-black">{blok.title}</H2>
+                  <H2 styles="text-black">{blok?.title}</H2>
                   <Text styles="mt-4 text-xl font-normal text-gray-800 text-black">
-                    {blok.text}
+                    {blok?.text}
                   </Text>
                 </div>
                 <ButtonPrimary
                   position="left"
-                  buttonText={blok.cta_button_text}
-                  href={blok.cta_button_link}
+                  buttonText={blok?.cta_button_text}
+                  href={blok?.cta_button_link}
                 />
               </div>
             </div>
           </div>
 
           <img
-            src={blok.image.filename}
+            src={blok?.image.filename}
             className="object-cover object-center w-full"
             alt=""
           />
