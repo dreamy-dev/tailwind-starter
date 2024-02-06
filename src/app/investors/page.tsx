@@ -302,7 +302,6 @@ export default function Investors() {
     <section>
       <InvestorHero />
       <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
-
       <NewsShortSection
         news={newsSection}
         newsTitle="News"
@@ -310,6 +309,25 @@ export default function Investors() {
         showButton={true}
         h2Styles="flex justify-left items-left"
       ></NewsShortSection>
+      <section>
+      <div className="gap-4 mb-24 sm:grid sm:grid-cols-4 sm:mt-12">
+        <img
+          className="object-cover h-80 w-full scale-100 col-span-2 mb-4 sm:block  "
+          src="https://www.stadlerrail.com/media/img/c/stasa_200520.jpg"
+          alt="content gallery 1"
+        />
+        <img
+          className=" object-cover h-80 w-full scale-100 hidden col-span-1 sm:block"
+          src="https://www.stadlerrail.com/media/img/744x606/2019_1111_milestones%202019%20for%20website_ipo%20(2).jpg"
+          alt="content gallery 2"
+        />
+        <img
+          className="object-cover h-80 w-full scale-100 hidden col-span-1 sm:block"
+          src="https://www.stadlerrail.com/media/img/800x/01_flirt%20nordic%20express.jpg"
+          alt="content gallery 3"
+        />
+      </div>
+      </section>
       {/* <HomePageCaroucel
         items={newsCards}
         carouselTitle="News"
