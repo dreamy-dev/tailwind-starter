@@ -109,35 +109,21 @@ const ProductCarousel = () => {
                 className="w-10 h-10 md:w-10 md:h-10"
                 onClick={() => paginate(-1)}
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
-                    fill="#005893"
-                  />
-                </svg>
+                <img
+                  className="w-5 h-5"
+                  src="/icons/ohne-box/chevron_left_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                  alt=""
+                />
               </button>
               <button
                 className="w-10 h-10 md:w-10 md:h-10"
                 onClick={() => paginate(1)}
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                    fill="#005893"
-                  />
-                </svg>
+                <img
+                  className="w-5 h-5"
+                  src="/icons/ohne-box/chevron_right_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                  alt=""
+                />
               </button>
             </div>
           </motion.div>

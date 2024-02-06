@@ -218,7 +218,11 @@ const TrainCarousel = (props?: any) => {
               massgeschneidert.
             </Text>
             <a className="flex mt-4" href="/solutions/schienenfahrzeuge">
-              <img className="h-5" src="/stadler-arrow-foreward.svg" />
+              <img
+                className="w-5 h-5"
+                src="/icons/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
+                alt=""
+              />
             </a>
           </div>
         </ContentWidth>
@@ -285,7 +289,11 @@ const TrainCarousel = (props?: any) => {
                   <div className="flex flex-row items-center justify-between">
                     <H3 styles="mb-0">{item.name}</H3>
                     <a href="#">
-                      <img src="/icons/arrow-blue.svg" />
+                      <img
+                        className="w-5 h-5"
+                        src="/icons/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                        alt=""
+                      />
                     </a>
                   </div>
                 </div>
