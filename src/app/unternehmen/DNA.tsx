@@ -8,7 +8,7 @@ import SmallWidth from "@/components/layouts/SmallWidth";
 
 export default function DNA() {
   return (
-    <section className="bg-white ">
+    <section className="bg-white lg:pt-24">
       <SmallWidth>
         {" "}
         <H2>Die Stadler-Prinzipien</H2>

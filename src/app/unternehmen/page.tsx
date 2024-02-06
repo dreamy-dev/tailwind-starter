@@ -185,7 +185,10 @@ export default function Unternehmen() {
         showThirdCard={false}
         numberOfColumns={2}
       />
-      <Map title="Global präsent – lokal verankert" />
+      <div className="lg:py-24">
+        {" "}
+        <Map title="Global präsent – lokal verankert" />
+      </div>
 
       <SustainableProcurement title="Nachhaltigkeit" showButton={true} />
       <History_Proposal />
