@@ -11,6 +11,7 @@ import ProductCarousel from "@/components/sections/ProductCarousel";
 import TestimonialsCarousel from "@/components/sections/ReferenzenCarousel";
 import ImageFullWidth from "@/components/sections/ImageFullWidth";
 import ProductCards from "@/components/sections/ProductCards";
+import Text from "@/components/typography/Text";
 const features = [
   {
     title: "Leichtbauweise",
@@ -202,15 +203,17 @@ export default function Product() {
         // buttonText="CTA Button"
       />
       <ImageFullWidth imgSrc="/Product-banner.jpg" />
-      <TextSection
-        text=" Der einstöckige Intercity- und Regionalzug fährt mit einer maximalen
-        Geschwindigkeit von 200–160 km/h. Mit durchdachte Ingenieursleistung und
-        Innovation passt sich der FLIRT den spezifischen Anforderungen und
-        Bedingungen von jedem Projekt. Die modulare Bauweise erlaubt individuell
-        konfigurierbare zwei- bis sechsstellige Zugskompositionen in Normal- und
-        Breitspur, und bietet Flexibilität bei der Wahl zwischen elektrischem,
-        Diesel- oder sogar bi-modalem Antrieb."
-      />
+      <TextSection>
+        <Text>
+          Der einstöckige Intercity- und Regionalzug fährt mit einer maximalen
+          Geschwindigkeit von 200–160 km/h. Mit durchdachte Ingenieursleistung
+          und Innovation passt sich der FLIRT den spezifischen Anforderungen und
+          Bedingungen von jedem Projekt. Die modulare Bauweise erlaubt
+          individuell konfigurierbare zwei- bis sechsstellige Zugskompositionen
+          in Normal- und Breitspur, und bietet Flexibilität bei der Wahl
+          zwischen elektrischem, Diesel- oder sogar bi-modalem Antrieb.
+        </Text>
+      </TextSection>
       <QualityFeatures
         features={features}
         mainTitle="Qualitätsmerkmale"
