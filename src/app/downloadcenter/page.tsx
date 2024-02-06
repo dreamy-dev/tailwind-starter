@@ -98,7 +98,7 @@ const downloads = [
 export default function Downloadcenter() {
   return (
     <>
-      <HeroText title="Download Center" />
+      <HeroText title="Downloads" />
       {/* <Publikationen
         tableData={tableData}
         publications={presentations}
