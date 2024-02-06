@@ -8,6 +8,7 @@ const navigation = {
   topNav: [
     { name: "Medien", href: "/medien" },
     { name: "Zulieferer", href: "/zulieferer" },
+    { name: "Kunden", href: "/kunden" },
     { name: "Downloads", href: "/downloadcenter" },
   ],
 };

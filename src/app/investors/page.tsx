@@ -18,6 +18,7 @@ import HomePageCaroucel from "@/components/sections/HomePageCaroucel";
 import TabsPublikationen from "./TabsPublikationen";
 import Features from "@/components/sections/Features";
 import TabsGeneralversammlung from "./TabsGeneralversammlung";
+import H2 from "@/components/typography/H2";
 
 const newsSection = [
   {
@@ -327,7 +328,14 @@ export default function Investors() {
         title="Neuste Berichte"
         showTable={false}
       ></Publikationen>
-      <TabsPublikationen></TabsPublikationen>
+      <section className="py-24">
+        <ContentWidth>
+        <div className="col-span-12 max-w-full">
+            <H2>Alle Publikationen nach Jahr</H2>
+            <TabsPublikationen></TabsPublikationen>
+          </div>
+          </ContentWidth>
+      </section>
       <ContentWidth>
         <div className="col-span-12 mb-14 flex justify-between align-baseline">
           <Text>
@@ -337,7 +345,12 @@ export default function Investors() {
         </div>
         <hr className="col-span-12 h-px bg-gray-200 border-0 dark:bg-gray-700" />
       </ContentWidth>
-      <TabsGeneralversammlung />
+      <ContentWidth>
+        <div className="py-24 col-span-12 max-w-full">
+          <H2>Generalversammlung</H2>
+          <TabsGeneralversammlung />
+        </div>
+      </ContentWidth>
       <TextBlock />
       <CorporateGorvernance
         mainTitle="Corporate Governance"
