@@ -202,7 +202,7 @@ export default function Product() {
         // withCTA={true}
         // buttonText="CTA Button"
       />
-      <ImageFullWidth imgSrc="/Product-banner.jpg" />
+      <ImageFullWidth imgSrc="/RABe-Traverso-Kaltbrunn-Schaelli.jpg" />
       <TextSection>
         <Text>
           Der einstöckige Intercity- und Regionalzug fährt mit einer maximalen

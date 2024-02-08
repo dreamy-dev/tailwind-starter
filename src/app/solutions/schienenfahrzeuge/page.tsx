@@ -318,7 +318,7 @@ export default function Schienenfahrzeuge() {
           <TrainCardList trains={urban}></TrainCardList>
           <ContentWidth>
             <div className="col-span-6 pb-12">
-              <H2 styles="text-white">Locomotiven</H2>
+              <H2 styles="text-white">Lokomotiven</H2>
               <Text styles="mt-4 text-xl font-normal text-gray-800 text-white">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
