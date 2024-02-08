@@ -16,7 +16,7 @@ const fontFamily = Montserrat({
 });
 
 storyblokInit({
-  accessToken: "r9bj1EQKQ2RBQpmI0LRxWQtt",
+  accessToken: "OzCkp5jSdfLeMLs4g0rshAtt",
   use: [apiPlugin],
 });
 
