@@ -7,7 +7,7 @@ import ContentWidth from "../layouts/ContentWidth";
 import { motion } from "framer-motion";
 const navigation = {
   topNav: [
-    { name: "Medien", href: "/medien" },
+    { name: "Medien", href: "/#" },
     { name: "Zulieferer", href: "/zulieferer" },
     { name: "Downloads", href: "/downloadcenter" },
   ],
@@ -56,7 +56,7 @@ const navigationMain: NavItems = {
         { title: "Service", href: "/solutions/service" },
       ],
     },
-    { title: "Karriere", href: "/career", icon: false },
+    { title: "Karriere", href: "/#", icon: false },
     {
       title: "Investor Relations",
       href: "/investors",
@@ -192,15 +192,6 @@ const Header = () => {
                   </ul>
                   <div className="border-b lg:border-none"></div>
                   <ul className="flex flex-col lg:flex lg:flex-row lg:items-center gap-8 mb-10 lg:mb-0 lg:gap-4">
-                    <li className="flex flex-row lg:flex lg:items-center gap-2">
-                      <img src="/icons/country.svg" alt="Country Icon" />
-                      <a
-                        className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
-                        href="#"
-                      >
-                        Schweiz
-                      </a>
-                    </li>
                     <li className="flex flex-row lg:flex lg:items-center  gap-2">
                       <img src="/icons/country-name.svg" alt="Language Icon" />
                       <a
@@ -359,7 +350,8 @@ const Header = () => {
 
                     <li className="hidden lg:block">
                       <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
-                        <img className="w-5 h-5"
+                        <img
+                          className="w-5 h-5"
                           src="/icons/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
                           alt=""
                         />

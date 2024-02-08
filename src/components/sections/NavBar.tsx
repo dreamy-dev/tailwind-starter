@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 const navigation = {
   topNav: [
-    { name: "Medien", href: "/medien" },
+    { name: "Medien", href: "/#" },
     { name: "Zulieferer", href: "/zulieferer" },
     { name: "Kunden", href: "/kunden" },
     { name: "Downloads", href: "/downloadcenter" },
@@ -56,7 +56,7 @@ const navigationMain: NavItems = {
         { title: "Service", href: "/solutions/service" },
       ],
     },
-    { title: "Karriere", href: "/career", icon: false },
+    { title: "Karriere", href: "/#", icon: false },
     {
       title: "Investor Relations",
       href: "/investors",
@@ -84,8 +84,6 @@ const NavBar = () => {
   const closeMainMenu = () => {
     setIsOpen(false);
   };
-
-
 
   let menuRef = useRef<HTMLDivElement>(null);
 
