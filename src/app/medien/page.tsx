@@ -238,7 +238,7 @@ export default function Medien() {
       <TeaserDownload
         title="Medienmitteilungen"
         leadText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        buttonLink="/downloadcenter"
+        buttonLink="/medienmitteilungen"
         buttonText="Alle Medienmitteilungen"
         showList={true}
         showButton={true}
