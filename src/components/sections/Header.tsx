@@ -7,7 +7,7 @@ import ContentWidth from "../layouts/ContentWidth";
 import { motion } from "framer-motion";
 const navigation = {
   topNav: [
-    { name: "Medien", href: "/#" },
+    { name: "Medien", href: "/medien" },
     { name: "Zulieferer", href: "/zulieferer" },
     { name: "Downloads", href: "/downloadcenter" },
   ],
@@ -56,7 +56,7 @@ const navigationMain: NavItems = {
         { title: "Service", href: "/solutions/service" },
       ],
     },
-    { title: "Karriere", href: "/#", icon: false },
+    { title: "Karriere", href: "/career", icon: false },
     {
       title: "Investor Relations",
       href: "/investors",
