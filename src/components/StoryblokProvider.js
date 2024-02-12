@@ -22,7 +22,7 @@ import QualityFeatureItem from "./sections/QualityFeatureItem";
 
 /** 3. Initialize it as usual */
 storyblokInit({
-  accessToken: "OzCkp5jSdfLeMLs4g0rshAtt",
+  accessToken: NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components: {
     page: Page,
