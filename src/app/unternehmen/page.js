@@ -6,7 +6,7 @@ import SustainableProcurement from "../zulieferer/SustainableProcurement";
 import TeaserGeneral from "../../components/sections/TeaserGeneral";
 import CorporateGorvernance from "./CorporateGovernance";
 import HomePageCarousel from "../../components/sections/HomePageCaroucel";
-import FactsAndFigures from "../../components/sections/FactsAndFigures";
+
 import Map from "../../components/sections/Map";
 import EventCalendar from "../../components/sections/EventCalendar";
 import Hero from "./Hero";
@@ -169,12 +169,7 @@ const newsCards = [
       <Hero></Hero>
       <DNA />
       {/* <WertePrinzipen /> */}
-      <FactsAndFigures
-        data1={statistics}
-        data2={daten}
-        title="Daten & Fakten"
-        showTwoRows={false}
-      ></FactsAndFigures>
+
       <CorporateGorvernance
         mainTitle="Verwaltungsrat und Konzernleitung"
         showThirdCard={false}

@@ -12,7 +12,7 @@ export default async function Home() {
 }
 
 export async function fetchData() {
-  let sbParams = { version: "public" };
+  let sbParams = { version: "draft" };
 
   const storyblokApi = getStoryblokApi();
   return await storyblokApi.get(`cdn/stories/blok-tests`, sbParams, {

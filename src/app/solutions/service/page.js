@@ -1,7 +1,7 @@
 "use client";
 
 import ContentWidth from "../../../components/layouts/ContentWidth";
-import FactsAndFigures from "../../../components/sections/FactsAndFigures";
+
 import HeroText from "../../../components/sections/HeroText";
 import Link from "../../../components/typography/Link";
 import ServiceTeasers from "../../../components/sections/ServiceTeasers";
@@ -128,7 +128,7 @@ export default function Service() {
         // buttonText="CTA Button"
       />
       <ImageFullWidth imgSrc="/teaser_service.jpeg" />
-      <FactsAndFigures data1={facts} data2={figures} title="Daten und Fakten" />
+
       <ServiceTeasers
         mainTitle="Alle Services auf einen Blick"
         text="Hier finden Sie eine Übersicht aller unser Service Angebote."

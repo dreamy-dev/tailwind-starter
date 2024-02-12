@@ -1,7 +1,7 @@
 "use client";
 import ApplicationProcess from "./ApplicationProcess";
 import CTASection from "../../components/sections/CTASection";
-import FactsAndFigures from "../../components/sections/FactsAndFigures";
+
 import Jobs from "../../components/sections/TeaserJobs";
 import Intro from "../../components/sections/Intro";
 import Testimonials from "../../components/sections/Testimonials";
@@ -88,7 +88,7 @@ export default function Karriere() {
         </div>
       </ContentWidth>
       <Testimonials />
-      <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
+
       <Jobs />
       {/* <ApplicationProcess /> */}
       <TeaserSuccessStories />
