@@ -18,7 +18,7 @@ import Map from "./sections/Map";
 import TextSection from "./sections/TextSection";
 import QualityFeatureGrid from "./sections/QualityFeatureGrid";
 import QualityFeatureItem from "./sections/QualityFeatureItem";
- //import HomePageCaroucel from "./sections/HomePageCaroucel";
+//import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 /** 3. Initialize it as usual */
 storyblokInit({
@@ -29,17 +29,17 @@ storyblokInit({
     footer: Footer,
     header: Header,
     map: Map,
-    "feature-grid": QualityFeatureGrid,
-    "feature-item": QualityFeatureItem,
+     "feature-grid": QualityFeatureGrid,
+     "feature-item": QualityFeatureItem,
     "text-block": TextSection,
     "double-page-teaser": Features,
     "simple-page-teaser": Career,
     "image-full-width": ImageFullWidth,
     "hero-subpage": HeroText,
-    "facts-figures": FactsAndFigures,
+    // "facts-figures": FactsAndFigures,
     "video-teaser": Video,
     "hero-home": HomePageHero,
-    "teaser-image-left": TeaserImageLeft,
+     "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
     //"success-stories": HomePageCaroucel,
   },

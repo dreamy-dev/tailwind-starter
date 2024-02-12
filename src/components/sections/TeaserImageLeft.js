@@ -4,7 +4,7 @@ import H2 from "../typography/H2";
 import SmallWidth from "../layouts/SmallWidth";
 import Text from "../typography/Text";
 
-const TeaserImageLeft = ({ imageSrc, children, listItems, blok }) => {
+const TeaserImageLeft = ({ blok }) => {
   return (
     <section {...storyblokEditable(blok)} className="antialiased py-12">
       <SmallWidth>
@@ -16,11 +16,10 @@ const TeaserImageLeft = ({ imageSrc, children, listItems, blok }) => {
           />
 
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-       
             <div>
               <H2 styles="text-black">{blok?.title}</H2>
               <Text styles="mt-4 text-xl font-normal text-black">
-                {blok?.text}
+                {blok?.text.content.map((item) => item.content[0].text)}
               </Text>
             </div>
             <ButtonPrimary
@@ -28,7 +27,6 @@ const TeaserImageLeft = ({ imageSrc, children, listItems, blok }) => {
               buttonText={blok?.cta_button_text}
               href={blok?.cta_button_link}
             />
-            {children}
           </div>
         </div>
       </SmallWidth>

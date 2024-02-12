@@ -4,7 +4,7 @@ import H2 from "../typography/H2";
 import Text from "../typography/Text";
 import SmallWidth from "../layouts/SmallWidth";
 
-const TeaserImageRight = ({ imageSrc, children, blok }) => {
+const TeaserImageRight = ({ blok }) => {
   return (
     <section {...storyblokEditable(blok)} className="antialiased py-12">
       <SmallWidth>
