@@ -16,7 +16,7 @@ const fontFamily = Montserrat({
 });
 
 storyblokInit({
-  accessToken: "OzCkp5jSdfLeMLs4g0rshAtt",
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <body className={fontFamily.className}>
           <Header />
           <main>{children}</main>
-          <Footer/>
+          <Footer />
         </body>
       </html>
     </StoryblokProvider>

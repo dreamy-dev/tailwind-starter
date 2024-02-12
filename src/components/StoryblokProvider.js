@@ -22,15 +22,15 @@ import QualityFeatureItem from "./sections/QualityFeatureItem";
 
 /** 3. Initialize it as usual */
 storyblokInit({
-  accessToken: "OzCkp5jSdfLeMLs4g0rshAtt",
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components: {
     page: Page,
     footer: Footer,
     header: Header,
     map: Map,
-     "feature-grid": QualityFeatureGrid,
-     "feature-item": QualityFeatureItem,
+    "feature-grid": QualityFeatureGrid,
+    "feature-item": QualityFeatureItem,
     "text-block": TextSection,
     "double-page-teaser": Features,
     "simple-page-teaser": Career,
@@ -39,7 +39,7 @@ storyblokInit({
     // "facts-figures": FactsAndFigures,
     "video-teaser": Video,
     "hero-home": HomePageHero,
-     "teaser-image-left": TeaserImageLeft,
+    "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
     //"success-stories": HomePageCaroucel,
   },
