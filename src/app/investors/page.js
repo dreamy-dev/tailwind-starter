@@ -2,7 +2,7 @@
 
 import ContentWidth from "../../components/layouts/ContentWidth";
 import Contact from "../../components/sections/Contact";
-
+import FactsAndFigures from "../../components/sections/FactsAndFigures";
 import Subscribe from "../../components/sections/Subscribe";
 import Publikationen from "../../components/sections/Publikationen";
 import CorporateGorvernance from "../unternehmen/CorporateGovernance";
@@ -177,7 +177,7 @@ export default function Investors() {
       {/* Header kann reiner TextHero sein mit Button der auf die letzte Publikation verweist, alle Publikationen zusammen, vlt ein Bild von publikation? */}
       <InvestorHero />
       {/* News & Events -> links Teaser von letzten News, rechts Teaser zu Events, beide verweisen auf Unterseiten */}
-
+      <FactsAndFigures data1={facts} data2={figures} title="Daten & Fakten" />
       <ContentWidth>
         <div className="col-span-12 flex flex-col mb-20"></div>
       </ContentWidth>

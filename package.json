@@ -14,7 +14,6 @@
     "@heroicons/react": "^2.0.18",
     "@storyblok/react": "^2.4.8",
     "clsx": "^2.0.0",
-    "dotenv": "^16.4.2",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.5.0",
     "framer-motion": "^10.16.4",

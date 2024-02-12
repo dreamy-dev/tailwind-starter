@@ -3,7 +3,6 @@ import StoryblokProvider from "../components/StoryblokProvider";
 import { Montserrat } from "next/font/google";
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
-
 import "./globals.css";
 
 export const metadata = {
@@ -17,7 +16,7 @@ const fontFamily = Montserrat({
 });
 
 storyblokInit({
-  accessToken: "r9bj1EQKQ2RBQpmI0LRxWQtt",
+  accessToken: NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
 });
 

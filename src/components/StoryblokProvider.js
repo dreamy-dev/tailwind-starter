@@ -5,7 +5,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "../components/sections/Page";
 import Footer from "./sections/Footer";
 import HeroText from "./sections/HeroText";
-
+import FactsAndFigures from "./sections/FactsAndFigures";
 import Video from "./sections/Video";
 import HomePageHero from "./sections/HomePageHero";
 import TeaserImageLeft from "./sections/TeaserImageLeft";
@@ -18,21 +18,17 @@ import Map from "./sections/Map";
 import TextSection from "./sections/TextSection";
 import QualityFeatureGrid from "./sections/QualityFeatureGrid";
 import QualityFeatureItem from "./sections/QualityFeatureItem";
-import FactsAndFiguresGrid from "./sections/FactsAndFiguresGrid";
-import FactsAndFiguresItem from "./sections/FactsAndFiguresItem";
  //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 /** 3. Initialize it as usual */
 storyblokInit({
-  accessToken: "r9bj1EQKQ2RBQpmI0LRxWQtt",
+  accessToken: NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components: {
     page: Page,
     footer: Footer,
     header: Header,
     map: Map,
-    "facts-figures-grid": FactsAndFiguresGrid,
-    "facts-figures-item": FactsAndFiguresItem,
     "feature-grid": QualityFeatureGrid,
     "feature-item": QualityFeatureItem,
     "text-block": TextSection,
@@ -40,6 +36,7 @@ storyblokInit({
     "simple-page-teaser": Career,
     "image-full-width": ImageFullWidth,
     "hero-subpage": HeroText,
+    "facts-figures": FactsAndFigures,
     "video-teaser": Video,
     "hero-home": HomePageHero,
     "teaser-image-left": TeaserImageLeft,
