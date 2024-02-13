@@ -18,6 +18,8 @@ import Map from "./sections/Map";
 import TextSection from "./sections/TextSection";
 import QualityFeatureGrid from "./sections/QualityFeatureGrid";
 import QualityFeatureItem from "./sections/QualityFeatureItem";
+import FactsAndFiguresGrid from "./sections/FactsFiguresGrid";
+import FactsAndFiguresItem from "./sections/FactsFiguresItem";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 /** 3. Initialize it as usual */
@@ -29,6 +31,8 @@ storyblokInit({
     footer: Footer,
     header: Header,
     map: Map,
+    "facts-figures-grid": FactsAndFiguresGrid,
+    "facts-figures-item": FactsAndFiguresItem,
     "feature-grid": QualityFeatureGrid,
     "feature-item": QualityFeatureItem,
     "text-block": TextSection,
@@ -36,7 +40,6 @@ storyblokInit({
     "simple-page-teaser": Career,
     "image-full-width": ImageFullWidth,
     "hero-subpage": HeroText,
-    // "facts-figures": FactsAndFigures,
     "video-teaser": Video,
     "hero-home": HomePageHero,
     "teaser-image-left": TeaserImageLeft,
