@@ -1,7 +1,8 @@
+"use client";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import FullWidth from "../layouts/FullWidth";
 
-export default function ImageFullWidth({blok}) {
+export default function ImageFullWidth({ blok }) {
   return (
     <section {...storyblokEditable(blok)}>
       <FullWidth>

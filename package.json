@@ -25,6 +25,7 @@
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.15.0",
+    "storyblok-rich-text-react-renderer": "^2.9.1",
     "yarn": "^1.22.19"
   },
   "devDependencies": {

@@ -1,3 +1,4 @@
+"use client";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import H4 from "../typography/H4";
 import Text from "../typography/Text";
@@ -9,9 +10,9 @@ const QualityFeatureItem = ({ blok }) => (
         <img src={blok?.image.filename} />
       </div>
       <div>
-        <H4 textColor="white">{ blok?.title}</H4>
+        <H4 textColor="white">{blok?.title}</H4>
         <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-        {blok?.text}
+          {blok?.text}
         </Text>
       </div>
     </div>

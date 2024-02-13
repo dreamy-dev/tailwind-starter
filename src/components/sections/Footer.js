@@ -1,4 +1,5 @@
 
+"use client";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import Button from "../elements/ButtonSecondary";
 import Link from "next/link";

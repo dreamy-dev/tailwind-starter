@@ -1,17 +1,11 @@
+"use client";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import SmallWidth from "../../components/layouts/SmallWidth";
 import H1 from "../../components/typography/H1";
 import Lead from "../../components/typography/Lead";
 
-
-const HeroText = ({
-  breadcrumbs = [],
-  props,
-  withCTA,
-  buttonText,
-  blok,
-}) => {
+const HeroText = ({ breadcrumbs = [], props, withCTA, buttonText, blok }) => {
   return (
     <section
       {...storyblokEditable(blok)}

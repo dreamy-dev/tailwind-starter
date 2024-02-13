@@ -1,10 +1,11 @@
+"use client";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import H2 from "../typography/H2";
 import ButtonPrimary from "../elements/ButtonPrimary";
 import Text from "../typography/Text";
 import FullWidth from "../layouts/FullWidth";
 
-export default function Video({blok}) {
+export default function Video({ blok }) {
   return (
     <div
       {...storyblokEditable(blok)}
@@ -25,16 +26,14 @@ export default function Video({blok}) {
           <div className="w-[90%] m-auto lg:px-4 xl:px-20 lg:w-1/3">
             <div className="mt-10 lg:mt-0">
               <H2 resetStyles={true} styles="text-4xl font-bold mb-6">
-               {blok.title}
+                {blok.title}
               </H2>
-              <Text styles="text-xl">
-              {blok.text}
-              </Text>
+              <Text styles="text-xl">{blok.text}</Text>
             </div>
 
             <div className="mt-6">
               <ButtonPrimary position="left">
-               {blok.button_text}
+                {blok.button_text}
                 <svg
                   width="15"
                   height="15"

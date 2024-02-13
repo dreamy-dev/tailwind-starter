@@ -1,9 +1,11 @@
+"use client";
+
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import H2 from "../../components/typography/H2";
 import ContentWidth from "../layouts/ContentWidth";
 
-export default function Career({blok}) {
+export default function Career({ blok }) {
   return (
     <section {...storyblokEditable(blok)} className="bg-white mt-16 mb-16">
       <ContentWidth>
@@ -15,7 +17,7 @@ export default function Career({blok}) {
             {blok?.text}
           </p>
           <div className="flex justify-center">
-            <ButtonPrimary>{ blok?.cta_button_text}</ButtonPrimary>
+            <ButtonPrimary>{blok?.cta_button_text}</ButtonPrimary>
           </div>
         </div>
       </ContentWidth>
