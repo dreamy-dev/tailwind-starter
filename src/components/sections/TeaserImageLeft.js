@@ -20,7 +20,8 @@ const TeaserImageLeft = ({ blok }) => {
             <div>
               <H2 styles="text-black">{blok?.title}</H2>
               <Text styles="mt-4 text-xl font-normal text-black">
-                {blok?.text.content.map((item) => item.content[0].text)}
+                {/* {blok?.text.content.map((item) => item.content[0].text)} */}
+                {blok?.text}
               </Text>
             </div>
             <ButtonPrimary
