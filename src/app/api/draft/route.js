@@ -18,7 +18,7 @@ export async function GET(request) {
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   });
   const { data } = await storyblok.get(`cdn/stories/${slug}`, {
-    version: 'draft',
+    version: 'public',
     excluding_fields: 'header,body,seo',
   })
 

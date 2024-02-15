@@ -18,7 +18,7 @@ export async function POST(req) {
   });
   // Revalidate the path
   storyblok
-    .get(`cdn/stories/${body.story_id}`, { version: 'draft' })
+    .get(`cdn/stories/${body.story_id}`, { version: 'published' })
     .then(async sbResult => {
       const story = sbResult.data.story
       if (story.slug !== 'global') {
