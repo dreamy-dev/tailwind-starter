@@ -37,7 +37,7 @@ let slug = "blok-tests";
   let sbParams = { version: "published" };
 
   const storyblokApi = getStoryblokApi();
-  return await storyblokApi.get(`cdn/stories/${slug}`, sbParams, {
+  return await storyblokApi.get(`cdn/stories/blok-tests`, sbParams, {
     cache: "no-store",
   });
 }
