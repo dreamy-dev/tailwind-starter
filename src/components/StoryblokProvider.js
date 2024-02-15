@@ -22,7 +22,7 @@ import FactsAndFiguresGrid from "./sections/FactsFiguresGrid";
 import FactsAndFiguresItem from "./sections/FactsFiguresItem";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
-/** 3. Initialize it as usual */
+
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
