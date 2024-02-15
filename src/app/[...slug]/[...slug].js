@@ -1,4 +1,4 @@
-import Head from "next/head";
+
 import Layout from "../components/Layout";
 
 import {
@@ -12,19 +12,16 @@ export default function Page({ story }) {
 
   return (
     <div>
-      {/* <Head>
-        <title>{story ? story.name : "My Site"}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-      {/* <Layout>
+   
+      <Layout>
         <StoryblokComponent blok={story.content} />
-      </Layout> */}
+      </Layout>
     </div>
   );
 }
 
 export async function getStaticProps({ params }) {
-  let slug = params.slug ? params.slug.join("/") : "home";
+  let slug = params.slug ? params.slug.join("/") : "blok-tests";
 
   let sbParams = {
     version: "published", // or 'published'
@@ -50,7 +47,7 @@ export async function getStaticPaths() {
 
   let paths = [];
   Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === "home") {
+    if (data.links[linkKey].is_folder || data.links[linkKey].slug === "blok-tests") {
       return;
     }
 
