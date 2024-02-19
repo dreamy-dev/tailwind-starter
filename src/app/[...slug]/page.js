@@ -8,7 +8,7 @@ async function fetchData(slug) {
  
   const sbParams = {
     resolve_links: 'url',
-    version: 'draft',
+    version: 'public',
   
   }
 
