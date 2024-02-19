@@ -1,5 +1,5 @@
 "use client";
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable } from "@storyblok/react/rsc";
 import { useState } from "react";
 
 
@@ -26,7 +26,7 @@ const AccordionItem = ({blok}) => {
           aria-expanded={activeAccordion === index}
           aria-controls={`accordion-flush-body-${index}`}
         >
-          <span>{blok.collapsable_1}</span>
+          <span>{blok?.collapsable_1}</span>
           <svg
             data-accordion-icon=""
             className={`w-6 h-6 ${
@@ -51,7 +51,7 @@ const AccordionItem = ({blok}) => {
       >
         <div className="py-5 border-b border-gray-200 dark:border-gray-700">
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            {blok.collapsable_text_1}
+            {blok?.collapsable_text_1}
           </p>
         </div>
       </div>
