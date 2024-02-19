@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { storyblokEditable } from "@storyblok/react/rsc";
 
 
 export default function ButtonPrimary({
@@ -6,6 +7,7 @@ export default function ButtonPrimary({
   position,
   buttonText,
   href,
+  blok
 }) {
   const containerStyles = {
     display: "flex",
@@ -20,11 +22,11 @@ export default function ButtonPrimary({
   const primaryButtonStyles = `bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2`;
 
   return (
-    <div style={containerStyles}>
-      <Link className={primaryButtonStyles} href={href ?? "#"}>
-        {children ?? (
+    <div style={containerStyles} {...storyblokEditable(blok)}>
+      <Link className={primaryButtonStyles} href={blok.url}>
+        {/* {children ?? ( */}
           <>
-            {buttonText ? buttonText : "Jetzt bewerben"}
+            {blok.text}
             <svg
               width="15"
               height="15"
@@ -50,7 +52,7 @@ export default function ButtonPrimary({
               </defs>
             </svg>
           </>
-        )}
+         {/* )} */}
       </Link>
     </div>
   );
