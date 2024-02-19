@@ -20,6 +20,8 @@ import QualityFeatureGrid from "./sections/QualityFeatureGrid";
 import QualityFeatureItem from "./sections/QualityFeatureItem";
 import FactsAndFiguresGrid from "./sections/FactsFiguresGrid";
 import FactsAndFiguresItem from "./sections/FactsFiguresItem";
+import AccordionGrid from "./sections/AccordionGrid";
+import AccordionItem from "./sections/AccordionItem";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 
@@ -44,6 +46,8 @@ storyblokInit({
     "hero-home": HomePageHero,
     "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
+    "accordion-item": AccordionItem,
+    "accordion-grid": AccordionGrid,
     //"success-stories": HomePageCaroucel,
   },
 });
