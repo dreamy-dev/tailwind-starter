@@ -8,7 +8,7 @@ async function fetchData(slug) {
  
   const sbParams = {
     resolve_links: 'url',
-    version: 'published',
+    version: 'draft',
   
   }
 
@@ -18,10 +18,6 @@ async function fetchData(slug) {
 }
 
 
-
-
-
-
 export default async function Home({ params }) {
   const slug = params?.slug ? params.slug.join("/") : "blok-tests";
 
@@ -29,8 +25,6 @@ export default async function Home({ params }) {
 
   return (
     <>
-  
-
       <StoryblokStory story={data.story} />
 
     </>
