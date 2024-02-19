@@ -1,6 +1,5 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import H2 from "../typography/H2";
-
 import ContentWidth from "../layouts/ContentWidth";
 
 const FactsAndFiguresGrid = ({ blok }) => {

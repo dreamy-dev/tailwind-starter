@@ -13,8 +13,8 @@ const AccordionItem = ({blok}) => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
   return (
-    <div {...storyblokEditable(blok)}>
-      {/* <h2 id={`accordion-flush-heading-${index}`} className="mb-2">
+    <div  {...storyblokEditable(blok)}>
+      <h2 id={`accordion-flush-heading-${index}`} className="mb-2">
         <button
           type="button"
           className={`flex justify-between items-center py-5 w-full font-medium text-left ${
@@ -25,9 +25,9 @@ const AccordionItem = ({blok}) => {
           onClick={() => handleAccordionClick(index)}
           aria-expanded={activeAccordion === index}
           aria-controls={`accordion-flush-body-${index}`}
-        > */}
-      <span>{blok?.collapsable_1}</span>
-      {/* <svg
+        >
+          <span>{blok?.collapsable_1}</span>
+          <svg
             data-accordion-icon=""
             className={`w-6 h-6 ${
               activeAccordion === index ? "rotate-180" : ""
@@ -54,10 +54,7 @@ const AccordionItem = ({blok}) => {
             {blok?.collapsable_text_1}
           </p>
         </div>
-      </div> */}
-      <p className="mb-2 text-gray-500 dark:text-gray-400">
-        {blok?.collapsable_text_1}
-      </p>
+      </div>
     </div>
   );
 };

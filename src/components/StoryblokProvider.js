@@ -46,8 +46,8 @@ storyblokInit({
     "hero-home": HomePageHero,
     "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
-    "accordion-item": AccordionItem,
-    "accordion-grid": AccordionGrid,
+    // "accordion-item": AccordionItem,
+    // "accordion-grid": AccordionGrid,
     //"success-stories": HomePageCaroucel,
   },
 });
