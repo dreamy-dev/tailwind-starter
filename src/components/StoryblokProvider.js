@@ -27,6 +27,8 @@ import AdvantageItem from "./sections/AdvantageItem";
 import AdvantagesGrid from "./sections/AdvantagesGrid";
 import PortraitGrid from "./sections/PortraitGrid";
 import PortraitItem from "./sections/PortraitItem";
+import ServiceTeaserItem from "./sections/ServiceTeaserItem";
+import ServiceTeasersGrid from "./sections/ServiceTeasersGrid";
 //import ButtonPrimary from "./elements/ButtonPrimary";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -54,13 +56,16 @@ storyblokInit({
     "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
     "image-left": Description,
-     "accordion-item": AccordionItem,
+    "accordion-item": AccordionItem,
     "accordion-grid": AccordionGrid,
     "highlights-grid": AdvantagesGrid,
     "highlights-item": AdvantageItem,
     "portrait-grid": PortraitGrid,
     "portrait": PortraitItem,
-    //"success-stories": HomePageCaroucel,
+    "services-grid": ServiceTeasersGrid,
+    "services-item": ServiceTeaserItem
+
+ 
   },
 });
 
