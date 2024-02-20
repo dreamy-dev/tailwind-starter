@@ -1,0 +1,94 @@
+{
+  "story": {
+    "name": "Board of Directors",
+    "created_at": "2024-02-14T10:08:20.149Z",
+    "published_at": "2024-02-20T09:37:31.752Z",
+    "id": 443205973,
+    "uuid": "825c0905-8b83-4e35-86cf-35672344a9ee",
+    "content": {
+      "_uid": "5589f090-0f91-402c-abea-027dd945c574",
+      "body": [
+      
+        {
+          "_uid": "339b7209-da2c-4d17-8d8b-c6eef537294d",
+          "Portrait": [
+            {
+              "_uid": "492b9375-29ef-4174-979e-bfb758a36901",
+              "name": "Peter Spuhler",
+              "image": {
+                "id": 14144633,
+                "alt": "",
+                "name": "",
+                "focus": "",
+                "title": "",
+                "source": "",
+                "filename": "https://a.storyblok.com/f/269997/1800x1090/20783748ee/peter-spuhler-2023-2.jpg",
+                "copyright": "",
+                "fieldtype": "asset",
+                "meta_data": {},
+                "is_private": "",
+                "is_external_url": false
+              },
+              "component": "portrait",
+              "description": "Verwaltungsratspräsident"
+            },
+            {
+              "_uid": "bb65b9d6-d683-4b30-9078-34cead59f722",
+              "name": "Peter Spuhler",
+              "image": {
+                "id": 14144633,
+                "alt": "",
+                "name": "",
+                "focus": "",
+                "title": "",
+                "source": "",
+                "filename": "https://a.storyblok.com/f/269997/1800x1090/20783748ee/peter-spuhler-2023-2.jpg",
+                "copyright": "",
+                "fieldtype": "asset",
+                "meta_data": {},
+                "is_private": "",
+                "is_external_url": false
+              },
+              "component": "portrait",
+              "description": "Verwaltungsratspräsident"
+            }
+          ],
+          "component": "portrait-grid"
+        }
+      ],
+      "component": "page"
+    },
+    "slug": "board-of-directors",
+    "full_slug": "board-of-directors",
+    "sort_by_date": null,
+    "position": -90,
+    "tag_list": [],
+    "is_startpage": false,
+    "parent_id": null,
+    "meta_data": null,
+    "group_id": "0b783f42-c2e5-433d-80e1-7c665e80421f",
+    "first_published_at": "2024-02-15T07:48:09.190Z",
+    "release_id": null,
+    "lang": "default",
+    "path": null,
+    "alternates": [],
+    "default_full_slug": "board-of-directors",
+    "translated_slugs": [
+      {
+        "path": "board-of-directors",
+        "name": null,
+        "lang": "de",
+        "published": null
+      },
+      {
+        "path": "board-of-directors",
+        "name": null,
+        "lang": "en",
+        "published": null
+      }
+    ]
+  },
+  "cv": 1708423271,
+  "rels": [],
+  "links": []
+}
