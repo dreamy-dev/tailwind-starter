@@ -17,7 +17,8 @@ const ServiceTeasersGrid= ({blok}) => {
      <H2>{blok?.title}</H2>
       <Text>{blok?.text}</Text>
         </div>
-        <div {...storyblokEditable(blok)}>
+        <div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
+          {...storyblokEditable(blok)}>
           {blok.grid_container.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
           ))}
