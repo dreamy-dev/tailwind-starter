@@ -16,11 +16,12 @@ const ServiceTeasersGrid= ({blok}) => {
         <div className="col-span-12 ">
           <H2>{blok?.title}</H2>
           <Text>{blok?.text}</Text>
-
-          <div {...storyblokEditable(blok)}>
-            {blok.grid_container.map((nestedBlok) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <div {...storyblokEditable(blok)}>
+              {blok.grid_container.map((nestedBlok) => (
+                <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
+              ))}
+            </div>
           </div>
         </div>
       </ContentWidth>
