@@ -4,7 +4,7 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 
 const ServiceTeaserItem = ({
 
-imageStyles,
+
 blok
 }) => {
   return (
