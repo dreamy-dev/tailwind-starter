@@ -9,7 +9,7 @@ blok
 }) => {
   return (
     <div {...storyblokEditable(blok)}>
-      <a href={blok.link.cached_url}>
+      <a href={blok.link.url}>
         <img className="w-24 pl-5 pt-5" src={blok?.Icon.filename} alt="" />
 
         <div className="p-5">

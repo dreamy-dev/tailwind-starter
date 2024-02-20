@@ -1,9 +1,8 @@
-
-  { 
-    "story": {
+{
+  "story": {
     "name": "Service",
     "created_at": "2024-02-14T10:16:24.585Z",
-    "published_at": "2024-02-20T10:37:43.786Z",
+    "published_at": "2024-02-20T12:53:18.639Z",
     "id": 443208321,
     "uuid": "45f308a4-6ac9-4ca9-9406-bf6f1534287b",
     "content": {
@@ -27,9 +26,7 @@
             "filename": "",
             "copyright": null,
             "fieldtype": "asset",
-            "meta_data": {
-              
-            }
+            "meta_data": {}
           },
           "component": "image-full-width"
         },
@@ -42,9 +39,7 @@
             {
               "_uid": "fcf7e4db-6e56-432a-8c4e-df2fdf2a2fc5",
               "component": "facts-figures-item",
-              "factsandfigures_data": [
-                
-              ],
+              "factsandfigures_data": [],
               "factsandfigures_text": ""
             }
           ]
@@ -57,6 +52,33 @@
           "grid_container": [
             {
               "Icon": {
+                "id": 14148655,
+                "alt": "",
+                "name": "",
+                "focus": "",
+                "title": "",
+                "source": "",
+                "filename": "https://a.storyblok.com/f/269997/64x64/2764b044f2/plattform.svg",
+                "copyright": "",
+                "fieldtype": "asset",
+                "meta_data": {},
+                "is_private": "",
+                "is_external_url": false
+              },
+              "_uid": "e35e48d1-68d5-4fa0-b2a1-0a9760a1f28d",
+              "link": {
+                "id": "626b74ad-4c7a-4922-ad4c-c39febd9526a",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": "full-service"
+              },
+              "text": "text",
+              "title": "text",
+              "component": "services-item"
+            },
+            {
+              "Icon": {
                 "id": null,
                 "alt": null,
                 "name": "",
@@ -66,11 +88,9 @@
                 "filename": "",
                 "copyright": null,
                 "fieldtype": "asset",
-                "meta_data": {
-                  
-                }
+                "meta_data": {}
               },
-              "_uid": "13276227-777e-4a41-9316-515f22e39c49",
+              "_uid": "0488ad77-fd1f-4de7-b491-cfae3bd0ff94",
               "text": "",
               "title": "",
               "component": "services-item"
@@ -84,9 +104,7 @@
     "full_slug": "service",
     "sort_by_date": null,
     "position": -100,
-    "tag_list": [
-      
-    ],
+    "tag_list": [],
     "is_startpage": false,
     "parent_id": null,
     "meta_data": null,
@@ -95,9 +113,7 @@
     "release_id": null,
     "lang": "default",
     "path": null,
-    "alternates": [
-      
-    ],
+    "alternates": [],
     "default_full_slug": "service",
     "translated_slugs": [
       {
@@ -114,11 +130,7 @@
       }
     ]
   },
-  "cv": 1708425463,
-  "rels": [
-    
-  ],
-  "links": [
-    
-  ]
+  "cv": 1708433598,
+  "rels": [],
+  "links": []
 }
