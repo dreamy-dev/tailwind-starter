@@ -25,6 +25,8 @@ import AccordionItem from "./sections/AccordionItem";
 import Description from "./sections/Description";
 import AdvantageItem from "./sections/AdvantageItem";
 import AdvantagesGrid from "./sections/AdvantagesGrid";
+import PortraitGrid from "./sections/PortraitGrid";
+import PortraitItem from "./sections/PortraitItem";
 //import ButtonPrimary from "./elements/ButtonPrimary";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -55,7 +57,9 @@ storyblokInit({
      "accordion-item": AccordionItem,
     "accordion-grid": AccordionGrid,
     "highlights-grid": AdvantagesGrid,
-     "highlights-item": AdvantageItem
+    "highlights-item": AdvantageItem,
+    "portrait-grid": PortraitGrid,
+    "portrait": PortraitItem,
     //"success-stories": HomePageCaroucel,
   },
 });
