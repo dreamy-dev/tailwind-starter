@@ -7,31 +7,29 @@ import { useState } from "react";
 
 
 const AccordionItem = ({blok}) => {
-  const [activeAccordion, setActiveAccordion] = useState(null);
+  const [isActive, setIsActive] = useState(false);
 
-  const handleAccordionClick = (index) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
+  const handleAccordionClick = () => {
+    setIsActive(!isActive);
   };
   return (
-    <div  {...storyblokEditable(blok)}>
-      <h2 id={`accordion-flush-heading-${index}`} className="mb-2">
+    <div {...storyblokEditable(blok)}>
+      
+      <h2 className="mb-2">
         <button
           type="button"
           className={`flex justify-between items-center py-5 w-full font-medium text-left ${
-            activeAccordion === index
+            isActive
               ? "text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
               : "text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
           }`}
-          onClick={() => handleAccordionClick(index)}
-          aria-expanded={activeAccordion === index}
-          aria-controls={`accordion-flush-body-${index}`}
+          onClick={handleAccordionClick}
+          aria-expanded={isActive}
         >
           <span>{blok?.collapsable_1}</span>
           <svg
             data-accordion-icon=""
-            className={`w-6 h-6 ${
-              activeAccordion === index ? "rotate-180" : ""
-            } shrink-0`}
+            className={`w-6 h-6 ${isActive ? "rotate-180" : ""} shrink-0`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +42,7 @@ const AccordionItem = ({blok}) => {
           </svg>
         </button>
       </h2>
-      <div
-        id={`accordion-flush-body-${index}`}
-        className={`${activeAccordion === index ? "" : "hidden"}`}
-        aria-labelledby={`accordion-flush-heading-${index}`}
-      >
+      <div className={`${isActive ? "" : "hidden"}`}>
         <div className="py-5 border-b border-gray-200 dark:border-gray-700">
           <p className="mb-2 text-gray-500 dark:text-gray-400">
             {blok?.collapsable_text_1}

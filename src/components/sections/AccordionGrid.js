@@ -12,13 +12,14 @@ const AccordionGrid = ({blok}) => {
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
           <H2>{blok?.title}</H2>
           <p className="my-6">{blok?.text}</p>
-       
-            <div id="accordion-flush" {...storyblokEditable(blok)}>
-              {blok?.accordion_item.map((nestedBlok) => (
+
+          <div id="accordion-flush" {...storyblokEditable(blok)}>
+            <div>
+              {blok?.columns.map((nestedBlok) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
               ))}
             </div>
-      
+          </div>
         </div>
       </SmallWidth>
     </section>
