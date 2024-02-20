@@ -25,7 +25,13 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
         </body>
+        {/* <script
+          src="https://app.storyblok.com/f/storyblok-latest.js?t=Q2mIMuV6frKpnmQlOee0rAtt"
+          type="text/javascript"
+        ></script> */}
       </html>
     </StoryblokProvider>
   );
+  // data - blok - c;
+  // data - blok - uid;
 }
