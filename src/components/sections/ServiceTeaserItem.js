@@ -12,7 +12,7 @@ blok
       className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
       {...storyblokEditable(blok)}
     >
-      <a href={item.href}>
+      {/* <a href={item.href}> */}
         <img className={` ${imageStyles}`} src={blok?.Icon.filename} alt="" />
 
         <div className="p-5">
@@ -21,7 +21,7 @@ blok
           </h5>
           <p>{blok?.text}</p>
         </div>
-      </a>
+      {/* </a> */}
     </div>
   );
 };
