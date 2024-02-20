@@ -20,9 +20,10 @@ import QualityFeatureGrid from "./sections/QualityFeatureGrid";
 import QualityFeatureItem from "./sections/QualityFeatureItem";
 import FactsAndFiguresGrid from "./sections/FactsFiguresGrid";
 import FactsAndFiguresItem from "./sections/FactsFiguresItem";
-import AccordionGrid from "./sections/AccordionGrid";
-import AccordionItem from "./sections/AccordionItem";
-import ButtonPrimary from "./elements/ButtonPrimary";
+//import AccordionGrid from "./sections/AccordionGrid";
+//import AccordionItem from "./sections/AccordionItem";
+//import ButtonPrimary from "./elements/ButtonPrimary";
+//import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 
@@ -47,9 +48,9 @@ storyblokInit({
     "hero-home": HomePageHero,
     "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
-    "download-item": ButtonPrimary,
-    // "accordion-item": AccordionItem,
-    // "accordion-grid": AccordionGrid,
+    //"download-item": ButtonPrimary,
+     //"accordion-item": AccordionItem,
+     //"accordion-grid": AccordionGrid,
     //"success-stories": HomePageCaroucel,
   },
 });
