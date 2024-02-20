@@ -8,7 +8,7 @@ const PortraitGrid = ({ blok }) => (
     <SmallWidth>
       <div className="grid grid-cols-2 gap-3 mb-8" {...storyblokEditable(blok)}>
     
-          {blok.portraits.map((nestedBlok) => (
+          {blok.portrait_grid.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
           ))}
   
