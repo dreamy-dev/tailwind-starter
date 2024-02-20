@@ -14,11 +14,11 @@ const AccordionGrid = ({blok}) => {
           <p className="my-6">{blok?.text}</p>
 
           <div id="accordion-flush" {...storyblokEditable(blok)}>
-            <div>
+         
               {blok?.columns.map((nestedBlok) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
               ))}
-            </div>
+         
           </div>
         </div>
       </SmallWidth>
