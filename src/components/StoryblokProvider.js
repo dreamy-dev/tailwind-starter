@@ -23,6 +23,8 @@ import FactsAndFiguresItem from "./sections/FactsFiguresItem";
 import AccordionGrid from "./sections/AccordionGrid";
 import AccordionItem from "./sections/AccordionItem";
 import Description from "./sections/Description";
+import AdvantageItem from "./sections/AdvantageItem";
+import AdvantagesGrid from "./sections/AdvantagesGrid";
 //import ButtonPrimary from "./elements/ButtonPrimary";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -50,9 +52,10 @@ storyblokInit({
     "teaser-image-left": TeaserImageLeft,
     "teaser-image-right": TeaserImageRight,
     "image-left": Description,
-    //"download-item": ButtonPrimary,
      "accordion-item": AccordionItem,
-     "accordion-grid": AccordionGrid,
+    "accordion-grid": AccordionGrid,
+    "highlights-grid": AdvantagesGrid,
+     "highlights-item": AdvantageItem
     //"success-stories": HomePageCaroucel,
   },
 });
