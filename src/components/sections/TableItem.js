@@ -12,18 +12,18 @@ const TableItem = ({ blok}) => {
           <th scope="col" className="px-6 py-3 w-1/5">
             {/* {item.name} */}
           </th>
-          <th scope="col" className="px-6 py-3 w-1/5">
-            {/* {item.name} */}
+          {/* <th scope="col" className="px-6 py-3 w-1/5">
+            {item.name}
           </th>
           <th scope="col" className="px-6 py-3 w-1/5">
-            {/* {item.name} */}
+            {item.name}
           </th>
           <th scope="col" className="px-6 py-3 w-1/5">
-            {/* {item.name} */}
+            {item.name}
           </th>
           <th scope="col" className="px-6 py-3 w-1/5">
-            {/* {item.name} */}
-          </th>
+            {item.name}
+          </th> */}
         </tr>
       </thead>
       <tbody>
