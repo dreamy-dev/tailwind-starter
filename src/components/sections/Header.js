@@ -339,7 +339,7 @@ const Header = ({ blok }) => {
                       <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
                         <img
                           className="w-5 h-5"
-                          src="/icons/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                          src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
                           alt=""
                         />
                       </div>
