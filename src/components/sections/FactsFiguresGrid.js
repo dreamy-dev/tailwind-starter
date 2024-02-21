@@ -14,14 +14,14 @@ const FactsAndFiguresGrid = ({ blok }) => {
                 className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3"
                 {...storyblokEditable(blok)}
               >
-                {/* <div className="mt-8 lg:mt-16"> */}
+             
                 {blok?.grid_container.map((nestedBlok) => (
                   <StoryblokComponent
                     blok={nestedBlok}
                     key={nestedBlok?._uid}
                   />
                 ))}
-                {/* </div> */}
+          
               </dl>
             </div>
           </div>

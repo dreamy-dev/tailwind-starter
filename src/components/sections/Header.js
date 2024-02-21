@@ -51,7 +51,7 @@ const navigationMain = {
   ],
 };
 
-const Header = ({blok}) => {
+const Header = ({ blok }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -116,35 +116,37 @@ const Header = ({blok}) => {
     <header
       {...storyblokEditable(blok)}
       className={`bg-white z-20 ${isMobileNavOpen ? "mobile-nav-open" : ""} ${
-        isMobileNavOpen && isNarrowScreen ? "fixed w-full h-full" : ""
+        isMobileNavOpen && isNarrowScreen ? "fixed w-screen h-screen" : ""
       }`}
     >
       <ContentWidth>
-        <div className="flex justify-between items-center col-span-12 w-full pt-5 pb-5">
-          <div className="lg:hidden">
+        <div className="lg:hidden col-span-12">
+          <div className="flex justify-between items-center col-span-12 w-full py-5">
             <Link href="/">
               <img src="/logo.svg" className="h-4 sm:h-6" alt="Stadler Logo" />
             </Link>
-          </div>
-          <div className="lg:hidden">
-            {isMobileNavOpen ? (
-              <img
-                src="/icons/times.svg"
-                alt="close icon"
-                onClick={toggleMobileNav}
-                className="cursor-pointer"
-              />
-            ) : (
-              <img
-                src="/icons/equal.svg"
-                alt="burger menu icon"
-                onClick={toggleMobileNav}
-                className="cursor-pointer"
-              />
-            )}
+
+            <div className="lg:hidden">
+              {isMobileNavOpen ? (
+                <img
+                  src="/icons/times.svg"
+                  alt="close icon"
+                  onClick={toggleMobileNav}
+                  className="cursor-pointer"
+                />
+              ) : (
+                <img
+                  src="/icons/equal.svg"
+                  alt="burger menu icon"
+                  onClick={toggleMobileNav}
+                  className="cursor-pointer"
+                />
+              )}
+            </div>
           </div>
         </div>
       </ContentWidth>
+
       <div
         className={`${
           isMobileNavOpen && isNarrowScreen ? "visible" : "hidden"
@@ -153,11 +155,11 @@ const Header = ({blok}) => {
         <>
           <section className="bg-white">
             <ContentWidth>
-              <div className="col-span-12 ">
-                <div className="py-2 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center  gap-8 lg:gap-4">
+              <div className="col-span-12 px-4 lg:px-0">
+                <div className="pt-5 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center gap-8 lg:gap-4">
                   <ul
                     role="list"
-                    className=" flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-8 lg:gap-4"
+                    className=" flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-6"
                   >
                     {navigation.topNav.map((item) => (
                       <li key={item.name}>
@@ -177,15 +179,6 @@ const Header = ({blok}) => {
                   </ul>
                   <div className="border-b lg:border-none"></div>
                   <ul className="flex flex-col lg:flex lg:flex-row lg:items-center gap-8 mb-10 lg:mb-0 lg:gap-4">
-                    <li className="flex flex-row lg:flex lg:items-center gap-2">
-                      <img src="/icons/country.svg" alt="Country Icon" />
-                      <a
-                        className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
-                        href="#"
-                      >
-                        Schweiz
-                      </a>
-                    </li>
                     <li className="flex flex-row lg:flex lg:items-center  gap-2">
                       <img src="/icons/country-name.svg" alt="Language Icon" />
                       <a
@@ -202,7 +195,7 @@ const Header = ({blok}) => {
           </section>
           <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
             <ContentWidth>
-              <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row pt-5 pb-6 lg:pb-12 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
+              <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                 <div className="hidden lg:block">
                   <Link
                     href="/"
@@ -222,7 +215,7 @@ const Header = ({blok}) => {
                 >
                   <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
                     {navigationMain.topNav.map((item) => (
-                      <li key={item.title} className="lg:px-5 ">
+                      <li key={item.title} className="lg:px-3 xl:px-5">
                         {item.href == "/solutions" ? (
                           <motion.div
                             onClick={() => {
@@ -269,13 +262,13 @@ const Header = ({blok}) => {
                               zIndex: "99",
                               width: "100%",
                               left: "0",
-                              top: "80px",
+                              top: "63px",
                               overflow: "hidden",
                             }}
                             className="fixed lg:absolute bg-white h-screen lg:h-auto lg:bg-greySolid-50"
                           >
                             <ContentWidth>
-                              <div className="w-full grid col-span-6 lg:col-start-5 grid-cols-1 lg:grid-cols-2 lg:gap-6 lg:p-8">
+                              <div className="w-full grid col-span-12 lg:col-span-6 lg:col-start-5 grid-cols-1 lg:grid-cols-2 lg:gap-6 lg:p-8 px-4 lg:px-0 mt-6 lg:mt-0">
                                 <div className="border-b lg:border-none lg:hidden">
                                   <Link
                                     href="#"
@@ -302,7 +295,7 @@ const Header = ({blok}) => {
                                 </div>
                                 <Link
                                   href="/solutions"
-                                  className="text-primarySolid-800 lg:bg-primaryTrans-100  lg:text-primary px-0 py-4 lg:px-8 lg:py-24 lg:text-center"
+                                  className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
                                   onClick={() => {
                                     closeMobileNav();
                                     setIsOpen((isOpen) => !isOpen);
@@ -344,18 +337,11 @@ const Header = ({blok}) => {
 
                     <li className="hidden lg:block">
                       <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M20 18.402L13.2637 11.6657C14.1502 10.4517 14.681 8.96104 14.681 7.34049C14.681 3.28628 11.3947 0 7.34049 0C3.28628 0 0 3.28628 0 7.34049C0 11.3947 3.28628 14.681 7.34049 14.681C8.96104 14.681 10.4517 14.1502 11.6657 13.2637L18.402 20L20 18.402ZM7.34613 12.4111C4.5511 12.4111 2.28119 10.1355 2.28119 7.34613C2.28119 4.55675 4.55674 2.2812 7.34613 2.2812C10.1355 2.2812 12.4111 4.55675 12.4111 7.34613C12.4111 10.1355 10.1355 12.4111 7.34613 12.4111Z"
-                            fill="#B3B3B3"
-                          />
-                        </svg>
+                        <img
+                          className="w-5 h-5"
+                          src="/icons/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                          alt=""
+                        />
                       </div>
                     </li>
                   </ul>

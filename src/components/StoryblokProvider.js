@@ -29,6 +29,8 @@ import PortraitGrid from "./sections/PortraitGrid";
 import PortraitItem from "./sections/PortraitItem";
 import ServiceTeaserItem from "./sections/ServiceTeaserItem";
 import ServiceTeasersGrid from "./sections/ServiceTeasersGrid";
+import TableGrid from "./sections/Table";
+import TableItem from "./sections/TableItem";
 //import ButtonPrimary from "./elements/ButtonPrimary";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -63,7 +65,9 @@ storyblokInit({
     "portrait-grid": PortraitGrid,
     "portrait": PortraitItem,
     "services-grid": ServiceTeasersGrid,
-    "services-item": ServiceTeaserItem
+    "services-item": ServiceTeaserItem,
+    "table-grid": TableGrid,
+    "table-item": TableItem
 
  
   },
