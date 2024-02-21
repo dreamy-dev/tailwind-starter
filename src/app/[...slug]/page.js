@@ -9,7 +9,7 @@ export const revalidate = isDev ? 0 : 3600
 async function fetchData(slug) {
  
   const sbParams = {
-    resolve_links: 'url',
+    //resolve_links: 'url',
     version: 'public',
   
   }
