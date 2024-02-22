@@ -1,38 +1,38 @@
+import { storyblokEditable } from "@storyblok/react/rsc";
 import SmallWidth from "../layouts/SmallWidth";
 import H2 from "../typography/H2";
 import H4 from "../typography/H4";
 import Text from "../typography/Text";
 
-export default function Contact(props) {
+export default function Contact({blok}) {
   return (
-    <section className="py-24 bg-stadlergradient">
+    <section
+      className="py-5 lg:py-24 bg-stadlergradient"
+      {...storyblokEditable(blok)}
+    >
       <SmallWidth>
         <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
           <div className="w-full xl:col-span-4">
             <img
               className="object-cover object-right max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
-              src="/thumbnail1.jpg"
+              src={blok?.image.filename}
               alt="contact"
             />
           </div>
           <div className="w-full xl:col-span-8">
             <div className=" tracking-tight">
-              <H2 styles="mb-8 text-white">{props.title ?? "Ihr Kontakt"}</H2>
+              <H2 styles="mb-8 text-white">{blok?.title ?? "Ihr Kontakt"}</H2>
             </div>
             <div className="mb-8 font-light md:text-lg text-white">
               <Text>
-                Wo andere Probleme sehen, schaffen wir für Sie Lösungen, die
-                ökologisch und wirtschaftlich begeistern. Bei uns stehen
-                Zuverlässigkeit und höchste Qualität an erster Stelle. Und wir
-                denken langfristig. In enger Zusammenarbeit begleiten wir Sie
-                mit viel Ambition, damit Sie Ihre hochgesteckten Ziele im
-                Bereich Bahn und Mobilität erreichen.
+                {blok?.text ??
+                  "Wo andere Probleme sehen, schaffen wir für Sie Lösungen, die ökologisch und wirtschaftlich begeistern. Bei uns stehen Zuverlässigkeit und höchste Qualität an erster Stelle. Und wir denken langfristig. In enger Zusammenarbeit begleiten wir Sie mit viel Ambition, damit Sie Ihre hochgesteckten Ziele im Bereich Bahn und Mobilität erreichen."}
               </Text>
             </div>
             <ul className="flex-col text-white">
               <li>
                 <H4 textColor="white" styles="mb-4">
-                  Kontakt Verkauf Schweiz
+                  {blok?.contactname ?? "Kontakt Verkauf Schweiz"}
                 </H4>
               </li>
               <li className="mb-4 flex items-center">
@@ -50,7 +50,7 @@ export default function Contact(props) {
                     stroke="white"
                   />
                 </svg>
-                {props.contactlevel ?? "+41 71 626 21 20"}
+                {blok?.phone ?? "+41 71 626 21 20"}
               </li>
               <li className="flex items-center">
                 <svg
@@ -67,7 +67,7 @@ export default function Contact(props) {
                     stroke="white"
                   />
                 </svg>
-                {props.email ?? "ir@stadlerrail.com"}
+                {blok?.email ?? "ir@stadlerrail.com"}
               </li>
             </ul>
           </div>

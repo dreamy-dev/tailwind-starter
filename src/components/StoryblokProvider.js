@@ -31,6 +31,7 @@ import ServiceTeaserItem from "./sections/ServiceTeaserItem";
 import ServiceTeasersGrid from "./sections/ServiceTeasersGrid";
 import TableGrid from "./sections/Table";
 import TableItem from "./sections/TableItem";
+import Contact from "./sections/Contact";
 //import ButtonPrimary from "./elements/ButtonPrimary";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -67,7 +68,8 @@ storyblokInit({
     "services-grid": ServiceTeasersGrid,
     "services-item": ServiceTeaserItem,
     "table-grid": TableGrid,
-    "table-item": TableItem
+    "table-item": TableItem,
+    "global0contact-section": Contact,
 
  
   },
