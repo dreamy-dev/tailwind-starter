@@ -9,41 +9,26 @@ const TableItem = ({ blok}) => {
     >
       <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-          <th scope="col" className="px-6 py-3 w-1/5">
-            {/* {item.name} */}
-          </th>
-          {/* <th scope="col" className="px-6 py-3 w-1/5">
-            {item.name}
-          </th>
-          <th scope="col" className="px-6 py-3 w-1/5">
-            {item.name}
-          </th>
-          <th scope="col" className="px-6 py-3 w-1/5">
-            {item.name}
-          </th>
-          <th scope="col" className="px-6 py-3 w-1/5">
-            {item.name}
-          </th> */}
+          {blok?.table.thead.map((th, index) => (
+            <th key={index} scope="col" className="px-6 py-3 w-1/5">
+              {th.value}
+            </th>
+          ))}
         </tr>
       </thead>
       <tbody>
-        <tr
-      
-          className="bg-white border-b dark:bg-black dark:border-gray-700"
-        >
-          <th
-            scope="row"
-            className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white"
+        {blok?.table.tbody.map((tr, rowIndex) => (
+          <tr
+            key={rowIndex}
+            className="bg-white border-b dark:bg-black dark:border-gray-700"
           >
-            {/* {item.name} */}
-          </th>
-          <td className="px-6 py-4"></td>
-          <td className="px-6 py-4 text-primary">
-            <p></p>
-          </td>
-          <td className="px-6 py-4 text-primary"></td>
-          <td className="px-6 py-4 text-primary"></td>
-        </tr>
+            {tr.body.map((td, colIndex) => (
+              <td key={colIndex} className="px-6 py-4">
+                {td.value}
+              </td>
+            ))}
+          </tr>
+        ))}
       </tbody>
     </table>
   );

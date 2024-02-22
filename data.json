@@ -1,136 +1,82 @@
 {
-  "story": {
-    "name": "Service",
-    "created_at": "2024-02-14T10:16:24.585Z",
-    "published_at": "2024-02-20T12:53:18.639Z",
-    "id": 443208321,
-    "uuid": "45f308a4-6ac9-4ca9-9406-bf6f1534287b",
-    "content": {
-      "_uid": "0c2ccf18-67c6-41f4-a4f5-253743fa7a2d",
-      "body": [
-        {
-          "_uid": "f6631611-1d8f-49c8-ae75-96219ad07ab9",
-          "lead": "",
-          "title": "",
-          "component": "hero-subpage"
-        },
-        {
-          "_uid": "a3ff211e-4ac9-43ac-8aa1-c5456fb900e3",
-          "image": {
-            "id": null,
-            "alt": null,
-            "name": "",
-            "focus": null,
-            "title": null,
-            "source": null,
-            "filename": "",
-            "copyright": null,
-            "fieldtype": "asset",
-            "meta_data": {}
+  "_uid": "deb5f44e-ba00-468f-969e-841b59214640",
+  "text": "",
+  "title": "",
+  "component": "table-grid",
+  "table_item": [
+    {
+      "_uid": "e144c127-ceac-4414-8396-b332be5ee26c",
+      "table": {
+        "tbody": [
+          {
+            "_uid": "0301df86-8610-47b0-8fb1-c79d07e9117f",
+            "body": [
+              {
+                "_uid": "46279c3a-382f-413c-bc8c-b57fb4ccbcb1",
+                "value": "",
+                "component": "_table_col"
+              },
+              {
+                "_uid": "5d580806-c90b-4997-ab4a-6e4f607c1238",
+                "value": "",
+                "component": "_table_col"
+              }
+            ],
+            "component": "_table_row"
+          }
+        ],
+        "thead": [
+          {
+            "_uid": "c2747616-5df5-4e1a-ac73-4184e87082d9",
+            "value": "",
+            "component": "_table_head"
           },
-          "component": "image-full-width"
-        },
-        {
-          "_uid": "01df21c0-4e17-4c75-ba35-64c4a77ab63b",
-          "text": "",
-          "title": "",
-          "component": "facts-figures-grid",
-          "grid_container": [
-            {
-              "_uid": "fcf7e4db-6e56-432a-8c4e-df2fdf2a2fc5",
-              "component": "facts-figures-item",
-              "factsandfigures_data": [],
-              "factsandfigures_text": ""
-            }
-          ]
-        },
-        {
-          "_uid": "79225c4c-0d81-4618-983f-04b31d8751c1",
-          "text": "",
-          "title": "",
-          "component": "services-grid",
-          "grid_container": [
-            {
-              "Icon": {
-                "id": 14148655,
-                "alt": "",
-                "name": "",
-                "focus": "",
-                "title": "",
-                "source": "",
-                "filename": "https://a.storyblok.com/f/269997/64x64/2764b044f2/plattform.svg",
-                "copyright": "",
-                "fieldtype": "asset",
-                "meta_data": {},
-                "is_private": "",
-                "is_external_url": false
-              },
-              "_uid": "e35e48d1-68d5-4fa0-b2a1-0a9760a1f28d",
-              "link": {
-                "id": "626b74ad-4c7a-4922-ad4c-c39febd9526a",
-                "url": "",
-                "linktype": "story",
-                "fieldtype": "multilink",
-                "cached_url": "full-service"
-              },
-              "text": "text",
-              "title": "text",
-              "component": "services-item"
-            },
-            {
-              "Icon": {
-                "id": null,
-                "alt": null,
-                "name": "",
-                "focus": null,
-                "title": null,
-                "source": null,
-                "filename": "",
-                "copyright": null,
-                "fieldtype": "asset",
-                "meta_data": {}
-              },
-              "_uid": "0488ad77-fd1f-4de7-b491-cfae3bd0ff94",
-              "text": "",
-              "title": "",
-              "component": "services-item"
-            }
-          ]
-        }
-      ],
-      "component": "page"
-    },
-    "slug": "service",
-    "full_slug": "service",
-    "sort_by_date": null,
-    "position": -100,
-    "tag_list": [],
-    "is_startpage": false,
-    "parent_id": null,
-    "meta_data": null,
-    "group_id": "6d245e74-4d72-48c2-bac2-27a500de4ee4",
-    "first_published_at": "2024-02-20T10:37:43.786Z",
-    "release_id": null,
-    "lang": "default",
-    "path": null,
-    "alternates": [],
-    "default_full_slug": "service",
-    "translated_slugs": [
-      {
-        "path": "service",
-        "name": null,
-        "lang": "de",
-        "published": null
+          {
+            "_uid": "26fc8f4f-1865-456c-b578-2cbd8e136e10",
+            "value": "",
+            "component": "_table_head"
+          }
+        ],
+        "fieldtype": "table"
       },
-      {
-        "path": "service",
-        "name": null,
-        "lang": "en",
-        "published": null
-      }
-    ]
-  },
-  "cv": 1708433598,
-  "rels": [],
-  "links": []
+      "component": "table-item"
+    },
+    {
+      "_uid": "dff3ebcd-b0d6-429a-ac5e-220b5104dead",
+      "table": {
+        "tbody": [
+          {
+            "_uid": "49f10362-d31a-4ec1-a89e-5cd8447aaad3",
+            "body": [
+              {
+                "_uid": "2b5f2bb4-58ed-4073-822b-0a1af944f9ef",
+                "value": "",
+                "component": "_table_col"
+              },
+              {
+                "_uid": "9fb32a96-107f-4eca-b18c-820379311006",
+                "value": "",
+                "component": "_table_col"
+              }
+            ],
+            "component": "_table_row"
+          }
+        ],
+        "thead": [
+          {
+            "_uid": "7ea6a97d-0442-44b6-83c8-e442074574b0",
+            "value": "",
+            "component": "_table_head"
+          },
+          {
+            "_uid": "60caab1d-b7d2-4b75-a94b-a00aa9e17b57",
+            "value": "",
+            "component": "_table_head"
+          }
+        ],
+        "fieldtype": "table"
+      },
+      "component": "table-item"
+    }
+  ]
 }
