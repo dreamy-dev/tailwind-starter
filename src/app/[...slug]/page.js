@@ -10,9 +10,10 @@ async function fetchData(slug) {
  
   const sbParams = {
     //resolve_links: 'url',
-    version: 'public',
-  
-  }
+    version: "public",
+    resolve_relations: global_reference.reference,
+
+  };
 
   const storyblokApi = getStoryblokApi()
 
