@@ -33,7 +33,7 @@ import TableGrid from "./sections/Table";
 import TableItem from "./sections/TableItem";
 import Contact from "./sections/Contact";
 import SolutionsGrid from "./sections/SolutionsGrid";
-import SolutionsItem from "./sections/SolutionsGridItem";
+import SolutionsGridItem from "./sections/SolutionsGridItem";
 //import ButtonPrimary from "./elements/ButtonPrimary";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -72,7 +72,7 @@ storyblokInit({
     "table-grid": TableGrid,
     "table-item": TableItem,
     "global0contact-section": Contact,
-    "solutions-item": SolutionsItem,
+    "solutions-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
 
  

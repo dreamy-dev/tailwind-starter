@@ -2,7 +2,7 @@
 
 import { storyblokEditable } from "@storyblok/react/rsc";
 
-const SolutionsItem = ({ blok }) => {
+const SolutionsGridItem = ({ blok }) => {
   return (
     <div
       {...storyblokEditable(blok)}
@@ -22,4 +22,4 @@ const SolutionsItem = ({ blok }) => {
   );
 };
 
-export default SolutionsItem;
+export default SolutionsGridItem;
