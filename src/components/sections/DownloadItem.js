@@ -9,7 +9,7 @@ function DownloadItem({blok}) {
       <section {...storyblokEditable(blok)}>
         <ContentWidth>
           <div className="col-span-12 mb-14 flex justify-between align-baseline">
-            <Text>{blok?.text}</Text>
+            <Text>{blok?.Text}</Text>
             <ButtonPrimary
               position="right"
               buttonText={blok?.CTA_text}
