@@ -15,7 +15,7 @@ const FactsAndFiguresGrid = ({ blok }) => {
                 {...storyblokEditable(blok)}
               >
              
-                {blok?.grid_container.map((nestedBlok) => (
+                {blok?.facts_figures_grid.map((nestedBlok) => (
                   <StoryblokComponent
                     blok={nestedBlok}
                     key={nestedBlok?._uid}
