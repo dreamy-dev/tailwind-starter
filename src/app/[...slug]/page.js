@@ -11,7 +11,7 @@ async function fetchData(slug) {
   const sbParams = {
     //resolve_links: 'url',
     version: "public",
-    // resolve_relations: ["global-contact-section"],
+    resolve_relations: ["global-contact-section"],
 
   };
 
