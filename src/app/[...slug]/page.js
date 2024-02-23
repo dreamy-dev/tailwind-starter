@@ -22,14 +22,20 @@ export async function generateStaticParams() {
     version: "published",
   });
 
-  const paths = [];
-  data.links.forEach((link) => {
-    if (!link.slug || link.is_folder || link.slug === "blok-tests") {
+ const paths = [];
+  Object.keys(data.links).forEach((linkKey) => {
+ 
+    if (
+      data.links[linkKey].is_folder ||
+      data.links[linkKey].slug === "blok-tests"
+    ) {
       return;
     }
 
-    const slug = link.slug;
+ 
+    const slug = data.links[linkKey].slug;
     let splittedSlug = slug.split("/");
+
 
     paths.push({ slug: splittedSlug });
   });
