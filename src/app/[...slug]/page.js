@@ -22,10 +22,9 @@ export async function generateStaticParams() {
     version: "published",
   });
 
-  const paths = slug;
-  // create a route for every link
+ const paths = [];
   Object.keys(data.links).forEach((linkKey) => {
-    // do not create a route for folders and home
+ 
     if (
       data.links[linkKey].is_folder ||
       data.links[linkKey].slug === "blok-tests"
@@ -33,11 +32,11 @@ export async function generateStaticParams() {
       return;
     }
 
-    // get array for slug because of catch all
+ 
     const slug = data.links[linkKey].slug;
     let splittedSlug = slug.split("/");
 
-    // creates all the routes
+
     paths.push({ slug: splittedSlug });
   });
 
@@ -54,11 +53,7 @@ export default async function Home({ params }) {
 
   return (
     <>
-     
-
       <StoryblokStory story={story} />
-
-   
     </>
   );
 }
