@@ -9,7 +9,7 @@ function DownloadItem({blok}) {
             <Text>{blok?.text}</Text>
             <ButtonPrimary position="right">
               buttonText={blok?.CTA_text}
-              href={blok?.CTA_link}
+              href={blok?.CTA_link.url}
               <svg
                 width="15"
                 height="15"
