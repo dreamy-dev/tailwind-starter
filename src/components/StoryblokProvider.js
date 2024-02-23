@@ -34,7 +34,7 @@ import TableItem from "./sections/TableItem";
 import Contact from "./sections/Contact";
 import SolutionsGrid from "./sections/SolutionsGrid";
 import SolutionsGridItem from "./sections/SolutionsGridItem";
-//import ButtonPrimary from "./elements/ButtonPrimary";
+import DownloadItem from "./sections/DownloadItem";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -74,6 +74,7 @@ storyblokInit({
     "global0contact-section": Contact,
     "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
+    "download-item": DownloadItem,
 
  
   },
