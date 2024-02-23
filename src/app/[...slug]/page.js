@@ -1,4 +1,6 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc'
+import Header from "../components/sections/Header";
+import Footer from "../components/sections/Footer";
 
 const isDev = "development";
 export const revalidate = isDev ? 0 : 3600;
@@ -54,7 +56,9 @@ export default async function Home({ params }) {
 
   return (
     <>
+      <Header />
       <StoryblokStory story={story} />
+      <Footer />
     </>
   );
 }
