@@ -1,4 +1,4 @@
-import Index, { revalidate, generateMetadata } from "./[...slug]/page";
+import Index, { revalidate} from "./[...slug]/page";
 
-export { revalidate, generateMetadata };
+export { revalidate };
 export default Index;
