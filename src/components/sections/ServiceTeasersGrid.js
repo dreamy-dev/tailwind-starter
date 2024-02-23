@@ -18,9 +18,9 @@ const ServiceTeasersGrid= ({blok}) => {
           <Text>{blok?.text}</Text>
        
             <div {...storyblokEditable(blok)} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-              {/* {blok.grid_container.map((nestedBlok) => (
+              {blok.service_grid.map((nestedBlok) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
-              ))} */}
+              ))}
            
           </div>
         </div>
