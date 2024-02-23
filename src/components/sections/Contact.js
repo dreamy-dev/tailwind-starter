@@ -15,13 +15,13 @@ export default function Contact({blok}) {
           <div className="w-full xl:col-span-4">
             <img
               className="object-cover object-right max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
-              src={blok?.image.filename}
+              src={blok?.glogal.image.filename}
               alt="contact"
             />
           </div>
           <div className="w-full xl:col-span-8">
             <div className=" tracking-tight">
-              <H2 styles="mb-8 text-white">{blok?.title ?? "Ihr Kontakt"}</H2>
+              <H2 styles="mb-8 text-white">{blok?.global.Title ?? "Ihr Kontakt"}</H2>
             </div>
             <div className="mb-8 font-light md:text-lg text-white">
               <Text>
@@ -32,7 +32,7 @@ export default function Contact({blok}) {
             <ul className="flex-col text-white">
               <li>
                 <H4 textColor="white" styles="mb-4">
-                  {blok?.contactname ?? "Kontakt Verkauf Schweiz"}
+                  { blok?.global.content.text ?? "Kontakt Verkauf Schweiz"}
                 </H4>
               </li>
               <li className="mb-4 flex items-center">
