@@ -8,7 +8,7 @@ const QualityFeatureGrid = ({ blok }) => {
       <section className="py-24 bg-stadlergradient">
         <ContentWidth>
           <div className="col-span-12 max-w-full mx-auto">
-            <H2 styles="text-white">Lorem ipsum</H2>
+            <H2 styles="text-white text-left">{ blok?.title}</H2>
             <div className="mt-8 lg:mt-16">
               <div className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24" {...storyblokEditable(blok)}>
                 {blok.feature_item.map((nestedBlok) => (
