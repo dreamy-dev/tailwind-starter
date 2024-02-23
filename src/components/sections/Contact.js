@@ -32,7 +32,7 @@ export default function Contact({blok}) {
             <ul className="flex-col text-white">
               <li>
                 <H4 textColor="white" styles="mb-4">
-                  { blok?.global.content.text ?? "Kontakt Verkauf Schweiz"}
+                  { blok?.global.content.content.text ?? "Kontakt Verkauf Schweiz"}
                 </H4>
               </li>
               <li className="mb-4 flex items-center">
