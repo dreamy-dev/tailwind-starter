@@ -10,9 +10,11 @@ function DownloadItem({blok}) {
         <ContentWidth>
           <div className="col-span-12 mb-14 flex justify-between align-baseline">
             <Text>{blok?.text}</Text>
-            <ButtonPrimary position="right">
+            <ButtonPrimary
+              position="right"
               buttonText={blok?.CTA_text}
               href={blok?.CTA_link.url}
+            >
               <svg
                 width="15"
                 height="15"
