@@ -16,9 +16,9 @@ const TableGrid = ({ blok }) => {
           <div className="text-start mb-8">
             <Text>{blok?.text}</Text>
           </div>
-          {blok?.table_item.map((nestedBlok) => (
+          {/* {blok?.table_item.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
-          ))}
+          ))} */}
         </div>
       </ContentWidth>
     </section>
