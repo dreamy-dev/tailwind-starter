@@ -15,7 +15,7 @@ const SolutionsItem = ({ blok }) => {
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {blok?.title}
           </h5>
-          <p>{blok?.description}</p>
+          <p>{blok?.text}</p>
         </div>
       </a>
     </div>
