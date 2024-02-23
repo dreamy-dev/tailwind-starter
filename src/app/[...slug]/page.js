@@ -1,83 +1,60 @@
-// import { ISbStoriesParams, getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc'
-// import { draftMode } from 'next/headers'
+import { ISbStoriesParams, getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc'
+import { Metadata } from "next";
 
 
-// const isDev = 'development'
-// export const revalidate = isDev ? 0 : 3600
+const isDev = 'development'
+export const revalidate = isDev ? 0 : 3600
 
 
-// async function fetchData(slug) {
+async function fetchData(slug) {
  
-//   const sbParams = {
+  const sbParams = {
+    //resolve_links: 'url',
+    version: 'public',
+  
+  }
 
-//     version: "published",
-//     resolve_relations: global_reference.reference,
+  const storyblokApi = getStoryblokApi()
 
-//   };
+  return storyblokApi.get(`cdn/stories/${slug}`, sbParams)
+}
 
-//   const storyblokApi = getStoryblokApi()
+export async function generateMetadata({ params }) {
+  const slug = params?.slug ? params.slug.join("/") : "home";
+  const { story } = await fetchData(slug);
 
-//   return storyblokApi.get(`cdn/stories/${slug}`, sbParams)
-// }
+  if (!story) {
+    return {};
+  }
 
+  const title = story.content?.seo?.title || story.name;
+  const description = story.content?.seo?.description;
+  return {
+    metadataBase: new URL("https://stadler.ch"),
+    title: `${title} · Stadler`,
+    description: description,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: `/${story.slug}`,
+    },
+  };
+}
 
-// export default async function Home({ params }) {
-//   const slug = params?.slug ? params.slug.join("/") : "blok-tests";
+export default async function Home({ params }) {
+  const slug = params?.slug ? params.slug.join("/") : "blok-tests";
 
-//   const { data } = await fetchData(slug)
+  const { data } = await fetchData(slug)
 
-//   return (
-//     <>
+  return (
+    <>
    
-//       <StoryblokStory story={data.story} />
+      <StoryblokStory story={data.story} />
 
-//     </>
-//   )
-// }
-
-
-  import {
-    getStoryblokApi,
-  } from "@storyblok/react/rsc";
-  import StoryblokStory from "@storyblok/react/story";
-  
-export const dynamicParams = true;
-  
-  export default async function Home({params}) {
-    let slug = params.slug ? params.slug.join("/") : "blok-tests";
-
-    const storyblokApi = getStoryblokApi();
-    let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {version: 'published', cv: Math.random(), resolve_relations: ['global-contact-section']});
-  
-    return (
-      <div>
-        <StoryblokStory story={data.story} bridgeOptions={{resolveRelations: ['global-contact-section']}} />
-      </div>
-    );
-  }
-  
-
-  export async function generateStaticParams() {
-
-    const storyblokApi = getStoryblokApi();
-    let { data } = await storyblokApi.get("cdn/links/" ,{
-        version: 'published'
-    });
-    let paths = [];
-    Object.keys(data.links).forEach((linkKey) => {
-        if (data.links[linkKey].is_folder) {
-        return;
-        }
-        const slug = data.links[linkKey].slug;
-        
-        if(slug == 'blok-tests'){
-            return
-        }
-
-        let splittedSlug = slug.split("/");
-    
-        paths.push({ slug: splittedSlug });
-    });
-    return paths
-
-  }
+    </>
+  )
+}
