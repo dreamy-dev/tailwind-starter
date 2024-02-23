@@ -10,7 +10,7 @@ async function fetchData(slug) {
  
   const sbParams = {
 
-    version: "public",
+    version: "published",
     resolve_relations: global_reference.reference,
 
   };
