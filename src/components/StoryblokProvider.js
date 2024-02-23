@@ -48,7 +48,7 @@ storyblokInit({
     "facts-figures-grid": FactsAndFiguresGrid,
     "facts-figures-item": FactsAndFiguresItem,
     "feature-grid": QualityFeatureGrid,
-    "simple-feature-item": QualityFeatureItem,
+    "feature-item": QualityFeatureItem,
     "text-block": TextSection,
     "double-page-teaser": Features,
     "simple-page-teaser": Career,
