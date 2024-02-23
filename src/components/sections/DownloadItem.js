@@ -1,5 +1,6 @@
 "use client"
 import ContentWidth from "../layouts/ContentWidth";
+import ButtonPrimary from "../elements/ButtonPrimary";
 import { storyblokEditable } from "@storyblok/react/rsc";
 function DownloadItem({blok}) {
     return (
