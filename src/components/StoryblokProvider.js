@@ -72,7 +72,7 @@ storyblokInit({
     "table-grid": TableGrid,
     "table-item": TableItem,
     "global0contact-section": Contact,
-    "solutions-item": SolutionsGridItem,
+    "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
 
  
