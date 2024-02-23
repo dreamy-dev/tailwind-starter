@@ -10,7 +10,7 @@ async function fetchData(slug) {
     resolve_links: "url",
     version: "published",
     cv: isDev || isDraft ? Date.now() : undefined,
-    resolve_relations: "global_reference.reference"
+    resolve_relations: ["global_reference.reference", "breadcrumb.children"]
   };
 
   const storyblokApi = getStoryblokApi();
@@ -18,7 +18,7 @@ async function fetchData(slug) {
 
   console.log(data)
   
-  return { story: data.story };
+  return { story: data.story, breadcrumbs: data.story.content.breadcrumbs };
 }
 
 export async function generateStaticParams() {
@@ -50,16 +50,18 @@ export async function generateStaticParams() {
 
 export default async function Home({ params }) {
   const slug = params?.slug ? params.slug.join("/") : "blok-tests";
-  const { story } = await fetchData(slug);
+  const { story, breadcrumbs } = await fetchData(slug);
 
   if (!story) {
     return notFound();
   }
 
+
+
   return (
     <>
       <Header />
-      <StoryblokStory story={story} />
+      <StoryblokStory story={story} blok={breadcrumbs} />
       <Footer />
     </>
   );
