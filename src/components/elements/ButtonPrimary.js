@@ -26,7 +26,7 @@ export default function ButtonPrimary({
       <Link className={primaryButtonStyles} href={blok?.CTA_Link.url}>
     
      
-            {blok.CTA_Text}
+            {blok?.CTA_Text}
             <svg
               width="15"
               height="15"
