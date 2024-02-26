@@ -30,7 +30,7 @@ blok
           <H3>{blok?.title}</H3>
         {/* </Link> */}
         <Link
-          href={blok?.cta_link.url}
+          href={blok?.cta_link.url ?? ""}
           target="_blank"
           className="inline-flex items-center pt-2 text-sm font-medium text-center"
         >
