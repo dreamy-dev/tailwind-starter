@@ -18,7 +18,7 @@ async function fetchData(slug) {
 
   console.log(data)
   
-  return { story: data.story, breadcrumbs: data.story.content.breadcrumbs };
+  return { story: data.story };
 }
 
 export async function generateStaticParams() {
