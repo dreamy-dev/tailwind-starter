@@ -1,82 +1,12 @@
 {
-  "_uid": "deb5f44e-ba00-468f-969e-841b59214640",
-  "text": "",
-  "title": "",
-  "component": "table-grid",
-  "table_item": [
-    {
-      "_uid": "e144c127-ceac-4414-8396-b332be5ee26c",
-      "table": {
-        "tbody": [
-          {
-            "_uid": "0301df86-8610-47b0-8fb1-c79d07e9117f",
-            "body": [
-              {
-                "_uid": "46279c3a-382f-413c-bc8c-b57fb4ccbcb1",
-                "value": "",
-                "component": "_table_col"
-              },
-              {
-                "_uid": "5d580806-c90b-4997-ab4a-6e4f607c1238",
-                "value": "",
-                "component": "_table_col"
-              }
-            ],
-            "component": "_table_row"
-          }
-        ],
-        "thead": [
-          {
-            "_uid": "c2747616-5df5-4e1a-ac73-4184e87082d9",
-            "value": "",
-            "component": "_table_head"
+          "_uid": "6c083f98-86a9-4724-82d6-cdb9fab2bcb1",
+          "CTA_Link": {
+            "id": "",
+            "url": "",
+            "linktype": "story",
+            "fieldtype": "multilink",
+            "cached_url": ""
           },
-          {
-            "_uid": "26fc8f4f-1865-456c-b578-2cbd8e136e10",
-            "value": "",
-            "component": "_table_head"
-          }
-        ],
-        "fieldtype": "table"
-      },
-      "component": "table-item"
-    },
-    {
-      "_uid": "dff3ebcd-b0d6-429a-ac5e-220b5104dead",
-      "table": {
-        "tbody": [
-          {
-            "_uid": "49f10362-d31a-4ec1-a89e-5cd8447aaad3",
-            "body": [
-              {
-                "_uid": "2b5f2bb4-58ed-4073-822b-0a1af944f9ef",
-                "value": "",
-                "component": "_table_col"
-              },
-              {
-                "_uid": "9fb32a96-107f-4eca-b18c-820379311006",
-                "value": "",
-                "component": "_table_col"
-              }
-            ],
-            "component": "_table_row"
-          }
-        ],
-        "thead": [
-          {
-            "_uid": "7ea6a97d-0442-44b6-83c8-e442074574b0",
-            "value": "",
-            "component": "_table_head"
-          },
-          {
-            "_uid": "60caab1d-b7d2-4b75-a94b-a00aa9e17b57",
-            "value": "",
-            "component": "_table_head"
-          }
-        ],
-        "fieldtype": "table"
-      },
-      "component": "table-item"
-    }
-  ]
-}
+          "CTA_Text": "",
+          "component": "cta"
+        }
