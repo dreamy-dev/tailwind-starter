@@ -1,6 +1,5 @@
 
 "use client";
-
 import { storyblokEditable } from "@storyblok/react/rsc";
 import Link from "next/link";
 import H3 from "../typography/H3";

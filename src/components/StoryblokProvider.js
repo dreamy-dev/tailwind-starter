@@ -70,7 +70,7 @@ storyblokInit({
     "highlights-grid": AdvantagesGrid,
     "highlights-item": AdvantageItem,
     "portrait-grid": PortraitGrid,
-    "portrait": PortraitItem,
+    portrait: PortraitItem,
     "services-grid": ServiceTeasersGrid,
     "services-item": ServiceTeaserItem,
     "table-grid": TableGrid,
@@ -79,13 +79,11 @@ storyblokInit({
     "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
     "download-item": DownloadItem,
-    "cta": ButtonPrimary,
+    cta: ButtonPrimary,
     "reports-grid": ReportsGrid,
-    "reports-item": ReportsItem
+    "reports-item": ReportsItem,
+    "image-tripple-banner": ImageTrippleBanner,
     //"contact-field": Contact,
-   
-
- 
   },
 });
 
