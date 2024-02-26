@@ -1,12 +1,195 @@
+// 20240226114817
+// https://api.storyblok.com/v2/cdn/stories/blok-tests?cv=1708944474&token=r9bj1EQKQ2RBQpmI0LRxWQtt&version=published
+
 {
+  "story": {
+    "name": "blok-tests",
+    "created_at": "2024-01-15T14:56:21.953Z",
+    "published_at": "2024-02-26T10:47:54.851Z",
+    "id": 427560987,
+    "uuid": "12d52a49-4a31-4fa6-9d18-09927eaa45f0",
+    "content": {
+      "_uid": "ccbd02ef-c56c-4d33-8f97-3f54a7bb220f",
+      "body": [
+        {
+          "_uid": "e53c9117-5213-47b3-92f8-8843b2ac4d22",
+          "component": "global_reference",
+          "reference": ["23bc5fc7-5c6b-4014-9219-6b54af09e844"]
+        },
+        {
+          "_uid": "58512ed8-5d84-4a5b-8c4b-ae81e069ec61",
+          "component": "global_reference",
+          "reference": ["23bc5fc7-5c6b-4014-9219-6b54af09e844"]
+        },
+        {
+          "_uid": "30efbfcc-0f01-48e8-98eb-c2a19cff59da",
+          "component": "global_reference",
+          "reference": ["e5938011-d9b4-458b-bd66-c5c2c2c2d5f2"]
+        },
+        {
           "_uid": "6c083f98-86a9-4724-82d6-cdb9fab2bcb1",
           "CTA_Link": {
             "id": "",
             "url": "",
-            "linktype": "story",
+            "linktype": "url",
             "fieldtype": "multilink",
             "cached_url": ""
           },
-          "CTA_Text": "",
+          "CTA_Text": "ljvlkxj",
           "component": "cta"
+        },
+        {
+          "_uid": "b29f2239-9481-4f28-a5c1-12afca691f9c",
+          "text": "kbk",
+          "title": "khkh",
+          "component": "reports-grid",
+          "reports_grid": [
+            {
+              "_uid": "fc156bec-8d66-4fea-97a5-8dc3ea19e64e",
+              "image": {
+                "id": 14226351,
+                "alt": "",
+                "name": "",
+                "focus": "",
+                "title": "",
+                "source": "",
+                "filename": "https://a.storyblok.com/f/269997/x/168d0d832d/screenshot-2024-02-23-at-10-59-43.png",
+                "copyright": "",
+                "fieldtype": "asset",
+                "meta_data": {},
+                "is_private": false,
+                "is_external_url": false
+              },
+              "title": "kjhkh",
+              "cta_link": {
+                "id": "",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": ""
+              },
+              "component": "reports-item"
+            },
+            {
+              "_uid": "231c1bd0-8080-442f-ac6f-76a7502c9e33",
+              "image": {
+                "id": 14226351,
+                "alt": "",
+                "name": "",
+                "focus": "",
+                "title": "",
+                "source": "",
+                "filename": "https://a.storyblok.com/f/269997/x/168d0d832d/screenshot-2024-02-23-at-10-59-43.png",
+                "copyright": "",
+                "fieldtype": "asset",
+                "meta_data": {},
+                "is_private": false,
+                "is_external_url": false
+              },
+              "title": "khkh",
+              "cta_link": {
+                "id": "",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": ""
+              },
+              "component": "reports-item"
+            }
+          ]
+        },
+        {
+          "_uid": "45b772e9-c1e1-44ac-8d78-d861cb484f46",
+          "image1": {
+            "id": 14226081,
+            "alt": "",
+            "name": "",
+            "focus": "",
+            "title": "",
+            "source": "",
+            "filename": "https://a.storyblok.com/f/269997/x/2e60c47c05/screenshot-2024-02-23-at-10-55-21.png",
+            "copyright": "",
+            "fieldtype": "asset",
+            "meta_data": {},
+            "is_private": false,
+            "is_external_url": false
+          },
+          "image2": {
+            "id": 14226081,
+            "alt": "",
+            "name": "",
+            "focus": "",
+            "title": "",
+            "source": "",
+            "filename": "https://a.storyblok.com/f/269997/x/2e60c47c05/screenshot-2024-02-23-at-10-55-21.png",
+            "copyright": "",
+            "fieldtype": "asset",
+            "meta_data": {},
+            "is_private": false,
+            "is_external_url": false
+          },
+          "image3": {
+            "id": 14226081,
+            "alt": "",
+            "name": "",
+            "focus": "",
+            "title": "",
+            "source": "",
+            "filename": "https://a.storyblok.com/f/269997/x/2e60c47c05/screenshot-2024-02-23-at-10-55-21.png",
+            "copyright": "",
+            "fieldtype": "asset",
+            "meta_data": {},
+            "is_private": false,
+            "is_external_url": false
+          },
+          "component": "image-tripple-banner"
+        },
+        {
+          "_uid": "b23ba803-eb36-47a9-8f32-d101c43ed32f",
+          "text": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph"
+              }
+            ]
+          },
+          "component": "text-block"
         }
+      ],
+      "component": "page"
+    },
+    "slug": "blok-tests",
+    "full_slug": "blok-tests",
+    "sort_by_date": null,
+    "position": -10,
+    "tag_list": [],
+    "is_startpage": false,
+    "parent_id": 0,
+    "meta_data": null,
+    "group_id": "6f574959-a57a-41e8-9502-7d5c56f4ee86",
+    "first_published_at": "2024-01-23T16:17:11.469Z",
+    "release_id": null,
+    "lang": "default",
+    "path": "/",
+    "alternates": [],
+    "default_full_slug": "blok-tests",
+    "translated_slugs": [
+      {
+        "path": "blok-tests",
+        "name": null,
+        "lang": "de-ch",
+        "published": null
+      },
+      {
+        "path": "blok-tests",
+        "name": null,
+        "lang": "en",
+        "published": null
+      }
+    ]
+  },
+  "cv": 1708944474,
+  "rels": [],
+  "links": []
+}

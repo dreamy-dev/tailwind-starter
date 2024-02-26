@@ -10,7 +10,7 @@ export default function TextSection(blok) {
       className="bg-white dark:bg-gray-900 py-24"
     >
       <SmallWidth>
-        <Text>{blok?.text.content.map((item) => item.content[0].text)}</Text>
+        {/* <Text>{blok?.text.content.map((item) => item.content[0].text)}</Text> */}
       </SmallWidth>
     </section>
   );
