@@ -23,7 +23,7 @@ export default function ButtonPrimary({
 
   return (
     <div style={containerStyles} {...storyblokEditable(blok)}>
-      <Link className={primaryButtonStyles} href={blok.url.CTA_Link}>
+      <Link className={primaryButtonStyles} href={blok.CTA_Link.url}>
         {children ?? (
           <>
             {blok.CTA_Text ? blok.CTA_Text : "Jetzt bewerben"}
