@@ -7,6 +7,7 @@ import Text from "../typography/Text";
 export default function Contact({blok}) {
   return (
     <section
+      blok={story.content}
       className="py-5 lg:py-24 bg-stadlergradient"
       {...storyblokEditable(blok)}
     >
@@ -21,7 +22,9 @@ export default function Contact({blok}) {
           </div>
           <div className="w-full xl:col-span-8">
             <div className=" tracking-tight">
-              <H2 styles="mb-8 text-white">{blok?.global.Title ?? "Ihr Kontakt"}</H2>
+              <H2 styles="mb-8 text-white">
+                {blok?.global.Title ?? "Ihr Kontakt"}
+              </H2>
             </div>
             <div className="mb-8 font-light md:text-lg text-white">
               <Text>
@@ -32,7 +35,8 @@ export default function Contact({blok}) {
             <ul className="flex-col text-white">
               <li>
                 <H4 textColor="white" styles="mb-4">
-                  { blok?.global.content.content.text ?? "Kontakt Verkauf Schweiz"}
+                  {blok?.global.content.content.text ??
+                    "Kontakt Verkauf Schweiz"}
                 </H4>
               </li>
               <li className="mb-4 flex items-center">
