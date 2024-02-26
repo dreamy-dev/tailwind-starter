@@ -78,7 +78,7 @@ storyblokInit({
     "solutions-grid": SolutionsGrid,
     "download-item": DownloadItem,
     "cta": ButtonPrimary,
-    "contact-field": Contact,
+    //"contact-field": Contact,
    
 
  
