@@ -39,6 +39,7 @@ import ButtonPrimary from "./elements/ButtonPrimary";
 import ReportsGrid from "./sections/ReportsGrid";
 import ReportsItem from "./sections/ReportsItem.js";
 import ImageTrippleBanner from "./sections/ImageTrippleBanner";
+import SimpleText from "./sections/SimpleText"
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -50,7 +51,6 @@ storyblokInit({
     page: Page,
     footer: Footer,
     header: Header,
-    map: Map,
     "facts-figures-grid": FactsAndFiguresGrid,
     "facts-figures-item": FactsAndFiguresItem,
     "feature-grid": QualityFeatureGrid,
@@ -83,6 +83,7 @@ storyblokInit({
     "reports-grid": ReportsGrid,
     "reports-item": ReportsItem,
     "image-tripple-banner": ImageTrippleBanner,
+    "textSection": SimpleText
     //"contact-field": Contact,
   },
 });
