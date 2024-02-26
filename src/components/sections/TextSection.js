@@ -13,16 +13,19 @@ export default function TextSection({ blok }) {
       <SmallWidth>
         <H2>{blok?.title}</H2>
         <Text>
-          {blok?.text &&
-            blok.text.content &&
-            blok.text.content
-              .map((item) => {
-                if (item.type === "paragraph" && item.content[0]?.text) {
-                  return item.content[0].text;
-                }
-                return null;
-              })
-              .filter((text) => text !== null)}
+          <Text>
+            {blok?.text &&
+              blok.text.content &&
+              blok.text.content.length > 0 &&
+              blok.text.content
+                .map((item) => {
+                  if (item.type === "paragraph" && item.content[0]?.text) {
+                    return item.content[0].text;
+                  }
+                  return null;
+                })
+                .filter((text) => text !== null)}
+          </Text>
         </Text>
       </SmallWidth>
     </section>
