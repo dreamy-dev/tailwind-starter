@@ -22,7 +22,7 @@ blok
         <img
           className="object-contain max-h-auto w-full"
           src={blok?.image.filename}
-          alt={publication.title}
+          alt={blok?.title}
         />
       </Link>
       <div className="p-5">

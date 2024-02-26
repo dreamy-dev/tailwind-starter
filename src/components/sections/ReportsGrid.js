@@ -10,11 +10,7 @@ import H2 from "../typography/H2";
 
 
 const ReportsGrid = ({blok }) => {
-//   const [showPublications, setShowPublications] = useState(false);
 
-//   const toggleTrainsVisibility = () => {
-//     setShowPublications(!showPublications);
-//   };
 
   return (
     <section className="bg-primarySolid-50 py-5 lg:py-24 ">
