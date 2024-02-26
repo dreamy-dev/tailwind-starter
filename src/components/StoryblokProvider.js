@@ -36,6 +36,8 @@ import SolutionsGrid from "./sections/SolutionsGrid";
 import SolutionsGridItem from "./sections/SolutionsGridItem";
 import DownloadItem from "./sections/DownloadItem";
 import ButtonPrimary from "./elements/ButtonPrimary";
+import ReportsGrid from "./sections/ReportsGrid";
+import ReportsItem from "./sections/ReportsItem.js";
 
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -78,6 +80,8 @@ storyblokInit({
     "solutions-grid": SolutionsGrid,
     "download-item": DownloadItem,
     "cta": ButtonPrimary,
+    "reports-grid": ReportsGrid,
+    "reports-item": ReportsItem
     //"contact-field": Contact,
    
 
