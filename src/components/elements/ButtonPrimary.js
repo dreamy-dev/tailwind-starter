@@ -22,11 +22,11 @@ export default function ButtonPrimary({
   const primaryButtonStyles = `bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2`;
 
   return (
-    <div style={containerStyles} >
-      <Link className={primaryButtonStyles} href={href ?? "#"}>
+    <div style={containerStyles} {...storyblokEditable(blok)}>
+      <Link className={primaryButtonStyles} href={blok.url.CTA_Link}>
         {children ?? (
           <>
-            {buttonText ? buttonText : "Jetzt bewerben"}
+            {blok.CTA_Text ? blok.CTA_Text : "Jetzt bewerben"}
             <svg
               width="15"
               height="15"
