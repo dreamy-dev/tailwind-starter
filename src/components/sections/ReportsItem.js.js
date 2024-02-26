@@ -18,17 +18,17 @@ blok
       {...storyblokEditable(blok)}
       className="max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
     >
-      <Link href={blok?.cta_link.url}>
+      {/* <Link href={blok?.cta_link.url}> */}
         <img
           className="object-contain max-h-auto w-full"
           src={blok?.image.filename}
           alt={blok?.title}
         />
-      </Link>
+      {/* </Link> */}
       <div className="p-5">
-        <Link href={blok?.cta_link.url}>
+        {/* <Link href={blok?.cta_link.url}> */}
           <H3>{blok?.title}</H3>
-        </Link>
+        {/* </Link> */}
         <Link
           href={blok?.cta_link.url}
           target="_blank"

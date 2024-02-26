@@ -50,7 +50,7 @@ export async function generateStaticParams() {
 
 export default async function Home({ params }) {
   const slug = params?.slug ? params.slug.join("/") : "blok-tests";
-  const { story, breadcrumbs } = await fetchData(slug);
+  const { story } = await fetchData(slug);
 
   if (!story) {
     return notFound();
@@ -61,7 +61,7 @@ export default async function Home({ params }) {
   return (
     <>
       <Header />
-      <StoryblokStory story={story} blok={breadcrumbs} />
+      <StoryblokStory story={story}  />
       <Footer />
     </>
   );
