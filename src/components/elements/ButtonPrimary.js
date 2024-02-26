@@ -23,7 +23,7 @@ export default function ButtonPrimary({
 
   return (
     <div style={containerStyles} {...storyblokEditable(blok)}>
-      <Link className={primaryButtonStyles} href={blok?.CTA_Link.url}>
+      <a className={primaryButtonStyles} href={blok?.CTA_Link.url}>
     
      
             {blok?.CTA_Text}
@@ -53,7 +53,7 @@ export default function ButtonPrimary({
             </svg>
       
  
-      </Link>
+      </a>
     </div>
   );
 }
