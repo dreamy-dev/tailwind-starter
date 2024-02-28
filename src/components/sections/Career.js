@@ -17,7 +17,7 @@ export default function Career({ blok }) {
             {blok?.text}
           </p>
           <div className="flex justify-center">
-            <ButtonPrimary>{blok?.cta_button_text}</ButtonPrimary>
+            <ButtonPrimary buttonText={blok?.cta_button_text} href={blok?.cta_button_link}></ButtonPrimary>
           </div>
         </div>
       </ContentWidth>
