@@ -30,7 +30,7 @@ import PortraitItem from "./sections/PortraitItem";
 import ServiceTeaserItem from "./sections/ServiceTeaserItem";
 import ServiceTeasersGrid from "./sections/ServiceTeasersGrid";
 import TableGrid from "./sections/Table";
-import TableItem from "./sections/TableItem";
+//import TableItem from "./sections/TableItem";
 import Contact from "./sections/Contact";
 import SolutionsGrid from "./sections/SolutionsGrid";
 import SolutionsGridItem from "./sections/SolutionsGridItem";
