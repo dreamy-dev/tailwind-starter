@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
       <html lang="en">
-        <body className={fontFamily.className}>
+        <body className={fontFamily.className + ' overflow-x-hidden flex flex-col min-h-screen'}>
           <Header />
           <main>{children}</main>
           <Footer />

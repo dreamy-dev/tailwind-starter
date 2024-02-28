@@ -14,14 +14,12 @@ const FactsAndFiguresGrid = ({ blok }) => {
                 className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3"
                 {...storyblokEditable(blok)}
               >
-             
                 {blok?.facts_figures_grid.map((nestedBlok) => (
                   <StoryblokComponent
                     blok={nestedBlok}
                     key={nestedBlok?._uid}
                   />
                 ))}
-          
               </dl>
             </div>
           </div>

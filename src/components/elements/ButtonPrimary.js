@@ -2,31 +2,24 @@ import Link from "next/link";
 import { storyblokEditable } from "@storyblok/react/rsc";
 
 
-export default function ButtonPrimary({
-  children,
-  position,
-  buttonText,
-  href,
-  blok
-}) {
+export default function ButtonPrimary(props) {
   const containerStyles = {
     display: "flex",
-    justifyContent:
-      position === "left"
+    /* TODO: Check how we can manage the position styles from CMS or with Logic */
+    /* justifyContent:
+      props.position === "left"
         ? "flex-start"
         : position === "center"
         ? "center"
         : "flex-end",
-    alignItems: "center",
+    alignItems: "center", */
   };
   const primaryButtonStyles = `bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2`;
 
   return (
-    <div style={containerStyles} {...storyblokEditable(blok)}>
-      <a className={primaryButtonStyles} href={blok?.CTA_Link.url}>
-    
-     
-            {blok?.CTA_Text}
+    <div style={containerStyles}>
+      <a className={primaryButtonStyles} href={props.href}>
+            <p>{props.buttonText}</p>
             <svg
               width="15"
               height="15"
@@ -51,8 +44,6 @@ export default function ButtonPrimary({
                 </clipPath>
               </defs>
             </svg>
-      
- 
       </a>
     </div>
   );
