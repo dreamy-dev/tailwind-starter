@@ -6,7 +6,7 @@ import H4 from "../typography/H4";
 
 const QualityFeatureGridExtended = ({ blok }) => {
     return (
-      <section className="py-24 bg-stadlergradient">
+      <section className="py-24 bg-stadlergradient" {...storyblokEditable(blok)}>
         <ContentWidth>
           <div className="col-span-12 max-w-full">
             <H2 styles="text-white item-start">{ blok?.title}</H2>
