@@ -7,17 +7,19 @@ const FactsAndFiguresItem = ({ blok }) => {
   return (
     <div {...storyblokEditable(blok)}>
       <div className="flex flex-col gap-y-2 col-span-1 max-w-[400px]">
-        <dt className="text-xl leading-7 text-black"></dt>
+        <dt className="text-xl leading-7 text-black">
+          {blok?.text}
+        </dt>
         <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
           <CountUp
-            start={blok?.start ?? 0}
-            end={blok?.end ?? ""}
+            start={0}
+            end={blok?.factsandfigures_data}
             suffix={blok?.suffix ?? " "}
             prefix={blok?.prefix ?? " "}
-            duration={blok?.duration ?? 2}
-            separator={blok?.separator ?? " "}
-            decimals={blok?.decimals ?? 0}
-            decimal={blok?.decimal ?? "'"}
+            duration={2}
+            separator=" "
+            decimals={0}
+            decimal="'"
             enableScrollSpy
           ></CountUp>
         </dd>
