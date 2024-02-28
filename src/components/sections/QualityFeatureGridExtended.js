@@ -50,7 +50,7 @@ const QualityFeatureGridExtended = ({ blok }) => {
                    <div>
                      <img
                        src={blok?.imageGIF.filename}
-                       alt=""
+                       alt="GIF Image train"
                      />
                    </div>
                  </div>

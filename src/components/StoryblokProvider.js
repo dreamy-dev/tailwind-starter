@@ -41,6 +41,8 @@ import ReportsItem from "./sections/ReportsItem.js";
 import ImageTrippleBanner from "./sections/ImageTrippleBanner";
 import SimpleText from "./sections/SimpleText";
 import QualityFeatureGridExtended from "./sections/QualityFeatureGridExtended";
+import DownloadSecondaryGrid from "./sections/DownloadSecondaryGrid";
+import DownloadSecondaryItem from "./sections/DownloadSecondaryItem";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -86,6 +88,8 @@ storyblokInit({
     "image-tripple-banner": ImageTrippleBanner,
     "textSection": SimpleText,
     "feature-grid_extended": QualityFeatureGridExtended,
+    "download_item": DownloadSecondaryGrid,
+    "download_item": DownloadSecondaryItem,
     //"contact-field": Contact,
   },
 });
