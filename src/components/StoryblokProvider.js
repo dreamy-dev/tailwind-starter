@@ -79,7 +79,7 @@ storyblokInit({
     "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
     "cta-small": DownloadItem,
-    cta: ButtonPrimary,
+    //cta: ButtonPrimary,
     "reports-grid": ReportsGrid,
     "reports-item": ReportsItem,
     "image-tripple-banner": ImageTrippleBanner,
