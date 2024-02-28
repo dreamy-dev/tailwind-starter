@@ -3,6 +3,7 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import ContentWidth from "../layouts/ContentWidth";
 import H2 from "../typography/H2";
 import H4 from "../typography/H4";
+import Text from "../typography/Text";
 
 const QualityFeatureGridExtended = ({ blok }) => {
     return (
