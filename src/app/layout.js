@@ -1,4 +1,4 @@
-import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
+import { apiPlugin, storyblokInit} from "@storyblok/react/rsc";
 import StoryblokProvider from '../components/StoryblokProvider'
 import Script from "next/script";
 import Header from "../components/sections/Header";
@@ -11,10 +11,12 @@ const fontFamily = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
+//const mySchema = cloneDeep(RichTextSchema);
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
+
 });
 
 
