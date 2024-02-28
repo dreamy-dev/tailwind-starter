@@ -28,19 +28,18 @@ const HeroText = ({ breadcrumbs = [], withCTA, buttonText, blok }) => {
             ))}
           </div>
         )}
-        <H1>Lorem ipsum</H1>
+        <H1>{blok?.title}</H1>
         <Lead>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {blok?.lead}
         </Lead>
-
-        <ButtonPrimary
-          position="left"
-          buttonText={blok?.buttontext}
-          href={blok?.buttonlink}
-        />
+      {blok?.showbutton ? 
+         <ButtonPrimary
+         position="left"
+         buttonText={blok?.buttontext}
+         href={blok?.buttonlink}
+       />
+      : 
+      ''}
       </SmallWidth>
     </section>
   );
