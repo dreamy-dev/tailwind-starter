@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { render } from 'storyblok-rich-text-react-renderer';
 import ButtonPrimary from "../elements/ButtonPrimary";
 import H2 from "../typography/H2";
 import SmallWidth from "../layouts/SmallWidth";
@@ -20,7 +21,7 @@ const TeaserImageLeft = ({ blok }) => {
             <div>
               <H2 styles="text-black">{blok?.title}</H2>
               <Text styles="mt-4 text-xl font-normal text-black">
-                {blok?.text.content.map((item) => item.blok?.content[0].text)}
+                {render(blok.text)}
                 {/* {blok?.text} */}
               </Text>
             </div>
