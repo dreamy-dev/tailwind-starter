@@ -86,7 +86,7 @@ storyblokInit({
     "services-item": ServiceTeaserItem,
     "table-section": TableGrid,
     // "table-item": TableItem,
-    //"contact-field": Contact,
+    "contact-section": Contact,
     "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
     "cta-small": DownloadItem,

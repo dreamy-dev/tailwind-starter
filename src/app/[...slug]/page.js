@@ -15,7 +15,7 @@ async function fetchData(slug) {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 
-  console.log(data.rels[0].content)
+  console.log(data.rels)
   
   return { story: data.story };
 }
