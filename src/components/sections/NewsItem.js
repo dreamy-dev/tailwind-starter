@@ -5,7 +5,7 @@ function NewsItem() {
   return (
     <ContentWidth>
       <div className="col-span-12 w-full">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {news.map((item, index) => (
             <a
               href={item.link}
@@ -36,7 +36,7 @@ function NewsItem() {
               <Text styles="texl-lg mb-3 text-gray-500">{item.lead}</Text>
             </a>
           ))}
-        </div>
+        </div> */}
       </div>
     </ContentWidth>
   );

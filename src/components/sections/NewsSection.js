@@ -1,12 +1,14 @@
  
 import ContentWidth from "../layouts/ContentWidth";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import Text from "../typography/Text";
 
 
-function NewsSection() {
+function NewsTeaser({ blok }) {
   return (
     <ContentWidth>
-      <div className="col-span-12 w-full">
+      <div {...storyblokEditable(blok)}>TEEEEEEEEEEEEEEEEEEEEEEEEst</div>
+      {/* <div className="col-span-12 w-full">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       
             <a
@@ -39,9 +41,9 @@ function NewsSection() {
             </a>
        
         </div>
-      </div>
+      </div> */}
     </ContentWidth>
   );
 }
 
-export default NewsSection;
+export default NewsTeaser;

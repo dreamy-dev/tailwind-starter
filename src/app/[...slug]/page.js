@@ -9,13 +9,13 @@ async function fetchData(slug) {
     resolve_links: "url",
     version: "published",
     cv: isDev || isDraft ? Date.now() : undefined,
-     //resolve_relations: ["global_reference.reference"]
+    resolve_relations: ["global_reference.reference"]
   };
 
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 
-  //console.log(data)
+  console.log(data.rels[0].content)
   
   return { story: data.story };
 }
