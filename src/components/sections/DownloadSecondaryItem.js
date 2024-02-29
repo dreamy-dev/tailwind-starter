@@ -1,6 +1,6 @@
 "use client";
 
-
+import { storyblokEditable } from "@storyblok/react/rsc";
 import Button from "../elements/ButtonSecondary";
 import Text from "../typography/Text";
 

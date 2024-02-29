@@ -43,6 +43,8 @@ import SimpleText from "./sections/SimpleText";
 import QualityFeatureGridExtended from "./sections/QualityFeatureGridExtended";
 import DownloadSecondaryGrid from "./sections/DownloadSecondaryGrid";
 import DownloadSecondaryItem from "./sections/DownloadSecondaryItem";
+import CorporateGorvernanceGrid from "./sections/CorporateCovernanceGrid";
+import CorporateGorvernanceTeaser from "./sections/CorporateGovernanceTeaser";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -88,8 +90,10 @@ storyblokInit({
     "image-tripple-banner": ImageTrippleBanner,
     "textSection": SimpleText,
     "feature-grid_extended": QualityFeatureGridExtended,
-    "download_item": DownloadSecondaryGrid,
+    "download_grid": DownloadSecondaryGrid,
     "download_item": DownloadSecondaryItem,
+    "corporate-governance-teaser": CorporateGorvernanceGrid,
+    "page-teaser-mini": CorporateGorvernanceTeaser,
     //"contact-field": Contact,
   },
 });
