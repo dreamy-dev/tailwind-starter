@@ -4,11 +4,10 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
 const SchienenfahrzeugeWrapper = ({ blok }) => {
   return (
-    <section className="pt-24 bg-stadlergradient">
+    <section className="py-24 bg-stadlergradient">
       
         <div
-          {...storyblokEditable(blok)}
-         
+          {...storyblokEditable(blok)} 
         >
           {blok.schienenfahrzeuge_grid.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
