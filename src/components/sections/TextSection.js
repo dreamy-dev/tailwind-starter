@@ -19,8 +19,8 @@ export default function TextSection({ blok }) {
     >
       <SmallWidth>
         <H2>{blok?.title}</H2>
-      
-        <Text><div  dangerouslySetInnerHTML={{    __html: renderedRichText  }}></div></Text>
+      <div> test xxxxxx</div>
+      <div  dangerouslySetInnerHTML={{    __html: renderedRichText  }}></div>
       </SmallWidth>
     </section>
   );
