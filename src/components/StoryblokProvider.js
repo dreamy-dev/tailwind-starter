@@ -47,6 +47,7 @@ import CorporateGorvernanceGrid from "./sections/CorporateCovernanceGrid";
 import CorporateGorvernanceTeaser from "./sections/CorporateGovernanceTeaser";
 import SchienenfahrzeugeGrid from "./sections/SchienenfahrzeugeGrid";
 import SchienenfahrzeugeItem from "./sections/SchienenfahrzeugeItem";
+import SchienenfahrzeugeWrapper from "./sections/SchienenfahrzeugeWrapper";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -98,6 +99,7 @@ storyblokInit({
     "page-teaser-mini": CorporateGorvernanceTeaser,
     "schienenfahrzeuge_grid": SchienenfahrzeugeGrid,
     "schienenfahrzeuge_item": SchienenfahrzeugeItem,
+    "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
     //"contact-field": Contact,
   },
 });

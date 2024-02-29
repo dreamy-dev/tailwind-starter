@@ -7,7 +7,7 @@ import Text from "../typography/Text";
 
 const SchienenfahrzeugeGrid = ({ blok }) => {
   return (
-    <section className="pt-24 bg-stadlergradient">
+    <section >
       <ContentWidth>
         <div className="col-span-6 pb-12">
           <H2 styles="text-white">{blok?.title}</H2>
