@@ -1,6 +1,7 @@
 "use client";
 
 import { storyblokEditable } from "@storyblok/react/rsc";
+import H3 from "../typography/H3";
 
 const SchienenfahrzeugeItem = ({ blok }) => {
   return (
