@@ -18,7 +18,7 @@ const CorporateGorvernanceGrid = ({ blok}) => {
             </Text>
           </div>
           <div
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2"
+            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
             {...storyblokEditable(blok)}  >
              {blok?.teaserCards.map((nestedBlok) => (
                   <StoryblokComponent
