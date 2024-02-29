@@ -3,15 +3,15 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import SmallWidth from "../../components/layouts/SmallWidth";
 import H2 from "../typography/H2";
 import Text from "../typography/Text";
+import { renderRichText } from "@storyblok/react";
 
-//import { renderRichText } from "@storyblok/react";
 
 
 
 
 export default function TextSection({ blok }) {
-  // const renderedRichText = renderRichText(blok.richtext);
-  // console.log(renderedRichText);
+   const renderedRichText = renderRichText(blok.text);
+  //console.log(renderedRichText);
   return (
     <section
       {...storyblokEditable(blok)}
@@ -20,7 +20,7 @@ export default function TextSection({ blok }) {
       <SmallWidth>
         <H2>{blok?.title}</H2>
       
-        <Text>lorem ipsum</Text>
+        <Text><div  dangerouslySetInnerHTML={{    __html: renderedRichText  }}></div></Text>
       </SmallWidth>
     </section>
   );
