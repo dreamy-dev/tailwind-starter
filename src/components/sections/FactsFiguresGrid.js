@@ -1,5 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import H2 from "../typography/H2";
+import Text from "../typography/Text";
 import ContentWidth from "../layouts/ContentWidth";
 
 const FactsAndFiguresGrid = ({ blok }) => {
@@ -8,6 +9,7 @@ const FactsAndFiguresGrid = ({ blok }) => {
       <ContentWidth>
         <div className="col-span-12 max-w-full mx-auto">
           <H2 styles="text-center mb-4">{blok.title}</H2>
+          <Text styles="text-center mb-4">{blok.text}</Text>
           <div className="bg-secondaryBgcGray py-8 sm:py-10">
             <div className="mx-auto max-w-full">
               <dl
