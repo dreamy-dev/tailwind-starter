@@ -84,7 +84,7 @@ storyblokInit({
     "services-item": ServiceTeaserItem,
     "table-section": TableGrid,
     // "table-item": TableItem,
-    "contact-section": Contact,
+  
     "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
     "cta-small": DownloadItem,
@@ -101,6 +101,7 @@ storyblokInit({
     "schienenfahrzeuge_grid": SchienenfahrzeugeGrid,
     "schienenfahrzeuge_item": SchienenfahrzeugeItem,
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
+    "contact-section": Contact,
     "news-teaser": NewsTeaser,
     //"contact-field": Contact,
   },
