@@ -45,6 +45,8 @@ import DownloadSecondaryGrid from "./sections/DownloadSecondaryGrid";
 import DownloadSecondaryItem from "./sections/DownloadSecondaryItem";
 import CorporateGorvernanceGrid from "./sections/CorporateCovernanceGrid";
 import CorporateGorvernanceTeaser from "./sections/CorporateGovernanceTeaser";
+import SchienenfahrzeugeGrid from "./sections/SchienenfahrzeugeGrid";
+import SchienenfahrzeugeItem from "./sections/SchienenfahrzeugeItem";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -94,6 +96,8 @@ storyblokInit({
     "download_item": DownloadSecondaryItem,
     "corporate-governance-teaser": CorporateGorvernanceGrid,
     "page-teaser-mini": CorporateGorvernanceTeaser,
+    "schienenfahrzeuge_grid": SchienenfahrzeugeGrid,
+    "schienenfahrzeuge_item": SchienenfahrzeugeItem,
     //"contact-field": Contact,
   },
 });
