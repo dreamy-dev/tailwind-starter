@@ -24,6 +24,19 @@ export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
       <html lang="en">
+        <head>
+          <Script>
+            { `
+            console.log("Matomo test with Storyblok")
+            var _mtm = window._mtm = window._mtm || [];
+              _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+              (function() {
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.async=true; g.src='https://matomo.gateb.com/js/container_9iU2twN3.js'; s.parentNode.insertBefore(g,s);
+              })();
+              `}
+          </Script>
+        </head>
         <body className={fontFamily.className + ' overflow-x-hidden flex flex-col min-h-screen'}>
           <Header />
           <main>{children}</main>

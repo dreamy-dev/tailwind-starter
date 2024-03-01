@@ -1,11 +1,21 @@
 "use client";
 
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { useEffect, useRef } from "react";
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import H2 from "../../components/typography/H2";
 import ContentWidth from "../layouts/ContentWidth";
 
 export default function Career({ blok }) {
+  useEffect(() => {
+    let careerEl = careerRef.current;
+
+    careerEl?.addEventListener("click", () => {
+      console.log("publicationEl", careerEl);
+      var _paq = (window._paq = window._paq || []);
+      _paq.push(["trackEvent", "Potenzielle Mitarbeiter", "Karierre Block"]);
+    });
+  });
   return (
     <section {...storyblokEditable(blok)} className="bg-white mt-16 mb-16">
       <ContentWidth>
@@ -17,7 +27,7 @@ export default function Career({ blok }) {
             {blok?.text}
           </p>
           <div className="flex justify-center">
-            <ButtonPrimary buttonText={blok?.cta_button_text} href={blok?.cta_button_link}></ButtonPrimary>
+            <ButtonPrimary ref={careerRef} buttonText={blok?.cta_button_text} href={blok?.cta_button_link}></ButtonPrimary>
           </div>
         </div>
       </ContentWidth>
