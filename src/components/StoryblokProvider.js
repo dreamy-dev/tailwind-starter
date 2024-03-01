@@ -51,6 +51,8 @@ import SchienenfahrzeugeWrapper from "./sections/SchienenfahrzeugeWrapper";
 import NewsTeaser from "./sections/NewsSection";
 import AccordionWrapper from "./sections/AccordionWrapper";
 import Intro from "./sections/Intro";
+import SuccessStoryGrid from "./sections/SuccessStoryGrid";
+import SuccessStory from "./sections/SuccessStory";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -104,9 +106,11 @@ storyblokInit({
     "schienenfahrzeuge_grid": SchienenfahrzeugeGrid,
     "schienenfahrzeuge_item": SchienenfahrzeugeItem,
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
-    //"contact-section": Contact,
     "news-teaser": NewsTeaser,
     "image-right": Intro,
+    "successstory": SuccessStory,
+    "success-story-grid":SuccessStoryGrid,
+     //"contact-section": Contact,
     //"contact-field": Contact,
   },
 });
