@@ -107,7 +107,7 @@ storyblokInit({
     "contact-section": Contact,
     "news-teaser": NewsTeaser,
     "image-right": Intro,
-    //"contact-field": Contact,
+    "contact-field": Contact,
   },
 });
 

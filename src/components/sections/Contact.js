@@ -5,14 +5,13 @@ import H4 from "../typography/H4";
 import Text from "../typography/Text";
 
 export default function Contact({blok}) {
-   //console.log(blok)
+
   return (
     <section
       className="py-5 lg:py-24 bg-stadlergradient"
       {...storyblokEditable(blok)}
     >
-      <div>Text teeeeeeeeeest</div>
-      {/* <SmallWidth>
+      <SmallWidth>
         <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
           <div className="w-full xl:col-span-4">
             <img
@@ -36,7 +35,7 @@ export default function Contact({blok}) {
             <ul className="flex-col text-white">
               <li>
                 <H4 textColor="white" styles="mb-4">
-                  {blok?.text}
+                  {blok?.subtitle}
                 </H4>
               </li>
               <li className="mb-4 flex items-center">
@@ -54,7 +53,7 @@ export default function Contact({blok}) {
                     stroke="white"
                   />
                 </svg>
-                {blok?.phone }
+                {blok?.phonenumber }
               </li>
               <li className="flex items-center">
                 <svg
@@ -76,7 +75,7 @@ export default function Contact({blok}) {
             </ul>
           </div>
         </div>
-      </SmallWidth> */}
+      </SmallWidth>
     </section>
   );
 }
