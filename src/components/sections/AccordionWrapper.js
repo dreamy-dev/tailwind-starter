@@ -5,7 +5,7 @@ import SmallWidth from "../layouts/SmallWidth";
 import H2 from "../typography/H2";
 
 
-const AccordionGrid = ({blok}) => {
+const AccordionWrapper = ({blok}) => {
   return (
     <section className="bg-white dark:bg-gray-900">
       <SmallWidth>
@@ -15,7 +15,7 @@ const AccordionGrid = ({blok}) => {
 
           <div id="accordion-flush" {...storyblokEditable(blok)}>
          
-              {blok?.accordion_wrapper.map((nestedBlok) => (
+              {blok?.accordion_item.map((nestedBlok) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
               ))}
          
@@ -26,5 +26,4 @@ const AccordionGrid = ({blok}) => {
   );
 };
 
-export default AccordionGrid;
-
+export default AccordionWrapper;

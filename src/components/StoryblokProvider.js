@@ -49,6 +49,7 @@ import SchienenfahrzeugeGrid from "./sections/SchienenfahrzeugeGrid";
 import SchienenfahrzeugeItem from "./sections/SchienenfahrzeugeItem";
 import SchienenfahrzeugeWrapper from "./sections/SchienenfahrzeugeWrapper";
 import NewsTeaser from "./sections/NewsSection";
+import AccordionWrapper from "./sections/AccordionWrapper";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -76,6 +77,7 @@ storyblokInit({
     "image-left": Description,
     "accordion-item": AccordionItem,
     "accordion-grid": AccordionGrid,
+    "accordion-wrapper": AccordionWrapper,
     "highlights-grid": AdvantagesGrid,
     "highlights-item": AdvantageItem,
     "portrait-grid": PortraitGrid,
