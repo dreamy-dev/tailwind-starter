@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react/rsc";
+import { render } from 'storyblok-rich-text-react-renderer';
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import SmallWidth from "../../components/layouts/SmallWidth";
 import H1 from "../../components/typography/H1";
@@ -30,7 +31,7 @@ const HeroText = ({ breadcrumbs = [], withCTA, buttonText, blok }) => {
         )}
         <H1>{blok?.title}</H1>
         <Lead>
-          {blok?.lead}
+        {render(blok.text)}
         </Lead>
       {blok?.showbutton ? 
          <ButtonPrimary
