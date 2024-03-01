@@ -70,7 +70,9 @@ export default function Contact({blok}) {
                     stroke="white"
                   />
                 </svg>
+              <a type="email" href="mailto:ir@stadlerrail.com">
                 {blok?.email }
+                </a>
               </li>
             </ul>
           </div>
