@@ -50,6 +50,7 @@ import SchienenfahrzeugeItem from "./sections/SchienenfahrzeugeItem";
 import SchienenfahrzeugeWrapper from "./sections/SchienenfahrzeugeWrapper";
 import NewsTeaser from "./sections/NewsSection";
 import AccordionWrapper from "./sections/AccordionWrapper";
+import Intro from "./sections/Intro";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -105,6 +106,7 @@ storyblokInit({
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
     "contact-section": Contact,
     "news-teaser": NewsTeaser,
+    "image-right": Intro,
     //"contact-field": Contact,
   },
 });
