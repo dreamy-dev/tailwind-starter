@@ -104,7 +104,7 @@ storyblokInit({
     "schienenfahrzeuge_grid": SchienenfahrzeugeGrid,
     "schienenfahrzeuge_item": SchienenfahrzeugeItem,
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
-    "contact-section": Contact,
+    //"contact-section": Contact,
     "news-teaser": NewsTeaser,
     "image-right": Intro,
     "contact-field": Contact,
