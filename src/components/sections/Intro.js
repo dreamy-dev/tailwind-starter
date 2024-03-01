@@ -1,4 +1,5 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
+import { render } from 'storyblok-rich-text-react-renderer';
 import ContentWidth from "../layouts/ContentWidth";
 import H2 from "../typography/H2";
 
@@ -11,7 +12,7 @@ export default function Intro({blok}) {
         <div className="font-normal sm:text-lg">
           <H2>{blok?.title}</H2>
           <p className="mb-4 mt-6">
-          {blok?.text}
+          {render(blok.text)}
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">

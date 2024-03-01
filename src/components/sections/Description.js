@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable } from "@storyblok/react/rsc";
+import { render } from 'storyblok-rich-text-react-renderer';
 import H2 from "../typography/H2";
 
 export default function Description({blok}) {
@@ -10,7 +11,7 @@ export default function Description({blok}) {
         <div className="mt-4 md:mt-0">
           <H2 styles="mb-8">{blok?.title}</H2>
           <p className="mb-6 font-normal text-black-500 md:text-lg">
-            {blok?.text.content.map((item) => item.content[0].text)}
+          {render(blok.text)}
           </p>
         </div>
       </div>
