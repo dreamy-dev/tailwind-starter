@@ -1,4 +1,3 @@
-
 "use client";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import Button from "../elements/ButtonSecondary";
@@ -19,8 +18,8 @@ const navigation = {
       href: "#",
       icon: (props) => (
         <svg
-          width="22"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 22 20"
           fill="none"
           {...props}
@@ -46,24 +45,38 @@ const navigation = {
       ),
     },
     {
-      name: "Twitter",
+      name: "Youtbe",
+      href: "#",
+      icon: (props) => (
+       <img src="/youtube.svg"/>
+      ),
+    },
+    {
+      name: "Facebook",
+      href: "#",
+      icon: (props) => (
+   <img src="/facebook.svg"/>
+      ),
+    },
+    {
+      name: "Xing",
       href: "#",
       icon: (props) => (
         <svg
-          {...props}
-          width="26"
-          height="27"
-          viewBox="0 0 26 27"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M25.3477 0.271484L16.759 15.3546L22.9965 26.2715H16.4329L10.1946 15.3546L18.8064 0.271484H25.3477ZM7.44804 3.50718L11.056 9.81511L6.07441 17.8459H0L4.91074 9.90816L1.27981 3.50718H7.44804Z"
-            fill="white"
-          />
-        </svg>
+        {...props}
+        width="26"
+        height="27"
+        viewBox="0 0 26 27"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M25.3477 0.271484L16.759 15.3546L22.9965 26.2715H16.4329L10.1946 15.3546L18.8064 0.271484H25.3477ZM7.44804 3.50718L11.056 9.81511L6.07441 17.8459H0L4.91074 9.90816L1.27981 3.50718H7.44804Z"
+          fill="white"
+        />
+      </svg>
       ),
     },
   ],

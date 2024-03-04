@@ -42,23 +42,8 @@ const SuccessStoryGrid = ({ blok }) => {
         <div className="col-span-12">
           <div className="relative">
             <div className="lg:pl-20 2xl:pl-0 mb-10">
-              <H2 styles={h2Styles}>{blok?.title}</H2>
+              <H2>{blok?.title}</H2>
             </div>
-            {/* {isMobile && (
-              <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">
-                <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
-                  {items.map((_, idx) => (
-                    <button key={idx} onClick={() => setCurrent(idx)}>
-                      <div
-                        className={` w-8 h-1 ${
-                          idx === current ? "bg-primary" : "bg-greyDarken-100"
-                        }`}
-                      ></div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )} */}
           </div>
           <div className="flex lg:pl-20 flex-col items-center justify-between 2xl:pl-0">
             <MotionConfig
@@ -69,6 +54,7 @@ const SuccessStoryGrid = ({ blok }) => {
                   {...storyblokEditable(blok)}
                   className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]"
                 >
+                 
                   {blok.success_stories.map((nestedBlok) => (
                     <StoryblokComponent
                       blok={nestedBlok}

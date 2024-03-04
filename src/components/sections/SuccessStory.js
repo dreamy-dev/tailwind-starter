@@ -10,7 +10,7 @@ import {  motion } from "framer-motion";
 const SuccessStory = ({ current, idx, blok }) => {
   return (
     <motion.div {...storyblokEditable(blok)}
-    
+    key={idx}
       className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
       animate={{
         translateX: `calc(-${current * 100}% - ${current * 2}rem)`,
