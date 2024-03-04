@@ -51,7 +51,8 @@ import SchienenfahrzeugeWrapper from "./sections/SchienenfahrzeugeWrapper";
 import NewsTeaser from "./sections/NewsSection";
 import AccordionWrapper from "./sections/AccordionWrapper";
 import Intro from "./sections/Intro";
-//import SuccessStoryGrid from "./sections/SuccessStoryGrid";
+import SuccessStoryGrid from "./sections/SuccessStoryGrid";
+import SuccessStoryContent from "./sections/SuccessStoryContent";
 //import SuccessStory from "./sections/SuccessStory";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -109,7 +110,8 @@ storyblokInit({
     "news-teaser": NewsTeaser,
     "image-right": Intro,
     //"successstory": SuccessStory,
-    //"success-story-grid":SuccessStoryGrid,
+    "success-story-grid": SuccessStoryGrid,
+    "successstory": SuccessStoryContent
      //"contact-section": Contact,
     //"contact-field": Contact,
   },

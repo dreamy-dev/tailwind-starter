@@ -54,13 +54,13 @@ const SuccessStoryGrid = ({ blok }) => {
                   {...storyblokEditable(blok)}
                   className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]"
                 >
-                 
                   {blok.success_stories.map((nestedBlok) => (
-                    <StoryblokComponent
+                    <p>{nestedBlok}</p>
+                  ))}
+                  {/* <StoryblokComponent
                       blok={nestedBlok}
                       key={nestedBlok?._uid}
-                    />
-                  ))}
+                    /> */}
                 </motion.div>
               </div>
             </MotionConfig>
