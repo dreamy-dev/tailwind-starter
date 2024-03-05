@@ -14,7 +14,6 @@ const SuccessStory = ({ current, idx, blok }) => {
       className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
       animate={{
         translateX: `calc(-${current * 100}% - ${current * 2}rem)`,
-
         opacity: idx === current || idx === current + 1 ? 1 : 0.3,
       }}
     >
@@ -23,7 +22,6 @@ const SuccessStory = ({ current, idx, blok }) => {
         src={card.img}
         alt=""
       />
-
       <div className="p-5 ">
         <div className="mb-4">
           <H3>{card.title}</H3>
