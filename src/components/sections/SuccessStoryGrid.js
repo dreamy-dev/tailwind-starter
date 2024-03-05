@@ -81,7 +81,7 @@ const SuccessStoryGrid = ({ blok }) => {
                               <Text>{nestedBlok.content?.teaser}</Text>
                           </div>
                           <Link
-                            href={'/successstories/' + nestedBlok.content.slug}
+                            href={'/successstories/' + nestedBlok?.slug}
                             className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-sm font-medium text-center"
                           >
                               <img
