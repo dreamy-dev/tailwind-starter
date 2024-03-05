@@ -40,7 +40,7 @@ const SuccessStoryGrid = ({ blok }) => {
   };
 
   return (
-    <section className="pb-5 lg:pb-24 bg-white overflow-hidden">
+    <section className="py-5 lg:py-24 bg-white overflow-hidden">
       <ContentWidth>
         <div className="col-span-12">
           <div className="relative">
