@@ -10,7 +10,7 @@ const AccordionWrapperBlueLine = ({ blok }) => {
             <H4 styles="my-6">{blok?.text_location}</H4>
           </div>
           <div {...storyblokEditable(blok)}>
-          {blok?.accordion_items.map((nestedBlok) => (
+          {blok?.accordion_item.map((nestedBlok) => (
            <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
          ))}
         </div>
