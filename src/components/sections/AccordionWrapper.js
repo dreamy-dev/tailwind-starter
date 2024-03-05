@@ -46,7 +46,7 @@ const AccordionWrapper = ({blok}) => {
         <div className="py-5 border-b border-gray-200 dark:border-gray-700">
         <div id="accordion-flush" {...storyblokEditable(blok)}>
          
-         {blok?.accordion_items.map((nestedBlok) => (
+         {blok.accordion_items.map((nestedBlok) => (
            <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
          ))}
     
