@@ -8,6 +8,7 @@ const AccordionTextDownloadItem = ({ blok }) => {
           <ul>
             <div>
               <li className=" my-4 text-xl flex justify-between items-center">
+              <p className="w-1/2">{blok?.text_location}</p>
                 <p className="w-1/2">{blok?.text_certifications}</p>
 
                 <a className="text-primary" href={blok?.download_en.url}>

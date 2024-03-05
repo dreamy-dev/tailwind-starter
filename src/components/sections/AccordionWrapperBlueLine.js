@@ -7,7 +7,7 @@ const AccordionWrapperBlueLine = ({ blok }) => {
       <div>
         <div className="max-w-full col-span-12">
           <div className=" border-b-2 border-primary">
-            <H4 styles="my-6">{blok?.text_location}</H4>
+            <H4 styles="my-6">{blok?.title}</H4>
           </div>
           <div {...storyblokEditable(blok)}>
           {blok?.accordion_item.map((nestedBlok) => (
