@@ -3,8 +3,7 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 const AccordionTextDownloadItem = ({ blok }) => {
   return (
     <div {...storyblokEditable(blok)}>
-      <div>
-       
+     
           <ul>
             <div>
               <li className=" my-4 text-xl flex justify-between items-center">
@@ -21,8 +20,6 @@ const AccordionTextDownloadItem = ({ blok }) => {
               <div className="border-b mb-6"></div>
             </div>
           </ul>
-        </div>
-    
     </div>
   );
 };
