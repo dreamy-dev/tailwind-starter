@@ -51,8 +51,11 @@ import SchienenfahrzeugeWrapper from "./sections/SchienenfahrzeugeWrapper";
 import NewsTeaser from "./sections/NewsSection";
 import AccordionWrapper from "./sections/AccordionWrapper";
 import Intro from "./sections/Intro";
-//import SuccessStoryGrid from "./sections/SuccessStoryGrid";
-//import SuccessStory from "./sections/SuccessStory";
+import SuccessStoryGrid from "./sections/SuccessStoryGrid";
+import SuccessStory from "./sections/SuccessStory";
+import AccordionTableItem from "./sections/AccordionTableItem";
+import AccordionWrapperBlueLine from "./sections/AccordionWrapperBlueLine";
+import AccordionTextDownloadItem from "./sections/AccordionTextDownloadItem";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -81,6 +84,9 @@ storyblokInit({
     "accordion-item": AccordionItem,
     "accordion-grid": AccordionGrid,
     "accordion-wrapper": AccordionWrapper,
+    "according-table-item": AccordionTableItem,
+    "accordion-download-wrapper-blueline": AccordionWrapperBlueLine,
+    "accordion-text-download-item": AccordionTextDownloadItem,
     "highlights-grid": AdvantagesGrid,
     "highlights-item": AdvantageItem,
     "portrait-grid": PortraitGrid,
@@ -108,8 +114,8 @@ storyblokInit({
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
     "news-teaser": NewsTeaser,
     "image-right": Intro,
-    //"successstory": SuccessStory,
-    //"success-story-grid":SuccessStoryGrid,
+    "successstory": SuccessStory,
+    "success-story-grid":SuccessStoryGrid,
      //"contact-section": Contact,
     //"contact-field": Contact,
   },
