@@ -1,4 +1,5 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
+import H4 from "../typography/H4";
 
 const AccordionWrapperBlueLine = ({ blok }) => {
   return (
