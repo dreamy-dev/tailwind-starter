@@ -1,3 +1,4 @@
+"use client"
 import { motion } from "framer-motion";
 import { useState } from "react";
 import DoubleCard from "./DoubleCard";
@@ -7,6 +8,7 @@ import TeaserMobilitySolutions from "./TeaserMobilitySolutions";
 import H3 from "../typography/H3";
 import Text from "../typography/Text";
 import Link from "../typography/Link";
+import TrainSequence from "./TrainSequence";
 
 const tabs = {
   categories: [
@@ -217,12 +219,15 @@ const TrainCarousel = (props) => {
           </a>
         </div>
       </ContentWidth>
-      <FullWidth>
+      {/* <FullWidth>
         <img
           src={tabs.categories[selectedCategory].image}
           className="col-span-12 w-full"
         />
-      </FullWidth>
+      </FullWidth> */}
+       <div className="w-full">
+        <TrainSequence selectedCategory={selectedCategory}></TrainSequence>
+      </div>
       <ContentWidth>
         <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
           <div className="flex flex-row items-start justify-center">
