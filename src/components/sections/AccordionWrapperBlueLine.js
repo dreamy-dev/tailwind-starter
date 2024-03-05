@@ -1,4 +1,4 @@
-import { storyblokEditable } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import H4 from "../typography/H4";
 
 const AccordionWrapperBlueLine = ({ blok }) => {
@@ -9,9 +9,9 @@ const AccordionWrapperBlueLine = ({ blok }) => {
             <H4 styles="my-6">{blok?.title}</H4>
           </div>
           <div {...storyblokEditable(blok)}>
-          {/* {blok.accordion_item.map((nestedBlok) => (
+          {blok.accordion_item.map((nestedBlok) => (
            <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
-         ))} */}
+         ))}
         </div>
       </div>
     </div>
