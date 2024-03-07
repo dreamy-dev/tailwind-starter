@@ -35,7 +35,6 @@ const HomePageCaroucel = ({
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -95,7 +94,6 @@ const HomePageCaroucel = ({
                       translateX: `calc(-${current * 100}% - ${
                         current * 2
                       }rem)`,
-
                       opacity:
                         idx === current || idx === current + 1 ? 1 : 0.3,
                     }}
@@ -105,13 +103,10 @@ const HomePageCaroucel = ({
                       src={card.img}
                       alt=""
                     />
-
                     <div className="p-5 ">
                       <div className="mb-4">
                         <H3>{card.title}</H3>
                       </div>
-                      
-
                       <div className="mb-14">
                         <Text>{card.text}</Text>
                       </div>
@@ -157,7 +152,6 @@ const HomePageCaroucel = ({
             </motion.div>
           </div>
         </div>
-       
       </div>
     </ContentWidth>
   </section>

@@ -52,7 +52,7 @@ import NewsTeaser from "./sections/NewsSection";
 import AccordionWrapper from "./sections/AccordionWrapper";
 import Intro from "./sections/Intro";
 import SuccessStoryGrid from "./sections/SuccessStoryGrid";
-import SuccessStory from "./sections/SuccessStory";
+import SuccessStoryContent from "./sections/SuccessStoryContent";
 import AccordionTableItem from "./sections/AccordionTableItem";
 import AccordionWrapperBlueLine from "./sections/AccordionWrapperBlueLine";
 import AccordionTextDownloadItem from "./sections/AccordionTextDownloadItem";
@@ -114,8 +114,9 @@ storyblokInit({
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
     "news-teaser": NewsTeaser,
     "image-right": Intro,
-    "successstory": SuccessStory,
-    "success-story-grid":SuccessStoryGrid,
+    //"successstory": SuccessStory,
+    "success-story-grid": SuccessStoryGrid,
+    "successstory": SuccessStoryContent
      //"contact-section": Contact,
     //"contact-field": Contact,
   },
