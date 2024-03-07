@@ -4,13 +4,9 @@ import H2 from "../typography/H2";
 import H4 from "../typography/H4";
 import Text from "../typography/Text";
 
-export default function Contact({blok}) {
-
+const Contact = ({ blok }) => {
   return (
-    <section
-      className="py-5 lg:py-24 bg-stadlergradient"
-      {...storyblokEditable(blok)}
-    >
+    <section className="py-5 lg:py-24 bg-stadlergradient" {...storyblokEditable(blok)}>
       <SmallWidth>
         <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
           <div className="w-full xl:col-span-4">
@@ -23,22 +19,19 @@ export default function Contact({blok}) {
           <div className="w-full xl:col-span-8">
             <div className=" tracking-tight">
               <H2 styles="mb-8 text-white">
-                {blok?.Title ?? "Ihr Kontakt"}
+                {blok?.Title}
               </H2>
             </div>
             <div className="mb-8 font-light md:text-lg text-white">
-              <Text>
-                {blok?.text ??
-                  "Wo andere Probleme sehen, schaffen wir für Sie Lösungen, die ökologisch und wirtschaftlich begeistern. Bei uns stehen Zuverlässigkeit und höchste Qualität an erster Stelle. Und wir denken langfristig. In enger Zusammenarbeit begleiten wir Sie mit viel Ambition, damit Sie Ihre hochgesteckten Ziele im Bereich Bahn und Mobilität erreichen."}
-              </Text>
+              <Text>{blok?.text }</Text>
             </div>
-            <ul className="flex-col text-white">
-              <li>
+            <div className="flex-col text-white">
+              <div>
                 <H4 textColor="white" styles="mb-4">
                   {blok?.subtitle}
                 </H4>
-              </li>
-              <li className="mb-4 flex items-center">
+              </div>
+              <div className="mb-4 flex items-center">
                 <svg
                   className="mr-2 w-5 h-5"
                   width="20"
@@ -54,8 +47,8 @@ export default function Contact({blok}) {
                   />
                 </svg>
                 {blok?.phonenumber }
-              </li>
-              <li className="flex items-center">
+              </div>
+              <div className="flex items-center">
                 <svg
                   className="mr-2 w-5 h-5"
                   width="20"
@@ -70,14 +63,16 @@ export default function Contact({blok}) {
                     stroke="white"
                   />
                 </svg>
-              <a type="email" href="mailto:ir@stadlerrail.com">
-                {blok?.email }
+                <a type="email" className="bg-transparent border-none" href="mailto:ir@stadlerrail.com">
+                  {blok?.email }
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </SmallWidth>
     </section>
   );
 }
+
+export default Contact;
