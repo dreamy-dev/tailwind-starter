@@ -91,7 +91,7 @@ module.exports = {
         "hero-career": "url('/career1.jpg')",
       },
       fontFamily: {
-        sans: ["var(--font-montserrat)"],
+        sans: ["var(--font-stadler)"],
       },
       height: {
         700: "700px",
