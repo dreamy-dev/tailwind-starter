@@ -53,8 +53,7 @@ import AccordionWrapper from "./sections/AccordionWrapper";
 import Intro from "./sections/Intro";
 import SuccessStoryGrid from "./sections/SuccessStoryGrid";
 import SuccessStoryContent from "./sections/SuccessStoryContent";
-//import SuccessStory from "./sections/SuccessStory";
-//import SubHero from "./sections/SubHero";
+import GlobalReference from "./sections/Global_Reference";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 
@@ -90,11 +89,9 @@ storyblokInit({
     "services-item": ServiceTeaserItem,
     "table-section": TableGrid,
     // "table-item": TableItem,
-  
     "solution-item": SolutionsGridItem,
     "solutions-grid": SolutionsGrid,
     "cta-small": DownloadItem,
-    //cta: ButtonPrimary,
     "reports-grid": ReportsGrid,
     "reports-item": ReportsItem,
     "image-tripple-banner": ImageTrippleBanner,
@@ -109,11 +106,10 @@ storyblokInit({
     "schienenfahrzeuge_wrapper": SchienenfahrzeugeWrapper,
     "news-teaser": NewsTeaser,
     "image-right": Intro,
-    //"successstory": SuccessStory,
     "success-story-grid": SuccessStoryGrid,
-    "successstory": SuccessStoryContent
-     //"contact-section": Contact,
-    //"contact-field": Contact,
+    "successstory": SuccessStoryContent,
+    "contact-field": Contact,
+    "global_reference": GlobalReference
   },
 });
 
