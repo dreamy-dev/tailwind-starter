@@ -54,6 +54,10 @@ import Intro from "./sections/Intro";
 import SuccessStoryGrid from "./sections/SuccessStoryGrid";
 import SuccessStoryContent from "./sections/SuccessStoryContent";
 import GlobalReference from "./sections/Global_Reference";
+import AccordionTableItem from "./sections/AccordionTableItem";
+import AccordionWrapperBlueLine from "./sections/AccordionWrapperBlueLine";
+import AccordionTextDownloadItem from "./sections/AccordionTextDownloadItem";
+//import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
 
@@ -81,6 +85,9 @@ storyblokInit({
     "accordion-item": AccordionItem,
     "accordion-grid": AccordionGrid,
     "accordion-wrapper": AccordionWrapper,
+    "according-table-item": AccordionTableItem,
+    "accordion-download-wrapper-blueline": AccordionWrapperBlueLine,
+    "accordion-text-download-item": AccordionTextDownloadItem,
     "highlights-grid": AdvantagesGrid,
     "highlights-item": AdvantageItem,
     "portrait-grid": PortraitGrid,

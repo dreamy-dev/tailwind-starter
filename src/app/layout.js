@@ -4,13 +4,51 @@ import Script from "next/script";
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import { Montserrat } from "next/font/google";
+import localFont from 'next/font/local';
 
 import "./globals.css";
 
-const fontFamily = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
+3	
+const fontStadler = localFont({
+  src: [
+    {
+      path: '../../public/fonts/StadlerType_W_Lt.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/StadlerType_W_Rg.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/StadlerType_W_It.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/StadlerType_W_Md.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/StadlerType_W_Md.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/StadlerType_W_SBd.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-stadler',
 });
+
+// const fontFamily = Montserrat({
+//   subsets: ["latin"],
+//   variable: "--font-montserrat",
+// });
 //const mySchema = cloneDeep(RichTextSchema);
 
 storyblokInit({
@@ -24,7 +62,20 @@ export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
       <html lang="en">
-        <body className={fontFamily.className + ' overflow-x-hidden flex flex-col min-h-screen'}>
+        <head>
+          <Script>
+            { `
+            console.log("Matomo test with Storyblok")
+            var _mtm = window._mtm = window._mtm || [];
+              _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+              (function() {
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.async=true; g.src='https://matomo.gateb.com/js/container_9iU2twN3.js'; s.parentNode.insertBefore(g,s);
+              })();
+              `}
+          </Script>
+        </head>
+        <body className={fontStadler.className + ' overflow-x-hidden flex flex-col min-h-screen'}>
           <Header />
           <main>{children}</main>
           <Footer />

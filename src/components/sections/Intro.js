@@ -21,11 +21,6 @@ export default function Intro({blok}) {
             src={blok?.image.filename}
             alt="office content 1"
           />
-          <img
-            className="object-cover object-center h-96 scale-100 mt-4  lg:mt-10"
-           src={blok?.imageTwo.filename}
-            alt="office content 2"
-          />
         </div>
       </div>
         </div>
