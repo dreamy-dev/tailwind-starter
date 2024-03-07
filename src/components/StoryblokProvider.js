@@ -57,6 +57,7 @@ import GlobalReference from "./sections/Global_Reference";
 import AccordionTableItem from "./sections/AccordionTableItem";
 import AccordionWrapperBlueLine from "./sections/AccordionWrapperBlueLine";
 import AccordionTextDownloadItem from "./sections/AccordionTextDownloadItem";
+import NewsBody from "./sections/NewsBody";
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -116,6 +117,7 @@ storyblokInit({
     "success-story-grid": SuccessStoryGrid,
     "successstory": SuccessStoryContent,
     "contact-field": Contact,
+    "news": NewsBody,
     "global_reference": GlobalReference
   },
 });
