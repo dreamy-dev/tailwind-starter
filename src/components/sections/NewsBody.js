@@ -1,3 +1,5 @@
+import { storyblokEditable } from "@storyblok/react/rsc";
+
 import ContentWidth from "../layouts/ContentWidth";
 import Text from "../typography/Text";
 
