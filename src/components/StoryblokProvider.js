@@ -58,6 +58,8 @@ import AccordionTableItem from "./sections/AccordionTableItem";
 import AccordionWrapperBlueLine from "./sections/AccordionWrapperBlueLine";
 import AccordionTextDownloadItem from "./sections/AccordionTextDownloadItem";
 import NewsBody from "./sections/NewsBody";
+import MedienmitteilungenBody from "./sections/MedienmitteilungenBody";
+
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -118,6 +120,7 @@ storyblokInit({
     "successstory": SuccessStoryContent,
     "contact-field": Contact,
     "news": NewsBody,
+    "medienmitteilungen": MedienmitteilungenBody,
     "global_reference": GlobalReference
   },
 });
