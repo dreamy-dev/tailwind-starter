@@ -5,6 +5,7 @@ import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import SmallWidth from "../../components/layouts/SmallWidth";
 import H1 from "../../components/typography/H1";
 import Lead from "../../components/typography/Lead";
+import Breadcrumbs from "./Breadcrumbs";
 
 const HeroText = ({ breadcrumbs = [], withCTA, buttonText, blok }) => {
   return (
@@ -13,7 +14,8 @@ const HeroText = ({ breadcrumbs = [], withCTA, buttonText, blok }) => {
       className="bg-white dark:bg-gray-900 py-24"
     >
       <SmallWidth>
-        {breadcrumbs.length > 0 && (
+        <Breadcrumbs />
+        {/* {breadcrumbs.length > 0 && (
           <div className="flex font-normal text-gray-600 pb-3">
             {breadcrumbs.map((breadcrumb, index) => (
               <div key={index}>
@@ -28,16 +30,16 @@ const HeroText = ({ breadcrumbs = [], withCTA, buttonText, blok }) => {
               </div>
             ))}
           </div>
-        )}
+        )} */}
         <H1>{blok?.title}</H1>
         <Lead>
-          {blok?.lead}
+          {render(blok?.lead)}
         </Lead>
         {blok?.showbutton ? 
          <ButtonPrimary
          position="left"
          buttonText={blok?.buttontext}
-         href={blok?.buttonlink}
+         href={blok?.buttonlink.url}
        />
       : 
       ''}
