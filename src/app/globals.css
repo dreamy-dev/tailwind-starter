@@ -24,3 +24,26 @@ h4 {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+.richtext p, .richtext li, .richtext ol, .richtext ul, .richtext a {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+.richtext h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.richtext h3 {
+  font-size: 1.5rem;;
+  line-height: 2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.richtext h4 {
+  font-size: 1.25rem;;
+  line-height: 1.75rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
