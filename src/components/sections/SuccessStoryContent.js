@@ -20,7 +20,7 @@ const SuccessStoryContent = ({ blok }) => {
         <div className="mb-14">
           <Text>{blok.teaser}</Text>
         </div>
-        <div className="mb-14">
+        <div className="mb-14 richtext">
           <Text>{render(blok.text)}</Text>
         </div>
       </div>

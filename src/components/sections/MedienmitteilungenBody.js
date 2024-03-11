@@ -14,7 +14,7 @@ function MedienmitteilungenBody({blok}) {
      
       <SuperSmallWidth>
       <div className="col-span-12 w-full">
-        <div className="text-md">
+        <div className="text-md richtext">
           {render(blok.text)}
         </div>
       </div>
