@@ -18,7 +18,7 @@ export default function TextSection({ blok }) {
     >
       <SmallWidth>
     
-      <div>{render(blok.text)}</div>
+      <div className="richtext">{render(blok.text)}</div>
       </SmallWidth>
     </section>
   );

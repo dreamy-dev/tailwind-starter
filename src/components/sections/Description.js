@@ -10,7 +10,7 @@ export default function Description({blok}) {
         <img src={blok?.image.filename} className="w-full" alt="full service" />
         <div className="mt-4 md:mt-0">
           <H2 styles="mb-8">{blok?.title}</H2>
-          <p className="mb-6 font-normal text-black-500 md:text-lg">
+          <p className="mb-6 font-normal text-black-500 md:text-lg richtext">
           {render(blok.text)}
           </p>
         </div>

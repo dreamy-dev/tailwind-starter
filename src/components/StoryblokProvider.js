@@ -81,7 +81,7 @@ storyblokInit({
     "image-full-width": ImageFullWidth,
     "hero-subpage": HeroText,
     //add correct connection to the page-teaser-mini
-    "page-teaser-mini": SimpleText,
+    // "page-teaser-mini": SimpleText,
     "video-teaser": Video,
     "hero-home": HomePageHero,
     "teaser-image-left": TeaserImageLeft,
