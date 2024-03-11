@@ -35,7 +35,7 @@ function ArticleHero({block}) {
           {block?.categories?.map((category, index) => (
             <span
               key={index}
-              className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+              className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
             >
               {category.content.category}
             </span>
