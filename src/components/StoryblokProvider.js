@@ -123,7 +123,7 @@ storyblokInit({
     "contact-field": Contact,
     "news": NewsBody,
     "medienmitteilungen": MedienmitteilungenBody,
-    "global_reference": GlobalReference
+    "global_contact_reference": GlobalReference
   },
 });
 
