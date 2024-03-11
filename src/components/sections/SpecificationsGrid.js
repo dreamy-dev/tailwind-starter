@@ -9,23 +9,10 @@ export default function SpecificationsGrid({blok}) {
     <section className="bg-white py-24 sm:py-32" {...storyblokEditable(blok)}>
       <ContentWidth>
         <div className="col-span-12 max-w-full">
-          {/* <div className="mx-auto max-w-2xl mb-16 lg:mx-0">
-            <H3>Der Beste seiner Klasse</H3>
-            <p className="mt-6 text-lg leading-8 text-lightGray">
-              Seit 2004 besteht der FLIRT160 erfolgreich verschiedene
-              klimatische Herausforderungen von Afrika bis zum Polarkreis. Es
-              ist die leidenschaftliche Hingabe zur höchster Qualität,
-              Flexibilität und Effizienz, die den FLIRT160 zu einem der
-              erfolgreichsten Regionalzüge seiner Klasse macht.
-            </p>
-          </div> */}
-          {/* <div className="mb-10">
-            <H4 textColor="black">Spezifikationen</H4>
-          </div> */}
+          <div className="mb-10">
+            <H4 textColor="black">{blok.title}</H4>
+          </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {/* {blok?.specifications_grid?.map((feature, index) => (
-              <SpecificationItem key={index} feature={feature} />
-            ))} */}
               {blok.specifications_grid.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
           ))}
