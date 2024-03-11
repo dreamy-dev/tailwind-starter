@@ -59,6 +59,10 @@ import AccordionWrapperBlueLine from "./sections/AccordionWrapperBlueLine";
 import AccordionTextDownloadItem from "./sections/AccordionTextDownloadItem";
 import NewsBody from "./sections/NewsBody";
 import MedienmitteilungenBody from "./sections/MedienmitteilungenBody";
+// import ProductCards from "./sections/ProductCards";
+import SpecificationsGrid from "./sections/SpecificationsGrid";
+import SpecificationItem from "./sections/SpecificationItem";
+
 
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -123,7 +127,11 @@ storyblokInit({
     "contact-field": Contact,
     "news": NewsBody,
     "medienmitteilungen": MedienmitteilungenBody,
-    "global_contact_reference": GlobalReference
+    "global_contact_reference": GlobalReference,
+    "global_reference": GlobalReference,
+    // "product-card": ProductCards,
+    "specifications-grid": SpecificationsGrid,
+    "specifications-item": SpecificationItem
   },
 });
 

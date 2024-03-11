@@ -9,7 +9,7 @@ async function fetchData(slug) {
     resolve_links: "url",
     version: "published",
     cv: isDev || isDraft ? Date.now() : undefined,
-    resolve_relations: ["global_contact_reference.reference", "success-story-grid.success_stories"]
+    resolve_relations: ["global_contact_reference.reference", "success-story-grid.success_stories", "news.categories"]
   };
 
   const storyblokApi = getStoryblokApi();

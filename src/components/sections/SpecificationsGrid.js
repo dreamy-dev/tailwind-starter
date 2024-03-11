@@ -1,52 +1,15 @@
-import H3 from "../typography/H3";
-import H4 from "../typography/H4";
+
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import Button from "../elements/ButtonSecondary";
 import ContentWidth from "../layouts/ContentWidth";
-const features = [
-  {
-    name: "Antrieb",
-    description: "Diesel / Vollelektrisch ",
-  },
-  {
-    name: "Sitzplätze",
-    description: "bis zu 250 Sitzplätze",
-  },
-  {
-    name: "Leistungsaufnahme unter Vollast",
-    description: "230 kw/h",
-  },
-  {
-    name: "Sitzplätze",
-    description: "bis zu 250 Sitzplätze",
-  },
-  {
-    name: "Leistung",
-    description: "1,5 kV / 3 kV / 10 kV",
-  },
-  {
-    name: "Leistungsaufnahme unter Vollast",
-    description: "230 kw/h",
-  },
-  {
-    name: "Leistungsaufnahme unter Vollast",
-    description: "230 kw/h",
-  },
-  {
-    name: "Sitzplätze",
-    description: "bis zu 250 Sitzplätze",
-  },
-  {
-    name: "Leistung",
-    description: "1,5 kV / 3 kV / 10 kV ",
-  },
-];
+import SpecificationItem from "./SpecificationItem";
 
-export default function Specification() {
+export default function SpecificationsGrid({blok}) {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-24 sm:py-32" {...storyblokEditable(blok)}>
       <ContentWidth>
         <div className="col-span-12 max-w-full">
-          <div className="mx-auto max-w-2xl mb-16 lg:mx-0">
+          {/* <div className="mx-auto max-w-2xl mb-16 lg:mx-0">
             <H3>Der Beste seiner Klasse</H3>
             <p className="mt-6 text-lg leading-8 text-lightGray">
               Seit 2004 besteht der FLIRT160 erfolgreich verschiedene
@@ -55,26 +18,26 @@ export default function Specification() {
               Flexibilität und Effizienz, die den FLIRT160 zu einem der
               erfolgreichsten Regionalzüge seiner Klasse macht.
             </p>
-          </div>
-          <div className="mb-10">
+          </div> */}
+          {/* <div className="mb-10">
             <H4 textColor="black">Spezifikationen</H4>
-          </div>
+          </div> */}
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <div key={index}>
-                <dt className="text-base text-black">{feature.name}</dt>
-                <dd className="mt-1 font-bold text-black">
-                  {feature.description}
-                </dd>
-              </div>
-            ))}
+            {/* {blok?.specifications_grid?.map((feature, index) => (
+              <SpecificationItem key={index} feature={feature} />
+            ))} */}
+              {blok.specifications_grid.map((nestedBlok) => (
+            <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
+          ))}
           </dl>
           <div className="block text-center mx-auto mt-16 ">
+            { blok.show_button &&
             <Button
               backgroundColorClass="bg-white"
               textColorClass="text-primary"
               borderColorClass="border-primary"
               position="center"
+              href={blok.link_URL.url}
               iconBefore={
                 <svg
                   width="16"
@@ -94,8 +57,9 @@ export default function Specification() {
                 </svg>
               }
             >
-              Kontakt aufnehmen
+              {blok.link_CTA}
             </Button>
+}
           </div>
         </div>
       </ContentWidth>
