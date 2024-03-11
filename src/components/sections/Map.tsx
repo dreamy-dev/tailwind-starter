@@ -70,9 +70,9 @@ const Map: React.FC<MapProps> = ({ props, title }) => {
               alt=""
             />
           </div>
-          <div className="pl-6 lg:pl-20 flex py-8 static w-full">
+          <div className="px-6 flex-column py-8 sm:-mt-20 static w-full">
             
-            <div className="md:w-1/3 w-1/2 mb-8 flex-column justify-start items-start">
+            <div className="w-full mb-4 flex-column justify-start items-start">
               <div className="flex justify-start items-center">
                 <div className="mr-3 w-3 h-3 bg-map-dark rounded-full"></div>
                 <div>Stadler vor Ort</div>
@@ -83,7 +83,7 @@ const Map: React.FC<MapProps> = ({ props, title }) => {
               </div>
             </div>
 
-            <div className="md:w-1/3 w-1/2">
+            <div className="w-full">
               <ButtonPrimary position="center" href="/#">
                 Alle Standorte
               </ButtonPrimary>
