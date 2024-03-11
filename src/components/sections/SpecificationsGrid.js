@@ -2,7 +2,7 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import Button from "../elements/ButtonSecondary";
 import ContentWidth from "../layouts/ContentWidth";
-import SpecificationItem from "./SpecificationItem";
+import H4 from "../typography/H4";
 
 export default function SpecificationsGrid({blok}) {
   return (
