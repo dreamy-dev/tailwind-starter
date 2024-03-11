@@ -70,7 +70,7 @@ const Map: React.FC<MapProps> = ({ props, title }) => {
               alt=""
             />
           </div>
-          <div className="pl-6 lg:pl-20 flex py-8 static w-full">
+          <div className="pl-6 lg:pl-20 md:flex flex-column py-8 static w-full">
             
             <div className="md:w-1/3 w-full mb-8 flex-column justify-start items-start">
               <div className="flex justify-start items-center">
