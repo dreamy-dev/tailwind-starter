@@ -127,6 +127,7 @@ storyblokInit({
     "contact-field": Contact,
     "news": NewsBody,
     "medienmitteilungen": MedienmitteilungenBody,
+    "global_contact_reference": GlobalReference,
     "global_reference": GlobalReference,
     // "product-card": ProductCards,
     "specifications-grid": SpecificationsGrid,
