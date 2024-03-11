@@ -100,7 +100,7 @@ storyblokInit({
     "highlights-grid": AdvantagesGrid,
     "highlights-item": AdvantageItem,
     "portrait-grid": PortraitGrid,
-    portrait: PortraitItem,
+    "portrait-item": PortraitItem,
     "services-grid": ServiceTeasersGrid,
     "services-item": ServiceTeaserItem,
     "table-section": TableGrid,
