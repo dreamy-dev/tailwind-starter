@@ -1,4 +1,5 @@
 import React from "react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import ContentWidth from "../layouts/ContentWidth";
 import Text from "../typography/Text";
 import H3 from "../typography/H3";
@@ -9,11 +10,11 @@ import H4 from "../typography/H4";
 const ProductCard = ({
   blok
 }) => (
-  <li className="w-full md:w-1/2">
+  <li className="" {...storyblokEditable(blok)}>
     <H4 styles="mb-4">{blok.title}</H4>
     <img
-      src={blok.image}
-      alt={`Image for ${title}`}
+      src={blok.image.filename}
+      alt={`Image for ${blok.title}`}
       className="w-full h-auto object-cover object-center"
     />
     <div className="pr-0">
@@ -21,13 +22,13 @@ const ProductCard = ({
         href="#"
         className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-white mb-5"
       >
-        <Text styles="text-black mb-4">{blok.description}</Text>
+        <Text styles="text-black mb-4">{blok.text}</Text>
       </a>
     </div>
   </li>
 );
 
-const ProductCards = () => {
+const ProductCardsGrid = () => {
   
   // const products = [
   //   {
@@ -70,4 +71,4 @@ const ProductCards = () => {
   );
 };
 
-export default ProductCards;
+export default ProductCard;

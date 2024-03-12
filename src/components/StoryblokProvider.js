@@ -62,6 +62,9 @@ import MedienmitteilungenBody from "./sections/MedienmitteilungenBody";
 // import ProductCards from "./sections/ProductCards";
 import SpecificationsGrid from "./sections/SpecificationsGrid";
 import SpecificationItem from "./sections/SpecificationItem";
+import ProductCardsGrid from "./sections/ProductCardsGrid";
+import ProductCard from "./sections/ProductCard";
+
 
 
 //import SubHero from "./sections/SubHero";
@@ -131,7 +134,9 @@ storyblokInit({
     "global_reference": GlobalReference,
     // "product-card": ProductCards,
     "specifications-grid": SpecificationsGrid,
-    "specifications-item": SpecificationItem
+    "specifications-item": SpecificationItem,
+    "product-card-grid": ProductCardsGrid,
+    "product-card": ProductCard
   },
 });
 
