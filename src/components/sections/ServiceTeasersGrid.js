@@ -15,7 +15,7 @@ const ServiceTeasersGrid= ({blok}) => {
       <ContentWidth>
         <div className="col-span-12 ">
           <H2>{blok?.title}</H2>
-          <Text className="mb-6">{blok?.text}</Text>
+          <Text styles="mb-6">{blok?.text}</Text>
        
             <div {...storyblokEditable(blok)} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {blok.service_grid.map((nestedBlok) => (
