@@ -64,8 +64,8 @@ const handleDrawCanvas = (
   let done = false; 
 let x = Number(prevCategoryNumber) / 3;
 let c = Number(category) / 3;
+const singleSlideProgress = 1 / 100;
 const changeCarouselPositions = (timeStamp) => {
-    const singleSlideProgress = 1 / 100;
     let count;
     if (start === undefined) {
       start = Number(prevCategoryNumber) / 3;
@@ -144,6 +144,11 @@ const changeCarouselPositions = (timeStamp) => {
     //   window.requestAnimationFrame(changeCarouselPositions);
     // }
   }
+  // useEffect(() => {
+  //   for(let i = 0; i < 0.33; i + 0.05) {
+  //     renderImage(i)
+  //   }
+  // }, [])
   useEffect(() => {
     // console.log(
     //   "counter updated",
