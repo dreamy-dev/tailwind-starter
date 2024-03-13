@@ -5,6 +5,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "../components/sections/Page";
 import Footer from "./sections/Footer";
 import HeroText from "./sections/HeroText";
+import HeroCareer from "./sections/HeroCareer";
 import FactsAndFigures from "./sections/FactsAndFigures";
 import Video from "./sections/Video";
 import HomePageHero from "./sections/HomePageHero";
@@ -136,7 +137,8 @@ storyblokInit({
     "specifications-grid": SpecificationsGrid,
     "specifications-item": SpecificationItem,
     "product-card-grid": ProductCardsGrid,
-    "product-card": ProductCard
+    "product-card": ProductCard,
+    "hero-careerpage": HeroCareer
   },
 });
 
