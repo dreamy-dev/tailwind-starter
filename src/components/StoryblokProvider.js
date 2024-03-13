@@ -66,7 +66,7 @@ import SpecificationItem from "./sections/SpecificationItem";
 import ProductCardsGrid from "./sections/ProductCardsGrid";
 import ProductCard from "./sections/ProductCard";
 import Testimonials from "./sections/Testimonials";
-
+import Jobs from "./sections/TeaserJobs";
 
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -139,7 +139,8 @@ storyblokInit({
     "product-card-grid": ProductCardsGrid,
     "product-card": ProductCard,
     "hero-careerpage": HeroCareer,
-    "tripple_quote": Testimonials
+    "tripple_quote": Testimonials,
+    "career-open-positions-grid": Jobs
   },
 });
 
