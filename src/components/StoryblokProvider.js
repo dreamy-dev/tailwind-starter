@@ -65,7 +65,7 @@ import SpecificationsGrid from "./sections/SpecificationsGrid";
 import SpecificationItem from "./sections/SpecificationItem";
 import ProductCardsGrid from "./sections/ProductCardsGrid";
 import ProductCard from "./sections/ProductCard";
-
+import Testimonials from "./sections/Testimonials";
 
 
 //import SubHero from "./sections/SubHero";
@@ -138,7 +138,8 @@ storyblokInit({
     "specifications-item": SpecificationItem,
     "product-card-grid": ProductCardsGrid,
     "product-card": ProductCard,
-    "hero-careerpage": HeroCareer
+    "hero-careerpage": HeroCareer,
+    "tripple_quote": Testimonials
   },
 });
 

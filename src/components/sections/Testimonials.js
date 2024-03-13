@@ -2,35 +2,16 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ContentWidth from "../layouts/ContentWidth";
 
-export default function Testimonials() {
-  const tabs = [
-    {
-      label: "Max Müller",
-      quote:
-        "Dank Stadler konnte ich eine Ausbildung in einem Bereich abschliessen der mich wirklich fasziniert.",
-      job: "Lernender Automatiker",
-      img: "https://www.stadlerrail.com/media/img/c/produktionsmechaniker_lernende.jpg",
-    },
-    {
-      label: "Jessica Steiner",
-      quote: "Bei Stadler arbeiten macht Spass.",
-      job: "Konstrukteur",
-      img: "https://www.stadlerrail.com/media/img/c/softwareentwickler_berufserfahrene.jpg",
-    },
-    {
-      label: "Michael Frei",
-      quote:
-        "Die Arbeit ist sehr spannend, weil man dazu beiträgt wortwörtlich die ganze Welt zu bewegen",
-      job: "Schreiner",
-      img: "https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg",
-    },
-  ];
+const Testimonials = ({blok}) => {
 
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [selectedTab, setSelectedTab] = useState(blok.testimonial[0]);
 
   return (
-    <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <section>
+    <ContentWidth>
+    <div className="col-span-12 mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       <nav
         className="mx-auto grid max-w-6xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4"
         aria-label="Tabs"
@@ -38,13 +19,13 @@ export default function Testimonials() {
         data-tabs-toggle="#myTabContent"
         role="tablist"
       >
-        {tabs.map((item) => (
+        {blok.testimonial.map((item) => (
           <button
-            key={item.label}
+            key={item.job}
             onClick={() => setSelectedTab(item)}
             className={`${
-              selectedTab.label == item.label ? "bg-gray-100" : " "
-            } rounded-xl p-3 text-center md:p-5 md:text-left`}
+              selectedTab.name == item.name ? "bg-gray-100" : " "
+            } p-3 text-center md:p-5 md:text-left`}
             type="button"
             id="tabs-with-card-item-1"
             data-hs-tab="#tabs-with-card-1"
@@ -56,12 +37,12 @@ export default function Testimonials() {
             <span className="md:flex">
               <img
                 className="h-16 w-16 rounded object-cover"
-                src={item.img}
+                src={item.image.filename}
                 alt="profile picture"
               />
               <span className="md:ml-5 md:grow">
                 <span className="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 block font-semibold text-gray-800 dark:text-gray-200">
-                  {item.label}
+                  {item.name}
                 </span>
                 <span className="mt-2 hidden text-gray-800 dark:text-gray-200 lg:block">
                   {item.job}
@@ -78,7 +59,7 @@ export default function Testimonials() {
             id="europe"
             role="tabpanel"
             aria-labelledby="tabs-with-card-item-1"
-            key={selectedTab ? selectedTab.label : "empty"}
+            key={selectedTab ? selectedTab.name : "empty"}
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
@@ -99,5 +80,9 @@ export default function Testimonials() {
         </AnimatePresence>
       </div>
     </div>
+    </ContentWidth>
+    </section>
   );
-}
+};
+
+export default Testimonials;
