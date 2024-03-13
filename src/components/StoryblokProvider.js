@@ -64,6 +64,9 @@ import SpecificationsGrid from "./sections/SpecificationsGrid";
 import SpecificationItem from "./sections/SpecificationItem";
 import ProductCardsGrid from "./sections/ProductCardsGrid";
 import ProductCard from "./sections/ProductCard";
+import History from "./sections/History";
+import HistoryWrapper from "./sections/HistoryWrapper";
+import HistoryCard from "./sections/HistoryCard";
 
 
 
@@ -136,7 +139,10 @@ storyblokInit({
     "specifications-grid": SpecificationsGrid,
     "specifications-item": SpecificationItem,
     "product-card-grid": ProductCardsGrid,
-    "product-card": ProductCard
+    "product-card": ProductCard,
+    "history": History,
+    "history-card": HistoryCard,
+    "history-section-wrapper": HistoryWrapper
   },
 });
 
