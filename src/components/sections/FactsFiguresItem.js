@@ -18,7 +18,7 @@ const FactsAndFiguresItem = ({ blok }) => {
             prefix={blok?.prefix ?? " "}
             duration={2}
             separator=" "
-            decimals={0}
+            decimals={blok?.decimals ?? 0}
             decimal="'"
             enableScrollSpy
           ></CountUp>
