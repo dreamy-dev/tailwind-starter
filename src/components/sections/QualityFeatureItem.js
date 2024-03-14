@@ -9,9 +9,9 @@ const QualityFeatureItem = ({ blok }) => (
       <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0">
         <img src={blok?.image.filename} />
       </div>
-      <div>
-        <H4 textColor="white">{blok?.title}</H4>
-        <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
+      <div className="text-white"> 
+        <H4>{blok?.title}</H4>
+        <Text styles="mt-2 text-xl font-normal sm:text-lg dark:text-gray-400">
           {blok?.text}
         </Text>
       </div>

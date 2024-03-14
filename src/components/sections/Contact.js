@@ -27,7 +27,7 @@ const Contact = ({ blok }) => {
             </div>
             <div className="flex-col text-white">
               <div>
-                <H4 textColor="white" styles="mb-4">
+                <H4 styles="mb-4">
                   {blok?.subtitle}
                 </H4>
               </div>
