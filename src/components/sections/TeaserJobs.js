@@ -18,12 +18,11 @@ const Jobs = ({blok}) => {
           </div>
 
           <div className="grid w-full grid-cols-1 gap-4 xl:max-w-3xl shrink-0 sm:grid-cols-2 md:grid-cols-3">
-
           {blok?.career_open_positions_items.map((item) => (
-            <div className="relative overflow-hidden rounded-lg group">
+            <a src={item.link.url} className="relative overflow-hidden group">
             <img
               className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
-              src="https://www.stadlerrail.com/media/img/c/anlagenbauer_berufserfahrene.jpg"
+              src={item.image.filename}
               alt=""
             />
             <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
@@ -34,7 +33,7 @@ const Jobs = ({blok}) => {
                 </p>
               </div>
             </div>
-          </div>
+          </a>
           ))}
           </div>
         </div>
