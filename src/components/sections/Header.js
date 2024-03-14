@@ -23,11 +23,21 @@ const variantsSub = {
   closed: { opacity: 0, y: 50, height: 0 },
 };
 
-
-
 const navigationMain = {
   topNav: [
-    { title: "Unternehmen", href: "/unternehmen", icon: false },
+    {
+      title: "Unternehmen",
+      href: "/unternehmen",
+      icon: <IconNav></IconNav>,
+      submenu: true,
+      submenuItems: [
+        {
+          title: "Standorte",
+          href: "/unternehmen/standorte",
+        },
+        { title: "Nachhaltigkeit", href: "/unternehmen/nachhaltigkeit" },
+      ],
+    },
     {
       title: "Lösungen",
       href: "/solutions",
@@ -54,15 +64,34 @@ const navigationMain = {
 const Header = ({ blok }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  //const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const [isUnternehmenSubmenuOpen, setIsUnternehmenSubmenuOpen] =
+    useState(false);
+  const [isSolutionsSubmenuOpen, setIsSolutionsSubmenuOpen] = useState(false);
 
-  const toggleSubmenu = () => {
-    setIsSubmenuOpen((prev) => !prev);
+  const toggleUnternehmenSubmenu = () => {
+    setIsUnternehmenSubmenuOpen((prev) => !prev);
   };
 
-  const closeSubmenu = () => {
-    setIsSubmenuOpen(false);
+  const toggleSolutionsSubmenu = () => {
+    setIsSolutionsSubmenuOpen((prev) => !prev);
   };
+
+  const closeUnternehmenSubmenu = () => {
+    setIsUnternehmenSubmenuOpen(false);
+  };
+
+  const closeSolutionsSubmenu = () => {
+    setIsSolutionsSubmenuOpen(false);
+  };
+
+  // const toggleSubmenu = () => {
+  //   setIsSubmenuOpen((prev) => !prev);
+  // };
+
+  // const closeSubmenu = () => {
+  //   setIsSubmenuOpen(false);
+  // };
 
   const toggleMainMenu = () => {
     setIsOpen((prev) => !prev);
@@ -79,17 +108,28 @@ const Header = ({ blok }) => {
     setIsMobileNavOpen(false);
   };
 
+  useEffect(() => {
+ 
+    setIsUnternehmenSubmenuOpen(false);
+    setIsSolutionsSubmenuOpen(false);
+   
+  }, []);
+
   let menuRef = useRef(null);
 
   useEffect(() => {
     let handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
+        setIsUnternehmenSubmenuOpen(false);
+        setIsSolutionsSubmenuOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handler);
   });
+
+
 
   const [isNarrowScreen, setIsNarrowScreen] = useState(false);
   useEffect(() => {
@@ -165,7 +205,10 @@ const Header = ({ blok }) => {
                       <li key={item.name}>
                         <Link
                           onClick={() => {
-                            closeSubmenu();
+                            closeUnternehmenSubmenu();
+                            closeSolutionsSubmenu();
+
+                            //closeSubmenu();
                             closeMainMenu();
                             closeMobileNav();
                           }}
@@ -216,10 +259,17 @@ const Header = ({ blok }) => {
                   <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
                     {navigationMain.topNav.map((item) => (
                       <li key={item.title} className="lg:px-3 xl:px-5">
-                        {item.href == "/solutions" ? (
+                        {item.href === "/unternehmen" ||
+                        item.href === "/solutions" ? (
                           <motion.div
                             onClick={() => {
-                              toggleSubmenu();
+                              if (item.href === "/unternehmen") {
+                                toggleUnternehmenSubmenu();
+                                closeSolutionsSubmenu();
+                              } else if (item.href === "/solutions") {
+                                toggleSolutionsSubmenu();
+                                closeUnternehmenSubmenu();
+                              }
                               toggleMainMenu();
                             }}
                             className="flex gap-2 justify-center items-center cursor-pointer pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -254,8 +304,19 @@ const Header = ({ blok }) => {
 
                         {item.submenu && item.submenuItems && (
                           <motion.div
-                            initial={"closed"}
-                            animate={isOpen ? "open" : "closed"}
+                            initial={
+                              item.title === "Unternehmen"
+                                ? "closed"
+                                : "" || item.title === "Lösungen"
+                                ? "closed"
+                                : ""
+                            }
+                            animate={
+                              (item.title === "Unternehmen" && isUnternehmenSubmenuOpen) ||
+                              (item.title === "Lösungen" && isSolutionsSubmenuOpen)
+                                  ? "open"
+                                  : "closed"
+                          }
                             variants={isNarrowScreen ? variantsSub : variants}
                             style={{
                               padding: "10px",
@@ -273,7 +334,8 @@ const Header = ({ blok }) => {
                                   <Link
                                     href="#"
                                     onClick={() => {
-                                      closeSubmenu();
+                                      closeUnternehmenSubmenu();
+                                      closeSolutionsSubmenu();
                                       toggleMainMenu();
                                     }}
                                     className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
@@ -293,19 +355,40 @@ const Header = ({ blok }) => {
                                     Main Menu
                                   </Link>
                                 </div>
-                                <Link
-                                  href="/solutions"
-                                  className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
-                                  onClick={() => {
-                                    closeMobileNav();
-                                    setIsOpen((isOpen) => !isOpen);
-                                  }}
-                                >
-                                  <p className="lg:text-lg">Übersicht</p>
-                                  <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                                    Lösungen
-                                  </p>
-                                </Link>
+                                {isSolutionsSubmenuOpen && (
+                                  <Link
+                                    href="/solutions"
+                                    className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                                    onClick={() => {
+                                      closeMobileNav();
+                                      setIsOpen((isOpen) => !isOpen);
+                                    }}
+                                  >
+                                    <p className="lg:text-lg">Übersicht</p>
+                                    <p className="hidden lg:block lg:font-semibold lg:text-xl">
+                                      Lösungen
+                                    </p>
+                                  </Link>
+                                )}
+
+                                {isUnternehmenSubmenuOpen && (
+                                  <>
+                                    {" "}
+                                    <Link
+                                      href="/unternehmen"
+                                      className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                                      onClick={() => {
+                                        closeMobileNav();
+                                        setIsOpen((isOpen) => !isOpen);
+                                      }}
+                                    >
+                                      <p className="lg:text-lg">Übersicht</p>
+                                      <p className="hidden lg:block lg:font-semibold lg:text-xl">
+                                        Unternehmen
+                                      </p>
+                                    </Link>
+                                  </>
+                                )}
                                 <div className="grid content-center">
                                   {item.submenuItems.map((subItem) => (
                                     <motion.div
