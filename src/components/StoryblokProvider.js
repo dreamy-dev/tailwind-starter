@@ -68,6 +68,11 @@ import ProductCard from "./sections/ProductCard";
 import Testimonials from "./sections/Testimonials";
 import Jobs from "./sections/TeaserJobs";
 import TeaserSuccessStories from "./sections/TeaserSuccessStories";
+import History from "./sections/History";
+import HistoryWrapper from "./sections/HistoryWrapper";
+import HistoryCard from "./sections/HistoryCard";
+
+
 
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -142,7 +147,10 @@ storyblokInit({
     "hero-careerpage": HeroCareer,
     "tripple_quote": Testimonials,
     "career-open-positions-grid": Jobs,
-    "employee-story-grid": TeaserSuccessStories
+    "employee-story-grid": TeaserSuccessStories,
+    "history": History,
+    "history-card": HistoryCard,
+    "history-section-wrapper": HistoryWrapper
   },
 });
 

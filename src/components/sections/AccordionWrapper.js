@@ -26,7 +26,7 @@ const AccordionWrapper = ({blok}) => {
           onClick={handleAccordionClick}
           aria-expanded={isActive}
         >
-          <span>{blok?.collapsable_1}</span>
+          <span>{blok?.title}</span>
           <svg
             data-accordion-icon=""
             className={`w-6 h-6 ${isActive ? "rotate-180" : ""} shrink-0`}
