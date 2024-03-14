@@ -68,6 +68,7 @@ import History from "./sections/History";
 import HistoryWrapper from "./sections/HistoryWrapper";
 import HistoryCard from "./sections/HistoryCard";
 
+import AllNews from "./sections/AllNews";
 
 
 //import SubHero from "./sections/SubHero";
@@ -142,7 +143,8 @@ storyblokInit({
     "product-card": ProductCard,
     "history": History,
     "history-card": HistoryCard,
-    "history-section-wrapper": HistoryWrapper
+    "history-section-wrapper": HistoryWrapper,
+    "all-news": AllNews
   },
 });
 
