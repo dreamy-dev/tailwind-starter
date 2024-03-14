@@ -50,7 +50,7 @@ function AllNews({ blok }) {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           { articles[0] && articles.map((article) => (
             <a
-            href={article.slug}
+            href={`news/${article.slug}`}
             className="group mb-6 transition-all"
             key={article.uuid}
           >
