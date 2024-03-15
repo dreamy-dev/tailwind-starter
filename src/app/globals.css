@@ -63,16 +63,13 @@ h4 {
     margin-bottom: 0.6rem;
 }
 .richtext blockquote {
-    border-inline-start-width: 4px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E5E5E5;
     margin-bottom: 1rem;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #0058930d;
-    border-color: #0058934d;
 }
 .richtext blockquote p {
-    line-height: 1.625;
-    font-size: 1.25rem;
-    font-weight: 500;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     font-style: italic;
 }
