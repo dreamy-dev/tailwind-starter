@@ -70,6 +70,8 @@ import HistoryCard from './sections/HistoryCard'
 import AllNews from './sections/AllNews'
 import CareerStepGrid from './sections/CareerStepGrid'
 import CareerStepItem from './sections/CareerStepItem'
+import AllMedienmitteilungen from './sections/AllMedienmitteilungen'
+
 
 
 
@@ -147,7 +149,8 @@ storyblokInit({
         'history-section-wrapper': HistoryWrapper,
         "all-news": AllNews,
         "career-step-grid": CareerStepGrid,
-        "career-step-item": CareerStepItem
+        "career-step-item": CareerStepItem,
+        "adhoc_medienmitteilungen_teaser": AllMedienmitteilungen,
     },
 })
 

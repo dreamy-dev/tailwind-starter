@@ -12,6 +12,7 @@ async function fetchData(slug) {
             'global_contact_reference.reference',
             'success-story-grid.success_stories',
             'news.categories',
+            'medienmitteilungen.categories',
         ],
     }
 
