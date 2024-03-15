@@ -25,6 +25,7 @@ const History = ({ blok }) => {
                             />
                         ))}
                     </div>
+                    {blok?.showbutton ? (
                     <ButtonPrimary position="left" href={blok?.cta_link.url}  buttonText={blok?.cta_text}>
                    
                     <svg
@@ -52,6 +53,9 @@ const History = ({ blok }) => {
                         </defs>
                     </svg>
                 </ButtonPrimary>
+                     ) : (
+                        ''
+                    )}
                 </div>
              
             </ContentWidth>
