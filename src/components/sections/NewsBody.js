@@ -1,5 +1,5 @@
 
-import { storyblokEditable } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import { render } from 'storyblok-rich-text-react-renderer';
 import { useState, useEffect } from "react";
 
@@ -35,12 +35,20 @@ function NewsBody({blok}) {
       <ArticleHero block={blok} />
      
       <SuperSmallWidth>
-      <div className="col-span-12 w-full">
-        <div className="text-md richtext">
-          {render(blok.text)}
+        <div className="col-span-12 w-full mb-32">
+          <div className="text-md richtext">
+            {render(blok.text)}
+          </div>
         </div>
-      </div>
-    </SuperSmallWidth>
+      </SuperSmallWidth>
+      {blok.news_blocks.map((nestedBlok) => (
+      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+    ))}
+      {/* {blok.news_blocks?.map((nestedBlok) => {
+        
+      {console.log(nestedBlok)}
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
+      })} */}
     </section>
   );
 }
