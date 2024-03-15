@@ -1,10 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import { render } from 'storyblok-rich-text-react-renderer'
-import { useState, useEffect } from 'react'
-
 import ContentWidth from '../layouts/ContentWidth'
 import H2 from '../typography/H2'
-import Text from '../typography/Text'
 
 function CareerStepGrid({ blok }) {
   
