@@ -33,15 +33,15 @@ const HeroText = ({ breadcrumbs = [], withCTA, buttonText, blok }) => {
         )} */}
                 <H1>{blok?.title}</H1>
                 <Lead className="richtext">{render(blok?.lead)}</Lead>
-                {blok?.showbutton ? (
+                {/* {blok?.showbutton ? ( */}
                     <ButtonPrimary
                         position="left"
                         buttonText={blok?.buttontext}
                         href={blok?.buttonlink.url}
                     />
-                ) : (
+                {/* ) : (
                     ''
-                )}
+                )} */}
             </SmallWidth>
         </section>
     )
