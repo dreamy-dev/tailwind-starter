@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 const HistoryWrapper = ({ blok, index }) => {
     const [showCards, setShowCards] = useState(index === 0)
+    
 
     useEffect(() => {
         if (index !== 0) {
@@ -12,6 +13,7 @@ const HistoryWrapper = ({ blok, index }) => {
 
     const toggleCards = () => {
         setShowCards((prevShowCards) => !prevShowCards)
+      
     }
 
     return (

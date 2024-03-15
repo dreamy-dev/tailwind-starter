@@ -19,13 +19,14 @@ const History = ({ blok }) => {
                     <div className="relative border-s border-gray-200 dark:border-gray-700">
                         {blok?.history_block.map((nestedBlok, index) => (
                             <StoryblokComponent
+
                                 index={index}
                                 blok={nestedBlok}
                                 key={nestedBlok?._uid}
                             />
                         ))}
                     </div>
-                    {blok?.showbutton ? (
+                    {blok?.show_button ? (
                     <ButtonPrimary position="left" href={blok?.cta_link.url}  buttonText={blok?.cta_text}>
                     <svg
                         width="15"
