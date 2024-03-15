@@ -42,13 +42,12 @@ function NewsBody({blok}) {
         </div>
       </SuperSmallWidth>
       {blok.news_blocks.map((nestedBlok) => (
-      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-    ))}
-      {/* {blok.news_blocks?.map((nestedBlok) => {
-        
-      {console.log(nestedBlok)}
-        <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
-      })} */}
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+      ))}
+      {blok.contact_block.map((nestedBlok) => (
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+      ))}
+     
     </section>
   );
 }

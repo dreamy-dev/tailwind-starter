@@ -13,7 +13,7 @@ function NewsTeaser({ blok }) {
   useEffect(() => {
     const getArticles = async () => {
       const categories = blok.categories.join(",")
-      console.log(blok)
+      
       const storyblokApi = getStoryblokApi();
       const { data } = await storyblokApi.get(`cdn/stories`, {
         version: "published",
@@ -45,7 +45,7 @@ function NewsTeaser({ blok }) {
 
     return formattedDay;
   }
-  console.log(articlesCategory)
+  
   return (
     <section {...storyblokEditable(blok)} className="py-5 lg:py-24">
     <ContentWidth>
