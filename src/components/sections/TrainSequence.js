@@ -79,7 +79,7 @@ const handleDrawCanvas = (
   let newCategory = Number(category) / 3;
 
   // Progress Value Equal to the Progress from Slide 0 to SLide 1
-  const singleSlideProgress = 1 / 299;
+  const singleSlideProgress = 1 / (299 / Math.abs(Number(category) - Number(prevCategoryNumber)));
 
   const changeCarouselPositions = (timeStamp) => {
     let count;
