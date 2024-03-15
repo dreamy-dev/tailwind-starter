@@ -68,6 +68,10 @@ import History from './sections/History'
 import HistoryWrapper from './sections/HistoryWrapper'
 import HistoryCard from './sections/HistoryCard'
 import AllNews from './sections/AllNews'
+import CareerStepGrid from './sections/CareerStepGrid'
+import CareerStepItem from './sections/CareerStepItem'
+
+
 
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -141,7 +145,9 @@ storyblokInit({
         history: History,
         'history-card': HistoryCard,
         'history-section-wrapper': HistoryWrapper,
-        "all-news": AllNews
+        "all-news": AllNews,
+        "career-step-grid": CareerStepGrid,
+        "career-step-item": CareerStepItem
     },
 })
 
