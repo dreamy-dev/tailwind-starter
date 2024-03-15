@@ -48,7 +48,7 @@ import CorporateGorvernanceTeaser from './sections/CorporateGovernanceTeaser'
 import SchienenfahrzeugeGrid from './sections/SchienenfahrzeugeGrid'
 import SchienenfahrzeugeItem from './sections/SchienenfahrzeugeItem'
 import SchienenfahrzeugeWrapper from './sections/SchienenfahrzeugeWrapper'
-import NewsTeaser from './sections/NewsSection'
+import NewsTeaser from './sections/NewsTeaser'
 import AccordionWrapper from './sections/AccordionWrapper'
 import Intro from './sections/Intro'
 import SuccessStoryGrid from './sections/SuccessStoryGrid'
@@ -67,6 +67,7 @@ import ProductCard from './sections/ProductCard'
 import History from './sections/History'
 import HistoryWrapper from './sections/HistoryWrapper'
 import HistoryCard from './sections/HistoryCard'
+import AllNews from './sections/AllNews'
 
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
@@ -123,7 +124,7 @@ storyblokInit({
         schienenfahrzeuge_grid: SchienenfahrzeugeGrid,
         schienenfahrzeuge_item: SchienenfahrzeugeItem,
         schienenfahrzeuge_wrapper: SchienenfahrzeugeWrapper,
-        'news-teaser': NewsTeaser,
+        'news_teaser': NewsTeaser,
         'image-right': Intro,
         'success-story-grid': SuccessStoryGrid,
         successstory: SuccessStoryContent,
@@ -140,6 +141,7 @@ storyblokInit({
         history: History,
         'history-card': HistoryCard,
         'history-section-wrapper': HistoryWrapper,
+        "all-news": AllNews
     },
 })
 
