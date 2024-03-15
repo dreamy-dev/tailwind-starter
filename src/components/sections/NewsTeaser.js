@@ -20,7 +20,8 @@ function NewsTeaser({ blok }) {
         starts_with: 'medien/news/',
         is_startpage: false,
         resolve_relations: "news.categories",
-        "filter_query[categories][exists]": categories
+        "filter_query[categories][exists]": categories,
+        "sort_by": "content.date:desc"
       });
  
       setArticlesCategory((prev) => data.stories.map((article) => {

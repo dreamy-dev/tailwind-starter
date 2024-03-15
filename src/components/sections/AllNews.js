@@ -16,7 +16,8 @@ function AllNews({ blok }) {
         version: "published",
         starts_with: 'medien/news/',
         is_startpage: false,
-        resolve_relations: "news.categories"
+        resolve_relations: "news.categories",
+        "sort_by": "content.date:desc"
       });
  
       setArticles((prev) => data.stories.map((article) => {
