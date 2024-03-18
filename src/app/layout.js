@@ -1,9 +1,10 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 import StoryblokProvider from '../components/StoryblokProvider'
-import Script from 'next/script'
-import Header from '../components/sections/Header'
-import Footer from '../components/sections/Footer'
-import { Montserrat } from 'next/font/google'
+import Script from "next/script";
+import Header from "../components/sections/Header";
+import Footer from "../components/sections/Footer";
+import TrainCarousel from "../components/sections/TrainCarousel";
+import { Montserrat } from "next/font/google";
 import localFont from 'next/font/local'
 
 import './globals.css'
@@ -82,6 +83,8 @@ export default function RootLayout({ children }) {
                     <Header />
                     <main>{children}</main>
                     <Footer />
+                    
+                    <TrainCarousel />
                 </body>
             </html>
         </StoryblokProvider>
