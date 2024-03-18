@@ -1,16 +1,16 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import { render } from 'storyblok-rich-text-react-renderer'
-import { useState, useEffect } from 'react'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import { render } from 'storyblok-rich-text-react-renderer';
+import { useState, useEffect } from 'react';
 
-import SuperSmallWidth from '../layouts/SuperSmallWidth'
-import H1 from '../typography/H1'
-import Text from '../typography/Text'
-import Breadcrumbs from './Breadcrumbs'
-import ArticleHero from './ArticleHero'
+import SuperSmallWidth from '../layouts/SuperSmallWidth';
+import H1 from '../typography/H1';
+import Text from '../typography/Text';
+import Breadcrumbs from './Breadcrumbs';
+import ArticleHero from './ArticleHero';
 
 function NewsBody({ blok }) {
     // const [categories, setCategories] = useState([]);
-    const uuids = blok.categories.join(',')
+    const uuids = blok.categories.join(',');
 
     // const callAPI = async () => {
     // 	try {
@@ -39,7 +39,7 @@ function NewsBody({ blok }) {
                 </div>
             </SuperSmallWidth>
         </section>
-    )
+    );
 }
 
-export default NewsBody
+export default NewsBody;

@@ -1,11 +1,11 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import ButtonPrimary from '../elements/ButtonPrimary'
-import MapTextTitle from './MapTextTitle'
-import FullWidth from '../layouts/FullWidth'
-import ContentWidth from '../layouts/ContentWidth'
-import Stats from './Stats'
-import CountUp from 'react-countup'
-import { motion } from 'framer-motion'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import MapTextTitle from './MapTextTitle';
+import FullWidth from '../layouts/FullWidth';
+import ContentWidth from '../layouts/ContentWidth';
+import Stats from './Stats';
+import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
 
 const countries = [
     'Schweiz',
@@ -21,7 +21,7 @@ const countries = [
     'Vereinigtes Königsreich',
     'Schweden',
     'Norwegen',
-]
+];
 
 export default function Map({ blok }) {
     return (
@@ -124,5 +124,5 @@ export default function Map({ blok }) {
                 </div>
             </FullWidth>
         </section>
-    )
+    );
 }

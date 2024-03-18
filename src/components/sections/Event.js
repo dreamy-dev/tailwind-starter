@@ -1,4 +1,4 @@
-import StepperVertical from './StepperVertical'
+import StepperVertical from './StepperVertical';
 
 export default function Event() {
     return (
@@ -35,5 +35,5 @@ export default function Event() {
                 </div>
             </div>
         </>
-    )
+    );
 }

@@ -1,7 +1,7 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H2 from '../typography/H2'
-import CountUp from 'react-countup'
-import ContentWidth from '../layouts/ContentWidth'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H2 from '../typography/H2';
+import CountUp from 'react-countup';
+import ContentWidth from '../layouts/ContentWidth';
 
 const FactsAndFigures = ({
     data1,
@@ -11,9 +11,11 @@ const FactsAndFigures = ({
     backgroundColor,
     blok,
 }) => {
-    const dataArray1 = Array.isArray(data1) ? data1 : []
-    const dataArray2 = Array.isArray(data2) ? data2 : []
-    const renderData = showTwoRows ? [...dataArray1, ...dataArray2] : dataArray1
+    const dataArray1 = Array.isArray(data1) ? data1 : [];
+    const dataArray2 = Array.isArray(data2) ? data2 : [];
+    const renderData = showTwoRows
+        ? [...dataArray1, ...dataArray2]
+        : dataArray1;
     return (
         <section
             {...storyblokEditable(blok)}
@@ -69,7 +71,7 @@ const FactsAndFigures = ({
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default FactsAndFigures
+export default FactsAndFigures;

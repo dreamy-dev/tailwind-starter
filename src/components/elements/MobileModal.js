@@ -1,14 +1,14 @@
-import { ExclamationTriangleIcon } from './heroicons/react/24/outline'
-import React, { useEffect } from 'react'
+import { ExclamationTriangleIcon } from './heroicons/react/24/outline';
+import React, { useEffect } from 'react';
 
 export default function MobileModal() {
     useEffect(() => {
-        document.body.classList.add('overflow-hidden')
+        document.body.classList.add('overflow-hidden');
 
         return () => {
-            document.body.classList.remove('overflow-hidden')
-        }
-    }, [])
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, []);
     return (
         <div>
             <div className="relative z-10 ">
@@ -48,5 +48,5 @@ export default function MobileModal() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

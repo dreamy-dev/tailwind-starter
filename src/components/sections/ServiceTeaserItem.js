@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const ServiceTeaserItem = ({ blok }) => {
     return (
@@ -23,7 +23,7 @@ const ServiceTeaserItem = ({ blok }) => {
                 </div>
             </a>
         </div>
-    )
-}
+    );
+};
 
-export default ServiceTeaserItem
+export default ServiceTeaserItem;

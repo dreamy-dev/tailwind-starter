@@ -1,7 +1,7 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import ContentWidth from '../layouts/ContentWidth'
-import H2 from '../typography/H2'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import ContentWidth from '../layouts/ContentWidth';
+import H2 from '../typography/H2';
 
 const QualityFeatureGrid = ({ blok }) => {
     return (
@@ -25,7 +25,7 @@ const QualityFeatureGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default QualityFeatureGrid
+export default QualityFeatureGrid;

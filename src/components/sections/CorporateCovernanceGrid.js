@@ -1,8 +1,8 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
-import SuperSmallWidth from '../layouts/SuperSmallWidth'
-import H2 from '../typography/H2'
-import Text from '../typography/Text'
+import SuperSmallWidth from '../layouts/SuperSmallWidth';
+import H2 from '../typography/H2';
+import Text from '../typography/Text';
 
 const CorporateGorvernanceGrid = ({ blok }) => {
     return (
@@ -29,6 +29,6 @@ const CorporateGorvernanceGrid = ({ blok }) => {
                 </div>
             </SuperSmallWidth>
         </section>
-    )
-}
-export default CorporateGorvernanceGrid
+    );
+};
+export default CorporateGorvernanceGrid;

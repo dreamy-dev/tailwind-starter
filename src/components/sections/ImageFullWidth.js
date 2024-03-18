@@ -1,6 +1,6 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import FullWidth from '../layouts/FullWidth'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import FullWidth from '../layouts/FullWidth';
 
 export default function ImageFullWidth({ blok }) {
     return (
@@ -16,5 +16,5 @@ export default function ImageFullWidth({ blok }) {
                 </div>
             </FullWidth>
         </section>
-    )
+    );
 }

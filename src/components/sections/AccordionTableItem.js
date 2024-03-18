@@ -1,4 +1,4 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const AccordionTableItem = ({ blok }) => {
     return (
@@ -33,7 +33,7 @@ const AccordionTableItem = ({ blok }) => {
                 </tbody>
             </table>
         </div>
-    )
-}
+    );
+};
 
-export default AccordionTableItem
+export default AccordionTableItem;

@@ -1,20 +1,18 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import React, { useState, useEffect } from 'react'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import React, { useState, useEffect } from 'react';
 
 const HistoryWrapper = ({ blok, index }) => {
-    const [showCards, setShowCards] = useState(index === 0)
-    
+    const [showCards, setShowCards] = useState(index === 0);
 
     useEffect(() => {
         if (index !== 0) {
-            setShowCards(false)
+            setShowCards(false);
         }
-    }, [index])
+    }, [index]);
 
     const toggleCards = () => {
-        setShowCards((prevShowCards) => !prevShowCards)
-      
-    }
+        setShowCards((prevShowCards) => !prevShowCards);
+    };
 
     return (
         <div className="mb-6 ms-8">
@@ -39,7 +37,7 @@ const HistoryWrapper = ({ blok, index }) => {
                 </div>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default HistoryWrapper
+export default HistoryWrapper;

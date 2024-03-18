@@ -1,6 +1,6 @@
-import ContentWidth from '../layouts/ContentWidth'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import Text from '../typography/Text'
+import ContentWidth from '../layouts/ContentWidth';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import Text from '../typography/Text';
 
 function NewsTeaser({ blok }) {
     return (
@@ -41,7 +41,7 @@ function NewsTeaser({ blok }) {
         </div>
       </div> */}
         </ContentWidth>
-    )
+    );
 }
 
-export default NewsTeaser
+export default NewsTeaser;

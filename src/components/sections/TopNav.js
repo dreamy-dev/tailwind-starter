@@ -1,5 +1,5 @@
-import ContentWidth from '../layouts/ContentWidth'
-import Link from 'next/link'
+import ContentWidth from '../layouts/ContentWidth';
+import Link from 'next/link';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -7,7 +7,7 @@ const navigation = {
         { name: 'Kunden', href: '/kunden' },
         { name: 'Downloadcenter', href: '/downloadcenter' },
     ],
-}
+};
 
 export default function TopNav() {
     return (
@@ -61,5 +61,5 @@ export default function TopNav() {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }

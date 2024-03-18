@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import ContentWidth from '../layouts/ContentWidth'
-import H2 from '../typography/H2'
-import Lead from '../typography/Lead'
-import ButtonPrimary from '../elements/ButtonPrimary'
-import Button from '../elements/ButtonSecondary'
-import H4 from '../typography/H4'
+import ContentWidth from '../layouts/ContentWidth';
+import H2 from '../typography/H2';
+import Lead from '../typography/Lead';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import Button from '../elements/ButtonSecondary';
+import H4 from '../typography/H4';
 
 const TeaserDownload = ({
     title,
@@ -98,6 +98,6 @@ const TeaserDownload = ({
                 </div>
             </ContentWidth>
         </section>
-    )
-}
-export default TeaserDownload
+    );
+};
+export default TeaserDownload;

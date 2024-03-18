@@ -1,6 +1,6 @@
-import CountUp from 'react-countup'
-import { motion } from 'framer-motion'
-import ContentWidth from '../layouts/ContentWidth'
+import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
+import ContentWidth from '../layouts/ContentWidth';
 
 const Stats = ({ data, backgroundColor }) => {
     return (
@@ -33,7 +33,7 @@ const Stats = ({ data, backgroundColor }) => {
                 </div>
             </div>
         </ContentWidth>
-    )
-}
+    );
+};
 
-export default Stats
+export default Stats;

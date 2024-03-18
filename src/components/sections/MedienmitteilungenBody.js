@@ -1,9 +1,9 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import { render } from 'storyblok-rich-text-react-renderer'
-import { useState, useEffect } from 'react'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import { render } from 'storyblok-rich-text-react-renderer';
+import { useState, useEffect } from 'react';
 
-import SuperSmallWidth from '../layouts/SuperSmallWidth'
-import ArticleHero from './ArticleHero'
+import SuperSmallWidth from '../layouts/SuperSmallWidth';
+import ArticleHero from './ArticleHero';
 
 function MedienmitteilungenBody({ blok }) {
     return (
@@ -16,7 +16,7 @@ function MedienmitteilungenBody({ blok }) {
                 </div>
             </SuperSmallWidth>
         </section>
-    )
+    );
 }
 
-export default MedienmitteilungenBody
+export default MedienmitteilungenBody;

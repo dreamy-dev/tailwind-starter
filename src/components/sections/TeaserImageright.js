@@ -1,9 +1,9 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import ButtonPrimary from '../elements/ButtonPrimary'
-import H2 from '../typography/H2'
-import Text from '../typography/Text'
-import SmallWidth from '../layouts/SmallWidth'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import H2 from '../typography/H2';
+import Text from '../typography/Text';
+import SmallWidth from '../layouts/SmallWidth';
 
 const TeaserImageRight = ({ blok }) => {
     return (
@@ -36,7 +36,7 @@ const TeaserImageRight = ({ blok }) => {
                 </div>
             </SmallWidth>
         </section>
-    )
-}
+    );
+};
 
-export default TeaserImageRight
+export default TeaserImageRight;

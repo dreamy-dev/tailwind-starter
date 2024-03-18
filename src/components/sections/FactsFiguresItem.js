@@ -1,7 +1,7 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H2 from '../typography/H2'
-import CountUp from 'react-countup'
-import ContentWidth from '../layouts/ContentWidth'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H2 from '../typography/H2';
+import CountUp from 'react-countup';
+import ContentWidth from '../layouts/ContentWidth';
 
 const FactsAndFiguresItem = ({ blok }) => {
     return (
@@ -23,7 +23,7 @@ const FactsAndFiguresItem = ({ blok }) => {
                 </dd>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default FactsAndFiguresItem
+export default FactsAndFiguresItem;

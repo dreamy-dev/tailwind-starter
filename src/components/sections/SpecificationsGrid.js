@@ -1,7 +1,7 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import Button from '../elements/ButtonSecondary'
-import ContentWidth from '../layouts/ContentWidth'
-import H4 from '../typography/H4'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import Button from '../elements/ButtonSecondary';
+import ContentWidth from '../layouts/ContentWidth';
+import H4 from '../typography/H4';
 
 export default function SpecificationsGrid({ blok }) {
     return (
@@ -56,5 +56,5 @@ export default function SpecificationsGrid({ blok }) {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }

@@ -1,4 +1,4 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const AccordionTextDownloadItem = ({ blok }) => {
     return (
@@ -26,7 +26,7 @@ const AccordionTextDownloadItem = ({ blok }) => {
                 </div>
             </ul>
         </div>
-    )
-}
+    );
+};
 
-export default AccordionTextDownloadItem
+export default AccordionTextDownloadItem;

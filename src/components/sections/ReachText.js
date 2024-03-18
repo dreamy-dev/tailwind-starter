@@ -7,7 +7,7 @@ const RichTextRenderer = ({ text }) => {
                 ),
             })}
         </>
-    )
-}
+    );
+};
 
-export default RichTextRenderer
+export default RichTextRenderer;

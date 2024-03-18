@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const IconNav = () => {
     return (
@@ -23,7 +23,7 @@ const IconNav = () => {
                 </defs>
             </svg>
         </button>
-    )
-}
+    );
+};
 
-export default IconNav
+export default IconNav;

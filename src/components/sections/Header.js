@@ -1,10 +1,10 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import React, { useState, useEffect, useRef } from 'react'
-import IconNav from '../elements/IconNav'
-import Link from 'next/link'
-import ContentWidth from '../layouts/ContentWidth'
-import { motion } from 'framer-motion'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import React, { useState, useEffect, useRef } from 'react';
+import IconNav from '../elements/IconNav';
+import Link from 'next/link';
+import ContentWidth from '../layouts/ContentWidth';
+import { motion } from 'framer-motion';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -12,16 +12,16 @@ const navigation = {
         // { name: "Kunden", href: "/kunden" },
         { name: 'Downloads', href: '/downloadcenter' },
     ],
-}
+};
 
 const variants = {
     open: { opacity: 1, y: 0, height: 'auto' },
     closed: { opacity: 0, y: 50, height: 0 },
-}
+};
 const variantsSub = {
     open: { opacity: 1, y: 0, height: '100%' },
     closed: { opacity: 0, y: 50, height: 0 },
-}
+};
 
 const navigationMain = {
     topNav: [
@@ -47,68 +47,71 @@ const navigationMain = {
             icon: false,
         },
     ],
-}
+};
 
 const Header = ({ blok }) => {
-    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
-    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
     const toggleSubmenu = () => {
-        setIsSubmenuOpen((prev) => !prev)
-    }
+        setIsSubmenuOpen((prev) => !prev);
+    };
 
     const closeSubmenu = () => {
-        setIsSubmenuOpen(false)
-    }
+        setIsSubmenuOpen(false);
+    };
 
     const toggleMainMenu = () => {
-        setIsOpen((prev) => !prev)
-    }
+        setIsOpen((prev) => !prev);
+    };
 
     const closeMainMenu = () => {
-        setIsOpen(false)
-    }
+        setIsOpen(false);
+    };
 
     const toggleMobileNav = () => {
-        setIsMobileNavOpen(!isMobileNavOpen)
-    }
+        setIsMobileNavOpen(!isMobileNavOpen);
+    };
     const closeMobileNav = () => {
-        setIsMobileNavOpen(false)
-    }
+        setIsMobileNavOpen(false);
+    };
 
-    let menuRef = useRef(null)
+    let menuRef = useRef(null);
 
     useEffect(() => {
         let handler = (e) => {
             if (menuRef.current && !menuRef.current.contains(e.target)) {
-                setIsOpen(false)
+                setIsOpen(false);
             }
-        }
+        };
 
-        document.addEventListener('mousedown', handler)
-    })
+        document.addEventListener('mousedown', handler);
+    });
 
-    const [isNarrowScreen, setIsNarrowScreen] = useState(false)
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
     useEffect(() => {
-        const mediaWatcher = window.matchMedia('(max-width: 1024px)')
-        setIsNarrowScreen(mediaWatcher.matches)
+        const mediaWatcher = window.matchMedia('(max-width: 1024px)');
+        setIsNarrowScreen(mediaWatcher.matches);
 
         function updateIsNarrowScreen(e) {
-            setIsNarrowScreen(e.matches)
+            setIsNarrowScreen(e.matches);
         }
         if (mediaWatcher.addEventListener) {
-            mediaWatcher.addEventListener('change', updateIsNarrowScreen)
+            mediaWatcher.addEventListener('change', updateIsNarrowScreen);
             return function cleanup() {
-                mediaWatcher.removeEventListener('change', updateIsNarrowScreen)
-            }
+                mediaWatcher.removeEventListener(
+                    'change',
+                    updateIsNarrowScreen
+                );
+            };
         } else {
-            mediaWatcher.addListener(updateIsNarrowScreen)
+            mediaWatcher.addListener(updateIsNarrowScreen);
             return function cleanup() {
-                mediaWatcher.removeListener(updateIsNarrowScreen)
-            }
+                mediaWatcher.removeListener(updateIsNarrowScreen);
+            };
         }
-    })
+    });
 
     return (
         <header
@@ -169,9 +172,9 @@ const Header = ({ blok }) => {
                                             <li key={item.name}>
                                                 <Link
                                                     onClick={() => {
-                                                        closeSubmenu()
-                                                        closeMainMenu()
-                                                        closeMobileNav()
+                                                        closeSubmenu();
+                                                        closeMainMenu();
+                                                        closeMobileNav();
                                                     }}
                                                     href={item.href}
                                                     className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
@@ -229,8 +232,8 @@ const Header = ({ blok }) => {
                                                 {item.href == '/solutions' ? (
                                                     <motion.div
                                                         onClick={() => {
-                                                            toggleSubmenu()
-                                                            toggleMainMenu()
+                                                            toggleSubmenu();
+                                                            toggleMainMenu();
                                                         }}
                                                         className="flex gap-2 justify-center items-center cursor-pointer pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                     >
@@ -253,7 +256,7 @@ const Header = ({ blok }) => {
                                                 ) : (
                                                     <Link
                                                         onClick={() => {
-                                                            closeMobileNav()
+                                                            closeMobileNav();
                                                         }}
                                                         href={item.href}
                                                         className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -293,8 +296,8 @@ const Header = ({ blok }) => {
                                                                         <Link
                                                                             href="#"
                                                                             onClick={() => {
-                                                                                closeSubmenu()
-                                                                                toggleMainMenu()
+                                                                                closeSubmenu();
+                                                                                toggleMainMenu();
                                                                             }}
                                                                             className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
                                                                         >
@@ -318,13 +321,13 @@ const Header = ({ blok }) => {
                                                                         href="/solutions"
                                                                         className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
                                                                         onClick={() => {
-                                                                            closeMobileNav()
+                                                                            closeMobileNav();
                                                                             setIsOpen(
                                                                                 (
                                                                                     isOpen
                                                                                 ) =>
                                                                                     !isOpen
-                                                                            )
+                                                                            );
                                                                         }}
                                                                     >
                                                                         <p className="lg:text-lg">
@@ -351,13 +354,13 @@ const Header = ({ blok }) => {
                                                                                         }
                                                                                         className="flex justify-between px-0 py-4 text-base text-primarySolid-800 lg:text-primarySolid-600 hover:text-primary"
                                                                                         onClick={() => {
-                                                                                            closeMobileNav()
+                                                                                            closeMobileNav();
                                                                                             setIsOpen(
                                                                                                 (
                                                                                                     isOpen
                                                                                                 ) =>
                                                                                                     !isOpen
-                                                                                            )
+                                                                                            );
                                                                                         }}
                                                                                     >
                                                                                         <p>
@@ -398,7 +401,7 @@ const Header = ({ blok }) => {
                 </>
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

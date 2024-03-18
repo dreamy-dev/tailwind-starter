@@ -1,9 +1,9 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import { useState } from 'react'
-import ContentWidth from '../layouts/ContentWidth'
-import Text from '../typography/Text'
-import H2 from '../typography/H2'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { useState } from 'react';
+import ContentWidth from '../layouts/ContentWidth';
+import Text from '../typography/Text';
+import H2 from '../typography/H2';
 
 const ReportsGrid = ({ blok }) => {
     return (
@@ -28,7 +28,7 @@ const ReportsGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default ReportsGrid
+export default ReportsGrid;

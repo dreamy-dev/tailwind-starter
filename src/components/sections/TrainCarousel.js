@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import DoubleCard from './DoubleCard'
-import ContentWidth from '../layouts/ContentWidth'
-import FullWidth from '../layouts/FullWidth'
-import TeaserMobilitySolutions from './TeaserMobilitySolutions'
-import H3 from '../typography/H3'
-import Text from '../typography/Text'
-import Link from '../typography/Link'
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import DoubleCard from './DoubleCard';
+import ContentWidth from '../layouts/ContentWidth';
+import FullWidth from '../layouts/FullWidth';
+import TeaserMobilitySolutions from './TeaserMobilitySolutions';
+import H3 from '../typography/H3';
+import Text from '../typography/Text';
+import Link from '../typography/Link';
 
 const tabs = {
     categories: [
@@ -185,21 +185,21 @@ const tabs = {
             ],
         },
     ],
-}
+};
 
 const variants = {
     open: { opacity: 1, y: 0 },
     closed: { opacity: 0, y: 100 },
-}
+};
 
 const plusAnimation = {
     open: { transform: 'rotate(45deg)' },
     close: { transform: 'rotate(0deg)' },
-}
+};
 
 const TrainCarousel = (props) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [selectedCategory, setSelectedCategory] = useState(0)
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(0);
 
     return (
         <section className="bg-stadlergradient">
@@ -311,7 +311,7 @@ const TrainCarousel = (props) => {
             </ContentWidth>
             <DoubleCard />
         </section>
-    )
-}
+    );
+};
 
-export default TrainCarousel
+export default TrainCarousel;

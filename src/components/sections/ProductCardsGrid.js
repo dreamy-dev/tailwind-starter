@@ -1,6 +1,6 @@
-import React from 'react'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import ContentWidth from '../layouts/ContentWidth'
+import React from 'react';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import ContentWidth from '../layouts/ContentWidth';
 
 const ProductCardsGrid = ({ blok }) => {
     return (
@@ -19,7 +19,7 @@ const ProductCardsGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default ProductCardsGrid
+export default ProductCardsGrid;

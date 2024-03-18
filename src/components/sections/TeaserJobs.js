@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import ButtonPrimary from '../elements/ButtonPrimary'
-import H2 from '../typography/H2'
+import ButtonPrimary from '../elements/ButtonPrimary';
+import H2 from '../typography/H2';
 
 export default function Jobs() {
     return (
@@ -140,5 +140,5 @@ export default function Jobs() {
                 </div>
             </div>
         </section>
-    )
+    );
 }
