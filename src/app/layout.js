@@ -83,8 +83,6 @@ export default function RootLayout({ children }) {
                     <Header />
                     <main>{children}</main>
                     <Footer />
-                    
-                    <TrainCarousel />
                 </body>
             </html>
         </StoryblokProvider>

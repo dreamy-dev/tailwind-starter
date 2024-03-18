@@ -73,9 +73,12 @@ import AccordionTabsTableWrapper from './sections/AccordionTabsTableWrapper';
 import AllNews from './sections/AllNews';
 import CareerStepGrid from './sections/CareerStepGrid';
 import CareerStepItem from './sections/CareerStepItem';
-import AllMedienmitteilungen from './sections/AllMedienmitteilungen';
+
 import VideoFullWidth from './sections/VideoFullWidth';
 import GlobalDownloadReference from './sections/GlobalDownloadReference';
+
+import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen';
+import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -154,7 +157,8 @@ storyblokInit({
         "all-news": AllNews,
         "career-step-grid": CareerStepGrid,
         "career-step-item": CareerStepItem,
-        "adhoc_medienmitteilungen_teaser": AllMedienmitteilungen,
+        "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
+        "alle-medienmitteilungen": AlleMedienmitteilungen,
         "video-full-width": VideoFullWidth,
         "global_download_reference": GlobalDownloadReference,
 
