@@ -1,7 +1,4 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
-import SmallWidth from '../../components/layouts/SmallWidth';
-import H2 from '../typography/H2';
-import Text from '../typography/Text';
 import Contact from './Contact';
 
 const GlobalReference = ({ blok }) => {
