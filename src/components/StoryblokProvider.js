@@ -70,10 +70,12 @@ import HistoryCard from './sections/HistoryCard';
 import AccordionYearWrapper from './sections/AccordionYearWrapper';
 import AccordionTextDateDownloadItem from './sections/AccordionTextDateDownloadItem';
 import AccordionTabsTableWrapper from './sections/AccordionTabsTableWrapper';
-import AllNews from './sections/AllNews'
-import CareerStepGrid from './sections/CareerStepGrid'
-import CareerStepItem from './sections/CareerStepItem'
-import AllMedienmitteilungen from './sections/AllMedienmitteilungen'
+import AllNews from './sections/AllNews';
+import CareerStepGrid from './sections/CareerStepGrid';
+import CareerStepItem from './sections/CareerStepItem';
+import AllMedienmitteilungen from './sections/AllMedienmitteilungen';
+import VideoFullWidth from './sections/VideoFullWidth';
+import GlobalDownloadReference from './sections/GlobalDownloadReference';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -153,6 +155,8 @@ storyblokInit({
         "career-step-grid": CareerStepGrid,
         "career-step-item": CareerStepItem,
         "adhoc_medienmitteilungen_teaser": AllMedienmitteilungen,
+        "video-full-width": VideoFullWidth,
+        "global_download_reference": GlobalDownloadReference,
 
     },
 });
