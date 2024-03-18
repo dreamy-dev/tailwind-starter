@@ -2,29 +2,12 @@ import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
 import Link from 'next/link';
-import { MotionConfig, motion, MotionProps } from 'framer-motion';
-import { useState, useEffect, useRef } from 'react';
-import FullWidth from '../layouts/FullWidth';
+import { MotionConfig, motion} from 'framer-motion';
+import { useState} from 'react';
 import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
 
-// interface ResponsiveObject {
-//   desktop: {
-//     breakpoint: { max: number; min: number };
-//     items: number;
-//     paritialVisibilityGutter: number;
-//   };
-//   tablet: {
-//     breakpoint: { max: number; min: number };
-//     items: number;
-//     paritialVisibilityGutter: number;
-//   };
-//   mobile: {
-//     breakpoint: { max: number; min: number };
-//     items: number;
-//     paritialVisibilityGutter: number;
-//   };
-// }
+
 
 const TestimonialMotionDiv = motion.div;
 
@@ -148,71 +131,12 @@ const Pagination = ({ total, current }) => {
     );
 };
 
-// const responsive: ResponsiveObject = {
-//   desktop: {
-//     breakpoint: { max: 3000, min: 1024 },
-//     items: 3,
-//     paritialVisibilityGutter: 60,
-//   },
-//   tablet: {
-//     breakpoint: { max: 1024, min: 464 },
-//     items: 2,
-//     paritialVisibilityGutter: 50,
-//   },
-//   mobile: {
-//     breakpoint: { max: 464, min: 0 },
-//     items: 1,
-//     paritialVisibilityGutter: 30,
-//   },
-// };
+
 
 const TestimonialsCarousel = () => {
     const [current, setCurrent] = useState(0);
     const [showTrains, setShowTrains] = useState(false);
 
-    //  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-
-    //  useEffect(() => {
-    //    const handleTouchStart = (e: TouchEvent) => {
-    //      setTouchStartX(e.touches[0].clientX);
-    //       e.preventDefault();
-    //    };
-
-    //    const handleTouchMove = (e: TouchEvent) => {
-    //      if (touchStartX !== null) {
-    //        const touchEndX = e.touches[0].clientX;
-    //        const deltaX = touchEndX - touchStartX;
-
-    //        const swipeThreshold = window.innerWidth / 4;
-
-    //        if (deltaX > swipeThreshold) {
-
-    //          onPrevClick();
-    //          setTouchStartX(null);
-    //        } else if (deltaX < -swipeThreshold) {
-
-    //          onNextClick();
-    //          setTouchStartX(null);
-    //        }
-    //      }
-    //    };
-
-    //    const handleTouchEnd = () => {
-    //      setTouchStartX(null);
-    //    };
-
-    //    document.addEventListener("touchstart", handleTouchStart, {
-    //      passive: false,
-    //    });
-    //    document.addEventListener("touchmove", handleTouchMove, { passive: false });
-    //    document.addEventListener("touchend", handleTouchEnd);
-
-    //    return () => {
-    //      document.removeEventListener("touchstart", handleTouchStart);
-    //      document.removeEventListener("touchmove", handleTouchMove);
-    //      document.removeEventListener("touchend", handleTouchEnd);
-    //    };
-    //  }, [touchStartX]);
 
     const onPrevClick = () => {
         if (current > 0) {
