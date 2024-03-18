@@ -73,7 +73,7 @@ import AccordionTabsTableWrapper from './sections/AccordionTabsTableWrapper';
 import AllNews from './sections/AllNews';
 import CareerStepGrid from './sections/CareerStepGrid';
 import CareerStepItem from './sections/CareerStepItem';
-import AllMedienmitteilungen from './sections/AllMedienmitteilungen';
+
 import VideoFullWidth from './sections/VideoFullWidth';
 import GlobalDownloadReference from './sections/GlobalDownloadReference';
 
