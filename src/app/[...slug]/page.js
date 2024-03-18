@@ -16,7 +16,11 @@ async function fetchData(slug) {
             'alle-medienmitteilungen.filter_years',
             'alle-medienmitteilungen.filter_country',
             'alle-medienmitteilungen.filter_medienmitteilungencategories',
-            'alle-medienmitteilungen.filter_products'
+            'alle-medienmitteilungen.filter_products',
+            'alle-news.filter_years',
+            'alle-news.filter_country',
+            'alle-news.filter_medienmitteilungencategories',
+            'alle-news.filter_products'
         ],
     };
 
