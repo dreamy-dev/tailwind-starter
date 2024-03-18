@@ -11,8 +11,8 @@ export default function SpecificationsGrid({ blok }) {
         >
             <ContentWidth>
                 <div className="col-span-12 max-w-full">
-                    <div className="mb-10">
-                        <H4 textColor="black">{blok.title}</H4>
+                    <div className="mb-10 text-white">
+                        <H4>{blok.title}</H4>
                     </div>
                     <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {blok.specifications_grid.map((nestedBlok) => (

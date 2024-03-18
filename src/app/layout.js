@@ -9,7 +9,6 @@ import localFont from 'next/font/local'
 
 import './globals.css';
 
-3;
 // const fontStadler = localFont({
 //   src: [
 //     {
