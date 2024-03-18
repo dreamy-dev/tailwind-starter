@@ -9,11 +9,11 @@ function DownloadItem({ blok }) {
         <section {...storyblokEditable(blok)}>
             <ContentWidth>
                 <div className="col-span-12 mb-14 flex justify-between align-baseline">
-                    <Text>{blok?.Text}</Text>
+                    <Text>{blok?.text}</Text>
                     <ButtonPrimary
                         position="right"
-                        buttonText={blok?.CTA_text}
-                        href={blok?.CTA_link.url}
+                        buttonText={blok?.button_text}
+                        href={blok?.button_link.url}
                     >
                         <svg
                             width="15"

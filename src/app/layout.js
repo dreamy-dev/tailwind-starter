@@ -1,14 +1,14 @@
-import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
-import StoryblokProvider from '../components/StoryblokProvider';
-import Script from 'next/script';
-import Header from '../components/sections/Header';
-import Footer from '../components/sections/Footer';
-import { Montserrat } from 'next/font/google';
-import localFont from 'next/font/local';
+import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
+import StoryblokProvider from '../components/StoryblokProvider'
+import Script from "next/script";
+import Header from "../components/sections/Header";
+import Footer from "../components/sections/Footer";
+import TrainCarousel from "../components/sections/TrainCarousel";
+import { Montserrat } from "next/font/google";
+import localFont from 'next/font/local'
 
 import './globals.css';
 
-3;
 // const fontStadler = localFont({
 //   src: [
 //     {

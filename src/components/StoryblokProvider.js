@@ -15,7 +15,6 @@ import Header from './sections/Header';
 import ImageFullWidth from './sections/ImageFullWidth';
 import Career from './sections/Career';
 import Features from './sections/Features';
-import Map from './sections/Map';
 import TextSection from './sections/TextSection';
 import QualityFeatureGrid from './sections/QualityFeatureGrid';
 import QualityFeatureItem from './sections/QualityFeatureItem';
@@ -49,7 +48,7 @@ import CorporateGorvernanceTeaser from './sections/CorporateGovernanceTeaser';
 import SchienenfahrzeugeGrid from './sections/SchienenfahrzeugeGrid';
 import SchienenfahrzeugeItem from './sections/SchienenfahrzeugeItem';
 import SchienenfahrzeugeWrapper from './sections/SchienenfahrzeugeWrapper';
-import NewsTeaser from './sections/NewsSection';
+import NewsTeaser from './sections/NewsTeaser';
 import AccordionWrapper from './sections/AccordionWrapper';
 import Intro from './sections/Intro';
 import SuccessStoryGrid from './sections/SuccessStoryGrid';
@@ -71,7 +70,16 @@ import TeaserSuccessStories from './sections/TeaserSuccessStories';
 import History from './sections/History';
 import HistoryWrapper from './sections/HistoryWrapper';
 import HistoryCard from './sections/HistoryCard';
-
+import AccordionYearWrapper from './sections/AccordionYearWrapper';
+import AccordionTextDateDownloadItem from './sections/AccordionTextDateDownloadItem';
+import AccordionTabsTableWrapper from './sections/AccordionTabsTableWrapper';
+import AllNews from './sections/AllNews';
+import CareerStepGrid from './sections/CareerStepGrid';
+import CareerStepItem from './sections/CareerStepItem';
+import VideoFullWidth from './sections/VideoFullWidth';
+import GlobalDownloadReference from './sections/GlobalDownloadReference';
+import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen';
+import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -127,7 +135,7 @@ storyblokInit({
         schienenfahrzeuge_grid: SchienenfahrzeugeGrid,
         schienenfahrzeuge_item: SchienenfahrzeugeItem,
         schienenfahrzeuge_wrapper: SchienenfahrzeugeWrapper,
-        'news-teaser': NewsTeaser,
+        'news_teaser': NewsTeaser,
         'image-right': Intro,
         'success-story-grid': SuccessStoryGrid,
         successstory: SuccessStoryContent,
@@ -148,6 +156,16 @@ storyblokInit({
         history: History,
         'history-card': HistoryCard,
         'history-section-wrapper': HistoryWrapper,
+        "accordion-all-years-wrapper": AccordionTabsTableWrapper,
+        "accordion-year-wrapper": AccordionYearWrapper,
+        "accordion-text-date-download-item":AccordionTextDateDownloadItem,
+        "all-news": AllNews,
+        "career-step-grid": CareerStepGrid,
+        "career-step-item": CareerStepItem,
+        "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
+        "alle-medienmitteilungen": AlleMedienmitteilungen,
+        "video-full-width": VideoFullWidth,
+        "global_download_reference": GlobalDownloadReference,
     },
 });
 
