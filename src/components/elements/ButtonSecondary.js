@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Button({
     backgroundColorClass,
@@ -20,8 +20,8 @@ export default function Button({
                   ? 'center'
                   : 'flex-end',
         alignItems: 'center',
-    }
-    const secondaryButtonStyles = `${backgroundColorClass} border ${textColorClass} ${borderColorClass} ${styles} flex text-sm px-5 py-3 items-center hover:primary-800 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded`
+    };
+    const secondaryButtonStyles = `${backgroundColorClass} border ${textColorClass} ${borderColorClass} ${styles} flex text-sm px-5 py-3 items-center hover:primary-800 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded`;
     return (
         <div style={containerStyles}>
             <a className={secondaryButtonStyles} href={href ?? '#'}>
@@ -30,5 +30,5 @@ export default function Button({
                 {iconAfter && <span className="ml-2">{iconAfter}</span>}
             </a>
         </div>
-    )
+    );
 }

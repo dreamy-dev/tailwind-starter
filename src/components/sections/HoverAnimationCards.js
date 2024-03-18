@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import Link from 'next/link'
-import ContentWidth from '../layouts/ContentWidth'
-import Text from '../typography/Text'
-import H3 from '../typography/H3'
-import H2 from '../typography/H2'
+import { useState } from 'react';
+import Link from 'next/link';
+import ContentWidth from '../layouts/ContentWidth';
+import Text from '../typography/Text';
+import H3 from '../typography/H3';
+import H2 from '../typography/H2';
 
 const HoverAnimationCards = ({ title, lead, list }) => {
     return (
@@ -41,7 +41,7 @@ const HoverAnimationCards = ({ title, lead, list }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default HoverAnimationCards
+export default HoverAnimationCards;

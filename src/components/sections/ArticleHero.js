@@ -1,26 +1,26 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import { render } from 'storyblok-rich-text-react-renderer'
-import { useState, useEffect } from 'react'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import { render } from 'storyblok-rich-text-react-renderer';
+import { useState, useEffect } from 'react';
 
-import SuperSmallWidth from '../layouts/SuperSmallWidth'
-import H1 from '../typography/H1'
-import Text from '../typography/Text'
-import Breadcrumbs from './Breadcrumbs'
+import SuperSmallWidth from '../layouts/SuperSmallWidth';
+import H1 from '../typography/H1';
+import Text from '../typography/Text';
+import Breadcrumbs from './Breadcrumbs';
 
 function ArticleHero({ block }) {
     const formatDate = (textToFormat) => {
-        const date = new Date(textToFormat)
-        const yyyy = date.getFullYear()
-        let mm = date.getMonth() + 1
-        let dd = date.getDate()
+        const date = new Date(textToFormat);
+        const yyyy = date.getFullYear();
+        let mm = date.getMonth() + 1;
+        let dd = date.getDate();
 
-        if (dd < 10) dd = '0' + dd
-        if (mm < 10) mm = '0' + mm
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
 
-        const formattedDay = dd + '.' + mm + '.' + yyyy
+        const formattedDay = dd + '.' + mm + '.' + yyyy;
 
-        return formattedDay
-    }
+        return formattedDay;
+    };
 
     return (
         <SuperSmallWidth>
@@ -50,7 +50,7 @@ function ArticleHero({ block }) {
                 alt="full service"
             />
         </SuperSmallWidth>
-    )
+    );
 }
 
-export default ArticleHero
+export default ArticleHero;

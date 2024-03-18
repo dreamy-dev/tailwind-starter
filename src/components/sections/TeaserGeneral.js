@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import ContentWidth from '../layouts/ContentWidth'
-import H2 from '../typography/H2'
-import Text from '../typography/Text'
-import ButtonPrimary from '../elements/ButtonPrimary'
+import ContentWidth from '../layouts/ContentWidth';
+import H2 from '../typography/H2';
+import Text from '../typography/Text';
+import ButtonPrimary from '../elements/ButtonPrimary';
 
 function TeaserGeneral({ title, customText, ctaText, href }) {
     return (
@@ -50,6 +50,6 @@ function TeaserGeneral({ title, customText, ctaText, href }) {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }
-export default TeaserGeneral
+export default TeaserGeneral;

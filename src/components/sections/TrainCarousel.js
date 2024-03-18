@@ -187,21 +187,21 @@ const tabs = {
             ],
         },
     ],
-}
+};
 
 const variants = {
     open: { opacity: 1, y: 0 },
     closed: { opacity: 0, y: 100 },
-}
+};
 
 const plusAnimation = {
     open: { transform: 'rotate(45deg)' },
     close: { transform: 'rotate(0deg)' },
-}
+};
 
 const TrainCarousel = (props) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [selectedCategory, setSelectedCategory] = useState(0)
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
     <section className="bg-stadlergradient">
@@ -302,4 +302,4 @@ const TrainCarousel = (props) => {
     )
 }
 
-export default TrainCarousel
+export default TrainCarousel;

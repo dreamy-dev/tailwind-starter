@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const ImageTrippleBanner = ({ blok }) => {
     return (
@@ -23,7 +23,7 @@ const ImageTrippleBanner = ({ blok }) => {
                 />
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default ImageTrippleBanner
+export default ImageTrippleBanner;

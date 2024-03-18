@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Testimonials() {
     const tabs = [
@@ -23,9 +23,9 @@ export default function Testimonials() {
             job: 'Schreiner',
             img: 'https://www.stadlerrail.com/media/img/c/schreiner_berufserfahrene.jpg',
         },
-    ]
+    ];
 
-    const [selectedTab, setSelectedTab] = useState(tabs[0])
+    const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
     return (
         <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -99,5 +99,5 @@ export default function Testimonials() {
                 </AnimatePresence>
             </div>
         </div>
-    )
+    );
 }

@@ -1,6 +1,6 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H4 from '../typography/H4'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H4 from '../typography/H4';
 
 const AdvantageItem = ({ blok }) => (
     <div {...storyblokEditable(blok)}>
@@ -10,6 +10,6 @@ const AdvantageItem = ({ blok }) => (
         <H4>{blok?.Title}</H4>
         <p className="text-gray-500 dark:text-gray-400">{blok?.Text}</p>
     </div>
-)
+);
 
-export default AdvantageItem
+export default AdvantageItem;

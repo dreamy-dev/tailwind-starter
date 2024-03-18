@@ -1,5 +1,5 @@
-import React from 'react'
-import { Card } from 'flowbite-react'
+import React from 'react';
+import { Card } from 'flowbite-react';
 
 export default function CardSimple() {
     return (
@@ -17,5 +17,5 @@ export default function CardSimple() {
                 </span>
             </p>
         </Card>
-    )
+    );
 }

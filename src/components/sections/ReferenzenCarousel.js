@@ -1,12 +1,12 @@
-import H3 from '../typography/H3'
-import Text from '../typography/Text'
-import H2 from '../typography/H2'
-import Link from 'next/link'
-import { MotionConfig, motion, MotionProps } from 'framer-motion'
-import { useState, useEffect, useRef } from 'react'
-import FullWidth from '../layouts/FullWidth'
-import ContentWidth from '../layouts/ContentWidth'
-import H4 from '../typography/H4'
+import H3 from '../typography/H3';
+import Text from '../typography/Text';
+import H2 from '../typography/H2';
+import Link from 'next/link';
+import { MotionConfig, motion, MotionProps } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import FullWidth from '../layouts/FullWidth';
+import ContentWidth from '../layouts/ContentWidth';
+import H4 from '../typography/H4';
 
 // interface ResponsiveObject {
 //   desktop: {
@@ -26,7 +26,7 @@ import H4 from '../typography/H4'
 //   };
 // }
 
-const TestimonialMotionDiv = motion.div
+const TestimonialMotionDiv = motion.div;
 
 const trains = [
     {
@@ -101,7 +101,7 @@ const trains = [
         name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
         image: '/Flirt-160/sob-gp1_0905b.jpg',
     },
-]
+];
 
 const images = [
     {
@@ -134,7 +134,7 @@ const images = [
         text: 'Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.',
         img: '/train-c.jpg',
     },
-]
+];
 
 const Pagination = ({ total, current }) => {
     return (
@@ -145,8 +145,8 @@ const Pagination = ({ total, current }) => {
                 <span>{total}</span>
             </p>
         </div>
-    )
-}
+    );
+};
 
 // const responsive: ResponsiveObject = {
 //   desktop: {
@@ -167,8 +167,8 @@ const Pagination = ({ total, current }) => {
 // };
 
 const TestimonialsCarousel = () => {
-    const [current, setCurrent] = useState(0)
-    const [showTrains, setShowTrains] = useState(false)
+    const [current, setCurrent] = useState(0);
+    const [showTrains, setShowTrains] = useState(false);
 
     //  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
@@ -216,19 +216,19 @@ const TestimonialsCarousel = () => {
 
     const onPrevClick = () => {
         if (current > 0) {
-            setCurrent(current - 1)
+            setCurrent(current - 1);
         }
-    }
+    };
 
     const onNextClick = () => {
         if (current < images.length - 1) {
-            setCurrent(current + 1)
+            setCurrent(current + 1);
         }
-    }
+    };
 
     const toggleTrainsVisibility = () => {
-        setShowTrains(!showTrains)
-    }
+        setShowTrains(!showTrains);
+    };
 
     return (
         <section className="py-24 bg-primarySolid-50">
@@ -449,7 +449,7 @@ const TestimonialsCarousel = () => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default TestimonialsCarousel
+export default TestimonialsCarousel;

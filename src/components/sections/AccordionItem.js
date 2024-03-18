@@ -1,4 +1,4 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const AccordionItem = ({ blok }) => {
     return (
@@ -7,7 +7,7 @@ const AccordionItem = ({ blok }) => {
                 {blok?.collapsable_text_2}
             </p>
         </div>
-    )
-}
+    );
+};
 
-export default AccordionItem
+export default AccordionItem;

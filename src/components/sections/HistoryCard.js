@@ -1,4 +1,4 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 export default function HistoryCard({ blok }) {
     return (
@@ -20,5 +20,5 @@ export default function HistoryCard({ blok }) {
                 </p>
             </div>
         </div>
-    )
+    );
 }

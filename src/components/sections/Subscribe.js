@@ -1,5 +1,5 @@
-import Button from '../elements/ButtonSecondary'
-import H2 from '../typography/H2'
+import Button from '../elements/ButtonSecondary';
+import H2 from '../typography/H2';
 
 export default function Subscribe() {
     return (
@@ -94,5 +94,5 @@ export default function Subscribe() {
                 </div>
             </div>
         </section>
-    )
+    );
 }

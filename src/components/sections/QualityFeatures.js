@@ -1,7 +1,7 @@
-import H2 from '../../components/typography/H2'
-import H4 from '../../components/typography/H4'
-import Text from '../typography/Text'
-import ContentWidth from '../layouts/ContentWidth'
+import H2 from '../../components/typography/H2';
+import H4 from '../../components/typography/H4';
+import Text from '../typography/Text';
+import ContentWidth from '../layouts/ContentWidth';
 
 const QualityFeatures = ({ features, mainTitle }) => {
     return (
@@ -88,7 +88,7 @@ const QualityFeatures = ({ features, mainTitle }) => {
                 </ContentWidth>
             </section>
         </>
-    )
-}
+    );
+};
 
-export default QualityFeatures
+export default QualityFeatures;

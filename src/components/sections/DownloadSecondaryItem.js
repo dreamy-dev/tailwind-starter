@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { storyblokEditable } from '@storyblok/react/rsc'
-import Button from '../elements/ButtonSecondary'
-import Text from '../typography/Text'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import Button from '../elements/ButtonSecondary';
+import Text from '../typography/Text';
 
 const DownloadSecondaryItem = ({ blok }) => {
     return (
@@ -45,6 +45,6 @@ const DownloadSecondaryItem = ({ blok }) => {
             </li>
             <div className="border-b mb-6"></div>
         </>
-    )
-}
-export default DownloadSecondaryItem
+    );
+};
+export default DownloadSecondaryItem;

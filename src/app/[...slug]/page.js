@@ -1,7 +1,7 @@
-import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc'
+import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 
-const isDev = 'development'
-export const revalidate = isDev ? 0 : 3600
+const isDev = 'development';
+export const revalidate = isDev ? 0 : 3600;
 
 async function fetchData(slug) {
     const sbParams = {
@@ -14,50 +14,50 @@ async function fetchData(slug) {
             'news.categories',
             'medienmitteilungen.categories',
         ],
-    }
+    };
 
-    const storyblokApi = getStoryblokApi()
-    const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams)
+    const storyblokApi = getStoryblokApi();
+    const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 
-    console.log(data.rels[(0, 1)])
-    return { story: data.story }
+    console.log(data.rels[(0, 1)]);
+    return { story: data.story };
 }
 
 export async function generateStaticParams() {
-    const storyblokApi = getStoryblokApi()
+    const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get('cdn/links/', {
         version: 'published',
-    })
+    });
 
-    const paths = []
+    const paths = [];
     Object.keys(data.links).forEach((linkKey) => {
         if (
             data.links[linkKey].is_folder ||
             data.links[linkKey].slug === 'blok-tests'
         ) {
-            return
+            return;
         }
 
-        const slug = data.links[linkKey].slug
-        let splittedSlug = slug.split('/')
+        const slug = data.links[linkKey].slug;
+        let splittedSlug = slug.split('/');
 
-        paths.push({ slug: splittedSlug })
-    })
+        paths.push({ slug: splittedSlug });
+    });
 
-    return paths
+    return paths;
 }
 
 export default async function Home({ params }) {
-    const slug = params?.slug ? params.slug.join('/') : 'blok-tests'
-    const { story } = await fetchData(slug)
+    const slug = params?.slug ? params.slug.join('/') : 'blok-tests';
+    const { story } = await fetchData(slug);
 
     if (!story) {
-        return notFound()
+        return notFound();
     }
 
     return (
         <>
             <StoryblokStory story={story} />
         </>
-    )
+    );
 }

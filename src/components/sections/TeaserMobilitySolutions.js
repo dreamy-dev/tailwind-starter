@@ -1,8 +1,8 @@
-'use client'
-import H2 from '../../components/typography/H2'
-import Text from '../../components/typography/Text'
-import ContentWidth from '../layouts/ContentWidth'
-import Button from '../elements/ButtonSecondary'
+'use client';
+import H2 from '../../components/typography/H2';
+import Text from '../../components/typography/Text';
+import ContentWidth from '../layouts/ContentWidth';
+import Button from '../elements/ButtonSecondary';
 
 export default function TeaserMobilitySolutions(props) {
     return (
@@ -55,5 +55,5 @@ export default function TeaserMobilitySolutions(props) {
                 <div className="col-span-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
             </ContentWidth>
         </section>
-    )
+    );
 }

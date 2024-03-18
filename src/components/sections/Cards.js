@@ -1,4 +1,4 @@
-import CardSimple from '../elements/CardSimple'
+import CardSimple from '../elements/CardSimple';
 
 export default function Cards() {
     return (
@@ -19,5 +19,5 @@ export default function Cards() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H3 from '../typography/H3'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
 
 const SchienenfahrzeugeItem = ({ blok }) => {
     return (
@@ -22,7 +22,7 @@ const SchienenfahrzeugeItem = ({ blok }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SchienenfahrzeugeItem
+export default SchienenfahrzeugeItem;

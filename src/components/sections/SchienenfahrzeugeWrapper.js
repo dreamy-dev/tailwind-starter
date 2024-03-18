@@ -1,5 +1,5 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
 const SchienenfahrzeugeWrapper = ({ blok }) => {
     return (
@@ -13,7 +13,7 @@ const SchienenfahrzeugeWrapper = ({ blok }) => {
                 ))}
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default SchienenfahrzeugeWrapper
+export default SchienenfahrzeugeWrapper;

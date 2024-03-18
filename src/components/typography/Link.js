@@ -8,5 +8,5 @@ export default function Link({ children, styles, href }) {
                 {children}
             </a>
         </>
-    )
+    );
 }

@@ -1,7 +1,7 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H4 from '../typography/H4'
-import Text from '../typography/Text'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H4 from '../typography/H4';
+import Text from '../typography/Text';
 
 const QualityFeatureItem = ({ blok }) => (
     <div {...storyblokEditable(blok)}>
@@ -17,6 +17,6 @@ const QualityFeatureItem = ({ blok }) => (
             </div>
         </div>
     </div>
-)
+);
 
-export default QualityFeatureItem
+export default QualityFeatureItem;

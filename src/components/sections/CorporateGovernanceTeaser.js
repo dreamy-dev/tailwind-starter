@@ -1,4 +1,4 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const CorporateGorvernanceTeaser = ({ blok }) => {
     return (
@@ -13,6 +13,6 @@ const CorporateGorvernanceTeaser = ({ blok }) => {
                 <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
             </article>
         </a>
-    )
-}
-export default CorporateGorvernanceTeaser
+    );
+};
+export default CorporateGorvernanceTeaser;

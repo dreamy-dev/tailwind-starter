@@ -1,5 +1,5 @@
-import ContentWidth from '../layouts/ContentWidth'
-import H2 from '../typography/H2'
+import ContentWidth from '../layouts/ContentWidth';
+import H2 from '../typography/H2';
 
 const eventData = [
     {
@@ -27,7 +27,7 @@ const eventData = [
         date: 'tt. mm. yyyy',
         link: '#',
     },
-]
+];
 const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
     return (
         <>
@@ -89,6 +89,6 @@ const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
                 </ContentWidth>
             </section>
         </>
-    )
-}
-export default EventCalendar
+    );
+};
+export default EventCalendar;

@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import FullWidth from '../layouts/FullWidth'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
+import { motion } from 'framer-motion';
+import FullWidth from '../layouts/FullWidth';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
 const SubHero = ({ imageUrl, children, blok }) => {
     return (
@@ -40,7 +40,7 @@ const SubHero = ({ imageUrl, children, blok }) => {
                 </div>
             </FullWidth>
         </section>
-    )
-}
+    );
+};
 
-export default SubHero
+export default SubHero;

@@ -1,9 +1,9 @@
-import React from 'react'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import ContentWidth from '../layouts/ContentWidth'
-import Text from '../typography/Text'
-import H3 from '../typography/H3'
-import H4 from '../typography/H4'
+import React from 'react';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import ContentWidth from '../layouts/ContentWidth';
+import Text from '../typography/Text';
+import H3 from '../typography/H3';
+import H4 from '../typography/H4';
 
 const ProductCard = ({ blok }) => (
     <li className="" {...storyblokEditable(blok)}>
@@ -22,7 +22,7 @@ const ProductCard = ({ blok }) => (
             </a>
         </div>
     </li>
-)
+);
 
 const ProductCardsGrid = () => {
     // const products = [
@@ -63,7 +63,7 @@ const ProductCardsGrid = () => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default ProductCard
+export default ProductCard;

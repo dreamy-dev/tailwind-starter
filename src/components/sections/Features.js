@@ -1,6 +1,6 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H3 from '../../components/typography/H3'
-import ContentWidth from '../layouts/ContentWidth'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H3 from '../../components/typography/H3';
+import ContentWidth from '../layouts/ContentWidth';
 
 const Features = ({ blok }) => {
     return (
@@ -60,7 +60,7 @@ const Features = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default Features
+export default Features;

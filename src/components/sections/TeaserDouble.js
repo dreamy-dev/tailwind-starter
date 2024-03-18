@@ -1,5 +1,5 @@
-import ButtonPrimary from '../elements/ButtonPrimary'
-import H2 from '../typography/H2'
+import ButtonPrimary from '../elements/ButtonPrimary';
+import H2 from '../typography/H2';
 
 export default function TeaserDouble() {
     return (
@@ -259,5 +259,5 @@ export default function TeaserDouble() {
                 </div>
             </div>
         </section>
-    )
+    );
 }

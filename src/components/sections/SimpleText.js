@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { storyblokEditable } from '@storyblok/react/rsc'
-import SmallWidth from '../../components/layouts/SmallWidth'
-import Text from '../typography/Text'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import SmallWidth from '../../components/layouts/SmallWidth';
+import Text from '../typography/Text';
 
 export default function SimpleText({ blok }) {
     return (
@@ -14,5 +14,5 @@ export default function SimpleText({ blok }) {
                 <Text>{blok?.text}</Text>
             </SmallWidth>
         </section>
-    )
+    );
 }

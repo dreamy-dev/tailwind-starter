@@ -1,27 +1,27 @@
-'use client'
+'use client';
 
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import { useEffect, useRef } from 'react'
-import ButtonPrimary from '../../components/elements/ButtonPrimary'
-import H2 from '../../components/typography/H2'
-import ContentWidth from '../layouts/ContentWidth'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { useEffect, useRef } from 'react';
+import ButtonPrimary from '../../components/elements/ButtonPrimary';
+import H2 from '../../components/typography/H2';
+import ContentWidth from '../layouts/ContentWidth';
 
 export default function Career({ blok }) {
-    const careerRef = useRef()
+    const careerRef = useRef();
 
     useEffect(() => {
-        let careerEl = careerRef.current
+        let careerEl = careerRef.current;
 
         careerEl?.addEventListener('click', () => {
-            console.log('publicationEl', careerEl)
-            var _paq = (window._paq = window._paq || [])
+            console.log('publicationEl', careerEl);
+            var _paq = (window._paq = window._paq || []);
             _paq.push([
                 'trackEvent',
                 'Potenzielle Mitarbeiter',
                 'Karierre Block',
-            ])
-        })
-    })
+            ]);
+        });
+    });
     return (
         <section {...storyblokEditable(blok)} className="bg-white mt-16 mb-16">
             <ContentWidth>
@@ -42,5 +42,5 @@ export default function Career({ blok }) {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }

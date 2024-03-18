@@ -1,6 +1,6 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H4 from '../typography/H4'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H4 from '../typography/H4';
 
 const PortraitItem = ({ blok }) => (
     <div {...storyblokEditable(blok)}>
@@ -22,6 +22,6 @@ const PortraitItem = ({ blok }) => (
             </div>
         </div>
     </div>
-)
+);
 
-export default PortraitItem
+export default PortraitItem;

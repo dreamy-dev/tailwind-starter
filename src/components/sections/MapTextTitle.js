@@ -1,6 +1,6 @@
-import H2 from '../../components/typography/H2'
-import Text from '../../components/typography/Text'
-import SmallWidth from '../layouts/SmallWidth'
+import H2 from '../../components/typography/H2';
+import Text from '../../components/typography/Text';
+import SmallWidth from '../layouts/SmallWidth';
 
 export default function MapTextTitle(props) {
     return (
@@ -16,5 +16,5 @@ export default function MapTextTitle(props) {
                 </div>
             </SmallWidth>
         </section>
-    )
+    );
 }

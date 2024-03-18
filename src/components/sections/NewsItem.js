@@ -1,5 +1,5 @@
-import ContentWidth from '../layouts/ContentWidth'
-import Text from '../typography/Text'
+import ContentWidth from '../layouts/ContentWidth';
+import Text from '../typography/Text';
 
 function NewsItem() {
     return (
@@ -39,7 +39,7 @@ function NewsItem() {
         </div> */}
             </div>
         </ContentWidth>
-    )
+    );
 }
 
-export default NewsItem
+export default NewsItem;

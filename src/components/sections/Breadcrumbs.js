@@ -1,40 +1,40 @@
-import { useEffect, useState } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 
 const convertBreadcrumb = (string) => {
     string
         .replace(/-/g, ' ')
         .replace(/oe/g, 'ö')
         .replace(/ae/g, 'ä')
-        .replace(/ue/g, 'ü')
+        .replace(/ue/g, 'ü');
 
-    return string.charAt(0).toUpperCase() + string.slice(1)
-}
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
 const Breadcrumbs = () => {
-    const router = useRouter()
-    const path = usePathname()
-    const [breadcrumbs, setBreadcrumbs] = useState(null)
+    const router = useRouter();
+    const path = usePathname();
+    const [breadcrumbs, setBreadcrumbs] = useState(null);
 
     useEffect(() => {
         if (router) {
-            const linkPath = path?.split('/')
-            linkPath.shift()
-            linkPath.splice(-1)
+            const linkPath = path?.split('/');
+            linkPath.shift();
+            linkPath.splice(-1);
 
             const pathArray = linkPath.map((path, i) => {
                 return {
                     breadcrumb: path,
                     href: '/' + linkPath.slice(0, i + 1).join('/'),
-                }
-            })
+                };
+            });
 
-            setBreadcrumbs(pathArray)
+            setBreadcrumbs(pathArray);
         }
-    }, [router])
+    }, [router]);
 
     if (!breadcrumbs) {
-        return null
+        return null;
     }
 
     return (
@@ -58,11 +58,11 @@ const Breadcrumbs = () => {
                                 </a>
                             )}
                         </li>
-                    )
+                    );
                 })}
             </ol>
         </nav>
-    )
-}
+    );
+};
 
-export default Breadcrumbs
+export default Breadcrumbs;

@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import Button from '../elements/ButtonSecondary'
+import Button from '../elements/ButtonSecondary';
 
 export default function Stepper() {
     return (
@@ -108,5 +108,5 @@ export default function Stepper() {
                 </div>
             </li>
         </ol>
-    )
+    );
 }
