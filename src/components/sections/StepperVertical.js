@@ -78,5 +78,5 @@ export default function StepperVertical() {
                 </li>
             </ol>
         </div>
-    )
+    );
 }

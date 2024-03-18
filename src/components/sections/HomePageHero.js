@@ -1,8 +1,8 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H1 from '../typography/H1'
-import Text from '../typography/Text'
-import { motion } from 'framer-motion'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H1 from '../typography/H1';
+import Text from '../typography/Text';
+import { motion } from 'framer-motion';
 
 export default function HomePageHero({ blok }) {
     return (
@@ -52,5 +52,5 @@ export default function HomePageHero({ blok }) {
                 </motion.div>
             </div>
         </div>
-    )
+    );
 }

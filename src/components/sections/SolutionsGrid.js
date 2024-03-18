@@ -1,9 +1,9 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
-import ContentWidth from '../layouts/ContentWidth'
-import H2 from '../typography/H2'
-import Text from '../typography/Text'
+import ContentWidth from '../layouts/ContentWidth';
+import H2 from '../typography/H2';
+import Text from '../typography/Text';
 
 const SolutionsGrid = ({ blok }) => {
     return (
@@ -26,7 +26,7 @@ const SolutionsGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default SolutionsGrid
+export default SolutionsGrid;

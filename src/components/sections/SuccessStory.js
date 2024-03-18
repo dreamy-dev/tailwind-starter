@@ -1,10 +1,10 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H3 from '../typography/H3'
-import Link from 'next/link'
-import Text from '../typography/Text'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
+import Link from 'next/link';
+import Text from '../typography/Text';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const SuccessStory = ({ current, idx, blok }) => {
     return (
@@ -42,7 +42,7 @@ const SuccessStory = ({ current, idx, blok }) => {
                 </Link>
             </div>
         </motion.div>
-    )
-}
+    );
+};
 
-export default SuccessStory
+export default SuccessStory;

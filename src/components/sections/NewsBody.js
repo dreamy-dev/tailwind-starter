@@ -29,4 +29,4 @@ function NewsBody({ blok }) {
   );
 }
 
-export default NewsBody
+export default NewsBody;

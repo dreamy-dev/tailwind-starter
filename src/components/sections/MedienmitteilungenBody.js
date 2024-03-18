@@ -2,8 +2,8 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
 import { render } from 'storyblok-rich-text-react-renderer'
 import { useState, useEffect } from 'react'
 
-import SuperSmallWidth from '../layouts/SuperSmallWidth'
-import ArticleHero from './ArticleHero'
+import SuperSmallWidth from '../layouts/SuperSmallWidth';
+import ArticleHero from './ArticleHero';
 
 function MedienmitteilungenBody({ blok }) {
     console.log(blok)
@@ -27,7 +27,7 @@ function MedienmitteilungenBody({ blok }) {
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
             ))}
         </section>
-    )
+    );
 }
 
-export default MedienmitteilungenBody
+export default MedienmitteilungenBody;

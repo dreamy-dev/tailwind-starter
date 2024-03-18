@@ -1,12 +1,12 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import { useState } from 'react'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { useState } from 'react';
 
-const AccordionWrapper = ({ blok }) => {
-    const [isActive, setIsActive] = useState(false)
+const AccordionWrapper = ({ blok, years }) => {
+    const [isActive, setIsActive] = useState(false);
 
     const handleAccordionClick = () => {
-        setIsActive(!isActive)
-    }
+        setIsActive(!isActive);
+    };
     return (
         <div {...storyblokEditable(blok)}>
             <h2 className="mb-2">
@@ -37,7 +37,7 @@ const AccordionWrapper = ({ blok }) => {
                 </button>
             </h2>
             <div className={`${isActive ? '' : 'hidden'}`}>
-                <div className="py-5 border-b border-gray-200 dark:border-gray-700">
+                <div className="">
                     <div id="accordion-flush" {...storyblokEditable(blok)}>
                         {blok.accordion_item.map((nestedBlok) => (
                             <StoryblokComponent
@@ -49,7 +49,7 @@ const AccordionWrapper = ({ blok }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AccordionWrapper
+export default AccordionWrapper;

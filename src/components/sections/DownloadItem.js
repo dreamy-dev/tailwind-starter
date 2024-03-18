@@ -1,19 +1,19 @@
-'use client'
-import ContentWidth from '../layouts/ContentWidth'
-import ButtonPrimary from '../elements/ButtonPrimary'
-import Text from '../typography/Text'
-import { storyblokEditable } from '@storyblok/react/rsc'
+'use client';
+import ContentWidth from '../layouts/ContentWidth';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import Text from '../typography/Text';
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 function DownloadItem({ blok }) {
     return (
         <section {...storyblokEditable(blok)}>
             <ContentWidth>
                 <div className="col-span-12 mb-14 flex justify-between align-baseline">
-                    <Text>{blok?.Text}</Text>
+                    <Text>{blok?.text}</Text>
                     <ButtonPrimary
                         position="right"
-                        buttonText={blok?.CTA_text}
-                        href={blok?.CTA_link.url}
+                        buttonText={blok?.button_text}
+                        href={blok?.button_link.url}
                     >
                         <svg
                             width="15"
@@ -43,7 +43,7 @@ function DownloadItem({ blok }) {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }
 
-export default DownloadItem
+export default DownloadItem;

@@ -1,7 +1,7 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
-import SmallWidth from '../layouts/SmallWidth'
+import SmallWidth from '../layouts/SmallWidth';
 
 const PortraitGrid = ({ blok }) => (
     <section>
@@ -19,6 +19,6 @@ const PortraitGrid = ({ blok }) => (
             </div>
         </SmallWidth>
     </section>
-)
+);
 
-export default PortraitGrid
+export default PortraitGrid;

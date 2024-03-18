@@ -1,7 +1,7 @@
-import React from 'react'
-import Button from '../elements/ButtonSecondary'
-import H4 from '../typography/H4'
-import ContentWidth from '../layouts/ContentWidth'
+import React from 'react';
+import Button from '../elements/ButtonSecondary';
+import H4 from '../typography/H4';
+import ContentWidth from '../layouts/ContentWidth';
 
 const List = ({ items, onItemClick, listTitle }) => {
     return (
@@ -52,7 +52,7 @@ const List = ({ items, onItemClick, listTitle }) => {
                 </div>
             </ContentWidth>
         </div>
-    )
-}
+    );
+};
 
-export default List
+export default List;

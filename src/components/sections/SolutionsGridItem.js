@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { storyblokEditable } from '@storyblok/react/rsc'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const SolutionsGridItem = ({ blok }) => {
     return (
@@ -19,7 +19,7 @@ const SolutionsGridItem = ({ blok }) => {
                 </div>
             </a>
         </div>
-    )
-}
+    );
+};
 
-export default SolutionsGridItem
+export default SolutionsGridItem;

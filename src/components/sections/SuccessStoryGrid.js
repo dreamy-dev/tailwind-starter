@@ -1,43 +1,43 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H2 from '../typography/H2'
-import H3 from '../typography/H3'
-import Link from 'next/link'
-import Text from '../typography/Text'
-import { MotionConfig, motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H2 from '../typography/H2';
+import H3 from '../typography/H3';
+import Link from 'next/link';
+import Text from '../typography/Text';
+import { MotionConfig, motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
-import ContentWidth from '../layouts/ContentWidth'
+import ContentWidth from '../layouts/ContentWidth';
 
 const SuccessStoryGrid = ({ blok }) => {
-    const [current, setCurrent] = useState(0)
-    const [isMobile, setIsMobile] = useState(false)
+    const [current, setCurrent] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
+            setIsMobile(window.innerWidth <= 768);
+        };
 
-        handleResize()
+        handleResize();
 
-        window.addEventListener('resize', handleResize)
+        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const onPrevClick = () => {
         if (current > 0) {
-            setCurrent(current - 1)
+            setCurrent(current - 1);
         }
-    }
+    };
 
     const onNextClick = () => {
         if (current < items.length - 1) {
-            setCurrent(current + 1)
+            setCurrent(current + 1);
         }
-    }
+    };
 
     return (
         <section className="py-5 lg:py-24 bg-white overflow-hidden">
@@ -62,7 +62,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                 >
                                     {blok.success_stories.map((nestedBlok) => {
                                         nestedBlok.content.slug =
-                                            nestedBlok.slug
+                                            nestedBlok.slug;
                                         return (
                                             <motion.div
                                                 {...storyblokEditable(blok)}
@@ -115,7 +115,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                                     </Link>
                                                 </div>
                                             </motion.div>
-                                        )
+                                        );
                                     })}
                                 </motion.div>
                             </div>
@@ -149,7 +149,7 @@ const SuccessStoryGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default SuccessStoryGrid
+export default SuccessStoryGrid;

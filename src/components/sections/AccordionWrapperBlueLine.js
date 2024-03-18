@@ -1,5 +1,5 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H4 from '../typography/H4'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H4 from '../typography/H4';
 
 const AccordionWrapperBlueLine = ({ blok }) => {
     return (
@@ -15,7 +15,7 @@ const AccordionWrapperBlueLine = ({ blok }) => {
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok?._uid} />
             ))}
         </div>
-    )
-}
+    );
+};
 
-export default AccordionWrapperBlueLine
+export default AccordionWrapperBlueLine;

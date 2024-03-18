@@ -1,7 +1,7 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H2 from '../typography/H2'
-import Text from '../typography/Text'
-import ContentWidth from '../layouts/ContentWidth'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H2 from '../typography/H2';
+import Text from '../typography/Text';
+import ContentWidth from '../layouts/ContentWidth';
 
 const FactsAndFiguresGrid = ({ blok }) => {
     return (
@@ -28,7 +28,7 @@ const FactsAndFiguresGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default FactsAndFiguresGrid
+export default FactsAndFiguresGrid;

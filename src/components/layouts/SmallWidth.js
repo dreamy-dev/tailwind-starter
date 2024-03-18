@@ -1,4 +1,4 @@
-import ContentWidth from './ContentWidth'
+import ContentWidth from './ContentWidth';
 
 export default function SmallWidth({ children }) {
     return (
@@ -7,5 +7,5 @@ export default function SmallWidth({ children }) {
                 {children}
             </div>
         </ContentWidth>
-    )
+    );
 }

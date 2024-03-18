@@ -1,8 +1,8 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import ContentWidth from '../layouts/ContentWidth'
-import H4 from '../typography/H4'
-import Text from '../typography/Text'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import ContentWidth from '../layouts/ContentWidth';
+import H4 from '../typography/H4';
+import Text from '../typography/Text';
 
 const TableGrid = ({ blok }) => {
     return (
@@ -53,6 +53,6 @@ const TableGrid = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
-export default TableGrid
+    );
+};
+export default TableGrid;

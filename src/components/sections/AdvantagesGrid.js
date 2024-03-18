@@ -1,6 +1,6 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H2 from '../typography/H2'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H2 from '../typography/H2';
 
 const AdvantagesGrid = ({ blok }) => (
     <section className="bg-gray-50">
@@ -21,6 +21,6 @@ const AdvantagesGrid = ({ blok }) => (
             </div>
         </div>
     </section>
-)
+);
 
-export default AdvantagesGrid
+export default AdvantagesGrid;

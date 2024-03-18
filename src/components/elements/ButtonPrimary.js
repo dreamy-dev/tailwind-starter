@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { storyblokEditable } from '@storyblok/react/rsc'
+import Link from 'next/link';
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 export default function ButtonPrimary(props) {
     const containerStyles = {
@@ -12,8 +12,8 @@ export default function ButtonPrimary(props) {
         ? "center"
         : "flex-end",
     alignItems: "center", */
-    }
-    const primaryButtonStyles = `bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2`
+    };
+    const primaryButtonStyles = `bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2`;
 
     return (
         <div style={containerStyles}>
@@ -45,5 +45,5 @@ export default function ButtonPrimary(props) {
                 </svg>
             </a>
         </div>
-    )
+    );
 }

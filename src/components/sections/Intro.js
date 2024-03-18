@@ -1,7 +1,7 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import { render } from 'storyblok-rich-text-react-renderer'
-import ContentWidth from '../layouts/ContentWidth'
-import H2 from '../typography/H2'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import { render } from 'storyblok-rich-text-react-renderer';
+import ContentWidth from '../layouts/ContentWidth';
+import H2 from '../typography/H2';
 
 export default function Intro({ blok }) {
     return (
@@ -29,5 +29,5 @@ export default function Intro({ blok }) {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }

@@ -1,7 +1,7 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
 
-import H3 from '../typography/H3'
+import H3 from '../typography/H3';
 
 const ReportsItem = ({ blok }) => {
     return (
@@ -47,7 +47,7 @@ const ReportsItem = ({ blok }) => {
                 </a>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ReportsItem
+export default ReportsItem;

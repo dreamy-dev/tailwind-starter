@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import SmallWidth from '../layouts/SmallWidth'
+import SmallWidth from '../layouts/SmallWidth';
 
 export default function Quote() {
     return (
@@ -48,5 +48,5 @@ export default function Quote() {
                 </figure>
             </SmallWidth>
         </section>
-    )
+    );
 }

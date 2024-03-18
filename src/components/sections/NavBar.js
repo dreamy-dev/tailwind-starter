@@ -1,9 +1,9 @@
-'use client'
-import ContentWidth from '../layouts/ContentWidth'
-import Link from 'next/link'
-import IconNav from '../elements/IconNav'
-import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+'use client';
+import ContentWidth from '../layouts/ContentWidth';
+import Link from 'next/link';
+import IconNav from '../elements/IconNav';
+import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -11,16 +11,16 @@ const navigation = {
         { name: 'Kunden', href: '/kunden' },
         { name: 'Downloads', href: '/downloadcenter' },
     ],
-}
+};
 
 const variants = {
     open: { opacity: 1, y: 0, height: 'auto' },
     closed: { opacity: 0, y: 50, height: 0 },
-}
+};
 const variantsSub = {
     open: { opacity: 1, y: 0, height: '100%' },
     closed: { opacity: 0, y: 50, height: 0 },
-}
+};
 
 const navigationMain = {
     topNav: [
@@ -46,27 +46,27 @@ const navigationMain = {
             icon: false,
         },
     ],
-}
+};
 
 const NavBar = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
     const toggleSubmenu = () => {
-        setIsSubmenuOpen((prev) => !prev)
-    }
+        setIsSubmenuOpen((prev) => !prev);
+    };
 
     const closeSubmenu = () => {
-        setIsSubmenuOpen(false)
-    }
+        setIsSubmenuOpen(false);
+    };
 
     const toggleMainMenu = () => {
-        setIsOpen((prev) => !prev)
-    }
+        setIsOpen((prev) => !prev);
+    };
 
     const closeMainMenu = () => {
-        setIsOpen(false)
-    }
+        setIsOpen(false);
+    };
 
     // useEffect(() => {
     //   const handleOutsideClick = (event: any) => {
@@ -85,40 +85,43 @@ const NavBar = () => {
     //   };
     // }, [isSubmenuOpen]);
 
-    let menuRef = useRef(null)
+    let menuRef = useRef(null);
 
     useEffect(() => {
         let handler = (e) => {
             if (menuRef.current && !menuRef.current.contains(e.target)) {
-                setIsOpen(false)
+                setIsOpen(false);
             }
-        }
+        };
 
-        document.addEventListener('mousedown', handler)
-    })
+        document.addEventListener('mousedown', handler);
+    });
 
-    const [isNarrowScreen, setIsNarrowScreen] = useState(false)
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
     useEffect(() => {
-        const mediaWatcher = window.matchMedia('(max-width: 1024px)')
-        setIsNarrowScreen(mediaWatcher.matches)
+        const mediaWatcher = window.matchMedia('(max-width: 1024px)');
+        setIsNarrowScreen(mediaWatcher.matches);
 
         function updateIsNarrowScreen(e) {
-            setIsNarrowScreen(e.matches)
+            setIsNarrowScreen(e.matches);
         }
         if (mediaWatcher.addEventListener) {
-            mediaWatcher.addEventListener('change', updateIsNarrowScreen)
+            mediaWatcher.addEventListener('change', updateIsNarrowScreen);
             return function cleanup() {
-                mediaWatcher.removeEventListener('change', updateIsNarrowScreen)
-            }
+                mediaWatcher.removeEventListener(
+                    'change',
+                    updateIsNarrowScreen
+                );
+            };
         } else {
-            mediaWatcher.addListener(updateIsNarrowScreen)
+            mediaWatcher.addListener(updateIsNarrowScreen);
             return function cleanup() {
-                mediaWatcher.removeListener(updateIsNarrowScreen)
-            }
+                mediaWatcher.removeListener(updateIsNarrowScreen);
+            };
         }
-    })
+    });
 
-    return <></>
-}
+    return <></>;
+};
 
-export default NavBar
+export default NavBar;

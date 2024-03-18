@@ -1,7 +1,7 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import { render } from 'storyblok-rich-text-react-renderer'
-import H2 from '../typography/H2'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import { render } from 'storyblok-rich-text-react-renderer';
+import H2 from '../typography/H2';
 
 export default function Description({ blok }) {
     return (
@@ -20,5 +20,5 @@ export default function Description({ blok }) {
                 </div>
             </div>
         </section>
-    )
+    );
 }

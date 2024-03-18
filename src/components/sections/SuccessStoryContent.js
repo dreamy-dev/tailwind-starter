@@ -1,11 +1,11 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H3 from '../typography/H3'
-import Link from 'next/link'
-import Text from '../typography/Text'
-import ContentWidth from '../layouts/ContentWidth'
-import H1 from '../typography/H1'
-import { render } from 'storyblok-rich-text-react-renderer'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
+import Link from 'next/link';
+import Text from '../typography/Text';
+import ContentWidth from '../layouts/ContentWidth';
+import H1 from '../typography/H1';
+import { render } from 'storyblok-rich-text-react-renderer';
 
 const SuccessStoryContent = ({ blok }) => {
     return (
@@ -32,7 +32,7 @@ const SuccessStoryContent = ({ blok }) => {
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default SuccessStoryContent
+export default SuccessStoryContent;

@@ -3,5 +3,5 @@ export default function Text({ children, styles }) {
         <p lang="de" className={`font-normal ${styles ? styles : 'text-xl'}`}>
             {children}
         </p>
-    )
+    );
 }

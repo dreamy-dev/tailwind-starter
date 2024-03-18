@@ -1,8 +1,8 @@
-import { storyblokEditable } from '@storyblok/react/rsc'
-import SmallWidth from '../../components/layouts/SmallWidth'
-import H2 from '../typography/H2'
-import Text from '../typography/Text'
-import { render } from 'storyblok-rich-text-react-renderer'
+import { storyblokEditable } from '@storyblok/react/rsc';
+import SmallWidth from '../../components/layouts/SmallWidth';
+import H2 from '../typography/H2';
+import Text from '../typography/Text';
+import { render } from 'storyblok-rich-text-react-renderer';
 
 export default function TextSection({ blok }) {
     return (
@@ -14,5 +14,5 @@ export default function TextSection({ blok }) {
                 <div className="richtext">{render(blok.text)}</div>
             </SmallWidth>
         </section>
-    )
+    );
 }

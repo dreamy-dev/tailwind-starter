@@ -1,9 +1,9 @@
-'use client'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import H2 from '../typography/H2'
-import ButtonPrimary from '../elements/ButtonPrimary'
-import Text from '../typography/Text'
-import FullWidth from '../layouts/FullWidth'
+'use client';
+import { storyblokEditable } from '@storyblok/react/rsc';
+import H2 from '../typography/H2';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import Text from '../typography/Text';
+import FullWidth from '../layouts/FullWidth';
 
 export default function Video({ blok }) {
     return (
@@ -67,5 +67,5 @@ export default function Video({ blok }) {
                 </div>
             </FullWidth>
         </div>
-    )
+    );
 }

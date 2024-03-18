@@ -7,9 +7,9 @@ import TrainCarousel from "../components/sections/TrainCarousel";
 import { Montserrat } from "next/font/google";
 import localFont from 'next/font/local'
 
-import './globals.css'
+import './globals.css';
 
-3
+3;
 // const fontStadler = localFont({
 //   src: [
 //     {
@@ -49,13 +49,13 @@ import './globals.css'
 const fontFamily = Montserrat({
     subsets: ['latin'],
     variable: '--font-montserrat',
-})
+});
 //const mySchema = cloneDeep(RichTextSchema);
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
-})
+});
 
 export default function RootLayout({ children }) {
     return (
@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
                 </body>
             </html>
         </StoryblokProvider>
-    )
+    );
 
     // <Script
     //   src="https://app.storyblok.com/f/storyblok-latest.js?t=OzCkp5jSdfLeMLs4g0rshAtt"

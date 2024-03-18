@@ -1,8 +1,8 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import Button from '../elements/ButtonSecondary'
-import Link from 'next/link'
-import ContentWidth from '../layouts/ContentWidth'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import Button from '../elements/ButtonSecondary';
+import Link from 'next/link';
+import ContentWidth from '../layouts/ContentWidth';
 
 const navigation = {
     legal: [
@@ -76,7 +76,7 @@ const navigation = {
             ),
         },
     ],
-}
+};
 
 export default function Footer({ blok }) {
     return (
@@ -151,5 +151,5 @@ export default function Footer({ blok }) {
                 </div>
             </ContentWidth>
         </footer>
-    )
+    );
 }

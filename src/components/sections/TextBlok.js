@@ -1,8 +1,8 @@
-import ContentWidth from '@/components/layouts/ContentWidth'
-import HeroText from '@/components/sections/HeroText'
-import Text from '@/components/typography/Text'
-import H2 from '@/components/typography/H2'
-import SmallWidth from '@/components/layouts/SmallWidth'
+import ContentWidth from '@/components/layouts/ContentWidth';
+import HeroText from '@/components/sections/HeroText';
+import Text from '@/components/typography/Text';
+import H2 from '@/components/typography/H2';
+import SmallWidth from '@/components/layouts/SmallWidth';
 
 export default function TextBlock() {
     return (
@@ -120,5 +120,5 @@ export default function TextBlock() {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }

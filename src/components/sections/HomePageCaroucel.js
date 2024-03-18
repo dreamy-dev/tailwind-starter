@@ -1,16 +1,16 @@
-'use client'
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import H3 from '../typography/H3'
-import Link from 'next/link'
-import Text from '../typography/Text'
-import H2 from '../typography/H2'
-import { MotionConfig, motion, MotionProps } from 'framer-motion'
-import { useState, useEffect, useRef } from 'react'
-import FullWidth from '../layouts/FullWidth'
-import ButtonPrimary from '../elements/ButtonPrimary'
-import ContentWidth from '../layouts/ContentWidth'
+'use client';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
+import Link from 'next/link';
+import Text from '../typography/Text';
+import H2 from '../typography/H2';
+import { MotionConfig, motion, MotionProps } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import FullWidth from '../layouts/FullWidth';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import ContentWidth from '../layouts/ContentWidth';
 
-const TestimonialMotionDiv = motion.div
+const TestimonialMotionDiv = motion.div;
 
 const HomePageCaroucel = ({
     items,
@@ -19,36 +19,36 @@ const HomePageCaroucel = ({
     showButton = true,
     blok,
 }) => {
-    const [current, setCurrent] = useState(0)
-    const [startX, setStartX] = useState(0)
-    const [isDragging, setIsDragging] = useState(false)
-    const [isMobile, setIsMobile] = useState(false)
-    const [showDate, setShowDate] = useState(true)
+    const [current, setCurrent] = useState(0);
+    const [startX, setStartX] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [showDate, setShowDate] = useState(true);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
+            setIsMobile(window.innerWidth <= 768);
+        };
 
-        handleResize()
-        window.addEventListener('resize', handleResize)
+        handleResize();
+        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const onPrevClick = () => {
         if (current > 0) {
-            setCurrent(current - 1)
+            setCurrent(current - 1);
         }
-    }
+    };
 
     const onNextClick = () => {
         if (current < items.length - 1) {
-            setCurrent(current + 1)
+            setCurrent(current + 1);
         }
-    }
+    };
 
     return (
         <section className="pb-5 lg:pb-24 bg-white overflow-hidden">
@@ -160,7 +160,7 @@ const HomePageCaroucel = ({
                 </div>
             </ContentWidth>
         </section>
-    )
-}
+    );
+};
 
-export default HomePageCaroucel
+export default HomePageCaroucel;

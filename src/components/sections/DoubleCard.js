@@ -1,6 +1,6 @@
-import H2 from '../../components/typography/H2'
-import ContentWidth from '../layouts/ContentWidth'
-import Text from '../typography/Text'
+import H2 from '../../components/typography/H2';
+import ContentWidth from '../layouts/ContentWidth';
+import Text from '../typography/Text';
 
 export default function DoubleCard() {
     return (
@@ -110,5 +110,5 @@ export default function DoubleCard() {
                 </div>
             </ContentWidth>
         </section>
-    )
+    );
 }

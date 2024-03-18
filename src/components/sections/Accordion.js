@@ -1,15 +1,15 @@
-'use client'
-import { useState } from 'react'
-import SmallWidth from '../../components/layouts/SmallWidth'
-import H2 from '../../components/typography/H2'
+'use client';
+import { useState } from 'react';
+import SmallWidth from '../../components/layouts/SmallWidth';
+import H2 from '../../components/typography/H2';
 
 const Accordion = ({ faqs, mainTitle }) => {
     const [activeAccordion, setActiveAccordion] =
-        (useState < number) | (null > null)
+        (useState < number) | (null > null);
 
     const handleAccordionClick = (index) => {
-        setActiveAccordion(activeAccordion === index ? null : index)
-    }
+        setActiveAccordion(activeAccordion === index ? null : index);
+    };
     return (
         <section className="bg-white dark:bg-gray-900">
             <SmallWidth>
@@ -82,7 +82,7 @@ const Accordion = ({ faqs, mainTitle }) => {
                 </div>
             </SmallWidth>
         </section>
-    )
-}
+    );
+};
 
-export default Accordion
+export default Accordion;
