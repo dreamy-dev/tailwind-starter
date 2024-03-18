@@ -48,7 +48,7 @@ import CorporateGorvernanceTeaser from './sections/CorporateGovernanceTeaser';
 import SchienenfahrzeugeGrid from './sections/SchienenfahrzeugeGrid';
 import SchienenfahrzeugeItem from './sections/SchienenfahrzeugeItem';
 import SchienenfahrzeugeWrapper from './sections/SchienenfahrzeugeWrapper';
-import NewsTeaser from './sections/NewsSection';
+import NewsTeaser from './sections/NewsTeaser';
 import AccordionWrapper from './sections/AccordionWrapper';
 import Intro from './sections/Intro';
 import SuccessStoryGrid from './sections/SuccessStoryGrid';
