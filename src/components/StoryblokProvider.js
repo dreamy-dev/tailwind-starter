@@ -70,6 +70,10 @@ import HistoryCard from './sections/HistoryCard';
 import AccordionYearWrapper from './sections/AccordionYearWrapper';
 import AccordionTextDateDownloadItem from './sections/AccordionTextDateDownloadItem';
 import AccordionTabsTableWrapper from './sections/AccordionTabsTableWrapper';
+import AllNews from './sections/AllNews'
+import CareerStepGrid from './sections/CareerStepGrid'
+import CareerStepItem from './sections/CareerStepItem'
+import AllMedienmitteilungen from './sections/AllMedienmitteilungen'
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -125,7 +129,7 @@ storyblokInit({
         schienenfahrzeuge_grid: SchienenfahrzeugeGrid,
         schienenfahrzeuge_item: SchienenfahrzeugeItem,
         schienenfahrzeuge_wrapper: SchienenfahrzeugeWrapper,
-        'news-teaser': NewsTeaser,
+        'news_teaser': NewsTeaser,
         'image-right': Intro,
         'success-story-grid': SuccessStoryGrid,
         successstory: SuccessStoryContent,
@@ -145,6 +149,11 @@ storyblokInit({
         "accordion-all-years-wrapper": AccordionTabsTableWrapper,
         "accordion-year-wrapper": AccordionYearWrapper,
         "accordion-text-date-download-item":AccordionTextDateDownloadItem,
+        "all-news": AllNews,
+        "career-step-grid": CareerStepGrid,
+        "career-step-item": CareerStepItem,
+        "adhoc_medienmitteilungen_teaser": AllMedienmitteilungen,
+
     },
 });
 
