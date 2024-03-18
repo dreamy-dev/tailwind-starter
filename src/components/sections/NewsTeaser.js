@@ -13,6 +13,7 @@ function NewsTeaser({ blok }) {
   useEffect(() => {
     const getArticles = async () => {
       const categories = blok.categories.join(",")
+      console.log("categories", categories)
       
       const storyblokApi = getStoryblokApi();
       const { data } = await storyblokApi.get(`cdn/stories`, {
@@ -20,8 +21,9 @@ function NewsTeaser({ blok }) {
         starts_with: 'medien/news/',
         is_startpage: false,
         resolve_relations: "news.categories",
-        "filter_query[categories][exists]": categories,
-        "sort_by": "content.date:desc"
+        "filter_query[categories][any_in_array]": categories,
+        "sort_by": "content.date:desc",
+        "per_page": 4
       });
  
       setArticlesCategory((prev) => data.stories.map((article) => {

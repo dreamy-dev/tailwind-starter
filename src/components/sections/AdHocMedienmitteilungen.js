@@ -7,7 +7,7 @@ import H1 from "../typography/H1";
 import Text from "../typography/Text";
 
 
-function AllNews({ blok }) {
+function AdHocMedienmitteilungen({ blok }) {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     const getArticles = async () => {
@@ -17,7 +17,8 @@ function AllNews({ blok }) {
         starts_with: 'medien/medienmitteilungen/',
         is_startpage: false,
         resolve_relations: "medienmitteilungen.categories",
-        "sort_by": "content.date:desc"
+        "sort_by": "content.date:desc",
+        "per_page": 4
       });
  
       setArticles((prev) => data.stories.map((article) => {
@@ -85,4 +86,4 @@ function AllNews({ blok }) {
   );
 }
 
-export default AllNews;
+export default AdHocMedienmitteilungen;

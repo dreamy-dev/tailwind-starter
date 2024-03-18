@@ -70,7 +70,8 @@ import HistoryCard from './sections/HistoryCard'
 import AllNews from './sections/AllNews'
 import CareerStepGrid from './sections/CareerStepGrid'
 import CareerStepItem from './sections/CareerStepItem'
-import AllMedienmitteilungen from './sections/AllMedienmitteilungen'
+import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen'
+import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen'
 
 
 
@@ -150,7 +151,8 @@ storyblokInit({
         "all-news": AllNews,
         "career-step-grid": CareerStepGrid,
         "career-step-item": CareerStepItem,
-        "adhoc_medienmitteilungen_teaser": AllMedienmitteilungen,
+        "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
+        "alle-medienmitteilungen": AlleMedienmitteilungen
     },
 })
 
