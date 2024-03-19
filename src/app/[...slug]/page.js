@@ -20,14 +20,16 @@ async function fetchData(slug) {
             'alle-news.filter_years',
             'alle-news.filter_country',
             'alle-news.filter_medienmitteilungencategories',
-            'alle-news.filter_products'
+            'alle-news.filter_products',
+            'global_download_reference.reference',
+            'reference-grid.highlight_reference'
         ],
     };
 
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 
-    return { story: data.story }
+    return { story: data.story };
 }
 
 export async function generateStaticParams() {

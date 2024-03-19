@@ -1,9 +1,10 @@
+import { getStoryblokApi, storyblokEditable } from "@storyblok/react/rsc";
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
 import Link from 'next/link';
 import { MotionConfig, motion} from 'framer-motion';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
 
@@ -133,10 +134,39 @@ const Pagination = ({ total, current }) => {
 
 
 
-const TestimonialsCarousel = () => {
+const TestimonialsCarousel = ({blok}) => {
     const [current, setCurrent] = useState(0);
     const [showTrains, setShowTrains] = useState(false);
+    const [highlightsCategory, setHighlightsCategory] = useState([]);
 
+    useEffect(() => {
+        const getArticles = async () => {
+           const arayHighlight =[]
+           blok.highlight_reference.map(item => {
+            arayHighlight.push(item.name); 
+           
+           })
+          //console.log("categories", blok)
+          const highlightReference = arayHighlight.join(',')
+          //console.log('highlightReference', highlightReference);
+          
+          const storyblokApi = getStoryblokApi();
+          const { data } = await storyblokApi.get(`cdn/stories`, {
+            
+              version: 'published',
+              starts_with: 'loesungen/referenzen/',
+              is_startpage: false,
+              'filter_query[categories][any_in_array]': highlightReference,
+          });
+        console.log('data 111111', data);
+          setHighlightsCategory((prev) => data.stories.map((article) => {
+               console.log('data', data);
+            article.content.slug = article.slug;
+            return article;
+          }));
+        };
+        getArticles();
+      }, []);
 
     const onPrevClick = () => {
         if (current > 0) {
@@ -155,11 +185,11 @@ const TestimonialsCarousel = () => {
     };
 
     return (
-        <section className="py-24 bg-primarySolid-50">
+        <section {...storyblokEditable(blok)} className="py-24 bg-primarySolid-50">
             <ContentWidth>
                 <div className="col-span-12 max-w-full 2xl:pl-0">
                     <div className="flex justify-center items-center mb-4">
-                        <H2>Referenzen</H2>
+                        <H2>{blok?.title}</H2>
                     </div>
                     <div className="flex flex-col items-center justify-between">
                         <MotionConfig
@@ -170,7 +200,7 @@ const TestimonialsCarousel = () => {
                         >
                             <div className="relative w-full max-w-[100%] flex items-center ">
                                 <motion.div className="max-w-[100%] flex gap-6 flex-nowrap lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
-                                    {images.map((image, idx) => (
+                                { highlightsCategory[0] && highlightsCategory.map((article, idx) => (
                                         <TestimonialMotionDiv
                                             key={idx}
                                             className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
@@ -181,21 +211,22 @@ const TestimonialsCarousel = () => {
                                                 opacity:
                                                     idx === current ? 1 : 0.3,
                                             }}
-                                            // responsive={responsive}
-                                        >
+                                          
+                                        ><a  href={`loesungen/${article.slug}`}>
                                             <img
-                                                src={image.img}
-                                                alt={image.title}
+                                                src={article.content.image.filename}
+                                                alt="Image 1"
                                                 className="w-full h-full object-cover"
                                             />
+                                            </a>
                                             <div className="flex flex-col justify-between p-10 leading-normal">
                                                 <Text styles="mb-6 md:mb-10">
-                                                    {image.name}
+                                                    {article.name}
                                                 </Text>
                                                 <div className="">
-                                                    <H3>{image.title}</H3>
+                                                    <H3>{article.title}</H3>
                                                     <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
-                                                        {image.text}
+                                                        {article.text}
                                                     </Text>
                                                 </div>
                                                 <Link
