@@ -43,10 +43,30 @@ const SuccessStoryGrid = ({ blok }) => {
         <section className="py-5 lg:py-24 bg-white overflow-hidden">
             <ContentWidth>
                 <div className="col-span-12">
-                    <div className="relative">
-                        <div className="lg:pl-20 2xl:pl-0 mb-10 flex justify-center items-center">
+                    <div className="relative mb-4">
+                        <div className="lg:pl-20 2xl:pl-0 flex justify-center items-center">
                             <H2>{blok?.title}</H2>
                         </div>
+                        {isMobile && (
+                            <div className="flex justify-center">
+                                <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
+                                    {blok.success_stories.map((_, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => setCurrent(idx)}
+                                        >
+                                            <div
+                                                className={` w-8 h-1 ${
+                                                    idx === current
+                                                        ? 'bg-primary'
+                                                        : 'bg-greyDarken-100'
+                                                }`}
+                                            ></div>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                     <div className="flex lg:pl-20 flex-col items-center justify-between 2xl:pl-0">
                         <MotionConfig
