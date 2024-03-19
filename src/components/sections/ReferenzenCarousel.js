@@ -1,30 +1,12 @@
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
 import Link from 'next/link';
-import { MotionConfig, motion, MotionProps } from 'framer-motion';
-import { useState, useEffect, useRef } from 'react';
-import FullWidth from '../layouts/FullWidth';
+import { MotionConfig, motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
-
-// interface ResponsiveObject {
-//   desktop: {
-//     breakpoint: { max: number; min: number };
-//     items: number;
-//     paritialVisibilityGutter: number;
-//   };
-//   tablet: {
-//     breakpoint: { max: number; min: number };
-//     items: number;
-//     paritialVisibilityGutter: number;
-//   };
-//   mobile: {
-//     breakpoint: { max: number; min: number };
-//     items: number;
-//     paritialVisibilityGutter: number;
-//   };
-// }
 
 const TestimonialMotionDiv = motion.div;
 
@@ -148,71 +130,67 @@ const Pagination = ({ total, current }) => {
     );
 };
 
-// const responsive: ResponsiveObject = {
-//   desktop: {
-//     breakpoint: { max: 3000, min: 1024 },
-//     items: 3,
-//     paritialVisibilityGutter: 60,
-//   },
-//   tablet: {
-//     breakpoint: { max: 1024, min: 464 },
-//     items: 2,
-//     paritialVisibilityGutter: 50,
-//   },
-//   mobile: {
-//     breakpoint: { max: 464, min: 0 },
-//     items: 1,
-//     paritialVisibilityGutter: 30,
-//   },
-// };
-
-const TestimonialsCarousel = () => {
+const TestimonialsCarousel = ({ blok }) => {
     const [current, setCurrent] = useState(0);
     const [showTrains, setShowTrains] = useState(false);
+    const [highlightsCategory, setHighlightsCategory] = useState([]);
+    const [reference, setReference] = useState([]);
 
-    //  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+    useEffect(() => {
+        const getArticles = async () => {
+            const arrayHighlight = [];
+            blok.highlight_reference.map((item) => {
+                arrayHighlight.push(item.uuid);
+            });
 
-    //  useEffect(() => {
-    //    const handleTouchStart = (e: TouchEvent) => {
-    //      setTouchStartX(e.touches[0].clientX);
-    //       e.preventDefault();
-    //    };
+            const highlightReference = arrayHighlight.join(',');
 
-    //    const handleTouchMove = (e: TouchEvent) => {
-    //      if (touchStartX !== null) {
-    //        const touchEndX = e.touches[0].clientX;
-    //        const deltaX = touchEndX - touchStartX;
+            const storyblokApi = getStoryblokApi();
+            const { data } = await storyblokApi.get(`cdn/stories`, {
+                version: 'published',
+                starts_with: 'loesungen/referenzen/',
+                is_startpage: false,
+                'filter_query[categories][any_in_array]': highlightReference,
+                per_page: 5,
+            });
 
-    //        const swipeThreshold = window.innerWidth / 4;
+            setHighlightsCategory((prev) =>
+                data.stories.map((article) => {
+                    article.content.slug = article.slug;
+                    return article;
+                })
+            );
+        };
+        getArticles();
+    }, []);
 
-    //        if (deltaX > swipeThreshold) {
+    useEffect(() => {
+        const getArticles = async () => {
+            const arrayReference = [];
+            blok.reference.map((item) => {
+                arrayReference.push(item.uuid);
+            });
+            console.log('categories', blok);
+            const references = arrayReference.join(',');
+            console.log('references', references);
 
-    //          onPrevClick();
-    //          setTouchStartX(null);
-    //        } else if (deltaX < -swipeThreshold) {
-
-    //          onNextClick();
-    //          setTouchStartX(null);
-    //        }
-    //      }
-    //    };
-
-    //    const handleTouchEnd = () => {
-    //      setTouchStartX(null);
-    //    };
-
-    //    document.addEventListener("touchstart", handleTouchStart, {
-    //      passive: false,
-    //    });
-    //    document.addEventListener("touchmove", handleTouchMove, { passive: false });
-    //    document.addEventListener("touchend", handleTouchEnd);
-
-    //    return () => {
-    //      document.removeEventListener("touchstart", handleTouchStart);
-    //      document.removeEventListener("touchmove", handleTouchMove);
-    //      document.removeEventListener("touchend", handleTouchEnd);
-    //    };
-    //  }, [touchStartX]);
+            const storyblokApi = getStoryblokApi();
+            const { data } = await storyblokApi.get(`cdn/stories`, {
+                version: 'published',
+                starts_with: 'loesungen/referenzen/',
+                is_startpage: false,
+                'filter_query[categories][any_in_array]': references,
+            });
+            //console.log("data 1111", data, data.stories)
+            setReference((prev) =>
+                data.stories.map((article) => {
+                    article.content.slug = article.slug;
+                    return article;
+                })
+            );
+        };
+        getArticles();
+    }, []);
 
     const onPrevClick = () => {
         if (current > 0) {
@@ -231,11 +209,14 @@ const TestimonialsCarousel = () => {
     };
 
     return (
-        <section className="py-24 bg-primarySolid-50">
+        <section
+            {...storyblokEditable(blok)}
+            className="py-24 bg-primarySolid-50"
+        >
             <ContentWidth>
                 <div className="col-span-12 max-w-full 2xl:pl-0">
                     <div className="flex justify-center items-center mb-4">
-                        <H2>Referenzen</H2>
+                        <H2>{blok?.title}</H2>
                     </div>
                     <div className="flex flex-col items-center justify-between">
                         <MotionConfig
@@ -246,65 +227,87 @@ const TestimonialsCarousel = () => {
                         >
                             <div className="relative w-full max-w-[100%] flex items-center ">
                                 <motion.div className="max-w-[100%] flex gap-6 flex-nowrap lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
-                                    {images.map((image, idx) => (
-                                        <TestimonialMotionDiv
-                                            key={idx}
-                                            className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
-                                            animate={{
-                                                translateX: `calc(-${current * 100}% - ${
-                                                    current * 1.5
-                                                }rem)`,
-                                                opacity:
-                                                    idx === current ? 1 : 0.3,
-                                            }}
-                                            // responsive={responsive}
-                                        >
-                                            <img
-                                                src={image.img}
-                                                alt={image.title}
-                                                className="w-full h-full object-cover"
-                                            />
-                                            <div className="flex flex-col justify-between p-10 leading-normal">
-                                                <Text styles="mb-6 md:mb-10">
-                                                    {image.name}
-                                                </Text>
-                                                <div className="">
-                                                    <H3>{image.title}</H3>
-                                                    <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
-                                                        {image.text}
-                                                    </Text>
-                                                </div>
-                                                <Link
-                                                    href="#"
-                                                    className="inline-flex items-center py-2 text-sm font-medium text-center"
+                                    {highlightsCategory[0] &&
+                                        highlightsCategory.map(
+                                            (article, idx) => (
+                                                <TestimonialMotionDiv
+                                                    key={idx}
+                                                    className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
+                                                    animate={{
+                                                        translateX: `calc(-${current * 100}% - ${
+                                                            current * 1.5
+                                                        }rem)`,
+                                                        opacity:
+                                                            idx === current
+                                                                ? 1
+                                                                : 0.3,
+                                                    }}
                                                 >
-                                                    <svg
-                                                        width="20"
-                                                        height="20"
-                                                        viewBox="0 0 20 20"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    <a
+                                                        href={`loesungen/${article.slug}`}
                                                     >
-                                                        <g clipPath="url(#clip0_4995_6662)">
-                                                            <path
-                                                                d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                                                                fill="#005893"
-                                                            />
-                                                        </g>
-                                                        <defs>
-                                                            <clipPath id="clip0_4995_6662">
-                                                                <rect
-                                                                    width="20"
-                                                                    height="20"
-                                                                    fill="white"
-                                                                />
-                                                            </clipPath>
-                                                        </defs>
-                                                    </svg>
-                                                </Link>
-                                            </div>
-                                        </TestimonialMotionDiv>
-                                    ))}
+                                                        <img
+                                                            src={
+                                                                article.content
+                                                                    .image
+                                                                    .filename
+                                                            }
+                                                            alt="Image 1"
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    </a>
+                                                    <div className="flex flex-col justify-between p-10 leading-normal">
+                                                        <Text styles="mb-6 md:mb-10">
+                                                            {article.name}
+                                                        </Text>
+                                                        <div className="">
+                                                            <H3>
+                                                                {
+                                                                    article
+                                                                        .content
+                                                                        .title
+                                                                }
+                                                            </H3>
+                                                            <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
+                                                                {
+                                                                    article
+                                                                        .content
+                                                                        .text
+                                                                }
+                                                            </Text>
+                                                        </div>
+                                                        <Link
+                                                            href="#"
+                                                            className="inline-flex items-center py-2 text-sm font-medium text-center"
+                                                        >
+                                                            <svg
+                                                                width="20"
+                                                                height="20"
+                                                                viewBox="0 0 20 20"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                            >
+                                                                <g clipPath="url(#clip0_4995_6662)">
+                                                                    <path
+                                                                        d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
+                                                                        fill="#005893"
+                                                                    />
+                                                                </g>
+                                                                <defs>
+                                                                    <clipPath id="clip0_4995_6662">
+                                                                        <rect
+                                                                            width="20"
+                                                                            height="20"
+                                                                            fill="white"
+                                                                        />
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+                                                        </Link>
+                                                    </div>
+                                                </TestimonialMotionDiv>
+                                            )
+                                        )}
                                 </motion.div>
                             </div>
                         </MotionConfig>
@@ -353,7 +356,7 @@ const TestimonialsCarousel = () => {
                                     />
                                 </svg>
                             )}
-                            alle einblenden
+                            {blok?.collapse_text}
                         </button>
 
                         <div className=" flex flex-row gap-4 justify-end items-center w-full  py-4">
@@ -401,48 +404,54 @@ const TestimonialsCarousel = () => {
                     <div className="col-span-12 max-w-full">
                         {showTrains && (
                             <div className=" md:grid grid-cols-1 gap-6 md:gap-10 lg:grid-cols-3 xl:gap-6 mt-2 w-full">
-                                {trains.map((train, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
-                                    >
-                                        <a href="#">
-                                            <img
-                                                className="w-full aspect-[4/3]"
-                                                src={train.image}
-                                                alt=""
-                                            />
-                                        </a>
-                                        <div className="h-full flex flex-col justify-between p-8">
-                                            <H4 styles="mb-4">{train.name}</H4>
-                                            <Link href="#">
-                                                <svg
-                                                    width="20"
-                                                    height="20"
-                                                    viewBox="0 0 20 20"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <g clipPath="url(#clip0_4995_6662)">
-                                                        <path
-                                                            d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                                                            fill="#005893"
-                                                        />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_4995_6662">
-                                                            <rect
-                                                                width="20"
-                                                                height="20"
-                                                                fill="white"
+                                {reference[0] &&
+                                    reference.map((train, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                                        >
+                                            <a href="#">
+                                                <img
+                                                    className="w-full aspect-[4/3]"
+                                                    src={
+                                                        train.content.image
+                                                            .filename
+                                                    }
+                                                    alt=""
+                                                />
+                                            </a>
+                                            <div className="h-full flex flex-col justify-between p-8">
+                                                <H4 styles="mb-4">
+                                                    {train.content.name}
+                                                </H4>
+                                                <Link href="#">
+                                                    <svg
+                                                        width="20"
+                                                        height="20"
+                                                        viewBox="0 0 20 20"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <g clipPath="url(#clip0_4995_6662)">
+                                                            <path
+                                                                d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
+                                                                fill="#005893"
                                                             />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </Link>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_4995_6662">
+                                                                <rect
+                                                                    width="20"
+                                                                    height="20"
+                                                                    fill="white"
+                                                                />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </Link>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
                             </div>
                         )}
                     </div>
