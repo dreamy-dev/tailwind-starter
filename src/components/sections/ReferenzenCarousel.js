@@ -185,7 +185,10 @@ const TestimonialsCarousel = ({blok}) => {
     };
 
     return (
-        <section {...storyblokEditable(blok)} className="py-24 bg-primarySolid-50">
+        <section
+            {...storyblokEditable(blok)}
+            className="py-24 bg-primarySolid-50"
+        >
             <ContentWidth>
                 <div className="col-span-12 max-w-full 2xl:pl-0">
                     <div className="flex justify-center items-center mb-4">
@@ -200,66 +203,81 @@ const TestimonialsCarousel = ({blok}) => {
                         >
                             <div className="relative w-full max-w-[100%] flex items-center ">
                                 <motion.div className="max-w-[100%] flex gap-6 flex-nowrap lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
-                                { highlightsCategory[0] && highlightsCategory.map((article, idx) => (
-                                        <TestimonialMotionDiv
-                                            key={idx}
-                                            className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
-                                            animate={{
-                                                translateX: `calc(-${current * 100}% - ${
-                                                    current * 1.5
-                                                }rem)`,
-                                                opacity:
-                                                    idx === current ? 1 : 0.3,
-                                            }}
-                                          
-                                        ><a  href={`loesungen/${article.slug}`}>
-                                            <img
-                                                src={article.content.image.filename}
-                                                alt="Image 1"
-                                                className="w-full h-full object-cover"
-                                            />
-                                            </a>
-                                            <div className="flex flex-col justify-between p-10 leading-normal">
-                                                <Text styles="mb-6 md:mb-10">
-                                                    {article.name}
-                                                </Text>
-                                                <div className="">
-                                                    <H3>{article.title}</H3>
-                                                    <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
-                                                        {article.text}
-                                                    </Text>
-                                                </div>
-                                                <Link
-                                                    href="#"
-                                                    className="inline-flex items-center py-2 text-sm font-medium text-center"
+                                    {highlightsCategory[0] &&
+                                        highlightsCategory.map(
+                                            (article, idx) => (
+                                                <TestimonialMotionDiv
+                                                    key={idx}
+                                                    className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
+                                                    animate={{
+                                                        translateX: `calc(-${current * 100}% - ${
+                                                            current * 1.5
+                                                        }rem)`,
+                                                        opacity:
+                                                            idx === current
+                                                                ? 1
+                                                                : 0.3,
+                                                    }}
                                                 >
-                                                    <svg
-                                                        width="20"
-                                                        height="20"
-                                                        viewBox="0 0 20 20"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    <a
+                                                        href={`loesungen/${article.slug}`}
                                                     >
-                                                        <g clipPath="url(#clip0_4995_6662)">
-                                                            <path
-                                                                d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                                                                fill="#005893"
-                                                            />
-                                                        </g>
-                                                        <defs>
-                                                            <clipPath id="clip0_4995_6662">
-                                                                <rect
-                                                                    width="20"
-                                                                    height="20"
-                                                                    fill="white"
-                                                                />
-                                                            </clipPath>
-                                                        </defs>
-                                                    </svg>
-                                                </Link>
-                                            </div>
-                                        </TestimonialMotionDiv>
-                                    ))}
+                                                        <img
+                                                            src={
+                                                                article.content
+                                                                    .image
+                                                                    .filename
+                                                            }
+                                                            alt="Image 1"
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    </a>
+                                                    <div className="flex flex-col justify-between p-10 leading-normal">
+                                                        <Text styles="mb-6 md:mb-10">
+                                                            {
+                                                                article.name
+                                                            }
+                                                        </Text>
+                                                        <div className="">
+                                                            <H3>
+                                                                {article.content.title}
+                                                            </H3>
+                                                            <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
+                                                                {article.content.text}
+                                                            </Text>
+                                                        </div>
+                                                        <Link
+                                                            href="#"
+                                                            className="inline-flex items-center py-2 text-sm font-medium text-center"
+                                                        >
+                                                            <svg
+                                                                width="20"
+                                                                height="20"
+                                                                viewBox="0 0 20 20"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                            >
+                                                                <g clipPath="url(#clip0_4995_6662)">
+                                                                    <path
+                                                                        d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
+                                                                        fill="#005893"
+                                                                    />
+                                                                </g>
+                                                                <defs>
+                                                                    <clipPath id="clip0_4995_6662">
+                                                                        <rect
+                                                                            width="20"
+                                                                            height="20"
+                                                                            fill="white"
+                                                                        />
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+                                                        </Link>
+                                                    </div>
+                                                </TestimonialMotionDiv>
+                                            )
+                                        )}
                                 </motion.div>
                             </div>
                         </MotionConfig>
@@ -308,7 +326,7 @@ const TestimonialsCarousel = ({blok}) => {
                                     />
                                 </svg>
                             )}
-                            alle einblenden
+                           {blok?.collapse_text}
                         </button>
 
                         <div className=" flex flex-row gap-4 justify-end items-center w-full  py-4">

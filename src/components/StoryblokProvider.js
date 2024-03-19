@@ -166,7 +166,6 @@ storyblokInit({
         "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
         "alle-medienmitteilungen": AlleMedienmitteilungen,
         "video-full-width": VideoFullWidth,
-        "global_download_reference": GlobalDownloadReference,
         "reference-grid": TestimonialsCarousel,
     },
 });
