@@ -143,7 +143,7 @@ const TestimonialsCarousel = ({blok}) => {
         const getArticles = async () => {
            const arayHighlight =[]
            blok.highlight_reference.map(item => {
-            arayHighlight.push(item.name); 
+            arayHighlight.push(item.uuid); 
            
            })
           //console.log("categories", blok)
@@ -158,9 +158,9 @@ const TestimonialsCarousel = ({blok}) => {
               'filter_query[categories][any_in_array]': highlightReference,
               per_page: 5,
           });
-        console.log('data 111111', data);
+        // console.log('data 111111', data);
           setHighlightsCategory((prev) => data.stories.map((article) => {
-               console.log('data', data);
+            //    console.log('data', data);
             article.content.slug = article.slug;
             return article;
           }));
