@@ -4,7 +4,7 @@ import { getStoryblokApi, storyblokEditable, StoryblokComponent } from "@storybl
 
 import { useState, useEffect } from "react";
 import H1 from "../typography/H1";
-import Text from "../typography/Text";
+import DateFormatter from "../helpers/DateFormatter";
 
 
 function AlleMedienmitteilungen({ blok }) {
@@ -28,20 +28,6 @@ function AlleMedienmitteilungen({ blok }) {
     };
     getMedienmitteilungen();
   }, []);
-
-  const formatDate = (textToFormat) => {
-    const date = new Date(textToFormat)
-    const yyyy = date.getFullYear();
-    let mm = date.getMonth() + 1;
-    let dd = date.getDate();
-
-    if (dd < 10) dd = '0' + dd;
-    if (mm < 10) mm = '0' + mm;
-
-    const formattedDay = dd + '.' + mm + '.' + yyyy;
-
-    return formattedDay;
-  }
 
   return (
     <ContentWidth {...storyblokEditable(blok)}>
@@ -141,7 +127,7 @@ function AlleMedienmitteilungen({ blok }) {
           <tbody>
             {medienmitteilungen[0] && medienmitteilungen.map((medienmitteilung) => (
               <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
-                <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">{formatDate(medienmitteilung.content.date)}</td>
+                <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">{DateFormatter(medienmitteilung.content.date)}</td>
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">
                   <a href={`news/${medienmitteilung.slug}`}>{medienmitteilung.name}</a>
                 </td>
