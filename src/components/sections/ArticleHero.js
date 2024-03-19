@@ -6,21 +6,9 @@ import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
 import Breadcrumbs from './Breadcrumbs';
+import DateFormatter from "../helpers/DateFormatter";
 
 function ArticleHero({ block }) {
-    const formatDate = (textToFormat) => {
-        const date = new Date(textToFormat);
-        const yyyy = date.getFullYear();
-        let mm = date.getMonth() + 1;
-        let dd = date.getDate();
-
-        if (dd < 10) dd = '0' + dd;
-        if (mm < 10) mm = '0' + mm;
-
-        const formattedDay = dd + '.' + mm + '.' + yyyy;
-
-        return formattedDay;
-    };
 
     return (
         <SuperSmallWidth>
@@ -40,7 +28,7 @@ function ArticleHero({ block }) {
                     ))}
                 </div>
                 <div className="col-span-6 align-right text-right">
-                    <Text styles="text-md">{formatDate(block?.date)}</Text>
+                    <Text styles="text-md">{DateFormatter(block?.date)}</Text>
                 </div>
             </div>
             <Text styles="text-lg mt-12">{block?.lead}</Text>
