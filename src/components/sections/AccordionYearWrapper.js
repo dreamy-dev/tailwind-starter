@@ -5,7 +5,8 @@ import H2 from '../typography/H2';
 const AccordionYearWrapper = ({ blok, isActive }) => {
     return (
         <div className="max-w-full col-span-12" {...storyblokEditable(blok)}>
-            {blok?.show_title ? <H2>{blok?.title}</H2> : ''}
+        
+         
             {isActive && (
                 <AnimatePresence mode="wait">
                     <motion.div

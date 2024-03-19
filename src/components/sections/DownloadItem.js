@@ -5,7 +5,7 @@ import Text from '../typography/Text';
 import { storyblokEditable } from '@storyblok/react/rsc';
 
 function DownloadItem({ blok }) {
-    console.log(blok)
+ 
     return (
         <section {...storyblokEditable(blok)}>
             <ContentWidth>
