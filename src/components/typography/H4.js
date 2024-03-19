@@ -2,7 +2,7 @@ const H4 = ({ children, textColor, styles, resetStyles }) => {
     const defaultStyles = 'text-xl font-bold break-words';
     const H4Styles = resetStyles
         ? defaultStyles
-        : `${defaultStyles} text-${textColor || 'black'} ${styles || ''}`;
+        : `${defaultStyles} ${styles || ''}`;
     return (
         <h4 lang="de" className={H4Styles}>
             {children}

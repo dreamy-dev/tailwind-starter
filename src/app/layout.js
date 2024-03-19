@@ -9,7 +9,6 @@ import localFont from 'next/font/local'
 
 import './globals.css';
 
-3;
 // const fontStadler = localFont({
 //   src: [
 //     {
@@ -83,8 +82,6 @@ export default function RootLayout({ children }) {
                     <Header />
                     <main>{children}</main>
                     <Footer />
-                    
-                    <TrainCarousel />
                 </body>
             </html>
         </StoryblokProvider>

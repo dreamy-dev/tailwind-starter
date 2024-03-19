@@ -5,6 +5,7 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 import Page from '../components/sections/Page';
 import Footer from './sections/Footer';
 import HeroText from './sections/HeroText';
+import HeroCareer from './sections/HeroCareer';
 import FactsAndFigures from './sections/FactsAndFigures';
 import Video from './sections/Video';
 import HomePageHero from './sections/HomePageHero';
@@ -14,7 +15,6 @@ import Header from './sections/Header';
 import ImageFullWidth from './sections/ImageFullWidth';
 import Career from './sections/Career';
 import Features from './sections/Features';
-import Map from './sections/Map';
 import TextSection from './sections/TextSection';
 import QualityFeatureGrid from './sections/QualityFeatureGrid';
 import QualityFeatureItem from './sections/QualityFeatureItem';
@@ -64,6 +64,9 @@ import SpecificationsGrid from './sections/SpecificationsGrid';
 import SpecificationItem from './sections/SpecificationItem';
 import ProductCardsGrid from './sections/ProductCardsGrid';
 import ProductCard from './sections/ProductCard';
+import Testimonials from './sections/Testimonials';
+import Jobs from './sections/TeaserJobs';
+import TeaserSuccessStories from './sections/TeaserSuccessStories';
 import History from './sections/History';
 import HistoryWrapper from './sections/HistoryWrapper';
 import HistoryCard from './sections/HistoryCard';
@@ -73,9 +76,10 @@ import AccordionTabsTableWrapper from './sections/AccordionTabsTableWrapper';
 import AllNews from './sections/AllNews';
 import CareerStepGrid from './sections/CareerStepGrid';
 import CareerStepItem from './sections/CareerStepItem';
-import AllMedienmitteilungen from './sections/AllMedienmitteilungen';
 import VideoFullWidth from './sections/VideoFullWidth';
 import GlobalDownloadReference from './sections/GlobalDownloadReference';
+import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen';
+import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -145,6 +149,10 @@ storyblokInit({
         'specifications-item': SpecificationItem,
         'product-card-grid': ProductCardsGrid,
         'product-card': ProductCard,
+        'hero-careerpage': HeroCareer,
+        tripple_quote: Testimonials,
+        'career-open-positions-grid': Jobs,
+        'employee-story-grid': TeaserSuccessStories,
         history: History,
         'history-card': HistoryCard,
         'history-section-wrapper': HistoryWrapper,
@@ -154,10 +162,10 @@ storyblokInit({
         "all-news": AllNews,
         "career-step-grid": CareerStepGrid,
         "career-step-item": CareerStepItem,
-        "adhoc_medienmitteilungen_teaser": AllMedienmitteilungen,
+        "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
+        "alle-medienmitteilungen": AlleMedienmitteilungen,
         "video-full-width": VideoFullWidth,
         "global_download_reference": GlobalDownloadReference,
-
     },
 });
 

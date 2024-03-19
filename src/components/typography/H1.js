@@ -1,6 +1,6 @@
 export default function H1({ children, styles, resetStyles }) {
     const defaultStyles = '';
-    const H1Styles = `text-black font-bold pt-3 mb-12 text-5xl ${
+    const H1Styles = `font-bold pt-3 mb-12 text-5xl ${
         resetStyles ? defaultStyles : ''
     } ${styles || ''}`;
     return (

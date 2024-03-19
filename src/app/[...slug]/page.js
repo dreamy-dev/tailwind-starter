@@ -13,14 +13,21 @@ async function fetchData(slug) {
             'success-story-grid.success_stories',
             'news.categories',
             'medienmitteilungen.categories',
+            'alle-medienmitteilungen.filter_years',
+            'alle-medienmitteilungen.filter_country',
+            'alle-medienmitteilungen.filter_medienmitteilungencategories',
+            'alle-medienmitteilungen.filter_products',
+            'alle-news.filter_years',
+            'alle-news.filter_country',
+            'alle-news.filter_medienmitteilungencategories',
+            'alle-news.filter_products'
         ],
     };
 
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 
-    console.log(data.rels[(0, 1)]);
-    return { story: data.story };
+    return { story: data.story }
 }
 
 export async function generateStaticParams() {

@@ -6,7 +6,6 @@ import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import ArticleHero from './ArticleHero';
 
 function MedienmitteilungenBody({ blok }) {
-    console.log(blok)
     return (
         <section {...storyblokEditable(blok)} className="mb-32">
             <ArticleHero block={blok} />
