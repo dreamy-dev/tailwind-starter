@@ -152,11 +152,11 @@ const TestimonialsCarousel = ({blok}) => {
           
           const storyblokApi = getStoryblokApi();
           const { data } = await storyblokApi.get(`cdn/stories`, {
-            
               version: 'published',
               starts_with: 'loesungen/referenzen/',
               is_startpage: false,
               'filter_query[categories][any_in_array]': highlightReference,
+              per_page: 5,
           });
         console.log('data 111111', data);
           setHighlightsCategory((prev) => data.stories.map((article) => {
