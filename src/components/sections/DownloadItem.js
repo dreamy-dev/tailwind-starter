@@ -4,17 +4,16 @@ import ButtonPrimary from '../elements/ButtonPrimary';
 import Text from '../typography/Text';
 import { storyblokEditable } from '@storyblok/react/rsc';
 
-function DownloadItem({ blok }) {
- 
+const DownloadItem = ({ blok }) => {
     return (
         <section {...storyblokEditable(blok)}>
             <ContentWidth>
                 <div className="col-span-12 mb-14 flex justify-between align-baseline">
-                    <Text>{blok?.text}</Text>
+                    <Text>{blok?.Text}</Text>
                     <ButtonPrimary
                         position="right"
-                        buttonText={blok?.button_text}
-                        href={blok?.button_link.url}
+                        buttonText={blok?.CTA_text}
+                        href={blok?.CTA_link.url}
                     >
                         <svg
                             width="15"
@@ -45,6 +44,6 @@ function DownloadItem({ blok }) {
             </ContentWidth>
         </section>
     );
-}
+};
 
 export default DownloadItem;

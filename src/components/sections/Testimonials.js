@@ -20,7 +20,7 @@ const Testimonials = ({ blok }) => {
                     >
                         {blok.testimonial.map((item) => (
                             <button
-                                key={item.job}
+                                key={item.name}
                                 onClick={() => setSelectedTab(item)}
                                 className={`${
                                     selectedTab.name == item.name
