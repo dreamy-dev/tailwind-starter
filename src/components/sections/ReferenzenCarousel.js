@@ -1,14 +1,12 @@
-import { getStoryblokApi, storyblokEditable } from "@storyblok/react/rsc";
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
 import Link from 'next/link';
-import { MotionConfig, motion} from 'framer-motion';
-import { useState, useEffect} from 'react';
+import { MotionConfig, motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
-
-
 
 const TestimonialMotionDiv = motion.div;
 
@@ -132,41 +130,67 @@ const Pagination = ({ total, current }) => {
     );
 };
 
-
-
-const TestimonialsCarousel = ({blok}) => {
+const TestimonialsCarousel = ({ blok }) => {
     const [current, setCurrent] = useState(0);
     const [showTrains, setShowTrains] = useState(false);
     const [highlightsCategory, setHighlightsCategory] = useState([]);
+    const [reference, setReference] = useState([]);
 
     useEffect(() => {
         const getArticles = async () => {
-           const arayHighlight =[]
-           blok.highlight_reference.map(item => {
-            arayHighlight.push(item.uuid); 
-           
-           })
-          //console.log("categories", blok)
-          const highlightReference = arayHighlight.join(',')
-          //console.log('highlightReference', highlightReference);
-          
-          const storyblokApi = getStoryblokApi();
-          const { data } = await storyblokApi.get(`cdn/stories`, {
-              version: 'published',
-              starts_with: 'loesungen/referenzen/',
-              is_startpage: false,
-              'filter_query[categories][any_in_array]': highlightReference,
-              per_page: 5,
-          });
-        // console.log('data 111111', data);
-          setHighlightsCategory((prev) => data.stories.map((article) => {
-            //    console.log('data', data);
-            article.content.slug = article.slug;
-            return article;
-          }));
+            const arrayHighlight = [];
+            blok.highlight_reference.map((item) => {
+                arrayHighlight.push(item.uuid);
+            });
+
+            const highlightReference = arrayHighlight.join(',');
+
+            const storyblokApi = getStoryblokApi();
+            const { data } = await storyblokApi.get(`cdn/stories`, {
+                version: 'published',
+                starts_with: 'loesungen/referenzen/',
+                is_startpage: false,
+                'filter_query[categories][any_in_array]': highlightReference,
+                per_page: 5,
+            });
+
+            setHighlightsCategory((prev) =>
+                data.stories.map((article) => {
+                    article.content.slug = article.slug;
+                    return article;
+                })
+            );
         };
         getArticles();
-      }, []);
+    }, []);
+
+    useEffect(() => {
+        const getArticles = async () => {
+            const arrayReference = [];
+            blok.reference.map((item) => {
+                arrayReference.push(item.uuid);
+            });
+            console.log('categories', blok);
+            const references = arrayReference.join(',');
+            console.log('references', references);
+
+            const storyblokApi = getStoryblokApi();
+            const { data } = await storyblokApi.get(`cdn/stories`, {
+                version: 'published',
+                starts_with: 'loesungen/referenzen/',
+                is_startpage: false,
+                'filter_query[categories][any_in_array]': references,
+            });
+            //console.log("data 1111", data, data.stories)
+            setReference((prev) =>
+                data.stories.map((article) => {
+                    article.content.slug = article.slug;
+                    return article;
+                })
+            );
+        };
+        getArticles();
+    }, []);
 
     const onPrevClick = () => {
         if (current > 0) {
@@ -234,16 +258,22 @@ const TestimonialsCarousel = ({blok}) => {
                                                     </a>
                                                     <div className="flex flex-col justify-between p-10 leading-normal">
                                                         <Text styles="mb-6 md:mb-10">
-                                                            {
-                                                                article.name
-                                                            }
+                                                            {article.name}
                                                         </Text>
                                                         <div className="">
                                                             <H3>
-                                                                {article.content.title}
+                                                                {
+                                                                    article
+                                                                        .content
+                                                                        .title
+                                                                }
                                                             </H3>
                                                             <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
-                                                                {article.content.text}
+                                                                {
+                                                                    article
+                                                                        .content
+                                                                        .text
+                                                                }
                                                             </Text>
                                                         </div>
                                                         <Link
@@ -326,7 +356,7 @@ const TestimonialsCarousel = ({blok}) => {
                                     />
                                 </svg>
                             )}
-                           {blok?.collapse_text}
+                            {blok?.collapse_text}
                         </button>
 
                         <div className=" flex flex-row gap-4 justify-end items-center w-full  py-4">
@@ -374,48 +404,54 @@ const TestimonialsCarousel = ({blok}) => {
                     <div className="col-span-12 max-w-full">
                         {showTrains && (
                             <div className=" md:grid grid-cols-1 gap-6 md:gap-10 lg:grid-cols-3 xl:gap-6 mt-2 w-full">
-                                {trains.map((train, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
-                                    >
-                                        <a href="#">
-                                            <img
-                                                className="w-full aspect-[4/3]"
-                                                src={train.image}
-                                                alt=""
-                                            />
-                                        </a>
-                                        <div className="h-full flex flex-col justify-between p-8">
-                                            <H4 styles="mb-4">{train.name}</H4>
-                                            <Link href="#">
-                                                <svg
-                                                    width="20"
-                                                    height="20"
-                                                    viewBox="0 0 20 20"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <g clipPath="url(#clip0_4995_6662)">
-                                                        <path
-                                                            d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
-                                                            fill="#005893"
-                                                        />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_4995_6662">
-                                                            <rect
-                                                                width="20"
-                                                                height="20"
-                                                                fill="white"
+                                {reference[0] &&
+                                    reference.map((train, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                                        >
+                                            <a href="#">
+                                                <img
+                                                    className="w-full aspect-[4/3]"
+                                                    src={
+                                                        train.content.image
+                                                            .filename
+                                                    }
+                                                    alt=""
+                                                />
+                                            </a>
+                                            <div className="h-full flex flex-col justify-between p-8">
+                                                <H4 styles="mb-4">
+                                                    {train.content.name}
+                                                </H4>
+                                                <Link href="#">
+                                                    <svg
+                                                        width="20"
+                                                        height="20"
+                                                        viewBox="0 0 20 20"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <g clipPath="url(#clip0_4995_6662)">
+                                                            <path
+                                                                d="M7.72573e-07 11.1628L16.338 11.1628L10.9296 18.6047L12.7324 20L20 10L12.7324 -6.35355e-07L10.9296 1.39535L16.338 8.83721L9.75882e-07 8.83721L7.72573e-07 11.1628Z"
+                                                                fill="#005893"
                                                             />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </Link>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_4995_6662">
+                                                                <rect
+                                                                    width="20"
+                                                                    height="20"
+                                                                    fill="white"
+                                                                />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </Link>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
                             </div>
                         )}
                     </div>

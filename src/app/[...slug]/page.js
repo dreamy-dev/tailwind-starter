@@ -21,7 +21,8 @@ async function fetchData(slug) {
             'alle-news.filter_country',
             'alle-news.filter_medienmitteilungencategories',
             'alle-news.filter_products',
-            'reference-grid.highlight_reference'
+            'reference-grid.highlight_reference',
+            'reference-grid.reference',
         ],
     };
 
