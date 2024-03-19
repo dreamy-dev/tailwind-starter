@@ -70,11 +70,11 @@ function NewsTeaser({ blok }) {
                 alt="Image 1"
               />
             </div>
-            <div className="mb-3 mt-4">
+            <div className="mb-1 mt-4 flex flex-wrap">
               {article.content.categories.map((category, index) => (
                 <span
                   key={index}
-                  className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                  className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
                 >
                   {category.content.category}
                 </span>
