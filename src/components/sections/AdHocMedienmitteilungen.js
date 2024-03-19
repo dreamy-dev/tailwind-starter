@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import H1 from "../typography/H1";
 import Text from "../typography/Text";
 import DateFormatter from "../helpers/DateFormatter";
+import TrimText from "../helpers/TrimText";
 
 
 function AdHocMedienmitteilungen({ blok }) {
@@ -39,7 +40,7 @@ function AdHocMedienmitteilungen({ blok }) {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           { articles[0] && articles.map((article) => (
             <a
-            href={`news/${article.slug}`}
+            href={`medienmitteilungen/${article.slug}`}
             className="group mb-6 transition-all"
             key={article.uuid}
           >
@@ -64,7 +65,7 @@ function AdHocMedienmitteilungen({ blok }) {
               <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-primary transition-all">
                 {article.name}
               </h2>
-              <Text styles="texl-lg mb-3 text-gray-500">{article.content.lead}</Text>
+              <Text styles="texl-lg mb-3 text-gray-500">{TrimText(article.content.lead)}</Text>
             </a>
           ))}
         </div>

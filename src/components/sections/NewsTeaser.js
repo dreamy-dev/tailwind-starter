@@ -7,6 +7,7 @@ import H2 from "../typography/H2";
 import Text from "../typography/Text";
 import ButtonPrimary from "../../components/elements/ButtonPrimary";
 import DateFormatter from "../helpers/DateFormatter";
+import TrimText from "../helpers/TrimText";
 
 
 function NewsTeaser({ blok }) {
@@ -14,7 +15,6 @@ function NewsTeaser({ blok }) {
   useEffect(() => {
     const getArticles = async () => {
       const categories = blok.categories.join(",")
-      console.log("categories", categories)
 
       const storyblokApi = getStoryblokApi();
       const { data } = await storyblokApi.get(`cdn/stories`, {
@@ -70,7 +70,7 @@ function NewsTeaser({ blok }) {
                 <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-primary transition-all">
                   {article.name}
                 </h2>
-                <Text styles="texl-lg mb-3 text-gray-500">{article.content.lead}</Text>
+                <Text styles="texl-lg mb-3 text-gray-500">{TrimText(article.content.lead)}</Text>
               </a>
             ))}
           </div>

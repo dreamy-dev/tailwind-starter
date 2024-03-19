@@ -2,6 +2,7 @@
 import ContentWidth from "../layouts/ContentWidth";
 import { getStoryblokApi, storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import DateFormatter from "../helpers/DateFormatter";
+import TrimText from "../helpers/TrimText";
 
 import { useState, useEffect } from "react";
 import H1 from "../typography/H1";
@@ -63,7 +64,7 @@ function AllNews({ blok }) {
               <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-primary transition-all">
                 {article.name}
               </h2>
-              <Text styles="texl-lg mb-3 text-gray-500">{article.content.lead}</Text>
+              <Text styles="texl-lg mb-3 text-gray-500">{TrimText(article.content.lead)}</Text>
             </a>
           ))}
         </div>

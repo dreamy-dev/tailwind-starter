@@ -129,7 +129,7 @@ function AlleMedienmitteilungen({ blok }) {
               <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">{DateFormatter(medienmitteilung.content.date)}</td>
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">
-                  <a href={`news/${medienmitteilung.slug}`}>{medienmitteilung.name}</a>
+                  <a href={`medienmitteilungen/${medienmitteilung.slug}`}>{medienmitteilung.name}</a>
                 </td>
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">
                   {medienmitteilung.content.categories.map((category, index) => (
