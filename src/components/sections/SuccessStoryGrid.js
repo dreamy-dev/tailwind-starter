@@ -34,7 +34,7 @@ const SuccessStoryGrid = ({ blok }) => {
     };
 
     const onNextClick = () => {
-        if (current < items.length - 1) {
+        if (current < blok.success_stories.length - 1) {
             setCurrent(current + 1);
         }
     };
@@ -43,10 +43,30 @@ const SuccessStoryGrid = ({ blok }) => {
         <section className="py-5 lg:py-24 bg-white overflow-hidden">
             <ContentWidth>
                 <div className="col-span-12">
-                    <div className="relative">
-                        <div className="lg:pl-20 2xl:pl-0 mb-10 flex justify-center items-center">
+                    <div className="relative mb-4">
+                        <div className="lg:pl-20 2xl:pl-0 flex justify-center items-center">
                             <H2>{blok?.title}</H2>
                         </div>
+                        {isMobile && (
+                            <div className="flex justify-center">
+                                <div className="flex gap-3 px-3 py-2 rounded-full opacity-80">
+                                    {blok.success_stories.map((_, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => setCurrent(idx)}
+                                        >
+                                            <div
+                                                className={` w-8 h-1 ${
+                                                    idx === current
+                                                        ? 'bg-primary'
+                                                        : 'bg-greyDarken-100'
+                                                }`}
+                                            ></div>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                     <div className="flex lg:pl-20 flex-col items-center justify-between 2xl:pl-0">
                         <MotionConfig
@@ -56,67 +76,72 @@ const SuccessStoryGrid = ({ blok }) => {
                             }}
                         >
                             <div className="relative w-full max-w-[100%] flex items-center">
-                                <motion.div
-                                    {...storyblokEditable(blok)}
-                                    className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]"
-                                >
-                                    {blok.success_stories.map((nestedBlok) => {
-                                        nestedBlok.content.slug =
-                                            nestedBlok.slug;
-                                        return (
-                                            <motion.div
-                                                {...storyblokEditable(blok)}
-                                                key={nestedBlok.content._uid}
-                                                className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
-                                                /* animate={{
-                            translateX: `calc(-${current * 100}% - ${current * 2}rem)`,
-                            opacity: idx === current || idx === current + 1 ? 1 : 0.3,
-                        }} */
-                                            >
-                                                <img
-                                                    className="w-full max-h-[430px] object-cover"
-                                                    src={
-                                                        nestedBlok.content
-                                                            ?.image.filename
+                                <motion.div className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
+                                    {blok.success_stories.map(
+                                        (nestedBlok, idx) => {
+                                            nestedBlok.content.slug =
+                                                nestedBlok.slug;
+                                            return (
+                                                <motion.div
+                                                    {...storyblokEditable(blok)}
+                                                    key={
+                                                        nestedBlok.content._uid
                                                     }
-                                                    alt=""
-                                                />
-                                                <div className="p-5 ">
-                                                    <div className="mb-4">
-                                                        <H3>
-                                                            {
-                                                                nestedBlok
-                                                                    .content
-                                                                    ?.title
-                                                            }
-                                                        </H3>
-                                                    </div>
-                                                    <div className="mb-14">
-                                                        <Text>
-                                                            {
-                                                                nestedBlok
-                                                                    .content
-                                                                    ?.teaser
-                                                            }
-                                                        </Text>
-                                                    </div>
-                                                    <Link
-                                                        href={
-                                                            '/successstories/' +
-                                                            nestedBlok?.slug
+                                                    className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
+                                                    animate={{
+                                                        translateX: `calc(-${current * 100}% - ${current * 2}rem)`,
+                                                        opacity:
+                                                            idx === current ||
+                                                            idx === current + 1
+                                                                ? 1
+                                                                : 0.3,
+                                                    }}
+                                                >
+                                                    <img
+                                                        className="w-full max-h-[430px] object-cover"
+                                                        src={
+                                                            nestedBlok.content
+                                                                ?.image.filename
                                                         }
-                                                        className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-sm font-medium text-center"
-                                                    >
-                                                        <img
-                                                            className="w-5 h-5"
-                                                            src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                            alt=""
-                                                        />
-                                                    </Link>
-                                                </div>
-                                            </motion.div>
-                                        );
-                                    })}
+                                                        alt=""
+                                                    />
+                                                    <div className="p-5 ">
+                                                        <div className="mb-4">
+                                                            <H3>
+                                                                {
+                                                                    nestedBlok
+                                                                        .content
+                                                                        ?.title
+                                                                }
+                                                            </H3>
+                                                        </div>
+                                                        <div className="mb-14">
+                                                            <Text>
+                                                                {
+                                                                    nestedBlok
+                                                                        .content
+                                                                        ?.teaser
+                                                                }
+                                                            </Text>
+                                                        </div>
+                                                        <Link
+                                                            href={
+                                                                '/successstories/' +
+                                                                nestedBlok?.slug
+                                                            }
+                                                            className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-sm font-medium text-center"
+                                                        >
+                                                            <img
+                                                                className="w-5 h-5"
+                                                                src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                                                                alt=""
+                                                            />
+                                                        </Link>
+                                                    </div>
+                                                </motion.div>
+                                            );
+                                        }
+                                    )}
                                 </motion.div>
                             </div>
                         </MotionConfig>
