@@ -422,7 +422,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                             </a>
                                             <div className="h-full flex flex-col justify-between p-8">
                                                 <H4 styles="mb-4">
-                                                    {train.content.name}
+                                                    {train.content.title}
                                                 </H4>
                                                 <Link href="#">
                                                     <svg
