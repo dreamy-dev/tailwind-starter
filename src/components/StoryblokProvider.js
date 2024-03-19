@@ -80,6 +80,7 @@ import VideoFullWidth from './sections/VideoFullWidth';
 import GlobalDownloadReference from './sections/GlobalDownloadReference';
 import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen';
 import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen';
+import TrainCarousel from './sections/TrainCarousel';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -166,6 +167,7 @@ storyblokInit({
         "alle-medienmitteilungen": AlleMedienmitteilungen,
         "video-full-width": VideoFullWidth,
         "global_download_reference": GlobalDownloadReference,
+        "train-carousel": TrainCarousel,
     },
 });
 
