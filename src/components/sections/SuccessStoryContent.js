@@ -9,6 +9,7 @@ import { render } from 'storyblok-rich-text-react-renderer';
 import HeroText from './HeroText';
 import SmallWidth from '../layouts/SmallWidth';
 import Lead from '../typography/Lead';
+import TextSection from './TextSection';
 
 const SuccessStoryContent = ({ blok }) => {
     return (
@@ -27,12 +28,10 @@ const SuccessStoryContent = ({ blok }) => {
                             src={blok?.image.filename}
                             alt=""
                         />
-                        <div className="my-14 richtext">
-                            <Text>{render(blok.text)}</Text>
-                        </div>
                     </div>
                 </ContentWidth>
             </section>
+            <TextSection blok={blok} />
         </div>
     );
 };
