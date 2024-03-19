@@ -10,7 +10,6 @@ import DateFormatter from "../helpers/DateFormatter";
 function AlleMedienmitteilungen({ blok }) {
   const [medienmitteilungen, setMedienmitteilungen] = useState([]);
   useEffect(() => {
-    console.log("blok", blok)
     const getMedienmitteilungen = async () => {
       const storyblokApi = getStoryblokApi();
       const { data } = await storyblokApi.get(`cdn/stories`, {
