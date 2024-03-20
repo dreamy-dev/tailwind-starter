@@ -86,8 +86,8 @@ import AddressGrid from './sections/AddressGrid';
 import AddressWrapper from './sections/AddressWrapper';
 import AddressCard from './sections/AddressCard';
 import GraphicTextWrapper from './sections/GraphicTextWrapper';
-//import SubHero from "./sections/SubHero";
-//import HomePageCaroucel from "./sections/HomePageCaroucel";
+import Quote from './sections/Quote';
+
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -178,6 +178,7 @@ storyblokInit({
         address_card: AddressCard,
         'address-wrapper': AddressWrapper,
         'graphic-text-wrapper': GraphicTextWrapper,
+        'quote': Quote,
     },
 });
 
