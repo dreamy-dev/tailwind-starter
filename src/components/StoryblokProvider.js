@@ -85,6 +85,7 @@ import TestimonialsCarousel from './sections/ReferenzenCarousel';
 import AddressGrid from './sections/AddressGrid';
 import AddressWrapper from './sections/AddressWrapper';
 import AddressCard from './sections/AddressCard';
+import GraphicTextWrapper from './sections/GraphicTextWrapper';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -175,7 +176,8 @@ storyblokInit({
         'reference-grid': TestimonialsCarousel,
         'address-grid': AddressGrid,
         address_card: AddressCard,
-        "address-wrapper": AddressWrapper,
+        'address-wrapper': AddressWrapper,
+        'graphic-text-wrapper': GraphicTextWrapper,
     },
 });
 
