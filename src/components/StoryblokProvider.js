@@ -87,6 +87,8 @@ import AddressWrapper from './sections/AddressWrapper';
 import AddressCard from './sections/AddressCard';
 import GraphicTextWrapper from './sections/GraphicTextWrapper';
 import Quote from './sections/Quote';
+import TextDownloadItem from './sections/TextDownloadItem';
+import DownloadElementLanguage from './sections/DownloadElementLanguage';
 
 
 storyblokInit({
@@ -179,6 +181,8 @@ storyblokInit({
         'address-wrapper': AddressWrapper,
         'graphic-text-wrapper': GraphicTextWrapper,
         'quote': Quote,
+        'download-element-language': DownloadElementLanguage,
+        'text-download-item': TextDownloadItem,
     },
 });
 
