@@ -17,7 +17,7 @@ const GraphicTextWrapper = ({ blok }) => {
                     <div className="grid gap-8 sm:gap-12 md:grid-cols-3">
                         <div className="flex justify-center">
                             <img
-                                className="mb-3 w-7 h-7"
+                                className="mr-3 w-6 h-6"
                                 src={blok?.step_one_icon.filename}
                                 alt="icon-1"
                             />
@@ -32,7 +32,7 @@ const GraphicTextWrapper = ({ blok }) => {
                         </div>
                         <div className="flex justify-center">
                             <img
-                                className="mb-3 w-7 h-7"
+                                className="mr-3 w-6 h-6"
                                 src={blok?.step_two_icon.filename}
                                 alt="icon-1"
                             />
@@ -47,7 +47,7 @@ const GraphicTextWrapper = ({ blok }) => {
                         </div>
                         <div className="flex justify-center">
                             <img
-                                className="mb-3 w-7 h-7"
+                                className="mr-3 w-6 h-6"
                                 src={blok?.step_three_icon.filename}
                                 alt="icon-1"
                             />
