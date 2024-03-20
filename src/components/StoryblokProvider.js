@@ -82,6 +82,9 @@ import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen';
 import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen';
 import TrainCarousel from './sections/TrainCarousel';
 import TestimonialsCarousel from './sections/ReferenzenCarousel';
+import AddressGrid from './sections/AddressGrid';
+import AddressWrapper from './sections/AddressWrapper';
+import AddressItem from './sections/AddressCard';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -170,6 +173,9 @@ storyblokInit({
         "global_download_reference": GlobalDownloadReference,
         "train-carousel": TrainCarousel,
         "reference-grid": TestimonialsCarousel,
+        "address-grid": AddressGrid,
+        "address-card": AddressItem,
+        "address-wrapper": AddressWrapper
     },
 });
 
