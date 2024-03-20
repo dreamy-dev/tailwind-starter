@@ -84,7 +84,7 @@ import TrainCarousel from './sections/TrainCarousel';
 import TestimonialsCarousel from './sections/ReferenzenCarousel';
 import AddressGrid from './sections/AddressGrid';
 import AddressWrapper from './sections/AddressWrapper';
-import AddressItem from './sections/AddressCard';
+import AddressCard from './sections/AddressCard';
 //import SubHero from "./sections/SubHero";
 //import HomePageCaroucel from "./sections/HomePageCaroucel";
 
@@ -140,7 +140,7 @@ storyblokInit({
         schienenfahrzeuge_grid: SchienenfahrzeugeGrid,
         schienenfahrzeuge_item: SchienenfahrzeugeItem,
         schienenfahrzeuge_wrapper: SchienenfahrzeugeWrapper,
-        'news_teaser': NewsTeaser,
+        news_teaser: NewsTeaser,
         'image-right': Intro,
         'success-story-grid': SuccessStoryGrid,
         successstory: SuccessStoryContent,
@@ -161,21 +161,21 @@ storyblokInit({
         history: History,
         'history-card': HistoryCard,
         'history-section-wrapper': HistoryWrapper,
-        "accordion-all-years-wrapper": AccordionTabsTableWrapper,
-        "accordion-year-wrapper": AccordionYearWrapper,
-        "accordion-text-date-download-item":AccordionTextDateDownloadItem,
-        "all-news": AllNews,
-        "career-step-grid": CareerStepGrid,
-        "career-step-item": CareerStepItem,
-        "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
-        "alle-medienmitteilungen": AlleMedienmitteilungen,
-        "video-full-width": VideoFullWidth,
-        "global_download_reference": GlobalDownloadReference,
-        "train-carousel": TrainCarousel,
-        "reference-grid": TestimonialsCarousel,
-        "address-grid": AddressGrid,
-        "address-card": AddressItem,
-        "address-wrapper": AddressWrapper
+        'accordion-all-years-wrapper': AccordionTabsTableWrapper,
+        'accordion-year-wrapper': AccordionYearWrapper,
+        'accordion-text-date-download-item': AccordionTextDateDownloadItem,
+        'all-news': AllNews,
+        'career-step-grid': CareerStepGrid,
+        'career-step-item': CareerStepItem,
+        adhoc_medienmitteilungen_teaser: AdHocMedienmitteilungen,
+        'alle-medienmitteilungen': AlleMedienmitteilungen,
+        'video-full-width': VideoFullWidth,
+        global_download_reference: GlobalDownloadReference,
+        'train-carousel': TrainCarousel,
+        'reference-grid': TestimonialsCarousel,
+        'address-grid': AddressGrid,
+        address_card: AddressCard,
+        "address-wrapper": AddressWrapper,
     },
 });
 

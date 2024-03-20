@@ -1,5 +1,6 @@
 'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
 
 const AddressWrapper = ({ blok }) => (
     <section {...storyblokEditable(blok)}>
