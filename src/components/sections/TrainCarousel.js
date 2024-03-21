@@ -206,7 +206,7 @@ const TrainCarousel = ({ blok }) => {
 
   return (
     <section className="bg-stadlergradient" {...storyblokEditable(blok)}>
-      <TeaserMobilitySolutions></TeaserMobilitySolutions>
+      <TeaserMobilitySolutions blok={blok}></TeaserMobilitySolutions>
       <ContentWidth>
         <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
           <H3>{blok.title}</H3>
