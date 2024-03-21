@@ -89,6 +89,9 @@ import GraphicTextWrapper from './sections/GraphicTextWrapper';
 import Quote from './sections/Quote';
 import TextDownloadItem from './sections/TextDownloadItem';
 import DownloadElementLanguage from './sections/DownloadElementLanguage';
+import MedienMitteilungDownload from './sections/MedienMitteilungDownload';
+import MedienmitteilungDownloadItem from './sections/MedienmitteilungDownloadItem';
+import MedienmitteilungDownloadLink from './sections/MedienmitteilungDownloadLink';
 
 
 storyblokInit({
@@ -183,6 +186,9 @@ storyblokInit({
         'quote': Quote,
         'download-element-language': DownloadElementLanguage,
         'text-download-item': TextDownloadItem,
+        'medienmitteilung-download': MedienMitteilungDownload,
+        'medienmitteilung-download-item': MedienmitteilungDownloadItem,
+        'medienmitteilung-download-link': MedienmitteilungDownloadLink,
     },
 });
 
