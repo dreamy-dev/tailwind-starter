@@ -11,6 +11,7 @@ import Text from "../typography/Text";
 
 function AllNews({ blok }) {
   const [articles, setArticles] = useState([]);
+  const [selectedOption, setSelectedOption] = useState();
   useEffect(() => {
     const getArticles = async () => {
       const storyblokApi = getStoryblokApi();
@@ -30,6 +31,10 @@ function AllNews({ blok }) {
     getArticles();
   }, []);
 
+  const onChange = (e) => {
+    console.log(e)
+  }
+
   return (
     <ContentWidth {...storyblokEditable(blok)}>
       <div className="col-span-12 w-full">
@@ -38,8 +43,9 @@ function AllNews({ blok }) {
       <div className="col-span-12 w-full flex flex-col mb-8 items-center justify-center pb-4 space-y-3 md:pb-0 md:mt-4 dark:bg-gray-800 md:flex-row md:space-y-0 md:space-x-4">
         <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
           <li className="mb-4 mr-2 lg:mr-4">
-            <select className=" px-4 py-2 text-base border rounded  block">
-              <option disabled value="">
+            <select className=" px-4 py-2 text-base border rounded block"
+              onChange={e => onChange(e)}>
+              <option value="">
                 {blok.filter_country_title}
               </option>
               {blok.filter_country.map((country, index) => (
@@ -50,8 +56,9 @@ function AllNews({ blok }) {
             </select>
           </li>
           <li className="mb-4 mr-2 lg:mr-4">
-            <select className=" px-4 py-2 text-base border rounded  block">
-              <option disabled value="">
+            <select className=" px-4 py-2 text-base border rounded block"
+              onChange={e => onChange(e)}>
+              <option value="">
                 {blok.filter_category_title}
               </option>
               {blok.filter_newscategories.map((category, index) => (
@@ -62,8 +69,9 @@ function AllNews({ blok }) {
             </select>
           </li>
           <li className="mb-4 mr-2 lg:mr-4">
-            <select className=" px-4 py-2 text-base border rounded block">
-              <option disabled value="">
+            <select className=" px-4 py-2 text-base border rounded block"
+              onChange={e => onChange(e)}>
+              <option value="">
                 {blok.filter_products_title}
               </option>
               {blok.filter_products.map((product, index) => (
@@ -74,8 +82,9 @@ function AllNews({ blok }) {
             </select>
           </li>
           <li className="mb-4 mr-2 lg:mr-4">
-            <select className=" px-4 py-2 text-base border rounded block">
-              <option disabled value="">
+            <select className=" px-4 py-2 text-base border rounded block"
+              onChange={e => onChange(e)}>
+              <option value="">
                 {blok.filter_years_title}
               </option>
               {blok.filter_years.map((year, index) => (
