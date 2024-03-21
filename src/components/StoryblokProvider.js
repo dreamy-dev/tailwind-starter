@@ -95,6 +95,7 @@ import MedienmitteilungDownloadLink from './sections/MedienmitteilungDownloadLin
 import HomeSolutionsSchienenfahrzeugeWrapper from './sections/HomeSolutionsSchienenfahrzeugeWrapper';
 import HomeSolutionsSchienenfahrzeugeItemBig from './sections/HomeSolutionsSchienenfahrzeugeItemBig';
 import HomeSolutionsDoublePageTeaser from './sections/HomeSolutionsDoublePageTeaser';
+import Map from './sections/Map';
 
 
 
@@ -196,7 +197,8 @@ storyblokInit({
         'medienmitteilung-download-link': MedienmitteilungDownloadLink,
         "home-solutions-schienenfahrzeuge-wrapper": HomeSolutionsSchienenfahrzeugeWrapper,
         "home-solutions-schienenfahrzeuge-item-big": HomeSolutionsSchienenfahrzeugeItemBig,
-        'home-solutions-double-page-teaser': HomeSolutionsDoublePageTeaser
+        'home-solutions-double-page-teaser': HomeSolutionsDoublePageTeaser,
+        'map': Map
     },
 });
 

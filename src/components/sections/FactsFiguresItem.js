@@ -6,7 +6,7 @@ import ContentWidth from '../layouts/ContentWidth';
 const FactsAndFiguresItem = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>
-            <div className="flex flex-col gap-y-2 col-span-1 max-w-[400px]">
+            <div className="flex flex-col gap-y-2 col-span-1 mx-auto max-w-[400px]">
                 <dt className="text-xl leading-7 text-black">{blok?.text}</dt>
                 <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                     <CountUp
