@@ -92,6 +92,11 @@ import DownloadElementLanguage from './sections/DownloadElementLanguage';
 import MedienMitteilungDownload from './sections/MedienMitteilungDownload';
 import MedienmitteilungDownloadItem from './sections/MedienmitteilungDownloadItem';
 import MedienmitteilungDownloadLink from './sections/MedienmitteilungDownloadLink';
+import HomeSolutionsSchienenfahrzeugeWrapper from './sections/HomeSolutionsSchienenfahrzeugeWrapper';
+import HomeSolutionsSchienenfahrzeugeItemBig from './sections/HomeSolutionsSchienenfahrzeugeItemBig';
+import HomeSolutionsDoublePageTeaser from './sections/HomeSolutionsDoublePageTeaser';
+
+
 
 
 storyblokInit({
@@ -189,6 +194,9 @@ storyblokInit({
         'medienmitteilung-download': MedienMitteilungDownload,
         'medienmitteilung-download-item': MedienmitteilungDownloadItem,
         'medienmitteilung-download-link': MedienmitteilungDownloadLink,
+        "home-solutions-schienenfahrzeuge-wrapper": HomeSolutionsSchienenfahrzeugeWrapper,
+        "home-solutions-schienenfahrzeuge-item-big": HomeSolutionsSchienenfahrzeugeItemBig,
+        'home-solutions-double-page-teaser': HomeSolutionsDoublePageTeaser
     },
 });
 
