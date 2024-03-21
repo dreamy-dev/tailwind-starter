@@ -167,7 +167,7 @@ storyblokInit({
         "alle-medienmitteilungen": AlleMedienmitteilungen,
         "video-full-width": VideoFullWidth,
         "global_download_reference": GlobalDownloadReference,
-        "train-carousel": TrainCarousel,
+        "home-solutions-grid": TrainCarousel,
     },
 });
 
