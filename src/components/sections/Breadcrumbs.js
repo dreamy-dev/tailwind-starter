@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 const convertBreadcrumb = (string) => {
-    string
+    const newString = string
         .replace(/-/g, ' ')
         .replace(/oe/g, 'ö')
         .replace(/ae/g, 'ä')
         .replace(/ue/g, 'ü');
 
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return newString.charAt(0).toUpperCase() + newString.slice(1);
 };
 
 const Breadcrumbs = () => {

@@ -13,7 +13,7 @@ const AccordionTabsTableWrapper = ({ blok }) => {
 
     return (
         <div className="max-w-full col-span-12" {...storyblokEditable(blok)}>
-            {blok?.show_title ? <H2>{blok?.title}</H2> : ''}
+            {blok?.show_title ? <H2 styles='mt-24'>{blok?.title}</H2> : ''}
             <nav
                 className="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-6 sm:gap-4"
                 aria-label="Tabs"

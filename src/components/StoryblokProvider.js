@@ -82,8 +82,17 @@ import AdHocMedienmitteilungen from './sections/AdHocMedienmitteilungen';
 import AlleMedienmitteilungen from './sections/AlleMedienmitteilungen';
 import TrainCarousel from './sections/TrainCarousel';
 import TestimonialsCarousel from './sections/ReferenzenCarousel';
-//import SubHero from "./sections/SubHero";
-//import HomePageCaroucel from "./sections/HomePageCaroucel";
+import AddressGrid from './sections/AddressGrid';
+import AddressWrapper from './sections/AddressWrapper';
+import AddressCard from './sections/AddressCard';
+import GraphicTextWrapper from './sections/GraphicTextWrapper';
+import Quote from './sections/Quote';
+import TextDownloadItem from './sections/TextDownloadItem';
+import DownloadElementLanguage from './sections/DownloadElementLanguage';
+import MedienMitteilungDownload from './sections/MedienMitteilungDownload';
+import MedienmitteilungDownloadItem from './sections/MedienmitteilungDownloadItem';
+import MedienmitteilungDownloadLink from './sections/MedienmitteilungDownloadLink';
+
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -137,7 +146,7 @@ storyblokInit({
         schienenfahrzeuge_grid: SchienenfahrzeugeGrid,
         schienenfahrzeuge_item: SchienenfahrzeugeItem,
         schienenfahrzeuge_wrapper: SchienenfahrzeugeWrapper,
-        'news_teaser': NewsTeaser,
+        news_teaser: NewsTeaser,
         'image-right': Intro,
         'success-story-grid': SuccessStoryGrid,
         successstory: SuccessStoryContent,
@@ -158,18 +167,28 @@ storyblokInit({
         history: History,
         'history-card': HistoryCard,
         'history-section-wrapper': HistoryWrapper,
-        "accordion-all-years-wrapper": AccordionTabsTableWrapper,
-        "accordion-year-wrapper": AccordionYearWrapper,
-        "accordion-text-date-download-item":AccordionTextDateDownloadItem,
-        "all-news": AllNews,
-        "career-step-grid": CareerStepGrid,
-        "career-step-item": CareerStepItem,
-        "adhoc_medienmitteilungen_teaser": AdHocMedienmitteilungen,
-        "alle-medienmitteilungen": AlleMedienmitteilungen,
-        "video-full-width": VideoFullWidth,
-        "global_download_reference": GlobalDownloadReference,
-        "home-solutions-grid": TrainCarousel,
-        "reference-grid": TestimonialsCarousel,
+        'accordion-all-years-wrapper': AccordionTabsTableWrapper,
+        'accordion-year-wrapper': AccordionYearWrapper,
+        'accordion-text-date-download-item': AccordionTextDateDownloadItem,
+        'all-news': AllNews,
+        'career-step-grid': CareerStepGrid,
+        'career-step-item': CareerStepItem,
+        adhoc_medienmitteilungen_teaser: AdHocMedienmitteilungen,
+        'alle-medienmitteilungen': AlleMedienmitteilungen,
+        'video-full-width': VideoFullWidth,
+        global_download_reference: GlobalDownloadReference,
+        'home-solutions-grid': TrainCarousel,
+        'reference-grid': TestimonialsCarousel,
+        'address-grid': AddressGrid,
+        address_card: AddressCard,
+        'address-wrapper': AddressWrapper,
+        'graphic-text-wrapper': GraphicTextWrapper,
+        'quote': Quote,
+        'download-element-language': DownloadElementLanguage,
+        'text-download-item': TextDownloadItem,
+        'medienmitteilung-download': MedienMitteilungDownload,
+        'medienmitteilung-download-item': MedienmitteilungDownloadItem,
+        'medienmitteilung-download-link': MedienmitteilungDownloadLink,
     },
 });
 
