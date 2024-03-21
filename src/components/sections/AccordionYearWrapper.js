@@ -1,9 +1,12 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import { motion, AnimatePresence } from 'framer-motion';
+import H2 from '../typography/H2';
 
 const AccordionYearWrapper = ({ blok, isActive }) => {
     return (
         <div className="max-w-full col-span-12" {...storyblokEditable(blok)}>
+        
+         
             {isActive && (
                 <AnimatePresence mode="wait">
                     <motion.div
