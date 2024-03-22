@@ -10,12 +10,10 @@ import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 
 const MedienMedienmitteilungenTeaser = ({
-    leadText,
-
-    blok,
+    blok
 }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
-    console.log("blok", blok)
+
     useEffect(() => {
         const getMedienmitteilungen = async () => {
             const storyblokApi = getStoryblokApi();
@@ -27,7 +25,6 @@ const MedienMedienmitteilungenTeaser = ({
                 sort_by: 'content.date:desc',
                 per_page: 5,
             });
-            console.log('data medienmitteilungen', data);
             setMedienmitteilungen((prev) =>
                 data.stories.map((medienmitteilungen) => {
                     medienmitteilungen.content.slug = medienmitteilungen.slug;
@@ -52,7 +49,7 @@ const MedienMedienmitteilungenTeaser = ({
                                 <li key={item.uuid}>
                                     <a
                                         className="group mb-6 text-xl md:flex-row flex justify-start md:justify-between items-center"
-                                        href={`medienmitteilungen/${item.slug}`}
+                                        href={`/${item.full_slug}`}
                                     >
                                         <div className="text-xl flex group-hover:text-primary justify-start md:justify-between items-center">
                                             <p className="w-28 group-hover:text-primary transition-all">
@@ -77,7 +74,7 @@ const MedienMedienmitteilungenTeaser = ({
                     </ul>
                     <ButtonPrimary
                         position="left"
-                        // href={blok?.CTA_Show_ALL.url}
+                        href={blok?.CTA_Show_ALL.url}
                         buttonText={blok?.ctag_all_news}
                     />
                 </div>
