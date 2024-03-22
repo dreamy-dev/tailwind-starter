@@ -100,7 +100,7 @@ import HomeSolutionsSchienenfahrzeugeItemBig from './sections/HomeSolutionsSchie
 import HomeSolutionsDoublePageTeaser from './sections/HomeSolutionsDoublePageTeaser';
 import Map from './sections/Map';
 import EmployeeContent from './sections/EmployeeContent';
-import { Emblema_One } from 'next/font/google';
+
 
 
 storyblokInit({
