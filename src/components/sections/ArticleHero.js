@@ -9,6 +9,7 @@ import Breadcrumbs from './Breadcrumbs';
 import DateFormatter from "../helpers/DateFormatter";
 
 function ArticleHero({ block }) {
+    console.log(block)
 
     return (
         <SuperSmallWidth>
