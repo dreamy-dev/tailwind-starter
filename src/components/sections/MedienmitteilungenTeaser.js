@@ -67,7 +67,7 @@ const MedienMedienmitteilungenTeaser = ({
                         <tbody>
                             {medienmitteilungen[0] &&
                                 medienmitteilungen.map((item) => (
-                                    <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
+                                    <tr key={item.uuid} className="bg-white border-b dark:bg-black dark:border-gray-700">
                                         <td
                                             scope="row"
                                             className="px-6 py-4 font-medium text-black whitespace-nowrap"
