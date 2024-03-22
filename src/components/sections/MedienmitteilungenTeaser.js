@@ -26,7 +26,7 @@ const MedienMedienmitteilungenTeaser = ({
                 per_page: 5,
             });
 
-         
+
             setMedienmitteilungen((prev) =>
                 data.stories.map((medienmitteilungen) => {
                     medienmitteilungen.content.slug = medienmitteilungen.slug;
@@ -65,8 +65,8 @@ const MedienMedienmitteilungenTeaser = ({
                             </tr>
                         </thead>
                         <tbody>
-                            {medienmitteilungenTeaser[0] &&
-                                medienmitteilungenTeaser.map((item) => (
+                            {medienmitteilungen[0] &&
+                                medienmitteilungen.map((item) => (
                                     <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
                                         <td
                                             scope="row"
@@ -79,7 +79,7 @@ const MedienMedienmitteilungenTeaser = ({
                                             className="px-6 py-4  font-medium text-black"
                                         >
                                             <a
-                                                href={`medienmitteilungen/${item.slug}`}
+                                                href={`/${item.full_slug}`}
                                             >
                                                 {item.name}
                                             </a>
