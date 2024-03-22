@@ -1,7 +1,7 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
-import H4 from '../typography/H4';
+import H2 from '../typography/H2';
 import Text from '../typography/Text';
 
 const TableGrid = ({ blok }) => {
@@ -13,7 +13,7 @@ const TableGrid = ({ blok }) => {
             <ContentWidth>
                 <div className="max-w-full col-span-12">
                     <div className="text-start mb-8">
-                        <H4>{blok?.title}</H4>
+                        <H2>{blok?.title}</H2>
                     </div>
                     <div className="text-start mb-8">
                         <Text>{blok?.text}</Text>
