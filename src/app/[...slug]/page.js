@@ -24,6 +24,7 @@ async function fetchData(slug) {
             'reference-grid.highlight_reference',
             'reference-grid.reference',
             'reference-page.categories',
+            'medienmitteilungen_teaser.categories',
         ],
     };
 
