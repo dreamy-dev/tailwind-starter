@@ -58,6 +58,7 @@ function NewsTeaser({ blok }) {
                 </div>
                 <div className="mb-1 mt-4 flex flex-wrap">
                   {article.content.categories.map((category, index) => (
+                    category.full_slug.includes("/news/") &&
                     <span
                       key={index}
                       className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
