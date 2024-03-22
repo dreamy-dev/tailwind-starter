@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
-    getStoryblokApi, storyblokEditable,
+    getStoryblokApi,
+    storyblokEditable,
     StoryblokComponent,
 } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
@@ -9,13 +10,9 @@ import ButtonPrimary from '../elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 
-const MedienMedienmitteilungenTeaser = ({
-    leadText,
-
-    blok,
-}) => {
+const MedienMedienmitteilungenTeaser = ({ blok }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
-    console.log("blok", blok)
+    console.log('blok', blok);
     useEffect(() => {
         const getMedienmitteilungen = async () => {
             const storyblokApi = getStoryblokApi();
@@ -46,7 +43,7 @@ const MedienMedienmitteilungenTeaser = ({
                 <div className="col-span-12 max-w-full flex flex-col justify-left">
                     <H2>{blok?.title}</H2>
 
-                    <ul className="mb-8" >
+                    <ul className="mb-8">
                         {medienmitteilungen[0] &&
                             medienmitteilungen.map((item) => (
                                 <li key={item.uuid}>
