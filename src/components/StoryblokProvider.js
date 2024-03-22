@@ -99,6 +99,8 @@ import HomeSolutionsSchienenfahrzeugeWrapper from './sections/HomeSolutionsSchie
 import HomeSolutionsSchienenfahrzeugeItemBig from './sections/HomeSolutionsSchienenfahrzeugeItemBig';
 import HomeSolutionsDoublePageTeaser from './sections/HomeSolutionsDoublePageTeaser';
 import Map from './sections/Map';
+import EmployeeContent from './sections/EmployeeContent';
+import { Emblema_One } from 'next/font/google';
 
 
 storyblokInit({
@@ -202,7 +204,8 @@ storyblokInit({
         "home-solutions-schienenfahrzeuge-wrapper": HomeSolutionsSchienenfahrzeugeWrapper,
         "home-solutions-schienenfahrzeuge-item-big": HomeSolutionsSchienenfahrzeugeItemBig,
         'home-solutions-double-page-teaser': HomeSolutionsDoublePageTeaser,
-        'map': Map
+        'map': Map,
+        'employee_story': EmployeeContent,
     },
 });
 
