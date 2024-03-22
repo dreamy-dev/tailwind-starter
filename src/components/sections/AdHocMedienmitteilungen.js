@@ -1,4 +1,4 @@
- 
+
 import ContentWidth from "../layouts/ContentWidth";
 import { getStoryblokApi, storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
@@ -22,10 +22,11 @@ function AdHocMedienmitteilungen({ blok }) {
         "sort_by": "content.date:desc",
         "per_page": 4
       });
- 
-      setArticles((prev) => data.stories.map((article) => {
-        article.content.slug = article.slug;
-        return article;
+
+      setArticles((prev) => data.stories.map((medienmitteilungen) => {
+        console.log('data medienmitteilungen', medienmitteilungen);
+        medienmitteilungen.content.slug = medienmitteilungen.slug;
+        return medienmitteilungen;
       }));
     };
     getArticles();
@@ -35,32 +36,32 @@ function AdHocMedienmitteilungen({ blok }) {
     <ContentWidth {...storyblokEditable(blok)}>
       <div className="col-span-12 w-full mt-32">
         <H1>{blok.title}</H1>
-      </div>  
+      </div>
       <div className="col-span-12 w-full">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          { articles[0] && articles.map((article) => (
+          {articles[0] && articles.map((article) => (
             <a
-            href={`medienmitteilungen/${article.slug}`}
-            className="group mb-6 transition-all"
-            key={article.uuid}
-          >
-            <div className="overflow-hidden h-52">
-              <img
-                src={article.content.image.filename}
-                className="object-cover w-full h-full group-hover:scale-110 transition-all"
-                alt="Image 1"
-              />
-            </div>
-            <div className="mb-1 mt-4 flex flex-wrap">
-              {article.content.categories.map((category, index) => (
-                <span
-                  key={index}
-                  className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                >
-                  {category.content.category}
-                </span>
-              ))}
-            </div>
+              href={`/${article.full_slug}`}
+              className="group mb-6 transition-all"
+              key={article.uuid}
+            >
+              <div className="overflow-hidden h-52">
+                <img
+                  src={article.content.image.filename}
+                  className="object-cover w-full h-full group-hover:scale-110 transition-all"
+                  alt="Image 1"
+                />
+              </div>
+              <div className="mb-1 mt-4 flex flex-wrap">
+                {article.content.categories.map((category, index) => (
+                  <span
+                    key={index}
+                    className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                  >
+                    {category.content.category}
+                  </span>
+                ))}
+              </div>
               <Text styles="text-sm mb-1 text-gray-500">{DateFormatter(article.content.date)}</Text>
               <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-primary transition-all">
                 {article.name}

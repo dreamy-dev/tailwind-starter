@@ -1,6 +1,6 @@
 
 import ContentWidth from "../layouts/ContentWidth";
-import { getStoryblokApi, storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { getStoryblokApi, storyblokEditable } from "@storyblok/react/rsc";
 
 import { useState, useEffect } from "react";
 import H2 from "../typography/H2";
@@ -27,7 +27,7 @@ function NewsTeaser({ blok }) {
         "per_page": 4
       });
 
-      setArticlesCategory((prev) => data.stories.map((article) => {
+      setArticlesCategory(() => data.stories.map((article) => {
         article.content.slug = article.slug;
         return article;
       }));
@@ -45,7 +45,7 @@ function NewsTeaser({ blok }) {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {articlesCategory[0] && articlesCategory.map((article) => (
               <a
-                href={`news/${article.slug}`}
+                href={`/${article.full_slug}`}
                 className="group mb-6 transition-all"
                 key={article.uuid}
               >

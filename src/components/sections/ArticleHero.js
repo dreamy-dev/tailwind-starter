@@ -1,7 +1,3 @@
-import { storyblokEditable } from '@storyblok/react/rsc';
-import { render } from 'storyblok-rich-text-react-renderer';
-import { useState, useEffect } from 'react';
-
 import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
@@ -9,8 +5,6 @@ import Breadcrumbs from './Breadcrumbs';
 import DateFormatter from "../helpers/DateFormatter";
 
 function ArticleHero({ block }) {
-    console.log(block)
-
     return (
         <SuperSmallWidth>
             <div className="mt-20 flex font-normal text-gray-600">
@@ -19,16 +13,16 @@ function ArticleHero({ block }) {
             <H1 styles="mb-8">{block?.title}</H1>
             <div className="grid grid-cols-12 gap-6 mb-6">
                 <div className="col-span-6">
-                    {block?.categories?.map((category, index) => (
-
-                        category.full_slug.includes("/news/") &&
-                        <span
-                            key={index}
-                            className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
-                        >
-                            {category.content.category}
-                        </span>
-                    ))}
+                    {block?.categories?.map((category, index) => {
+                        if (category.full_slug.includes("/news/") || category.full_slug.includes("/medienmitteilungen/")) {
+                            return (<span
+                                key={index}
+                                className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
+                            >
+                                {category.content.category}
+                            </span>)
+                        }
+                    })}
                 </div>
                 <div className="col-span-6 align-right text-right">
                     <Text styles="text-md">{DateFormatter(block?.date)}</Text>

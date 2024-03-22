@@ -37,7 +37,7 @@ function AlleMedienmitteilungen({ blok }) {
         <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
           <li className="mb-4 mr-2 lg:mr-4">
             <select className=" px-4 py-2 text-base border rounded  block">
-              <option disabled value="">
+              <option value="">
                 {blok.filter_country_title}
               </option>
               {blok.filter_country.map((country, index) => (
@@ -49,7 +49,7 @@ function AlleMedienmitteilungen({ blok }) {
           </li>
           <li className="mb-4 mr-2 lg:mr-4">
             <select className=" px-4 py-2 text-base border rounded  block">
-              <option disabled value="">
+              <option value="">
                 {blok.filter_category_title}
               </option>
               {blok.filter_medienmitteilungencategories.map((category, index) => (
@@ -61,7 +61,7 @@ function AlleMedienmitteilungen({ blok }) {
           </li>
           <li className="mb-4 mr-2 lg:mr-4">
             <select className=" px-4 py-2 text-base border rounded block">
-              <option disabled value="">
+              <option value="">
                 {blok.filter_products_title}
               </option>
               {blok.filter_products.map((product, index) => (
@@ -73,7 +73,7 @@ function AlleMedienmitteilungen({ blok }) {
           </li>
           <li className="mb-4 mr-2 lg:mr-4">
             <select className=" px-4 py-2 text-base border rounded block">
-              <option disabled value="">
+              <option value="">
                 {blok.filter_years_title}
               </option>
               {blok.filter_years.map((year, index) => (
@@ -128,7 +128,7 @@ function AlleMedienmitteilungen({ blok }) {
               <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">{DateFormatter(medienmitteilung.content.date)}</td>
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">
-                  <a href={`medienmitteilungen/${medienmitteilung.slug}`}>{medienmitteilung.name}</a>
+                  <a href={`/${medienmitteilung.full_slug}`}>{medienmitteilung.name}</a>
                 </td>
                 <td scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">
                   {medienmitteilung.content.categories.map((category, index) => (

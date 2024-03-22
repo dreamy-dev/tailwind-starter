@@ -9,11 +9,11 @@ import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
 
-const MedienMedienmitteilungenTeaser = ({ blok }) => {
-    const [medienmitteilungenTeaser, setMedienmitteilungenTeaser] = useState(
-        []
-    );
-    console.log('blok', blok);
+const MedienMedienmitteilungenTeaser = ({
+    blok
+}) => {
+    const [medienmitteilungen, setMedienmitteilungen] = useState([]);
+
     useEffect(() => {
         const getMedienmitteilungen = async () => {
             const storyblokApi = getStoryblokApi();
@@ -25,8 +25,9 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                 sort_by: 'content.date:desc',
                 per_page: 5,
             });
-            console.log('data medienmitteilungen', data);
-            setMedienmitteilungenTeaser((prev) =>
+
+         
+            setMedienmitteilungen((prev) =>
                 data.stories.map((medienmitteilungen) => {
                     medienmitteilungen.content.slug = medienmitteilungen.slug;
                     return medienmitteilungen;
