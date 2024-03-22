@@ -95,6 +95,10 @@ import MedienmitteilungDownloadLink from './sections/MedienmitteilungDownloadLin
 import ReferenzContent from './sections/ReferenzContent';
 import MedienMedienmitteilungenTeaser from './sections/MedienmitteilungenTeaser';
 import AccordionContactItem from './sections/AccordionContactItem';
+import HomeSolutionsSchienenfahrzeugeWrapper from './sections/HomeSolutionsSchienenfahrzeugeWrapper';
+import HomeSolutionsSchienenfahrzeugeItemBig from './sections/HomeSolutionsSchienenfahrzeugeItemBig';
+import HomeSolutionsDoublePageTeaser from './sections/HomeSolutionsDoublePageTeaser';
+import Map from './sections/Map';
 
 
 storyblokInit({
@@ -180,7 +184,7 @@ storyblokInit({
         'alle-medienmitteilungen': AlleMedienmitteilungen,
         'video-full-width': VideoFullWidth,
         global_download_reference: GlobalDownloadReference,
-        'train-carousel': TrainCarousel,
+        'home-solutions-grid': TrainCarousel,
         'reference-grid': TestimonialsCarousel,
         'address-grid': AddressGrid,
         address_card: AddressCard,
@@ -195,6 +199,10 @@ storyblokInit({
         'reference-page': ReferenzContent,
         'medienmitteilungen_teaser': MedienMedienmitteilungenTeaser,
         'accordion-contact-item': AccordionContactItem,
+        "home-solutions-schienenfahrzeuge-wrapper": HomeSolutionsSchienenfahrzeugeWrapper,
+        "home-solutions-schienenfahrzeuge-item-big": HomeSolutionsSchienenfahrzeugeItemBig,
+        'home-solutions-double-page-teaser': HomeSolutionsDoublePageTeaser,
+        'map': Map
     },
 });
 

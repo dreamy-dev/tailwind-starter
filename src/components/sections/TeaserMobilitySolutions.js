@@ -4,24 +4,21 @@ import Text from '../../components/typography/Text';
 import ContentWidth from '../layouts/ContentWidth';
 import Button from '../elements/ButtonSecondary';
 
-export default function TeaserMobilitySolutions(props) {
+export default function TeaserMobilitySolutions({ blok }) {
     return (
         <section className="pt-24 pb-12 dark:bg-gray-900 ">
             <ContentWidth>
                 <div className="col-span-12 max-w-4xl lg:mx-auto">
                     <H2 styles="text-center leading-tight text-white break-words">
-                        Die Mobilitätslösungen von Stadler stehen für hohe
-                        Effizienz und Zuverlässigkeit
+                        {blok.title}
                     </H2>
                     <Text styles="my-8 text-xl text-center text-white break-words">
-                        Stadler entwickelt die besten Schienenfahrzeuge der
-                        Welt. Diese werden mit massgeschneiderten Lösungen im
-                        Bereich Signaltechnik und einem integrierten
-                        Service-Konzept komplementiert.
+                        {blok.lead}
                     </Text>
                     <Button
                         position="center"
                         textColorClass="text-white"
+                        href={blok.cta_link.href}
                         styles="mb-12"
                         iconAfter={
                             <svg
@@ -49,7 +46,7 @@ export default function TeaserMobilitySolutions(props) {
                             </svg>
                         }
                     >
-                        Zu den Lösungen
+                        {blok.cta_text}
                     </Button>
                 </div>
                 <div className="col-span-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
