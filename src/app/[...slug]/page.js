@@ -23,6 +23,7 @@ async function fetchData(slug) {
             'all-news.filter_products',
             'reference-grid.highlight_reference',
             'reference-grid.reference',
+            'reference-page.categories',
         ],
     };
 
