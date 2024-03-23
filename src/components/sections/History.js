@@ -2,6 +2,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import { render } from 'storyblok-rich-text-react-renderer';
 import H2 from '../../components/typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 import ContentWidth from '../../components/layouts/ContentWidth';
 
@@ -14,7 +15,7 @@ const History = ({ blok }) => {
                         <H2>{blok?.title}</H2>
                     </div>
                     <div className="mb-4 text-left text-xl font-normal">
-                        {render(blok?.text)}
+                        <RichTextRenderer text={blok.text} />
                     </div>
                     <div className="relative border-s border-gray-200 dark:border-gray-700">
                         {blok?.history_block.map((nestedBlok, index) => (
