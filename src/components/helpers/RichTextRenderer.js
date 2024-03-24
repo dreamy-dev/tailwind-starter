@@ -1,12 +1,11 @@
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import {
-    MARK_BOLD,
     MARK_LINK,
-    MARK_TEXT_STYLE,
     MARK_UNDERLINE,
     NODE_HEADING,
     NODE_HR,
+    NODE_IMAGE,
     NODE_LI,
     NODE_OL,
     NODE_PARAGRAPH,
@@ -63,6 +62,14 @@ const RichTextRenderer = (props) => {
                     },
                 },
                 nodeResolvers: {
+                    [NODE_IMAGE]: (children, props) => (
+                        <img
+                            src={props?.src}
+                            title={props.title}
+                            alt={props.alt}
+                            className="my-6"
+                        />
+                    ),
                     [NODE_QUOTE]: (children) => (
                         <Blockquote>{children}</Blockquote>
                     ),
@@ -86,11 +93,23 @@ const RichTextRenderer = (props) => {
                             case 1:
                                 return <H1>{children}</H1>;
                             case 2:
-                                return <H2>{children}</H2>;
+                                return (
+                                    <div className="mt-12">
+                                        <H2>{children}</H2>
+                                    </div>
+                                );
                             case 3:
-                                return <H3>{children}</H3>;
+                                return (
+                                    <div className="mt-12 mb-4">
+                                        <H3>{children}</H3>
+                                    </div>
+                                );
                             case 4:
-                                return <H4>{children}</H4>;
+                                return (
+                                    <div className="mt-5 mb-3">
+                                        <H4>{children}</H4>
+                                    </div>
+                                );
                         }
                     },
                 },
