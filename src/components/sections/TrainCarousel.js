@@ -206,12 +206,13 @@ const TrainCarousel = ({ blok }) => {
 
   return (
     <section className="bg-stadlergradient" {...storyblokEditable(blok)}>
-      <TeaserMobilitySolutions></TeaserMobilitySolutions>
+      gfdsfg
+      {/* <TeaserMobilitySolutions blok={blok}></TeaserMobilitySolutions>
       <ContentWidth>
         <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
           <H3>{blok.title}</H3>
           <Text>
-            {blok.description}
+            {blok.lead}
           </Text>
           <a className="flex mt-4" href="/solutions/schienenfahrzeuge">
             <img className="h-5" src="/stadler-arrow-foreward.svg" />
@@ -288,7 +289,7 @@ const TrainCarousel = ({ blok }) => {
           </div>
         </motion.div>
       </ContentWidth>
-      <DoubleCard />
+      <DoubleCard /> */}
     </section>
   )
 }
