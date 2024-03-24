@@ -21,8 +21,7 @@ const TeaserImageLeft = ({ blok }) => {
                         <div>
                             <H2 styles="text-black">{blok?.title}</H2>
                             <Text styles="mt-4 text-xl font-normal text-black richtext">
-                                {render(blok.text)}
-                                {/* {blok?.text} */}
+                                {blok?.text}
                             </Text>
                         </div>
                         <ButtonPrimary
