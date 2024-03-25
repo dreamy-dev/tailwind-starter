@@ -1,5 +1,5 @@
 const DateFormatter = (textToFormat) => {
-    const date = new Date(textToFormat)
+    const date = new Date(textToFormat);
     const yyyy = date.getFullYear();
     let mm = date.getMonth() + 1;
     let dd = date.getDate();
@@ -10,6 +10,6 @@ const DateFormatter = (textToFormat) => {
     const formattedDay = dd + '.' + mm + '.' + yyyy;
 
     return formattedDay;
-}
+};
 
 export default DateFormatter;

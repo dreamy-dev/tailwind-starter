@@ -6,8 +6,6 @@ import Text from '../typography/Text';
 import Breadcrumbs from './Breadcrumbs';
 import SmallWidth from '../layouts/SmallWidth';
 
-
-
 function ReferenzContent({ blok }) {
     return (
         <section {...storyblokEditable(blok)} className="mb-24">
@@ -37,7 +35,6 @@ function ReferenzContent({ blok }) {
                             key={nestedBlok._uid}
                         />
                     ))}
-                  
                 </div>
             </SmallWidth>
 
