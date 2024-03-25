@@ -23,6 +23,11 @@ const variantsSub = {
     closed: { opacity: 0, y: 50, height: 0 },
 };
 
+const variantsLang = {
+    open: { opacity: 1 },
+    closed: { opacity: 0 },
+};
+
 const navigationMain = {
     topNav: [
         {
@@ -111,6 +116,10 @@ const Header = ({ blok }) => {
         setIsMobileNavOpen(false);
     };
 
+    const openLangDropdown = () => {
+        setIsOpen(true);
+    };
+
     useEffect(() => {
         setIsUnternehmenSubmenuOpen(false);
         setIsSolutionsSubmenuOpen(false);
@@ -194,7 +203,6 @@ const Header = ({ blok }) => {
                     </div>
                 </div>
             </ContentWidth>
-
             <div
                 className={`${
                     isMobileNavOpen && isNarrowScreen ? 'visible' : 'hidden'
@@ -207,7 +215,7 @@ const Header = ({ blok }) => {
                                 <div className="pt-5 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center gap-8 lg:gap-4">
                                     <ul
                                         role="list"
-                                        className=" flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-6"
+                                        className="flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-8"
                                     >
                                         {navigation.topNav.map((item) => (
                                             <li key={item.name}>
@@ -226,21 +234,71 @@ const Header = ({ blok }) => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <div className="border-b lg:border-none"></div>
-                                    <ul className="flex flex-col lg:flex lg:flex-row lg:items-center gap-8 mb-10 lg:mb-0 lg:gap-4">
-                                        <li className="flex flex-row lg:flex lg:items-center  gap-2">
-                                            <img
-                                                src="/icons/country-name.svg"
-                                                alt="Language Icon"
-                                            />
-                                            <a
-                                                className="text-base leading-6  font-medium text-primarySolid-800 hover:text-primary"
-                                                href="#"
-                                            >
-                                                DE
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <button
+                                        type="button"
+                                        onClick={() =>
+                                            setIsOpen((isOpen) => !isOpen)
+                                        }
+                                        className="inline-flex items-center dark:text-gray-300 hover:bg-gray-50 hover:text-primary text-primarySolid-800 font-medium rounded-lg text-base px-2.5 lg:px-5 py-2.5 dark:hover:bg-gray-700 focus:outline-none "
+                                    >
+                                        English
+                                        <svg
+                                            className="ml-1 w-4 h-4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                    <motion.div
+                                        animate={isOpen ? 'open' : 'closed'}
+                                        variants={variantsLang}
+                                        className="lg:absolute lg:top-14 z-50 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+                                        id="language-dropdown"
+                                    >
+                                        <ul className="py-1" role="none">
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    role="menuitem"
+                                                >
+                                                    <div className="inline-flex items-center">
+                                                        French
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    role="menuitem"
+                                                >
+                                                    <div className="inline-flex items-center">
+                                                        Deutsch
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    role="menuitem"
+                                                >
+                                                    <div className="inline-flex items-center">
+                                                        Italiano
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
                                 </div>
                             </div>
                         </ContentWidth>
