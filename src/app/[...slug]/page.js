@@ -44,7 +44,7 @@ export async function generateStaticParams() {
     Object.keys(data.links).forEach((linkKey) => {
         if (
             data.links[linkKey].is_folder ||
-            data.links[linkKey].slug === 'blok-tests'
+            data.links[linkKey].slug === 'home'
         ) {
             return;
         }
@@ -59,7 +59,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Home({ params }) {
-    const slug = params?.slug ? params.slug.join('/') : 'blok-tests';
+    const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story } = await fetchData(slug);
 
     if (!story) {
