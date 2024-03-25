@@ -9,9 +9,7 @@ import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
 
-const MedienMedienmitteilungenTeaser = ({
-    blok
-}) => {
+const MedienMedienmitteilungenTeaser = ({ blok }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
 
     useEffect(() => {
@@ -25,7 +23,6 @@ const MedienMedienmitteilungenTeaser = ({
                 sort_by: 'content.date:desc',
                 per_page: 5,
             });
-
 
             setMedienmitteilungen((prev) =>
                 data.stories.map((medienmitteilungen) => {
@@ -67,7 +64,10 @@ const MedienMedienmitteilungenTeaser = ({
                         <tbody>
                             {medienmitteilungen[0] &&
                                 medienmitteilungen.map((item) => (
-                                    <tr key={item.uuid} className="bg-white border-b dark:bg-black dark:border-gray-700">
+                                    <tr
+                                        key={item.uuid}
+                                        className="bg-white border-b dark:bg-black dark:border-gray-700"
+                                    >
                                         <td
                                             scope="row"
                                             className="px-6 py-4 font-medium text-black whitespace-nowrap"
@@ -78,9 +78,7 @@ const MedienMedienmitteilungenTeaser = ({
                                             scope="row"
                                             className="px-6 py-4  font-medium text-black"
                                         >
-                                            <a
-                                                href={`/${item.full_slug}`}
-                                            >
+                                            <a href={`/${item.full_slug}`}>
                                                 {item.name}
                                             </a>
                                         </td>

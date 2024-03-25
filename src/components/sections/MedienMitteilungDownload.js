@@ -4,10 +4,10 @@ import H2 from '../typography/H2';
 
 const MedienMitteilungDownload = ({ blok }) => {
     return (
-        <div {...storyblokEditable(blok)} className='py-24'>
+        <div {...storyblokEditable(blok)} className="py-24">
             <ContentWidth>
                 <div className="col-span-12">
-                    <H2 >{blok?.title}</H2>
+                    <H2>{blok?.title}</H2>
                     <div>
                         <div className=" my-4 text-xl ">
                             {blok.download.map((nestedBlok) => (
@@ -17,7 +17,6 @@ const MedienMitteilungDownload = ({ blok }) => {
                                 />
                             ))}
                         </div>
-                      
                     </div>
                 </div>
             </ContentWidth>

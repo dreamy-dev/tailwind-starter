@@ -3,7 +3,7 @@
 import SmallWidth from '../layouts/SmallWidth';
 import { storyblokEditable } from '@storyblok/react/rsc';
 
-export default function Quote({blok}) {
+export default function Quote({ blok }) {
     return (
         <section
             {...storyblokEditable(blok)}

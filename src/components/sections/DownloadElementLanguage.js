@@ -1,6 +1,5 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 
-
 function DownloadElementLanguage({ blok }) {
     return (
         <a
