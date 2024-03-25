@@ -203,7 +203,6 @@ const Header = ({ blok }) => {
                     </div>
                 </div>
             </ContentWidth>
-
             <div
                 className={`${
                     isMobileNavOpen && isNarrowScreen ? 'visible' : 'hidden'
@@ -216,7 +215,7 @@ const Header = ({ blok }) => {
                                 <div className="pt-5 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center gap-8 lg:gap-4">
                                     <ul
                                         role="list"
-                                        className=" flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-8"
+                                        className="flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-8"
                                     >
                                         {navigation.topNav.map((item) => (
                                             <li key={item.name}>
@@ -300,21 +299,6 @@ const Header = ({ blok }) => {
                                             </li>
                                         </ul>
                                     </motion.div>
-
-                                    {/* <ul className="flex flex-col lg:flex lg:flex-row lg:items-center gap-8 mb-10 lg:mb-0 lg:gap-4">
-                                      <li className="flex flex-row lg:flex lg:items-center  gap-2">
-                                          <img
-                                              src="/icons/country-name.svg"
-                                              alt="Language Icon"
-                                          />
-                                          <a
-                                              className="text-base leading-6  font-medium text-primarySolid-800 hover:text-primary"
-                                              href="#"
-                                          >
-                                              DE
-                                          </a>
-                                      </li>
-                                  </ul> */}
                                 </div>
                             </div>
                         </ContentWidth>
