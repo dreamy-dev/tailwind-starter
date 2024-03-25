@@ -2,7 +2,7 @@ import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
 import Breadcrumbs from './Breadcrumbs';
-import DateFormatter from "../helpers/DateFormatter";
+import DateFormatter from '../helpers/DateFormatter';
 
 function ArticleHero({ block }) {
     return (
@@ -14,13 +14,18 @@ function ArticleHero({ block }) {
             <div className="grid grid-cols-12 gap-6 mb-6">
                 <div className="col-span-6">
                     {block?.categories?.map((category, index) => {
-                        if (category.full_slug.includes("/news/") || category.full_slug.includes("/medienmitteilungen/")) {
-                            return (<span
-                                key={index}
-                                className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
-                            >
-                                {category.content.category}
-                            </span>)
+                        if (
+                            category.full_slug.includes('/news/') ||
+                            category.full_slug.includes('/medienmitteilungen/')
+                        ) {
+                            return (
+                                <span
+                                    key={index}
+                                    className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
+                                >
+                                    {category.content.category}
+                                </span>
+                            );
                         }
                     })}
                 </div>

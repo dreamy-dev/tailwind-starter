@@ -30,7 +30,6 @@ export default function Map({ blok }) {
                         </dl>
                     </div>
                     <div className="relative">
-
                         <div className="pl-6 relative w-full">
                             <img
                                 className="w-full h-auto"
@@ -39,7 +38,6 @@ export default function Map({ blok }) {
                             />
                         </div>
                         <div className="pl-6 lg:pl-20 md:flex flex-column py-8 static w-full">
-
                             <div className="md:w-1/3 w-full mb-8 flex-column justify-start items-start">
                                 <div className="flex justify-start items-center">
                                     <div className="mr-3 w-3 h-3 bg-map-dark rounded-full"></div>
@@ -52,12 +50,16 @@ export default function Map({ blok }) {
                             </div>
 
                             <div className="md:w-1/3 w-full flex justify-center items-center">
-                                <ButtonPrimary position="center" buttonText={blok.cta_title} href={blok.cta_link.url} />
+                                <ButtonPrimary
+                                    position="center"
+                                    buttonText={blok.cta_title}
+                                    href={blok.cta_link.url}
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
             </FullWidth>
-        </section >
+        </section>
     );
 }

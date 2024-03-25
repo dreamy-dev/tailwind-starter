@@ -76,8 +76,8 @@ module.exports = {
                 800: '#000000cc',
             },
             map: {
-              dark: "#004976",
-              light: "#3f6d92",
+                dark: '#004976',
+                light: '#3f6d92',
             },
         },
         screens: {

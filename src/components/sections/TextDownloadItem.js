@@ -5,7 +5,7 @@ const TextDownloadItem = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>
             <ContentWidth>
-                <ul className='col-span-12'>
+                <ul className="col-span-12">
                     <div>
                         <li className=" my-4 text-xl flex justify-between items-center">
                             <p className="w-10/12">{blok?.title}</p>

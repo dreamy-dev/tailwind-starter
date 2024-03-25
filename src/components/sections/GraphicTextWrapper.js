@@ -3,7 +3,6 @@ import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 
 const GraphicTextWrapper = ({ blok }) => {
- 
     return (
         <section {...storyblokEditable(blok)}>
             <ContentWidth>
@@ -68,5 +67,3 @@ const GraphicTextWrapper = ({ blok }) => {
 };
 
 export default GraphicTextWrapper;
-
-
