@@ -125,7 +125,7 @@ storyblokInit({
         'teaser-image-left': TeaserImageLeft,
         'teaser-image-right': TeaserImageRight,
         'image-left': Description,
-        'accordion-item': AccordionItem,
+        'accordion-text-item': AccordionItem,
         'accordion-grid': AccordionGrid,
         'accordion-wrapper': AccordionWrapper,
         'according-table-item': AccordionTableItem,

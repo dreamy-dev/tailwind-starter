@@ -6,7 +6,6 @@ export default function VideoFullWidth({ blok }) {
     const [playing, setPlaying] = useState(false);
     const videoRef = useRef(null);
 
-
     useEffect(() => {
         window.addEventListener('scroll', function () {
             if (isScrolledIntoView(videoRef.current) && !playing) {
@@ -14,14 +13,14 @@ export default function VideoFullWidth({ blok }) {
                 videoRef.current.play();
             }
         });
-    }, [])
+    }, []);
 
     function isScrolledIntoView(elem) {
         var rect = elem.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
 
-        var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+        var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
 
         return isVisible;
     }
