@@ -36,7 +36,6 @@ export default function Video({ blok }) {
 
                         <div className="mt-6">
                             <ButtonPrimary buttonText={blok?.cta_text} position="left">
-
                                 <svg
                                     width="15"
                                     height="15"
