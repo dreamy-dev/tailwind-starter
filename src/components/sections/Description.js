@@ -14,9 +14,10 @@ export default function Description({ blok }) {
                 />
                 <div className="mt-4 md:mt-0">
                     <H2 styles="mb-8">{blok?.title}</H2>
-                    <p className="mb-6 font-normal text-black-500 md:text-lg richtext">
+                    {blok?.text && <p className="mb-6 font-normal text-black-500 md:text-lg richtext">
                         {blok?.text}
                     </p>
+                    }
                 </div>
             </div>
         </section>
