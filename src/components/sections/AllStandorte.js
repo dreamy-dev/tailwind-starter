@@ -5,21 +5,17 @@ import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 import { useState } from 'react';
 import AccordionLocations from './AccordionLocations';
-const filters = { country: '', category: '' };
+const filters = { country: '', category: '', searchTerm: '' };
 
 function AllStandorte({ blok }) {
     const [selectedOptions, setSelectedOptions] = useState({
         filters
     });
- console.log(selectedOptions, 'selectedOptions');
+
     
 console.log(blok)
 
-  const handleFilterChange = (e, filterType) => {
-      const locationSelectedOptions = { ...selectedOptions };
-      locationSelectedOptions[filterType] = e.target.value;
-      setSelectedOptions(locationSelectedOptions);
-    };
+
     
      const countryDropdown = (
          <select
@@ -40,7 +36,7 @@ console.log(blok)
             <select
                 className=" px-4 py-2 text-base border rounded block"
                 onChange={(e) => handleFilterChange(e, 'category')}
-                value={selectedOptions.category}
+                 value={selectedOptions.category}
             >
                 <option value="">{blok.filter_businessarea_title}</option>
                 {blok.filter_business_area.map((category, index) => (
@@ -51,29 +47,79 @@ console.log(blok)
             </select>
         );
 
+ 
 
 
-   
-  
-    // const filterArticles = (e, typeFilter) => {
+
+    // const handleFilterChange = (e, filterType) => {
+        
     //     const locationSelectedOptions = { ...selectedOptions };
-    //     locationSelectedOptions[typeFilter] = e.target.value;
+    //     locationSelectedOptions[filterType] = e.target.value;
     //     setSelectedOptions(locationSelectedOptions);
-    //     const categories = [];
-    //     Object.values(locationSelectedOptions).forEach((value) => {
-    //         value.length && categories.push(value);
-    //     });
-
-    
-    //     if (categories.length > 0) {
-           
-    //     }
-    //     if (search.length > 2) {
-           
-    //     }
-
-   
     // };
+
+    // const filteredLocations = blok.locations_wrapper.filter((location) => {
+    //     const countryMatch =
+    //         !selectedOptions.country ||
+    //         location.tag_country.some(
+    //             (tag) => tag.uuid === selectedOptions.country
+    //         );
+    //     const categoryMatch =
+    //         !selectedOptions.category ||
+    //         location.tag_business_area.some(
+    //             (tag) => tag.uuid === selectedOptions.category
+    //         );
+
+    //     return countryMatch && categoryMatch;
+    // });
+   const handleFilterChange = (e, filterType) => {
+       const locationSelectedOptions = { ...selectedOptions };
+       locationSelectedOptions[filterType] = e.target.value;
+       setSelectedOptions(locationSelectedOptions);
+   };
+
+   const handleSearchChange = (e) => {
+       const searchTerm = e.target.value.toLowerCase();
+       setSelectedOptions((prevState) => ({ ...prevState, searchTerm }));
+   };
+
+   const filteredLocations = blok.locations_wrapper.filter((location) => {
+       const countryMatch =
+           !selectedOptions.country ||
+           location.tag_country.some(
+               (tag) => tag.uuid === selectedOptions.country
+           );
+       const categoryMatch =
+           !selectedOptions.category ||
+           location.tag_business_area.some(
+               (tag) => tag.uuid === selectedOptions.category
+           );
+      const textMatch =
+          !selectedOptions.searchTerm ||
+          (location.title &&
+              location.title
+                  .toLowerCase()
+                  .includes(selectedOptions.searchTerm)) ||
+          (location.text &&
+              location.text
+                  .toLowerCase()
+                  .includes(selectedOptions.searchTerm)) ||
+          location.tag_country.some((tag) =>
+              tag.name.toLowerCase().includes(selectedOptions.searchTerm)
+          ) ||
+          location.tag_business_area.some((tag) =>
+              tag.content.category
+                  .toLowerCase()
+                  .includes(selectedOptions.searchTerm)
+          ) ||
+          location.tag_division.some((tag) =>
+              tag.name.toLowerCase().includes(selectedOptions.searchTerm)
+          );
+
+       return countryMatch && categoryMatch && textMatch;
+   });
+   
+ 
 
  
 
@@ -105,20 +151,25 @@ console.log(blok)
                             <input
                                 className="inline-block px-8 py-2 text-base border hover:text-gray-900 hover:bg-gray-100"
                                 placeholder={blok.text_search}
-                                onChange={(e) => onSearchChange(e)}
+                                onChange={handleSearchChange}
                             />
                         </div>
                     </li>
                 </ul>
             </div>
             <div className="pb-24 col-span-12">
-                {blok.locations_wrapper.map((nestedBlok) => (
+                {filteredLocations.map((nestedBlok, index) => (
                     <StoryblokComponent
                         blok={nestedBlok}
                         key={nestedBlok._uid}
-                        componentMap={{
-                            "single-location-wrapper": AccordionLocations, 
-                        }}
+                        // componentMap={{
+                        //     AccordionLocations: (props) => (
+                        //         <AccordionLocations
+                        //             {...props}
+                        //             selectedOptions={selectedOptions}
+                        //         />
+                        //     ),
+                        // }}
                     />
                 ))}
             </div>

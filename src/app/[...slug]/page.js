@@ -28,6 +28,8 @@ async function fetchData(slug) {
             'all-locations.filter_business_area',
             'all-locations.filter_country',
             'single-location-wrapper.tag_division',
+            'single-location-wrapper.tag_country',
+            'single-location-wrapper.tag_business_area',
         ],
     };
 
