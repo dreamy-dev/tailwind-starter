@@ -81,7 +81,7 @@ const AccordionLocations = ({ blok }) => {
                                         className="mr-4 flex w-6"
                                         alt="office"
                                     />
-                                    {blok.phonenumber}
+                                    {blok?.phonenumber}
                                 </div>
 
                                 <div className="flex mb-4 justify-start items-center">
@@ -90,7 +90,7 @@ const AccordionLocations = ({ blok }) => {
                                         className="mr-4 flex w-6"
                                         alt="office"
                                     />
-                                    {blok.email}
+                                    {blok?.email}
                                 </div>
 
                                 <div className="flex justify-start items-center text-primary">
@@ -101,14 +101,14 @@ const AccordionLocations = ({ blok }) => {
                                     />
                                     <a
                                         className=""
-                                        // href={blok.link_google_maps.url}
+                                         href={blok?.link_google_maps?.url}
                                     >
-                                        {blok.text_google_maps}
+                                        {blok?.text_google_maps}
                                     </a>
                                 </div>
                             </div>
                             <img
-                                // src={blok?.image.filename}
+                                src={blok?.image?.filename}
 
                                 className="flex w-3/12"
                                 alt="office"
@@ -116,7 +116,7 @@ const AccordionLocations = ({ blok }) => {
                         </div>
                         <div className="pt-8">
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                {blok.text}
+                                {blok?.text}
                             </p>
                         </div>
                     </div>
