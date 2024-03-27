@@ -14,7 +14,9 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
+ 
     const [search, setSearch] = useState('');
+ 
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -93,10 +95,10 @@ function AllNews({ blok }) {
                                 {blok.filter_country_title}
                             </option>
                             {blok.filter_country.map((country, index) => (
-                                <option key={index} value={country.uuid}>
-                                    {country.name}
-                                </option>
-                            ))}
+                                    <option key={index} value={country.uuid}>
+                                        {country.name}
+                                    </option>
+                                ))}
                         </select>
                     </li>
                     <li className="mb-4 mr-2 lg:mr-4">
@@ -191,15 +193,17 @@ function AllNews({ blok }) {
                                 </div>
                                 <div className="mb-1 mt-4 flex flex-wrap">
                                     {article.content.categories.map(
-                                        (category, index) => (
-                                            category.full_slug.includes("/news/") &&
-                                            <span
-                                                key={index}
-                                                className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                            >
-                                                {category.content.category}
-                                            </span>
-                                        )
+                                        (category, index) =>
+                                            category.full_slug.includes(
+                                                '/news/'
+                                            ) && (
+                                                <span
+                                                    key={index}
+                                                    className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                >
+                                                    {category.content.category}
+                                                </span>
+                                            )
                                     )}
                                 </div>
                                 <Text styles="text-sm mb-1 text-gray-500">
