@@ -8,8 +8,6 @@ const AccordionLocations = ({ blok }) => {
         setIsActive(!isActive);
     };
 
-      
-
     return (
         <div className="col-span-12" {...storyblokEditable(blok)}>
             <div

@@ -1,127 +1,96 @@
-
 import ContentWidth from '../layouts/ContentWidth';
-import { getStoryblokApi, storyblokEditable,StoryblokComponent } from '@storyblok/react/rsc';
-import DateFormatter from '../helpers/DateFormatter';
-import TrimText from '../helpers/TrimText';
+import {
+    getStoryblokApi,
+    storyblokEditable,
+    StoryblokComponent,
+} from '@storyblok/react/rsc';
+
 import { useState } from 'react';
-import AccordionLocations from './AccordionLocations';
 const filters = { country: '', category: '', searchTerm: '' };
 
 function AllStandorte({ blok }) {
     const [selectedOptions, setSelectedOptions] = useState({
-        filters
+        filters,
     });
 
-    
-console.log(blok)
+
+    const countryDropdown = (
+        <select
+            className=" px-4 py-2 text-base border rounded block"
+            onChange={(e) => handleFilterChange(e, 'country')}
+            value={selectedOptions.country}
+        >
+            <option value="">{blok.filter_country_title}</option>
+            {blok.filter_country.map((country, index) => (
+                <option key={index} value={country.uuid}>
+                    {country.name}
+                </option>
+            ))}
+        </select>
+    );
+
+    const categoryDropdown = (
+        <select
+            className=" px-4 py-2 text-base border rounded block"
+            onChange={(e) => handleFilterChange(e, 'category')}
+            value={selectedOptions.category}
+        >
+            <option value="">{blok.filter_businessarea_title}</option>
+            {blok.filter_business_area.map((category, index) => (
+                <option key={index} value={category.uuid}>
+                    {category.content.category}
+                </option>
+            ))}
+        </select>
+    );
 
 
-    
-     const countryDropdown = (
-         <select
-             className=" px-4 py-2 text-base border rounded block"
-             onChange={(e) => handleFilterChange(e, 'country')}
-             value={selectedOptions.country}
-         >
-             <option value="">{blok.filter_country_title}</option>
-             {blok.filter_country.map((country, index) => (
-                 <option key={index} value={country.uuid}>
-                     {country.name}
-                 </option>
-             ))}
-         </select>
-     );
-    
-        const categoryDropdown = (
-            <select
-                className=" px-4 py-2 text-base border rounded block"
-                onChange={(e) => handleFilterChange(e, 'category')}
-                 value={selectedOptions.category}
-            >
-                <option value="">{blok.filter_businessarea_title}</option>
-                {blok.filter_business_area.map((category, index) => (
-                    <option key={index} value={category.uuid}>
-                        {category.content.category}
-                    </option>
-                ))}
-            </select>
-        );
+    const handleFilterChange = (e, filterType) => {
+        const locationSelectedOptions = { ...selectedOptions };
+        locationSelectedOptions[filterType] = e.target.value;
+        setSelectedOptions(locationSelectedOptions);
+    };
 
- 
+    const handleSearchChange = (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        setSelectedOptions((prevState) => ({ ...prevState, searchTerm }));
+    };
 
+    const filteredLocations = blok.locations_wrapper.filter((location) => {
+        const countryMatch =
+            !selectedOptions.country ||
+            location.tag_country.some(
+                (tag) => tag.uuid === selectedOptions.country
+            );
+        const categoryMatch =
+            !selectedOptions.category ||
+            location.tag_business_area.some(
+                (tag) => tag.uuid === selectedOptions.category
+            );
+        const textMatch =
+            !selectedOptions.searchTerm ||
+            (location.title &&
+                location.title
+                    ?.toLowerCase()
+                    .includes(selectedOptions.searchTerm)) ||
+            (location.text &&
+                location.text
+                    ?.toLowerCase()
+                    .includes(selectedOptions.searchTerm)) ||
+            location.tag_country.some((tag) =>
+                tag.name.toLowerCase().includes(selectedOptions.searchTerm)
+            ) ||
+            location.tag_business_area.some((tag) =>
+                tag.content.category
+                    ?.toLowerCase()
+                    .includes(selectedOptions.searchTerm)
+            ) ||
+            location.tag_division.some((tag) =>
+                tag.name.toLowerCase().includes(selectedOptions.searchTerm)
+            );
 
-
-    // const handleFilterChange = (e, filterType) => {
-        
-    //     const locationSelectedOptions = { ...selectedOptions };
-    //     locationSelectedOptions[filterType] = e.target.value;
-    //     setSelectedOptions(locationSelectedOptions);
-    // };
-
-    // const filteredLocations = blok.locations_wrapper.filter((location) => {
-    //     const countryMatch =
-    //         !selectedOptions.country ||
-    //         location.tag_country.some(
-    //             (tag) => tag.uuid === selectedOptions.country
-    //         );
-    //     const categoryMatch =
-    //         !selectedOptions.category ||
-    //         location.tag_business_area.some(
-    //             (tag) => tag.uuid === selectedOptions.category
-    //         );
-
-    //     return countryMatch && categoryMatch;
-    // });
-   const handleFilterChange = (e, filterType) => {
-       const locationSelectedOptions = { ...selectedOptions };
-       locationSelectedOptions[filterType] = e.target.value;
-       setSelectedOptions(locationSelectedOptions);
-   };
-
-   const handleSearchChange = (e) => {
-       const searchTerm = e.target.value.toLowerCase();
-       setSelectedOptions((prevState) => ({ ...prevState, searchTerm }));
-   };
-
-   const filteredLocations = blok.locations_wrapper.filter((location) => {
-       const countryMatch =
-           !selectedOptions.country ||
-           location.tag_country.some(
-               (tag) => tag.uuid === selectedOptions.country
-           );
-       const categoryMatch =
-           !selectedOptions.category ||
-           location.tag_business_area.some(
-               (tag) => tag.uuid === selectedOptions.category
-           );
-      const textMatch =
-          !selectedOptions.searchTerm ||
-          (location.title &&
-              location.title
-                  .toLowerCase()
-                  .includes(selectedOptions.searchTerm)) ||
-          (location.text &&
-              location.text
-                  .toLowerCase()
-                  .includes(selectedOptions.searchTerm)) ||
-          location.tag_country.some((tag) =>
-              tag.name.toLowerCase().includes(selectedOptions.searchTerm)
-          ) ||
-          location.tag_business_area.some((tag) =>
-              tag.content.category
-                  .toLowerCase()
-                  .includes(selectedOptions.searchTerm)
-          ) ||
-          location.tag_division.some((tag) =>
-              tag.name.toLowerCase().includes(selectedOptions.searchTerm)
-          );
-
-       return countryMatch && categoryMatch && textMatch;
-   });
-   
- 
-
- 
+        return countryMatch && categoryMatch && textMatch;
+    });
 
     return (
         <ContentWidth {...storyblokEditable(blok)}>

@@ -211,8 +211,7 @@ storyblokInit({
         map: Map,
         employee_story: EmployeeContent,
         'form-wrapper': ContactForm,
-        'single-location-wrapper': AccordionLocations
-
+        'single-location-wrapper': AccordionLocations,
     },
 });
 

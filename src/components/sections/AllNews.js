@@ -1,8 +1,5 @@
 import ContentWidth from '../layouts/ContentWidth';
-import {
-    getStoryblokApi,
-    storyblokEditable,
-} from '@storyblok/react/rsc';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 
@@ -14,9 +11,9 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
- 
+
     const [search, setSearch] = useState('');
- 
+
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -25,27 +22,28 @@ function AllNews({ blok }) {
         sort_by: 'content.date:desc',
     };
     const onSearchChange = (e) => {
-        setSearch(e.target.value)
+        setSearch(e.target.value);
         const categories = [];
         Object.values(selectedOptions).forEach((value) => {
             value.length && categories.push(value);
         });
-        const filterSearchParameters = {}
+        const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] = categories.join(',');
+            filterSearchParameters['filter_query[categories][any_in_array]'] =
+                categories.join(',');
         }
         if (e.target.value.length > 2) {
-            filterSearchParameters["search_term"] = e.target.value;
+            filterSearchParameters['search_term'] = e.target.value;
             getArticles(filterSearchParameters);
         } else {
             getArticles(filterSearchParameters);
         }
-    }
+    };
     const getArticles = async (filterSearchRequest = {}) => {
         const storyblokApi = getStoryblokApi();
         const { data } = await storyblokApi.get(`cdn/stories`, {
             ...apiRequest,
-            ...filterSearchRequest
+            ...filterSearchRequest,
         });
 
         setArticles((prev) =>
@@ -68,12 +66,13 @@ function AllNews({ blok }) {
             value.length && categories.push(value);
         });
 
-        const filterSearchParameters = {}
+        const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] = categories.join(',');
+            filterSearchParameters['filter_query[categories][any_in_array]'] =
+                categories.join(',');
         }
         if (search.length > 2) {
-            filterSearchParameters["search_term"] = search
+            filterSearchParameters['search_term'] = search;
         }
 
         getArticles(filterSearchParameters);
@@ -95,10 +94,10 @@ function AllNews({ blok }) {
                                 {blok.filter_country_title}
                             </option>
                             {blok.filter_country.map((country, index) => (
-                                    <option key={index} value={country.uuid}>
-                                        {country.name}
-                                    </option>
-                                ))}
+                                <option key={index} value={country.uuid}>
+                                    {country.name}
+                                </option>
+                            ))}
                         </select>
                     </li>
                     <li className="mb-4 mr-2 lg:mr-4">
