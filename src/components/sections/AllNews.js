@@ -1,8 +1,5 @@
 import ContentWidth from '../layouts/ContentWidth';
-import {
-    getStoryblokApi,
-    storyblokEditable,
-} from '@storyblok/react/rsc';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 
@@ -14,7 +11,9 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
+
     const [search, setSearch] = useState('');
+
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -23,27 +22,28 @@ function AllNews({ blok }) {
         sort_by: 'content.date:desc',
     };
     const onSearchChange = (e) => {
-        setSearch(e.target.value)
+        setSearch(e.target.value);
         const categories = [];
         Object.values(selectedOptions).forEach((value) => {
             value.length && categories.push(value);
         });
-        const filterSearchParameters = {}
+        const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] = categories.join(',');
+            filterSearchParameters['filter_query[categories][any_in_array]'] =
+                categories.join(',');
         }
         if (e.target.value.length > 2) {
-            filterSearchParameters["search_term"] = e.target.value;
+            filterSearchParameters['search_term'] = e.target.value;
             getArticles(filterSearchParameters);
         } else {
             getArticles(filterSearchParameters);
         }
-    }
+    };
     const getArticles = async (filterSearchRequest = {}) => {
         const storyblokApi = getStoryblokApi();
         const { data } = await storyblokApi.get(`cdn/stories`, {
             ...apiRequest,
-            ...filterSearchRequest
+            ...filterSearchRequest,
         });
 
         setArticles((prev) =>
@@ -66,12 +66,13 @@ function AllNews({ blok }) {
             value.length && categories.push(value);
         });
 
-        const filterSearchParameters = {}
+        const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] = categories.join(',');
+            filterSearchParameters['filter_query[categories][any_in_array]'] =
+                categories.join(',');
         }
         if (search.length > 2) {
-            filterSearchParameters["search_term"] = search
+            filterSearchParameters['search_term'] = search;
         }
 
         getArticles(filterSearchParameters);
@@ -191,15 +192,17 @@ function AllNews({ blok }) {
                                 </div>
                                 <div className="mb-1 mt-4 flex flex-wrap">
                                     {article.content.categories.map(
-                                        (category, index) => (
-                                            category.full_slug.includes("/news/") &&
-                                            <span
-                                                key={index}
-                                                className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                            >
-                                                {category.content.category}
-                                            </span>
-                                        )
+                                        (category, index) =>
+                                            category.full_slug.includes(
+                                                '/news/'
+                                            ) && (
+                                                <span
+                                                    key={index}
+                                                    className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                >
+                                                    {category.content.category}
+                                                </span>
+                                            )
                                     )}
                                 </div>
                                 <Text styles="text-sm mb-1 text-gray-500">
