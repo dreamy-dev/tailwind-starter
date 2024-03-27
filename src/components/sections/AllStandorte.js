@@ -16,7 +16,7 @@ function AllStandorte({ blok }) {
 
     const countryDropdown = (
         <select
-            className=" px-4 py-2 text-base border rounded block"
+            className=" px-4 py-2 text-base border block"
             onChange={(e) => handleFilterChange(e, 'country')}
             value={selectedOptions.country}
         >
@@ -31,7 +31,7 @@ function AllStandorte({ blok }) {
 
     const categoryDropdown = (
         <select
-            className=" px-4 py-2 text-base border rounded block"
+            className=" px-4 py-2 text-base border block"
             onChange={(e) => handleFilterChange(e, 'category')}
             value={selectedOptions.category}
         >
