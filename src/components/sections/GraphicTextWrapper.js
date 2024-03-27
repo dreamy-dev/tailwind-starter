@@ -1,6 +1,8 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
+import RichTextRenderer from '../helpers/RichTextRenderer';
+
 
 const GraphicTextWrapper = ({ blok }) => {
     return (
@@ -24,9 +26,11 @@ const GraphicTextWrapper = ({ blok }) => {
                                 <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
                                     {blok?.step_one_title}
                                 </h3>
-                                <p className="font-light text-gray-500 dark:text-gray-400">
-                                    {blok?.step_one_text}
-                                </p>
+                                <div className="richtext font-light text-gray-500 dark:text-gray-400">
+                                    <RichTextRenderer
+                                        text={blok?.step_one_text}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className="flex justify-center">
@@ -39,9 +43,11 @@ const GraphicTextWrapper = ({ blok }) => {
                                 <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
                                     {blok?.step_two_title}
                                 </h3>
-                                <p className="font-light text-gray-500 dark:text-gray-400">
-                                    {blok?.step_two_text}
-                                </p>
+                                <div className="richtext font-light text-gray-500 dark:text-gray-400">
+                                    <RichTextRenderer
+                                        text={blok?.step_two_text}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className="flex justify-center">
@@ -54,9 +60,11 @@ const GraphicTextWrapper = ({ blok }) => {
                                 <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
                                     {blok?.step_three_title}
                                 </h3>
-                                <p className="font-light text-gray-500 dark:text-gray-400">
-                                    {blok?.step_three_text}
-                                </p>
+                                <div className="richtext font-light text-gray-500 dark:text-gray-400">
+                                    <RichTextRenderer
+                                        text={blok?.step_three_text}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
