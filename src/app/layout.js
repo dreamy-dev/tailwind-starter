@@ -73,13 +73,21 @@ export default function RootLayout({ children }) {
               `}
                     </Script>
 
-                    {/* <Script
-                            id="Cookiebot"
-                            src="https://consent.cookiebot.com/uc.js"
-                            data-cbid="0a239956-1c77-43b1-8052-f4eae73923ff"
-                            data-blockingmode="auto"
-                            type="text/javascript"
-                        ></Script> */}
+                    <Script
+                        id="Cookiebot"
+                        src="
+https://consent.cookiebot.com/uc.js"
+                        data-cbid="cedf775e-624e-499c-a386-4629e677f18e"
+                        data-blockingmode="auto"
+                        type="text/javascript"
+                    ></Script>
+                    <Script
+                        id="CookieDeclaration"
+                        src="
+https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
+                        type="text/javascript"
+                        async
+                    ></Script>
                 </head>
                 <body
                     className={
