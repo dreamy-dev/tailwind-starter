@@ -58,7 +58,7 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export default async function Home({ params }) {
+export default async function Detailpage({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story } = await fetchData(slug);
 

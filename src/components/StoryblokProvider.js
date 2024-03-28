@@ -2,7 +2,7 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 
 /** 2. Import your components */
-import Page from '../components/sections/Page';
+import Page from './sections/Page';
 import Footer from './sections/Footer';
 import HeroText from './sections/HeroText';
 import HeroCareer from './sections/HeroCareer';
@@ -37,7 +37,7 @@ import SolutionsGridItem from './sections/SolutionsGridItem';
 import DownloadItem from './sections/DownloadItem';
 import ButtonPrimary from './elements/ButtonPrimary';
 import ReportsGrid from './sections/ReportsGrid';
-import ReportsItem from './sections/ReportsItem.js';
+import ReportsItem from './sections/ReportsItem.js.js';
 import ImageTrippleBanner from './sections/ImageTrippleBanner';
 import SimpleText from './sections/SimpleText';
 import QualityFeatureGridExtended from './sections/QualityFeatureGridExtended';
