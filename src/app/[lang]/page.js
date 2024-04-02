@@ -4,7 +4,7 @@ const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
 
 export async function generateStaticParams() {
-    return [{ lang: 'en' }, { lang: 'de-ch' }];
+    return [{ lang: 'en' }, { lang: 'de' }];
 }
 
 async function fetchData(slug) {
