@@ -1,9 +1,5 @@
 import ContentWidth from '../layouts/ContentWidth';
-import {
-    getStoryblokApi,
-    storyblokEditable,
-    StoryblokComponent,
-} from '@storyblok/react/rsc';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 
@@ -15,6 +11,9 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
+
+    const [search, setSearch] = useState('');
+
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -22,18 +21,39 @@ function AllNews({ blok }) {
         resolve_relations: 'news.categories',
         sort_by: 'content.date:desc',
     };
-    useEffect(() => {
-        const getArticles = async () => {
-            const storyblokApi = getStoryblokApi();
-            const { data } = await storyblokApi.get(`cdn/stories`, apiRequest);
+    const onSearchChange = (e) => {
+        setSearch(e.target.value);
+        const categories = [];
+        Object.values(selectedOptions).forEach((value) => {
+            value.length && categories.push(value);
+        });
+        const filterSearchParameters = {};
+        if (categories.length > 0) {
+            filterSearchParameters['filter_query[categories][any_in_array]'] =
+                categories.join(',');
+        }
+        if (e.target.value.length > 2) {
+            filterSearchParameters['search_term'] = e.target.value;
+            getArticles(filterSearchParameters);
+        } else {
+            getArticles(filterSearchParameters);
+        }
+    };
+    const getArticles = async (filterSearchRequest = {}) => {
+        const storyblokApi = getStoryblokApi();
+        const { data } = await storyblokApi.get(`cdn/stories`, {
+            ...apiRequest,
+            ...filterSearchRequest,
+        });
 
-            setArticles((prev) =>
-                data.stories.map((article) => {
-                    article.content.slug = article.slug;
-                    return article;
-                })
-            );
-        };
+        setArticles((prev) =>
+            data.stories.map((article) => {
+                article.content.slug = article.slug;
+                return article;
+            })
+        );
+    };
+    useEffect(() => {
         getArticles();
     }, []);
 
@@ -46,21 +66,16 @@ function AllNews({ blok }) {
             value.length && categories.push(value);
         });
 
-        const getArticles = async () => {
-            const storyblokApi = getStoryblokApi();
-            const { data } = await storyblokApi.get(`cdn/stories`, {
-                ...apiRequest,
-                'filter_query[categories][any_in_array]': categories.join(','),
-            });
+        const filterSearchParameters = {};
+        if (categories.length > 0) {
+            filterSearchParameters['filter_query[categories][any_in_array]'] =
+                categories.join(',');
+        }
+        if (search.length > 2) {
+            filterSearchParameters['search_term'] = search;
+        }
 
-            setArticles((prev) =>
-                data.stories.map((article) => {
-                    article.content.slug = article.slug;
-                    return article;
-                })
-            );
-        };
-        getArticles();
+        getArticles(filterSearchParameters);
     };
 
     return (
@@ -153,6 +168,7 @@ function AllNews({ blok }) {
                             <input
                                 className="inline-block px-8 py-2 text-base rounded border hover:text-gray-900 hover:bg-gray-100"
                                 placeholder={blok.text_search}
+                                onChange={(e) => onSearchChange(e)}
                             />
                         </div>
                     </li>
@@ -176,15 +192,17 @@ function AllNews({ blok }) {
                                 </div>
                                 <div className="mb-1 mt-4 flex flex-wrap">
                                     {article.content.categories.map(
-                                        (category, index) => (
-                                            // category.full_slug.includes("/news/") &&
-                                            <span
-                                                key={index}
-                                                className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                            >
-                                                {category.content.category}
-                                            </span>
-                                        )
+                                        (category, index) =>
+                                            category.full_slug.includes(
+                                                '/news/'
+                                            ) && (
+                                                <span
+                                                    key={index}
+                                                    className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                >
+                                                    {category.content.category}
+                                                </span>
+                                            )
                                     )}
                                 </div>
                                 <Text styles="text-sm mb-1 text-gray-500">

@@ -1,4 +1,4 @@
-import { useState } from 'react'; 
+import { useState } from 'react';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import AccordionYearWrapper from './AccordionYearWrapper';
 import ContentWidth from '../layouts/ContentWidth';

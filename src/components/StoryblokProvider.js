@@ -101,6 +101,8 @@ import HomeSolutionsDoublePageTeaser from './sections/HomeSolutionsDoublePageTea
 import Map from './sections/Map';
 import EmployeeContent from './sections/EmployeeContent';
 import ContactForm from './sections/ContactForm';
+import AllStandorte from './sections/AllStandorte';
+import AccordionLocations from './sections/AccordionLocations';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -125,7 +127,7 @@ storyblokInit({
         'teaser-image-left': TeaserImageLeft,
         'teaser-image-right': TeaserImageRight,
         'image-left': Description,
-        'accordion-item': AccordionItem,
+        'accordion-text-item': AccordionItem,
         'accordion-grid': AccordionGrid,
         'accordion-wrapper': AccordionWrapper,
         'according-table-item': AccordionTableItem,
@@ -179,6 +181,7 @@ storyblokInit({
         'accordion-year-wrapper': AccordionYearWrapper,
         'accordion-text-date-download-item': AccordionTextDateDownloadItem,
         'all-news': AllNews,
+        'all-locations': AllStandorte,
         'career-step-grid': CareerStepGrid,
         'career-step-item': CareerStepItem,
         adhoc_medienmitteilungen_teaser: AdHocMedienmitteilungen,
@@ -208,6 +211,7 @@ storyblokInit({
         map: Map,
         employee_story: EmployeeContent,
         'form-wrapper': ContactForm,
+        'single-location-wrapper': AccordionLocations,
     },
 });
 
