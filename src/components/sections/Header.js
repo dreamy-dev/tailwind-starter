@@ -5,6 +5,7 @@ import IconNav from '../elements/IconNav';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { motion } from 'framer-motion';
+import LanguageSwitcher from '../elements/LanguageSwitcher';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -21,11 +22,6 @@ const variants = {
 const variantsSub = {
     open: { opacity: 1, y: 0, height: '100%' },
     closed: { opacity: 0, y: 50, height: 0 },
-};
-
-const variantsLang = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 },
 };
 
 const navigationMain = {
@@ -114,10 +110,6 @@ const Header = ({ blok }) => {
     };
     const closeMobileNav = () => {
         setIsMobileNavOpen(false);
-    };
-
-    const openLangDropdown = () => {
-        setIsOpen(true);
     };
 
     useEffect(() => {
@@ -234,71 +226,7 @@ const Header = ({ blok }) => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            setIsOpen((isOpen) => !isOpen)
-                                        }
-                                        className="inline-flex items-center dark:text-gray-300 hover:bg-gray-50 hover:text-primary text-primarySolid-800 font-medium rounded-lg text-base px-2.5 lg:px-5 py-2.5 dark:hover:bg-gray-700 focus:outline-none "
-                                    >
-                                        English
-                                        <svg
-                                            className="ml-1 w-4 h-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M19 9l-7 7-7-7"
-                                            ></path>
-                                        </svg>
-                                    </button>
-                                    <motion.div
-                                        animate={isOpen ? 'open' : 'closed'}
-                                        variants={variantsLang}
-                                        className="lg:absolute lg:top-14 z-50 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
-                                        id="language-dropdown"
-                                    >
-                                        <ul className="py-1" role="none">
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                    role="menuitem"
-                                                >
-                                                    <div className="inline-flex items-center">
-                                                        French
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                    role="menuitem"
-                                                >
-                                                    <div className="inline-flex items-center">
-                                                        Deutsch
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                    role="menuitem"
-                                                >
-                                                    <div className="inline-flex items-center">
-                                                        Italiano
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </motion.div>
+                                    <LanguageSwitcher />
                                 </div>
                             </div>
                         </ContentWidth>
