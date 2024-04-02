@@ -34,7 +34,7 @@ export default function Career({ blok }) {
                     </p>
                     <div className="flex justify-center">
                         <ButtonPrimary
-                            ref={careerRef}
+                            ref={careerRef}     
                             buttonText={blok?.cta_button_text}
                             href={blok?.cta_button_link}
                         ></ButtonPrimary>
