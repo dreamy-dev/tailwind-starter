@@ -3,7 +3,7 @@ import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
 
-async function fetchData(slug) {
+async function fetchData(slug, lang) {
     const sbParams = {
         resolve_links: 'url',
         version: 'published',
@@ -31,6 +31,7 @@ async function fetchData(slug) {
             'single-location-wrapper.tag_country',
             'single-location-wrapper.tag_business_area',
         ],
+        language: lang,
     };
 
     const storyblokApi = getStoryblokApi();
@@ -63,9 +64,9 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export default async function Home({ params }) {
+export default async function Detailpage({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
-    const { story } = await fetchData(slug);
+    const { story } = await fetchData(slug, params.lang);
 
     if (!story) {
         return notFound();
