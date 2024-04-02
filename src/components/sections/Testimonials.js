@@ -10,9 +10,9 @@ const Testimonials = ({ blok }) => {
     return (
         <section>
             <ContentWidth>
-                <div className="col-span-12 mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+                <div className="col-span-12 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
                     <nav
-                        className="mx-auto grid max-w-6xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4"
+                        className="mx-auto grid  max-w-6xl grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 sm:gap-4"
                         aria-label="Tabs"
                         id="myTab"
                         data-tabs-toggle="#myTabContent"
