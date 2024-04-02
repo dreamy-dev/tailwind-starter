@@ -22,6 +22,7 @@
         "local-ssl-proxy": "^2.0.5",
         "mkcert": "^3.0.0",
         "next": "13.4.19",
+        "next-i18n-router": "^5.4.0",
         "popmotion": "^11.0.5",
         "react": "18.2.0",
         "react-countup": "^6.4.2",
