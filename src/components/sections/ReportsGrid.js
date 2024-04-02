@@ -12,11 +12,11 @@ const ReportsGrid = ({ blok }) => {
                 <div className="col-span-12">
                     <div className="text-start mb-8">
                         <H2>{blok?.title}</H2>
-                        <Text>{blok?.text}</Text>
+                        <Text>{blok?.text}</Text>    
                     </div>
                     <div
                         {...storyblokEditable(blok)}
-                        className="w-full mx-auto justify-center  items-stretch grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-3"
+                        className="w-full mx-auto justify-center items-stretch grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-3"
                     >
                         {blok.reports_grid.map((nestedBlok) => (
                             <StoryblokComponent
