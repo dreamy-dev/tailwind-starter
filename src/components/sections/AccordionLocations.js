@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const AccordionLocations = ({ blok }) => {
     const [isActive, setIsActive] = useState(false);
-
     const handleAccordionClick = () => {
         setIsActive(!isActive);
     };
@@ -73,7 +72,7 @@ const AccordionLocations = ({ blok }) => {
                 </div>
                 {isActive && (
                     <div className="p-5 border-t border-gray-200 dark:border-gray-700">
-                        <div className="flex justify-start items-start">
+                        <div className="flex flex-col lg:flex-row justify-start items-start">
                             <div className="w-9/12">
                                 <div className="mb-4 flex justify-start items-center">
                                     <img
@@ -93,7 +92,7 @@ const AccordionLocations = ({ blok }) => {
                                     {blok?.email}
                                 </div>
 
-                                <div className="flex justify-start items-center text-primary">
+                                <div className="mb-2 flex justify-start items-center text-primary">
                                     <img
                                         src="/icons/map-pin-blue.svg"
                                         className="mr-2 flex w-6"
@@ -101,7 +100,7 @@ const AccordionLocations = ({ blok }) => {
                                     />
                                     <a
                                         className=""
-                                         href={blok?.link_google_maps?.url}
+                                        href={blok?.link_google_maps?.url}
                                     >
                                         {blok?.text_google_maps}
                                     </a>
@@ -109,8 +108,7 @@ const AccordionLocations = ({ blok }) => {
                             </div>
                             <img
                                 src={blok?.image?.filename}
-
-                                className="flex w-3/12"
+                                className="flex md:w-3/12"
                                 alt="office"
                             />
                         </div>

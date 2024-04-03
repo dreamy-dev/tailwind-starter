@@ -131,14 +131,7 @@ function AllStandorte({ blok }) {
                     <StoryblokComponent
                         blok={nestedBlok}
                         key={nestedBlok._uid}
-                        // componentMap={{
-                        //     AccordionLocations: (props) => (
-                        //         <AccordionLocations
-                        //             {...props}
-                        //             selectedOptions={selectedOptions}
-                        //         />
-                        //     ),
-                        // }}
+                       
                     />
                 ))}
             </div>
