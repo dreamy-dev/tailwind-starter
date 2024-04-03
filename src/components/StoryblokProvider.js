@@ -103,6 +103,7 @@ import EmployeeContent from './sections/EmployeeContent';
 import ContactForm from './sections/ContactForm';
 import AllStandorte from './sections/AllStandorte';
 import AccordionLocations from './sections/AccordionLocations';
+import JobOverview from './sections/JobOverview';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -212,6 +213,7 @@ storyblokInit({
         employee_story: EmployeeContent,
         'form-wrapper': ContactForm,
         'single-location-wrapper': AccordionLocations,
+        'job-overview': JobOverview,
     },
 });
 
