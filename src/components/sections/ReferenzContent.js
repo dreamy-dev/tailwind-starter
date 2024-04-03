@@ -33,7 +33,7 @@ function ReferenzContent({ blok }) {
                         <StoryblokComponent
                             blok={nestedBlok}
                             key={nestedBlok._uid}
-                        />     
+                        />
                     ))}
                 </div>
             </SuperSmallWidth>

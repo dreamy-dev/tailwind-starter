@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 const CorporateGorvernanceTeaser = ({ blok }) => {
     return (
         <a
-             className="w-full xl:w-auto"        
+            className="w-full xl:w-auto"
             href={blok?.page_link.url}
             {...storyblokEditable(blok)}
         >

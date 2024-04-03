@@ -15,7 +15,7 @@ export default function Career({ blok }) {
         careerEl?.addEventListener('click', () => {
             console.log('publicationEl', careerEl);
             var _paq = (window._paq = window._paq || []);
-            _paq.push([     
+            _paq.push([
                 'trackEvent',
                 'Potenzielle Mitarbeiter',
                 'Karierre Block',
@@ -34,7 +34,7 @@ export default function Career({ blok }) {
                     </p>
                     <div className="flex justify-center">
                         <ButtonPrimary
-                            ref={careerRef}     
+                            ref={careerRef}
                             buttonText={blok?.cta_button_text}
                             href={blok?.cta_button_link}
                         ></ButtonPrimary>

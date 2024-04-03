@@ -12,7 +12,7 @@ const ReportsGrid = ({ blok }) => {
                 <div className="col-span-12">
                     <div className="text-start mb-8">
                         <H2>{blok?.title}</H2>
-                        <Text>{blok?.text}</Text>    
+                        <Text>{blok?.text}</Text>
                     </div>
                     <div
                         {...storyblokEditable(blok)}

@@ -19,7 +19,6 @@ const DownloadSecondaryItem = ({ blok }) => {
                         textColorClass="text-primary"
                         borderColorClass="border-primary"
                         styles="flex gap-2"
-                      
                         href={blok?.download_cta.url}
                         iconAfter={
                             <svg
