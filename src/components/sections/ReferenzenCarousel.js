@@ -10,81 +10,6 @@ import H4 from '../typography/H4';
 
 const TestimonialMotionDiv = motion.div;
 
-const trains = [
-    {
-        name: 'Hybrider FLIRT 160 für Flughafen-Transit',
-        image: '/Flirt-160/f3nsreiz0715e-1.jpg',
-    },
-    {
-        name: 'Ein vollelektrischer FLIRT zwischen DE und NL',
-        image: '/Flirt-160/f3vd0716_pic.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/fab0516_pic.jpg',
-    },
-    {
-        name: "Hybrider FLIRT 160 für Flughafen'Transit Hybrider FLIRT 160 für Flughafen'Transit",
-        image: '/Flirt-160/fbzd0814ir_pic.jpg',
-    },
-    {
-        name: 'Ein vollelektrischer FLIRT zwischen DE und NL',
-        image: '/Flirt-160/fga0816d_pic.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt_abellio_gauda-alphen_nl.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt_city_ru.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt_finnland_ru.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt_mav_2serie_2014_presse2.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt_region_lodz_polen.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt_region_lodz_polen.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/flirt3-arriva-bahnhof-dreisystem.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/frex0711d-1.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/front-designbild_dynamisch_bmu.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/frontbild_dynamisch_flirt_texrail.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/fsta0416_pic_klein.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/fwfb0615_pic_klein.jpg',
-    },
-    {
-        name: 'Zwischen Couda und Alphen: Ein elektrischer Niederflur-FLIRT',
-        image: '/Flirt-160/sob-gp1_0905b.jpg',
-    },
-];
-
 const images = [
     {
         name: 'Dallas Area Rapid Transit (DART) USA',
@@ -148,7 +73,7 @@ const TestimonialsCarousel = ({ blok }) => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'loesungen/referenzen/',
+                starts_with: 'loesungen/service/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': highlightReference,
                 per_page: 5,
@@ -170,18 +95,17 @@ const TestimonialsCarousel = ({ blok }) => {
             blok.reference.map((item) => {
                 arrayReference.push(item.uuid);
             });
-            console.log('categories', blok);
+
             const references = arrayReference.join(',');
-            console.log('references', references);
 
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'loesungen/referenzen/',
+                starts_with: 'loesungen/service/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': references,
             });
-            //console.log("data 1111", data, data.stories)
+
             setReference((prev) =>
                 data.stories.map((article) => {
                     article.content.slug = article.slug;
@@ -231,7 +155,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                         highlightsCategory.map(
                                             (article, idx) => (
                                                 <TestimonialMotionDiv
-                                                    key={idx}
+                                                    key={article.uuid}
                                                     className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
                                                     animate={{
                                                         translateX: `calc(-${current * 100}% - ${
