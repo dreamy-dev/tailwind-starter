@@ -3,7 +3,6 @@ import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 
-
 const GraphicTextWrapper = ({ blok }) => {
     return (
         <section {...storyblokEditable(blok)}>

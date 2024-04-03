@@ -13,7 +13,6 @@ function AllStandorte({ blok }) {
         filters,
     });
 
-
     const countryDropdown = (
         <select
             className=" px-4 py-2 text-base border block"
@@ -43,7 +42,6 @@ function AllStandorte({ blok }) {
             ))}
         </select>
     );
-
 
     const handleFilterChange = (e, filterType) => {
         const locationSelectedOptions = { ...selectedOptions };
@@ -131,14 +129,6 @@ function AllStandorte({ blok }) {
                     <StoryblokComponent
                         blok={nestedBlok}
                         key={nestedBlok._uid}
-                        // componentMap={{
-                        //     AccordionLocations: (props) => (
-                        //         <AccordionLocations
-                        //             {...props}
-                        //             selectedOptions={selectedOptions}
-                        //         />
-                        //     ),
-                        // }}
                     />
                 ))}
             </div>

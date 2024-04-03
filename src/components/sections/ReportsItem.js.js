@@ -7,7 +7,7 @@ const ReportsItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+            className="max-w-full  lg:max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
         >
             {/* <Link href={blok?.cta_link.url}> */}
             <img

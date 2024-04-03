@@ -9,7 +9,7 @@ const DownloadSecondaryItem = ({ blok }) => {
         <>
             <li
                 {...storyblokEditable(blok)}
-                className="mb-6 text-xl flex-col md:flex-row flex justify-start md:justify-between items-center"
+                className="mb-6 text-xl flex-col md:flex-row flex justify-start md:justify-between"
             >
                 <Text className="w-full md:w-auto mr-0 md:mr-10">
                     {blok.title}

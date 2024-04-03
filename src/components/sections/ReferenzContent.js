@@ -27,8 +27,8 @@ function ReferenzContent({ blok }) {
                     </div>
                 </div>
             </SuperSmallWidth>
-            <SmallWidth>
-                <div className="px-8">
+            <SuperSmallWidth>
+                <div className="w-full">
                     {blok.downloads.map((nestedBlok) => (
                         <StoryblokComponent
                             blok={nestedBlok}
@@ -36,8 +36,7 @@ function ReferenzContent({ blok }) {
                         />
                     ))}
                 </div>
-            </SmallWidth>
-
+            </SuperSmallWidth>
             <SuperSmallWidth>
                 <Text styles="text-lg mt-12">{blok?.lead}</Text>
                 <img

@@ -8,7 +8,7 @@ const DownloadItem = ({ blok }) => {
     return (
         <section {...storyblokEditable(blok)}>
             <ContentWidth>
-                <div className="col-span-12 mb-14 flex justify-between align-baseline">
+                <div className="col-span-12 mb-14 flex flex-col lg:flex-row justify-between align-baseline">
                     <Text>{blok?.Text}</Text>
                     <ButtonPrimary
                         position="right"
