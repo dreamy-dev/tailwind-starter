@@ -4,8 +4,13 @@ import FullWidth from '../layouts/FullWidth';
 import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
 import Script from 'next/script';
+import { useState, useEffect } from 'react';
 
 export default function MailchimpEmbed({ blok }) {
+    const [email, setEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [company, setCompany] = useState('');
     return (
 
         <div id="mc_embed_shell">
@@ -13,11 +18,28 @@ export default function MailchimpEmbed({ blok }) {
                 <form action="https://stadlerrail.us14.list-manage.com/subscribe/post?u=7e29f428e402a1b5e2a54d074&amp;id=abef8b12b4&amp;f_id=00b922e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
                     <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
                         <div className="indicates-required"><span className="asterisk">*</span> indicates required</div>
-                        <div className="mc-field-group"><label for="mce-EMAIL">Email <span className="asterisk">*</span></label><input type="email" name="EMAIL" className="required email" id="mce-EMAIL" required="" value="" /></div><div className="mc-field-group"><label for="mce-FNAME">First Name <span className="asterisk">*</span></label><input type="text" name="FNAME" className="required text" id="mce-FNAME" value="" required="" /></div><div className="mc-field-group"><label for="mce-LNAME">Last Name <span className="asterisk">*</span></label><input type="text" name="LNAME" className="required text" id="mce-LNAME" value="" required="" /></div><div className="mc-field-group"><label for="mce-COMPANY">Company <span className="asterisk">*</span></label><input type="text" name="COMPANY" className="required text" id="mce-COMPANY" value="" required="" /></div>
+                        <div className="mc-field-group">
+                            <label for="mce-EMAIL">Email <span className="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" value={email} onChange={e => setEmail(e.target.value)} className="required email" id="mce-EMAIL" required="" />
+                        </div>
+                        <div className="mc-field-group">
+                            <label for="mce-FNAME">First Name <span className="asterisk">*</span></label>
+                            <input type="text" name="FNAME" value={firstName} onChange={e => setFirstName(e.target.value)} className="required text" id="mce-FNAME" required="" />
+                        </div>
+                        <div className="mc-field-group">
+                            <label for="mce-LNAME">Last Name <span className="asterisk">*</span></label>
+                            <input type="text" name="LNAME" value={lastName} onChange={e => setLastName(e.target.value)} className="required text" id="mce-LNAME" required="" />
+                        </div>
+                        <div className="mc-field-group">
+                            <label for="mce-COMPANY">Company <span className="asterisk">*</span></label>
+                            <input type="text" name="COMPANY" value={company} onChange={e => setCompany(e.target.value)} className="required text" id="mce-COMPANY" required="" />
+                        </div>
                         <div id="mce-responses" className="clear">
                             <div className="response hidden" id="mce-error-response"></div>
                             <div className="response hidden" id="mce-success-response"></div>
-                        </div><div aria-hidden="true"><input type="text" name="b_7e29f428e402a1b5e2a54d074_abef8b12b4" tabindex="-1" value="" /></div><div className="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe" /></div>
+                        </div>
+                        <div aria-hidden="true"><input type="text" name="b_7e29f428e402a1b5e2a54d074_abef8b12b4" tabindex="-1" value="" /></div>
+                        <div className="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe" /></div>
                     </div>
                 </form>
             </div>
