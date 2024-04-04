@@ -9,9 +9,9 @@ const SchienenfahrzeugeGrid = ({ blok }) => {
     return (
         <section className="pb-24">
             <ContentWidth>
-                <div className="col-span-6 pb-12">
-                    <H2 styles="text-white">{blok?.title}</H2>
-                    <Text styles="mt-4 text-xl font-normal text-gray-800 text-white">
+                <div className="col-span-6 pb-12 text-white">
+                    <H2>{blok?.title}</H2>
+                    <Text styles="mt-4 text-xl font-normal text-gray-800">
                         {blok?.text}
                     </Text>
                 </div>

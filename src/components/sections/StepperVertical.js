@@ -1,4 +1,4 @@
-export default function StepperVertical() {
+/* export default function StepperVertical() {
     return (
         <div className="max-w-lg p-6">
             <ol className="relative text-gray-500 border-l border-gray-200 dark:border-gray-700 dark:text-gray-400">
@@ -79,4 +79,4 @@ export default function StepperVertical() {
             </ol>
         </div>
     );
-}
+} */

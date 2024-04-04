@@ -1,4 +1,4 @@
-import ButtonPrimary from '../elements/ButtonPrimary';
+/* import ButtonPrimary from '../elements/ButtonPrimary';
 import H2 from '../typography/H2';
 
 export default function TeaserDouble() {
@@ -261,3 +261,4 @@ export default function TeaserDouble() {
         </section>
     );
 }
+ */

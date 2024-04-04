@@ -1,4 +1,4 @@
-import ContentWidth from '../layouts/ContentWidth';
+/* import ContentWidth from '../layouts/ContentWidth';
 
 export default function Values() {
     return (
@@ -348,3 +348,4 @@ export default function Values() {
         </div>
     );
 }
+ */
