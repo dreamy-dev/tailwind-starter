@@ -56,7 +56,7 @@ const HomePageCaroucel = ({
                 <div className="col-span-12">
                     <div className="relative">
                         <div className="lg:pl-20 2xl:pl-0 mb-10">
-                            <H2 styles={h2Styles}>{carouselTitle}</H2>
+                            <H2>{carouselTitle}</H2>
                         </div>
                         {isMobile && (
                             <div className="absolute top-[60px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]  z-10 ">

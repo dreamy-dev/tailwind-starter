@@ -8,7 +8,7 @@ const FactsAndFiguresGrid = ({ blok }) => {
         <section className="py-24 bg-primarySolid-50">
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
-                    <H2 styles="text-center ">{blok.title}</H2>
+                    <H2 styles="text-center">{blok.title}</H2>
                     <Text styles="text-center mb-4">{blok.text}</Text>
                     <div className="bg-secondaryBgcGray py-8 sm:py-10">
                         <div className="mx-auto max-w-full">

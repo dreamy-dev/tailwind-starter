@@ -7,7 +7,7 @@ export default function Subscribe() {
             <div className="px-4 mx-auto max-w-screen-xl lg:px-6">
                 <div className="gap-16 justify-between items-center p-6 text-white bg-primary lg:flex lg:gap-24 md:p-12">
                     <div className="w-full">
-                        <H2 styles="mb-4">Sign up for our newsletter</H2>
+                        <H2>Sign up for our newsletter</H2>
                         <p className="font-light text-white sm:text-xl">
                             Stay up to date with the roadmap progress,
                             announcements and exclusive discounts feel free to
