@@ -175,9 +175,9 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                 </ul>
             </div>
-            <div className="col-span-12 w-full pb-24">
-                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
+            <div className="col-span-12 w-full pb-24 overflow-x-auto">
+                <table className=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-black whitespace-nowrap uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3 w-1/12">
                                 {blok.table_date_title}
@@ -209,7 +209,7 @@ function AlleMedienmitteilungen({ blok }) {
                                     </td>
                                     <td
                                         scope="row"
-                                        className="px-6 py-4 font-medium text-black whitespace-nowrap"
+                                        className="px-6 py-4 font-medium text-black wordbreak-normal"
                                     >
                                         <a
                                             href={`/${medienmitteilung.full_slug}`}
