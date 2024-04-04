@@ -12,9 +12,7 @@ const PortraitItem = ({ blok }) => (
             />
             <div className="mt-4 space-y-2">
                 <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                        {blok?.name}
-                    </h3>
+                    <H4>{blok?.name}</H4>
                     <p className="text-base font-medium text-gray-500 dark:text-gray-400">
                         {blok?.description}
                     </p>

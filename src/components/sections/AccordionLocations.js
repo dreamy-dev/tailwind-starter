@@ -1,5 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { useState } from 'react';
+import H3 from '../typography/H3';
+import H4 from '../typography/H4';
 
 const AccordionLocations = ({ blok }) => {
     const [isActive, setIsActive] = useState(false);
@@ -30,10 +32,8 @@ const AccordionLocations = ({ blok }) => {
                             </p>
                         </div>
                         <div className="flex flex-row items-center">
-                            <div className="mr-6">
-                                <h3 className="mb-2 text-xl font-semibold tracking-tight text-gray-900">
-                                    {blok.title}
-                                </h3>
+                            <div className="mr-6 text-black">
+                                <H4 styles="font-medium">{blok.title}</H4>
                             </div>
                         </div>
                         <div className="hidden w-full  items-start flex-wrap lg:flex-nowrap">

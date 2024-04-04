@@ -2,6 +2,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import RichTextRenderer from '../helpers/RichTextRenderer';
+import H4 from '../typography/H4';
 
 const GraphicTextWrapper = ({ blok }) => {
     return (
@@ -17,14 +18,12 @@ const GraphicTextWrapper = ({ blok }) => {
                     <div className="grid gap-8 sm:gap-12 md:grid-cols-3">
                         <div className="flex justify-center">
                             <img
-                                className="mr-3 w-6 h-6"
+                                className="mr-3 w-6 h-6 mt-0.5"
                                 src={blok?.step_one_icon.filename}
                                 alt="icon-1"
                             />
                             <div>
-                                <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
-                                    {blok?.step_one_title}
-                                </h3>
+                                <H4>{blok?.step_one_title}</H4>
                                 <div className="richtext font-light text-gray-500 dark:text-gray-400">
                                     <RichTextRenderer
                                         text={blok?.step_one_text}
@@ -34,14 +33,12 @@ const GraphicTextWrapper = ({ blok }) => {
                         </div>
                         <div className="flex justify-center">
                             <img
-                                className="mr-3 w-6 h-6"
+                                className="mr-3 w-6 h-6 mt-0.5"
                                 src={blok?.step_two_icon.filename}
                                 alt="icon-1"
                             />
                             <div>
-                                <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
-                                    {blok?.step_two_title}
-                                </h3>
+                                <H4>{blok?.step_two_title}</H4>
                                 <div className="richtext font-light text-gray-500 dark:text-gray-400">
                                     <RichTextRenderer
                                         text={blok?.step_two_text}
@@ -51,14 +48,12 @@ const GraphicTextWrapper = ({ blok }) => {
                         </div>
                         <div className="flex justify-center">
                             <img
-                                className="mr-3 w-6 h-6"
+                                className="mr-3 w-6 h-6 mt-0.5"
                                 src={blok?.step_three_icon.filename}
                                 alt="icon-1"
                             />
                             <div>
-                                <h3 className="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
-                                    {blok?.step_three_title}
-                                </h3>
+                                <H4>{blok?.step_three_title}</H4>
                                 <div className="richtext font-light text-gray-500 dark:text-gray-400">
                                     <RichTextRenderer
                                         text={blok?.step_three_text}
