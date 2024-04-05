@@ -1,11 +1,16 @@
 'use client';
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import {
+    storyblokEditable,
+    getStoryblokApi,
+    StoryblokComponent,
+} from '@storyblok/react/rsc';
 import React, { useState, useEffect, useRef } from 'react';
 import IconNav from '../elements/IconNav';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from '../elements/LanguageSwitcher';
+import ModalSearch from './ModalSearch';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -66,6 +71,8 @@ const navigationMain = {
 };
 
 const Header = ({ blok }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     //const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -88,14 +95,6 @@ const Header = ({ blok }) => {
     const closeSolutionsSubmenu = () => {
         setIsSolutionsSubmenuOpen(false);
     };
-
-    // const toggleSubmenu = () => {
-    //   setIsSubmenuOpen((prev) => !prev);
-    // };
-
-    // const closeSubmenu = () => {
-    //   setIsSubmenuOpen(false);
-    // };
 
     const toggleMainMenu = () => {
         setIsOpen((prev) => !prev);
@@ -154,11 +153,20 @@ const Header = ({ blok }) => {
             };
         }
     });
+    // Modal logit
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <header
             {...storyblokEditable(blok)}
-            className={`bg-white z-20 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
+            className={`relative bg-white z-20 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
                 isMobileNavOpen && isNarrowScreen
                     ? 'fixed w-screen h-screen'
                     : ''
@@ -233,7 +241,7 @@ const Header = ({ blok }) => {
                     </section>
                     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
                         <ContentWidth>
-                            <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
+                            <div className="  bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                                 <div className="hidden lg:block">
                                     <Link
                                         href="/"
@@ -467,12 +475,24 @@ const Header = ({ blok }) => {
                                             </li>
                                         ))}
 
-                                        <li className="hidden lg:block">
+                                        <li className="lg:block z-50">
                                             <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
-                                                <img
-                                                    className="w-5 h-5"
-                                                    src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                    alt=""
+                                                <button
+                                                    onClick={openModal}
+                                                    data-modal-target="default-modal"
+                                                    data-modal-toggle="default-modal"
+                                                    type="button"
+                                                >
+                                                    <img
+                                                        className="w-5 h-5"
+                                                        src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                                                        alt=""
+                                                    />
+                                                </button>
+
+                                                <ModalSearch
+                                                    isModalOpen={isModalOpen}
+                                                    closeModal={closeModal}
                                                 />
                                             </div>
                                         </li>

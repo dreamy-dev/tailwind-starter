@@ -27,7 +27,7 @@ function AdHocMedienmitteilungen({ blok }) {
 
             setArticles((prev) =>
                 data.stories.map((medienmitteilungen) => {
-                    console.log('data medienmitteilungen', medienmitteilungen);
+                    // console.log('data medienmitteilungen', medienmitteilungen);
                     medienmitteilungen.content.slug = medienmitteilungen.slug;
                     return medienmitteilungen;
                 })
