@@ -22,7 +22,7 @@ export default function MailchimpEmbed({ blok }) {
                     </Text>
                     <div id="mc_embed_shell" className="col-span-12 mt-8 w-full">
                         <div id="mc_embed_signup" className="w-full">
-                            <form action="https://stadlerrail.us14.list-manage.com/subscribe/post?u=7e29f428e402a1b5e2a54d074&amp;id=abef8b12b4&amp;f_id=00b922e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+                            <form action="https://stadlerrail.us14.list-manage.com/subscribe/post?u=7e29f428e402a1b5e2a54d074&amp;id=be8e58f4ee&amp;f_id=00b922e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
                                 <div id="mc_embed_signup_scroll" className="items-center space-y-4 flex-col">
                                     <div className="grid grid-cols-1 gap-4 lg:gap-4 lg:grid-cols-2 items-center">
                                         <div className="mc-field-group relative w-full">
@@ -54,7 +54,7 @@ export default function MailchimpEmbed({ blok }) {
                                         <div className="response hidden" id="mce-error-response"></div>
                                         <div className="response hidden" id="mce-success-response"></div>
                                     </div>
-                                    <div className="hidden" aria-hidden="true"><input type="text" name="b_7e29f428e402a1b5e2a54d074_abef8b12b4" tabindex="-1" value="" /></div>
+                                    <div className="hidden" aria-hidden="true"><input type="text" name="b_7e29f428e402a1b5e2a54d074_be8e58f4ee" tabindex="-1" value="" /></div>
                                     <div className="clear flex justify-center">
                                         <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2" value={blok.button_text} />
                                     </div>
