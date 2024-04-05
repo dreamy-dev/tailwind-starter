@@ -24,8 +24,7 @@ export default function MailchimpEmbed({ blok }) {
                         <div id="mc_embed_signup" className="w-full">
                             <form action="https://stadlerrail.us14.list-manage.com/subscribe/post?u=7e29f428e402a1b5e2a54d074&amp;id=abef8b12b4&amp;f_id=00b922e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
                                 <div id="mc_embed_signup_scroll" className="items-center space-y-4 flex-col">
-                                    {/* <div className="indicates-required"><span className="asterisk">*</span> indicates required</div> */}
-                                    <div className="grid grid-cols-1 gap-8 lg:gap-4 lg:grid-cols-2 items-center">
+                                    <div className="grid grid-cols-1 gap-4 lg:gap-4 lg:grid-cols-2 items-center">
                                         <div className="mc-field-group relative w-full">
                                             <label for="mce-FNAME" className="mb-2 text-sm font-medium">{blok.fname_label} <span className="asterisk">*</span></label>
                                             <input type="text" name="FNAME" value={firstName} onChange={e => setFirstName(e.target.value)} className="required text block p-3  w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" id="mce-FNAME" required="" />

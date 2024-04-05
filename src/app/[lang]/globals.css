@@ -31,17 +31,19 @@ h4 {
 }
 
 #mc_embed_signup input.mce_inline_error {
-    border-color: #6B0505;
+    border-color: #C81E1E !important;
 }
 
 #mc_embed_signup div.mce_inline_error {
-    margin: 0 0 .5em 0 !important;
+    font-size: 14px;
+    margin: 0 0 0 0 !important;
     padding: 5px 0px !important;
     background-color: transparent !important;
     font-weight: 400 !important;
     z-index: 1;
-    color: #6B0505 !important;
+    color: #C81E1E !important;
 }
 #mce-error-response {
-    color: #6B0505 !important;
+    font-size: 14px;
+    color: #C81E1E !important;
 }
