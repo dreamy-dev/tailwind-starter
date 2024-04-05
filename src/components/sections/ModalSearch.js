@@ -72,8 +72,8 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
             // Check if the modal is open and the click is outside the modal and its content
             if (
                 isModalOpen &&
-                modalRef.current &&
-                !modalRef.current.contains(event.target)
+                contentRef.current &&
+                !contentRef.current.contains(event.target)
             ) {
                 closeModal();
             }
@@ -89,11 +89,16 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     return (
         <div
             ref={modalRef}
-            className={`${
-                isModalOpen ? '' : 'hidden'
-            } absolute  top-[100%] right-0  p-4 w-[375px]  md:w-[50%] h-[500px] `}
+            className={`absolute top-[100%] right-0 p-4 w-[375px] md:w-[50%] transition-transform duration-500 ${
+                isModalOpen
+                    ? 'transform opacity-100 ease-in-out'
+                    : 'transform opacity-0 ease-in-out'
+            }`}
         >
-            <div className="relative bg-white shadow dark:bg-gray-700 h-full">
+            <div
+                ref={contentRef}
+                className="relative bg-white shadow dark:bg-gray-700 h-full"
+            >
                 <div className="flex items-center justify-between p-4 md:p-5 border-b dark:border-gray-600">
                     <div className="pr-2">
                         <img
@@ -102,7 +107,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                             alt=""
                         />
                     </div>
-                    <label htmlFor="search" className=" w-full ">
+                    <label htmlFor="search" className="w-full">
                         <input
                             name="search"
                             onChange={onSearchChange}
@@ -136,11 +141,8 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                     </button>
                 </div>
 
-                <div
-                    className="p-2 md:p-3 overflow-y-scroll h-[400px]"
-                    //ref={contentRef}
-                >
-                    <div className="flex flex-col ">
+                <div className="p-2 md:p-3 overflow-y-scroll h-[385px]">
+                    <div className="flex flex-col">
                         {articles[0] &&
                             articles.map((article) => (
                                 <a
