@@ -102,12 +102,15 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                             alt=""
                         />
                     </div>
-                    <input
-                        onChange={onSearchChange}
-                        value={search}
-                        type="search"
-                        className="p-2 w-full border-primary focus:border-primary"
-                    />
+                    <label htmlFor="search" className=" w-full ">
+                        <input
+                            name="search"
+                            onChange={onSearchChange}
+                            value={search}
+                            type="search"
+                            className="p-2 w-full border-primary focus:border-primary"
+                        />
+                    </label>
                     <button
                         onClick={closeModal}
                         type="button"

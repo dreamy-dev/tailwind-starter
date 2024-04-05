@@ -344,7 +344,7 @@ const Header = ({ blok }) => {
                                                             }
                                                             style={{
                                                                 padding: '10px',
-                                                                zIndex: '99',
+                                                                zIndex: '30',
                                                                 width: '100%',
                                                                 left: '0',
                                                                 top: '63px',
