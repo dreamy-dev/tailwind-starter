@@ -11,7 +11,7 @@ const convertBreadcrumb = (string) => {
     return newString.charAt(0).toUpperCase() + newString.slice(1);
 };
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ block }) => {
     const router = useRouter();
     const path = usePathname();
     const [breadcrumbs, setBreadcrumbs] = useState(null);
@@ -19,6 +19,7 @@ const Breadcrumbs = () => {
     useEffect(() => {
         if (router) {
             const linkPath = path?.split('/');
+            linkPath.shift();
             linkPath.shift();
             linkPath.splice(-1);
 
