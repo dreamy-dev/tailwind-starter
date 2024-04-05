@@ -2,7 +2,7 @@
 
 import Button from '../elements/ButtonSecondary';
 
-export default function Stepper() {
+/* export default function Stepper() {
     return (
         <ol className="items-top sm:flex bg-white border-primarySolid-50">
             <li className="relative mb-6 sm:mb-0">
@@ -50,10 +50,6 @@ export default function Stepper() {
                             />
                         </svg>
                     </a>
-                    {/* Button isn't quite working yet: */}
-                    {/* <Button position="left" iconAfter>
-            Apply now
-          </Button> */}
                 </div>
             </li>
             <li className="relative mb-6 sm:mb-0">
@@ -109,4 +105,4 @@ export default function Stepper() {
             </li>
         </ol>
     );
-}
+} */

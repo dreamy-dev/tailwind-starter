@@ -29,3 +29,21 @@ h4 {
 .richtext > ol > li > p {
     display: contents !important;
 }
+
+#mc_embed_signup input.mce_inline_error {
+    border-color: #C81E1E !important;
+}
+
+#mc_embed_signup div.mce_inline_error {
+    font-size: 14px;
+    margin: 0 0 0 0 !important;
+    padding: 5px 0px !important;
+    background-color: transparent !important;
+    font-weight: 400 !important;
+    z-index: 1;
+    color: #C81E1E !important;
+}
+#mce-error-response {
+    font-size: 14px;
+    color: #C81E1E !important;
+}

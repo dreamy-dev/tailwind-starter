@@ -1,4 +1,5 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
 
 const CorporateGorvernanceTeaser = ({ blok }) => {
     return (
@@ -8,9 +9,7 @@ const CorporateGorvernanceTeaser = ({ blok }) => {
             {...storyblokEditable(blok)}
         >
             <article className="p-4 h-full flex flex-col flex-wrap justify-between content-start bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <h2 className="my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {blok?.title}
-                </h2>
+                <H3>{blok?.title}</H3>
                 <p className="mb-4 font-normal text-black dark:text-gray-400">
                     {blok?.text}
                 </p>

@@ -6,6 +6,7 @@ import TrimText from '../helpers/TrimText';
 import { useState, useEffect } from 'react';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
+import H4 from '../typography/H4';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AllNews({ blok }) {
@@ -208,9 +209,9 @@ function AllNews({ blok }) {
                                 <Text styles="text-sm mb-1 text-gray-500">
                                     {DateFormatter(article.content.date)}
                                 </Text>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 group-hover:text-primary transition-all">
+                                <H4 styles="group-hover:text-primary transition-all">
                                     {article.name}
-                                </h2>
+                                </H4>
                                 <Text styles="texl-lg mb-3 text-gray-500">
                                     {TrimText(article.content.lead)}
                                 </Text>

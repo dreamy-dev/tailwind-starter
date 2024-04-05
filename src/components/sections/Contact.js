@@ -20,8 +20,8 @@ const Contact = ({ blok }) => {
                         />
                     </div>
                     <div className="w-full xl:col-span-8">
-                        <div className=" tracking-tight">
-                            <H2 styles="mb-8 text-white">{blok?.Title}</H2>
+                        <div className=" tracking-tight text-white">
+                            <H2>{blok?.Title}</H2>
                         </div>
                         <div className="mb-8 font-light md:text-lg text-white">
                             <Text>{blok?.text}</Text>

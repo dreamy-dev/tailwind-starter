@@ -19,7 +19,7 @@ const TeaserImageLeft = ({ blok }) => {
 
                     <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                         <div>
-                            <H2 styles="text-black">{blok?.title}</H2>
+                            <H2>{blok?.title}</H2>
                             <Text styles="mt-4 text-xl font-normal text-black richtext">
                                 {blok?.text}
                             </Text>

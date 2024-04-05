@@ -79,6 +79,10 @@ module.exports = {
                 dark: '#004976',
                 light: '#3f6d92',
             },
+            red: {
+                700: '#C81E1E',
+                600: '#E02424'
+            }
         },
         screens: {
             sm: '640px',
