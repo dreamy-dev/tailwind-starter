@@ -3,6 +3,7 @@ import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 
 import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
+import H4 from '../typography/H4';
 import Text from '../typography/Text';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
