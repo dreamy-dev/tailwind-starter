@@ -63,7 +63,7 @@ const LanguageSwitcher = () => {
             <motion.div
                 animate={isOpen ? 'open' : 'closed'}
                 variants={variantsLang}
-                className="lg:absolute lg:top-14 z-50 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
+                className="lg:absolute lg:top-14 z-10 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
                 id="language-dropdown"
             >
                 <ul className="py-1" role="none">
