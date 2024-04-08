@@ -12,19 +12,20 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
         resolve_links: 'url',
     };
 
-    const onSearchChange = (e) => {
-        const inputValue = e.target.value;
-        setSearch(inputValue);
+const onSearchChange = (e) => {
+    const inputValue = e.target.value;
+    setSearch(inputValue);
 
-        const filterSearchParameters = {};
+    const filterSearchParameters = {};
 
-        if (inputValue.length > 0) {
-            filterSearchParameters['search_term'] = inputValue.toLowerCase();
-            getArticles(filterSearchParameters);
-        } else {
-            setArticles([]);
-        }
-    };
+    if (inputValue.length > 0) {
+        filterSearchParameters['search_term'] = inputValue.toLowerCase();
+        getArticles(filterSearchParameters);
+    } else {
+        // If the input is empty, set articles to an empty array
+        setArticles([]);
+    }
+};
 
     const getArticles = async (filterSearchRequest = {}) => {
         const slug = '/';
@@ -89,7 +90,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     return (
         <div
             ref={modalRef}
-            className={`absolute top-[100%] right-0 p-4 w-[375px] md:w-[50%] transition-transform duration-500 ${
+            className={`shadow-md absolute top-[100%] right-0 px-4 w-[375px] md:w-[50%] transition-transform duration-500 ${
                 isModalOpen
                     ? 'transform opacity-100 ease-in-out'
                     : 'transform opacity-0 ease-in-out'
@@ -109,11 +110,16 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                     </div>
                     <label htmlFor="search" className="w-full">
                         <input
+                            placeholder="Enter your search term..."
                             name="search"
                             onChange={onSearchChange}
                             value={search}
                             type="search"
-                            className="p-2 w-full border-primary focus:border-primary"
+                            style={{
+                                WebkitAppearance: 'none',
+                                appearance: 'none',
+                            }}
+                            className="p-2 w-full border-primary focus:border-primary appearance-none"
                         />
                     </label>
                     <button
