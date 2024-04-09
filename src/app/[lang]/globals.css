@@ -31,7 +31,7 @@ h4 {
 }
 
 #mc_embed_signup input.mce_inline_error {
-    border-color: #C81E1E !important;
+    border-color: #c81e1e !important;
 }
 
 #mc_embed_signup div.mce_inline_error {
@@ -41,10 +41,9 @@ h4 {
     background-color: transparent !important;
     font-weight: 400 !important;
     z-index: 1;
-    color: #C81E1E !important;
+    color: #c81e1e !important;
 }
 #mce-error-response {
     font-size: 14px;
-    color: #C81E1E !important;
+    color: #c81e1e !important;
 }
-

@@ -12,13 +12,7 @@ import ContentWidth from '../layouts/ContentWidth';
 
 const TestimonialMotionDiv = motion.div;
 
-const HomePageCaroucel = ({
-    items,
-    carouselTitle,
-    h2Styles,
-    showButton = true,
-    blok,
-}) => {
+const HomePageCaroucel = ({ items, carouselTitle }) => {
     const [current, setCurrent] = useState(0);
     const [startX, setStartX] = useState(0);
     const [isDragging, setIsDragging] = useState(false);

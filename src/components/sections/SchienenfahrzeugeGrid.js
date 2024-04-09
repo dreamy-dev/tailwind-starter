@@ -11,9 +11,9 @@ const SchienenfahrzeugeGrid = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-6 pb-12 text-white">
                     <H2>{blok?.title}</H2>
-                    <Text styles="mt-4 text-xl font-normal text-gray-800">
-                        {blok?.text}
-                    </Text>
+                    <div className="mt-4  text-white">
+                        <Text>{blok?.text}</Text>
+                    </div>
                 </div>
                 <div
                     {...storyblokEditable(blok)}

@@ -11,12 +11,14 @@ export default function CTASection(props) {
             <div className="bg-primaryBgcGray py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-sm text-center">
                     <H2>{props.title}</H2>
-                    <Text styles="my-6">
-                        Du hast deine passende Stelle noch nicht gefunden? Sende
-                        uns deinen Lebenslauf zu und sei der Erste, der
-                        berücksichtigt wird, wenn eine neue Stellenanzeige
-                        erstellt wird.
-                    </Text>
+                    <div className="my-6">
+                        <Text>
+                            Du hast deine passende Stelle noch nicht gefunden?
+                            Sende uns deinen Lebenslauf zu und sei der Erste,
+                            der berücksichtigt wird, wenn eine neue
+                            Stellenanzeige erstellt wird.
+                        </Text>
+                    </div>
                     <ButtonPrimary
                         position="center"
                         href="https://recruitingapp-2787.umantis.com/Vacancies/Choose/InitiativeApplication/1?lang=ger"

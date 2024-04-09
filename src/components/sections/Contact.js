@@ -27,8 +27,8 @@ const Contact = ({ blok }) => {
                             <Text>{blok?.text}</Text>
                         </div>
                         <div className="flex-col text-white">
-                            <div>
-                                <H4 styles="mb-4">{blok?.subtitle}</H4>
+                            <div className="mb-4">
+                                <H4>{blok?.subtitle}</H4>
                             </div>
                             <div className="mb-4 flex items-center">
                                 <svg

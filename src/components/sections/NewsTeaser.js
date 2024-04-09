@@ -76,15 +76,21 @@ function NewsTeaser({ blok }) {
                                                 )
                                         )}
                                     </div>
-                                    <Text styles="text-sm mb-1 text-gray-500">
-                                        {DateFormatter(article.content.date)}
-                                    </Text>
-                                    <H4 styles="group-hover:text-primary transition-all">
-                                        {article.name}
-                                    </H4>
-                                    <Text styles="texl-lg mb-3 text-gray-500">
-                                        {TrimText(article.content.lead)}
-                                    </Text>
+                                    <div className="text-sm mb-1 text-gray-500">
+                                        <Text>
+                                            {DateFormatter(
+                                                article.content.date
+                                            )}
+                                        </Text>
+                                    </div>
+                                    <div className="text-sm mb-1 text-gray-500 group-hover:text-primary transition-all">
+                                        <H4>{article.name}</H4>
+                                    </div>
+                                    <div className="texl-lg mb-3 text-gray-500">
+                                        <Text>
+                                            {TrimText(article.content.lead)}
+                                        </Text>
+                                    </div>
                                 </a>
                             ))}
                     </div>

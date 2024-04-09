@@ -99,9 +99,9 @@ const ProductCarousel = () => {
 
                         <div className="p-24 mx-w-full md:w-auto">
                             <H3>{data[imageIndex].titleH3}</H3>
-                            <Text styles="mb-6 mt-8 md:mb-6 mt-4 md:mt-8">
-                                {data[imageIndex].text}
-                            </Text>
+                            <div className="mb-6 mt-8 md:mb-6 mt-4 md:mt-8">
+                                <Text>{data[imageIndex].text}</Text>
+                            </div>
                             <button
                                 className="w-10 h-10 md:w-10 md:h-10"
                                 onClick={() => paginate(-1)}
