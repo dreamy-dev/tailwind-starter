@@ -38,7 +38,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                 ...apiRequest,
                 ...filterSearchRequest,
             });
-
+console.log(data, "data")
             // Sort articles with solutions in slug to be prioritized
             const sortedArticles = data.stories.sort((a, b) => {
                 const aIsSolution = a.full_slug.includes('loesungen/solutions');
