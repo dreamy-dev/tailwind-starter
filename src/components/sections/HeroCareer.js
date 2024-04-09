@@ -20,9 +20,9 @@ const HeroCareer = ({ blok }) => {
                         <br />
                         <br />
                         <H1>{blok?.title}</H1>
-                        <Text styles="my-8 text-white lg:mb-8 text-xl">
-                            {blok?.subheading}
-                        </Text>
+                        <div className="my-8 lg:mb-8">
+                            <Text>{blok?.subheading}</Text>
+                        </div>
                     </div>
                     <form
                         action="#"

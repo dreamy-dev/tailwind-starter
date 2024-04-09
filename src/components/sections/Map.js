@@ -10,13 +10,8 @@ export default function Map({ blok }) {
             <FullWidth>
                 <div className="col-span-12 w-full bg-white pb-5 lg:pb-24">
                     <SmallWidth>
-                        <div className="max-w-4xl mx-auto">
-                            <H2
-                                styles="text-center mb-2 text-4xl font-bold "
-                                resetStyles={true}
-                            >
-                                {blok.title}
-                            </H2>
+                        <div className="max-w-4xl mx-auto text-center mb-2 text-4xl font-bold">
+                            <H2>{blok.title}</H2>
                         </div>
                     </SmallWidth>
                     <div className="px-6 mb-24 lg:px-8">

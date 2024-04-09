@@ -32,8 +32,8 @@ const AccordionLocations = ({ blok }) => {
                             </p>
                         </div>
                         <div className="flex flex-row items-center">
-                            <div className="mr-6 text-black">
-                                <H4 styles="font-medium">{blok.title}</H4>
+                            <div className="mr-6 text-black font-medium">
+                                <H4>{blok.title}</H4>
                             </div>
                         </div>
                         <div className="hidden w-full  items-start flex-wrap lg:flex-nowrap">

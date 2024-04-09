@@ -18,15 +18,14 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                                     href={blok?.link_1}
                                     className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
                                 >
-                                    <H2
-                                        resetStyles={true}
-                                        styles="mb-4 text-4xl font-bold"
-                                    >
-                                        {blok?.title_1}
-                                    </H2>
-                                    <Text styles="text-greyBrighten-800 mb-4">
-                                        {blok?.text_1}
-                                    </Text>
+                                    <div className="mb-4 text-4xl">
+                                        <H2 resetStyles={true}>
+                                            {blok?.title_1}
+                                        </H2>
+                                    </div>
+                                    <div className="mb-4 ">
+                                        <Text>{blok?.text_1}</Text>
+                                    </div>
                                     <img
                                         className="w-5 h-5"
                                         src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
@@ -42,15 +41,17 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                                     href={blok?.link_2}
                                     className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
                                 >
-                                    <H2
-                                        resetStyles={true}
-                                        styles="mb-4 text-4xl font-bold"
-                                    >
-                                        {blok?.title_2}
-                                    </H2>
-                                    <Text styles="text-greyBrighten-800 mb-4">
-                                        {blok?.text_2}
-                                    </Text>
+                                    <div className="mb-4">
+                                        <H2
+                                            resetStyles={true}
+                                            styles=" text-4xl "
+                                        >
+                                            {blok?.title_2}
+                                        </H2>
+                                    </div>
+
+                                    <Text>{blok?.text_2}</Text>
+
                                     <img
                                         className="w-5 h-5"
                                         src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"

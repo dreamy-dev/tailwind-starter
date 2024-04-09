@@ -256,7 +256,7 @@ const Header = ({ blok }) => {
                                 </div>
                                 <div
                                     ref={menuRef}
-                                    className="relative w-full lg:w-auto"
+                                    className=" w-full lg:w-auto"
                                     id="navbar-solid-bg"
                                 >
                                     <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
@@ -476,7 +476,7 @@ const Header = ({ blok }) => {
                                         ))}
 
                                         <li className=" lg:block z-20">
-                                            <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
+                                            <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
                                                 <button
                                                     onClick={openModal}
                                                     data-modal-target="default-modal"
