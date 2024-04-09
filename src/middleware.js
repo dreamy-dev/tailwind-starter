@@ -9,8 +9,11 @@ export function middleware(request) {
     console.log(`Visitor from ${country}`);
     console.log(request.geo.country);
     console.log(`Pathname ${request.url.pathname}`);
+    console.log(request);
+    console.log(`Pathname ${request.url}`);
+    console.log(`Pathname ${request.nextUrl.pathname}`);
 
-    if ((request.url.pathname == '/de/career') | 'en/career') {
+    if ((request.nextUrl.pathname == '/de/career') | 'en/career') {
         switch (request.url.pathname) {
             case 'CH':
                 request.nextUrl.pathname = '/ch/career-ch-en';
