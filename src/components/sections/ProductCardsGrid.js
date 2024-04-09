@@ -4,7 +4,7 @@ import ContentWidth from '../layouts/ContentWidth';
 
 const ProductCardsGrid = ({ blok }) => {
     return (
-        <section className="py-24" {...storyblokEditable(blok)}>
+        <section className="py-16 lg:py-24" {...storyblokEditable(blok)}>
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
                     <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>

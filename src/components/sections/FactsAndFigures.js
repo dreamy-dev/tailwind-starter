@@ -19,10 +19,10 @@ const FactsAndFigures = ({
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-primarySolid-50 dark:bg-gray-900 py-24"
+            className="bg-primarySolid-50 dark:bg-gray-900 py-16 lg:py-24"
         >
             <ContentWidth>
-                <div className="col-span-12 my-auto  ">
+                <div className="col-span-12 my-auto">
                     <div className="text-center mb-4">
                         <H2>{blok?.title}</H2>
                     </div>
@@ -30,7 +30,7 @@ const FactsAndFigures = ({
                         {/* <div className="border-b border-black border-solid">
             <H3 titleH3="Wirtschaftliche Kennzahlen"></H3>
           </div> */}
-                        <div className="bg-secondaryBgcGray py-8 sm:py-10">
+                        <div className="bg-secondaryBgcGray pt-8 sm:pt-10">
                             <div className="mx-auto max-w-full">
                                 <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                                     {renderData.map((stat, index) => (

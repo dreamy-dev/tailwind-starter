@@ -6,7 +6,7 @@ import Text from '../typography/Text';
 
 const CorporateGorvernanceGrid = ({ blok }) => {
     return (
-        <section className="bg-white dark:bg-gray-900 py-24">
+        <section className="bg-white dark:bg-gray-900 py-16 lg:py-24">
             <SuperSmallWidth>
                 <div className="">
                     <div className="mx-auto text-center mb-2 lg:mb-4">
