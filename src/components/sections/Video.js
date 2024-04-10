@@ -25,13 +25,12 @@ export default function Video({ blok }) {
                     </div>
                     <div className="w-[90%] m-auto lg:px-4 xl:px-20 lg:w-1/3">
                         <div className="mt-10 lg:mt-0">
-                            <H2
-                                resetStyles={true}
-                                styles="text-4xl font-bold mb-6"
-                            >
-                                {blok?.title}
-                            </H2>
-                            <Text styles="text-xl">{blok?.text}</Text>
+                            <div className="text-4xl font-bold mb-6">
+                                <H2 resetStyles={true}>{blok?.title}</H2>
+                            </div>
+                            <div className="text-xl">
+                                <Text>{blok?.text}</Text>
+                            </div>
                         </div>
 
                         <div className="mt-6">

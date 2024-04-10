@@ -10,7 +10,9 @@ function ArticleHero({ block }) {
             <div className="mt-20 flex font-normal text-gray-600">
                 <Breadcrumbs />
             </div>
-            <H1 styles="mb-8">{block?.title}</H1>
+            <div className="mb-8">
+                <H1>{block?.title}</H1>
+            </div>
             <div className="grid grid-cols-12 gap-6 mb-6">
                 <div className="col-span-6">
                     {block?.categories?.map((category, index) => {
@@ -29,11 +31,13 @@ function ArticleHero({ block }) {
                         }
                     })}
                 </div>
-                <div className="col-span-6 align-right text-right">
-                    <Text styles="text-md">{DateFormatter(block?.date)}</Text>
+                <div className="col-span-6 align-right text-right text-md">
+                    <Text>{DateFormatter(block?.date)}</Text>
                 </div>
             </div>
-            <Text styles="text-lg mt-12">{block?.lead}</Text>
+            <div className="text-lg mt-12">
+                <Text>{block?.lead}</Text>
+            </div>
             <img
                 src={block?.image?.filename}
                 className="w-full my-8"

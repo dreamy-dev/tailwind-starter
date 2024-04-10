@@ -13,11 +13,9 @@ const TeaserImageRight = ({ blok }) => {
                     <div>
                         <div className="">
                             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-                                <div>
-                                    <H2>{blok?.title}</H2>
-                                    <Text styles="mt-4 text-xl font-normal text-gray-800 text-black">
-                                        {blok?.text}
-                                    </Text>
+                                <H2>{blok?.title}</H2>
+                                <div className="mt-4 text-xl">
+                                    <Text>{blok?.text}</Text>
                                 </div>
                                 <ButtonPrimary
                                     position="left"

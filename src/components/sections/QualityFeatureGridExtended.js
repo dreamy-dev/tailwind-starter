@@ -13,7 +13,8 @@ const QualityFeatureGridExtended = ({ blok }) => {
         >
             <ContentWidth>
                 <div className="col-span-12 max-w-full">
-                    <H2 styles="text-white item-start">{blok?.title}</H2>
+                    <div className="text-white item-start"></div>
+                    <H2>{blok?.title}</H2>
                     <div className="mt-8 lg:mt-16">
                         <div
                             className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24"
@@ -30,14 +31,18 @@ const QualityFeatureGridExtended = ({ blok }) => {
                             <div className=" flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">
                                 <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
                                 <div>
-                                    <H4 styles="text-white">
-                                        {blok?.subtitleOne ??
-                                            'Flexibles Kastensystem'}
-                                    </H4>
-                                    <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-                                        {blok?.textOne ??
-                                            '  Es stehen zwei Wagenkastenlängen und -breiten zur Wahl, sowie verschiedene Lichtraumprofile. Der FLIRT hat einen hohen Niederfluranteil und ist barrierefrei über die Wagengänge begehbar.'}
-                                    </Text>
+                                    <div className="text-white">
+                                        <H4>
+                                            {blok?.subtitleOne ??
+                                                'Flexibles Kastensystem'}
+                                        </H4>
+                                    </div>
+                                    <div className="mt-2 text-xl text-white sm:text-lg dark:text-gray-400">
+                                        <Text>
+                                            {blok?.textOne ??
+                                                '  Es stehen zwei Wagenkastenlängen und -breiten zur Wahl, sowie verschiedene Lichtraumprofile. Der FLIRT hat einen hohen Niederfluranteil und ist barrierefrei über die Wagengänge begehbar.'}
+                                        </Text>
+                                    </div>
                                 </div>
                             </div>
                             <div className=" mt-8 sm:mt-0">
@@ -50,14 +55,17 @@ const QualityFeatureGridExtended = ({ blok }) => {
                         <div className="pt-24 flex flex-col items-start gap-4 sm:gap-5 sm:flex-row ">
                             <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-start shrink-0"></div>
                             <div>
-                                <H4 styles="text-white">
+                                <div className="text-white"></div>
+                                <H4>
                                     {blok?.subtitleTwo ??
                                         'Kapazität à la carte'}
                                 </H4>
-                                <Text styles="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
-                                    {blok?.textTwo ??
-                                        '  Die Modularität der FLIRT-Typen ermöglicht flexible Passagierkapazitäten. Triebzüge von 2 bis 8 Teilen bieten Platz für 100 bis 500 Passagiere. Kleinere Formationen sind erweiterbar, um mehr Fahrgäste aufzunehmen, und bis zu vier Züge können in Vielfachtraktion verkehren.'}
-                                </Text>
+                                <div className="mt-2 text-xl font-normal text-white sm:text-lg dark:text-gray-400">
+                                    <Text>
+                                        {blok?.textTwo ??
+                                            '  Die Modularität der FLIRT-Typen ermöglicht flexible Passagierkapazitäten. Triebzüge von 2 bis 8 Teilen bieten Platz für 100 bis 500 Passagiere. Kleinere Formationen sind erweiterbar, um mehr Fahrgäste aufzunehmen, und bis zu vier Züge können in Vielfachtraktion verkehren.'}
+                                    </Text>
+                                </div>
                             </div>
                         </div>
                         <div className="pt-14 flex flex-col items-start gap-4 sm:gap-5 sm:flex-row">

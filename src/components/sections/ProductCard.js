@@ -18,7 +18,9 @@ const ProductCard = ({ blok }) => (
                 href="#"
                 className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-white mb-5"
             >
-                <Text styles="text-black mb-4">{blok.text}</Text>
+                <div className=" mb-4">
+                    <Text>{blok.text}</Text>
+                </div>
             </a>
         </div>
     </li>
