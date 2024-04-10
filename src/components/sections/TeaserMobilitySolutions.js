@@ -19,7 +19,7 @@ export default function TeaserMobilitySolutions({ blok }) {
                         position="center"
                         textColorClass="text-white"
                         href={blok.cta_link.href}
-                        styles="mb-12"
+                        styles="my-12"
                         iconAfter={
                             <svg
                                 width="16"

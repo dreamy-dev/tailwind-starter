@@ -8,7 +8,7 @@ import Text from '../typography/Text';
 
 const TeaserImageLeft = ({ blok }) => {
     return (
-        <section {...storyblokEditable(blok)} className="antialiased py-12">
+        <section {...storyblokEditable(blok)} className="py-16 lg:py-24">
             <SmallWidth>
                 <div className="grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
                     <img
