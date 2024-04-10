@@ -8,16 +8,15 @@ export function middleware(request) {
 
     console.log(`Visitor from ${country}`);
     console.log(request.geo.country);
-    console.log(`Pathname ${request.url.pathname}`);
     console.log(request);
-    console.log(`Pathname ${request.url}`);
+    console.log(`URL ${request.url}`);
     console.log(`Pathname ${request.nextUrl.pathname}`);
 
     if (request.nextUrl.pathname == '/de/career') {
         switch (request.geo.country) {
             case 'CH':
                 console.log('I was called');
-                request.nextUrl.pathname = '/ch/career-ch-en';
+                request.nextUrl.pathname = '/de/ch/career-ch-en';
                 return NextResponse.rewrite(request.nextUrl);
             case 'DE':
                 // request.nextUrl.pathname = 'ch/...'
