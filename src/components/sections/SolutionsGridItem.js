@@ -6,7 +6,7 @@ const SolutionsGridItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="  bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mx-auto"
+            className="  bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mx-auto"
         >
             <a href={blok.link.url}>
                 <img className="w-full" src={blok?.image.filename} alt="" />

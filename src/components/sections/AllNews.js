@@ -4,7 +4,7 @@ import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 
 import { useState, useEffect } from 'react';
-import H1 from '../typography/H1';
+import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import H4 from '../typography/H4';
 const filters = { country: '', category: '', product: '', year: '' };
@@ -82,10 +82,10 @@ function AllNews({ blok }) {
     return (
         <ContentWidth {...storyblokEditable(blok)}>
             <div className="col-span-12 w-full">
-                <H1>{blok.title}</H1>
+                <H2>{blok.title}</H2>
             </div>
             <div className="col-span-12 w-full flex flex-col mb-8 items-center justify-center pb-4 space-y-3 md:pb-0 md:mt-4 dark:bg-gray-800 md:flex-row md:space-y-0 md:space-x-4">
-                <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
+                <ul className="w-full flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
                     <li className="mb-4 mr-2 lg:mr-4">
                         <select
                             className=" px-4 py-2 text-base border rounded block"

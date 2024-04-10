@@ -7,7 +7,7 @@ import Text from '../typography/Text';
 const TableGrid = ({ blok }) => {
     return (
         <section
-            className="bg-white pb-5 lg:pb-24"
+            className="bg-white pb-5 py-16 lg:py-24"
             {...storyblokEditable(blok)}
         >
             <ContentWidth>
