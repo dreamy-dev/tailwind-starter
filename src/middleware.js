@@ -14,7 +14,7 @@ export function middleware(request) {
     console.log(`Pathname ${request.nextUrl.pathname}`);
 
     if ((request.nextUrl.pathname == '/de/career') | 'en/career') {
-        switch (request.url.pathname) {
+        switch (request.geo.country) {
             case 'CH':
                 request.nextUrl.pathname = '/ch/career-ch-en';
                 return NextResponse.rewrite(request.nextUrl);
