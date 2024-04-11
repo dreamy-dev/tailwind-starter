@@ -8,7 +8,7 @@ export default function HomePageHero({ blok }) {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="mx-auto w-full bg-white pb-16"
+            className="mx-auto w-full bg-white"
         >
             <div className="w-full overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
                 <motion.div
