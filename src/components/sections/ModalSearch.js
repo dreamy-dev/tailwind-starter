@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 
@@ -7,6 +7,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     const [search, setSearch] = useState('');
     const modalRef = useRef(null);
     const contentRef = useRef(null);
+    const inputRef = useRef(null);
 
     const apiRequest = {
         version: 'published',
@@ -38,7 +39,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                 ...apiRequest,
                 ...filterSearchRequest,
             });
-console.log(data, "data")
+
             // Sort articles with solutions in slug to be prioritized
             const sortedArticles = data.stories.sort((a, b) => {
                 const aIsSolution = a.full_slug.includes('loesungen/solutions');
@@ -70,6 +71,12 @@ console.log(data, "data")
     }, []);
 
     useEffect(() => {
+        if (isModalOpen && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [isModalOpen]);
+
+    useEffect(() => {
         const handleOutsideClick = (event) => {
             // Check if the modal is open and the click is outside the modal and its content
             if (
@@ -77,7 +84,10 @@ console.log(data, "data")
                 contentRef.current &&
                 !contentRef.current.contains(event.target)
             ) {
+              
                 closeModal();
+                setSearch('')
+                setArticles([]);
             }
         };
 
@@ -87,6 +97,12 @@ console.log(data, "data")
             document.removeEventListener('mousedown', handleOutsideClick);
         };
     }, [isModalOpen, closeModal]);
+
+    const handleArticleClick = (article) => {
+        window.location.href = `/${article.full_slug}`;
+    };
+
+ 
 
     return (
         <div
@@ -111,57 +127,30 @@ console.log(data, "data")
                     </div>
                     <label htmlFor="search" className="w-full">
                         <input
+                            ref={inputRef}
                             placeholder="Enter your search term..."
                             name="search"
                             onChange={onSearchChange}
                             value={search}
                             type="search"
-                            style={{
-                                WebkitAppearance: 'none',
-                                appearance: 'none',
-                            }}
                             className="p-2 w-full border-primary focus:border-primary appearance-none"
                         />
                     </label>
-                    <button
-                        onClick={closeModal}
-                        type="button"
-                        className="text-primary bg-transparent text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-hide="default-modal"
-                    >
-                        <svg
-                            className="w-3 h-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="#005893"
-                            viewBox="0 0 14 14"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                            />
-                        </svg>
-                        <span className="sr-only">Close modal</span>
-                    </button>
                 </div>
 
-                <div className="p-2 md:p-3 overflow-y-scroll h-[385px]">
+                <div className="overflow-y-scroll h-[385px]">
                     <div className="flex flex-col">
-                        {articles[0] &&
-                            articles.map((article) => (
-                                <a
-                                    href={`/${article.full_slug}`}
-                                    className="group mb-6 transition-all"
-                                    key={article.uuid}
-                                >
-                                    <h2 className="mb-1 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
-                                        {article.name}
-                                    </h2>
-                                </a>
-                            ))}
+                        {articles.map((article) => (
+                            <div
+                                key={article.uuid}
+                                onClick={() => handleArticleClick(article)}
+                                className="group transition-all cursor-pointer hover:bg-gray-100"
+                            >
+                                <h2 className="p-4 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
+                                    {article.name}
+                                </h2>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
