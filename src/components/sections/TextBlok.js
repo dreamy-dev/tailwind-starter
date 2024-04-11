@@ -6,11 +6,10 @@ import SmallWidth from '@/components/layouts/SmallWidth';
 
 export default function TextBlock() {
     return (
-        <section className="py-24 bg-primarySolid-50">
+        <section className="py-16 lg:py-24 bg-primarySolid-50">
             <ContentWidth>
                 <div className="col-span-12">
                     <H2>
-                        {' '}
                         Investieren Sie in eine echte Schweizer
                         Erfolgsgeschichte
                     </H2>

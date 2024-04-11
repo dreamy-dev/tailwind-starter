@@ -7,7 +7,7 @@ import Text from '../typography/Text';
 const Jobs = ({ blok }) => {
     return (
         <section className="bg-white dark:bg-gray-900 antialiased">
-            <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+            <div className="max-w-screen-xl px-4 mx-auto lg:px-6 py-16 lg:py-24">
                 <div className="flex flex-col gap-8 sm:gap-12 xl:gap-16 xl:flex-row xl:items-start">
                     <div>
                         <H2>{blok?.title}</H2>

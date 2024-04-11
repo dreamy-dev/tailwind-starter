@@ -4,7 +4,7 @@ import H2 from '../typography/H2';
 
 const MedienMitteilungDownload = ({ blok }) => {
     return (
-        <div {...storyblokEditable(blok)} className="py-24">
+        <div {...storyblokEditable(blok)} className="py-16 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12">
                     <H2>{blok?.title}</H2>
