@@ -6,9 +6,9 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 
 const DownloadItem = ({ blok }) => {
     return (
-        <section {...storyblokEditable(blok)}>
+        <section {...storyblokEditable(blok)} className='py-16 lg:py-24'>
             <ContentWidth>
-                <div className="col-span-12 mb-14 flex flex-col lg:flex-row justify-between align-baseline">
+                <div className="col-span-12 flex flex-col lg:flex-row justify-between align-baseline">
                     <Text>{blok?.Text}</Text>
                     <ButtonPrimary
                         position="right"
