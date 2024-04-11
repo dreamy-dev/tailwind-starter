@@ -13,40 +13,38 @@ const AccordionTabsTableWrapper = ({ blok }) => {
 
     return (
         <section>
-           
-                    <nav
-                        className="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-6 sm:gap-4"
-                        aria-label="Tabs"
-                        id="myTab"
-                        data-tabs-toggle="#myTabContent"
-                        role="tablist"
+            <nav
+                className="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-6 sm:gap-4"
+                aria-label="Tabs"
+                id="myTab"
+                data-tabs-toggle="#myTabContent"
+                role="tablist"
+            >
+                {blok.year_wrapper.map((nestedBlok, index) => (
+                    <button
+                        key={nestedBlok._uid}
+                        type="button"
+                        id={`tab-${index}`}
+                        onClick={() => handleTabClick(index)}
+                        className={`${
+                            index === activeTab ? 'bg-gray-100' : ''
+                        } p-3 text-center md:p-5 md:text-left ${
+                            index === activeTab ? 'active' : ''
+                        }`}
                     >
-                        {blok.year_wrapper.map((nestedBlok, index) => (
-                            <button
-                                key={nestedBlok._uid}
-                                type="button"
-                                id={`tab-${index}`}
-                                onClick={() => handleTabClick(index)}
-                                className={`${
-                                    index === activeTab ? 'bg-gray-100' : ''
-                                } p-3 text-center md:p-5 md:text-left ${
-                                    index === activeTab ? 'active' : ''
-                                }`}
-                            >
-                                {nestedBlok.year}
-                            </button>
-                        ))}
-                    </nav>
-                    <div className="tab-content">
-                        {blok.year_wrapper.map((nestedBlok, index) => (
-                            <AccordionYearWrapper
-                                key={nestedBlok._uid}
-                                blok={nestedBlok}
-                                isActive={index === activeTab}
-                            />
-                        ))}
-                    </div>
-             
+                        {nestedBlok.year}
+                    </button>
+                ))}
+            </nav>
+            <div className="tab-content">
+                {blok.year_wrapper.map((nestedBlok, index) => (
+                    <AccordionYearWrapper
+                        key={nestedBlok._uid}
+                        blok={nestedBlok}
+                        isActive={index === activeTab}
+                    />
+                ))}
+            </div>
         </section>
     );
 };

@@ -12,7 +12,7 @@ const SimpleContainerWrapper = ({ blok }) => {
                     className="max-w-full col-span-12 "
                     {...storyblokEditable(blok)}
                 >
-                  <H2>{blok?.title}</H2> 
+                    <H2>{blok?.title}</H2>
 
                     <div>
                         {blok.container.map((nestedBlok, index) => (
