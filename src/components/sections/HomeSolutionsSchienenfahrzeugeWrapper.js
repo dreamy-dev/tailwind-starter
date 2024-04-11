@@ -39,7 +39,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                         <div className="flex flex-row items-start justify-center">
                             {blok.wrapper.map((item, key) => (
                                 <div
-                                    key={item.key}
+                                    key={key}
                                     className={`${
                                         selectedCategory === key
                                             ? 'text-white'
@@ -69,6 +69,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                                 : 'close'
                                         }
                                         variants={plusAnimation}
+                                        key={item.key}
                                     />
                                 </div>
                             ))}
@@ -80,7 +81,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                 <StoryblokComponent
                     blok={nestedBlok}
                     open={selectedCategory === index && isOpen}
-                    key={nestedBlok?._uid}
+                    key={nestedBlok._uid}
                 />
             ))}
         </>
