@@ -9,7 +9,7 @@ export default function Video({ blok }) {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="bg-white py-24  2xl:max-w-[1760px] 2xl:mx-auto"
+            className="bg-white py-16 lg:py-24 2xl:max-w-[1760px] 2xl:mx-auto"
         >
             <FullWidth>
                 <div className="col-span-12 flex flex-col lg:flex-row justify-between items-center">

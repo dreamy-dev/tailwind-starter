@@ -7,9 +7,9 @@ import Text from '../typography/Text';
 
 const SchienenfahrzeugeGrid = ({ blok }) => {
     return (
-        <section className="pb-24">
+        <section className="py-16 lg:py-24">
             <ContentWidth>
-                <div className="col-span-6 pb-12 text-white">
+                <div className="col-span-12 lg:col-span-6 pb-12 text-white">
                     <H2>{blok?.title}</H2>
                     <div className="mt-4  text-white">
                         <Text>{blok?.text}</Text>
@@ -17,7 +17,7 @@ const SchienenfahrzeugeGrid = ({ blok }) => {
                 </div>
                 <div
                     {...storyblokEditable(blok)}
-                    className="grid col-span-12 lg:grid-cols-4 lg:grid-rows gap-2"
+                    className="grid col-span-12 lg:grid-cols-4 lg:grid-rows gap-4"
                 >
                     {blok.schienenfahrzeuge_card.map((nestedBlok) => (
                         <StoryblokComponent
