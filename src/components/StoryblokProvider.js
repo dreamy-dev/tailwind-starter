@@ -105,6 +105,7 @@ import AllStandorte from './sections/AllStandorte';
 import AccordionLocations from './sections/AccordionLocations';
 import JobOverview from './sections/JobOverview';
 import MailchimpEmbed from './sections/MailchimpEmbed';
+import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -216,6 +217,7 @@ storyblokInit({
         'single-location-wrapper': AccordionLocations,
         'job-overview': JobOverview,
         'signup-mailchimp': MailchimpEmbed,
+        'simple_container_wrapper': SimpleContainerWrapper,
     },
 });
 

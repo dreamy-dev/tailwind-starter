@@ -12,13 +12,8 @@ const AccordionTabsTableWrapper = ({ blok }) => {
     };
 
     return (
-        <section className="py-16 lg:py-24">
-            <ContentWidth>
-                <div
-                    className="max-w-full col-span-12 "
-                    {...storyblokEditable(blok)}
-                >
-                    {blok?.show_title ? <H2>{blok?.title}</H2> : ''}
+        <section>
+           
                     <nav
                         className="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-6 sm:gap-4"
                         aria-label="Tabs"
@@ -51,8 +46,7 @@ const AccordionTabsTableWrapper = ({ blok }) => {
                             />
                         ))}
                     </div>
-                </div>
-            </ContentWidth>
+             
         </section>
     );
 };
