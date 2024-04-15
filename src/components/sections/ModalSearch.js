@@ -29,42 +29,59 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
         }
     };
 
-    const getArticles = async (filterSearchRequest = {}) => {
-        const slug = '/';
-        const storyblokApi = getStoryblokApi();
+const getArticles = async (filterSearchRequest = {}) => {
+    const slug = '/';
+    const storyblokApi = getStoryblokApi();
 
-        // Only fetch articles if there is a search term
-        if (search.length > 0) {
-            const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-                ...apiRequest,
-                ...filterSearchRequest,
-            });
+    // Only fetch articles if there is a search term
+    if (search.length > 0) {
+        const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+            ...apiRequest,
+            ...filterSearchRequest,
+        });
+        console.log(data, 'data');
 
-            // Sort articles with solutions in slug to be prioritized
-            const sortedArticles = data.stories.sort((a, b) => {
-                const aIsSolution = a.full_slug.includes('loesungen/solutions');
-                const bIsSolution = b.full_slug.includes('loesungen/solutions');
-
-                if (aIsSolution && !bIsSolution) {
-                    return -1;
-                } else if (!aIsSolution && bIsSolution) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            });
-
-            setArticles((prev) =>
-                sortedArticles.map((article) => {
-                    article.content.slug = article.slug;
-                    return article;
-                })
+        const filteredArticles = data.stories.filter((article) => {
+            // Exclude if 'full_slug' starts with "categories/" or contains "/categories/"
+            return (
+                !article.full_slug.startsWith('categories/') &&
+                !article.full_slug.includes('/categories/')
             );
-        } else {
-            // If there is no search term, set articles to an empty array
-            setArticles([]);
-        }
-    };
+        });
+
+        console.log(filteredArticles, 'filteredArticles');
+        const prioritySlugs = [
+            'schienenfahrzeuge',
+            'rollingstock',
+            'signalling',
+            'service',
+        ];
+        // Sort articles with solutions in slug to be prioritized
+const sortedArticles = filteredArticles.sort((a, b) => {
+    const aPriority = prioritySlugs.some((slug) => a.full_slug.includes(slug));
+    const bPriority = prioritySlugs.some((slug) => b.full_slug.includes(slug));
+
+    if (aPriority && !bPriority) {
+        return -1;
+    } else if (!aPriority && bPriority) {
+        return 1;
+    } else {
+        // If both have or don't have priority slugs, sort by other criteria (e.g., published date)
+        return new Date(b.published_at) - new Date(a.published_at);
+    }
+});
+
+        setArticles((prev) =>
+            sortedArticles.map((article) => {
+                article.content.slug = article.slug;
+                return article;
+            })
+        );
+    } else {
+        // If there is no search term, set articles to an empty array
+        setArticles([]);
+    }
+};
 
     useEffect(() => {
         getArticles();
@@ -107,10 +124,10 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     return (
         <div
             ref={modalRef}
-            className={`col-span-12 z-20 shadow-md absolute top-[100%] right-0  w-[100%] sm:w-[450px] md:w-[710px] transition-transform duration-500 ${
+            className={`col-span-12 shadow-md absolute top-10 right-0  w-[100%] sm:w-[450px] md:w-[710px] transition-transform duration-500 ${
                 isModalOpen
-                    ? 'transform opacity-100 ease-in-out'
-                    : 'transform opacity-0 ease-in-out'
+                    ? 'transform opacity-100 ease-in-out z-20'
+                    : 'transform opacity-0 ease-in-out max-h-0 overflow-hidden'
             }`}
         >
             <div

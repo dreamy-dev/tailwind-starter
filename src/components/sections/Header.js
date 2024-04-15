@@ -475,7 +475,7 @@ const Header = ({ blok }) => {
                                             </li>
                                         ))}
 
-                                        <li className=" lg:block z-20">
+                                        <li className="lg:relative lg:block z-20">
                                             <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
                                                 <button
                                                     onClick={openModal}
@@ -490,12 +490,13 @@ const Header = ({ blok }) => {
                                                     />
                                                 </button>
                                             </div>
+                                            <ModalSearch
+                                                isModalOpen={isModalOpen}
+                                                closeModal={closeModal}
+                                            />
                                         </li>
                                     </ul>
-                                    <ModalSearch
-                                        isModalOpen={isModalOpen}
-                                        closeModal={closeModal}
-                                    />
+
                                     <div className="border-b lg:border-none"></div>
                                 </div>
                             </div>
