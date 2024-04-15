@@ -5,7 +5,7 @@ import ContentWidth from '../layouts/ContentWidth';
 
 const FactsAndFiguresGrid = ({ blok }) => {
     return (
-        <section className="py-24 bg-primarySolid-50">
+        <section className="py-16 lg:py-24 bg-primarySolid-50">
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
                     <H2 styles="text-center">{blok.title}</H2>
@@ -13,7 +13,7 @@ const FactsAndFiguresGrid = ({ blok }) => {
                     <div className="bg-secondaryBgcGray pt-8 sm:pt-10">
                         <div className="mx-auto max-w-full">
                             <dl
-                                className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3"
+                                className="grid grid-cols-1 gap-x-8 gap-y-10 lg:gap-y-16 text-center lg:grid-cols-3"
                                 {...storyblokEditable(blok)}
                             >
                                 {blok?.facts_figures_grid.map((nestedBlok) => (

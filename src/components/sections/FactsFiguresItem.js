@@ -7,8 +7,10 @@ const FactsAndFiguresItem = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>
             <div className="flex flex-col gap-y-2 col-span-1 mx-auto max-w-[400px]">
-                <dt className="text-xl leading-7 text-black">{blok?.text}</dt>
-                <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
+                <dt className="text-base lg:text-xl leading-7 text-black">
+                    {blok?.text}
+                </dt>
+                <dd className="order-first text-3xl lg:text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                     <CountUp
                         start={0}
                         end={blok?.factsandfigures_data}

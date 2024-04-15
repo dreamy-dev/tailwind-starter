@@ -6,7 +6,7 @@ import Button from '../elements/ButtonSecondary';
 
 export default function TeaserMobilitySolutions({ blok }) {
     return (
-        <section className="pt-24 pb-12 dark:bg-gray-900 ">
+        <section className="pt-16 lg:pt-24 pb-12 dark:bg-gray-900 ">
             <ContentWidth>
                 <div className="col-span-12 max-w-4xl lg:mx-auto">
                     <div className="text-center leading-tight text-white break-words">
@@ -19,7 +19,7 @@ export default function TeaserMobilitySolutions({ blok }) {
                         position="center"
                         textColorClass="text-white"
                         href={blok.cta_link.href}
-                        styles="my-12"
+                        styles="mb-8 lg:mb-12"
                         iconAfter={
                             <svg
                                 width="16"

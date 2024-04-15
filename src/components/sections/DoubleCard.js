@@ -2,7 +2,7 @@ import H2 from '../../components/typography/H2';
 import ContentWidth from '../layouts/ContentWidth';
 import Text from '../typography/Text';
 
-export default function DoubleCard() {
+/* export default function DoubleCard() {
     return (
         <section className="py-16 lg:py-24">
             <ContentWidth>
@@ -112,3 +112,4 @@ export default function DoubleCard() {
         </section>
     );
 }
+ */

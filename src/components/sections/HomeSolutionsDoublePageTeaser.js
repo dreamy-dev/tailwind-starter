@@ -5,7 +5,7 @@ import Text from '../typography/Text';
 
 const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (
-        <section {...storyblokEditable(blok)} className="pb-5 lg:pb-24">
+        <section {...storyblokEditable(blok)} className="pb-16 lg:pb-24">
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
                     <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
@@ -16,14 +16,14 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <a
                                     href={blok?.link_1}
-                                    className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
+                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-5"
                                 >
-                                    <div className="mb-4 text-4xl">
-                                        <H2 resetStyles={true}>
+                                    <div className="text-4xl">
+                                        <H2 styles="!mb-0 lg:!mb-2">
                                             {blok?.title_1}
                                         </H2>
                                     </div>
-                                    <div className="mb-4 ">
+                                    <div className="">
                                         <Text>{blok?.text_1}</Text>
                                     </div>
                                     <img
@@ -39,19 +39,14 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <a
                                     href={blok?.link_2}
-                                    className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
+                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-5"
                                 >
-                                    <div className="mb-4">
-                                        <H2
-                                            resetStyles={true}
-                                            styles=" text-4xl "
-                                        >
+                                    <div className="">
+                                        <H2 styles="!mb-0 lg:!mb-2">
                                             {blok?.title_2}
                                         </H2>
                                     </div>
-
                                     <Text>{blok?.text_2}</Text>
-
                                     <img
                                         className="w-5 h-5"
                                         src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
