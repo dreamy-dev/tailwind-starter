@@ -17,7 +17,7 @@ const QualityFeatureGridExtended = ({ blok }) => {
                     <H2>{blok?.title}</H2>
                     <div className="mt-8 lg:mt-16">
                         <div
-                            className="grid grid-cols-1 gap-16 sm:gap-12 lg:grid-cols-2 lg:gap-24"
+                            className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-24"
                             {...storyblokEditable(blok)}
                         >
                             {blok.feature_item.map((nestedBlok) => (

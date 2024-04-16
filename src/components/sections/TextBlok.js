@@ -1,4 +1,4 @@
-import ContentWidth from '@/components/layouts/ContentWidth';
+/* import ContentWidth from '@/components/layouts/ContentWidth';
 import HeroText from '@/components/sections/HeroText';
 import Text from '@/components/typography/Text';
 import H2 from '@/components/typography/H2';
@@ -121,3 +121,4 @@ export default function TextBlock() {
         </section>
     );
 }
+ */
