@@ -11,9 +11,13 @@ const SchienenfahrzeugeItem = ({ blok }) => {
         >
             <img className="w-full" src={blok?.image.filename} alt="Train" />
             <div className="p-4 lg:p-6 lg:pb-6">
-                <small className="text-greySolid-600 flex mb-2">
-                    {blok?.tag}
-                </small>
+                {blok.tag ? (
+                    <small className="text-greySolid-600 flex mb-2">
+                        {blok?.tag}
+                    </small>
+                ) : (
+                    ''
+                )}
                 <div className="flex flex-row items-center justify-between">
                     <H3 styles="max-lg:mb-0 lg:mb-0.5">{blok?.title}</H3>
                     <a className="" href={blok?.link.url}>
