@@ -3,20 +3,27 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
 import H2 from '../typography/H2';
+
+// 20 - Level
+// 25 - Arbeitsort
+// 10 - Berufsfelt
+const filters = { '10': '', '20': '', '25': '', year: '' };
+
 const ProspectiveCareer = ({ blok }) => {
 
     const [jobs, setJobs] = useState([]);
     const [attributes, setAttributes] = useState([]);
+    const [selectedOptions, setSelectedOptions] = useState(filters);
 
-    const getJobs = async () => {
+    const getJobs = async (filter = '') => {
 
-        const url = 'api/prospective-jobs';
+        const url = `api/prospective-jobs?filter=${filter}`;
 
-        const checkConnection = await fetch(url);
+        const checkConnection = await fetch(url, filters);
 
         const data = await checkConnection.json()
 
-        setJobs(data.message.jobs)
+        setJobs(data?.message?.jobs || [])
 
     };
     const getAttributes = async () => {
@@ -28,9 +35,10 @@ const ProspectiveCareer = ({ blok }) => {
         const attributes = await checkConnection.json()
 
         const selectAttributes = {}
+        console.log("attributes", attributes)
 
-        attributes.attributes.attributes.map(item => {
-            selectAttributes[item.id] = { values: item.values, name: name }
+        attributes?.attributes?.map(item => {
+            selectAttributes[item.id] = { values: item.values, name }
         })
 
         setAttributes(selectAttributes)
@@ -41,6 +49,27 @@ const ProspectiveCareer = ({ blok }) => {
         getAttributes()
 
     }, [])
+
+
+    const filterJobs = (e, typeFilter) => {
+        const newSelectedOptions = { ...selectedOptions };
+        newSelectedOptions[typeFilter] = e.target.value;
+        setSelectedOptions(newSelectedOptions);
+
+        let filtersString = ''
+
+        Object.keys(newSelectedOptions).map((key) => {
+            if (newSelectedOptions[key]) {
+                if (filtersString.length) {
+                    filtersString += `,`
+                }
+                filtersString += `${key}:${newSelectedOptions[key]}`;
+            }
+        })
+        console.log(filtersString)
+        getJobs(filtersString)
+    }
+
     return (
         <section className="mt-12" {...storyblokEditable(blok)}>
             <SmallWidth>
@@ -61,7 +90,7 @@ const ProspectiveCareer = ({ blok }) => {
 
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            // onChange={(e) => filterArticles(e, 'country')}
+                                onChange={(e) => filterJobs(e, '10')}
                             >
                                 <option value="">
                                     Berufsfeld
@@ -73,15 +102,6 @@ const ProspectiveCareer = ({ blok }) => {
                                 })}
 
                             </select>
-                            {/* <select
-                                id="countries"
-                                className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            >
-                                <option selected>Alle</option>
-                                <option value="US">Engineering</option>
-                                <option value="CA">Logistik</option>
-                                <option value="FR">Produktion</option>
-                            </select> */}
                         </div>
                         <div className="grid col-span-6">
                             <label
@@ -91,14 +111,18 @@ const ProspectiveCareer = ({ blok }) => {
                                 Level
                             </label>
                             <select
-                                id="countries"
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                onChange={(e) => filterJobs(e, '20')}
                             >
-                                <option selected>Alle</option>
-                                <option value="US">Lernende</option>
-                                <option value="CA">Praktikanten</option>
-                                <option value="FR">Berufserfahrene</option>
-                                <option value="FR">Führungsfunktion</option>
+                                <option value="">
+                                    Level
+                                </option>
+                                {attributes["20"] && attributes["20"]["values"] && Object.keys(attributes["20"]["values"]).map((key) => {
+                                    return <option key={key} value={key}>
+                                        {attributes["20"]["values"][key]}
+                                    </option>
+                                })}
+
                             </select>
                         </div>
                     </div>
@@ -111,12 +135,18 @@ const ProspectiveCareer = ({ blok }) => {
                                 Arbeitsort
                             </label>
                             <select
-                                id="countries"
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                onChange={(e) => filterJobs(e, '25')}
                             >
-                                <option selected>Alle</option>
-                                <option value="US">Schweiz</option>
-                                <option value="CA">Deutschland</option>
+                                <option value="">
+                                    Alle
+                                </option>
+                                {attributes["25"] && attributes["25"]["values"] && Object.keys(attributes["25"]["values"]).map((key) => {
+                                    return <option key={key} value={key}>
+                                        {attributes["25"]["values"][key]}
+                                    </option>
+                                })}
+
                             </select>
                         </div>
                         <div className="grid col-span-6">
