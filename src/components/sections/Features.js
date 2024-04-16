@@ -1,4 +1,4 @@
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../../components/typography/H3';
 import ContentWidth from '../layouts/ContentWidth';
 
@@ -6,16 +6,20 @@ const Features = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-24 sm:pb-24"
+            className="bg-white py-16 lg:py-24"
         >
             <ContentWidth>
-                <div className="col-span-12  max-w-full mx-auto bg-white">
+                <div className="col-span-12 max-w-full mx-auto bg-white">
                     <div className="mb-10 tracking-tight dark:text-white ">
                         <H3>{blok?.title}</H3>
                     </div>
-                    <ul className="flex items-center justify-center flex-col gap-8 sm:gap-12 md:gap-16 md:flex-row">
-                        <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
-                            <img src={blok?.image_1.filename} alt="Image" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                        <div className="flex flex-col justify-center items-center md:items-start ">
+                            <img
+                                src={blok?.image_1.filename}
+                                alt="Image"
+                                className="w-full md:w-auto h-[320px] object-cover"
+                            />
                             <a
                                 href={blok?.link_1}
                                 className="flex items-center gap-2 text-2xl font-bold mt-4"
@@ -34,11 +38,15 @@ const Features = ({ blok }) => {
                                     />
                                 </svg>
                             </a>
-                        </li>
-                        <li className="w-full md:w-1/2 sm:w-full lg:w-1/2">
-                            <img src={blok?.image_2.filename} alt="Image" />
+                        </div>
+                        <div className="flex flex-col justify-center items-center md:items-start ">
+                            <img
+                                src={blok?.image_2.filename}
+                                alt="Image"
+                                className="w-full md:w-auto h-[320px] object-cover"
+                            />
                             <a
-                                href={blok?.link_1}
+                                href={blok?.link_2}
                                 className="flex items-center gap-2 text-2xl font-bold mt-4"
                             >
                                 {blok?.text_2}
@@ -55,8 +63,8 @@ const Features = ({ blok }) => {
                                     />
                                 </svg>
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </ContentWidth>
         </section>

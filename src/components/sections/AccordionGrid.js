@@ -5,9 +5,9 @@ import H2 from '../typography/H2';
 
 const AccordionGrid = ({ blok }) => {
     return (
-        <section className="bg-white dark:bg-gray-900">
+        <section className="bg-white dark:bg-gray-900 py-16 lg:py-24">
             <SmallWidth>
-                <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <div className="mx-auto max-w-screen-xl ">
                     <H2>{blok?.title}</H2>
                     <p className="my-6">{blok?.text}</p>
 

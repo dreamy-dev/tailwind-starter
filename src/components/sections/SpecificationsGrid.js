@@ -6,7 +6,7 @@ import H4 from '../typography/H4';
 export default function SpecificationsGrid({ blok }) {
     return (
         <section
-            className="bg-white py-24 sm:py-32"
+            className="bg-white py-16 lg:py-24"
             {...storyblokEditable(blok)}
         >
             <ContentWidth>

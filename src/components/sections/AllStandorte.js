@@ -15,7 +15,7 @@ function AllStandorte({ blok }) {
 
     const countryDropdown = (
         <select
-            className=" px-4 py-2 text-base border block"
+            className="w-full px-4 py-2 text-base border block"
             onChange={(e) => handleFilterChange(e, 'country')}
             value={selectedOptions.country}
         >
@@ -30,7 +30,7 @@ function AllStandorte({ blok }) {
 
     const categoryDropdown = (
         <select
-            className=" px-4 py-2 text-base border block"
+            className="w-full px-4 py-2 text-base border block"
             onChange={(e) => handleFilterChange(e, 'category')}
             value={selectedOptions.category}
         >
@@ -92,12 +92,17 @@ function AllStandorte({ blok }) {
 
     return (
         <ContentWidth {...storyblokEditable(blok)}>
-            <div className="col-span-12 flex flex-col items-center justify-center pb-4 space-y-3 md:pb-0 md:mt-4 dark:bg-gray-800 md:flex-row md:space-y-0 md:space-x-4">
-                <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
-                    <li className="mb-4 mr-2 lg:mr-4">{countryDropdown}</li>
-                    <li className="mb-4 mr-2 lg:mr-4"> {categoryDropdown}</li>
-                    <li className="mb-4 mr-2 lg:mr-4">
-                        <div className="relative">
+            <div className="col-span-12 mt-12 ">
+                <ul className="flex flex-col md:flex-row gap-8 text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
+                    <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
+                        {countryDropdown}
+                    </li>
+                    <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
+                        {' '}
+                        {categoryDropdown}
+                    </li>
+                    <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
+                        <div className="relative w-full">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg
                                     className="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -116,7 +121,7 @@ function AllStandorte({ blok }) {
                                 </svg>
                             </div>
                             <input
-                                className="inline-block px-8 py-2 text-base border hover:text-gray-900 hover:bg-gray-100"
+                                className="w-full inline-block px-8 py-2 text-base border hover:text-gray-900 hover:bg-gray-100"
                                 placeholder={blok.text_search}
                                 onChange={handleSearchChange}
                             />

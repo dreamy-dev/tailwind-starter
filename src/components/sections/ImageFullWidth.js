@@ -4,7 +4,7 @@ import FullWidth from '../layouts/FullWidth';
 
 export default function ImageFullWidth({ blok }) {
     return (
-        <section {...storyblokEditable(blok)}>
+        <section {...storyblokEditable(blok)} className='py-16 lg:py-24'>
             <FullWidth>
                 <div className="col-span-12">
                     <img
