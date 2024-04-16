@@ -7,7 +7,7 @@ export default function Quote({ blok }) {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white pb-5 lg:py-24"
+            className="bg-white py-16 lg:py-24"
         >
             <SmallWidth>
                 <figure className="max-w-screen-lg mx-auto">

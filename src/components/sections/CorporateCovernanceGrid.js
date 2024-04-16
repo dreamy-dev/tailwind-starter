@@ -6,17 +6,17 @@ import Text from '../typography/Text';
 
 const CorporateGorvernanceGrid = ({ blok }) => {
     return (
-        <section className="bg-white dark:bg-gray-900 py-24">
+        <section className="bg-white dark:bg-gray-900 py-16 lg:py-24">
             <SuperSmallWidth>
-                <div className="">
-                    <div className="mx-auto text-center mb-2 lg:mb-4">
+            
+                    <div className="col-span-12 mx-auto text-center mb-2 lg:mb-4">
                         <H2>{blok?.title}</H2>
                     </div>
                     <div className="mx-auto text-left mb-8 lg:mb-16">
                         <Text>{blok?.text}</Text>
                     </div>
                     <div
-                        className="flex lg:flex-row gap-8 xl:flex-nowrap flex-wrap flex-col justify-center items-center"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"
                         {...storyblokEditable(blok)}
                     >
                         {blok?.teaserCards.map((nestedBlok) => (
@@ -26,7 +26,7 @@ const CorporateGorvernanceGrid = ({ blok }) => {
                             />
                         ))}
                     </div>
-                </div>
+            
             </SuperSmallWidth>
         </section>
     );

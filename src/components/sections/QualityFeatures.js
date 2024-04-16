@@ -6,7 +6,7 @@ import ContentWidth from '../layouts/ContentWidth';
 const QualityFeatures = ({ features, mainTitle }) => {
     return (
         <>
-            <section className="py-24 bg-stadlergradient">
+            <section className="py-16 lg:py-24 bg-stadlergradient">
                 <ContentWidth>
                     <div className="col-span-12 max-w-full mx-auto">
                         <div className="text-white">

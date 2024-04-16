@@ -5,7 +5,7 @@ import H2 from '../typography/H2';
 
 const QualityFeatureGrid = ({ blok }) => {
     return (
-        <section className="py-24 bg-stadlergradient">
+        <section className="py-16 lg:py-24 bg-stadlergradient">
             <ContentWidth>
                 <div className="col-span-12 max-w-full">
                     <div className="text-white item-start">
