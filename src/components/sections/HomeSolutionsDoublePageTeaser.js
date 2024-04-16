@@ -16,7 +16,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <a
                                     href={blok?.link_1}
-                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-5"
+                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-4 lg:mb-0"
                                 >
                                     <div className="text-4xl">
                                         <H2 styles="!mb-0 lg:!mb-2">
@@ -39,7 +39,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <a
                                     href={blok?.link_2}
-                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-5"
+                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-0"
                                 >
                                     <div className="">
                                         <H2 styles="!mb-0 lg:!mb-2">

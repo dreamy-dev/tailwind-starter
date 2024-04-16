@@ -8,14 +8,14 @@ export default function Map({ blok }) {
     return (
         <section {...storyblokEditable(blok)}>
             <FullWidth>
-                <div className="col-span-12 w-full bg-white pb-5 lg:py-24">
+                <div className="col-span-12 w-full bg-white py-16 lg:py-24">
                     <SmallWidth>
                         <div className="max-w-4xl mx-auto text-center mb-2 text-4xl font-bold">
                             <H2>{blok.title}</H2>
                         </div>
                     </SmallWidth>
-                    <div className="px-6 my-24 lg:px-8">
-                        <dl className="grid grid-cols-1 gap-x-8 gap-y-12 lg:gap-y-24 text-center lg:grid-cols-4">
+                    <div className="px-6 mb-16 lg:my-24 lg:px-8">
+                        <dl className="grid grid-cols-1 gap-x-8 gap-y-10 lg:gap-y-24 text-center lg:grid-cols-4">
                             {blok.facts_figures_block.map((nestedBlok) => (
                                 <StoryblokComponent
                                     blok={nestedBlok}
