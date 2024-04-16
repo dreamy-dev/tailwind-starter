@@ -217,7 +217,7 @@ storyblokInit({
         'single-location-wrapper': AccordionLocations,
         'job-overview': JobOverview,
         'signup-mailchimp': MailchimpEmbed,
-        'simple_container_wrapper': SimpleContainerWrapper,
+        simple_container_wrapper: SimpleContainerWrapper,
     },
 });
 
