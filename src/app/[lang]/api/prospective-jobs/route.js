@@ -8,7 +8,10 @@ export async function GET(request) {
     if (request.nextUrl.searchParams.get('filter')) {
         url += `&f=${request.nextUrl.searchParams.get('filter')}`
     }
-    console.log("filters", request.nextUrl.searchParams.get('filter'), url)
+    if (request.nextUrl.searchParams.get('search')) {
+        url += `&q=${request.nextUrl.searchParams.get('search')}`
+    }
+    console.log("filters", request.nextUrl.searchParams.get('search'), url)
 
     try {
 
