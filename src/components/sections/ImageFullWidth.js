@@ -8,7 +8,7 @@ export default function ImageFullWidth({ blok }) {
             <FullWidth>
                 <div className="col-span-12">
                     <img
-                        className="aspect-[1/1] lg:aspect-[2/1] object-cover"
+                        className="lg:aspect-[2/1] object-cover"
                         width={'100%'}
                         src={blok?.image.filename}
                         alt="hero product image"

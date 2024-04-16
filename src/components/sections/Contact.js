@@ -33,14 +33,20 @@ const Contact = ({ blok }) => {
                                 <H4>{blok?.subtitle}</H4>
                             </div>
                             <div className="mb-2 flex items-center">
-                                <PhoneIcon className="fill-white w-4 h-4" />
+                                <PhoneIcon
+                                    color="#fff"
+                                    className="fill-white w-4 h-4"
+                                />
                                 {/*  TODO: Add link? */}
                                 <span className="py-2 px-3">
                                     {blok?.phonenumber}
                                 </span>
                             </div>
                             <div className="flex items-center">
-                                <MailIcon className="fill-white w-4 h-4" />
+                                <MailIcon
+                                    color="#fff"
+                                    className="fill-white w-4 h-4"
+                                />
                                 <a
                                     type="email"
                                     className="bg-transparent border-none"
