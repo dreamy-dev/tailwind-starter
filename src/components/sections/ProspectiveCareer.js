@@ -4,10 +4,12 @@ import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
 import H2 from '../typography/H2';
 import { ArrowForward } from '../icons/ArrowForward';
+import { Loader } from '../elements/Loader';
 
 // 20 - Level
 // 25 - Arbeitsort
 // 10 - Berufsfelt
+
 const filters = { '10': '', '20': '', '25': '', '25_': '' };
 
 const ProspectiveCareer = ({ blok }) => {
@@ -17,14 +19,17 @@ const ProspectiveCareer = ({ blok }) => {
     const [attributes, setAttributes] = useState([]);
     const [dependentField, setDependentField] = useState('');
     const [selectedOptions, setSelectedOptions] = useState(filters);
+    const [isDataLoading, setIsDataLoading] = useState(true);
 
     const getJobs = async (filter = '', search = '') => {
+        setIsDataLoading(true);
 
         const url = `api/prospective-jobs?filter=${filter}&search=${search}`;
 
         const checkConnection = await fetch(url, filters);
 
         const data = await checkConnection.json()
+        setIsDataLoading(false);
 
         setJobs(data?.message?.jobs || [])
 
@@ -82,7 +87,7 @@ const ProspectiveCareer = ({ blok }) => {
     }
 
 
-    const filterJobs = (e, typeFilter) => {
+    const filterJobs = async (e, typeFilter) => {
         const newSelectedOptions = { ...selectedOptions };
         newSelectedOptions[typeFilter] = e.target.value;
         setSelectedOptions(newSelectedOptions);
@@ -262,7 +267,7 @@ const ProspectiveCareer = ({ blok }) => {
                 </div>
                 <div className="grid col-span-12">
                     <div className="divide-y">
-                        {jobs?.map((item, key) => (
+                        {isDataLoading ? <Loader /> : jobs?.map((item, key) => (
                             <a key={key} href={item.links.directlink} target="_blank" className="block py-4 hover:cursor-pointer hover:text-primary">
                                 <H4>{item.title}</H4>
                                 <div className="flex">
