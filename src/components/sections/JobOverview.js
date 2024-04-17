@@ -5,6 +5,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import Text from '../typography/Text';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
+import H3 from '../typography/H3';
 import H2 from '../typography/H2';
 import Button from '../elements/ButtonSecondary';
 import ButtonPrimary from '../elements/ButtonPrimary';
@@ -65,7 +66,8 @@ const JobOverview = ({ blok }) => (
                 </div>
             </div>
             <div className="mt-8">
-                <H2>Übersicht der offenen Stellen</H2>
+                <H2>Arbeiten bei Stadler</H2>
+                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus erat sem, finibus nec sem at, tempus feugiat est. In bibendum pellentesque mauris egestas ornare. Phasellus dictum turpis nec tempor hendrerit. </Text>
             </div>
             <form className="grid col-span-12 grid-cols-12 my-8 mb-12">
                 <div className="grid col-span-12">
@@ -106,7 +108,7 @@ const JobOverview = ({ blok }) => (
                             for="countries"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         >
-                            Level
+                            Einstiegslevel
                         </label>
                         <select
                             id="countries"
@@ -162,6 +164,8 @@ const JobOverview = ({ blok }) => (
             <hr className="h-px my-12 bg-gray-200 border-0"></hr>
 
             <div className="grid col-span-12">
+
+                <H3>Arbeiten bei Stadler</H3>
                 <div className="divide-y">
                     {jobs.map((item) => (
                         <div className="py-4 hover:cursor-pointer hover:text-primary">
