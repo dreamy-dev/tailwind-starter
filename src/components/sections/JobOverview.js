@@ -165,7 +165,7 @@ const JobOverview = ({ blok }) => (
 
             <div className="grid col-span-12">
 
-                <H3>Arbeiten bei Stadler</H3>
+                <H3>Offene Stellen</H3>
                 <div className="divide-y">
                     {jobs.map((item) => (
                         <div className="py-4 hover:cursor-pointer hover:text-primary">
