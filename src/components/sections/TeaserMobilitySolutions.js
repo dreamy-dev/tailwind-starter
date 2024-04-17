@@ -9,17 +9,17 @@ export default function TeaserMobilitySolutions({ blok }) {
         <section className="pt-24 pb-12 dark:bg-gray-900 ">
             <ContentWidth>
                 <div className="col-span-12 max-w-4xl lg:mx-auto">
-                    <H2 styles="text-center leading-tight text-white break-words">
-                        {blok.title}
-                    </H2>
-                    <Text styles="my-8 text-xl text-center text-white break-words">
-                        {blok.lead}
-                    </Text>
+                    <div className="text-center leading-tight text-white break-words">
+                        <H2>{blok.title}</H2>
+                    </div>
+                    <div className="my-8 text-xl text-center text-white break-words">
+                        <Text>{blok.lead}</Text>
+                    </div>
                     <Button
                         position="center"
                         textColorClass="text-white"
                         href={blok.cta_link.href}
-                        styles="mb-12"
+                        styles="my-12"
                         iconAfter={
                             <svg
                                 width="16"

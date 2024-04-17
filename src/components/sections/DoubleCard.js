@@ -4,7 +4,7 @@ import Text from '../typography/Text';
 
 export default function DoubleCard() {
     return (
-        <section className="pb-24 sm:py-24">
+        <section className="py-16 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
                     <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
@@ -20,17 +20,17 @@ export default function DoubleCard() {
                                     href="#"
                                     className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
                                 >
-                                    <H2
-                                        resetStyles={true}
-                                        styles="mb-4 text-4xl font-bold"
-                                    >
-                                        Signalling
-                                    </H2>
-                                    <Text styles="text-greyBrighten-800 mb-4">
-                                        Massgeschneiderte Signalling-Lösungen
-                                        für kompromisslose Sicherheit und
-                                        Pünktlichkeit auf jeder Strecke.
-                                    </Text>
+                                    <div className="mb-4 text-4xl font-bold">
+                                        <H2>Signalling</H2>
+                                    </div>
+                                    <div className="text-greyBrighten-800 mb-4">
+                                        <Text>
+                                            Massgeschneiderte
+                                            Signalling-Lösungen für
+                                            kompromisslose Sicherheit und
+                                            Pünktlichkeit auf jeder Strecke.
+                                        </Text>
+                                    </div>
                                     <svg
                                         width="20"
                                         height="20"
@@ -68,17 +68,17 @@ export default function DoubleCard() {
                                     href="#"
                                     className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-white mb-5"
                                 >
-                                    <H2
-                                        resetStyles={true}
-                                        styles="mb-4 text-4xl font-bold"
-                                    >
-                                        Service
-                                    </H2>
-                                    <Text styles="text-greyBrighten-800 mb-4">
-                                        Regelmässige Service für Gesamtlösungen
-                                        und Schienenfahrzeuge garantieren
-                                        zuverlässige Spitzenleistung.
-                                    </Text>
+                                    <div className="mb-4 text-4xl font-bold">
+                                        <H2>Service</H2>
+                                    </div>
+                                    <div className="text-greyBrighten-800 mb-4">
+                                        <Text>
+                                            Regelmässige Service für
+                                            Gesamtlösungen und Schienenfahrzeuge
+                                            garantieren zuverlässige
+                                            Spitzenleistung.
+                                        </Text>
+                                    </div>
 
                                     <svg
                                         width="20"

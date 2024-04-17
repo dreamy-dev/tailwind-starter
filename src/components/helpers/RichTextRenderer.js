@@ -94,7 +94,7 @@ const RichTextRenderer = (props) => {
                                 return <H1>{children}</H1>;
                             case 2:
                                 return (
-                                    <div className="mt-12">
+                                    <div >
                                         <H2>{children}</H2>
                                     </div>
                                 );

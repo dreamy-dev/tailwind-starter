@@ -8,18 +8,13 @@ export default function Map({ blok }) {
     return (
         <section {...storyblokEditable(blok)}>
             <FullWidth>
-                <div className="col-span-12 w-full bg-white pb-5 lg:pb-24">
+                <div className="col-span-12 w-full bg-white pb-5 lg:py-24">
                     <SmallWidth>
-                        <div className="max-w-4xl mx-auto">
-                            <H2
-                                styles="text-center mb-2 text-4xl font-bold "
-                                resetStyles={true}
-                            >
-                                {blok.title}
-                            </H2>
+                        <div className="max-w-4xl mx-auto text-center mb-2 text-4xl font-bold">
+                            <H2>{blok.title}</H2>
                         </div>
                     </SmallWidth>
-                    <div className="px-6 mb-24 lg:px-8">
+                    <div className="px-6 my-24 lg:px-8">
                         <dl className="grid grid-cols-1 gap-x-8 gap-y-12 lg:gap-y-24 text-center lg:grid-cols-4">
                             {blok.facts_figures_block.map((nestedBlok) => (
                                 <StoryblokComponent
@@ -37,7 +32,7 @@ export default function Map({ blok }) {
                                 alt=""
                             />
                         </div>
-                        <div className="pl-6 lg:pl-20 md:flex flex-column py-8 static w-full">
+                        <div className="pl-6 lg:pl-20 md:flex flex-column pt-8 static w-full">
                             <div className="md:w-1/3 w-full mb-8 flex-column justify-start items-start">
                                 <div className="flex justify-start items-center">
                                     <div className="mr-3 w-3 h-3 bg-map-dark rounded-full"></div>

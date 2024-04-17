@@ -15,14 +15,14 @@ const HeroCareer = ({ blok }) => {
             className="bg-no-repeat bg-cover bg-left bg-gray-400 bg-blend-multiply"
         >
             <SmallWidth>
-                <div className="col-span-12 relative py-24 px-4 mx-auto max-w-screen-xl text-white lg:pt-64 lg:pb-12 xl:px-0 z-1">
+                <div className="py-16 lg:py-24 col-span-12 relative px-4 mx-auto max-w-screen-xl text-white lg:pt-64 lg:pb-12 xl:px-0 z-1">
                     <div className="mb-6 max-w-screen-md lg:mb-0 text-white">
                         <br />
                         <br />
                         <H1>{blok?.title}</H1>
-                        <Text styles="my-8 text-white lg:mb-8 text-xl">
-                            {blok?.subheading}
-                        </Text>
+                        <div className="my-8 lg:mb-8">
+                            <Text>{blok?.subheading}</Text>
+                        </div>
                     </div>
                     <form
                         action="#"

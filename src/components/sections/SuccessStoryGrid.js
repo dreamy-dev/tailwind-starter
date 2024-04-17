@@ -40,7 +40,7 @@ const SuccessStoryGrid = ({ blok }) => {
     };
 
     return (
-        <section className="py-5 lg:py-24 bg-white overflow-hidden">
+        <section className="py-16 lg:py-24 bg-white overflow-hidden">
             <ContentWidth>
                 <div className="col-span-12">
                     <div className="relative mb-4">
@@ -53,7 +53,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                     {blok.success_stories.map((_, idx) => (
                                         <button
                                             key={idx}
-                                            onClick={() => setCurrent(idx)}
+                                            /* onClick={() => setCurrent(idx)} */
                                         >
                                             <div
                                                 className={` w-8 h-1 ${
@@ -61,6 +61,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                                         ? 'bg-primary'
                                                         : 'bg-greyDarken-100'
                                                 }`}
+                                                key={idx}
                                             ></div>
                                         </button>
                                     ))}
@@ -79,14 +80,10 @@ const SuccessStoryGrid = ({ blok }) => {
                                 <motion.div className="flex items-stretch gap-8 flex-nowrap overflow-hidden  ml-[-2px] pl-[2px] my-[-32px] py-[32px] pr-[2px] mr-[-2px]">
                                     {blok.success_stories.map(
                                         (nestedBlok, idx) => {
-                                            nestedBlok.content.slug =
-                                                nestedBlok.slug;
                                             return (
                                                 <motion.div
                                                     {...storyblokEditable(blok)}
-                                                    key={
-                                                        nestedBlok.content._uid
-                                                    }
+                                                    key={nestedBlok.slug}
                                                     className="min-w-[100%] relative lg:min-w-[43%] md:flex-row  testimonial-motion-div shadow-md shadow-greyDarken-300"
                                                     animate={{
                                                         translateX: `calc(-${current * 100}% - ${current * 2}rem)`,
@@ -98,6 +95,10 @@ const SuccessStoryGrid = ({ blok }) => {
                                                     }}
                                                 >
                                                     <img
+                                                        key={
+                                                            nestedBlok.slug +
+                                                            ' image'
+                                                        }
                                                         className="w-full max-h-[430px] object-cover"
                                                         src={
                                                             nestedBlok.content
@@ -105,7 +106,10 @@ const SuccessStoryGrid = ({ blok }) => {
                                                         }
                                                         alt=""
                                                     />
-                                                    <div className="p-5 ">
+                                                    <div
+                                                        className="p-5 "
+                                                        key={nestedBlok.slug}
+                                                    >
                                                         <div className="mb-4">
                                                             <H3>
                                                                 {
@@ -149,7 +153,7 @@ const SuccessStoryGrid = ({ blok }) => {
                     <div className="relative lg:pl-20  flex flex-row w-full mt-8 justify-beetween items-center ">
                         <div className=" flex flex-row gap-4 justify-center items-center w-full">
                             <motion.div
-                                className=" flex flex-row gap-4 z-10 "
+                                className="flex flex-row gap-4 z-10 "
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}

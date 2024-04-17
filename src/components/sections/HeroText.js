@@ -8,27 +8,29 @@ import Lead from '../../components/typography/Lead';
 import Breadcrumbs from './Breadcrumbs';
 
 const HeroText = ({ blok }) => {
-  return (
-    <section
-      {...storyblokEditable(blok)}
-      className="bg-white dark:bg-gray-900 py-24"
-    >
-      <SmallWidth>
-        <Breadcrumbs />
-        <H1>{blok?.title}</H1>
-        <Lead className="richtext">{blok?.lead}</Lead>
-        {blok?.showbutton ? (
-          <ButtonPrimary
-            position="left"
-            buttonText={blok?.buttontext}
-            href={blok?.buttonlink.url}
-          />
-        ) : (
-          ''
-        )}
-      </SmallWidth>
-    </section>
-  );
+    return (
+        <section
+            {...storyblokEditable(blok)}
+            className="bg-white dark:bg-gray-900 py-16 lg:py-24"
+        >
+            <SmallWidth>
+                <Breadcrumbs />
+                <H1>{blok?.title}</H1>
+                <Lead className="richtext">{blok?.lead}</Lead>
+                {blok?.showbutton ? (
+                    <div className='mb-8 lg:mb-12'>
+                        <ButtonPrimary
+                            position="left"
+                            buttonText={blok?.buttontext}
+                            href={blok?.buttonlink.url}
+                        />
+                    </div>
+                ) : (
+                    ''
+                )}
+            </SmallWidth>
+        </section>
+    );
 };
 
 export default HeroText;

@@ -135,7 +135,7 @@ const TestimonialsCarousel = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="py-24 bg-primarySolid-50"
+            className="py-16 lg:py-24 bg-primarySolid-50"
         >
             <ContentWidth>
                 <div className="col-span-12 max-w-full 2xl:pl-0">

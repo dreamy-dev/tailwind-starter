@@ -11,9 +11,9 @@ const QualityFeatureItem = ({ blok }) => (
             </div>
             <div className="text-white">
                 <H4>{blok?.title}</H4>
-                <Text styles="mt-2 text-xl font-normal sm:text-lg dark:text-gray-400">
-                    {blok?.text}
-                </Text>
+                <div className="text-white mt-2 ">
+                    <Text styles="">{blok?.text}</Text>
+                </div>
             </div>
         </div>
     </div>

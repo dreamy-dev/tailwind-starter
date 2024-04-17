@@ -1,11 +1,16 @@
 'use client';
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import {
+    storyblokEditable,
+    getStoryblokApi,
+    StoryblokComponent,
+} from '@storyblok/react/rsc';
 import React, { useState, useEffect, useRef } from 'react';
 import IconNav from '../elements/IconNav';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from '../elements/LanguageSwitcher';
+import ModalSearch from './ModalSearch';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -66,6 +71,8 @@ const navigationMain = {
 };
 
 const Header = ({ blok }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     //const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -88,14 +95,6 @@ const Header = ({ blok }) => {
     const closeSolutionsSubmenu = () => {
         setIsSolutionsSubmenuOpen(false);
     };
-
-    // const toggleSubmenu = () => {
-    //   setIsSubmenuOpen((prev) => !prev);
-    // };
-
-    // const closeSubmenu = () => {
-    //   setIsSubmenuOpen(false);
-    // };
 
     const toggleMainMenu = () => {
         setIsOpen((prev) => !prev);
@@ -154,11 +153,20 @@ const Header = ({ blok }) => {
             };
         }
     });
+    // Modal logit
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <header
             {...storyblokEditable(blok)}
-            className={`bg-white z-20 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
+            className={` bg-white z-10 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
                 isMobileNavOpen && isNarrowScreen
                     ? 'fixed w-screen h-screen'
                     : ''
@@ -233,7 +241,7 @@ const Header = ({ blok }) => {
                     </section>
                     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
                         <ContentWidth>
-                            <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
+                            <div className=" bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                                 <div className="hidden lg:block">
                                     <Link
                                         href="/"
@@ -248,7 +256,7 @@ const Header = ({ blok }) => {
                                 </div>
                                 <div
                                     ref={menuRef}
-                                    className="w-full lg:w-auto"
+                                    className=" w-full lg:w-auto"
                                     id="navbar-solid-bg"
                                 >
                                     <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
@@ -336,7 +344,7 @@ const Header = ({ blok }) => {
                                                             }
                                                             style={{
                                                                 padding: '10px',
-                                                                zIndex: '99',
+                                                                zIndex: '30',
                                                                 width: '100%',
                                                                 left: '0',
                                                                 top: '63px',
@@ -467,16 +475,28 @@ const Header = ({ blok }) => {
                                             </li>
                                         ))}
 
-                                        <li className="hidden lg:block">
-                                            <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
-                                                <img
-                                                    className="w-5 h-5"
-                                                    src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                    alt=""
-                                                />
+                                        <li className="lg:relative lg:block z-20">
+                                            <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
+                                                <button
+                                                    onClick={openModal}
+                                                    data-modal-target="default-modal"
+                                                    data-modal-toggle="default-modal"
+                                                    type="button"
+                                                >
+                                                    <img
+                                                        className="w-5 h-5"
+                                                        src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                                                        alt=""
+                                                    />
+                                                </button>
                                             </div>
+                                            <ModalSearch
+                                                isModalOpen={isModalOpen}
+                                                closeModal={closeModal}
+                                            />
                                         </li>
                                     </ul>
+
                                     <div className="border-b lg:border-none"></div>
                                 </div>
                             </div>

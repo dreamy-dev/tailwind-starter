@@ -18,7 +18,9 @@ const ProductCard = ({ blok }) => (
                 href="#"
                 className="flex flex-col items-start  gap-2 text-xl font-bold mt-5 text-white mb-5"
             >
-                <Text styles="text-black mb-4">{blok.text}</Text>
+                <div className=" mb-4">
+                    <Text>{blok.text}</Text>
+                </div>
             </a>
         </div>
     </li>
@@ -42,7 +44,7 @@ const ProductCardsGrid = () => {
     // ];
 
     return (
-        <section className="py-24">
+        <section className="py-16 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
                     {/* <div className="mx-auto max-w-2xl mb-16 lg:mx-0">

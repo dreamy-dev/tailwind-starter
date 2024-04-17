@@ -7,17 +7,15 @@ import SmallWidth from '../layouts/SmallWidth';
 
 const TeaserImageRight = ({ blok }) => {
     return (
-        <section {...storyblokEditable(blok)} className="antialiased py-12">
+        <section {...storyblokEditable(blok)} className="py-16 lg:py-24">
             <SmallWidth>
                 <div className="grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
                     <div>
                         <div className="">
                             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-                                <div>
-                                    <H2>{blok?.title}</H2>
-                                    <Text styles="mt-4 text-xl font-normal text-gray-800 text-black">
-                                        {blok?.text}
-                                    </Text>
+                                <H2>{blok?.title}</H2>
+                                <div className="mt-4 text-xl">
+                                    <Text>{blok?.text}</Text>
                                 </div>
                                 <ButtonPrimary
                                     position="left"

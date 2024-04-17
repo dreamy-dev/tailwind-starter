@@ -7,8 +7,8 @@ import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
 
 const variantsLang = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 },
+    open: { opacity: 1, zIndex: 21 },
+    closed: { opacity: 0, zIndex: 10 },
 };
 
 const LanguageSwitcher = () => {
@@ -63,7 +63,7 @@ const LanguageSwitcher = () => {
             <motion.div
                 animate={isOpen ? 'open' : 'closed'}
                 variants={variantsLang}
-                className="lg:absolute lg:top-14 z-50 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
+                className="lg:absolute lg:top-14 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
                 id="language-dropdown"
             >
                 <ul className="py-1" role="none">

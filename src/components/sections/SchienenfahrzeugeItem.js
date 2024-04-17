@@ -7,7 +7,7 @@ const SchienenfahrzeugeItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="bg-white text-black flex flex-row lg:flex-col"
+            className="bg-white text-black flex flex-col"
         >
             <img className="w-full" src={blok?.image.filename} alt="Train" />
             <div className="p-6">
