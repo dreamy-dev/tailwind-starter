@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
+import H3 from '../typography/H3';
 import H2 from '../typography/H2';
+import Text from '../typography/Text';
 import { ArrowForward } from '../icons/ArrowForward';
 import { Loader } from '../elements/Loader';
 
@@ -27,7 +29,6 @@ const ProspectiveCareer = ({ blok }) => {
         const url = `api/prospective-jobs?filter=${filter}&search=${search}`;
 
         const checkConnection = await fetch(url, filters);
-
         const data = await checkConnection.json()
         setIsDataLoading(false);
 
@@ -39,7 +40,6 @@ const ProspectiveCareer = ({ blok }) => {
         const url = 'api/prospective-attributes';
 
         const checkConnection = await fetch(url);
-
         const attributes = await checkConnection.json()
 
         const selectAttributes = {}
@@ -48,7 +48,7 @@ const ProspectiveCareer = ({ blok }) => {
         attributes?.attributes?.map(item => {
             selectAttributes[item.id] = { values: item.values, name }
         })
-        console.log("selectAttributes", selectAttributes)
+        // console.log("selectAttributes", selectAttributes)
 
         setAttributes(selectAttributes)
 
@@ -83,7 +83,7 @@ const ProspectiveCareer = ({ blok }) => {
         if (e.target.value == "1098730" || e.target.value == "1098735") {
             setDependentField(`25_${e.target.value}`)
         }
-        console.log("setLocation", e)
+        // console.log("setLocation", e)
     }
 
 
@@ -102,7 +102,7 @@ const ProspectiveCareer = ({ blok }) => {
                 filtersString += `${key}:${newSelectedOptions[key]}`;
             }
         })
-        console.log(filtersString)
+
         if (search.length > 2) {
             getJobs(filtersString, search)
         } else {
@@ -119,50 +119,51 @@ const ProspectiveCareer = ({ blok }) => {
                         role="group"
                     >
                         <a
-                            href="#"
+                            href={blok.button_1.url}
                             type="button"
                             className="md:col-span-1 col-span-4 mb-4 flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50  hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                         >
-                            <p>Spontanbewerbung</p>
+                            {blok.button_1_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                         <a
-                            href="#"
+                            href={blok.button_2.url}
                             type="button"
                             className="md:col-span-1 col-span-4 mb-4 flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50 hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                         >
-                            <p>Personalvermittler</p>
+                            {blok.button_2_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                         <a
-                            href="#"
+                            href={blok.button_3.url}
                             type="button"
                             className="md:col-span-1 col-span-4 mb-4 flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50 hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                         >
-                            <p>Mein Profil</p>
+                            {blok.button_3_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                         <a
-                            href="#"
+                            href={blok.button_4.url}
                             type="button"
                             className="md:col-span-1 col-span-4 mb-4 flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50  hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                         >
-                            <p>Job-Abo</p>
+                            {blok.button_4_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                     </div>
                 </div>
                 <div className="mt-8">
-                    <H2>Übersicht der offenen Stellen</H2>
+                    <H2>{blok.title}</H2>
+                    <Text>{blok.description_text}</Text>
                 </div>
 
                 <div className="grid col-span-12 grid-cols-12 my-8 mb-12">
                     <div className="grid col-span-12">
                         <label
-                            for="search"
+                            htmlFor="search"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         >
-                            Suchbegriff
+                            {blok.search_input_label}
                         </label>
                         <input
                             type="text"
@@ -175,10 +176,10 @@ const ProspectiveCareer = ({ blok }) => {
                     <div className="grid col-span-12 grid-cols-12 gap-6 mt-4">
                         <div className="grid col-span-6">
                             <label
-                                for="countries"
+                                htmlFor="countries"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                                Berufsfeld
+                                {blok.select_1_label}
                             </label>
                             {/* {attributes["10"] && JSON.stringify(attributes["10"]["values"])} */}
 
@@ -187,7 +188,7 @@ const ProspectiveCareer = ({ blok }) => {
                                 onChange={(e) => filterJobs(e, '10')}
                             >
                                 <option value="">
-                                    Berufsfeld
+                                    {blok.select_1_placeholder}
                                 </option>
                                 {attributes["10"] && attributes["10"]["values"] && Object.keys(attributes["10"]["values"]).map((key) => {
                                     return <option key={key} value={key}>
@@ -199,17 +200,17 @@ const ProspectiveCareer = ({ blok }) => {
                         </div>
                         <div className="grid col-span-6">
                             <label
-                                for="countries"
+                                htmlFor="countries"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                                Level
+                                {blok.select_2_label}
                             </label>
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => filterJobs(e, '20')}
                             >
                                 <option value="">
-                                    Level
+                                    {blok.select_2_placeholder}
                                 </option>
                                 {attributes["20"] && attributes["20"]["values"] && Object.keys(attributes["20"]["values"]).map((key) => {
                                     return <option key={key} value={key}>
@@ -223,17 +224,17 @@ const ProspectiveCareer = ({ blok }) => {
                     <div className="grid col-span-12 grid-cols-12 gap-6 mt-4">
                         <div className="grid col-span-6">
                             <label
-                                for="countries"
+                                htmlFor="countries"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                                Arbeitsort
+                                {blok.select_3_label}
                             </label>
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => { filterJobs(e, '25'); setLocation(e, '25'); }}
                             >
                                 <option value="">
-                                    Alle
+                                    {blok.select_3_placeholder}
                                 </option>
                                 {attributes["25"] && attributes["25"]["values"] && Object.keys(attributes["25"]["values"]).map((key) => {
                                     return <option key={key} value={key}>
@@ -245,17 +246,19 @@ const ProspectiveCareer = ({ blok }) => {
                         </div>
                         <div className="grid col-span-6">
                             <label
-                                for="countries_disabled"
+                                htmlFor="countries_disabled"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                                Region / Land
+                                {blok.select_4_label}
                             </label>
                             <select
                                 disabled={!dependentField}
                                 id="countries_disabled"
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             >
-                                <option value="">None</option>
+                                <option value="">
+                                    {blok.select_4_placeholder}
+                                </option>
                                 {dependentField && attributes[dependentField] && attributes[dependentField]["values"] && Object.keys(attributes[dependentField]["values"]).map((key) => {
                                     return <option key={key} value={key}>
                                         {attributes[dependentField]["values"][key]}
@@ -266,6 +269,7 @@ const ProspectiveCareer = ({ blok }) => {
                     </div>
                 </div>
                 <div className="grid col-span-12">
+                    <H3>{blok.subtitle}</H3>
                     <div className="divide-y">
                         {isDataLoading ? <Loader /> : jobs?.map((item, key) => (
                             <a key={key} href={item.links.directlink} target="_blank" className="block py-4 hover:cursor-pointer hover:text-primary">
