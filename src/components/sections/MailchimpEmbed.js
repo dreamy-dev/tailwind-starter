@@ -107,7 +107,7 @@ export default function MailchimpEmbed({ blok }) {
                                     </div>
                                     <div className="mc-field-group">
                                         <label
-                                            for="mce-COMPANY"
+                                            for="mce-FIRMA"
                                             className="mb-2 text-sm font-medium"
                                         >
                                             {blok.company_label}{' '}
@@ -115,13 +115,13 @@ export default function MailchimpEmbed({ blok }) {
                                         </label>
                                         <input
                                             type="text"
-                                            name="COMPANY"
+                                            name="FIRMA"
                                             value={company}
                                             onChange={(e) =>
                                                 setCompany(e.target.value)
                                             }
                                             className="required text block p-3  w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                            id="mce-COMPANY"
+                                            id="mce-FIRMA"
                                             required=""
                                         />
                                     </div>
@@ -182,7 +182,7 @@ export default function MailchimpEmbed({ blok }) {
                             type="text/javascript"
                             src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
                         ></Script>
-                        <Script type="text/javascript">{`(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='COMPANY';ftypes[6]='text';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='MMERGE5';ftypes[5]='address';fnames[7]='MMERGE7';ftypes[7]='dropdown';}(jQuery));var $mcj = jQuery.noConflict(true);`}</Script>
+                        <Script type="text/javascript">{`(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='FIRMA';ftypes[6]='text';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='MMERGE5';ftypes[5]='address';fnames[7]='MMERGE7';ftypes[7]='dropdown';}(jQuery));var $mcj = jQuery.noConflict(true);`}</Script>
                     </div>
                 </div>
             </ContentWidth>
