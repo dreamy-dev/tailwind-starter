@@ -36,7 +36,7 @@ function ArticleHero({ block }) {
                     <Text>{DateFormatter(block?.date)}</Text>
                 </div>
             </div>
-            <div className="text-lg mt-12">
+            <div className="mt-12">
                 <Lead>{block?.lead}</Lead>
             </div>
             <img
