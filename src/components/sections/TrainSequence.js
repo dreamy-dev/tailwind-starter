@@ -74,7 +74,7 @@ const ImageSequence = ({ category }) => {
 
     // Progress Value Equal to the Progress from Slide 0 to SLide 1
     const singleSlideProgress =
-        1 / (150 / Math.abs(Number(category) - Number(prevCategoryNumber)));
+        1 / (100 / Math.abs(Number(category) - Number(prevCategoryNumber)));
 
     const changeCarouselPositions = (timeStamp) => {
         let count;
