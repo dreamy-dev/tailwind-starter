@@ -9,6 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 import FullWidth from '../layouts/FullWidth';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import ContentWidth from '../layouts/ContentWidth';
+import { ChevronRight } from '../icons/ChevronRight';
 
 const TestimonialMotionDiv = motion.div;
 

@@ -1,4 +1,4 @@
-'use client';
+/* 'use client';
 
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
@@ -101,3 +101,4 @@ const TeaserDownload = ({
     );
 };
 export default TeaserDownload;
+ */

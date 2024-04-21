@@ -11,7 +11,6 @@ const SolutionsGrid = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 ">
                     <H2>{blok?.title}</H2>
-
                     <div
                         {...storyblokEditable(blok)}
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"

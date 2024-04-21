@@ -2,6 +2,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
+import { ArrowForward } from '../icons/ArrowForward';
 
 const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (
@@ -26,11 +27,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                                     <div className="">
                                         <Text>{blok?.text_1}</Text>
                                     </div>
-                                    <img
-                                        className="w-5 h-5"
-                                        src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
-                                        alt=""
-                                    />
+                                    <ArrowForward styles="w-5 h-5 fill-white" />
                                 </a>
                             </div>
                         </li>
@@ -47,11 +44,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                                         </H2>
                                     </div>
                                     <Text>{blok?.text_2}</Text>
-                                    <img
-                                        className="w-5 h-5"
-                                        src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
-                                        alt=""
-                                    />
+                                    <ArrowForward styles="w-5 h-5 fill-white" />
                                 </a>
                             </div>
                         </li>

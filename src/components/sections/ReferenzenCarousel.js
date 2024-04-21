@@ -7,6 +7,8 @@ import { MotionConfig, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
+import { ChevronLeft } from '../icons/ChevronLeft';
+import { ChevronRight } from '../icons/ChevronRight';
 
 const TestimonialMotionDiv = motion.div;
 
@@ -289,38 +291,16 @@ const TestimonialsCarousel = ({ blok }) => {
                                 current={current}
                             />
                             <motion.div
-                                className=" flex flex-row gap-4 z-10 "
+                                className="flex flex-row gap-4 z-10 "
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
                                 <button onClick={onPrevClick}>
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 20 20"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
-                                            fill="#005893"
-                                        />
-                                    </svg>
+                                    <ChevronLeft styles="w-5 h-5 fill-primary" />
                                 </button>
                                 <button onClick={onNextClick}>
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 20 20"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                                            fill="#005893"
-                                        />
-                                    </svg>
+                                    <ChevronRight styles="w-5 h-5 fill-primary" />
                                 </button>
                             </motion.div>
                         </div>

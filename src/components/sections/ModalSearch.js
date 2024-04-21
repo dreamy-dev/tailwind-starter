@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
+import { SearchIcon } from '../icons/SearchIcon';
 
 const ModalSearch = ({ isModalOpen, closeModal }) => {
     const [articles, setArticles] = useState([]);
@@ -29,59 +30,63 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
         }
     };
 
-const getArticles = async (filterSearchRequest = {}) => {
-    const slug = '/';
-    const storyblokApi = getStoryblokApi();
+    const getArticles = async (filterSearchRequest = {}) => {
+        const slug = '/';
+        const storyblokApi = getStoryblokApi();
 
-    // Only fetch articles if there is a search term
-    if (search.length > 0) {
-        const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-            ...apiRequest,
-            ...filterSearchRequest,
-        });
-        console.log(data, 'data');
+        // Only fetch articles if there is a search term
+        if (search.length > 0) {
+            const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+                ...apiRequest,
+                ...filterSearchRequest,
+            });
+            console.log(data, 'data');
 
-        const filteredArticles = data.stories.filter((article) => {
-            // Exclude if 'full_slug' starts with "categories/" or contains "/categories/"
-            return (
-                !article.full_slug.startsWith('categories/') &&
-                !article.full_slug.includes('/categories/')
+            const filteredArticles = data.stories.filter((article) => {
+                // Exclude if 'full_slug' starts with "categories/" or contains "/categories/"
+                return (
+                    !article.full_slug.startsWith('categories/') &&
+                    !article.full_slug.includes('/categories/')
+                );
+            });
+
+            console.log(filteredArticles, 'filteredArticles');
+            const prioritySlugs = [
+                'schienenfahrzeuge',
+                'rollingstock',
+                'signalling',
+                'service',
+            ];
+            // Sort articles with solutions in slug to be prioritized
+            const sortedArticles = filteredArticles.sort((a, b) => {
+                const aPriority = prioritySlugs.some((slug) =>
+                    a.full_slug.includes(slug)
+                );
+                const bPriority = prioritySlugs.some((slug) =>
+                    b.full_slug.includes(slug)
+                );
+
+                if (aPriority && !bPriority) {
+                    return -1;
+                } else if (!aPriority && bPriority) {
+                    return 1;
+                } else {
+                    // If both have or don't have priority slugs, sort by other criteria (e.g., published date)
+                    return new Date(b.published_at) - new Date(a.published_at);
+                }
+            });
+
+            setArticles((prev) =>
+                sortedArticles.map((article) => {
+                    article.content.slug = article.slug;
+                    return article;
+                })
             );
-        });
-
-        console.log(filteredArticles, 'filteredArticles');
-        const prioritySlugs = [
-            'schienenfahrzeuge',
-            'rollingstock',
-            'signalling',
-            'service',
-        ];
-        // Sort articles with solutions in slug to be prioritized
-const sortedArticles = filteredArticles.sort((a, b) => {
-    const aPriority = prioritySlugs.some((slug) => a.full_slug.includes(slug));
-    const bPriority = prioritySlugs.some((slug) => b.full_slug.includes(slug));
-
-    if (aPriority && !bPriority) {
-        return -1;
-    } else if (!aPriority && bPriority) {
-        return 1;
-    } else {
-        // If both have or don't have priority slugs, sort by other criteria (e.g., published date)
-        return new Date(b.published_at) - new Date(a.published_at);
-    }
-});
-
-        setArticles((prev) =>
-            sortedArticles.map((article) => {
-                article.content.slug = article.slug;
-                return article;
-            })
-        );
-    } else {
-        // If there is no search term, set articles to an empty array
-        setArticles([]);
-    }
-};
+        } else {
+            // If there is no search term, set articles to an empty array
+            setArticles([]);
+        }
+    };
 
     useEffect(() => {
         getArticles();
@@ -101,9 +106,8 @@ const sortedArticles = filteredArticles.sort((a, b) => {
                 contentRef.current &&
                 !contentRef.current.contains(event.target)
             ) {
-              
                 closeModal();
-                setSearch('')
+                setSearch('');
                 setArticles([]);
             }
         };
@@ -119,8 +123,6 @@ const sortedArticles = filteredArticles.sort((a, b) => {
         window.location.href = `/${article.full_slug}`;
     };
 
- 
-
     return (
         <div
             ref={modalRef}
@@ -135,11 +137,10 @@ const sortedArticles = filteredArticles.sort((a, b) => {
                 className="relative bg-white shadow dark:bg-gray-700 h-full"
             >
                 <div className="flex items-center justify-between p-4 md:p-5 border-b dark:border-gray-600">
-                    <div className="pr-2">
-                        <img
-                            className="w-5 h-5"
-                            src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                            alt=""
+                    <div className="pr-2 w-7 h-5">
+                        <SearchIcon
+                            className="w-5 h-5 fill-primary"
+                            color="#005893"
                         />
                     </div>
                     <label htmlFor="search" className="w-full">

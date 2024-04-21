@@ -8,6 +8,9 @@ import { MotionConfig, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 import ContentWidth from '../layouts/ContentWidth';
+import { ChevronRight } from '../icons/ChevronRight';
+import { ChevronLeft } from '../icons/ChevronLeft';
+import { ArrowForward } from '../icons/ArrowForward';
 
 const SuccessStoryGrid = ({ blok }) => {
     const [current, setCurrent] = useState(0);
@@ -135,11 +138,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                                             }
                                                             className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-sm font-medium text-center"
                                                         >
-                                                            <img
-                                                                className="w-5 h-5"
-                                                                src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                                alt=""
-                                                            />
+                                                            <ArrowForward styles="w-5 h-5 fill-primary" />
                                                         </Link>
                                                     </div>
                                                 </motion.div>
@@ -159,18 +158,10 @@ const SuccessStoryGrid = ({ blok }) => {
                                 exit={{ opacity: 0 }}
                             >
                                 <button onClick={onPrevClick}>
-                                    <img
-                                        className="w-5 h-5"
-                                        src="/ohne-box/chevron_left_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                        alt=""
-                                    />
+                                    <ChevronLeft styles="w-5 h-5 fill-primary" />
                                 </button>
                                 <button onClick={onNextClick}>
-                                    <img
-                                        className="w-5 h-5"
-                                        src="/ohne-box/chevron_right_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                        alt=""
-                                    />
+                                    <ChevronRight styles="w-5 h-5 fill-primary" />
                                 </button>
                             </motion.div>
                         </div>
