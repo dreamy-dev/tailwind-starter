@@ -1,6 +1,7 @@
 import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
+import Lead from '../typography/Lead';
 import Breadcrumbs from './Breadcrumbs';
 import DateFormatter from '../helpers/DateFormatter';
 
@@ -35,8 +36,8 @@ function ArticleHero({ block }) {
                     <Text>{DateFormatter(block?.date)}</Text>
                 </div>
             </div>
-            <div className="text-lg mt-12">
-                <Text>{block?.lead}</Text>
+            <div className="mt-12">
+                <Lead>{block?.lead}</Lead>
             </div>
             <img
                 src={block?.image?.filename}

@@ -14,7 +14,7 @@ export async function GET(req, res) {
         })
         const attributes = await initialResponse.json()
 
-        return NextResponse.json({ attributes });
+        return NextResponse.json(attributes);
     }
     catch (err) {
         return NextResponse.json({});
