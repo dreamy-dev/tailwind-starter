@@ -6,10 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function HomePageHero({ blok }) {
     return (
-        <div
-            {...storyblokEditable(blok)}
-            className="mx-auto w-full bg-white"
-        >
+        <div {...storyblokEditable(blok)} className="mx-auto w-full bg-white">
             <div className="w-full overflow-hidden relative inset-0 flex flex-col-reverse md:flex-row items-center justify-end">
                 <motion.div
                     initial={{ x: -1000, opacity: 0 }}
@@ -39,9 +36,9 @@ export default function HomePageHero({ blok }) {
                     </motion.div>
                 </motion.div>
                 <motion.div
-                    initial={{ x: -1800 }}
+                    /* initial={{ x: -1800 }}
                     animate={{ x: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1 }} */
                     className="w-full  bg-center bg-cover object-center bg-no-repeat"
                 >
                     <img
