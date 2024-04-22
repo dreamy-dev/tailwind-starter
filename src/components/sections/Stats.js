@@ -16,10 +16,10 @@ const Stats = ({ data, backgroundColor }) => {
                                 className="mx-auto flex max-w-[250px] flex-col gap-y-4"
                                 key={index}
                             >
-                                <dt className="text-xl leading-7 text-primary">
+                                <dt className="text-base lg:text-xl leading-7 text-primary">
                                     {stat.text}
                                 </dt>
-                                <dd className="order-first text-6xl font-bold tracking-tight text-black sm:text-5xl">
+                                <dd className="order-first text-3xl lg:text-6xl font-bold tracking-tight text-black sm:text-5xl">
                                     <CountUp
                                         end={stat.end}
                                         suffix={stat.suffix}

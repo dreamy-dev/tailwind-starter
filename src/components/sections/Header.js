@@ -11,6 +11,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from '../elements/LanguageSwitcher';
 import ModalSearch from './ModalSearch';
+import { SearchIcon } from '../icons/SearchIcon';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -482,11 +483,11 @@ const Header = ({ blok }) => {
                                                     data-modal-target="default-modal"
                                                     data-modal-toggle="default-modal"
                                                     type="button"
+                                                    className="w-5 h-5"
                                                 >
-                                                    <img
-                                                        className="w-5 h-5"
-                                                        src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                        alt=""
+                                                    <SearchIcon
+                                                        className="w-5 h-5 fill-primary"
+                                                        color="#005893"
                                                     />
                                                 </button>
                                             </div>

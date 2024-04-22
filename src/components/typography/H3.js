@@ -4,7 +4,7 @@ const H3 = ({ styles, children, resetStyles, onClick }) => {
         ? defaultStyles
         : `${defaultStyles} ${styles || ''}`;
     return (
-        <h3 lang="de" className={H3Styles} onClick={onClick}>
+        <h3 className={H3Styles} onClick={onClick}>
             {children}
         </h3>
     );

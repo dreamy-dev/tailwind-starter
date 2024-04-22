@@ -2,6 +2,9 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import { useState } from 'react';
 import H3 from '../typography/H3';
 import H4 from '../typography/H4';
+import { MailIcon } from '../icons/MailIcon';
+import { PhoneIcon } from '../icons/PhoneIcon';
+import { PinIcon } from '../icons/PinIcon';
 
 const AccordionLocations = ({ blok }) => {
     const [isActive, setIsActive] = useState(false);
@@ -71,38 +74,31 @@ const AccordionLocations = ({ blok }) => {
                     </div>
                 </div>
                 {isActive && (
-                    <div className="p-5 border-t border-gray-200 dark:border-gray-700">
+                    <div className="px-2 py-5 lg:p-5 border-t border-gray-200 dark:border-gray-700">
                         <div className="flex flex-col lg:flex-row justify-start items-start">
-                            <div className="w-9/12">
+                            <div className="w-9/12 mb-4 lg:mb-0">
                                 <div className="mb-4 flex justify-start items-center">
-                                    <img
-                                        src="/icons/phone-outline-black.svg"
-                                        className="mr-4 flex w-6"
-                                        alt="office"
-                                    />
-                                    {blok?.phonenumber}
+                                    <PhoneIcon color="#000" />
+                                    <span className="ml-4">
+                                        {' '}
+                                        {blok?.phonenumber}
+                                    </span>
                                 </div>
 
                                 <div className="flex mb-4 justify-start items-center">
-                                    <img
-                                        src="/icons/mail-blue.svg"
-                                        className="mr-4 flex w-6"
-                                        alt="office"
-                                    />
-                                    {blok?.email}
+                                    <MailIcon className="fill-blueDark" />
+                                    <span className="ml-4"> {blok?.email}</span>
                                 </div>
 
                                 <div className="mb-2 flex justify-start items-center text-primary">
-                                    <img
-                                        src="/icons/map-pin-blue.svg"
-                                        className="mr-2 flex w-6"
-                                        alt="office"
-                                    />
+                                    <PinIcon />
                                     <a
                                         className=""
                                         href={blok?.link_google_maps?.url}
                                     >
-                                        {blok?.text_google_maps}
+                                        <span className="ml-2">
+                                            {blok?.text_google_maps}
+                                        </span>
                                     </a>
                                 </div>
                             </div>
@@ -113,7 +109,7 @@ const AccordionLocations = ({ blok }) => {
                             />
                         </div>
                         <div className="pt-8">
-                            <p className="mb-2 text-gray-500 dark:text-gray-400">
+                            <p className="mb-2 text-black dark:text-gray-400">
                                 {blok?.text}
                             </p>
                         </div>

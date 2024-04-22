@@ -219,7 +219,7 @@ storyblokInit({
         'job-overview': JobOverview,
         'signup-mailchimp': MailchimpEmbed,
         'career-prospective': ProspectiveCareer,
-        'simple_container_wrapper': SimpleContainerWrapper,
+        simple_container_wrapper: SimpleContainerWrapper,
     },
 });
 

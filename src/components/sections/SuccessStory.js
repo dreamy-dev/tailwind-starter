@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Text from '../typography/Text';
 
 import { motion } from 'framer-motion';
+import { ArrowForward } from '../icons/ArrowForward';
 
 const SuccessStory = ({ current, idx, blok }) => {
     return (

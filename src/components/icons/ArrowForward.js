@@ -1,4 +1,4 @@
-export const ArrowForward = ({ color, styles }) => (
+export const ArrowForward = ({ styles }) => (
     <svg
         version="1.1"
         id="Ebene_1"
