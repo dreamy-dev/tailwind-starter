@@ -27,21 +27,18 @@ const FactsAndFigures = ({
                         <H2>{blok?.title}</H2>
                     </div>
                     <div className="first-level">
-                        {/* <div className="border-b border-black border-solid">
-            <H3 titleH3="Wirtschaftliche Kennzahlen"></H3>
-          </div> */}
                         <div className="bg-secondaryBgcGray pt-8 sm:pt-10">
                             <div className="mx-auto max-w-full">
-                                <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                                <dl className="grid grid-cols-1 gap-x-8 gap-y-10 lg:gap-y-16 text-center lg:grid-cols-3">
                                     {renderData.map((stat, index) => (
                                         <div
                                             className="flex flex-col gap-y-2 col-span-1 max-w-[400px]"
                                             key={index}
                                         >
-                                            <dt className="text-xl leading-7 text-black">
+                                            <dt className="text-base lg:text-xl leading-7 text-black">
                                                 {stat?.text}
                                             </dt>
-                                            <dd className="order-first text-6xl font-bold tracking-tight text-primary sm:text-5xl">
+                                            <dd className="order-first text-3xl lg:text-6xl font-bold tracking-tight text-primary sm:text-5xl">
                                                 <CountUp
                                                     start={stat?.start ?? 0}
                                                     end={stat?.end ?? ''}

@@ -9,7 +9,7 @@ const TeaserImageRight = ({ blok }) => {
     return (
         <section {...storyblokEditable(blok)} className="py-16 lg:py-24">
             <SmallWidth>
-                <div className="grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
+                <div className="flex flex-col-reverse lg:grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 items-center">
                     <div>
                         <div className="">
                             <div className="space-y-4 sm:space-y-6 lg:space-y-8">

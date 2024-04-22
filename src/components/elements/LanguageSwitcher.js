@@ -5,6 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
+import { ChevronDown } from '../icons/ChevronDown';
 
 const variantsLang = {
     open: { opacity: 1, zIndex: 21 },
@@ -59,6 +60,7 @@ const LanguageSwitcher = () => {
                         d="M19 9l-7 7-7-7"
                     ></path>
                 </svg>
+                {/* <ChevronDown styles="w-6 h-6" color="#005893" /> */}
             </button>
             <motion.div
                 animate={isOpen ? 'open' : 'closed'}

@@ -35,8 +35,8 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                     selectedCategory={selectedCategory}
                 ></TrainSequence>
                 <ContentWidth>
-                    <div className="col-span-8 col-start-4 col-end-10 grid grid-cols-1 my-6">
-                        <div className="flex flex-row items-start justify-center">
+                    <div className="col-span-12 lg:col-span-8 lg:col-start-4 lg:col-end-10 grid lg:grid-cols-1 my-6">
+                        <div className="flex flex-row items-start  justify-between lg:justify-center">
                             {blok.wrapper.map((item, key) => (
                                 <div
                                     key={key}
@@ -44,7 +44,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                         selectedCategory === key
                                             ? 'text-white'
                                             : 'text-greyBrighten-600'
-                                    } font-semibold text-center px-4 flex flex-col items-center cursor-pointer`}
+                                    } font-semibold text-center lg:px-4 flex flex-col items-center cursor-pointer`}
                                     onClick={() => (
                                         setIsOpen(
                                             selectedCategory === key &&
@@ -59,9 +59,11 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                         )
                                     )}
                                 >
-                                    <p>{item.tab_title}</p>
+                                    <p className="text-sm lg:text-base">
+                                        {item.tab_title}
+                                    </p>
                                     <motion.img
-                                        className={`${selectedCategory === key ? 'w-4' : 'w-0'} mt-2`}
+                                        className={`${selectedCategory === key ? 'w-3 lg:w-4' : 'w-0'} mt-2`}
                                         src="/plus-light.svg"
                                         animate={
                                             selectedCategory === key && isOpen

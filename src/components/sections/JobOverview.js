@@ -5,9 +5,11 @@ import ContentWidth from '../layouts/ContentWidth';
 import Text from '../typography/Text';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
+import H3 from '../typography/H3';
 import H2 from '../typography/H2';
 import Button from '../elements/ButtonSecondary';
 import ButtonPrimary from '../elements/ButtonPrimary';
+import { ArrowForward } from '../icons/ArrowForward';
 
 const jobs = [
     {
@@ -26,37 +28,46 @@ const JobOverview = ({ blok }) => (
         <SmallWidth>
             <div className="grid col-span-12">
                 <div
-                    className="grid grid-flow-col justify-stretch shadow-sm hover:cursor-pointer mb-4"
+                    className="grid grid-cols-4 grid-flow-col justify-stretch hover:cursor-pointer mb-4 gap-x-2"
                     role="group"
                 >
                     <a
+                        href="#"
                         type="button"
-                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200  hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+                        className="flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50  hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                     >
-                        Spontanbewerbung
+                        <p>Spontanbewerbung</p>
+                        <ArrowForward styles="w-3 h-3 fill-primary" />
                     </a>
                     <a
+                        href="#"
                         type="button"
-                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+                        className="flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50 hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                     >
-                        Personalvermittler
+                        <p>Personalvermittler</p>
+                        <ArrowForward styles="w-3 h-3 fill-primary" />
                     </a>
                     <a
+                        href="#"
                         type="button"
-                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+                        className="flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50 hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                     >
-                        Mein Profil
+                        <p>Mein Profil</p>
+                        <ArrowForward styles="w-3 h-3 fill-primary" />
                     </a>
                     <a
+                        href="#"
                         type="button"
-                        className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200  hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+                        className="flex items-center justify-between px-4 py-2 text-sm font-medium text-primary bg-primarySolid-50  hover:bg-gray-100 hover:cursor-pointer hover:text-primary"
                     >
-                        Job-Abo
+                        <p>Job-Abo</p>
+                        <ArrowForward styles="w-3 h-3 fill-primary" />
                     </a>
                 </div>
             </div>
             <div className="mt-8">
-                <H2>Übersicht der offenen Stellen</H2>
+                <H2>Arbeiten bei Stadler</H2>
+                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus erat sem, finibus nec sem at, tempus feugiat est. In bibendum pellentesque mauris egestas ornare. Phasellus dictum turpis nec tempor hendrerit. </Text>
             </div>
             <form className="grid col-span-12 grid-cols-12 my-8 mb-12">
                 <div className="grid col-span-12">
@@ -97,7 +108,7 @@ const JobOverview = ({ blok }) => (
                             for="countries"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         >
-                            Level
+                            Einstiegslevel
                         </label>
                         <select
                             id="countries"
@@ -153,6 +164,8 @@ const JobOverview = ({ blok }) => (
             <hr className="h-px my-12 bg-gray-200 border-0"></hr>
 
             <div className="grid col-span-12">
+
+                <H3>Offene Stellen</H3>
                 <div className="divide-y">
                     {jobs.map((item) => (
                         <div className="py-4 hover:cursor-pointer hover:text-primary">

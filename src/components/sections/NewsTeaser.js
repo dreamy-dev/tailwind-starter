@@ -3,7 +3,7 @@ import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 
 import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
-import H4 from '../typography/H4';
+import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
@@ -76,17 +76,17 @@ function NewsTeaser({ blok }) {
                                                 )
                                         )}
                                     </div>
-                                    <div className="text-sm mb-1 text-gray-500">
+                                    <div className="text-sm mb-1">
                                         <Text>
                                             {DateFormatter(
                                                 article.content.date
                                             )}
                                         </Text>
                                     </div>
-                                    <div className="text-sm mb-1 text-gray-500 group-hover:text-primary transition-all">
-                                        <H4>{article.name}</H4>
+                                    <div className="text-sm mb-1 group-hover:text-primary transition-all">
+                                        <H3>{article.name}</H3>
                                     </div>
-                                    <div className="texl-lg mb-3 text-gray-500">
+                                    <div className="texl-lg mb-3">
                                         <Text>
                                             {TrimText(article.content.lead)}
                                         </Text>

@@ -1,9 +1,5 @@
 const Blockquote = ({ children }) => {
-    return (
-        <blockquote lang="de" className="italic">
-            {children}
-        </blockquote>
-    );
+    return <blockquote className="italic">{children}</blockquote>;
 };
 
 export default Blockquote;
