@@ -1,4 +1,5 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import Layout from '@/src/components/sections/Layout';
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -36,8 +37,13 @@ async function fetchData(slug, lang) {
 
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+    let config_footer = await storyblokApi.get(
+        'cdn/stories/config-footer',
+        sbParams
+    );
+console.log('config_footer', config_footer.data.story);
 
-    return { story: data.story };
+    return { story: data.story, config_footer: config_footer.data.story };
 }
 
 export async function generateStaticParams() {
@@ -45,7 +51,6 @@ export async function generateStaticParams() {
     const { data } = await storyblokApi.get('cdn/links/', {
         version: 'published',
     });
-
     const paths = [];
     Object.keys(data.links).forEach((linkKey) => {
         if (
@@ -66,7 +71,8 @@ export async function generateStaticParams() {
 
 export default async function Detailpage({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
-    const { story } = await fetchData(slug, params.lang);
+    const { story, config_footer } = await fetchData(slug, params.lang);
+ 
 
     if (!story) {
         return notFound();
@@ -74,7 +80,10 @@ export default async function Detailpage({ params }) {
 
     return (
         <>
-            <StoryblokStory story={story} />
+          
+            <Layout story={config_footer}>
+                <StoryblokStory story={story} />
+            </Layout>
         </>
     );
 }

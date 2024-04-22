@@ -96,7 +96,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                 >
                     <Header />
                     <main>{children}</main>
-                    <Footer />
+                    {/* <Footer /> */}
                 </body>
             </html>
         </StoryblokProvider>
