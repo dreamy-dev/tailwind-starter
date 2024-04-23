@@ -5,11 +5,9 @@ import Footer from './Footer';
 const ConfigFooter = ({ blok }) => {
     return (
         <div className="bg-blueDark mt-auto" {...storyblokEditable(blok)}>
-          
+
             <div >
-                <div >
-
-
+                <div>
                     {blok.footer.map(
                         (nestedBlok) =>
                             <Footer

@@ -47,7 +47,8 @@ async function fetchData(slug, lang) {
     );
 
     return {
-        story: data.story, config_footer: config_footer.data.story,
+        story: data.story,
+        config_footer: config_footer.data.story,
         config_header: config_header.data.story
     };
 }
@@ -79,7 +80,7 @@ export default async function Detailpage({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story, config_footer, config_header } = await fetchData(slug, params.lang);
 
-   
+
     if (!story) {
         return notFound();
     }
