@@ -10,7 +10,6 @@ export async function POST(request, res) {
     try {
         const initialResponse = await fetch(url, {
             headers: {
-                Authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',
             },
             method: 'POST',
@@ -22,9 +21,9 @@ export async function POST(request, res) {
         const response = await initialResponse.json()
         console.log("response", response)
 
-        return NextResponse.json(response);
+        return NextResponse.json({ success: response });
     }
     catch (err) {
-        return NextResponse.json(err);
+        return NextResponse.json({ errors: err });
     }
 }
