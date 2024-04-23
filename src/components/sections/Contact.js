@@ -6,6 +6,18 @@ import Text from '../typography/Text';
 import { MailIcon } from '../icons/MailIcon';
 import { PhoneIcon } from '../icons/PhoneIcon';
 
+
+const optimizeImage = (image) => {
+    if (!image || !image.filename) return null;
+
+ 
+    let imageSource = image.filename + `/m/1200x0`;
+
+    if (image.focus) imageSource += `/filters:focal(${image.focus})`;
+
+    return imageSource;
+};
+
 const Contact = ({ blok }) => {
     return (
         <section
@@ -15,11 +27,13 @@ const Contact = ({ blok }) => {
             <SmallWidth>
                 <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
                     <div className="w-full xl:col-span-4">
-                        <img
-                            className="object-cover object-right max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
-                            src={blok?.image.filename}
-                            alt="contact"
-                        />
+                        <div className="image-container">
+                            <img
+                                className="object-cover object-center max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
+                                src={optimizeImage(blok?.image)}
+                                alt="contact"
+                            />
+                        </div>
                     </div>
                     <div className="w-full xl:col-span-8">
                         <div className=" tracking-tight text-white">
