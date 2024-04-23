@@ -107,6 +107,7 @@ import JobOverview from './sections/JobOverview';
 import MailchimpEmbed from './sections/MailchimpEmbed';
 import ProspectiveCareer from './sections/ProspectiveCareer';
 import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
+import MailchimpContact from './sections/MailchimpContact';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -220,6 +221,7 @@ storyblokInit({
         'signup-mailchimp': MailchimpEmbed,
         'career-prospective': ProspectiveCareer,
         simple_container_wrapper: SimpleContainerWrapper,
+        "contact-form-mailchimp": MailchimpContact
     },
 });
 
