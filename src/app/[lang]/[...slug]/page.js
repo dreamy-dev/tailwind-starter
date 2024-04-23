@@ -38,10 +38,10 @@ async function fetchData(slug, lang) {
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
     let config_footer = await storyblokApi.get(
-        'cdn/stories/config-footer',
+        'cdn/stories/config-footer-new',
         sbParams
     );
-console.log('config_footer', config_footer.data.story);
+    console.log('config_footer', config_footer.data.story);
 
     return { story: data.story, config_footer: config_footer.data.story };
 }
@@ -72,8 +72,8 @@ export async function generateStaticParams() {
 export default async function Detailpage({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story, config_footer, config_header } = await fetchData(slug, params.lang);
- 
-console.log({ config_footer }, 'config_footer');
+
+    console.log({ config_footer }, 'config_footer');
     if (!story) {
         return notFound();
     }
