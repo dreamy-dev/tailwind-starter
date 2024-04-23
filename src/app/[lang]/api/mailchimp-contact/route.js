@@ -18,7 +18,7 @@ export async function POST(request, res) {
                 "fields": { "2810": email, "2814": "test even more", "2818": "very test" }
             })
         })
-        const response = await initialResponse.json()
+        const response = await initialResponse
         console.log("response", response)
 
         return NextResponse.json({ success: response });
