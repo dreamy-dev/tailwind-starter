@@ -10,21 +10,20 @@ export async function POST(request, res) {
     try {
         const initialResponse = await fetch(url, {
             headers: {
-                Authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',
             },
             method: 'POST',
             body: JSON.stringify({
-                "subscribe": true, "mc-SMSPHONE-ack": false,
+                "subscribe": true, "mc-SMSPHONE-ack": false, "status": "subscribed",
                 "fields": { "2810": email, "2814": "test even more", "2818": "very test" }
             })
         })
         const response = await initialResponse.json()
         console.log("response", response)
 
-        return NextResponse.json(response);
+        return NextResponse.json({ success: response });
     }
     catch (err) {
-        return NextResponse.json(err);
+        return NextResponse.json({ errors: err });
     }
 }
