@@ -10,6 +10,7 @@ export async function POST(request, res) {
     try {
         const initialResponse = await fetch(url, {
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             method: 'POST',
