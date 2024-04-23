@@ -23,10 +23,12 @@ export default function MailchimpContact({ blok }) {
         const checkConnection = await fetch(url, {
             method: 'POST',
             headers: {
+                Accept: 'application/json',
                 'Content-Type': 'application/json',
             }
         });
         const attributes = await checkConnection.json()
+        console.log("attributes", attributes)
 
         if (attributes.status == "subscribed") {
             setValidationSuccess(true)
