@@ -21,7 +21,7 @@ export async function POST(request, res) {
         const response = await initialResponse
         console.log("response", response)
 
-        return NextResponse.json({ success: response.stack, status: err.status });
+        return NextResponse.json({ success: response.stack, status: response.status });
     }
     catch (err) {
 
