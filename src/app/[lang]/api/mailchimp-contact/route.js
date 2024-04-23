@@ -14,7 +14,7 @@ export async function POST(request, res) {
             },
             method: 'POST',
             body: JSON.stringify({
-                "subscribe": true, "mc-SMSPHONE-ack": false,
+                "subscribe": true, "mc-SMSPHONE-ack": false, "status": "subscribed",
                 "fields": { "2810": email, "2814": "test even more", "2818": "very test" }
             })
         })
