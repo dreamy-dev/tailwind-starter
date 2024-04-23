@@ -1,14 +1,18 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 const AddressCard = ({ blok }) => (
     <div
         {...storyblokEditable(blok)}
-        className="w-full items-center p-8 bg-gray-50 shadow"
+        className="w-full items-center p-8 bg-greySolid-30 shadow"
     >
-        <p className="text-base font-semibold text-gray-500">{blok?.title}</p>
-        <p className="text-base font-normal text-gray-500">{blok?.address}</p>
-        <p className="text-base font-normal text-gray-500">{blok?.hours}</p>
+        <div className="mb-2">
+            <p className="text-base font-semibold text-gray-500">
+                {blok?.title}
+            </p>
+            <RichTextRenderer text={blok?.address_hours} />
+        </div>
     </div>
 );
 

@@ -2,10 +2,11 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
+import { ArrowForward } from '../icons/ArrowForward';
 
 const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (
-        <section {...storyblokEditable(blok)} className="pb-5 lg:pb-24">
+        <section {...storyblokEditable(blok)} className="pb-16 lg:pb-24">
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto">
                     <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
@@ -16,22 +17,17 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <a
                                     href={blok?.link_1}
-                                    className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
+                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-4 lg:mb-0"
                                 >
-                                    <H2
-                                        resetStyles={true}
-                                        styles="mb-4 text-4xl font-bold"
-                                    >
-                                        {blok?.title_1}
-                                    </H2>
-                                    <Text styles="text-greyBrighten-800 mb-4">
-                                        {blok?.text_1}
-                                    </Text>
-                                    <img
-                                        className="w-5 h-5"
-                                        src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
-                                        alt=""
-                                    />
+                                    <div className="text-4xl">
+                                        <H2 styles="!mb-0 lg:!mb-2">
+                                            {blok?.title_1}
+                                        </H2>
+                                    </div>
+                                    <div className="">
+                                        <Text>{blok?.text_1}</Text>
+                                    </div>
+                                    <ArrowForward styles="w-5 h-5 fill-white" />
                                 </a>
                             </div>
                         </li>
@@ -40,22 +36,15 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <a
                                     href={blok?.link_2}
-                                    className="flex flex-col items-start gap-2 text-xl font-bold text-white mt-5 mb-5"
+                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-0"
                                 >
-                                    <H2
-                                        resetStyles={true}
-                                        styles="mb-4 text-4xl font-bold"
-                                    >
-                                        {blok?.title_2}
-                                    </H2>
-                                    <Text styles="text-greyBrighten-800 mb-4">
-                                        {blok?.text_2}
-                                    </Text>
-                                    <img
-                                        className="w-5 h-5"
-                                        src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_white.svg"
-                                        alt=""
-                                    />
+                                    <div className="">
+                                        <H2 styles="!mb-0 lg:!mb-2">
+                                            {blok?.title_2}
+                                        </H2>
+                                    </div>
+                                    <Text>{blok?.text_2}</Text>
+                                    <ArrowForward styles="w-5 h-5 fill-white" />
                                 </a>
                             </div>
                         </li>

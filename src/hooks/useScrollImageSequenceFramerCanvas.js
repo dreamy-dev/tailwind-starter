@@ -49,6 +49,11 @@ const useScrollImageSequenceFramerCanvas = ({ onDraw, keyframes }) => {
         };
     }, [keyframes, onDraw]);
 
+    useEffect(() => {
+        onDraw(keyframes[0], canvasRef.current.getContext('2d'));
+
+    }, []);
+
     //  useMotionValueEvent(progress, 'change', renderImage);
 
     return [progress, canvasRef, renderImage];

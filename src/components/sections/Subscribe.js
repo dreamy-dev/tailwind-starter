@@ -23,7 +23,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></div>
                                     <input
-                                        className="block p-3  w-full text-sm text-gray-900 bg-gray-50  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        className="block p-3  w-full text-sm text-gray-900 bg-greySolid-30  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         placeholder="Enter your Vorname"
                                         type="text"
                                     />
@@ -34,7 +34,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></div>
                                     <input
-                                        className="block p-3  w-full text-sm text-gray-900 bg-gray-50  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        className="block p-3  w-full text-sm text-gray-900 bg-greySolid-30  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         placeholder="Enter your Nachname"
                                         type="text"
                                     />
@@ -45,7 +45,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></div>
                                     <input
-                                        className="block p-3  w-full text-sm text-gray-900 bg-gray-50  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        className="block p-3  w-full text-sm text-gray-900 bg-greySolid-30  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         placeholder="Enter your Firma"
                                         type="text"
                                     />
@@ -56,7 +56,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></div>
                                     <input
-                                        className="block p-3 w-full text-sm text-gray-900 bg-gray-50  border border-white "
+                                        className="block p-3 w-full text-sm text-gray-900 bg-greySolid-30  border border-white "
                                         placeholder="Enter your E-mail"
                                         type="email"
                                     />

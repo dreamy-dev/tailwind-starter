@@ -1,32 +1,34 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
+import { SearchIcon } from '../icons/SearchIcon';
 
 const ModalSearch = ({ isModalOpen, closeModal }) => {
     const [articles, setArticles] = useState([]);
     const [search, setSearch] = useState('');
     const modalRef = useRef(null);
     const contentRef = useRef(null);
+    const inputRef = useRef(null);
 
     const apiRequest = {
         version: 'published',
         resolve_links: 'url',
     };
 
-const onSearchChange = (e) => {
-    const inputValue = e.target.value;
-    setSearch(inputValue);
+    const onSearchChange = (e) => {
+        const inputValue = e.target.value;
+        setSearch(inputValue);
 
-    const filterSearchParameters = {};
+        const filterSearchParameters = {};
 
-    if (inputValue.length > 0) {
-        filterSearchParameters['search_term'] = inputValue.toLowerCase();
-        getArticles(filterSearchParameters);
-    } else {
-        // If the input is empty, set articles to an empty array
-        setArticles([]);
-    }
-};
+        if (inputValue.length > 0) {
+            filterSearchParameters['search_term'] = inputValue.toLowerCase();
+            getArticles(filterSearchParameters);
+        } else {
+            // If the input is empty, set articles to an empty array
+            setArticles([]);
+        }
+    };
 
     const getArticles = async (filterSearchRequest = {}) => {
         const slug = '/';
@@ -38,18 +40,39 @@ const onSearchChange = (e) => {
                 ...apiRequest,
                 ...filterSearchRequest,
             });
+            console.log(data, 'data');
 
+            const filteredArticles = data.stories.filter((article) => {
+                // Exclude if 'full_slug' starts with "categories/" or contains "/categories/"
+                return (
+                    !article.full_slug.startsWith('categories/') &&
+                    !article.full_slug.includes('/categories/')
+                );
+            });
+
+            console.log(filteredArticles, 'filteredArticles');
+            const prioritySlugs = [
+                'schienenfahrzeuge',
+                'rollingstock',
+                'signalling',
+                'service',
+            ];
             // Sort articles with solutions in slug to be prioritized
-            const sortedArticles = data.stories.sort((a, b) => {
-                const aIsSolution = a.full_slug.includes('loesungen/solutions');
-                const bIsSolution = b.full_slug.includes('loesungen/solutions');
+            const sortedArticles = filteredArticles.sort((a, b) => {
+                const aPriority = prioritySlugs.some((slug) =>
+                    a.full_slug.includes(slug)
+                );
+                const bPriority = prioritySlugs.some((slug) =>
+                    b.full_slug.includes(slug)
+                );
 
-                if (aIsSolution && !bIsSolution) {
+                if (aPriority && !bPriority) {
                     return -1;
-                } else if (!aIsSolution && bIsSolution) {
+                } else if (!aPriority && bPriority) {
                     return 1;
                 } else {
-                    return 0;
+                    // If both have or don't have priority slugs, sort by other criteria (e.g., published date)
+                    return new Date(b.published_at) - new Date(a.published_at);
                 }
             });
 
@@ -70,6 +93,12 @@ const onSearchChange = (e) => {
     }, []);
 
     useEffect(() => {
+        if (isModalOpen && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [isModalOpen]);
+
+    useEffect(() => {
         const handleOutsideClick = (event) => {
             // Check if the modal is open and the click is outside the modal and its content
             if (
@@ -78,6 +107,8 @@ const onSearchChange = (e) => {
                 !contentRef.current.contains(event.target)
             ) {
                 closeModal();
+                setSearch('');
+                setArticles([]);
             }
         };
 
@@ -88,86 +119,60 @@ const onSearchChange = (e) => {
         };
     }, [isModalOpen, closeModal]);
 
-    return (
-    
-            <div
-                ref={modalRef}
-                className={`col-span-12 z-20 shadow-md absolute top-[100%] right-0  w-[100%] sm:w-[450px] md:w-[710px] transition-transform duration-500 ${
-                    isModalOpen
-                        ? 'transform opacity-100 ease-in-out'
-                        : 'transform opacity-0 ease-in-out'
-                }`}
-            >
-                <div
-                    ref={contentRef}
-                    className="relative bg-white shadow dark:bg-gray-700 h-full"
-                >
-                    <div className="flex items-center justify-between p-4 md:p-5 border-b dark:border-gray-600">
-                        <div className="pr-2">
-                            <img
-                                className="w-5 h-5"
-                                src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                alt=""
-                            />
-                        </div>
-                        <label htmlFor="search" className="w-full">
-                            <input
-                                placeholder="Enter your search term..."
-                                name="search"
-                                onChange={onSearchChange}
-                                value={search}
-                                type="search"
-                                style={{
-                                    WebkitAppearance: 'none',
-                                    appearance: 'none',
-                                }}
-                                className="p-2 w-full border-primary focus:border-primary appearance-none"
-                            />
-                        </label>
-                        <button
-                            onClick={closeModal}
-                            type="button"
-                            className="text-primary bg-transparent text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="default-modal"
-                        >
-                            <svg
-                                className="w-3 h-3"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="#005893"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span className="sr-only">Close modal</span>
-                        </button>
-                    </div>
+    const handleArticleClick = (article) => {
+        window.location.href = `/${article.full_slug}`;
+    };
 
-                    <div className="p-2 md:p-3 overflow-y-scroll h-[385px]">
-                        <div className="flex flex-col">
-                            {articles[0] &&
-                                articles.map((article) => (
-                                    <a
-                                        href={`/${article.full_slug}`}
-                                        className="group mb-6 transition-all"
-                                        key={article.uuid}
-                                    >
-                                        <h2 className="mb-1 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
-                                            {article.name}
-                                        </h2>
-                                    </a>
-                                ))}
-                        </div>
+    return (
+        <div
+            ref={modalRef}
+            className={`col-span-12 shadow-md absolute top-10 right-0  w-[100%] sm:w-[450px] md:w-[710px] transition-transform duration-500 ${
+                isModalOpen
+                    ? 'transform opacity-100 ease-in-out z-20'
+                    : 'transform opacity-0 ease-in-out max-h-0 overflow-hidden'
+            }`}
+        >
+            <div
+                ref={contentRef}
+                className="relative bg-white shadow dark:bg-gray-700 h-full"
+            >
+                <div className="flex items-center justify-between p-4 md:p-5 border-b dark:border-gray-600">
+                    <div className="pr-2 w-7 h-5">
+                        <SearchIcon
+                            className="w-5 h-5 fill-primary"
+                            color="#005893"
+                        />
+                    </div>
+                    <label htmlFor="search" className="w-full">
+                        <input
+                            ref={inputRef}
+                            placeholder="Enter your search term..."
+                            name="search"
+                            onChange={onSearchChange}
+                            value={search}
+                            type="search"
+                            className="p-2 w-full border-primary focus:border-primary appearance-none"
+                        />
+                    </label>
+                </div>
+
+                <div className="overflow-y-scroll h-[385px]">
+                    <div className="flex flex-col">
+                        {articles.map((article) => (
+                            <div
+                                key={article.uuid}
+                                onClick={() => handleArticleClick(article)}
+                                className="group transition-all cursor-pointer hover:bg-gray-100"
+                            >
+                                <h2 className="p-4 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
+                                    {article.name}
+                                </h2>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
-    
+        </div>
     );
 };
 

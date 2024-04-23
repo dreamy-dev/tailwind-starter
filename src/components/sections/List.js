@@ -8,8 +8,8 @@ const List = ({ items, onItemClick, listTitle }) => {
         <div>
             <ContentWidth>
                 <div className="max-w-full col-span-12">
-                    <div className=" border-b-2 border-primary">
-                        <H4 styles="mb-6">{listTitle}</H4>
+                    <div className=" border-b-2 border-primary mb-6">
+                        <H4>{listTitle}</H4>
                     </div>
                     <ul>
                         {items.map((item, index) => (

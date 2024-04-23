@@ -9,16 +9,11 @@ import { useState, useEffect, useRef } from 'react';
 import FullWidth from '../layouts/FullWidth';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import ContentWidth from '../layouts/ContentWidth';
+import { ChevronRight } from '../icons/ChevronRight';
 
 const TestimonialMotionDiv = motion.div;
 
-const HomePageCaroucel = ({
-    items,
-    carouselTitle,
-    h2Styles,
-    showButton = true,
-    blok,
-}) => {
+const HomePageCaroucel = ({ items, carouselTitle }) => {
     const [current, setCurrent] = useState(0);
     const [startX, setStartX] = useState(0);
     const [isDragging, setIsDragging] = useState(false);

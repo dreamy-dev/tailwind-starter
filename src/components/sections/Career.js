@@ -25,7 +25,7 @@ export default function Career({ blok }) {
     return (
         <section {...storyblokEditable(blok)} className="bg-white mt-16 mb-16">
             <ContentWidth>
-                <div className="col-span-12 w-full  py-20 bg-primarySolid-50">
+                <div className="col-span-12 w-full py-12 lg:py-20 bg-primarySolid-50">
                     <div className="mb-4 text-center tracking-tight dark:text-white ">
                         <H2>{blok?.title}</H2>
                     </div>
@@ -34,7 +34,7 @@ export default function Career({ blok }) {
                     </p>
                     <div className="flex justify-center">
                         <ButtonPrimary
-                            ref={careerRef}
+                            /* ref={careerRef} */
                             buttonText={blok?.cta_button_text}
                             href={blok?.cta_button_link}
                         ></ButtonPrimary>

@@ -11,6 +11,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from '../elements/LanguageSwitcher';
 import ModalSearch from './ModalSearch';
+import { SearchIcon } from '../icons/SearchIcon';
 const navigation = {
     topNav: [
         { name: 'Medien', href: '/medien' },
@@ -256,7 +257,7 @@ const Header = ({ blok }) => {
                                 </div>
                                 <div
                                     ref={menuRef}
-                                    className="relative w-full lg:w-auto"
+                                    className=" w-full lg:w-auto"
                                     id="navbar-solid-bg"
                                 >
                                     <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
@@ -475,27 +476,28 @@ const Header = ({ blok }) => {
                                             </li>
                                         ))}
 
-                                        <li className=" lg:block z-20">
-                                            <div className="block pt-6 pl-0 md:pl-12 md:pt-0">
+                                        <li className="lg:relative lg:block z-20">
+                                            <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
                                                 <button
                                                     onClick={openModal}
                                                     data-modal-target="default-modal"
                                                     data-modal-toggle="default-modal"
                                                     type="button"
+                                                    className="w-5 h-5"
                                                 >
-                                                    <img
-                                                        className="w-5 h-5"
-                                                        src="/ohne-box/search_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                        alt=""
+                                                    <SearchIcon
+                                                        className="w-5 h-5 fill-primary"
+                                                        color="#005893"
                                                     />
                                                 </button>
                                             </div>
+                                            <ModalSearch
+                                                isModalOpen={isModalOpen}
+                                                closeModal={closeModal}
+                                            />
                                         </li>
                                     </ul>
-                                    <ModalSearch
-                                        isModalOpen={isModalOpen}
-                                        closeModal={closeModal}
-                                    />
+
                                     <div className="border-b lg:border-none"></div>
                                 </div>
                             </div>
