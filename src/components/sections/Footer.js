@@ -96,6 +96,7 @@ const socialLinks = (
             aria-labelledby="footer-heading"
         >
             <ContentWidth>
+              
                 <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
                     <div className="lg:flex lg:items-center lg:justify-between">
                         <img

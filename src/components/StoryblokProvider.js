@@ -108,6 +108,7 @@ import MailchimpEmbed from './sections/MailchimpEmbed';
 import ProspectiveCareer from './sections/ProspectiveCareer';
 import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
 import ConfigFooter from './sections/Config_footer';
+import ConfigHeader from './sections/Config_header';
 
 
 storyblokInit({
@@ -223,6 +224,7 @@ storyblokInit({
         'career-prospective': ProspectiveCareer,
         simple_container_wrapper: SimpleContainerWrapper,
         config_footer: ConfigFooter,
+        config_header: ConfigHeader,
     },
 });
 

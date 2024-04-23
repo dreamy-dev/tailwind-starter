@@ -12,14 +12,7 @@ import { motion } from 'framer-motion';
 import LanguageSwitcher from '../elements/LanguageSwitcher';
 import ModalSearch from './ModalSearch';
 import { SearchIcon } from '../icons/SearchIcon';
-const navigation = {
-    topNav: [
-        { name: 'Medien', href: '/medien' },
-        { name: 'Zulieferer', href: '/zulieferer' },
-        // { name: "Kunden", href: "/kunden" },
-        { name: 'Downloads', href: '/downloadcenter' },
-    ],
-};
+
 
 const variants = {
     open: { opacity: 1, y: 0, height: 'auto' },
@@ -30,48 +23,66 @@ const variantsSub = {
     closed: { opacity: 0, y: 50, height: 0 },
 };
 
-const navigationMain = {
-    topNav: [
-        {
-            title: 'Unternehmen',
-            href: '/unternehmen',
-            icon: <IconNav></IconNav>,
-            submenu: true,
-            submenuItems: [
-                {
-                    title: 'Standorte',
-                    href: '/unternehmen/standorte',
-                },
-                {
-                    title: 'Nachhaltigkeit',
-                    href: '/unternehmen/nachhaltigkeit',
-                },
-            ],
-        },
-        {
-            title: 'Lösungen',
-            href: '/loesungen',
-            icon: <IconNav></IconNav>,
-            submenu: true,
-            submenuItems: [
-                {
-                    title: 'Schienenfahrzeuge',
-                    href: '/loesungen/schienenfahrzeuge',
-                },
-                { title: 'Signalling', href: '/loesungen/signalling' },
-                { title: 'Service', href: '/loesungen/service' },
-            ],
-        },
-        { title: 'Karriere', href: '/career', icon: false },
-        {
-            title: 'Investor Relations',
-            href: '/investors',
-            icon: false,
-        },
-    ],
-};
+
 
 const Header = ({ blok }) => {
+    const navigation = {
+        topNav: [
+            { name: blok.media_link_text, href: blok.media_link.url },
+            { name: blok.suppliers_text, href: blok.suppliers_link.url },
+            { name: blok.downloads_text, href: blok.downloads_link.url },
+        ],
+    };
+    const navigationMain = {
+        topNav: [
+            {
+                title: blok.main_link_1_text,
+                href: blok.main_link_1_link.url,
+                icon: <IconNav></IconNav>,
+                submenu: true,
+                submenuItems: [
+                    {
+                        title: blok.main_1_sublink_1_text,
+                        href: blok.main_1_sublink_1_link.url,
+                    },
+                    {
+                        title: blok.main_1_sublink_2_text,
+                        href: blok.main_1_sublink_2_link.url,
+                    },
+                ],
+            },
+            {
+                title: blok.main_2_link_1_text,
+                href: blok.main_2_link_1_link.url,
+                icon: <IconNav></IconNav>,
+                submenu: true,
+                submenuItems: [
+                    {
+                        title: blok.main_2_link_2_text,
+                        href: blok.main_2_link_2_link.url,
+                    },
+                    {
+                        title: blok.main_2_link_3_text,
+                        href: blok.main_2_link_3_link.url,
+                    },
+                    {
+                        title: blok.main_link_2_text,
+                        href: blok.main_link_2_link.url,
+                    },
+                ],
+            },
+            {
+                title: blok.main_link_3_text,
+                href: blok.main_link_3_link.url,
+                icon: false,
+            },
+            {
+                title: blok.main_link_4_text,
+                href: blok.main_link_4_link.url,
+                icon: false,
+            },
+        ],
+    };
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -166,7 +177,6 @@ const Header = ({ blok }) => {
 
     return (
         <header
-            {...storyblokEditable(blok)}
             className={` bg-white z-10 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
                 isMobileNavOpen && isNarrowScreen
                     ? 'fixed w-screen h-screen'
@@ -176,9 +186,9 @@ const Header = ({ blok }) => {
             <ContentWidth>
                 <div className="lg:hidden col-span-12">
                     <div className="flex justify-between items-center col-span-12 w-full py-5">
-                        <Link href="/">
+                        <Link href={blok.LinkLogo.url}>
                             <img
-                                src="/logo.svg"
+                                src={blok.Logo.filename}
                                 className="h-4 sm:h-6"
                                 alt="Stadler Logo"
                             />
@@ -245,11 +255,11 @@ const Header = ({ blok }) => {
                             <div className=" bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                                 <div className="hidden lg:block">
                                     <Link
-                                        href="/"
+                                        href={blok.LinkLogo.url}
                                         className="flex justify-start items-start lg:justify-center lg:items-center mb-10 lg:mb-0 "
                                     >
                                         <img
-                                            src="/logo.svg"
+                                            src={blok.Logo.filename}
                                             className="h-4 sm:h-6"
                                             alt="Stadler Logo"
                                         />
@@ -324,7 +334,7 @@ const Header = ({ blok }) => {
                                                                     ? 'closed'
                                                                     : '' ||
                                                                         item.title ===
-                                                                            'Lösungen'
+                                                                        'Lösungen'
                                                                       ? 'closed'
                                                                       : ''
                                                             }
