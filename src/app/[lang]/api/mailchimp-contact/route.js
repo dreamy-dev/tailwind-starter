@@ -24,6 +24,7 @@ export async function POST(request, res) {
         return NextResponse.json({ success: response });
     }
     catch (err) {
-        return NextResponse.json({ errors: err.message });
+
+        return NextResponse.json({ status: err.status });
     }
 }
