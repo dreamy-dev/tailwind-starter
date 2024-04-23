@@ -41,9 +41,15 @@ async function fetchData(slug, lang) {
         'cdn/stories/config-footer-new',
         sbParams
     );
-    console.log('config_footer', config_footer.data.story);
+    let config_header = await storyblokApi.get(
+        'cdn/stories/config-header-new',
+        sbParams
+    );
 
-    return { story: data.story, config_footer: config_footer.data.story };
+    return {
+        story: data.story, config_footer: config_footer.data.story,
+        config_header: config_header.data.story
+    };
 }
 
 export async function generateStaticParams() {
@@ -73,14 +79,14 @@ export default async function Detailpage({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story, config_footer, config_header } = await fetchData(slug, params.lang);
 
-    console.log({ config_footer }, 'config_footer');
+   
     if (!story) {
         return notFound();
     }
 
     return (
         <>
-            <Layout story={config_footer}>
+            <Layout config_footer={config_footer} config_header={config_header}>
                 <StoryblokStory story={story} />
             </Layout>
         </>

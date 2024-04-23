@@ -5,7 +5,7 @@ import Footer from './Footer';
 const ConfigFooter = ({ blok }) => {
     return (
         <div className="bg-blueDark mt-auto" {...storyblokEditable(blok)}>
-            {/* {JSON.stringify(blok)} */}
+          
             <div >
                 <div >
 

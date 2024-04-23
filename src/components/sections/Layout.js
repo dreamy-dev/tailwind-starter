@@ -2,15 +2,14 @@
 import ConfigFooter from './Config_footer';
 import ConfigHeader from './Config_header';
 
-const Layout = ({ children, story }) => {
+const Layout = ({ children, config_header, config_footer }) => {
   
-    console.log('story.content:', story.content);
 
     return (
         <div>
-            {/* <ConfigHeader blok={story.content} /> */}
+            <ConfigHeader blok={config_header.content} />
             {children}
-            <ConfigFooter blok={story.content} />
+            <ConfigFooter blok={config_footer.content} />
         </div>
     );
 };

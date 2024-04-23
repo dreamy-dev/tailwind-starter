@@ -1,8 +1,7 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import StoryblokProvider from '@/src/components/StoryblokProvider';
 import Script from 'next/script';
-import Header from '@/src/components/sections/Header';
-import Footer from '@/src/components/sections/Footer';
+
 import { Montserrat } from 'next/font/google';
 /* import localFont from 'next/font/local'; */
 
@@ -94,9 +93,9 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         ' overflow-x-hidden flex flex-col min-h-screen'
                     }
                 >
-                    {/* <Header /> */}
+                 
                     <main>{children}</main>
-                    {/* <Footer /> */}
+                  
                 </body>
             </html>
         </StoryblokProvider>

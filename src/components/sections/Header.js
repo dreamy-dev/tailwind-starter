@@ -255,7 +255,7 @@ const Header = ({ blok }) => {
                             <div className=" bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                                 <div className="hidden lg:block">
                                     <Link
-                                        href={blok.LinkLogo.url}
+                                       href={blok.LinkLogo.url}
                                         className="flex justify-start items-start lg:justify-center lg:items-center mb-10 lg:mb-0 "
                                     >
                                         <img
@@ -334,7 +334,7 @@ const Header = ({ blok }) => {
                                                                     ? 'closed'
                                                                     : '' ||
                                                                         item.title ===
-                                                                        'Lösungen'
+                                                                            'Lösungen'
                                                                       ? 'closed'
                                                                       : ''
                                                             }
