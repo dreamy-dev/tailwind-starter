@@ -1,10 +1,7 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import ButtonPrimary from '../elements/ButtonPrimary';
-import FullWidth from '../layouts/FullWidth';
 import ContentWidth from '../layouts/ContentWidth';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
-import Script from 'next/script';
 import { useState, useEffect } from 'react';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 
@@ -15,6 +12,7 @@ export default function MailchimpEmbed({ blok }) {
     const [company, setCompany] = useState('');
     const [isSelected, setSelection] = useState(false);
     const [validationError, setValidationError] = useState(false);
+    const [validationSubscribedError, setValidationSubscribedError] = useState(false);
     const [validationSuccess, setValidationSuccess] = useState(false);
     const [errors, setErrors] = useState({ email: false, firstName: false, lastName: false, company: false, isSelected: false });
 
@@ -34,14 +32,24 @@ export default function MailchimpEmbed({ blok }) {
         if (attributes.status == "subscribed") {
             setValidationSuccess(true)
             setValidationError(false)
+            setValidationSubscribedError(false)
+            return false
+        }
+        else if (attributes.status == 400) {
+            setValidationSuccess(false)
+            setValidationError(true)
+            setValidationSubscribedError(true)
             return false
         }
         else if (attributes.status) {
             setValidationSuccess(false)
             setValidationError(true)
+            setValidationSubscribedError(false)
             return false
         } else {
-            console.log("Some strange error happend")
+            setValidationSuccess(false)
+            setValidationError(true)
+            setValidationSubscribedError(false)
         }
     };
 
@@ -205,7 +213,7 @@ export default function MailchimpEmbed({ blok }) {
                                     name="checkbox-1"
                                     className="required relative shrink-0 w-4 h-4 border-2 border-primary checked:bg-primary checked:border-primary"
                                     checked={isSelected}
-                                    onClick={(e) => { console.log(e); setSelection(e.target.checked); validateCheckbox(!e.target.checked) }}
+                                    onClick={(e) => { setSelection(e.target.checked); validateCheckbox(!e.target.checked) }}
                                     type="checkbox"
                                 />
                                 <label
@@ -223,7 +231,7 @@ export default function MailchimpEmbed({ blok }) {
                                 onClick={handleSubmit} value={blok.button_text}
                             />
                         </div>
-                        <div className={`${validationError ? "block " : "hidden "} mt-4 mb-2 text-sm text-red-700 font-medium`}>{blok.global_validation_error}</div>
+                        <div className={`${validationError ? "block " : "hidden "} mt-4 mb-2 text-sm text-red-700 font-medium`}>{validationSubscribedError ? blok.error_email_exists : blok.global_validation_error}</div>
                         {validationSuccess && <div className="top-0 left-0 absolute bg-white w-full h-full items-center flex align-center justify-center text-md"><p>{blok.global_validation_success}</p></div>}
 
                     </div>
