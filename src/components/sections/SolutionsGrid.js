@@ -9,7 +9,7 @@ const SolutionsGrid = ({ blok }) => {
     return (
         <section className="bg-white dark:bg-gray-900 antialiased py-16 lg:py-24">
             <ContentWidth>
-                <div className="col-span-12 ">
+                <div className="col-span-12">
                     <H2>{blok?.title}</H2>
                     <div
                         {...storyblokEditable(blok)}

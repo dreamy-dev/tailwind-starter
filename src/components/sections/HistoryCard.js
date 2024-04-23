@@ -1,4 +1,5 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
+import H3 from '../typography/H3';
 
 export default function HistoryCard({ blok }) {
     return (
@@ -12,9 +13,7 @@ export default function HistoryCard({ blok }) {
                 src={blok?.image.filename}
             />
             <div className="p-5">
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {blok?.title}
-                </h5>
+                <H3>{blok?.title}</H3>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                     {blok?.text}
                 </p>
