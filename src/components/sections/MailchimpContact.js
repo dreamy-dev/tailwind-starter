@@ -18,12 +18,11 @@ export default function MailchimpContact({ blok }) {
 
     const subscribeUser = async () => {
 
-        const url = `../api/mailchimp-contact?email=${email}&firma=${company}&firstName=${firstName}&lastName=${lastName}`;
+        const url = `api/mailchimp-contact?email=${email}`;
 
         const checkConnection = await fetch(url, {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
                 'Content-Type': 'application/json',
             }
         });
