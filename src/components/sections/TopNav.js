@@ -7,9 +7,9 @@ import ContentWidth from '../layouts/ContentWidth';
 export default function TopNav({ blok }) {
     const navigation = {
         topNav: [
-            { name: blok.media_link_text, href: blok.media_link.url },
-            { name: blok.suppliers_text, href: blok.suppliers_link.url },
-            { name: blok.downloads_text, href: blok.downloads_link.url },
+            { name: blok.media_link_text, href: blok.media_link.story.url },
+            { name: blok.suppliers_text, href: blok.suppliers_link.story.url },
+            { name: blok.downloads_text, href: blok.downloads_link.story.url },
         ],
     };
     return (

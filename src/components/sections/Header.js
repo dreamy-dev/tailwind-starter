@@ -23,48 +23,48 @@ const Header = ({ blok }) => {
         topNav: [
             {
                 title: blok.main_link_1_text,
-                href: blok.main_link_1_link.url,
+                href: blok.main_link_1_link.story.url,
                 icon: <IconNav></IconNav>,
                 submenu: true,
                 submenuItems: [
                     {
                         title: blok.main_1_sublink_1_text,
-                        href: blok.main_1_sublink_1_link.url,
+                        href: blok.main_1_sublink_1_link.story.url,
                     },
                     {
                         title: blok.main_1_sublink_2_text,
-                        href: blok.main_1_sublink_2_link.url,
+                        href: blok.main_1_sublink_2_link.story.url,
                     },
                 ],
             },
             {
                 title: blok.main_2_link_1_text,
-                href: blok.main_2_link_1_link.url,
+                href: blok.main_2_link_1_link.story.url,
                 icon: <IconNav></IconNav>,
                 submenu: true,
                 submenuItems: [
                     {
                         title: blok.main_2_link_2_text,
-                        href: blok.main_2_link_2_link.url,
+                        href: blok.main_2_link_2_link.story.url,
                     },
                     {
                         title: blok.main_2_link_3_text,
-                        href: blok.main_2_link_3_link.url,
+                        href: blok.main_2_link_3_link.story.url,
                     },
                     {
                         title: blok.main_link_2_text,
-                        href: blok.main_link_2_link.url,
+                        href: blok.main_link_2_link.story.url,
                     },
                 ],
             },
             {
                 title: blok.main_link_3_text,
-                href: blok.main_link_3_link.url,
+                href: blok.main_link_3_link.story.url,
                 icon: false,
             },
             {
                 title: blok.main_link_4_text,
-                href: blok.main_link_4_link.url,
+                href: blok.main_link_4_link.story.url,
                 icon: false,
             },
         ],
