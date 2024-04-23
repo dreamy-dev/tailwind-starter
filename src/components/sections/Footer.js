@@ -91,10 +91,12 @@ const socialLinks = (
 );
  
     return (
+        
         <footer
             className="bg-blueDark mt-auto"
             aria-labelledby="footer-heading"
         >
+            {JSON.stringify(blok)}
             <ContentWidth>
               
                 <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
@@ -111,7 +113,7 @@ const socialLinks = (
                                     textColorClass="text-white"
                                     borderColorClass="border-white"
                                     position="left"
-                                    href={blok.button.story.url}
+                                    href={blok.button.url}
                                 >
                                     {blok.button_text}
                                 </Button>
