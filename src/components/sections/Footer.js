@@ -21,7 +21,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
-                    href={blok.link_2_url.url}
+                    href={`/${blok.link_2_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
                     {blok.link_2_text}
@@ -29,7 +29,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
-                    href={blok.link_3_url.url}
+                    href={`/${blok.link_3_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
                     {blok.link_3_text}
@@ -37,7 +37,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
-                    href={blok.link_4_url.url}
+                    href={`/${blok.link_4_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
                     {blok.link_4_text}
@@ -45,7 +45,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
-                    href={blok.link_5_url.url}
+                    href={`/${blok.link_5_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
                     {blok.link_5_text}
@@ -88,14 +88,12 @@ const Footer = ({ blok }) => {
     );
 
     return (
-
         <footer
             className="bg-blueDark mt-auto"
             aria-labelledby="footer-heading"
         >
             {JSON.stringify(blok)}
             <ContentWidth>
-
                 <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
                     <div className="lg:flex lg:items-center lg:justify-between">
                         <img
@@ -110,23 +108,17 @@ const Footer = ({ blok }) => {
                                     textColorClass="text-white"
                                     borderColorClass="border-white"
                                     position="left"
-                                    href={blok.button.story.url}
+                                    href={`/${blok.button.story.url}`}
                                 >
                                     {blok.button_text}
                                 </Button>
                             </div>
-                            <div className="flex space-x-4">
-                                {socialLinks}
-
-                            </div>
+                            <div className="flex space-x-4">{socialLinks}</div>
                         </div>
                     </div>
 
                     <div className=" lg:pt-8 flex-wrap flex-row  lg:flex xl:flex-row md:flex-col md:justify-start md:items-start xl:items-center xl:justify-between">
-                        <div className="mt-16 lg:mt-0">
-                            {legalLinks}
-
-                        </div>
+                        <div className="mt-16 lg:mt-0">{legalLinks}</div>
 
                         <p className="mt-16 md:mt-16 lg:mt-16 xl:mt-0 sm:mt-12 text-base leading-5 text-primarySolid-400">
                             {blok.copyright_text}
