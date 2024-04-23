@@ -1,18 +1,13 @@
 'use client';
-import {
-    storyblokEditable,
-    getStoryblokApi,
-    StoryblokComponent,
-} from '@storyblok/react/rsc';
+
 import React, { useState, useEffect, useRef } from 'react';
 import IconNav from '../elements/IconNav';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { motion } from 'framer-motion';
-import LanguageSwitcher from '../elements/LanguageSwitcher';
 import ModalSearch from './ModalSearch';
 import { SearchIcon } from '../icons/SearchIcon';
-
+import TopNav from './TopNav';
 
 const variants = {
     open: { opacity: 1, y: 0, height: 'auto' },
@@ -23,16 +18,7 @@ const variantsSub = {
     closed: { opacity: 0, y: 50, height: 0 },
 };
 
-
-
 const Header = ({ blok }) => {
-    const navigation = {
-        topNav: [
-            { name: blok.media_link_text, href: blok.media_link.url },
-            { name: blok.suppliers_text, href: blok.suppliers_link.url },
-            { name: blok.downloads_text, href: blok.downloads_link.url },
-        ],
-    };
     const navigationMain = {
         topNav: [
             {
@@ -87,7 +73,6 @@ const Header = ({ blok }) => {
 
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    //const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
     const [isUnternehmenSubmenuOpen, setIsUnternehmenSubmenuOpen] =
         useState(false);
     const [isSolutionsSubmenuOpen, setIsSolutionsSubmenuOpen] = useState(false);
@@ -165,7 +150,8 @@ const Header = ({ blok }) => {
             };
         }
     });
-    // Modal logit
+
+    // Modal logic
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -220,42 +206,13 @@ const Header = ({ blok }) => {
                 } lg:visible flex lg:flex flex-col-reverse w-full lg:flex-col`}
             >
                 <>
-                    <section className="bg-white">
-                        <ContentWidth>
-                            <div className="col-span-12 px-4 lg:px-0">
-                                <div className="pt-5 flex flex-col sm:justify-between lg:justify-end lg:flex-row lg:flex lg:items-center gap-8 lg:gap-4">
-                                    <ul
-                                        role="list"
-                                        className="flex lg:flex flex-col lg:flex-row justify-between lg:justify-end gap-8"
-                                    >
-                                        {navigation.topNav.map((item) => (
-                                            <li key={item.name}>
-                                                <Link
-                                                    onClick={() => {
-                                                        closeUnternehmenSubmenu();
-                                                        closeSolutionsSubmenu();
-                                                        closeMainMenu();
-                                                        closeMobileNav();
-                                                    }}
-                                                    href={item.href}
-                                                    className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <LanguageSwitcher />
-                                </div>
-                            </div>
-                        </ContentWidth>
-                    </section>
+                    <TopNav blok={blok} />
                     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
                         <ContentWidth>
                             <div className=" bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                                 <div className="hidden lg:block">
                                     <Link
-                                       href={blok.LinkLogo.url}
+                                        href={blok.LinkLogo.url}
                                         className="flex justify-start items-start lg:justify-center lg:items-center mb-10 lg:mb-0 "
                                     >
                                         <img
@@ -324,7 +281,6 @@ const Header = ({ blok }) => {
                                                         {item.title}
                                                     </Link>
                                                 )}
-
                                                 {item.submenu &&
                                                     item.submenuItems && (
                                                         <motion.div
@@ -417,7 +373,6 @@ const Header = ({ blok }) => {
 
                                                                     {isUnternehmenSubmenuOpen && (
                                                                         <>
-                                                                            {' '}
                                                                             <Link
                                                                                 href="/unternehmen"
                                                                                 className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
@@ -485,7 +440,6 @@ const Header = ({ blok }) => {
                                                     )}
                                             </li>
                                         ))}
-
                                         <li className="lg:relative lg:block z-20">
                                             <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
                                                 <button
@@ -507,7 +461,6 @@ const Header = ({ blok }) => {
                                             />
                                         </li>
                                     </ul>
-
                                     <div className="border-b lg:border-none"></div>
                                 </div>
                             </div>
