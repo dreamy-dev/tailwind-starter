@@ -3,7 +3,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
 
 import Footer from './Footer';
 const ConfigFooter = ({ blok }) => {
-    console.log(blok, 'blok');
+ 
     return (
         <div className="bg-blueDark mt-auto" {...storyblokEditable(blok)}>
 

@@ -9,9 +9,15 @@ import ModalSearch from './ModalSearch';
 import { SearchIcon } from '../icons/SearchIcon';
 import TopNav from './TopNav';
 
-const variants = {
-    open: { opacity: 1, y: 0, height: 'auto' },
-    closed: { opacity: 0, y: 50, height: 0 },
+const submenuVariants = {
+    open: { opacity: 1, y: 0, height: 'auto', overflow: 'visible' },
+    closed: {
+        opacity: 0,
+        y: 50,
+        height: 0,
+        overflow: 'hidden',
+        transitionEnd: { display: 'none' },
+    },
 };
 const variantsSub = {
     open: { opacity: 1, y: 0, height: '100%' },
@@ -26,6 +32,7 @@ const Header = ({ blok }) => {
                 href: blok.main_link_1_link.story.url,
                 icon: <IconNav></IconNav>,
                 submenu: true,
+                id: 2,
                 submenuItems: [
                     {
                         title: blok.main_1_sublink_1_text,
@@ -42,6 +49,7 @@ const Header = ({ blok }) => {
                 href: blok.main_2_link_1_link.story.url,
                 icon: <IconNav></IconNav>,
                 submenu: true,
+                id: 1,
                 submenuItems: [
                     {
                         title: blok.main_2_link_2_text,
@@ -70,62 +78,44 @@ const Header = ({ blok }) => {
         ],
     };
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [isUnternehmenSubmenuOpen, setIsUnternehmenSubmenuOpen] =
-        useState(false);
-    const [isSolutionsSubmenuOpen, setIsSolutionsSubmenuOpen] = useState(false);
+    const [openSubmenu, setOpenSubmenu] = useState(null);
 
-    const toggleUnternehmenSubmenu = () => {
-        setIsUnternehmenSubmenuOpen((prev) => !prev);
-    };
+    const menuRef = useRef(null);
 
-    const toggleSolutionsSubmenu = () => {
-        setIsSolutionsSubmenuOpen((prev) => !prev);
-    };
-
-    const closeUnternehmenSubmenu = () => {
-        setIsUnternehmenSubmenuOpen(false);
-    };
-
-    const closeSolutionsSubmenu = () => {
-        setIsSolutionsSubmenuOpen(false);
+    const toggleSubmenu = (submenuId) => {
+        setOpenSubmenu(openSubmenu === submenuId ? null : submenuId);
+        toggleMainMenu();
     };
 
     const toggleMainMenu = () => {
         setIsOpen((prev) => !prev);
     };
 
-    const closeMainMenu = () => {
-        setIsOpen(false);
+    const toggleMobileNav = () => {
+        setIsMobileNavOpen((prev) => !prev);
+        setOpenSubmenu(null); 
     };
 
-    const toggleMobileNav = () => {
-        setIsMobileNavOpen(!isMobileNavOpen);
-    };
     const closeMobileNav = () => {
         setIsMobileNavOpen(false);
+        setOpenSubmenu(null); 
     };
 
     useEffect(() => {
-        setIsUnternehmenSubmenuOpen(false);
-        setIsSolutionsSubmenuOpen(false);
-    }, []);
-
-    let menuRef = useRef(null);
-
-    useEffect(() => {
-        let handler = (e) => {
-            if (menuRef.current && !menuRef.current.contains(e.target)) {
-                setIsOpen(false);
-                setIsUnternehmenSubmenuOpen(false);
-                setIsSolutionsSubmenuOpen(false);
+        const handler = (e) => {
+            if (!menuRef.current.contains(e.target)) {
+                //   setIsOpen(false);
+                setOpenSubmenu(null);
+                setIsMobileNavOpen(false);
             }
         };
-
         document.addEventListener('mousedown', handler);
-    });
+        return () => {
+            document.removeEventListener('mousedown', handler);
+        };
+    }, []);
 
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
     useEffect(() => {
@@ -159,6 +149,49 @@ const Header = ({ blok }) => {
 
     const closeModal = () => {
         setIsModalOpen(false);
+    };
+
+    const renderSubmenuContent = (submenuId, title, href) => {
+        switch (submenuId) {
+            case 1:
+                return (
+                
+                        <Link
+                            href={href}
+                            className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                            onClick={() => {
+                                closeMobileNav();
+                                setIsOpen((isOpen) => !isOpen);
+                            }}
+                        >
+                            <p className="lg:text-lg">Übersicht</p>
+                            <p className="hidden lg:block lg:font-semibold lg:text-xl">
+                              {title}
+                            </p>
+                        </Link>
+                 
+                );
+            case 2:
+                return (
+                  
+                        <Link
+                            href={href}
+                            className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                            onClick={() => {
+                                closeMobileNav();
+                                setIsOpen((isOpen) => !isOpen);
+                            }}
+                        >
+                            <p className="lg:text-lg">Übersicht</p>
+                            <p className="hidden lg:block lg:font-semibold lg:text-xl">
+                               {title}
+                            </p>
+                        </Link>
+                  
+                );
+            default:
+                return null;
+        }
     };
 
     return (
@@ -231,84 +264,44 @@ const Header = ({ blok }) => {
                                         {navigationMain.topNav.map((item) => (
                                             <li
                                                 key={item.title}
-                                                className="lg:px-3 xl:px-5"
+                                                className="lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                             >
-                                                {item.href === '/unternehmen' ||
-                                                item.href === '/loesungen' ? (
+                                                {item.submenu ? (
                                                     <motion.div
-                                                        onClick={() => {
-                                                            if (
-                                                                item.href ===
-                                                                '/unternehmen'
-                                                            ) {
-                                                                toggleUnternehmenSubmenu();
-                                                                closeSolutionsSubmenu();
-                                                            } else if (
-                                                                item.href ===
-                                                                '/loesungen'
-                                                            ) {
-                                                                toggleSolutionsSubmenu();
-                                                                closeUnternehmenSubmenu();
-                                                            }
-                                                            toggleMainMenu();
-                                                        }}
-                                                        className="flex gap-2 justify-center items-center cursor-pointer pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                        onClick={() =>
+                                                            toggleSubmenu(
+                                                                item.id
+                                                            )
+                                                        }
+                                                        variants={
+                                                            submenuVariants
+                                                        }
+                                                        animate={
+                                                            openSubmenu ===
+                                                            item.id
+                                                                ? 'open'
+                                                                : ''
+                                                        }
+                                                        initial="open"
                                                     >
                                                         {item.title}
-                                                        <svg
-                                                            className="lg:hidden"
-                                                            width="10"
-                                                            height="10"
-                                                            viewBox="0 0 20 20"
-                                                            fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                            <path
-                                                                d="M5.55124 20L4 18.3171L13.0269 10L4 1.68288L5.55124 0L16.4099 10L5.55124 20Z"
-                                                                fill="#005893"
-                                                            />
-                                                        </svg>
-                                                        <motion.span></motion.span>
                                                     </motion.div>
                                                 ) : (
                                                     <Link
-                                                        onClick={() => {
-                                                            closeMobileNav();
-                                                        }}
-                                                        href={item.href}
                                                         className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                        href={item.href}
                                                     >
                                                         {item.title}
                                                     </Link>
                                                 )}
                                                 {item.submenu &&
-                                                    item.submenuItems && (
+                                                    openSubmenu === item.id && (
                                                         <motion.div
-                                                            initial={
-                                                                item.title ===
-                                                                'Unternehmen'
-                                                                    ? 'closed'
-                                                                    : '' ||
-                                                                        item.title ===
-                                                                            'Lösungen'
-                                                                      ? 'closed'
-                                                                      : ''
-                                                            }
-                                                            animate={
-                                                                (item.title ===
-                                                                    'Unternehmen' &&
-                                                                    isUnternehmenSubmenuOpen) ||
-                                                                (item.title ===
-                                                                    'Lösungen' &&
-                                                                    isSolutionsSubmenuOpen)
-                                                                    ? 'open'
-                                                                    : 'closed'
-                                                            }
                                                             variants={
-                                                                isNarrowScreen
-                                                                    ? variantsSub
-                                                                    : variants
+                                                                submenuVariants
                                                             }
+                                                            initial="closed"
+                                                            animate="open"
                                                             style={{
                                                                 padding: '10px',
                                                                 zIndex: '30',
@@ -326,8 +319,6 @@ const Header = ({ blok }) => {
                                                                         <Link
                                                                             href="#"
                                                                             onClick={() => {
-                                                                                closeUnternehmenSubmenu();
-                                                                                closeSolutionsSubmenu();
                                                                                 toggleMainMenu();
                                                                             }}
                                                                             className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
@@ -348,53 +339,11 @@ const Header = ({ blok }) => {
                                                                             Menu
                                                                         </Link>
                                                                     </div>
-                                                                    {isSolutionsSubmenuOpen && (
-                                                                        <Link
-                                                                            href="/solutions"
-                                                                            className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
-                                                                            onClick={() => {
-                                                                                closeMobileNav();
-                                                                                setIsOpen(
-                                                                                    (
-                                                                                        isOpen
-                                                                                    ) =>
-                                                                                        !isOpen
-                                                                                );
-                                                                            }}
-                                                                        >
-                                                                            <p className="lg:text-lg">
-                                                                                Übersicht
-                                                                            </p>
-                                                                            <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                                                                                Lösungen
-                                                                            </p>
-                                                                        </Link>
-                                                                    )}
-
-                                                                    {isUnternehmenSubmenuOpen && (
-                                                                        <>
-                                                                            <Link
-                                                                                href="/unternehmen"
-                                                                                className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
-                                                                                onClick={() => {
-                                                                                    closeMobileNav();
-                                                                                    setIsOpen(
-                                                                                        (
-                                                                                            isOpen
-                                                                                        ) =>
-                                                                                            !isOpen
-                                                                                    );
-                                                                                }}
-                                                                            >
-                                                                                <p className="lg:text-lg">
-                                                                                    Übersicht
-                                                                                </p>
-                                                                                <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                                                                                    Unternehmen
-                                                                                </p>
-                                                                            </Link>
-                                                                        </>
-                                                                    )}
+                                                                    {openSubmenu ===
+                                                                        item.id &&
+                                                                        renderSubmenuContent(
+                                                                            item.id, item.title, item.href
+                                                                        )}
                                                                     <div className="grid content-center">
                                                                         {item.submenuItems.map(
                                                                             (

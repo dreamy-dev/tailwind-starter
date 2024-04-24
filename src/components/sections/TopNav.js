@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 
-export default function TopNav({ blok }) {
+export default function TopNav({ blok, closeMainMenu, closeMobileNav }) {
     const navigation = {
         topNav: [
             { name: blok.media_link_text, href: blok.media_link.story.url },
@@ -24,12 +24,12 @@ export default function TopNav({ blok }) {
                             {navigation.topNav.map((item) => (
                                 <li key={item.name}>
                                     <Link
-                                        /* onClick={() => {
-                                            closeUnternehmenSubmenu();
-                                            closeSolutionsSubmenu();
+                                         onClick={() => {
+                                            // closeUnternehmenSubmenu();
+                                            // closeSolutionsSubmenu();
                                             closeMainMenu();
                                             closeMobileNav();
-                                        }} */
+                                        }} 
                                         href={item.href}
                                         className="text-base leading-6 font-medium text-primarySolid-800 hover:text-primary"
                                     >
