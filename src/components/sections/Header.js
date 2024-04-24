@@ -10,12 +10,19 @@ import { SearchIcon } from '../icons/SearchIcon';
 import TopNav from './TopNav';
 
 const submenuVariants = {
-    open: { opacity: 1, y: 0, height: 'auto', overflow: 'visible' },
+    open: {
+        opacity: 1,
+        y: 0,
+        height: 'auto',
+        overflow: 'visible',
+        cursor: 'pointer',
+    },
     closed: {
         opacity: 0,
         y: 50,
         height: 0,
         overflow: 'hidden',
+
         transitionEnd: { display: 'none' },
     },
 };
@@ -168,7 +175,7 @@ const toggleMainMenu = () => {
                 return (
                     <Link
                         href={href}
-                        className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                        className="cursor-pointer text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
                         onClick={onClickHandler}
                     >
                         <p className="hidden lg:block lg:font-semibold lg:text-xl">
@@ -181,7 +188,7 @@ const toggleMainMenu = () => {
                 return (
                     <Link
                         href={href}
-                        className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                        className="cursor-pointer text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
                         onClick={onClickHandler}
                     >
                         <p className="hidden lg:block lg:font-semibold lg:text-xl">
@@ -266,7 +273,7 @@ const toggleMainMenu = () => {
                                             (item, index) => (
                                                 <li
                                                     key={index}
-                                                    className="lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                    className="cursor-poiner lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                 >
                                                     {item.submenu ? (
                                                         <motion.div
