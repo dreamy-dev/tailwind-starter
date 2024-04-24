@@ -84,14 +84,21 @@ const Header = ({ blok }) => {
 
     const menuRef = useRef(null);
 
-    const toggleSubmenu = (submenuId) => {
-        setOpenSubmenu(openSubmenu === submenuId ? null : submenuId);
-        toggleMainMenu();
-    };
+  const toggleSubmenu = (submenuId) => {
+      
+      if (openSubmenu === submenuId) {
+          setOpenSubmenu(null);
+      } else {
+          setOpenSubmenu(submenuId);
+          setIsOpen(true); 
+      }
+  };
 
-    const toggleMainMenu = () => {
-        setIsOpen((prev) => !prev);
-    };
+const toggleMainMenu = () => {
+    setIsOpen((prev) => !prev); 
+    setOpenSubmenu(null); 
+    
+};
 
     const toggleMobileNav = () => {
         setIsMobileNavOpen((prev) => !prev);
@@ -106,7 +113,7 @@ const Header = ({ blok }) => {
     useEffect(() => {
         const handler = (e) => {
             if (!menuRef.current.contains(e.target)) {
-                //   setIsOpen(false);
+                   setIsOpen(false);
                 setOpenSubmenu(null);
                 setIsMobileNavOpen(false);
             }
@@ -141,7 +148,7 @@ const Header = ({ blok }) => {
         }
     });
 
-    // Modal logic
+
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -152,42 +159,36 @@ const Header = ({ blok }) => {
     };
 
     const renderSubmenuContent = (submenuId, title, href) => {
+            const onClickHandler = () => {
+                closeMobileNav(); 
+                setIsOpen(false);
+            };
         switch (submenuId) {
             case 1:
                 return (
-                
-                        <Link
-                            href={href}
-                            className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
-                            onClick={() => {
-                                closeMobileNav();
-                                setIsOpen((isOpen) => !isOpen);
-                            }}
-                        >
-                            <p className="lg:text-lg">Übersicht</p>
-                            <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                              {title}
-                            </p>
-                        </Link>
-                 
+                    <Link
+                        href={href}
+                        className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                        onClick={onClickHandler}
+                    >
+                        <p className="hidden lg:block lg:font-semibold lg:text-xl">
+                            Übersicht
+                        </p>
+                        <p className="">{title}</p>
+                    </Link>
                 );
             case 2:
                 return (
-                  
-                        <Link
-                            href={href}
-                            className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
-                            onClick={() => {
-                                closeMobileNav();
-                                setIsOpen((isOpen) => !isOpen);
-                            }}
-                        >
-                            <p className="lg:text-lg">Übersicht</p>
-                            <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                               {title}
-                            </p>
-                        </Link>
-                  
+                    <Link
+                        href={href}
+                        className="text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
+                        onClick={onClickHandler}
+                    >
+                        <p className="hidden lg:block lg:font-semibold lg:text-xl">
+                            Übersicht
+                        </p>
+                        <p className="">{title}</p>
+                    </Link>
                 );
             default:
                 return null;
@@ -318,8 +319,20 @@ const Header = ({ blok }) => {
                                                                     <div className="border-b lg:border-none lg:hidden">
                                                                         <Link
                                                                             href="#"
-                                                                            onClick={() => {
-                                                                                toggleMainMenu();
+                                                                            onClick={(
+                                                                                e
+                                                                            ) => {
+                                                                                e.preventDefault();
+                                                                                
+                                                                                setIsOpen(
+                                                                                    true
+                                                                                ); 
+                                                                                setOpenSubmenu(
+                                                                                    null
+                                                                                ); 
+                                                                                setIsMobileNavOpen(
+                                                                                    true
+                                                                                ); 
                                                                             }}
                                                                             className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
                                                                         >
@@ -342,7 +355,9 @@ const Header = ({ blok }) => {
                                                                     {openSubmenu ===
                                                                         item.id &&
                                                                         renderSubmenuContent(
-                                                                            item.id, item.title, item.href
+                                                                            item.id,
+                                                                            item.title,
+                                                                            item.href
                                                                         )}
                                                                     <div className="grid content-center">
                                                                         {item.submenuItems.map(

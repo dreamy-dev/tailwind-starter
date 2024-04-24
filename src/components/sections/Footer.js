@@ -1,5 +1,5 @@
 
-import { storyblokEditable, getStoryblokApi } from '@storyblok/react/rsc';
+
 import Button from '../elements/ButtonSecondary';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
@@ -92,7 +92,7 @@ const Footer = ({ blok }) => {
             className="bg-blueDark mt-auto"
             aria-labelledby="footer-heading"
         >
-            {JSON.stringify(blok)}
+        
             <ContentWidth>
                 <div className="col-span-12 py-8 mx-auto w-full  lg:py-10">
                     <div className="lg:flex lg:items-center lg:justify-between">
