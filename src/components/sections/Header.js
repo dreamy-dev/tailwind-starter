@@ -262,148 +262,152 @@ const toggleMainMenu = () => {
                                     id="navbar-solid-bg"
                                 >
                                     <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
-                                        {navigationMain.topNav.map((item) => (
-                                            <li
-                                                key={item.title}
-                                                className="lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                            >
-                                                {item.submenu ? (
-                                                    <motion.div
-                                                        onClick={() =>
-                                                            toggleSubmenu(
-                                                                item.id
-                                                            )
-                                                        }
-                                                        variants={
-                                                            submenuVariants
-                                                        }
-                                                        animate={
-                                                            openSubmenu ===
-                                                            item.id
-                                                                ? 'open'
-                                                                : ''
-                                                        }
-                                                        initial="open"
-                                                    >
-                                                        {item.title}
-                                                    </motion.div>
-                                                ) : (
-                                                    <Link
-                                                        className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                                        href={item.href}
-                                                    >
-                                                        {item.title}
-                                                    </Link>
-                                                )}
-                                                {item.submenu &&
-                                                    openSubmenu === item.id && (
+                                        {navigationMain.topNav.map(
+                                            (item, index) => (
+                                                <li
+                                                    key={index}
+                                                    className="lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                >
+                                                    {item.submenu ? (
                                                         <motion.div
+                                                            onClick={() =>
+                                                                toggleSubmenu(
+                                                                    item.id
+                                                                )
+                                                            }
                                                             variants={
                                                                 submenuVariants
                                                             }
-                                                            initial="closed"
-                                                            animate="open"
-                                                            style={{
-                                                                padding: '10px',
-                                                                zIndex: '30',
-                                                                width: '100%',
-                                                                left: '0',
-                                                                top: '63px',
-                                                                overflow:
-                                                                    'hidden',
-                                                            }}
-                                                            className="fixed lg:absolute bg-white h-screen lg:h-auto lg:bg-greySolid-50"
+                                                            animate={
+                                                                openSubmenu ===
+                                                                item.id
+                                                                    ? 'open'
+                                                                    : ''
+                                                            }
+                                                            initial="open"
                                                         >
-                                                            <ContentWidth>
-                                                                <div className="w-full grid col-span-12 lg:col-span-6 lg:col-start-5 grid-cols-1 lg:grid-cols-2 lg:gap-6 lg:p-8 px-4 lg:px-0 mt-6 lg:mt-0">
-                                                                    <div className="border-b lg:border-none lg:hidden">
-                                                                        <Link
-                                                                            href="#"
-                                                                            onClick={(
-                                                                                e
-                                                                            ) => {
-                                                                                e.preventDefault();
-                                                                                
-                                                                                setIsOpen(
-                                                                                    true
-                                                                                ); 
-                                                                                setOpenSubmenu(
-                                                                                    null
-                                                                                ); 
-                                                                                setIsMobileNavOpen(
-                                                                                    true
-                                                                                ); 
-                                                                            }}
-                                                                            className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
-                                                                        >
-                                                                            <svg
-                                                                                width="10"
-                                                                                height="10"
-                                                                                viewBox="0 0 20 20"
-                                                                                fill="none"
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                            >
-                                                                                <path
-                                                                                    d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
-                                                                                    fill="#005893"
-                                                                                />
-                                                                            </svg>
-                                                                            Main
-                                                                            Menu
-                                                                        </Link>
-                                                                    </div>
-                                                                    {openSubmenu ===
-                                                                        item.id &&
-                                                                        renderSubmenuContent(
-                                                                            item.id,
-                                                                            item.title,
-                                                                            item.href
-                                                                        )}
-                                                                    <div className="grid content-center">
-                                                                        {item.submenuItems.map(
-                                                                            (
-                                                                                subItem
-                                                                            ) => (
-                                                                                <motion.div
-                                                                                    key={
-                                                                                        subItem.title
-                                                                                    }
-                                                                                    className=""
-                                                                                >
-                                                                                    <Link
-                                                                                        href={
-                                                                                            subItem.href
-                                                                                        }
-                                                                                        className="flex justify-between px-0 py-4 text-base text-primarySolid-800 lg:text-primarySolid-600 hover:text-primary"
-                                                                                        onClick={() => {
-                                                                                            closeMobileNav();
-                                                                                            setIsOpen(
-                                                                                                (
-                                                                                                    isOpen
-                                                                                                ) =>
-                                                                                                    !isOpen
-                                                                                            );
-                                                                                        }}
-                                                                                    >
-                                                                                        <p>
-                                                                                            {
-                                                                                                subItem.title
-                                                                                            }
-                                                                                        </p>
-                                                                                        <span className="hidden lg:block">
-                                                                                            <img src="/icons/chevron-right-light.svg" />
-                                                                                        </span>
-                                                                                    </Link>
-                                                                                </motion.div>
-                                                                            )
-                                                                        )}
-                                                                    </div>
-                                                                </div>
-                                                            </ContentWidth>
+                                                            {item.title}
                                                         </motion.div>
+                                                    ) : (
+                                                        <Link
+                                                            className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                            href={item.href}
+                                                        >
+                                                            {item.title}
+                                                        </Link>
                                                     )}
-                                            </li>
-                                        ))}
+                                                    {item.submenu &&
+                                                        openSubmenu ===
+                                                            item.id && (
+                                                            <motion.div
+                                                                variants={
+                                                                    submenuVariants
+                                                                }
+                                                                initial="closed"
+                                                                animate="open"
+                                                                style={{
+                                                                    padding:
+                                                                        '10px',
+                                                                    zIndex: '30',
+                                                                    width: '100%',
+                                                                    left: '0',
+                                                                    top: '63px',
+                                                                    overflow:
+                                                                        'hidden',
+                                                                }}
+                                                                className="fixed lg:absolute bg-white h-screen lg:h-auto lg:bg-greySolid-50"
+                                                            >
+                                                                <ContentWidth>
+                                                                    <div className="w-full grid col-span-12 lg:col-span-6 lg:col-start-5 grid-cols-1 lg:grid-cols-2 lg:gap-6 lg:p-8 px-4 lg:px-0 mt-6 lg:mt-0">
+                                                                        <div className="border-b lg:border-none lg:hidden">
+                                                                            <Link
+                                                                                href="#"
+                                                                                onClick={(
+                                                                                    e
+                                                                                ) => {
+                                                                                    e.preventDefault();
+
+                                                                                    setIsOpen(
+                                                                                        true
+                                                                                    );
+                                                                                    setOpenSubmenu(
+                                                                                        null
+                                                                                    );
+                                                                                    setIsMobileNavOpen(
+                                                                                        true
+                                                                                    );
+                                                                                }}
+                                                                                className="text-primarySolid-800 lg:text-primarySolid-600 mb-6 ml-[-20px] flex flex-row gap-2 items-center justify-start content-center whitespace-nowrap"
+                                                                            >
+                                                                                <svg
+                                                                                    width="10"
+                                                                                    height="10"
+                                                                                    viewBox="0 0 20 20"
+                                                                                    fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                >
+                                                                                    <path
+                                                                                        d="M14.8586 20L4 10L14.8586 0L16.4099 1.68288L7.38294 10L16.4099 18.3171L14.8586 20Z"
+                                                                                        fill="#005893"
+                                                                                    />
+                                                                                </svg>
+                                                                                Main
+                                                                                Menu
+                                                                            </Link>
+                                                                        </div>
+                                                                        {openSubmenu ===
+                                                                            item.id &&
+                                                                            renderSubmenuContent(
+                                                                                item.id,
+                                                                                item.title,
+                                                                                item.href
+                                                                            )}
+                                                                        <div className="grid content-center">
+                                                                            {item.submenuItems.map(
+                                                                                (
+                                                                                    subItem
+                                                                                ) => (
+                                                                                    <motion.div
+                                                                                        key={
+                                                                                            subItem.title
+                                                                                        }
+                                                                                        className=""
+                                                                                    >
+                                                                                        <Link
+                                                                                            href={
+                                                                                                subItem.href
+                                                                                            }
+                                                                                            className="flex justify-between px-0 py-4 text-base text-primarySolid-800 lg:text-primarySolid-600 hover:text-primary"
+                                                                                            onClick={() => {
+                                                                                                closeMobileNav();
+                                                                                                setIsOpen(
+                                                                                                    (
+                                                                                                        isOpen
+                                                                                                    ) =>
+                                                                                                        !isOpen
+                                                                                                );
+                                                                                            }}
+                                                                                        >
+                                                                                            <p>
+                                                                                                {
+                                                                                                    subItem.title
+                                                                                                }
+                                                                                            </p>
+                                                                                            <span className="hidden lg:block">
+                                                                                                <img src="/icons/chevron-right-light.svg" />
+                                                                                            </span>
+                                                                                        </Link>
+                                                                                    </motion.div>
+                                                                                )
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </ContentWidth>
+                                                            </motion.div>
+                                                        )}
+                                                </li>
+                                            )
+                                        )}
                                         <li className="lg:relative lg:block z-20">
                                             <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
                                                 <button
