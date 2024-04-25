@@ -39,7 +39,7 @@ const HeroCareer = ({ blok }) => {
                                 <input
                                     name="end"
                                     type="text"
-                                    className="bg-gray-50 border rounded border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Berufsfeld"
                                 />
                             </div>
@@ -56,7 +56,7 @@ const HeroCareer = ({ blok }) => {
                                 <input
                                     type="text"
                                     id="location-form"
-                                    className="bg-gray-50 border rounded border-gray-300 text-gray-900 text-sm  focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 text-sm  focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Land"
                                 />
                             </div>

@@ -67,7 +67,12 @@ const JobOverview = ({ blok }) => (
             </div>
             <div className="mt-8">
                 <H2>Arbeiten bei Stadler</H2>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus erat sem, finibus nec sem at, tempus feugiat est. In bibendum pellentesque mauris egestas ornare. Phasellus dictum turpis nec tempor hendrerit. </Text>
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus erat sem, finibus nec sem at, tempus feugiat est.
+                    In bibendum pellentesque mauris egestas ornare. Phasellus
+                    dictum turpis nec tempor hendrerit.{' '}
+                </Text>
             </div>
             <form className="grid col-span-12 grid-cols-12 my-8 mb-12">
                 <div className="grid col-span-12">
@@ -149,7 +154,7 @@ const JobOverview = ({ blok }) => (
                         <select
                             disabled
                             id="countries_disabled"
-                            className="bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-greySolid-30 border border-gray-300 text-gray-400 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         >
                             <option selected>-</option>
                             <option value="US">United States</option>
@@ -164,7 +169,6 @@ const JobOverview = ({ blok }) => (
             <hr className="h-px my-12 bg-gray-200 border-0"></hr>
 
             <div className="grid col-span-12">
-
                 <H3>Offene Stellen</H3>
                 <div className="divide-y">
                     {jobs.map((item) => (

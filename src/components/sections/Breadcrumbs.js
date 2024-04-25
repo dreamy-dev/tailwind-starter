@@ -11,7 +11,7 @@ const convertBreadcrumb = (string) => {
     return newString.charAt(0).toUpperCase() + newString.slice(1);
 };
 
-const Breadcrumbs = ({ block }) => {
+const Breadcrumbs = ({}) => {
     const router = useRouter();
     const path = usePathname();
     const [breadcrumbs, setBreadcrumbs] = useState(null);
@@ -40,7 +40,7 @@ const Breadcrumbs = ({ block }) => {
 
     return (
         <nav>
-            <ol className="mt-20 flex font-normal text-gray-600">
+            <ol className="mt-0 lg:mt-20 flex font-normal text-sm lg:text-base text-gray-600">
                 {breadcrumbs.map((breadcrumb, i) => {
                     return (
                         <li key={i}>

@@ -37,7 +37,6 @@ const Contact = ({ blok }) => {
                                     color="#fff"
                                     className="fill-white w-4 h-4"
                                 />
-                                {/*  TODO: Add link? */}
                                 <span className="py-2 px-3">
                                     {blok?.phonenumber}
                                 </span>
@@ -50,7 +49,7 @@ const Contact = ({ blok }) => {
                                 <a
                                     type="email"
                                     className="bg-transparent border-none"
-                                    href="mailto:ir@stadlerrail.com"
+                                    href={'mailto:' + blok?.email_link.email}
                                 >
                                     {blok?.email}
                                 </a>
