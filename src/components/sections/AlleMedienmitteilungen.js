@@ -240,24 +240,24 @@ function AlleMedienmitteilungen({ blok }) {
                                     </td>
                                     <td className="px-6 py-4 text-primary">
                                         <div className="flex justify-end">
-                                            {medienmitteilung.content.downloads_block.map(
+                                            {/* {JSON.stringify(medienmitteilung.content)} */}
+                                            {medienmitteilung.content.downloads_block?.map(
                                                 (downloadBlock, index) =>
-                                                    downloadBlock.download_grid.map(
+                                                    downloadBlock.download_grid?.map(
                                                         (
                                                             downloadGrid,
                                                             index
                                                         ) => (
                                                             <a
                                                                 href={
-                                                                    downloadGrid
-                                                                        .download_cta
+                                                                    downloadGrid?.download_cta
                                                                         .url
                                                                 }
                                                                 key={index}
                                                                 className="ml-3 pt-2 pb-2 inline-flex"
                                                             >
                                                                 {
-                                                                    downloadGrid.download_cta_text
+                                                                    downloadGrid?.download_cta_text
                                                                 }
                                                             </a>
                                                         )
