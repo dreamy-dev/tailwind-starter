@@ -107,6 +107,9 @@ import JobOverview from './sections/JobOverview';
 import MailchimpEmbed from './sections/MailchimpEmbed';
 import ProspectiveCareer from './sections/ProspectiveCareer';
 import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
+import ConfigFooter from './sections/Config_footer';
+import ConfigHeader from './sections/Config_header';
+
 import MailchimpContact from './sections/MailchimpContact';
 
 storyblokInit({
@@ -221,6 +224,8 @@ storyblokInit({
         'signup-mailchimp': MailchimpEmbed,
         'career-prospective': ProspectiveCareer,
         simple_container_wrapper: SimpleContainerWrapper,
+        config_footer: ConfigFooter,
+        config_header: ConfigHeader,
         "contact-form-mailchimp": MailchimpContact
     },
 });

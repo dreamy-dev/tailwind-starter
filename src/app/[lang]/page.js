@@ -1,4 +1,5 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import Layout from '@/src/components/sections/Layout';
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -7,7 +8,8 @@ export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'de' }];
 }
 
-async function fetchData(slug) {
+async function fetchData(slug, lang) {
+   
     const sbParams = {
         resolve_links: 'url',
         version: 'published',
@@ -30,41 +32,33 @@ async function fetchData(slug) {
             'reference-page.categories',
             'medienmitteilungen_teaser.categories',
         ],
+        language: lang,
     };
+
+   
 
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-
-    return { story: data.story };
+ let config_footer = await storyblokApi.get(
+     'cdn/stories/config-footer-new',
+     sbParams
+ );
+ let config_header = await storyblokApi.get(
+     'cdn/stories/config-header-new',
+     sbParams
+ );
+    return { story: data.story, config_footer: config_footer.data.story,
+        config_header: config_header.data.story };
 }
 
-/* export async function generateStaticParams() {
-    const storyblokApi = getStoryblokApi();
-    const { data } = await storyblokApi.get('cdn/links/', {
-        version: 'published',
-    });
 
-    const paths = [];
-    Object.keys(data.links).forEach((linkKey) => {
-        if (
-            data.links[linkKey].is_folder ||
-            data.links[linkKey].slug === 'home'
-        ) {
-            return;
-        }
-
-        const slug = data.links[linkKey].slug;
-        let splittedSlug = slug.split('/');
-
-        paths.push({ slug: splittedSlug });
-    });
-
-    return paths;
-} */
-
-export default async function Homepage({ params }) {
+export default async function Homepage({ params, lang }) {
+   
     const slug = 'home';
-    const { story } = await fetchData(slug);
+    const { story, config_footer, config_header } = await fetchData(
+        slug,
+        params.lang
+    );
 
     if (!story) {
         return notFound();
@@ -72,7 +66,13 @@ export default async function Homepage({ params }) {
 
     return (
         <>
-            <StoryblokStory story={story} />
+            <Layout
+            
+                config_footer={config_footer}
+                config_header={config_header}
+            >
+                <StoryblokStory story={story} />
+            </Layout>
         </>
     );
 }
