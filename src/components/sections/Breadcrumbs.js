@@ -40,7 +40,7 @@ const Breadcrumbs = ({}) => {
 
     return (
         <nav>
-            <ol className="mt-20 flex font-normal text-sm lg:text-base text-gray-600">
+            <ol className="mt-0 lg:mt-20 flex font-normal text-sm lg:text-base text-gray-600">
                 {breadcrumbs.map((breadcrumb, i) => {
                     return (
                         <li key={i}>
