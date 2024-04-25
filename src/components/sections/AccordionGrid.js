@@ -5,13 +5,17 @@ import H2 from '../typography/H2';
 
 const AccordionGrid = ({ blok }) => {
     return (
-        <section className="bg-white dark:bg-gray-900 py-16 lg:py-24">
+        <section
+            id={blok.anchor}
+            {...storyblokEditable(blok)}
+            className="bg-white dark:bg-gray-900 py-16 lg:py-24"
+        >
             <SmallWidth>
                 <div className="mx-auto max-w-screen-xl ">
                     <H2>{blok?.title}</H2>
                     <p className="my-6">{blok?.text}</p>
 
-                    <div id="accordion-flush" {...storyblokEditable(blok)}>
+                    <div id="accordion-flush">
                         {blok?.accordion_wrapper.map((nestedBlok) => (
                             <StoryblokComponent
                                 blok={nestedBlok}
