@@ -116,21 +116,19 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                             </td>
                                             <td className="px-6 py-4 text-primary">
                                                 <div className="flex justify-end">
-                                                    {item.content.downloads_block.map(
+                                                    {item.content.downloads_block?.forEach(
                                                         (
                                                             downloadBlock,
                                                             index
                                                         ) =>
-                                                            downloadBlock.download_grid.map(
+                                                            downloadBlock.download_grid?.map(
                                                                 (
                                                                     downloadGrid,
                                                                     index
                                                                 ) => (
                                                                     <a
                                                                         href={
-                                                                            downloadGrid
-                                                                                .download_cta
-                                                                                .url
+                                                                            downloadGrid?.download_cta.url
                                                                         }
                                                                         key={
                                                                             index
@@ -138,7 +136,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                         className="ml-3 pt-2 pb-2 inline-flex"
                                                                     >
                                                                         {
-                                                                            downloadGrid.download_cta_text
+                                                                            downloadGrid?.download_cta_text
                                                                         }
                                                                     </a>
                                                                 )

@@ -23,7 +23,7 @@ export default function MailchimpContact({ blok }) {
         const checkConnection = await fetch(url, {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
+                Accept: '*/*',
                 'Content-Type': 'application/json',
             }
         });
