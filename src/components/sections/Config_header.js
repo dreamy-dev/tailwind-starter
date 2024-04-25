@@ -3,7 +3,7 @@ import Header from './Header';
 const ConfigHeader = ({ blok }) => {
     return (
         <>
-            {/* {JSON.stringify(blok)} */}
+        
             <div {...storyblokEditable(blok)}>
                 {blok?.header.map((nestedBlok) => (
                  

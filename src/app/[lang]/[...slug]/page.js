@@ -76,9 +76,9 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export default async function Detailpage({ params }) {
+export default async function Detailpage({ params, lang }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
-    const { story, config_footer, config_header } = await fetchData(slug, params.lang);
+    const { story, config_footer, config_header} = await fetchData(slug, params.lang);
 
 
     if (!story) {
@@ -87,7 +87,7 @@ export default async function Detailpage({ params }) {
 
     return (
         <>
-            <Layout config_footer={config_footer} config_header={config_header}>
+            <Layout lang={ lang} config_footer={config_footer} config_header={config_header}>
                 <StoryblokStory story={story} />
             </Layout>
         </>

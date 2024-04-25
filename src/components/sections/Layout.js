@@ -2,14 +2,14 @@
 import ConfigFooter from './Config_footer';
 import ConfigHeader from './Config_header';
 
-const Layout = ({ children, config_header, config_footer }) => {
-  
+const Layout = ({ children, config_header, config_footer, lang }) => {
+  console.log(lang, "lang");
 
     return (
         <div>
-            <ConfigHeader blok={config_header.content} />
+            <ConfigHeader lang={lang} blok={config_header.content} />
             {children}
-            <ConfigFooter blok={config_footer.content} />
+            <ConfigFooter lang={lang} blok={config_footer.content} />
         </div>
     );
 };

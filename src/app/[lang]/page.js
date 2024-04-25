@@ -8,7 +8,8 @@ export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'de' }];
 }
 
-async function fetchData(slug) {
+async function fetchData(slug, lang) {
+   
     const sbParams = {
         resolve_links: 'url',
         version: 'published',
@@ -31,7 +32,10 @@ async function fetchData(slug) {
             'reference-page.categories',
             'medienmitteilungen_teaser.categories',
         ],
+        language: lang,
     };
+
+   
 
     const storyblokApi = getStoryblokApi();
     const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
@@ -48,9 +52,13 @@ async function fetchData(slug) {
 }
 
 
-export default async function Homepage({ params }) {
+export default async function Homepage({ params, lang }) {
+   
     const slug = 'home';
-    const { story, config_footer, config_header } = await fetchData(slug);
+    const { story, config_footer, config_header } = await fetchData(
+        slug,
+        params.lang
+    );
 
     if (!story) {
         return notFound();
@@ -58,7 +66,11 @@ export default async function Homepage({ params }) {
 
     return (
         <>
-            <Layout config_footer={config_footer} config_header={config_header}>
+            <Layout
+            
+                config_footer={config_footer}
+                config_header={config_header}
+            >
                 <StoryblokStory story={story} />
             </Layout>
         </>
