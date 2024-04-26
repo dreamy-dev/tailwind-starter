@@ -8,6 +8,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const MedienMedienmitteilungenTeaser = ({ blok }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
@@ -152,7 +153,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                     <div className="pt-16">
                         <ButtonPrimary
                             position="left"
-                            href={blok?.CTA_Show_All.url}
+                            href={ButtonUrlRenderer(blok?.CTA_Show_All)}
                             buttonText={blok?.ctag_all_news}
                         />
                     </div>

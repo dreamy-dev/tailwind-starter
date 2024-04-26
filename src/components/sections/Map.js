@@ -3,6 +3,7 @@ import ButtonPrimary from '../elements/ButtonPrimary';
 import FullWidth from '../layouts/FullWidth';
 import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function Map({ blok }) {
     return (
@@ -48,7 +49,7 @@ export default function Map({ blok }) {
                                 <ButtonPrimary
                                     position="center"
                                     buttonText={blok.cta_title}
-                                    href={blok.cta_link.url}
+                                    href={ButtonUrlRenderer(blok?.cta_link)}
                                 />
                             </div>
                         </div>

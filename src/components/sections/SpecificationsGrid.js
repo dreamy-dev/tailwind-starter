@@ -2,6 +2,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import Button from '../elements/ButtonSecondary';
 import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function SpecificationsGrid({ blok }) {
     return (
@@ -29,7 +30,7 @@ export default function SpecificationsGrid({ blok }) {
                                 textColorClass="text-primary"
                                 borderColorClass="border-primary"
                                 position="center"
-                                href={blok.link_URL.url}
+                                href={ButtonUrlRenderer(blok.link_URL)}
                                 iconBefore={
                                     <svg
                                         width="16"
