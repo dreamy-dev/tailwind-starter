@@ -4,6 +4,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import Button from '../elements/ButtonSecondary';
 import Text from '../typography/Text';
 import { DownloadIcon } from '../icons/DownloadIcon';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const DownloadSecondaryItem = ({ blok }) => {
     return (
@@ -20,7 +21,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                         textColorClass="text-primary"
                         borderColorClass="border-primary"
                         styles="flex gap-2"
-                        href={blok?.download_cta.url}
+                        href={ButtonUrlRenderer(blok?.download_cta)}
                         iconAfter={
                             <DownloadIcon styles="w-3.5 h-3.5 fill-primary" />
                         }

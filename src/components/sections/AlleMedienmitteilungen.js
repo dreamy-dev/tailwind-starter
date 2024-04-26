@@ -240,7 +240,6 @@ function AlleMedienmitteilungen({ blok }) {
                                     </td>
                                     <td className="px-6 py-4 text-primary">
                                         <div className="flex justify-end">
-                                            {/* {JSON.stringify(medienmitteilung.content)} */}
                                             {medienmitteilung.content.downloads_block?.map(
                                                 (downloadBlock, index) =>
                                                     downloadBlock.download_grid?.map(

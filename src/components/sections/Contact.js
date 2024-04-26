@@ -49,7 +49,7 @@ const Contact = ({ blok }) => {
                                 <a
                                     type="email"
                                     className="bg-transparent border-none"
-                                    href={'mailto:' + blok?.email_link.email}
+                                    href={'mailto:' + blok?.email_link?.email}
                                 >
                                     {blok?.email}
                                 </a>

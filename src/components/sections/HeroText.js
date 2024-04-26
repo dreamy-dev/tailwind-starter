@@ -6,6 +6,7 @@ import SmallWidth from '../../components/layouts/SmallWidth';
 import H1 from '../../components/typography/H1';
 import Lead from '../../components/typography/Lead';
 import Breadcrumbs from './Breadcrumbs';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const HeroText = ({ blok }) => {
     return (
@@ -22,7 +23,7 @@ const HeroText = ({ blok }) => {
                         <ButtonPrimary
                             position="left"
                             buttonText={blok?.buttontext}
-                            href={blok?.buttonlink.url}
+                            href={ButtonUrlRenderer(blok?.buttonlink)}
                         />
                     </div>
                 ) : (
