@@ -179,7 +179,7 @@ const toggleMainMenu = () => {
                         onClick={onClickHandler}
                     >
                         <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                            Übersicht
+                            {blok.main_submenu_2_text}
                         </p>
                         <p className="">{title}</p>
                     </Link>
@@ -192,7 +192,7 @@ const toggleMainMenu = () => {
                         onClick={onClickHandler}
                     >
                         <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                            Übersicht
+                            {blok.main_submenu_2_text}
                         </p>
                         <p className="">{title}</p>
                     </Link>
