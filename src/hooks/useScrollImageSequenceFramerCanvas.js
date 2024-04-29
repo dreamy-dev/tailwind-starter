@@ -7,11 +7,11 @@ const useScrollImageSequenceFramerCanvas = ({ onDraw, keyframes }) => {
     const resizeCanvas = useCallback(() => {
         const canvas = canvasRef.current;
         canvas.width = window.innerWidth;
-        canvas.height = (window.innerWidth / 2.35) > (window.innerHeight - window.innerHeight / 3) ? (window.innerWidth / 2.35) : (window.innerHeight - window.innerHeight / 3);
+        canvas.height = (window.innerWidth / 2.35) < (window.innerHeight - window.innerHeight / 4) ? (window.innerWidth / 2.35) : (window.innerHeight - window.innerHeight / 4);
         console.log(
             'window',
-            window.innerHeight - window.innerHeight / 3,
-            window.innerWidth / 2.35
+            window.innerHeight - window.innerHeight / 4,
+            window.innerWidth / 2.3
         );
     }, []);
 
