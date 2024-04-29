@@ -2,25 +2,21 @@ import { useCallback, useEffect, useRef } from 'react';
 
 const useScrollImageSequenceFramerCanvas = ({ onDraw, keyframes }) => {
     const canvasRef = useRef(null);
-
-    // const { scrollYProgress } = useScroll(scrollOptions);
     const progress = 0;
 
     const resizeCanvas = useCallback(() => {
         const canvas = canvasRef.current;
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight - window.innerHeight / 3;
+        canvas.height = (window.innerWidth / 2.35) > (window.innerHeight - window.innerHeight / 3) ? (window.innerWidth / 2.35) : (window.innerHeight - window.innerHeight / 3);
         console.log(
             'window',
             window.innerHeight - window.innerHeight / 3,
-            window.innerHeight
+            window.innerWidth / 2.35
         );
     }, []);
 
     const renderImage = useCallback(
         (progress) => {
-            // console.log("progress", progress, scrollYProgress, canvasRef.current)
-            // console.log("progress", progress)
             const constraint = (n, min = 0, max = keyframes.length - 1) =>
                 Math.min(Math.max(n, min), max);
             onDraw(
