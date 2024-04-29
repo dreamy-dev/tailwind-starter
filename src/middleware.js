@@ -17,7 +17,7 @@ export function middleware(request) {
         switch (request.geo.country) {
             case 'CH':
                 console.log('I was called');
-                request.nextUrl.pathname = '/de/ch/career-ch-en';
+                request.nextUrl.pathname = '/de/ch/career-ch-de';
                 return NextResponse.rewrite(request.nextUrl);
             case 'DE':
                 // request.nextUrl.pathname = 'ch/...'
@@ -68,6 +68,8 @@ export function middleware(request) {
             // and update this career page just in english and german
             // otherwise redirect here to global folder
         }
+    }
+    if (request.nextUrl.pathname == '/en/career') {
     } else {
         // nothing should happen really, right? not sure...
     }
