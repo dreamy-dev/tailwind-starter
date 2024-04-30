@@ -3,10 +3,10 @@
 import SmallWidth from '../layouts/SmallWidth';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H2 from '../typography/H2';
-import ButtonPrimary from '../elements/ButtonPrimary';
 import { useState } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 export default function ContactForm({ blok }) {
     const [first_name, setName] = useState('');
@@ -58,13 +58,14 @@ export default function ContactForm({ blok }) {
             <SmallWidth>
                 <div className="col-span-12">
                     <form className="" onSubmit={handleSubmit}>
-                        <H2>Kontaktformular</H2>
+                        <H2>{blok?.title}</H2>
                         <div className="relative z-0 w-full mb-5 group">
                             <label
                                 htmlFor="subject"
                                 className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                             >
-                                Betreff *
+                                {blok?.label_subject}{' '}
+                                {blok?.required_subject ? '*' : ''}
                             </label>
                             <input
                                 className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
@@ -74,7 +75,7 @@ export default function ContactForm({ blok }) {
                                 value={subject}
                                 type="text"
                                 placeholder=""
-                                /* required */
+                                required={blok?.required_subject ? true : false}
                                 onChange={(e) => setSubject(e.target.value)}
                             />
                         </div>
@@ -92,7 +93,7 @@ export default function ContactForm({ blok }) {
                                     htmlFor="male"
                                     className="ms-2 text-sm font-medium text-greySolid-800 dark:text-gray-300"
                                 >
-                                    Herr
+                                    {blok?.gender_male}
                                 </label>
                             </div>
                             <div className="flex items-center me-4">
@@ -108,7 +109,7 @@ export default function ContactForm({ blok }) {
                                     htmlFor="female"
                                     className="ms-2 text-sm font-medium text-greySolid-800 dark:text-gray-300"
                                 >
-                                    Frau
+                                    {blok?.gender_female}
                                 </label>
                             </div>
                         </div>
@@ -119,7 +120,8 @@ export default function ContactForm({ blok }) {
                                     htmlFor="first_name"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Vorname *
+                                    {blok?.label_first_name}{' '}
+                                    {blok?.required_first_name ? '*' : ''}
                                 </label>
                                 <input
                                     type="text"
@@ -129,7 +131,9 @@ export default function ContactForm({ blok }) {
                                     value={first_name}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_first_name ? true : false
+                                    }
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
@@ -138,7 +142,8 @@ export default function ContactForm({ blok }) {
                                     htmlFor="floating_last_name"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Nachname *
+                                    {blok?.label_last_name}{' '}
+                                    {blok?.required_last_name ? '*' : ''}
                                 </label>
                                 <input
                                     type="text"
@@ -147,7 +152,9 @@ export default function ContactForm({ blok }) {
                                     value={last_name}
                                     className="block p-3 w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_last_name ? true : false
+                                    }
                                     onChange={(e) =>
                                         setLastName(e.target.value)
                                     }
@@ -157,10 +164,11 @@ export default function ContactForm({ blok }) {
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_first_name"
+                                    htmlFor="floating_street"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Strasse *
+                                    {blok?.label_street}{' '}
+                                    {blok?.required_street ? '*' : ''}
                                 </label>
                                 <input
                                     name="street"
@@ -169,26 +177,31 @@ export default function ContactForm({ blok }) {
                                     value={street}
                                     type="text"
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_street ? true : false
+                                    }
                                     onChange={(e) => setStreet(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_last_name"
+                                    htmlFor="floating_number"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Nr. *
+                                    {blok?.label_nr}{' '}
+                                    {blok?.required_number ? '*' : ''}
                                 </label>
                                 <input
                                     name="number"
                                     id="number"
                                     autoComplete="number"
                                     value={number}
-                                    type="text"
+                                    type="number"
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_number ? true : false
+                                    }
                                     onChange={(e) => setNumber(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -197,10 +210,11 @@ export default function ContactForm({ blok }) {
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_first_name"
+                                    htmlFor="floating_zip"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    PLZ *
+                                    {blok?.label_zip}{' '}
+                                    {blok?.required_zip ? '*' : ''}
                                 </label>
                                 <input
                                     name="zip"
@@ -209,7 +223,7 @@ export default function ContactForm({ blok }) {
                                     value={zip}
                                     type="text"
                                     placeholder=""
-                                    /* required */
+                                    required={blok?.required_zip ? true : false}
                                     onChange={(e) => setZIP(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -219,7 +233,8 @@ export default function ContactForm({ blok }) {
                                     htmlFor="floating_last_name"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Ort *
+                                    {blok?.label_city}{' '}
+                                    {blok?.required_city ? '*' : ''}
                                 </label>
                                 <input
                                     name="city"
@@ -228,7 +243,9 @@ export default function ContactForm({ blok }) {
                                     value={city}
                                     type="text"
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_city ? true : false
+                                    }
                                     onChange={(e) => setCity(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -238,29 +255,33 @@ export default function ContactForm({ blok }) {
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_phone"
+                                    htmlFor="floating_email"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Email *
+                                    {blok?.label_email}{' '}
+                                    {blok?.required_email ? '*' : ''}
                                 </label>
                                 <input
                                     name="email"
                                     id="email"
                                     autoComplete="email"
                                     value={email}
-                                    type="text"
+                                    type="email"
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_email ? true : false
+                                    }
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_company"
+                                    htmlFor="floating_phone"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Telefon *
+                                    {blok?.label_phone}{' '}
+                                    {blok?.required_phone ? '*' : ''}
                                 </label>
                                 <input
                                     type="tel"
@@ -269,7 +290,9 @@ export default function ContactForm({ blok }) {
                                     autoComplete="phone"
                                     value={phone}
                                     placeholder=""
-                                    /* required */
+                                    required={
+                                        blok?.required_phone ? true : false
+                                    }
                                     onChange={(e) => setPhone(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -280,7 +303,8 @@ export default function ContactForm({ blok }) {
                                 htmlFor="message"
                                 className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                             >
-                                Bemerkung *
+                                {blok?.label_message}{' '}
+                                {blok?.required_message ? '*' : ''}
                             </label>
                             <textarea
                                 rows={6}
@@ -289,7 +313,7 @@ export default function ContactForm({ blok }) {
                                 value={message}
                                 type="text"
                                 placeholder=""
-                                /* required */
+                                required={blok?.required_message ? true : false}
                                 onChange={(e) => setMessage(e.target.value)}
                                 className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
@@ -307,20 +331,12 @@ export default function ContactForm({ blok }) {
                             />
                             <label
                                 htmlFor="checkbox"
-                                className="ms-2 text-sm font-medium text-black dark:text-gray-300"
+                                className="ms-2 !text-sm font-medium text-black dark:text-gray-300"
                             >
-                                Mit dem Absenden dieses Formulars erklären Sie
-                                sich damit einverstanden, dass Stadler Ihre
-                                personenbezogenen Daten für den internen
-                                Gebrauch in Übereinstimmung mit unserer{' '}
-                                <a
-                                    href="#"
-                                    className="text-black cursor-pointer break-words"
-                                >
-                                    Datenschutzerklärung
-                                </a>{' '}
-                                und mit sicheren technischen Mitteln sammelt und
-                                verarbeitet.
+                                <RichTextRenderer
+                                    text={blok?.disclaimer_text}
+                                    customStyles="!text-sm !my-0"
+                                />
                             </label>
                         </div>
                         <button
@@ -335,7 +351,7 @@ export default function ContactForm({ blok }) {
                                     className="w-6 h-6 border-4 border-white border-solid rounded-full animate-spin"
                                 ></div>
                             ) : (
-                                'Submit'
+                                blok?.submit_button_text
                             )}
                         </button>
                     </form>
