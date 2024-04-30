@@ -5,6 +5,8 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import { useState } from 'react';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 export default function ContactForm({ blok }) {
     const [first_name, setName] = useState('');
@@ -17,14 +19,18 @@ export default function ContactForm({ blok }) {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
-
+    const [data_protection, setDataProtection] = useState('');
+    const [gender, setGender] = useState('');
     const [loading, setLoading] = useState(false);
 
+    const currentLocale = useCurrentLocale(i18nConfig);
+
     async function handleSubmit(event) {
+        setLoading(true);
         event.preventDefault();
         const formData = new FormData(event.target);
         try {
-            const response = await fetch('/en/api/send', {
+            const response = await fetch(`/${currentLocale}/api/send`, {
                 method: 'post',
                 body: formData,
             });
@@ -35,10 +41,11 @@ export default function ContactForm({ blok }) {
             }
             const responseData = await response.json();
             console.log(responseData['message']);
-
+            setLoading(false);
             alert('Message successfully sent');
         } catch (err) {
             console.error(err);
+            setLoading(false);
             alert('Error, please try resubmitting the form');
         }
     }
@@ -55,60 +62,62 @@ export default function ContactForm({ blok }) {
                         <div className="relative z-0 w-full mb-5 group">
                             <label
                                 htmlFor="subject"
-                                className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                             >
                                 Betreff *
                             </label>
                             <input
-                                className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 name="subject"
                                 id="subject"
                                 autoComplete="subject"
                                 value={subject}
                                 type="text"
                                 placeholder=""
-                                required
+                                /* required */
                                 onChange={(e) => setSubject(e.target.value)}
                             />
                         </div>
                         <div className="flex flex-wrap mb-5">
-                            {/* <div className="flex items-center me-4">
+                            <div className="flex items-center me-4">
                                 <input
-                                    id="red-radio"
+                                    id="male"
                                     type="radio"
-                                    value=""
-                                    name="colored-radio"
-                                    className=" w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary focus:ring-2"
+                                    value="male"
+                                    name="gender"
+                                    className=" w-4 h-4 text-primary bg-gray-100 border-greySolid-400 focus:ring-primary focus:ring-2"
+                                    onChange={(e) => setGender(e.target.value)}
                                 />
                                 <label
-                                    htmlFor="red-radio"
-                                    className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                                    htmlFor="male"
+                                    className="ms-2 text-sm font-medium text-greySolid-800 dark:text-gray-300"
                                 >
                                     Herr
                                 </label>
                             </div>
                             <div className="flex items-center me-4">
                                 <input
-                                    id="green-radio"
+                                    id="female"
                                     type="radio"
-                                    value=""
-                                    name="colored-radio"
-                                    className=" w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary focus:ring-2"
+                                    value="female"
+                                    name="gender"
+                                    className=" w-4 h-4 text-primary bg-gray-100 border-greySolid-400 focus:ring-primary focus:ring-2"
+                                    onChange={(e) => setGender(e.target.value)}
                                 />
                                 <label
-                                    htmlFor="green-radio"
-                                    className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                                    htmlFor="female"
+                                    className="ms-2 text-sm font-medium text-greySolid-800 dark:text-gray-300"
                                 >
                                     Frau
                                 </label>
-                            </div> */}
+                            </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="first_name"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Vorname *
                                 </label>
@@ -118,16 +127,16 @@ export default function ContactForm({ blok }) {
                                     id="first_name"
                                     autoComplete="first_name"
                                     value={first_name}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_last_name"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Nachname *
                                 </label>
@@ -136,9 +145,9 @@ export default function ContactForm({ blok }) {
                                     name="last_name"
                                     id="last_name"
                                     value={last_name}
-                                    className="block p-3 w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3 w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) =>
                                         setLastName(e.target.value)
                                     }
@@ -149,7 +158,7 @@ export default function ContactForm({ blok }) {
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_first_name"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Strasse *
                                 </label>
@@ -160,15 +169,15 @@ export default function ContactForm({ blok }) {
                                     value={street}
                                     type="text"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setStreet(e.target.value)}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_last_name"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Nr. *
                                 </label>
@@ -179,9 +188,9 @@ export default function ContactForm({ blok }) {
                                     value={number}
                                     type="text"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setNumber(e.target.value)}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                         </div>
@@ -189,7 +198,7 @@ export default function ContactForm({ blok }) {
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_first_name"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     PLZ *
                                 </label>
@@ -200,15 +209,15 @@ export default function ContactForm({ blok }) {
                                     value={zip}
                                     type="text"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setZIP(e.target.value)}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_last_name"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Ort *
                                 </label>
@@ -219,9 +228,9 @@ export default function ContactForm({ blok }) {
                                     value={city}
                                     type="text"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setCity(e.target.value)}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                         </div>
@@ -230,7 +239,7 @@ export default function ContactForm({ blok }) {
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_phone"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Email *
                                 </label>
@@ -241,15 +250,15 @@ export default function ContactForm({ blok }) {
                                     value={email}
                                     type="text"
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
                                     htmlFor="floating_company"
-                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Telefon *
                                 </label>
@@ -260,16 +269,16 @@ export default function ContactForm({ blok }) {
                                     autoComplete="phone"
                                     value={phone}
                                     placeholder=""
-                                    required
+                                    /* required */
                                     onChange={(e) => setPhone(e.target.value)}
-                                    className="block p-3  w-full text-sm text-gray-900 bg-white  border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                    className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                             </div>
                         </div>
                         <div className="mb-5">
                             <label
                                 htmlFor="message"
-                                className="peer-focus:font-medium  mb-2 text-sm font-medium text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                             >
                                 Bemerkung *
                             </label>
@@ -280,19 +289,25 @@ export default function ContactForm({ blok }) {
                                 value={message}
                                 type="text"
                                 placeholder=""
-                                required
+                                /* required */
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="block p-2.5 w-full text-sm text-gray-900 bg-white border border-gray-300 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                                className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
                         </div>
                         <div className="flex items-start mb-8">
                             <input
-                                className="relative shrink-0 w-6 h-6 border-2 border-primary  bg-whitefocus:ring-primary checked:bg-primary checked:border-primary"
+                                className="relative shrink-0 w-6 h-6 border-2 border-primary bg-whitefocus:ring-primary checked:bg-primary checked:border-primary"
                                 type="checkbox"
+                                name="data_protection"
+                                id="data_protection"
+                                value="on"
+                                onChange={(e) =>
+                                    setDataProtection(e.target.value)
+                                }
                             />
                             <label
-                                htmlFor="checkbox-1"
-                                className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                                htmlFor="checkbox"
+                                className="ms-2 text-sm font-medium text-black dark:text-gray-300"
                             >
                                 Mit dem Absenden dieses Formulars erklären Sie
                                 sich damit einverstanden, dass Stadler Ihre
@@ -300,7 +315,7 @@ export default function ContactForm({ blok }) {
                                 Gebrauch in Übereinstimmung mit unserer{' '}
                                 <a
                                     href="#"
-                                    className="text-gray-500 hover:underline cursor-pointer break-words"
+                                    className="text-black cursor-pointer break-words"
                                 >
                                     Datenschutzerklärung
                                 </a>{' '}
@@ -310,7 +325,7 @@ export default function ContactForm({ blok }) {
                         </div>
                         <button
                             type="submit"
-                            className="flex justify-center rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500"
+                            className="cursor-pointer bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2"
                         >
                             {loading ? (
                                 <div
@@ -323,11 +338,6 @@ export default function ContactForm({ blok }) {
                                 'Submit'
                             )}
                         </button>
-                        {/* <ButtonPrimary
-                            href="#"
-                            position="left"
-                            buttonText="Senden"
-                        ></ButtonPrimary> */}
                     </form>
                 </div>
             </SmallWidth>
