@@ -17,7 +17,7 @@ const handleDrawCanvas = (img, ctx) => {
     const ratio = Math.max(widthRatio, heightRatio);
     const centerX = (canvas.width - img.width * ratio) / 2;
     const centerY = (canvas.height - img.height * ratio) / 2;
-    console.log("ratio", ratio, widthRatio, heightRatio);
+    // console.log("ratio", ratio, widthRatio, heightRatio);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(
         img,
@@ -33,8 +33,13 @@ const handleDrawCanvas = (img, ctx) => {
 };
 
 const ImageSequence = ({ category }) => {
-    console.log("ImageSequence", category, window.innerWidth)
-    const imageWidth = window.innerWidth > 1740 ? "Carousel_1700_png" : window.innerWidth > 600 ? "Carousel_1440_png" : "Carousel_600_png"
+    let imageWidth;
+    if (typeof window !== "undefined") {
+        imageWidth = window?.innerWidth > 1740 ? "Carousel_1700_png" : window?.innerWidth > 600 ? "Carousel_1440_png" : "Carousel_600_png"
+    } else {
+        imageWidth = "Carousel_1440_png"
+    }
+
     const keyframes = useMemo(
         () =>
             [...new Array(299)].map((_, i) =>
