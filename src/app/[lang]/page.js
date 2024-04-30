@@ -54,15 +54,17 @@ async function fetchData(slug, lang) {
 export async function generateMetadata({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story } = await fetchData(slug, params.lang);
-
+console.log(story, "story")
     if (!story) {
         return {};
     }
 
     const title = story.content?.seo?.title || story.name;
     const description = story.content?.seo?.description;
+
+    console.log(title, 'title');
     return {
-        metadataBase: new URL('https://your-brand.ch'),
+        metadataBase: new URL('https://yoursite.com/example'),
         title: `${title} · Stadler`,
         description: description,
         robots: {
@@ -70,14 +72,13 @@ export async function generateMetadata({ params }) {
             follow: true,
         },
         openGraph: {
-            og_image: image,
             og_title: title,
             og_description: description,
             url: `/${story.slug}`,
         },
         twitter: {
             card: 'summary',
-            twitter_image: image,
+
             twitter_title: title,
             twitter_description: description,
         },

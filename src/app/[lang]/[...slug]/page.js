@@ -95,14 +95,14 @@ export async function generateMetadata({ params }) {
           follow: true,
       },
       openGraph: {
-          og_image: image,
+      
           og_title: title,
           og_description: description,
           url: `/${story.slug}`,
       },
       twitter: {
           card: 'summary',
-          twitter_image: image,
+        
           twitter_title: title,
           twitter_description: description,
       },
