@@ -76,6 +76,39 @@ export async function generateStaticParams() {
     return paths;
 }
 
+export async function generateMetadata({ params }) {
+  const slug = params?.slug ? params.slug.join('/') : 'home'
+  const { story } = await fetchData(slug, params.lang);
+
+  if (!story) {
+    return {}
+  }
+
+  const title = story.content?.seo?.title || story.name
+  const description = story.content?.seo?.description
+  return {
+      metadataBase: new URL('https://your-brand.ch'),
+      title: `${title} · Stadler`,
+      description: description,
+      robots: {
+          index: true,
+          follow: true,
+      },
+      openGraph: {
+          og_image: image,
+          og_title: title,
+          og_description: description,
+          url: `/${story.slug}`,
+      },
+      twitter: {
+          card: 'summary',
+          twitter_image: image,
+          twitter_title: title,
+          twitter_description: description,
+      },
+  };
+}
+
 export default async function Detailpage({ params, lang }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story, config_footer, config_header} = await fetchData(slug, params.lang);
