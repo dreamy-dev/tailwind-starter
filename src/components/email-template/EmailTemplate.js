@@ -1,7 +1,9 @@
 import * as React from 'react';
 
 export const EmailTemplate = ({
+    language,
     subject,
+    gender,
     first_name,
     last_name,
     street,
@@ -11,30 +13,136 @@ export const EmailTemplate = ({
     email,
     phone,
     message,
+    data_protection,
 }) => (
     <div>
         <h1>Neues Kontaktformular</h1>
         <p>Ein neues Kontakformular ist eingegangen. Das sind die Angaben:</p>
-        <p>Subject:</p>
-        <p>{subject}</p>
-        {/* <p>Gender</p> */}
-        <p>First Name:</p>
-        <p>{first_name}</p>
-        <p>Last Name:</p>
-        <p>{last_name}</p>
-        <p>Street:</p>
-        <p>{street}</p>
-        <p>Number:</p>
-        <p>{number}</p>
-        <p>ZIP:</p>
-        <p>{zip}</p>
-        <p>city:</p>
-        <p>{city}</p>
-        <p>E-Mail:</p>
-        <p>{email}</p>
-        <p>Phone:</p>
-        <p>{phone}</p>
-        <p>Message:</p>
+        <table>
+            <tr>
+                <td>
+                    <p>
+                        <b>Language:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{language}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Subject:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{subject}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Gender:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{gender}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>First Name</b>:
+                    </p>
+                </td>
+                <td>
+                    <p>{first_name}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Last Name:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{last_name}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Street:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{street}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Number:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{number}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>ZIP:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{zip}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>City:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{city}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>E-Mail:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{email}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Phone:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{phone}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Data Protection Option:</b>
+                    </p>
+                </td>
+                <td>
+                    <p>{data_protection}</p>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <b>Message:</b>
+        </p>
         <p>{message}</p>
     </div>
 );
