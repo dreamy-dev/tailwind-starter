@@ -99,7 +99,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                             }}
                                         >
                                             <img
-                                                className="w-full max-h-[430px] object-cover"
+                                                className="w-full aspect-[4/3] object-cover"
                                                 src={card.img}
                                                 alt=""
                                             />
