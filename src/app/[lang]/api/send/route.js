@@ -15,16 +15,21 @@ export async function POST(request) {
     const email = formData.get('email');
     const phone = formData.get('phone');
     const message = formData.get('message');
+    const language = request.nextUrl.pathname.substr(1, 2);
+    const gender = formData.get('gender');
+    const dataProtection = formData.get('data_protection');
 
     try {
         const data = await resend.emails.send({
-            from: 'GateB Test <info@gateb-test-domain.site>',
-            to: ['cecile.hefti@outlook.com'],
-            subject: 'Hello world',
+            from: 'info@stadlerrail.com <info@stadlerrail.com>',
+            to: ['cecile.hefti@outlook.com'], //stadler.rail@stadlerrail.com
+            subject: '[EXTERNAL] New Message from Contact Page',
             react: EmailTemplate({
+                language: language,
                 first_name: name,
                 last_name: lastName,
                 subject: subject,
+                gender: gender,
                 street: street,
                 number: number,
                 zip: zip,
@@ -32,9 +37,9 @@ export async function POST(request) {
                 email: email,
                 phone: phone,
                 message: message,
+                data_protection: dataProtection ? dataProtection : 'off',
             }),
         });
-        console.log(data);
 
         return Response.json(data);
     } catch (error) {

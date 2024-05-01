@@ -102,7 +102,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                                             nestedBlok.slug +
                                                             ' image'
                                                         }
-                                                        className="w-full max-h-[430px] object-cover"
+                                                        className="w-full aspect-[4/3] object-cover"
                                                         src={
                                                             nestedBlok.content
                                                                 ?.image.filename

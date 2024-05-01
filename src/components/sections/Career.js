@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import H2 from '../../components/typography/H2';
 import ContentWidth from '../layouts/ContentWidth';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function Career({ blok }) {
     const careerRef = useRef();
@@ -34,9 +35,8 @@ export default function Career({ blok }) {
                     </p>
                     <div className="flex justify-center">
                         <ButtonPrimary
-                            /* ref={careerRef} */
                             buttonText={blok?.cta_button_text}
-                            href={blok?.cta_button_link}
+                            href={ButtonUrlRenderer(blok?.cta_button_link)}
                         ></ButtonPrimary>
                     </div>
                 </div>
