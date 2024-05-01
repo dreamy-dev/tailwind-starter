@@ -89,7 +89,7 @@ function AllNews({ blok }) {
                     <ul className="grid gap-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'country')}
                             >
                                 <option value="">
@@ -104,7 +104,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'category')}
                             >
                                 <option value="">
@@ -124,7 +124,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'product')}
                             >
                                 <option value="">
@@ -139,7 +139,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'year')}
                             >
                                 <option value="">
@@ -172,7 +172,7 @@ function AllNews({ blok }) {
                                     </svg>
                                 </div>
                                 <input
-                                    className="w-full pl-8 pr-4 py-2 text-base border block"
+                                    className="w-full pl-8 pr-4 py-2 text-base border-primary block focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                     placeholder={blok.text_search}
                                     onChange={onSearchChange}
                                 />

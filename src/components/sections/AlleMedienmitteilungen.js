@@ -88,7 +88,7 @@ function AlleMedienmitteilungen({ blok }) {
                 <ul className="flex-wrap text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
                     <li className="mb-4 mr-2 lg:mr-4">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className=" px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                             onChange={(e) => filterArticles(e, 'country')}
                         >
                             <option value="">
@@ -103,7 +103,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="mb-4 mr-2 lg:mr-4">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className=" px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                             onChange={(e) => filterArticles(e, 'category')}
                         >
                             <option value="">
@@ -120,7 +120,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="mb-4 mr-2 lg:mr-4">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className=" px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                             onChange={(e) => filterArticles(e, 'product')}
                         >
                             <option value="">
@@ -135,7 +135,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="mb-4 mr-2 lg:mr-4">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className=" px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100 block"
                             onChange={(e) => filterArticles(e, 'year')}
                         >
                             <option value="">{blok.filter_years_title}</option>
@@ -167,7 +167,7 @@ function AlleMedienmitteilungen({ blok }) {
                                 </svg>
                             </div>
                             <input
-                                className="inline-block px-8 py-2 text-base rounded border hover:text-gray-900 hover:bg-gray-100"
+                                className="inline-block px-8 py-2 text-base  border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                 placeholder={blok.text_search}
                                 onChange={(e) => onSearchChange(e)}
                             />
@@ -249,7 +249,8 @@ function AlleMedienmitteilungen({ blok }) {
                                                         ) => (
                                                             <a
                                                                 href={
-                                                                    downloadGrid?.download_cta
+                                                                    downloadGrid
+                                                                        ?.download_cta
                                                                         .url
                                                                 }
                                                                 key={index}

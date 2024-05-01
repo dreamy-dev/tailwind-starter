@@ -323,10 +323,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                             className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                                         >
                                             <a href={`referenze/${train.slug}`}>
-                                                {console.log(
-                                                    'train.slug',
-                                                    train.slug
-                                                )}
+                                               
                                                 <img
                                                     className="w-full aspect-[4/3]"
                                                     src={
