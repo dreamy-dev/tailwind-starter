@@ -1,4 +1,5 @@
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
@@ -175,7 +176,9 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     }}
                                                 >
                                                     <a
-                                                        href={`referenze/${article.slug}`}
+                                                        href={ButtonUrlRenderer(
+                                                            `referenzen/${article.slug}`
+                                                        )}
                                                     >
                                                         <img
                                                             src={
@@ -206,13 +209,10 @@ const TestimonialsCarousel = ({ blok }) => {
                                                                         .lead
                                                                 }
                                                                 styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8"
-                                                            >
-                                                               
-                                                               
-                                                            </RichTextRenderer>
+                                                            ></RichTextRenderer>
                                                         </div>
                                                         <Link
-                                                            href="#"
+                                                            href={`referenzen/${article.slug}`}
                                                             className="inline-flex items-center py-2 text-sm font-medium text-center"
                                                         >
                                                             <svg
