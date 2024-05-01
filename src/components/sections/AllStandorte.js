@@ -99,7 +99,7 @@ function AllStandorte({ blok }) {
                         {countryDropdown}
                     </li>
                     <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
-                        {' '}
+                   
                         {categoryDropdown}
                     </li>
                     <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
