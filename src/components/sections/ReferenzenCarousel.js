@@ -9,6 +9,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
 import { ChevronLeft } from '../icons/ChevronLeft';
 import { ChevronRight } from '../icons/ChevronRight';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 const TestimonialMotionDiv = motion.div;
 
@@ -63,19 +64,22 @@ const TestimonialsCarousel = ({ blok }) => {
     const [highlightsCategory, setHighlightsCategory] = useState([]);
     const [reference, setReference] = useState([]);
 
+
     useEffect(() => {
         const getArticles = async () => {
             const arrayHighlight = [];
+            //   console.log(arrayHighlight, 'arrayHighlight');
+          console.log(blok.highlight_reference, 'blok');
             blok.highlight_reference.map((item) => {
                 arrayHighlight.push(item.uuid);
             });
 
             const highlightReference = arrayHighlight.join(',');
-
+          
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'loesungen/service/',
+                starts_with: 'loesungen/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': highlightReference,
                 per_page: 5,
@@ -103,9 +107,10 @@ const TestimonialsCarousel = ({ blok }) => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'loesungen/service/',
+                starts_with: 'loesungen/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': references,
+                
             });
 
             setReference((prev) =>
@@ -194,13 +199,17 @@ const TestimonialsCarousel = ({ blok }) => {
                                                                         .title
                                                                 }
                                                             </H3>
-                                                            <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
-                                                                {
+                                                            <RichTextRenderer
+                                                                text={
                                                                     article
                                                                         .content
-                                                                        .text
+                                                                        .lead
                                                                 }
-                                                            </Text>
+                                                                styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8"
+                                                            >
+                                                               
+                                                               
+                                                            </RichTextRenderer>
                                                         </div>
                                                         <Link
                                                             href="#"
