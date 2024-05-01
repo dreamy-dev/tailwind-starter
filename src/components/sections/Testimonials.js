@@ -35,17 +35,17 @@ const Testimonials = ({ blok }) => {
                                 role="tab"
                                 data-tabs-target="#europe"
                             >
-                                <span className="md:flex">
+                                <span className="flex items-center">
                                     <img
-                                        className="h-16 w-16 rounded object-cover"
+                                        className="h-20 w-20 md:h-16 md:w-16 object-cover"
                                         src={item.image.filename}
                                         alt="profile picture"
                                     />
-                                    <span className="md:ml-5 md:grow">
+                                    <span className="ml-5 grow">
                                         <span className="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 block font-semibold text-gray-800 dark:text-gray-200">
                                             {item.name}
                                         </span>
-                                        <span className="mt-2 hidden text-gray-800 dark:text-gray-200 lg:block">
+                                        <span className="mt-2 text-gray-800 dark:text-gray-200 lg:block">
                                             {item.job}
                                         </span>
                                     </span>

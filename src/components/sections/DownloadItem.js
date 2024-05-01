@@ -11,7 +11,7 @@ const DownloadItem = ({ blok }) => {
         <section
             id={blok.anchor}
             {...storyblokEditable(blok)}
-            className="py-16 lg:py-24"
+            className="pb-16 pt-8 lg:pb-24 lg:pt-16"
         >
 
             <ContentWidth>

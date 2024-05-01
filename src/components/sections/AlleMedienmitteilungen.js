@@ -84,11 +84,11 @@ function AlleMedienmitteilungen({ blok }) {
             <div className="col-span-12 w-full">
                 <H1>{blok.title}</H1>
             </div>
-            <div className="col-span-12 w-full flex flex-col mb-8 items-center justify-center pb-4 space-y-3 md:pb-0 md:mt-4 dark:bg-gray-800 md:flex-row md:space-y-0 md:space-x-4">
-                <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
-                    <li className="mb-4 mr-2 lg:mr-4">
+            <div className="col-span-12 mb-8">
+                <ul className="grid gap-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
+                    <li className="lg:col-span-2">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                             onChange={(e) => filterArticles(e, 'country')}
                         >
                             <option value="">
@@ -101,9 +101,9 @@ function AlleMedienmitteilungen({ blok }) {
                             ))}
                         </select>
                     </li>
-                    <li className="mb-4 mr-2 lg:mr-4">
+                    <li className="lg:col-span-2">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                             onChange={(e) => filterArticles(e, 'category')}
                         >
                             <option value="">
@@ -118,9 +118,9 @@ function AlleMedienmitteilungen({ blok }) {
                             )}
                         </select>
                     </li>
-                    <li className="mb-4 mr-2 lg:mr-4">
+                    <li className="lg:col-span-2">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                             onChange={(e) => filterArticles(e, 'product')}
                         >
                             <option value="">
@@ -133,9 +133,9 @@ function AlleMedienmitteilungen({ blok }) {
                             ))}
                         </select>
                     </li>
-                    <li className="mb-4 mr-2 lg:mr-4">
+                    <li className="lg:col-span-2">
                         <select
-                            className=" px-4 py-2 text-base border rounded block"
+                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100 block"
                             onChange={(e) => filterArticles(e, 'year')}
                         >
                             <option value="">{blok.filter_years_title}</option>
@@ -147,7 +147,7 @@ function AlleMedienmitteilungen({ blok }) {
                         </select>
                     </li>
 
-                    <li className="mb-4 mr-2 lg:mr-4">
+                    <li className="lg:col-span-4">
                         <div className="relative">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg
@@ -167,7 +167,7 @@ function AlleMedienmitteilungen({ blok }) {
                                 </svg>
                             </div>
                             <input
-                                className="inline-block px-8 py-2 text-base rounded border hover:text-gray-900 hover:bg-gray-100"
+                                className="w-full inline-block px-8 py-2 text-base  border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                 placeholder={blok.text_search}
                                 onChange={(e) => onSearchChange(e)}
                             />
@@ -249,7 +249,8 @@ function AlleMedienmitteilungen({ blok }) {
                                                         ) => (
                                                             <a
                                                                 href={
-                                                                    downloadGrid?.download_cta
+                                                                    downloadGrid
+                                                                        ?.download_cta
                                                                         .url
                                                                 }
                                                                 key={index}
