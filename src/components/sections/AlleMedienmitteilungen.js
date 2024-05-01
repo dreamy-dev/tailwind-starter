@@ -85,7 +85,7 @@ function AlleMedienmitteilungen({ blok }) {
                 <H1>{blok.title}</H1>
             </div>
             <div className="col-span-12 w-full flex flex-col mb-8 items-center justify-center pb-4 space-y-3 md:pb-0 md:mt-4 dark:bg-gray-800 md:flex-row md:space-y-0 md:space-x-4">
-                <ul className="flex-wrap hidden text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
+                <ul className="flex-wrap text-sm font-medium text-center text-gray-500 md:flex dark:text-gray-400">
                     <li className="mb-4 mr-2 lg:mr-4">
                         <select
                             className=" px-4 py-2 text-base border rounded block"

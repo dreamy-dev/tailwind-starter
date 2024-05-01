@@ -16,7 +16,7 @@ function AllStandorte({ blok }) {
 
     const countryDropdown = (
         <select
-            className="w-full px-4 py-2 text-base border block"
+            className="w-full px-4 py-2 text-base border block focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
             onChange={(e) => handleFilterChange(e, 'country')}
             value={selectedOptions.country}
         >
@@ -31,7 +31,7 @@ function AllStandorte({ blok }) {
 
     const categoryDropdown = (
         <select
-            className="w-full px-4 py-2 text-base border block"
+            className="w-full px-4 py-2 text-base border block focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
             onChange={(e) => handleFilterChange(e, 'category')}
             value={selectedOptions.category}
         >
@@ -111,7 +111,7 @@ function AllStandorte({ blok }) {
                                 />
                             </div>
                             <input
-                                className="w-full inline-block px-10 py-2 text-base border hover:text-gray-900 hover:bg-gray-100"
+                                className="w-full inline-block px-4 py-2 text-base border hover:text-gray-900 hover:bg-gray-100 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={handleSearchChange}
                             />

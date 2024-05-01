@@ -69,8 +69,7 @@ const TestimonialsCarousel = ({ blok }) => {
     useEffect(() => {
         const getArticles = async () => {
             const arrayHighlight = [];
-            //   console.log(arrayHighlight, 'arrayHighlight');
-          console.log(blok.highlight_reference, 'blok');
+        
             blok.highlight_reference.map((item) => {
                 arrayHighlight.push(item.uuid);
             });
@@ -176,9 +175,9 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     }}
                                                 >
                                                     <a
-                                                        href={ButtonUrlRenderer(
+                                                        href={
                                                             `referenzen/${article.slug}`
-                                                        )}
+                                                        }
                                                     >
                                                         <img
                                                             src={
