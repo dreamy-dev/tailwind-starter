@@ -1,4 +1,5 @@
 import ContentWidth from '../layouts/ContentWidth';
+import React from 'react';
 import {
     getStoryblokApi,
     storyblokEditable,
@@ -175,100 +176,82 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                 </ul>
             </div>
-            <div className="col-span-12 w-full pb-24 overflow-x-auto">
-                <table className=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-black whitespace-nowrap uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" className="px-6 py-3 w-1/12">
-                                {blok.table_date_title}
-                            </th>
-                            <th scope="col" className="px-6 py-3 w-7/12">
-                                {blok.table_medienmitteilung_title}
-                            </th>
-                            <th scope="col" className="px-6 py-3 w-2/12">
-                                {blok.table_category_title}
-                            </th>
-                            <th scope="col" className="px-6 py-3 w-2/12">
-                                <div className="flex justify-end">
-                                    {blok.table_documents_title}
-                                </div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {medienmitteilungen[0] &&
-                            medienmitteilungen.map((medienmitteilung) => (
-                                <tr className="bg-white border-b dark:bg-black dark:border-gray-700">
-                                    <td
-                                        scope="row"
-                                        className="px-6 py-4 font-medium text-black whitespace-nowrap"
-                                    >
+            <div className="col-span-12 w-full pb-24 ">
+                <ul className="hidden lg:grid grid-cols-12 gap-4 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-primarySolid-50 dark:bg-gray-700">
+                    {/* Header */}
+                    <li className="col-span-1 px-6 py-3 text-xs text-black uppercase">
+                        {blok.table_date_title}
+                    </li>
+                    <li className="col-span-5 px-6 py-3 text-xs text-black uppercase">
+                        {blok.table_medienmitteilung_title}
+                    </li>
+                    <li className="col-span-3 px-6 py-3 text-xs text-black uppercase">
+                        {blok.table_category_title}
+                    </li>
+                    <li className="col-span-3 px-6 py-3 text-xs text-black uppercase flex justify-end">
+                        {blok.table_documents_title}
+                    </li>
+                </ul>
+                {/* Data Rows */}
+                <div className="w-full blok lg:hidden  mb-4 border-b dark:border-gray-700"></div>
+                <div className="grid grid-cols-12 gap-4 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    {medienmitteilungen[0] &&
+                        medienmitteilungen.map((medienmitteilung, idx) => (
+                            <div
+                                key={idx}
+                                className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b "
+                            >
+                                <div className="grid grid-cols-1 lg:grid-cols-12">
+                                    <div className=" bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
                                         {DateFormatter(
                                             medienmitteilung.content.date
                                         )}
-                                    </td>
-                                    <td
-                                        scope="row"
-                                        className="px-6 py-4 font-medium text-black wordbreak-normal"
-                                    >
+                                    </div>
+                                    <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-black">
                                         <a
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             {medienmitteilung.name}
                                         </a>
-                                    </td>
-                                    <td
-                                        scope="row"
-                                        className="px-6 py-4 font-medium text-black whitespace-nowrap"
-                                    >
+                                    </div>
+                                    <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
                                         {medienmitteilung.content.categories.map(
-                                            (category, index) =>
-                                                category.full_slug.includes(
-                                                    '/medienmitteilungen/'
-                                                ) && (
-                                                    <span
-                                                        key={index}
-                                                        className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                                    >
-                                                        {
-                                                            category.content
-                                                                .category
-                                                        }
-                                                    </span>
+                                            (category, index) => (
+                                                <span
+                                                    key={index}
+                                                    className="mb-2 inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                >
+                                                    {category.content.category}
+                                                </span>
+                                            )
+                                        )}
+                                    </div>
+                                    <div className="col-span-1 lg:col-span-3 px-6 py-4 text-primary items-center flex justify-start lg:justify-end">
+                                        {medienmitteilung.content.downloads_block?.map(
+                                            (downloadBlock, index) =>
+                                                downloadBlock.download_grid?.map(
+                                                    (downloadGrid, idx) => (
+                                                        <a
+                                                            href={
+                                                                downloadGrid
+                                                                    ?.download_cta
+                                                                    .url
+                                                            }
+                                                            key={idx}
+                                                            className="first:ml-0 ml-3 pt-2 pb-2 inline-flex"
+                                                        >
+                                                            {
+                                                                downloadGrid?.download_cta_text
+                                                            }
+                                                        </a>
+                                                    )
                                                 )
                                         )}
-                                    </td>
-                                    <td className="px-6 py-4 text-primary">
-                                        <div className="flex justify-end">
-                                            {medienmitteilung.content.downloads_block?.map(
-                                                (downloadBlock, index) =>
-                                                    downloadBlock.download_grid?.map(
-                                                        (
-                                                            downloadGrid,
-                                                            index
-                                                        ) => (
-                                                            <a
-                                                                href={
-                                                                    downloadGrid
-                                                                        ?.download_cta
-                                                                        .url
-                                                                }
-                                                                key={index}
-                                                                className="ml-3 pt-2 pb-2 inline-flex"
-                                                            >
-                                                                {
-                                                                    downloadGrid?.download_cta_text
-                                                                }
-                                                            </a>
-                                                        )
-                                                    )
-                                            )}
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
-                    </tbody>
-                </table>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                </div>
             </div>
         </ContentWidth>
     );
