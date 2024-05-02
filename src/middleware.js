@@ -11,55 +11,80 @@ export function middleware(request) {
     console.log(`Visitor from ${country}`);
     console.log(request.geo.country);
     console.log(request);
+    console.log(request.headers.get('accept-language')?.split(',')?.[0]);
     console.log(`Pathname ${request.nextUrl.pathname}`);
 
-    if (request.nextUrl.pathname == '/de/career') {
+    const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
+
+    if (request.nextUrl.pathname == '/en/career') {
         switch (request.geo.country) {
             case 'CH':
                 console.log('I was called');
-                request.nextUrl.pathname = '/de/ch/career-ch-de';
-                return NextResponse.rewrite(request.nextUrl);
+                if (userLocale.includes('de')) {
+                    request.nextUrl.pathname = '/ch/career-ch-de';
+                    return NextResponse.rewrite(request.nextUrl);
+                } else if (userLocale.includes('fr')) {
+                    request.nextUrl.pathname = '/ch/career-ch-fr';
+                    return NextResponse.rewrite(request.nextUrl);
+                } else {
+                    request.nextUrl.pathname = '/ch/career-ch-en';
+                    return NextResponse.rewrite(request.nextUrl);
+                }
             case 'DE':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/de/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'US':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/us/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'ES':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/es/us/career-es-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'PL':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/pl/career-pl-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'HU':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/hu/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'BY':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/by/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'KZ':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/kz/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'CZ':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/cz/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'AT':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/at/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'GB':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/gb/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'IT':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/it/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'NL':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/nl/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'SE':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/se/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'NO':
-                // request.nextUrl.pathname = 'ch/...'
+                request.nextUrl.pathname = '/en/no/career-ch-en';
+                //return NextResponse.rewrite(request.nextUrl);
                 break;
             default:
             // bring on global page
@@ -68,8 +93,16 @@ export function middleware(request) {
             // and update this career page just in english and german
             // otherwise redirect here to global folder
         }
-    }
-    if (request.nextUrl.pathname == '/en/career') {
+    } else if (request.nextUrl.pathname == '/de/career') {
+        switch (request.geo.country) {
+            case 'CH':
+                request.nextUrl.pathname = '/de/ch/career-ch-de';
+                return NextResponse.rewrite(request.nextUrl);
+            case 'DE':
+                request.nextUrl.pathname = '/de/de/career-de-de';
+                //return NextResponse.rewrite(request.nextUrl);
+                break;
+        }
     } else {
         // nothing should happen really, right? not sure...
     }
