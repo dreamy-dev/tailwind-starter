@@ -4,6 +4,7 @@ import Text from '../../components/typography/Text';
 import ContentWidth from '../layouts/ContentWidth';
 import Button from '../elements/ButtonSecondary';
 import { ArrowForward } from '../icons/ArrowForward';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function TeaserMobilitySolutions({ blok }) {
     return (
@@ -19,7 +20,7 @@ export default function TeaserMobilitySolutions({ blok }) {
                     <Button
                         position="center"
                         textColorClass="text-white"
-                        href={blok.cta_link.href}
+                        href={ButtonUrlRenderer(blok?.cta_link)}
                         styles="mb-8 lg:mb-12"
                         iconAfter={<ArrowForward styles="w-4 h-4 fill-white" />}
                     >

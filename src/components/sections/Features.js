@@ -1,6 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../../components/typography/H3';
 import ContentWidth from '../layouts/ContentWidth';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer'
 
 const Features = ({ blok }) => {
     return (
@@ -21,7 +22,7 @@ const Features = ({ blok }) => {
                                 className="w-full md:w-auto h-[320px] object-cover"
                             />
                             <a
-                                href={blok?.link_1}
+                                href={ButtonUrlRenderer(blok?.link_1)}
                                 className="flex items-center gap-2 text-2xl font-bold mt-4"
                             >
                                 {blok?.text_1}
@@ -46,7 +47,7 @@ const Features = ({ blok }) => {
                                 className="w-full md:w-auto h-[320px] object-cover"
                             />
                             <a
-                                href={blok?.link_2}
+                                href={ButtonUrlRenderer(blok?.link_2)}
                                 className="flex items-center gap-2 text-2xl font-bold mt-4"
                             >
                                 {blok?.text_2}

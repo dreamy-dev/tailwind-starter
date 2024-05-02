@@ -3,6 +3,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import { ArrowForward } from '../icons/ArrowForward';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer'
 
 const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (
@@ -16,7 +17,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
 
                             <div className="pr-0">
                                 <a
-                                    href={blok?.link_1}
+                                    href={ButtonUrlRenderer(blok?.link_1)}
                                     className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-4 lg:mb-0"
                                 >
                                     <div className="text-4xl">
@@ -35,7 +36,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <img src={blok?.image_2.filename} alt="Image" />
                             <div className="pr-0">
                                 <a
-                                    href={blok?.link_2}
+                                    href={ButtonUrlRenderer(blok?.link_2)}
                                     className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-0"
                                 >
                                     <div className="">

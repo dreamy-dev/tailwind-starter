@@ -3,6 +3,7 @@
 import ButtonPrimary from '../elements/ButtonPrimary';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const Jobs = ({ blok }) => {
     return (
@@ -14,7 +15,7 @@ const Jobs = ({ blok }) => {
                         <Text>{blok?.text}</Text>
                         <div className="mt-8">
                             <ButtonPrimary
-                                href={blok?.link_URL.url}
+                                href={ButtonUrlRenderer(blok?.link_URL)}
                                 position="left"
                                 buttonText={blok?.link_CTA}
                             />

@@ -8,6 +8,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const MedienMedienmitteilungenTeaser = ({ blok }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
@@ -116,21 +117,19 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                             </td>
                                             <td className="px-6 py-4 text-primary">
                                                 <div className="flex justify-end">
-                                                    {item.content.downloads_block.map(
+                                                    {item.content.downloads_block?.forEach(
                                                         (
                                                             downloadBlock,
                                                             index
                                                         ) =>
-                                                            downloadBlock.download_grid.map(
+                                                            downloadBlock.download_grid?.map(
                                                                 (
                                                                     downloadGrid,
                                                                     index
                                                                 ) => (
                                                                     <a
                                                                         href={
-                                                                            downloadGrid
-                                                                                .download_cta
-                                                                                .url
+                                                                            downloadGrid?.download_cta.url
                                                                         }
                                                                         key={
                                                                             index
@@ -138,7 +137,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                         className="ml-3 pt-2 pb-2 inline-flex"
                                                                     >
                                                                         {
-                                                                            downloadGrid.download_cta_text
+                                                                            downloadGrid?.download_cta_text
                                                                         }
                                                                     </a>
                                                                 )
@@ -154,7 +153,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                     <div className="pt-16">
                         <ButtonPrimary
                             position="left"
-                            href={blok?.CTA_Show_All.url}
+                            href={ButtonUrlRenderer(blok?.CTA_Show_All)}
                             buttonText={blok?.ctag_all_news}
                         />
                     </div>
