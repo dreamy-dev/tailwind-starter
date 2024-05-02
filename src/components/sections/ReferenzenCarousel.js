@@ -180,9 +180,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                     }}
                                                 >
                                                     <a
-                                                        href={
-                                                            `referenzen/${article.slug}`
-                                                        }
+                                                        href={`loesungen/referenzen/${article.slug}`}
                                                     >
                                                         <img
                                                             src={
@@ -216,7 +214,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                             ></RichTextRenderer>
                                                         </div>
                                                         <Link
-                                                            href={`referenzen/${article.slug}`}
+                                                            href={`/referenzen/${article.slug}`}
                                                             className="inline-flex items-center py-2 text-sm font-medium text-center"
                                                         >
                                                             <svg
@@ -327,8 +325,9 @@ console.log(highlightsCategory, 'highlightsCategory');
                                             key={idx}
                                             className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                                         >
-                                            <a href={`referenze/${train.slug}`}>
-                                               
+                                            <a
+                                                href={`./referenze/${train.slug}`}
+                                            >
                                                 <img
                                                     className="w-full aspect-[4/3]"
                                                     src={
