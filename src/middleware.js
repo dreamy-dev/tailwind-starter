@@ -21,13 +21,13 @@ export function middleware(request) {
             case 'CH':
                 console.log('I was called');
                 if (userLocale.includes('de')) {
-                    request.nextUrl.pathname = '/ch/career-ch-de';
+                    request.nextUrl.pathname = '/de/ch/career-ch-de';
                     return NextResponse.rewrite(request.nextUrl);
                 } else if (userLocale.includes('fr')) {
-                    request.nextUrl.pathname = '/ch/career-ch-fr';
+                    request.nextUrl.pathname = '/en/ch/career-ch-fr';
                     return NextResponse.rewrite(request.nextUrl);
                 } else {
-                    request.nextUrl.pathname = '/ch/career-ch-en';
+                    request.nextUrl.pathname = '/en/ch/career-ch-en';
                     return NextResponse.rewrite(request.nextUrl);
                 }
             case 'DE':
