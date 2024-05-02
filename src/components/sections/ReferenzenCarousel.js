@@ -214,7 +214,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                             ></RichTextRenderer>
                                                         </div>
                                                         <Link
-                                                            href={`/referenzen/${article.slug}`}
+                                                            href={`/${article.full_slug}`}
                                                             className="inline-flex items-center py-2 text-sm font-medium text-center"
                                                         >
                                                             <svg
