@@ -180,7 +180,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                     }}
                                                 >
                                                     <a
-                                                        href={`loesungen/referenzen/${article.slug}`}
+                                                        href={`/${article.full_slug}`}
                                                     >
                                                         <img
                                                             src={
@@ -325,9 +325,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                             key={idx}
                                             className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                                         >
-                                            <a
-                                                href={`./referenze/${train.slug}`}
-                                            >
+                                            <a href={`/${train.full_slug}`}>
                                                 <img
                                                     className="w-full aspect-[4/3]"
                                                     src={
@@ -341,7 +339,9 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                 <H4 styles="mb-4">
                                                     {train.content.title}
                                                 </H4>
-                                                <Link href="#">
+                                                <Link
+                                                    href={`/${train.full_slug}`}
+                                                >
                                                     <svg
                                                         width="20"
                                                         height="20"
