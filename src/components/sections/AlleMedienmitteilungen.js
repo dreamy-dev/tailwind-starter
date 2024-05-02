@@ -179,16 +179,16 @@ function AlleMedienmitteilungen({ blok }) {
             <div className="col-span-12 w-full pb-24 ">
                 <ul className="hidden lg:grid grid-cols-12 gap-4 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-primarySolid-50 dark:bg-gray-700">
                     {/* Header */}
-                    <li className="col-span-1 px-6 py-3 text-xs text-black uppercase">
+                    <li className="col-span-1 px-6 py-3 text-xs font-bold text-black uppercase">
                         {blok.table_date_title}
                     </li>
-                    <li className="col-span-5 px-6 py-3 text-xs text-black uppercase">
+                    <li className="col-span-5 px-6 py-3 text-xs font-bold text-black uppercase">
                         {blok.table_medienmitteilung_title}
                     </li>
-                    <li className="col-span-3 px-6 py-3 text-xs text-black uppercase">
+                    <li className="col-span-3 px-6 py-3 text-xs font-bold text-black uppercase">
                         {blok.table_category_title}
                     </li>
-                    <li className="col-span-3 px-6 py-3 text-xs text-black uppercase flex justify-end">
+                    <li className="col-span-3 px-6 py-3 text-xs font-bold text-black uppercase flex justify-end">
                         {blok.table_documents_title}
                     </li>
                 </ul>
