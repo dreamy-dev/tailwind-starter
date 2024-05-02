@@ -12,6 +12,7 @@ const ButtonUrlRenderer = (data) => {
     if (data.linktype == "email") {
 
     }
+    return data
 };
 
 export default ButtonUrlRenderer;
