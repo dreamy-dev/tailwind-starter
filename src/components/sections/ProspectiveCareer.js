@@ -1,3 +1,4 @@
+import { useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
@@ -23,13 +24,14 @@ const ProspectiveCareer = ({ blok }) => {
     const [dependentFilter, setDependentFilter] = useState({});
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [isDataLoading, setIsDataLoading] = useState(true);
+    const searchParams = useSearchParams()
 
     const getJobs = async (filter = '', search = '') => {
         setIsDataLoading(true);
 
         const url = `api/prospective-jobs?filter=${filter}&search=${search}`;
 
-        // console.log(dependentFilter, "dependentFilter")
+        console.log(filter, "filter")
 
         const checkConnection = await fetch(url, filters);
         const data = await checkConnection.json()
@@ -55,9 +57,16 @@ const ProspectiveCareer = ({ blok }) => {
 
     };
     useEffect(() => {
-        getJobs()
+        let filters = ""
+        if (searchParams.get('10')) {
+            filters += `10:${searchParams.get('10')}`
+        }
+        if (searchParams.get('25')) {
+            filters += `25:${searchParams.get('25')}`
+        }
+        console.log("searchParams", filters)
+        getJobs(filters)
         getAttributes()
-
     }, [])
 
     const onSearchChange = (e) => {
@@ -218,12 +227,13 @@ const ProspectiveCareer = ({ blok }) => {
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => filterJobs(e, '10')}
+                                value={selectedOptions["10"] ? selectedOptions["10"] : searchParams.get('10')}
                             >
                                 <option value="">
                                     {blok.select_1_placeholder}
                                 </option>
                                 {attributes["10"] && attributes["10"]["values"] && Object.keys(attributes["10"]["values"]).map((key) => {
-                                    return <option key={key} value={key}>
+                                    return <option key={key} value={key} >
                                         {attributes["10"]["values"][key]}
                                     </option>
                                 })}
@@ -240,6 +250,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => filterJobs(e, '20')}
+                                value={selectedOptions["20"] ? selectedOptions["20"] : searchParams.get('20')}
                             >
                                 <option value="">
                                     {blok.select_2_placeholder}
@@ -264,6 +275,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => { filterJobs(e, '25'); setLocation(e, '25'); }}
+                                value={selectedOptions["25"] ? selectedOptions["25"] : searchParams.get('25')}
                             >
                                 <option value="">
                                     {blok.select_3_placeholder}
