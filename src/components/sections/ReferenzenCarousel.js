@@ -69,26 +69,29 @@ console.log(highlightsCategory, 'highlightsCategory');
     useEffect(() => {
         const getArticles = async () => {
             const arrayHighlight = [];
-        
             blok.highlight_reference.map((item) => {
                 arrayHighlight.push(item.uuid);
             });
 
             const highlightReference = arrayHighlight.join(',');
-         
+            console.log(highlightReference, 'highlightReference');
             const storyblokApi = getStoryblokApi();
-            const { data } = await storyblokApi.get(`cdn/stories`, {
-                version: 'published',
-                starts_with: 'loesungen/',
-                is_startpage: false,
-                'filter_query[categories][any_in_array]': highlightReference,
-                per_page: 5,
-            });
+            const { data } = await storyblokApi.get(
+                `cdn/stories`,
+                {
+                    version: 'published',
+                    starts_with: "loesungen/",
+                    is_startpage: false,
+                    'filter_query[categories][any_in_array]':
+                        highlightReference,
+                    per_page: 5,
+                }
+            );
             console.log(data, "data")
            
             setHighlightsCategory((prev) =>
                 data.stories.map((article) => {
-                    article.content.full_slug = article.full_slug;
+                    article.content.slug = article.slug;
                      console.log(article, 'article');
                     return article;
                 })
