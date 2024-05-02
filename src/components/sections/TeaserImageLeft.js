@@ -5,6 +5,7 @@ import ButtonPrimary from '../elements/ButtonPrimary';
 import H2 from '../typography/H2';
 import SmallWidth from '../layouts/SmallWidth';
 import Text from '../typography/Text';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserImageLeft = ({ blok }) => {
     return (
@@ -25,7 +26,7 @@ const TeaserImageLeft = ({ blok }) => {
                         <ButtonPrimary
                             position="left"
                             buttonText={blok?.cta_button_text}
-                            href={blok?.cta_button_link}
+                            href={ButtonUrlRenderer(blok?.cta_button_link)}
                         />
                     </div>
                 </div>
