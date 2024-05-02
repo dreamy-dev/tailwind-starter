@@ -139,8 +139,8 @@ export default function MailchimpEmbed({ blok }) {
 
 
                     <div className="mt-6 w-full lg:mt-0 relative">
-                        <div className="grid grid-cols-1 gap-4 lg:gap-4 lg:grid-cols-2 items-center">
-                            <div className="mb-2 relative w-full">
+                        <div className="grid grid-cols-1 gap-4 lg:gap-4 lg:grid-cols-2 items-start">
+                            <div className="mb-2 relative w-full items-start">
                                 <label className="mb-2 text-sm font-medium">
                                     {blok.fname_label}{' '}
                                     <span>
@@ -158,7 +158,7 @@ export default function MailchimpEmbed({ blok }) {
                                 />
                                 <div className={`${errors.firstName ? "block " : "hidden "} mt-2 mb-2 text-sm text-red-700 font-medium`}>{blok.fname_error}</div>
                             </div>
-                            <div className="mb-2 relative w-full">
+                            <div className="mb-2 relative w-full items-start">
                                 <label className="mb-2 text-sm font-medium">
                                     {blok.lname_label}{' '}
                                     <span>

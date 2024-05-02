@@ -2,6 +2,7 @@ import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
 import H4 from '../typography/H4';
 import Text from '../typography/Text';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserSuccessStories = ({ blok }) => {
     return (
@@ -16,7 +17,7 @@ const TeaserSuccessStories = ({ blok }) => {
                         {blok?.employee_items.map((item) => (
                             <a
                                 key={item.link.url}
-                                href={item.link.url}
+                                href={ButtonUrlRenderer(item.link.url)}
                                 className="group relative overflow-hidden"
                             >
                                 <img
