@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import H1 from '../../components/typography/H1';
@@ -8,6 +9,46 @@ import { PinIcon } from '../icons/PinIcon';
 import { CalenderIcon } from '../icons/CalenderIcon';
 
 const HeroCareer = ({ blok }) => {
+    const [values, setValues] = useState({ 10: "", 25: "" });
+    const [urlQuery, setUrlQuery] = useState("");
+    const [attributes, setAttributes] = useState([]);
+
+    const changeChosenFilter = (value, property) => {
+        const newValues = { ...values }
+        newValues[property] = value
+        setValues(newValues)
+        let query = ""
+        Object.keys(newValues).forEach(key => {
+            if (newValues[key]) {
+                query += `${key}=${newValues[key]}&`
+            }
+        })
+
+        setUrlQuery(query)
+    }
+
+
+    const getAttributes = async () => {
+
+        const url = 'api/prospective-attributes';
+
+        const checkConnection = await fetch(url);
+        const attributes = await checkConnection.json()
+
+        const selectAttributes = {}
+
+        attributes?.attributes?.map(item => {
+            selectAttributes[item.id] = { values: item.values, name }
+        })
+
+        setAttributes(selectAttributes)
+
+    };
+    useEffect(() => {
+        getAttributes()
+
+    }, [])
+
     return (
         <section
             {...storyblokEditable(blok)}
@@ -36,12 +77,21 @@ const HeroCareer = ({ blok }) => {
                                         styles="w-5 h-5"
                                     />
                                 </div>
-                                <input
-                                    name="end"
-                                    type="text"
+                                <select
                                     className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    placeholder="Berufsfeld"
-                                />
+
+                                    onChange={(e) => (changeChosenFilter(e.target.value, "10"))}
+                                >
+                                    <option value="">
+                                        Berufsfeld
+                                    </option>
+                                    {attributes["10"] && attributes["10"]["values"] && Object.keys(attributes["10"]["values"]).map((key) => {
+                                        return <option key={key} value={key}>
+                                            {attributes["10"]["values"][key]}
+                                        </option>
+                                    })}
+
+                                </select>
                             </div>
                         </div>
                         <div className="flex-grow">
@@ -53,16 +103,25 @@ const HeroCareer = ({ blok }) => {
                                         styles="w-5 h-5"
                                     />
                                 </div>
-                                <input
-                                    type="text"
-                                    id="location-form"
-                                    className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 text-sm  focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    placeholder="Land"
-                                />
+                                <select
+                                    className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+
+                                    onChange={(e) => changeChosenFilter(e.target.value, "25")}
+                                >
+                                    <option value="">
+                                        Land
+                                    </option>
+                                    {attributes["25"] && attributes["25"]["values"] && Object.keys(attributes["25"]["values"]).map((key) => {
+                                        return <option key={key} value={key}>
+                                            {attributes["25"]["values"][key]}
+                                        </option>
+                                    })}
+
+                                </select>
                             </div>
                         </div>
                         <div className="">
-                            <ButtonPrimary buttonText="Suchen" />
+                            <ButtonPrimary href={`/career-search?${urlQuery}`} buttonText="Suchen" />
                         </div>
                     </form>
                 </div>
