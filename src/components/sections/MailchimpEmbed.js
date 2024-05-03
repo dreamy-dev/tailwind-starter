@@ -148,7 +148,7 @@ export default function MailchimpEmbed({ blok }) {
                                     </span>
                                 </label>
                                 <input
-                                    className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                                    className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
                                     value={firstName}
                                     onChange={(e) =>
                                         setFirstName(e.target.value)
@@ -166,7 +166,7 @@ export default function MailchimpEmbed({ blok }) {
                                     </span>
                                 </label>
                                 <input
-                                    className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                                    className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
                                     value={lastName}
                                     onChange={(e) =>
                                         setLastName(e.target.value)
@@ -185,7 +185,7 @@ export default function MailchimpEmbed({ blok }) {
                                 </span>
                             </label>
                             <input
-                                className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                                className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
                                 type="text" value={company}
                                 onChange={(e) =>
                                     setCompany(e.target.value)
@@ -202,7 +202,7 @@ export default function MailchimpEmbed({ blok }) {
                                 </span>
                             </label>
                             <input
-                                className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                                className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
                                 type="email" value={email}
                                 onChange={(e) =>
                                     setEmail(e.target.value)
