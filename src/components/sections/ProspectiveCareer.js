@@ -66,19 +66,21 @@ const ProspectiveCareer = ({ blok }) => {
         let filters = ""
         const newSelectedOptions = { ...selectedOptions };
         if (searchParams.get('10')) {
-            filters += `10:${searchParams.get('10')}`
+            filters += `10:${searchParams.get('10')},`
             newSelectedOptions['10'] = searchParams.get('10');
         }
         if (searchParams.get('25')) {
-            filters += `25:${searchParams.get('25')}`
+            filters += `25:${searchParams.get('25')},`
             newSelectedOptions['25'] = searchParams.get('25');
         }
         if (searchParams.get('20')) {
-            filters += `20:${searchParams.get('20')}`
+            filters += `20:${searchParams.get('20')},`
             newSelectedOptions['20'] = searchParams.get('20');
         }
         // setting fiters for the background object to manipulate onSelect function
         setSelectedOptions(newSelectedOptions)
+
+        console.log("filters", filters)
 
         // fetching jobs with filter values
         getJobs(filters)
