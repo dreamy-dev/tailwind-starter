@@ -64,10 +64,8 @@ export default function Subscribe() {
                                 <div className="flex items-center">
                                     <input
                                         className="
-        peer relative appearance-none shrink-0 w-6 h-6 border-2 border-white  bg-white
-        focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-primary
-        checked:bg-white checked:border-0
-        disabled:border-steel-400 disabled:bg-steel-400
+        peer relative appearance-none shrink-0 w-6 h-6 border-2  bg-white
+        border-primary checked:bg-primary hover:checked:bg-primary checked:border-primary focus:checked:bg-primary hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary
       "
                                         type="checkbox"
                                     />
