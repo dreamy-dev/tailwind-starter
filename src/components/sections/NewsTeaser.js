@@ -8,6 +8,7 @@ import Text from '../typography/Text';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 function NewsTeaser({ blok }) {
     const [articlesCategory, setArticlesCategory] = useState([]);
@@ -97,8 +98,8 @@ function NewsTeaser({ blok }) {
                 </div>
                 <div className="col-span-12 w-full">
                     <ButtonPrimary
-                        buttonText={blok.ctag_all_news}
-                        href={blok.CTA_Show_All.url}
+                        buttonText={blok?.ctag_all_news}
+                        href={ButtonUrlRenderer(blok?.CTA_Show_All)}
                     ></ButtonPrimary>
                 </div>
             </ContentWidth>

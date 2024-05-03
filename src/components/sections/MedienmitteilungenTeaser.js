@@ -117,7 +117,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                             </td>
                                             <td className="px-6 py-4 text-primary">
                                                 <div className="flex justify-end">
-                                                    {item.content.downloads_block?.forEach(
+                                                    {item.content.downloads_block?.map(
                                                         (
                                                             downloadBlock,
                                                             index
@@ -126,10 +126,10 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                 (
                                                                     downloadGrid,
                                                                     index
-                                                                ) => (
+                                                                ) =>
                                                                     <a
                                                                         href={
-                                                                            downloadGrid?.download_cta.url
+                                                                            ButtonUrlRenderer(downloadGrid?.download_cta)
                                                                         }
                                                                         key={
                                                                             index
@@ -140,7 +140,6 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                             downloadGrid?.download_cta_text
                                                                         }
                                                                     </a>
-                                                                )
                                                             )
                                                     )}
                                                 </div>
@@ -159,7 +158,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                     </div>
                 </div>
             </ContentWidth>
-        </section>
+        </section >
     );
 };
 export default MedienMedienmitteilungenTeaser;

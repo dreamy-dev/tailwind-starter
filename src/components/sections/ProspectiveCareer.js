@@ -1,6 +1,6 @@
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react';
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
 import H3 from '../typography/H3';
@@ -16,7 +16,6 @@ import { Loader } from '../elements/Loader';
 const filters = { '10': '', '20': '', '25': '' };
 
 const ProspectiveCareer = ({ blok }) => {
-
     const [jobs, setJobs] = useState([]);
     const [search, setSearch] = useState('');
     const [attributes, setAttributes] = useState([]);
@@ -26,12 +25,11 @@ const ProspectiveCareer = ({ blok }) => {
     const [isDataLoading, setIsDataLoading] = useState(true);
     const searchParams = useSearchParams()
 
+    // function to get all the jobs (with possible filters and search query) via server function in next
     const getJobs = async (filter = '', search = '') => {
         setIsDataLoading(true);
 
         const url = `api/prospective-jobs?filter=${filter}&search=${search}`;
-
-        console.log(filter, "filter")
 
         const checkConnection = await fetch(url, filters);
         const data = await checkConnection.json()
@@ -40,8 +38,9 @@ const ProspectiveCareer = ({ blok }) => {
         setJobs(data?.message?.jobs || [])
 
     };
-    const getAttributes = async () => {
 
+    // function to get all the attributes via server function in next
+    const getAttributes = async () => {
         const url = 'api/prospective-attributes';
 
         const checkConnection = await fetch(url);
@@ -54,18 +53,37 @@ const ProspectiveCareer = ({ blok }) => {
         })
 
         setAttributes(selectAttributes)
-
     };
+
+    // on component mounting we need to check if there are query parameters in URL
+    // e.g. ?20=1129862
+    // it means that some of the filters should be preselected
+    // 10 - Berufsfelt
+    // 20 - Level
+    // 25 - Arbeitsort
+
     useEffect(() => {
         let filters = ""
+        const newSelectedOptions = { ...selectedOptions };
         if (searchParams.get('10')) {
             filters += `10:${searchParams.get('10')}`
+            newSelectedOptions['10'] = searchParams.get('10');
         }
         if (searchParams.get('25')) {
             filters += `25:${searchParams.get('25')}`
+            newSelectedOptions['25'] = searchParams.get('25');
         }
-        console.log("searchParams", filters)
+        if (searchParams.get('20')) {
+            filters += `20:${searchParams.get('20')}`
+            newSelectedOptions['20'] = searchParams.get('20');
+        }
+        // setting fiters for the background object to manipulate onSelect function
+        setSelectedOptions(newSelectedOptions)
+
+        // fetching jobs with filter values
         getJobs(filters)
+
+        // getting attributes' values for selects
         getAttributes()
     }, [])
 
@@ -89,6 +107,8 @@ const ProspectiveCareer = ({ blok }) => {
             getJobs(filtersString)
         }
     };
+
+    // Set dependent value on location filter, applicable only for Switzerland and Weitere
     const setLocation = (e, typeFilter) => {
         if (e.target.value == "1098730") {
             const filterObject = {};
@@ -105,12 +125,11 @@ const ProspectiveCareer = ({ blok }) => {
             setDependentFilter({})
             setDependentField(false)
         }
-        // console.log("setLocation", e)
     }
     const changeDependentFilter = (e) => {
         const updatedValue = {}
         updatedValue[Object.keys(dependentFilter)[0]] = e.target.value
-        // console.log("changeDependentFilter", updatedValue)
+
         setDependentFilter(updatedValue)
         filterJobs(e, Object.keys(dependentFilter)[0], e.target.value);
     }
@@ -237,7 +256,6 @@ const ProspectiveCareer = ({ blok }) => {
                                         {attributes["10"]["values"][key]}
                                     </option>
                                 })}
-
                             </select>
                         </div>
                         <div className="grid col-span-6">

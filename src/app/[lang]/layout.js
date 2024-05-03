@@ -3,50 +3,110 @@ import StoryblokProvider from '@/src/components/StoryblokProvider';
 import Script from 'next/script';
 
 import { Montserrat } from 'next/font/google';
-/* import localFont from 'next/font/local'; */
+import localFont from 'next/font/local';
 
 import './globals.css';
 
-// const fontStadler = localFont({
-//   src: [
-//     {
-//       path: '../../public/fonts/StadlerType_W_Lt.woff2',
-//       weight: '300',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/StadlerType_W_Rg.woff2',
-//       weight: '400',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/StadlerType_W_It.woff2',
-//       weight: '400',
-//       style: 'italic',
-//     },
-//     {
-//       path: '../../public/fonts/StadlerType_W_Md.woff2',
-//       weight: '500',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/StadlerType_W_Md.woff2',
-//       weight: '600',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/StadlerType_W_SBd.woff2',
-//       weight: '700',
-//       style: 'normal',
-//     },
-//   ],
-//   variable: '--font-stadler',
-// });
-
-const fontFamily = Montserrat({
-    subsets: ['latin'],
-    variable: '--font-montserrat',
+const fontStadler = localFont({
+    src: [
+        {
+            path: '../../../public/fonts/StadlerType_W_Th.woff2',
+            weight: '100',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_ThIt.woff2',
+            weight: '100',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_XLt.woff2',
+            weight: '200',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_XLtIt.woff2',
+            weight: '200',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_Lt.woff2',
+            weight: '300',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_LtIt.woff2',
+            weight: '300',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_Rg.woff2',
+            weight: '400',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_It.woff2',
+            weight: '400',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_Md.woff2',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_MdIt.woff2',
+            weight: '500',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_SBd.woff2',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_SBdIt.woff2',
+            weight: '600',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_Bd.woff2',
+            weight: '700',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_BdIt.woff2',
+            weight: '700',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_XBd.woff2',
+            weight: '800',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_XBdIt.woff2',
+            weight: '800',
+            style: 'italic',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_Blk.woff2',
+            weight: '900',
+            style: 'normal',
+        },
+        {
+            path: '../../../public/fonts/StadlerType_W_BlkIt.woff2',
+            weight: '900',
+            style: 'italic',
+        },
+    ],
+    variable: '--font-stadler',
 });
+
+// const fontFamily = Montserrat({
+//     subsets: ['latin'],
+//     variable: '--font-montserrat',
+// });
 //const mySchema = cloneDeep(RichTextSchema);
 
 storyblokInit({
@@ -89,13 +149,13 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                 </head>
                 <body
                     className={
-                        fontFamily.className +
+                        fontStadler.className +
                         ' overflow-x-hidden flex flex-col min-h-screen'
                     }
                 >
-                 
+
                     <main>{children}</main>
-                  
+
                 </body>
             </html>
         </StoryblokProvider>
