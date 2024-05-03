@@ -320,7 +320,7 @@ export default function ContactForm({ blok }) {
                         </div>
                         <div className="flex items-start mb-8">
                             <input
-                                className="relative shrink-0 w-6 h-6 border-2 border-primary bg-whitefocus:ring-primary checked:bg-primary checked:border-primary"
+                                className="relative shrink-0 w-6 h-6 border-2 border-primary checked:bg-primary hover:checked:bg-primary checked:border-primary focus:checked:bg-primary hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary"
                                 type="checkbox"
                                 name="data_protection"
                                 id="data_protection"

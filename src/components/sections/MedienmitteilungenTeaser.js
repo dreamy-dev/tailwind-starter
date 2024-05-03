@@ -42,9 +42,8 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 max-w-full  pb-24">
                     <H2>{blok?.title}</H2>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
-                            <thead className="text-xs whitespace-nowrap text-black uppercase bg-primarySolid-50 dark:bg-gray-700 dark:text-gray-400">
+                   
+                      
                                 <tr>
                                     <th
                                         scope="col"
@@ -73,7 +72,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                         </div>
                                     </th>
                                 </tr>
-                            </thead>
+                         
                             <tbody>
                                 {medienmitteilungen[0] &&
                                     medienmitteilungen.map((item) => (
@@ -147,8 +146,8 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                         </tr>
                                     ))}
                             </tbody>
-                        </table>
-                    </div>
+                      
+                  
                     <div className="pt-16">
                         <ButtonPrimary
                             position="left"
