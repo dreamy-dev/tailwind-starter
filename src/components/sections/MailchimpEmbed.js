@@ -137,15 +137,11 @@ export default function MailchimpEmbed({ blok }) {
                         <Text>{blok.description}</Text>
                     </div>
 
-
                     <div className="mt-6 w-full lg:mt-0 relative">
                         <div className="grid grid-cols-1 gap-4 lg:gap-4 lg:grid-cols-2 items-start">
                             <div className="mb-2 relative w-full items-start">
                                 <label className="mb-2 text-sm font-medium">
-                                    {blok.fname_label}{' '}
-                                    <span>
-                                        *
-                                    </span>
+                                    {blok.fname_label} <span>*</span>
                                 </label>
                                 <input
                                     className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
@@ -156,14 +152,15 @@ export default function MailchimpEmbed({ blok }) {
                                     onBlur={validateFirstName}
                                     type="text"
                                 />
-                                <div className={`${errors.firstName ? "block " : "hidden "} mt-2 mb-2 text-sm text-red-700 font-medium`}>{blok.fname_error}</div>
+                                <div
+                                    className={`${errors.firstName ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.fname_error}
+                                </div>
                             </div>
                             <div className="mb-2 relative w-full items-start">
                                 <label className="mb-2 text-sm font-medium">
-                                    {blok.lname_label}{' '}
-                                    <span>
-                                        *
-                                    </span>
+                                    {blok.lname_label} <span>*</span>
                                 </label>
                                 <input
                                     className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
@@ -174,50 +171,57 @@ export default function MailchimpEmbed({ blok }) {
                                     onBlur={validateLastName}
                                     type="text"
                                 />
-                                <div className={`${errors.lastName ? "block " : "hidden "} mt-2 mb-2 text-sm text-red-700 font-medium`}>{blok.lname_error}</div>
+                                <div
+                                    className={`${errors.lastName ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.lname_error}
+                                </div>
                             </div>
                         </div>
                         <div className="mb-2 relative w-full">
                             <label className="mb-2 text-sm font-medium">
-                                {blok.company_label}{' '}
-                                <span>
-                                    *
-                                </span>
+                                {blok.company_label} <span>*</span>
                             </label>
                             <input
                                 className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
-                                type="text" value={company}
-                                onChange={(e) =>
-                                    setCompany(e.target.value)
-                                }
+                                type="text"
+                                value={company}
+                                onChange={(e) => setCompany(e.target.value)}
                                 onBlur={validateCompany}
                             />
-                            <div className={`${errors.company ? "block " : "hidden "} mt-2 mb-2 text-sm text-red-700 font-medium`}>{blok.company_error}</div>
+                            <div
+                                className={`${errors.company ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                            >
+                                {blok.company_error}
+                            </div>
                         </div>
                         <div className="mb-2 relative w-full">
                             <label className="mb-2 text-sm font-medium">
-                                {blok.email_label}{' '}
-                                <span>
-                                    *
-                                </span>
+                                {blok.email_label} <span>*</span>
                             </label>
                             <input
                                 className="block p-3 w-full text-sm text-gray-900 border border-gray-300 focus:ring-primary focus:border-primary"
-                                type="email" value={email}
-                                onChange={(e) =>
-                                    setEmail(e.target.value)
-                                }
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 onBlur={validateEmail}
                             />
-                            <div className={`${errors.email ? "block " : "hidden "} mt-2 mb-2 text-sm text-red-700 font-medium`}>{blok.email_error}</div>
+                            <div
+                                className={`${errors.email ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                            >
+                                {blok.email_error}
+                            </div>
                         </div>
                         <div>
                             <div className="flex mt-4 mb-6 items-start">
                                 <input
                                     name="checkbox-1"
-                                    className="required mt-0.5 relative shrink-0 w-4 h-4 border-2 border-primary checked:bg-primary checked:border-primary"
+                                    className="mt-0.5 relative shrink-0 w-4 h-4 border-2 border-primary checked:bg-primary hover:checked:bg-primary checked:border-primary focus:checked:bg-primary hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary"
                                     defaultChecked={isSelected}
-                                    onClick={(e) => { setSelection(e.target.checked); validateCheckbox(!e.target.checked) }}
+                                    onClick={(e) => {
+                                        setSelection(e.target.checked);
+                                        validateCheckbox(!e.target.checked);
+                                    }}
                                     type="checkbox"
                                 />
                                 <label
@@ -227,21 +231,42 @@ export default function MailchimpEmbed({ blok }) {
                                     {render(blok?.checkbox_label)}
                                 </label>
                             </div>
-                            <div className={`${errors.isSelected ? "block " : "hidden "} mt-2 mb-2 text-sm text-red-700 font-medium`}>{blok.checkbox_error}</div>
+                            <div
+                                className={`${errors.isSelected ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                            >
+                                {blok.checkbox_error}
+                            </div>
                         </div>
                         <div className="clear flex justify-center">
-                            <input type="submit" name="subscribe"
+                            <input
+                                type="submit"
+                                name="subscribe"
                                 className="bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2"
-                                onClick={handleSubmit} value={blok.button_text}
+                                onClick={handleSubmit}
+                                value={blok.button_text}
                             />
                         </div>
-                        <div className={`${validationError ? "block " : "hidden "} mt-4 mb-2 text-sm text-red-700 font-medium`}>{validationSubscribedError ? blok.error_email_exists : blok.global_validation_error}</div>
-                        {validationSuccess && <div className="top-0 left-0 absolute bg-white w-full h-full items-center flex flex-wrap content-center align-center justify-center text-md">
-                            <div className="w-full text-center">
-                                <H3>{blok.global_validation_success}</H3>
+                        <div
+                            className={`${validationError ? 'block ' : 'hidden '} mt-4 mb-2 text-sm text-red-700 font-medium`}
+                        >
+                            {validationSubscribedError
+                                ? blok.error_email_exists
+                                : blok.global_validation_error}
+                        </div>
+                        {validationSuccess && (
+                            <div className="top-0 left-0 absolute bg-white w-full h-full items-center flex flex-wrap content-center align-center justify-center text-md">
+                                <div className="w-full text-center">
+                                    <H3>{blok.global_validation_success}</H3>
+                                </div>
+                                <div className="w-2/3 text-center">
+                                    <RichTextRenderer
+                                        text={
+                                            blok?.global_validation_success_description
+                                        }
+                                    />
+                                </div>
                             </div>
-                            <div className="w-2/3 text-center"><RichTextRenderer text={blok?.global_validation_success_description} /></div>
-                        </div>}
+                        )}
                     </div>
                 </div>
             </ContentWidth>
