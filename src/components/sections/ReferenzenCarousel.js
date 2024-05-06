@@ -64,7 +64,7 @@ const TestimonialsCarousel = ({ blok }) => {
     const [showTrains, setShowTrains] = useState(false);
     const [highlightsCategory, setHighlightsCategory] = useState([]);
     const [reference, setReference] = useState([]);
-console.log(highlightsCategory, 'highlightsCategory');
+
 
     useEffect(() => {
         const getArticles = async () => {
@@ -74,7 +74,7 @@ console.log(highlightsCategory, 'highlightsCategory');
             });
 
             const highlightReference = arrayHighlight.join(',');
-            console.log(highlightReference, 'highlightReference');
+           
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(
                 `cdn/stories`,
@@ -92,7 +92,7 @@ console.log(highlightsCategory, 'highlightsCategory');
             setHighlightsCategory((prev) =>
                 data.stories.map((article) => {
                     article.content.slug = article.slug;
-                     console.log(article, 'article');
+                 
                     return article;
                 })
             );
