@@ -6,6 +6,9 @@ const ButtonUrlRenderer = (data) => {
     if (data.linktype == "url") {
         return data?.url || "/"
     }
+    if (data.fieldtype == "asset") {
+        return data?.filename
+    }
     if (data.linktype == "asset") {
 
     }
