@@ -22,14 +22,14 @@ export function middleware(request) {
                 console.log('I was called');
                 if (userLocale.includes('de')) {
                     request.nextUrl.pathname = '/de/ch/career-ch-de';
-                    return NextResponse.rewrite(request.nextUrl);
+                    //return NextResponse.rewrite(request.nextUrl);
                 } else if (userLocale.includes('fr')) {
                     request.nextUrl.pathname = '/en/ch/career-ch-fr';
-                    return NextResponse.rewrite(request.nextUrl);
+                    //return NextResponse.rewrite(request.nextUrl);
                 } else {
                     request.nextUrl.pathname = '/en/ch/career-ch-en';
-                    return NextResponse.rewrite(request.nextUrl);
                 }
+                return NextResponse.rewrite(request.nextUrl);
             case 'DE':
                 request.nextUrl.pathname = '/en/de/career-ch-en';
                 //return NextResponse.rewrite(request.nextUrl);
