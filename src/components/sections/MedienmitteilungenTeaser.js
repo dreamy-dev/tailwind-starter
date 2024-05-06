@@ -42,112 +42,82 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 max-w-full  pb-24">
                     <H2>{blok?.title}</H2>
-                   
-                      
-                                <tr>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-3 w-1/12"
-                                    >
-                                        {blok.table_date_title}
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-3 w-7/12"
-                                    >
-                                        {blok.table_medienmitteilungen_title}
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-3 w-2/12"
-                                    >
-                                        {blok.table_category_title}
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-3 w-2/12"
-                                    >
-                                        <div className="flex justify-end">
-                                            {blok.table_documents_title}
+                    <ul className="hidden lg:grid grid-cols-12 gap-4 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-primarySolid-50 dark:bg-gray-700">
+                        <li className="col-span-1 px-6 py-3 text-xs font-bold text-black uppercase">
+                            {blok.table_date_title}
+                        </li>
+                        <li className="col-span-5 px-6 py-3 text-xs font-bold text-black uppercase">
+                            {blok.table_medienmitteilungen_title}
+                        </li>
+                        <li className="col-span-3 px-6 py-3 text-xs font-bold text-black uppercase">
+                            {blok.table_category_title}
+                        </li>
+                        <li className="col-span-3 px-6 py-3 text-xs font-bold text-black uppercase flex justify-end">
+                            {blok.table_documents_title}
+                        </li>
+                    </ul>
+                    <div className="w-full blok lg:hidden  mb-4 border-b dark:border-gray-700"></div>
+                    <div className="grid grid-cols-12 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        {medienmitteilungen[0] &&
+                            medienmitteilungen.map((item) => (
+                                <div
+                                    key={item.uuid}
+                                    className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b"
+                                >
+                                    <div className="grid grid-cols-1 items-center lg:grid-cols-12">
+                                        <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
+                                            {DateFormatter(item.content.date)}
                                         </div>
-                                    </th>
-                                </tr>
-                         
-                            <tbody>
-                                {medienmitteilungen[0] &&
-                                    medienmitteilungen.map((item) => (
-                                        <tr
-                                            key={item.uuid}
-                                            className="bg-white border-b dark:bg-black dark:border-gray-700"
-                                        >
-                                            <td
-                                                scope="row"
-                                                className="px-6 py-4 font-medium text-black whitespace-nowrap"
-                                            >
-                                                {DateFormatter(
-                                                    item.content.date
-                                                )}
-                                            </td>
-                                            <td
-                                                scope="row"
-                                                className="px-6 py-4  font-medium text-black"
-                                            >
-                                                <a href={`/${item.full_slug}`}>
-                                                    {item.name}
-                                                </a>
-                                            </td>
-                                            <td
-                                                scope="row"
-                                                className="px-6 py-4 font-medium text-black whitespace-nowrap"
-                                            >
-                                                {item.content.categories.map(
-                                                    (category, index) => (
-                                                        <span
-                                                            key={index}
-                                                            className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                                        >
-                                                            {
-                                                                category.content
-                                                                    .category
-                                                            }
-                                                        </span>
-                                                    )
-                                                )}
-                                            </td>
-                                            <td className="px-6 py-4 text-primary">
-                                                <div className="flex justify-end">
-                                                    {item.content.downloads_block?.map(
+                                        <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-black">
+                                            <a href={`/${item.full_slug}`}>
+                                                {item.name}
+                                            </a>
+                                        </div>
+                                        <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
+                                            {item.content.categories.map(
+                                                (category, index) => (
+                                                    <span
+                                                        key={index}
+                                                        className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                    >
+                                                        {
+                                                            category.content
+                                                                .category
+                                                        }
+                                                    </span>
+                                                )
+                                            )}
+                                        </div>
+                                        {/* <div className="px-6 py-4 text-primary"> */}
+                                        <div className="col-span-1 lg:col-span-3 px-6 py-4 text-primary items-center flex justify-start lg:justify-end">
+                                            {item.content.downloads_block?.map(
+                                                (downloadBlock, index) =>
+                                                    downloadBlock.download_grid?.map(
                                                         (
-                                                            downloadBlock,
+                                                            downloadGrid,
                                                             index
-                                                        ) =>
-                                                            downloadBlock.download_grid?.map(
-                                                                (
-                                                                    downloadGrid,
-                                                                    index
-                                                                ) =>
-                                                                    <a
-                                                                        href={
-                                                                            ButtonUrlRenderer(downloadGrid?.download_cta)
-                                                                        }
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="ml-3 pt-2 pb-2 inline-flex"
-                                                                    >
-                                                                        {
-                                                                            downloadGrid?.download_cta_text
-                                                                        }
-                                                                    </a>
-                                                            )
-                                                    )}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
-                            </tbody>
-                      
-                  
+                                                        ) => (
+                                                            <a
+                                                                href={ButtonUrlRenderer(
+                                                                    downloadGrid?.download_cta
+                                                                )}
+                                                                key={index}
+                                                                className="first:ml-0 ml-3"
+                                                            >
+                                                                {
+                                                                    downloadGrid?.download_cta_text
+                                                                }
+                                                            </a>
+                                                        )
+                                                    )
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                                // </div>
+                            ))}
+                    </div>
+
                     <div className="pt-16">
                         <ButtonPrimary
                             position="left"
@@ -157,7 +127,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                     </div>
                 </div>
             </ContentWidth>
-        </section >
+        </section>
     );
 };
 export default MedienMedienmitteilungenTeaser;

@@ -238,7 +238,7 @@ function AlleMedienmitteilungen({ blok }) {
                                                                     .url
                                                             }
                                                             key={idx}
-                                                            className="first:ml-0 ml-3 pt-2 pb-2 inline-flex"
+                                                            className="first:ml-0 ml-3  inline-flex"
                                                         >
                                                             {
                                                                 downloadGrid?.download_cta_text
