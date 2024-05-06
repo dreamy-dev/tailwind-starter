@@ -11,10 +11,14 @@ import Text from '../typography/Text';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 import H4 from '../typography/H4';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 function AdHocMedienmitteilungen({ blok }) {
     const [articles, setArticles] = useState([]);
     useEffect(() => {
+        const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+
         const getArticles = async () => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
@@ -24,6 +28,7 @@ function AdHocMedienmitteilungen({ blok }) {
                 resolve_relations: 'medienmitteilungen.categories',
                 sort_by: 'content.date:desc',
                 per_page: 4,
+                language: currentLocale
             });
 
             setArticles((prev) =>

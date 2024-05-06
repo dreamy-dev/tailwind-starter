@@ -9,11 +9,15 @@ import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 const MedienMedienmitteilungenTeaser = ({ blok }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
 
     useEffect(() => {
+        const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+
         const getMedienmitteilungen = async () => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
@@ -23,6 +27,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                 resolve_relations: 'medienmitteilungen.categories',
                 sort_by: 'content.date:desc',
                 per_page: 5,
+                language: currentLocale
             });
 
             setMedienmitteilungen((prev) =>

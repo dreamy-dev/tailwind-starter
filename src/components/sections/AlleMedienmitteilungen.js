@@ -10,18 +10,23 @@ import { useState, useEffect } from 'react';
 import H1 from '../typography/H1';
 import DateFormatter from '../helpers/DateFormatter';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AlleMedienmitteilungen({ blok }) {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [search, setSearch] = useState('');
+
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/medienmitteilungen/',
         is_startpage: false,
         resolve_relations: ['medienmitteilungen.categories'],
         sort_by: 'content.date:desc',
+        language: currentLocale
     };
 
     const onSearchChange = (e) => {
@@ -204,7 +209,7 @@ function AlleMedienmitteilungen({ blok }) {
                             >
                                 <div className="grid grid-cols-1 items-center lg:grid-cols-12">
                                     <div className=" bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
-                                        {DateFormatter(
+                                        {medienmitteilung.content?.date && DateFormatter(
                                             medienmitteilung.content.date
                                         )}
                                     </div>
@@ -220,7 +225,7 @@ function AlleMedienmitteilungen({ blok }) {
                                             (category, index) => (
                                                 <span
                                                     key={index}
-                                                    className=" inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                    className="mb-1 inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
                                                 >
                                                     {category.content.category}
                                                 </span>
