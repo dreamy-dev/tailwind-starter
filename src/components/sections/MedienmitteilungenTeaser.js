@@ -78,7 +78,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                 (category, index) => (
                                                     <span
                                                         key={index}
-                                                        className="mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                        className=" inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0 lg:whitespace-nowrap"
                                                     >
                                                         {
                                                             category.content
