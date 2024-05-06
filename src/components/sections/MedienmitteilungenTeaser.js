@@ -94,7 +94,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                 className="px-6 py-4  font-medium text-black"
                                             >
                                                 <a href={`/${item.full_slug}`}>
-                                                    {item.name}
+                                                    {item.content.title}
                                                 </a>
                                             </td>
                                             <td

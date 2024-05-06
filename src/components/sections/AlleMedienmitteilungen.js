@@ -215,7 +215,7 @@ function AlleMedienmitteilungen({ blok }) {
                                         <a
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
-                                            {medienmitteilung.name}
+                                            {medienmitteilung.content.title}
                                         </a>
                                     </td>
                                     <td

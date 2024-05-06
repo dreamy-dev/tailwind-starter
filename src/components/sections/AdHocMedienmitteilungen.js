@@ -75,7 +75,7 @@ function AdHocMedienmitteilungen({ blok }) {
                                     </Text>
                                 </div>
                                 <div className="group-hover:text-primary transition-all">
-                                    <H4>{article.name}</H4>
+                                    <H4>{article.content.title}</H4>
                                 </div>
                                 <div className="texl-lg mb-3 text-gray-500">
                                     <Text>
