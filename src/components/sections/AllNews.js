@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import H4 from '../typography/H4';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AllNews({ blok }) {
@@ -14,6 +16,7 @@ function AllNews({ blok }) {
     const [selectedOptions, setSelectedOptions] = useState(filters);
 
     const [search, setSearch] = useState('');
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
 
     const apiRequest = {
         version: 'published',
@@ -21,6 +24,7 @@ function AllNews({ blok }) {
         is_startpage: false,
         resolve_relations: 'news.categories',
         sort_by: 'content.date:desc',
+        language: currentLocale
     };
     const onSearchChange = (e) => {
         setSearch(e.target.value);
