@@ -17,18 +17,20 @@ const DownloadSecondaryItem = ({ blok }) => {
                     {blok.title}
                 </Text>
                 <div className="flex justify-start">
-                    <Button
-                        textColorClass="text-primary"
-                        borderColorClass="border-primary"
-                        
-                        styles="flex gap-2"
-                        href={ButtonUrlRenderer(blok?.download_cta)}
-                        iconAfter={
-                            <DownloadIcon styles="w-3.5 h-3.5 fill-primary" />
-                        }
-                    >
-                        {blok?.download_cta_text}
-                    </Button>
+                    {blok?.download_list.map((item) => (
+                        item?.cta_text && <Button
+                            textColorClass="text-primary"
+                            borderColorClass="border-primary"
+
+                            styles="flex gap-2 ml-4"
+                            href={ButtonUrlRenderer(item?.cta_asset)}
+                            iconAfter={
+                                <DownloadIcon styles="w-3.5 h-3.5 fill-primary" />
+                            }
+                        >
+                            {item?.cta_text}
+                        </Button>
+                    ))}
                 </div>
             </li>
             <div className="border-b mb-6"></div>
