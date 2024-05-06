@@ -127,19 +127,19 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                     downloadGrid,
                                                                     index
                                                                 ) =>
-                                                                    <a
-                                                                        href={
-                                                                            ButtonUrlRenderer(downloadGrid?.download_cta)
-                                                                        }
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="ml-3 pt-2 pb-2 inline-flex"
-                                                                    >
-                                                                        {
-                                                                            downloadGrid?.download_cta_text
-                                                                        }
-                                                                    </a>
+                                                                    downloadGrid.download_list?.map((item, index) => (
+                                                                        <a
+                                                                            href={
+                                                                                ButtonUrlRenderer(item?.cta_asset)
+                                                                            }
+                                                                            key={index}
+                                                                            className="ml-3 pt-2 pb-2 inline-flex"
+                                                                        >
+                                                                            {
+                                                                                item?.cta_text
+                                                                            }
+                                                                        </a>
+                                                                    ))
                                                             )
                                                     )}
                                                 </div>

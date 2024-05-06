@@ -8,6 +8,7 @@ import {
 import { useState, useEffect } from 'react';
 import H1 from '../typography/H1';
 import DateFormatter from '../helpers/DateFormatter';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AlleMedienmitteilungen({ blok }) {
@@ -247,19 +248,19 @@ function AlleMedienmitteilungen({ blok }) {
                                                             downloadGrid,
                                                             index
                                                         ) => (
-                                                            <a
-                                                                href={
-                                                                    downloadGrid
-                                                                        ?.download_cta
-                                                                        .url
-                                                                }
-                                                                key={index}
-                                                                className="ml-3 pt-2 pb-2 inline-flex"
-                                                            >
-                                                                {
-                                                                    downloadGrid?.download_cta_text
-                                                                }
-                                                            </a>
+                                                            downloadGrid.download_list?.map((item, index) => (
+                                                                <a
+                                                                    href={
+                                                                        ButtonUrlRenderer(item?.cta_asset)
+                                                                    }
+                                                                    key={index}
+                                                                    className="ml-3 pt-2 pb-2 inline-flex"
+                                                                >
+                                                                    {
+                                                                        item?.cta_text
+                                                                    }
+                                                                </a>
+                                                            ))
                                                         )
                                                     )
                                             )}
