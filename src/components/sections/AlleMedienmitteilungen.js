@@ -194,14 +194,14 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
                 {/* Data Rows */}
                 <div className="w-full blok lg:hidden  mb-4 border-b dark:border-gray-700"></div>
-                <div className="grid grid-cols-12 gap-4 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <div className="grid grid-cols-12 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     {medienmitteilungen[0] &&
                         medienmitteilungen.map((medienmitteilung, idx) => (
                             <div
                                 key={idx}
                                 className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b "
                             >
-                                <div className="grid grid-cols-1 lg:grid-cols-12">
+                                <div className="grid grid-cols-1 items-center lg:grid-cols-12">
                                     <div className=" bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
                                         {DateFormatter(
                                             medienmitteilung.content.date
@@ -219,7 +219,7 @@ function AlleMedienmitteilungen({ blok }) {
                                             (category, index) => (
                                                 <span
                                                     key={index}
-                                                    className="mb-2 inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                    className=" inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
                                                 >
                                                     {category.content.category}
                                                 </span>
