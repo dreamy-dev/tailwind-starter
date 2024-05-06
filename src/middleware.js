@@ -1,6 +1,6 @@
 import { i18nRouter } from 'next-i18n-router';
-import i18nConfig from '../i18nConfig';
 import { NextResponse } from 'next/server';
+import i18nConfig from '@/i18nConfig';
 
 // Middleware used for i18n Routing
 export function middleware(request) {
@@ -14,7 +14,7 @@ export function middleware(request) {
     console.log(request.headers.get('accept-language')?.split(',')?.[0]);
     console.log(`Pathname ${request.nextUrl.pathname}`);
 
-    const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
+    //const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
     if (request.nextUrl.pathname == '/en/career') {
         switch (request.geo.country) {
@@ -58,14 +58,14 @@ export function middleware(request) {
                 return NextResponse.rewrite(request.nextUrl);
                 break;
             case 'BY':
-                if (userLocale.includes('by')) {
+                if (userLocale.includes('ru')) {
                     request.nextUrl.pathname = '/en/by-ru/career-by-by';
                 } else {
                     request.nextUrl.pathname = '/en/by-ru/career-by-en';
                 }
                 return NextResponse.rewrite(request.nextUrl);
             case 'KZ':
-                if (userLocale.includes('kz')) {
+                if (userLocale.includes('ru')) {
                     request.nextUrl.pathname = '/en/kz-ru/career-kz-kz';
                 } else {
                     request.nextUrl.pathname = '/en/kz-ru/career-kz-en';
@@ -128,12 +128,10 @@ export function middleware(request) {
                 return NextResponse.rewrite(request.nextUrl);
             case 'DE':
                 request.nextUrl.pathname = '/de/de-de/career-de-de';
-                //return NextResponse.rewrite(request.nextUrl);
-                break;
+                return NextResponse.rewrite(request.nextUrl);
             case 'AT':
                 request.nextUrl.pathname = '/de/at-de/career-at-de';
-                //return NextResponse.rewrite(request.nextUrl);
-                break;
+                return NextResponse.rewrite(request.nextUrl);
         }
     } else {
         // nothing should happen really, right? not sure...
