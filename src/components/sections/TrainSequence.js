@@ -35,14 +35,16 @@ const handleDrawCanvas = (img, ctx) => {
 const ImageSequence = ({ category }) => {
     let imageWidth;
     if (typeof window !== "undefined") {
-        imageWidth = window?.innerWidth > 1740 ? "Carousel_1700_png" : window?.innerWidth > 600 ? "Carousel_1440_png" : "Carousel_600_png"
+        imageWidth = "Carousel_1700_short"
+        // imageWidth = window?.innerWidth > 1740 ? "Carousel_1700_png" : window?.innerWidth > 600 ? "Carousel_1440_png" : "Carousel_600_png"
     } else {
-        imageWidth = "Carousel_1440_png"
+        imageWidth = "Carousel_1700_short"
+        // imageWidth = "Carousel_1440_png"
     }
 
     const keyframes = useMemo(
         () =>
-            [...new Array(299)].map((_, i) =>
+            [...new Array(100)].map((_, i) =>
                 createImage(
                     `/${imageWidth}/Stadler_Carousel_${i
                         .toString()
@@ -108,6 +110,7 @@ const ImageSequence = ({ category }) => {
                 }
             }
         }
+        console.log("count", count)
 
         if (newCategory < previousCategory) {
             const categoryDifference =
