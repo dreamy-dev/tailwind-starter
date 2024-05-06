@@ -14,7 +14,7 @@ export function middleware(request) {
     console.log(request.headers.get('accept-language')?.split(',')?.[0]);
     console.log(`Pathname ${request.nextUrl.pathname}`);
 
-    //const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
+    const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
     if (request.nextUrl.pathname == '/en/career') {
         switch (request.geo.country) {
