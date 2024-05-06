@@ -17,7 +17,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                     {blok.title}
                 </Text>
                 <div className="flex justify-start">
-                    {blok?.download_list.map((item) => (
+                    {blok?.download_list?.map((item) => (
                         item?.cta_text && <Button
                             textColorClass="text-primary"
                             borderColorClass="border-primary"

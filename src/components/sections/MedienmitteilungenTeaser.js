@@ -70,7 +70,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                         </div>
                                         <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-black">
                                             <a href={`/${item.full_slug}`}>
-                                                {item.name}
+                                                {item.content.title}
                                             </a>
                                         </div>
                                         <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
@@ -97,17 +97,19 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                             downloadGrid,
                                                             index
                                                         ) => (
-                                                            <a
-                                                                href={ButtonUrlRenderer(
-                                                                    downloadGrid?.download_cta
-                                                                )}
-                                                                key={index}
-                                                                className="first:ml-0 ml-3"
-                                                            >
-                                                                {
-                                                                    downloadGrid?.download_cta_text
-                                                                }
-                                                            </a>
+                                                            downloadGrid.download_list?.map((item, index) => (
+                                                                <a
+                                                                    href={
+                                                                        ButtonUrlRenderer(item?.cta_asset)
+                                                                    }
+                                                                    key={index}
+                                                                    className="ml-3 pt-2 pb-2 inline-flex"
+                                                                >
+                                                                    {
+                                                                        item?.cta_text
+                                                                    }
+                                                                </a>
+                                                            ))
                                                         )
                                                     )
                                             )}
