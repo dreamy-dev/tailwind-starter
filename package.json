@@ -20,6 +20,7 @@
         "flowbite-react": "^0.5.0",
         "framer-motion": "^10.16.4",
         "local-ssl-proxy": "^2.0.5",
+        "lodash": "^4.17.21",
         "mkcert": "^3.0.0",
         "next": "13.4.19",
         "next-i18n-router": "^5.4.0",
