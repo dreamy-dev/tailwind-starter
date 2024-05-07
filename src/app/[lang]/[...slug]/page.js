@@ -85,9 +85,13 @@ export async function generateMetadata({ params }) {
   }
 
   const title = story.content?.seo?.title || story.name
-  const description = story.content?.seo?.description
+    const description = story.content?.seo?.description
+    console.log(title, "title");
+     console.log(description, 'description');
   return {
-      metadataBase: new URL('https://your-brand.ch'),
+      metadataBase: new URL(
+          'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/'
+      ),
       title: `${title} · Stadler`,
       description: description,
       robots: {
@@ -95,19 +99,22 @@ export async function generateMetadata({ params }) {
           follow: true,
       },
       openGraph: {
-      
           og_title: title,
           og_description: description,
           url: `/${story.slug}`,
       },
       twitter: {
           card: 'summary',
-        
+
           twitter_title: title,
           twitter_description: description,
       },
   };
 }
+
+generateMetadata({ params: { slug: "home", lang: 'en' } })
+    .then((metadata) => console.log(metadata))
+    .catch((error) => console.error(error));
 
 export default async function Detailpage({ params, lang }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
