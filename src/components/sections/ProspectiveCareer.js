@@ -29,7 +29,7 @@ const ProspectiveCareer = ({ blok }) => {
     const getJobs = async (filter = '', search = '') => {
         setIsDataLoading(true);
 
-        const url = `api/prospective-jobs?filter=${filter}&search=${search}`;
+        const url = `../../api/prospective-jobs?filter=${filter}&search=${search}`;
 
         const checkConnection = await fetch(url, filters);
         const data = await checkConnection.json()
@@ -41,7 +41,7 @@ const ProspectiveCareer = ({ blok }) => {
 
     // function to get all the attributes via server function in next
     const getAttributes = async () => {
-        const url = 'api/prospective-attributes';
+        const url = `../../api/prospective-attributes?language=${blok.default_language}`;
 
         const checkConnection = await fetch(url);
         const attributes = await checkConnection.json()
@@ -49,8 +49,10 @@ const ProspectiveCareer = ({ blok }) => {
         const selectAttributes = {}
 
         attributes?.attributes?.map(item => {
-            selectAttributes[item.id] = { values: item.values, name }
+            selectAttributes[item.id] = item.values
         })
+
+        console.log(selectAttributes, "selectAttributes")
 
         setAttributes(selectAttributes)
     };
@@ -86,7 +88,29 @@ const ProspectiveCareer = ({ blok }) => {
         getJobs(filters)
 
         // getting attributes' values for selects
-        getAttributes()
+        console.log(blok.default_language !== "unset", blok.default_language)
+        if (blok.default_language !== "unset") {
+            getAttributes()
+        } else {
+            let selectAttributes = {}
+
+            let jobValues = {}
+            jobValues["1077440"] = blok.purchasing || ''
+            jobValues["1077441"] = blok.engineering || ''
+            jobValues["1077442"] = blok.finance || ''
+            jobValues["1077443"] = blok.human_resources || ''
+            jobValues["1077444"] = blok.commissioning || ''
+            jobValues["1077445"] = blok.it || ''
+            jobValues["1077446"] = blok.commercial_professions || ''
+            jobValues["1077447"] = blok.logistics || ''
+            jobValues["1077448"] = blok.production || ''
+            jobValues["1077450"] = blok.quality_management || ''
+            jobValues["1077452"] = blok.sales_and_marketing || ''
+            jobValues["1186757"] = blok.project_management || ''
+            selectAttributes["10"] = jobValues
+            console.log(selectAttributes)
+            setAttributes(selectAttributes)
+        }
     }, [])
 
     const onSearchChange = (e) => {
@@ -176,6 +200,7 @@ const ProspectiveCareer = ({ blok }) => {
     return (
         <section className="mt-12" {...storyblokEditable(blok)}>
             <SmallWidth>
+                {JSON.stringify(blok)}
                 <div className="grid col-span-12">
                     <div
                         className="grid grid-cols-4 justify-stretch hover:cursor-pointer gap-x-2"
@@ -253,9 +278,9 @@ const ProspectiveCareer = ({ blok }) => {
                                 <option value="">
                                     {blok.select_1_placeholder}
                                 </option>
-                                {attributes["10"] && attributes["10"]["values"] && Object.keys(attributes["10"]["values"]).map((key) => {
+                                {attributes["10"] && Object.keys(attributes["10"]).map((key) => {
                                     return <option key={key} value={key} >
-                                        {attributes["10"]["values"][key]}
+                                        {attributes["10"][key]}
                                     </option>
                                 })}
                             </select>
@@ -275,9 +300,9 @@ const ProspectiveCareer = ({ blok }) => {
                                 <option value="">
                                     {blok.select_2_placeholder}
                                 </option>
-                                {attributes["20"] && attributes["20"]["values"] && Object.keys(attributes["20"]["values"]).map((key) => {
+                                {attributes["20"] && Object.keys(attributes["20"]).map((key) => {
                                     return <option key={key} value={key}>
-                                        {attributes["20"]["values"][key]}
+                                        {attributes["20"][key]}
                                     </option>
                                 })}
 
@@ -300,9 +325,9 @@ const ProspectiveCareer = ({ blok }) => {
                                 <option value="">
                                     {blok.select_3_placeholder}
                                 </option>
-                                {attributes["25"] && attributes["25"]["values"] && Object.keys(attributes["25"]["values"]).map((key) => {
+                                {attributes["25"] && Object.keys(attributes["25"]).map((key) => {
                                     return <option key={key} value={key}>
-                                        {attributes["25"]["values"][key]}
+                                        {attributes["25"][key]}
                                     </option>
                                 })}
 
@@ -324,9 +349,9 @@ const ProspectiveCareer = ({ blok }) => {
                                 <option value="">
                                     {blok.select_4_placeholder}
                                 </option>
-                                {dependentField && attributes[Object.keys(dependentFilter)[0]] && attributes[Object.keys(dependentFilter)[0]]["values"] && Object.keys(attributes[Object.keys(dependentFilter)[0]]["values"]).map((key) => {
+                                {dependentField && attributes[Object.keys(dependentFilter)[0]] && Object.keys(attributes[Object.keys(dependentFilter)[0]]).map((key) => {
                                     return <option key={key} value={key}>
-                                        {attributes[Object.keys(dependentFilter)[0]]["values"][key]}
+                                        {attributes[Object.keys(dependentFilter)[0]][key]}
                                     </option>
                                 })}
                             </select>
