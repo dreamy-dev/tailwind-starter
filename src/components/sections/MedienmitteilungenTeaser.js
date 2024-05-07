@@ -61,21 +61,27 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                             {blok.table_documents_title}
                         </li>
                     </ul>
-                    <div className="w-full blok lg:hidden  mb-4 border-b dark:border-gray-700"></div>
+                    <div className="w-full blok lg:hidden  my-4 border-b dark:border-gray-700"></div>
                     <div className="grid grid-cols-12 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         {medienmitteilungen[0] &&
                             medienmitteilungen.map((item) => (
                                 <div
                                     key={item.uuid}
-                                    className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b"
+                                    className="col-span-12 bg-white dark:bg-black dark:border-gray-700 mb-4 last:mb-0 lg:mb-0 lg:last:mb-0 border-b"
                                 >
                                     <div className="grid grid-cols-1 items-center lg:grid-cols-12">
                                         <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
                                             {DateFormatter(item.content.date)}
                                         </div>
-                                        <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-black">
-                                            <a href={`/${item.full_slug}`}>
+                                        <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-primary cursor-pointer">
+                                            <a className='inline-block' href={`/${item.full_slug}`}>
                                                 {item.content.title}
+                                            </a>
+                                            <a
+                                                className=" block mt-4 lg:hidden"
+                                                href={`/${item.full_slug}`}
+                                            >
+                                                <img width="20" height="20" src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg" />
                                             </a>
                                         </div>
                                         <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
@@ -93,35 +99,37 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                 )
                                             )}
                                         </div>
-                                        {/* <div className="px-6 py-4 text-primary"> */}
+
                                         <div className="col-span-1 lg:col-span-3 px-6 py-4 text-primary items-center flex justify-start lg:justify-end">
                                             {item.content.downloads_block?.map(
                                                 (downloadBlock, index) =>
                                                     downloadBlock.download_grid?.map(
-                                                        (
-                                                            downloadGrid,
-                                                            index
-                                                        ) => (
-                                                            downloadGrid.download_list?.map((item, index) => (
-                                                                <a
-                                                                    href={
-                                                                        ButtonUrlRenderer(item?.cta_asset)
-                                                                    }
-                                                                    key={index}
-                                                                    className="ml-3 pt-2 pb-2 inline-flex"
-                                                                >
-                                                                    {
-                                                                        item?.cta_text
-                                                                    }
-                                                                </a>
-                                                            ))
-                                                        )
+                                                        (downloadGrid, index) =>
+                                                            downloadGrid.download_list?.map(
+                                                                (
+                                                                    item,
+                                                                    index
+                                                                ) => (
+                                                                    <a
+                                                                        href={ButtonUrlRenderer(
+                                                                            item?.cta_asset
+                                                                        )}
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                        className="ml-3 pt-2 pb-2 inline-flex"
+                                                                    >
+                                                                        {
+                                                                            item?.cta_text
+                                                                        }
+                                                                    </a>
+                                                                )
+                                                            )
                                                     )
                                             )}
                                         </div>
                                     </div>
                                 </div>
-                                // </div>
                             ))}
                     </div>
 
