@@ -2,17 +2,23 @@ import React, { useState, useEffect, useRef } from 'react';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import { SearchIcon } from '../icons/SearchIcon';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 const ModalSearch = ({ isModalOpen, closeModal }) => {
     const [articles, setArticles] = useState([]);
     const [search, setSearch] = useState('');
+
     const modalRef = useRef(null);
     const contentRef = useRef(null);
     const inputRef = useRef(null);
 
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+    
     const apiRequest = {
         version: 'published',
         resolve_links: 'url',
+        language: currentLocale,
     };
 
     const onSearchChange = (e) => {
@@ -25,65 +31,63 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
             filterSearchParameters['search_term'] = inputValue.toLowerCase();
             getArticles(filterSearchParameters);
         } else {
-            // If the input is empty, set articles to an empty array
             setArticles([]);
         }
+    };
+
+    const determineTitle = (article) => {
+        if (article.content.title && article.content.title.trim() !== '') {
+            return article.content.title;
+        } else if (article.content.body) {
+            const heroSubpage = article.content.body.find(
+                (item) => item.component === 'hero-subpage'
+            );
+            if (
+                heroSubpage &&
+                heroSubpage.title &&
+                heroSubpage.title.trim() !== ''
+            ) {
+                return heroSubpage.title;
+            }
+        }
+        return article.name; 
     };
 
     const getArticles = async (filterSearchRequest = {}) => {
         const slug = '/';
         const storyblokApi = getStoryblokApi();
 
-        // Only fetch articles if there is a search term
         if (search.length > 0) {
             const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
                 ...apiRequest,
                 ...filterSearchRequest,
             });
-            console.log(data, 'data');
 
-            const filteredArticles = data.stories.filter((article) => {
-                // Exclude if 'full_slug' starts with "categories/" or contains "/categories/"
-                return (
-                    !article.full_slug.startsWith('categories/') &&
-                    !article.full_slug.includes('/categories/')
-                );
-            });
-
-            console.log(filteredArticles, 'filteredArticles');
-            const prioritySlugs = [
-                'schienenfahrzeuge',
-                'rollingstock',
-                'signalling',
-                'service',
+            const excludedKeywords = [
+                'test',
+                'template',
+                'page',
+                'header',
+                'footer',
             ];
-            // Sort articles with solutions in slug to be prioritized
-            const sortedArticles = filteredArticles.sort((a, b) => {
-                const aPriority = prioritySlugs.some((slug) =>
-                    a.full_slug.includes(slug)
-                );
-                const bPriority = prioritySlugs.some((slug) =>
-                    b.full_slug.includes(slug)
-                );
+            const filteredArticles = data.stories.filter(
+                (article) =>
+                    !article.full_slug.startsWith('categories/') &&
+                    !article.full_slug.includes('/categories/') &&
+                    !article.full_slug.startsWith('global/') &&
+                    !article.full_slug.includes('/global') &&
+                    !excludedKeywords.some((keyword) =>
+                        article.name.includes(keyword)
+                    )
+            );
 
-                if (aPriority && !bPriority) {
-                    return -1;
-                } else if (!aPriority && bPriority) {
-                    return 1;
-                } else {
-                    // If both have or don't have priority slugs, sort by other criteria (e.g., published date)
-                    return new Date(b.published_at) - new Date(a.published_at);
-                }
-            });
-
-            setArticles((prev) =>
-                sortedArticles.map((article) => {
-                    article.content.slug = article.slug;
-                    return article;
-                })
+            setArticles(
+                filteredArticles.map((article) => ({
+                    ...article,
+                    displayTitle: determineTitle(article), 
+                }))
             );
         } else {
-            // If there is no search term, set articles to an empty array
             setArticles([]);
         }
     };
@@ -100,7 +104,6 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
 
     useEffect(() => {
         const handleOutsideClick = (event) => {
-            // Check if the modal is open and the click is outside the modal and its content
             if (
                 isModalOpen &&
                 contentRef.current &&
@@ -164,9 +167,12 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                                 onClick={() => handleArticleClick(article)}
                                 className="group transition-all cursor-pointer hover:bg-gray-100"
                             >
+                             
+                              
                                 <h2 className="p-4 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
-                                    {article.name}
+                                    {article.displayTitle}
                                 </h2>
+                            
                             </div>
                         ))}
                     </div>
