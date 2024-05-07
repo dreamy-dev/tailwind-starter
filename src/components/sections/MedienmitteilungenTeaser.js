@@ -74,14 +74,21 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                             {DateFormatter(item.content.date)}
                                         </div>
                                         <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-primary cursor-pointer">
-                                            <a className='inline-block' href={`/${item.full_slug}`}>
+                                            <a
+                                                className="inline-block"
+                                                href={`/${item.full_slug}`}
+                                            >
                                                 {item.content.title}
                                             </a>
                                             <a
                                                 className=" block mt-4 lg:hidden"
                                                 href={`/${item.full_slug}`}
                                             >
-                                                <img width="20" height="20" src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg" />
+                                                <img
+                                                    width="20"
+                                                    height="20"
+                                                    src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                                                />
                                             </a>
                                         </div>
                                         <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
@@ -117,7 +124,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                         key={
                                                                             index
                                                                         }
-                                                                        className="ml-3 pt-2 pb-2 inline-flex"
+                                                                        className="ml-3 first-of-type:ml-0 inline-flex"
                                                                     >
                                                                         {
                                                                             item?.cta_text

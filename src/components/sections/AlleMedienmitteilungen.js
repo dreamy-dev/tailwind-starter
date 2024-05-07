@@ -256,7 +256,7 @@ function AlleMedienmitteilungen({ blok }) {
                                                                         item?.cta_asset
                                                                     )}
                                                                     key={index}
-                                                                    className="ml-3 inline-flex"
+                                                                    className="first-of-type:ml-0 ml-3 inline-flex"
                                                                 >
                                                                     {
                                                                         item?.cta_text
