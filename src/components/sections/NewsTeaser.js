@@ -14,12 +14,13 @@ import i18nConfig from '@/i18nConfig';
 
 function NewsTeaser({ blok }) {
     const [articlesCategory, setArticlesCategory] = useState([]);
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+
     useEffect(() => {
         const getArticles = async () => {
             const categories = blok.categories.join(',');
 
             const storyblokApi = getStoryblokApi();
-            const currentLocale = useCurrentLocale(i18nConfig) || 'en';
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
                 starts_with: 'medien/news/',

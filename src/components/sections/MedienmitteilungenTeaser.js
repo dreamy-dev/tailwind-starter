@@ -14,10 +14,9 @@ import i18nConfig from '@/i18nConfig';
 
 const MedienMedienmitteilungenTeaser = ({ blok }) => {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
 
     useEffect(() => {
-        const currentLocale = useCurrentLocale(i18nConfig) || 'en';
-
         const getMedienmitteilungen = async () => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {

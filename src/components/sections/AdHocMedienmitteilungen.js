@@ -16,9 +16,9 @@ import i18nConfig from '@/i18nConfig';
 
 function AdHocMedienmitteilungen({ blok }) {
     const [articles, setArticles] = useState([]);
-    useEffect(() => {
-        const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
 
+    useEffect(() => {
         const getArticles = async () => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
