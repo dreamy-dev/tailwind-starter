@@ -20,7 +20,7 @@ import Blockquote from '../typography/Blockquote';
 
 const RichTextRenderer = (props) => {
     return (
-        <div className="richtext">
+        <div className={'richtext ' + props.customStyles}>
             {render(props.text, {
                 markResolvers: {
                     [MARK_UNDERLINE]: (children) => (
@@ -74,7 +74,9 @@ const RichTextRenderer = (props) => {
                         <Blockquote>{children}</Blockquote>
                     ),
                     [NODE_HR]: () => <hr className="my-6 bg-greySolid-100" />,
-                    [NODE_PARAGRAPH]: (children) => <Text>{children}</Text>,
+                    [NODE_PARAGRAPH]: (children) => (
+                        <Text styles={props.customStyles}>{children}</Text>
+                    ),
                     [NODE_UL]: (children) => (
                         <ul className="my-6 list-inside list-disc">
                             {children}

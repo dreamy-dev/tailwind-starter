@@ -1,11 +1,12 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../typography/H3';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const CorporateGovernanceTeaser = ({ blok }) => {
     return (
         <a
             className="w-full xl:w-auto"
-            href={blok?.page_link.url}
+            href={ButtonUrlRenderer(blok?.page_link)}
             {...storyblokEditable(blok)}
         >
             <article className="p-4 h-full flex flex-col justify-between bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">

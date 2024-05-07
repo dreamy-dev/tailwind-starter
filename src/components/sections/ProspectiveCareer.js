@@ -1,5 +1,6 @@
+import { useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react';
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
 import H3 from '../typography/H3';
@@ -15,7 +16,6 @@ import { Loader } from '../elements/Loader';
 const filters = { '10': '', '20': '', '25': '' };
 
 const ProspectiveCareer = ({ blok }) => {
-
     const [jobs, setJobs] = useState([]);
     const [search, setSearch] = useState('');
     const [attributes, setAttributes] = useState([]);
@@ -23,13 +23,13 @@ const ProspectiveCareer = ({ blok }) => {
     const [dependentFilter, setDependentFilter] = useState({});
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [isDataLoading, setIsDataLoading] = useState(true);
+    const searchParams = useSearchParams()
 
+    // function to get all the jobs (with possible filters and search query) via server function in next
     const getJobs = async (filter = '', search = '') => {
         setIsDataLoading(true);
 
         const url = `api/prospective-jobs?filter=${filter}&search=${search}`;
-
-        // console.log(dependentFilter, "dependentFilter")
 
         const checkConnection = await fetch(url, filters);
         const data = await checkConnection.json()
@@ -38,8 +38,9 @@ const ProspectiveCareer = ({ blok }) => {
         setJobs(data?.message?.jobs || [])
 
     };
-    const getAttributes = async () => {
 
+    // function to get all the attributes via server function in next
+    const getAttributes = async () => {
         const url = 'api/prospective-attributes';
 
         const checkConnection = await fetch(url);
@@ -52,12 +53,40 @@ const ProspectiveCareer = ({ blok }) => {
         })
 
         setAttributes(selectAttributes)
-
     };
-    useEffect(() => {
-        getJobs()
-        getAttributes()
 
+    // on component mounting we need to check if there are query parameters in URL
+    // e.g. ?20=1129862
+    // it means that some of the filters should be preselected
+    // 10 - Berufsfelt
+    // 20 - Level
+    // 25 - Arbeitsort
+
+    useEffect(() => {
+        let filters = ""
+        const newSelectedOptions = { ...selectedOptions };
+        if (searchParams.get('10')) {
+            filters += `10:${searchParams.get('10')},`
+            newSelectedOptions['10'] = searchParams.get('10');
+        }
+        if (searchParams.get('25')) {
+            filters += `25:${searchParams.get('25')},`
+            newSelectedOptions['25'] = searchParams.get('25');
+        }
+        if (searchParams.get('20')) {
+            filters += `20:${searchParams.get('20')},`
+            newSelectedOptions['20'] = searchParams.get('20');
+        }
+        // setting fiters for the background object to manipulate onSelect function
+        setSelectedOptions(newSelectedOptions)
+
+        console.log("filters", filters)
+
+        // fetching jobs with filter values
+        getJobs(filters)
+
+        // getting attributes' values for selects
+        getAttributes()
     }, [])
 
     const onSearchChange = (e) => {
@@ -80,6 +109,8 @@ const ProspectiveCareer = ({ blok }) => {
             getJobs(filtersString)
         }
     };
+
+    // Set dependent value on location filter, applicable only for Switzerland and Weitere
     const setLocation = (e, typeFilter) => {
         if (e.target.value == "1098730") {
             const filterObject = {};
@@ -96,12 +127,11 @@ const ProspectiveCareer = ({ blok }) => {
             setDependentFilter({})
             setDependentField(false)
         }
-        // console.log("setLocation", e)
     }
     const changeDependentFilter = (e) => {
         const updatedValue = {}
         updatedValue[Object.keys(dependentFilter)[0]] = e.target.value
-        // console.log("changeDependentFilter", updatedValue)
+
         setDependentFilter(updatedValue)
         filterJobs(e, Object.keys(dependentFilter)[0], e.target.value);
     }
@@ -218,16 +248,16 @@ const ProspectiveCareer = ({ blok }) => {
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => filterJobs(e, '10')}
+                                value={selectedOptions["10"] ? selectedOptions["10"] : searchParams.get('10')}
                             >
                                 <option value="">
                                     {blok.select_1_placeholder}
                                 </option>
                                 {attributes["10"] && attributes["10"]["values"] && Object.keys(attributes["10"]["values"]).map((key) => {
-                                    return <option key={key} value={key}>
+                                    return <option key={key} value={key} >
                                         {attributes["10"]["values"][key]}
                                     </option>
                                 })}
-
                             </select>
                         </div>
                         <div className="grid col-span-6">
@@ -240,6 +270,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => filterJobs(e, '20')}
+                                value={selectedOptions["20"] ? selectedOptions["20"] : searchParams.get('20')}
                             >
                                 <option value="">
                                     {blok.select_2_placeholder}
@@ -264,6 +295,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 onChange={(e) => { filterJobs(e, '25'); setLocation(e, '25'); }}
+                                value={selectedOptions["25"] ? selectedOptions["25"] : searchParams.get('25')}
                             >
                                 <option value="">
                                     {blok.select_3_placeholder}

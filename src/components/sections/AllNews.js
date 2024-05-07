@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import H4 from '../typography/H4';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AllNews({ blok }) {
@@ -14,6 +16,7 @@ function AllNews({ blok }) {
     const [selectedOptions, setSelectedOptions] = useState(filters);
 
     const [search, setSearch] = useState('');
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
 
     const apiRequest = {
         version: 'published',
@@ -21,6 +24,7 @@ function AllNews({ blok }) {
         is_startpage: false,
         resolve_relations: 'news.categories',
         sort_by: 'content.date:desc',
+        language: currentLocale
     };
     const onSearchChange = (e) => {
         setSearch(e.target.value);
@@ -89,7 +93,7 @@ function AllNews({ blok }) {
                     <ul className="grid gap-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'country')}
                             >
                                 <option value="">
@@ -104,7 +108,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'category')}
                             >
                                 <option value="">
@@ -124,7 +128,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'product')}
                             >
                                 <option value="">
@@ -139,7 +143,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border  block"
+                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
                                 onChange={(e) => filterArticles(e, 'year')}
                             >
                                 <option value="">
@@ -172,7 +176,7 @@ function AllNews({ blok }) {
                                     </svg>
                                 </div>
                                 <input
-                                    className="w-full pl-8 pr-4 py-2 text-base border block"
+                                    className="w-full pl-8 pr-4 py-2 text-base border-primary block focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                     placeholder={blok.text_search}
                                     onChange={onSearchChange}
                                 />

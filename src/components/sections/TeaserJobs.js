@@ -26,7 +26,7 @@ const Jobs = ({ blok }) => {
                         {blok?.career_open_positions_items.map((item) => (
                             <a
                                 key={item.title}
-                                src={item.link.url}
+                                href={`${ButtonUrlRenderer(item.link)}?20=${item.entry_level}`}
                                 className="relative overflow-hidden group"
                             >
                                 <img

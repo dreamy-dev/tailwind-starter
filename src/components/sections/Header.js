@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import ModalSearch from './ModalSearch';
 import { SearchIcon } from '../icons/SearchIcon';
 import TopNav from './TopNav';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const submenuVariants = {
     open: {
@@ -36,50 +37,50 @@ const Header = ({ blok }) => {
         topNav: [
             {
                 title: blok.main_link_1_text,
-                href: blok.main_link_1_link.story.url,
+                href: blok.main_link_1_link,
                 icon: <IconNav></IconNav>,
                 submenu: true,
                 id: 2,
                 submenuItems: [
                     {
                         title: blok.main_1_sublink_1_text,
-                        href: blok.main_1_sublink_1_link.story.url,
+                        href: blok.main_1_sublink_1_link,
                     },
                     {
                         title: blok.main_1_sublink_2_text,
-                        href: blok.main_1_sublink_2_link.story.url,
+                        href: blok.main_1_sublink_2_link,
                     },
                 ],
             },
             {
                 title: blok.main_2_link_1_text,
-                href: blok.main_2_link_1_link.story.url,
+                href: blok.main_2_link_1_link,
                 icon: <IconNav></IconNav>,
                 submenu: true,
                 id: 1,
                 submenuItems: [
                     {
                         title: blok.main_2_link_2_text,
-                        href: blok.main_2_link_2_link.story.url,
+                        href: blok.main_2_link_2_link,
                     },
                     {
                         title: blok.main_2_link_3_text,
-                        href: blok.main_2_link_3_link.story.url,
+                        href: blok.main_2_link_3_link,
                     },
                     {
                         title: blok.main_link_2_text,
-                        href: blok.main_link_2_link.story.url,
+                        href: blok.main_link_2_link,
                     },
                 ],
             },
             {
                 title: blok.main_link_3_text,
-                href: blok.main_link_3_link.story.url,
+                href: blok.main_link_3_link,
                 icon: false,
             },
             {
                 title: blok.main_link_4_text,
-                href: blok.main_link_4_link.story.url,
+                href: blok.main_link_4_link,
                 icon: false,
             },
         ],
@@ -91,36 +92,34 @@ const Header = ({ blok }) => {
 
     const menuRef = useRef(null);
 
-  const toggleSubmenu = (submenuId) => {
-      
-      if (openSubmenu === submenuId) {
-          setOpenSubmenu(null);
-      } else {
-          setOpenSubmenu(submenuId);
-          setIsOpen(true); 
-      }
-  };
+    const toggleSubmenu = (submenuId) => {
+        if (openSubmenu === submenuId) {
+            setOpenSubmenu(null);
+        } else {
+            setOpenSubmenu(submenuId);
+            setIsOpen(true);
+        }
+    };
 
-const toggleMainMenu = () => {
-    setIsOpen((prev) => !prev); 
-    setOpenSubmenu(null); 
-    
-};
+    const toggleMainMenu = () => {
+        setIsOpen((prev) => !prev);
+        setOpenSubmenu(null);
+    };
 
     const toggleMobileNav = () => {
         setIsMobileNavOpen((prev) => !prev);
-        setOpenSubmenu(null); 
+        setOpenSubmenu(null);
     };
 
     const closeMobileNav = () => {
         setIsMobileNavOpen(false);
-        setOpenSubmenu(null); 
+        setOpenSubmenu(null);
     };
 
     useEffect(() => {
         const handler = (e) => {
             if (!menuRef.current.contains(e.target)) {
-                   setIsOpen(false);
+                setIsOpen(false);
                 setOpenSubmenu(null);
                 setIsMobileNavOpen(false);
             }
@@ -155,8 +154,6 @@ const toggleMainMenu = () => {
         }
     });
 
-
-
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -166,15 +163,15 @@ const toggleMainMenu = () => {
     };
 
     const renderSubmenuContent = (submenuId, title, href) => {
-            const onClickHandler = () => {
-                closeMobileNav(); 
-                setIsOpen(false);
-            };
+        const onClickHandler = () => {
+            closeMobileNav();
+            setIsOpen(false);
+        };
         switch (submenuId) {
             case 1:
                 return (
                     <Link
-                        href={href}
+                        href={ButtonUrlRenderer(href)}
                         className="cursor-pointer text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
                         onClick={onClickHandler}
                     >
@@ -187,7 +184,7 @@ const toggleMainMenu = () => {
             case 2:
                 return (
                     <Link
-                        href={href}
+                        href={ButtonUrlRenderer(href)}
                         className="cursor-pointer text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
                         onClick={onClickHandler}
                     >
@@ -213,7 +210,7 @@ const toggleMainMenu = () => {
             <ContentWidth>
                 <div className="lg:hidden col-span-12">
                     <div className="flex justify-between items-center col-span-12 w-full py-5">
-                        <Link href={blok.LinkLogo.url}>
+                        <Link href={ButtonUrlRenderer(blok.LinkLogo)}>
                             <img
                                 src={blok.Logo.filename}
                                 className="h-4 sm:h-6"
@@ -253,7 +250,7 @@ const toggleMainMenu = () => {
                             <div className=" bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
                                 <div className="hidden lg:block">
                                     <Link
-                                        href={blok.LinkLogo.url}
+                                        href={ButtonUrlRenderer(blok.LinkLogo)}
                                         className="flex justify-start items-start lg:justify-center lg:items-center mb-10 lg:mb-0 "
                                     >
                                         <img
@@ -298,7 +295,9 @@ const toggleMainMenu = () => {
                                                     ) : (
                                                         <Link
                                                             className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                                            href={item.href}
+                                                            href={ButtonUrlRenderer(
+                                                                item.href
+                                                            )}
                                                         >
                                                             {item.title}
                                                         </Link>
@@ -381,9 +380,9 @@ const toggleMainMenu = () => {
                                                                                         className=""
                                                                                     >
                                                                                         <Link
-                                                                                            href={
+                                                                                            href={ButtonUrlRenderer(
                                                                                                 subItem.href
-                                                                                            }
+                                                                                            )}
                                                                                             className="flex justify-between px-0 py-4 text-base text-primarySolid-800 lg:text-primarySolid-600 hover:text-primary"
                                                                                             onClick={() => {
                                                                                                 closeMobileNav();

@@ -4,7 +4,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
     return (
         <tr
             {...storyblokEditable(blok)}
-            className="text-xs text-black whitespace-nowrap bg-white border-b dark:bg-black dark:border-gray-700"
+            className="text-xs text-black whitespace-nowrap bg-white border-b last:mb-4 last:border-b-0 dark:bg-black dark:border-gray-700"
         >
             <td className="px-6 py-4 font-bold">{blok?.title}</td>
             <td className="px-6 py-4 ">{blok?.text_date}</td>

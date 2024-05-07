@@ -1,4 +1,5 @@
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
@@ -9,6 +10,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H4 from '../typography/H4';
 import { ChevronLeft } from '../icons/ChevronLeft';
 import { ChevronRight } from '../icons/ChevronRight';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 const TestimonialMotionDiv = motion.div;
 
@@ -63,6 +65,7 @@ const TestimonialsCarousel = ({ blok }) => {
     const [highlightsCategory, setHighlightsCategory] = useState([]);
     const [reference, setReference] = useState([]);
 
+
     useEffect(() => {
         const getArticles = async () => {
             const arrayHighlight = [];
@@ -71,19 +74,25 @@ const TestimonialsCarousel = ({ blok }) => {
             });
 
             const highlightReference = arrayHighlight.join(',');
-
+           
             const storyblokApi = getStoryblokApi();
-            const { data } = await storyblokApi.get(`cdn/stories`, {
-                version: 'published',
-                starts_with: 'loesungen/service/',
-                is_startpage: false,
-                'filter_query[categories][any_in_array]': highlightReference,
-                per_page: 5,
-            });
-
+            const { data } = await storyblokApi.get(
+                `cdn/stories`,
+                {
+                    version: 'published',
+                    starts_with: "loesungen/",
+                    is_startpage: false,
+                    'filter_query[categories][any_in_array]':
+                        highlightReference,
+                    per_page: 5,
+                }
+            );
+            console.log(data, "data")
+           
             setHighlightsCategory((prev) =>
                 data.stories.map((article) => {
                     article.content.slug = article.slug;
+                 
                     return article;
                 })
             );
@@ -103,9 +112,10 @@ const TestimonialsCarousel = ({ blok }) => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'loesungen/service/',
+                starts_with: 'loesungen/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': references,
+                
             });
 
             setReference((prev) =>
@@ -170,7 +180,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     }}
                                                 >
                                                     <a
-                                                        href={`referenze/${article.slug}`}
+                                                        href={`/${article.full_slug}`}
                                                     >
                                                         <img
                                                             src={
@@ -194,16 +204,17 @@ const TestimonialsCarousel = ({ blok }) => {
                                                                         .title
                                                                 }
                                                             </H3>
-                                                            <Text styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8">
-                                                                {
+                                                            <RichTextRenderer
+                                                                text={
                                                                     article
                                                                         .content
-                                                                        .text
+                                                                        .lead
                                                                 }
-                                                            </Text>
+                                                                styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8"
+                                                            ></RichTextRenderer>
                                                         </div>
                                                         <Link
-                                                            href="#"
+                                                            href={`/${article.full_slug}`}
                                                             className="inline-flex items-center py-2 text-sm font-medium text-center"
                                                         >
                                                             <svg
@@ -314,11 +325,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                             key={idx}
                                             className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                                         >
-                                            <a href={`referenze/${train.slug}`}>
-                                                {console.log(
-                                                    'train.slug',
-                                                    train.slug
-                                                )}
+                                            <a href={`/${train.full_slug}`}>
                                                 <img
                                                     className="w-full aspect-[4/3]"
                                                     src={
@@ -332,7 +339,9 @@ const TestimonialsCarousel = ({ blok }) => {
                                                 <H4 styles="mb-4">
                                                     {train.content.title}
                                                 </H4>
-                                                <Link href="#">
+                                                <Link
+                                                    href={`/${train.full_slug}`}
+                                                >
                                                     <svg
                                                         width="20"
                                                         height="20"

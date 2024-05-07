@@ -2,6 +2,7 @@
 
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../typography/H3';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const ServiceTeaserItem = ({ blok }) => {
     return (
@@ -9,7 +10,7 @@ const ServiceTeaserItem = ({ blok }) => {
             {...storyblokEditable(blok)}
             className="  bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 mx-auto"
         >
-            <a href={blok.link.url}>
+            <a href={ButtonUrlRenderer(blok?.link)}>
                 {blok?.Icon.filename ? (
                     <img
                         className="w-24 pl-5 pt-5"

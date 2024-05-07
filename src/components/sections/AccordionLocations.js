@@ -5,6 +5,7 @@ import H4 from '../typography/H4';
 import { MailIcon } from '../icons/MailIcon';
 import { PhoneIcon } from '../icons/PhoneIcon';
 import { PinIcon } from '../icons/PinIcon';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 const AccordionLocations = ({ blok }) => {
     const [isActive, setIsActive] = useState(false);
@@ -110,7 +111,7 @@ const AccordionLocations = ({ blok }) => {
                         </div>
                         <div className="pt-8">
                             <p className="mb-2 text-black dark:text-gray-400">
-                                {blok?.text}
+                                <RichTextRenderer text={blok?.text} />
                             </p>
                         </div>
                     </div>

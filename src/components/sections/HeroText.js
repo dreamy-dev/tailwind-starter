@@ -19,7 +19,7 @@ const HeroText = ({ blok }) => {
                 <H1>{blok?.title}</H1>
                 <Lead className="richtext">{blok?.lead}</Lead>
                 {blok?.showbutton ? (
-                    <div className='mb-8 lg:mb-12'>
+                    <div className='my-8 lg:my-12'>
                         <ButtonPrimary
                             position="left"
                             buttonText={blok?.buttontext}

@@ -11,26 +11,23 @@ const DownloadSecondaryItem = ({ blok }) => {
         <>
             <li
                 {...storyblokEditable(blok)}
-                className="mb-6 text-xl flex-col md:flex-row flex justify-start md:justify-between"
+                className="mb-4 text-xl flex-col md:flex-row flex align-middle md:justify-between"
             >
-                <Text className="w-full md:w-auto mr-0 md:mr-10">
+                <Text className="w-full md:w-auto mr-0 md:mr-10 text-wrap">
                     {blok.title}
                 </Text>
-                <div className="w-full md:w-auto min-w-[14rem]">
-                    <Button
-                        textColorClass="text-primary"
-                        borderColorClass="border-primary"
-                        styles="flex gap-2"
-                        href={ButtonUrlRenderer(blok?.download_cta)}
-                        iconAfter={
-                            <DownloadIcon styles="w-3.5 h-3.5 fill-primary" />
-                        }
-                    >
-                        {blok?.download_cta_text}
-                    </Button>
+                <div className="flex justify-start items-center">
+                    {blok?.download_list?.map((item) => (
+                        item?.cta_text && <a
+                            className="ml-4 pt-2 pb-2 text-base text-primary inline-flex"
+                            href={ButtonUrlRenderer(item?.cta_asset)}
+                        >
+                            {item?.cta_text}
+                        </a>
+                    ))}
                 </div>
             </li>
-            <div className="border-b mb-6"></div>
+            <div className="border-b mb-4"></div>
         </>
     );
 };

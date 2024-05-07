@@ -2,6 +2,7 @@ import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
 import H4 from '../typography/H4';
 import Text from '../typography/Text';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserSuccessStories = ({ blok }) => {
     return (
@@ -15,20 +16,20 @@ const TeaserSuccessStories = ({ blok }) => {
                     <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:mt-16 xl:grid-cols-3">
                         {blok?.employee_items.map((item) => (
                             <a
-                                key={item.link.url}
-                                href={item.link.url}
+                                key={ButtonUrlRenderer(item?.link)}
+                                href={ButtonUrlRenderer(item?.link)}
                                 className="group relative overflow-hidden"
                             >
                                 <img
                                     className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
-                                    src={item.image.filename}
+                                    src={item?.image.filename}
                                     alt=""
                                 />
                                 <div className="absolute inset-0 grid items-end justify-center bg-gradient-to-b from-transparent to-black/60 p-4">
                                     <div className="text-center text-white">
                                         <H4>{item?.name}</H4>
                                         <p className="text-base font-medium text-gray-300">
-                                            30 Jahre bei Stadler
+                                            {item?.description}
                                         </p>
                                     </div>
                                 </div>

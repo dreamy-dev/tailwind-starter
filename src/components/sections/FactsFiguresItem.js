@@ -1,7 +1,6 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
-import H2 from '../typography/H2';
 import CountUp from 'react-countup';
-import ContentWidth from '../layouts/ContentWidth';
+
 
 const FactsAndFiguresItem = ({ blok }) => {
     return (
@@ -17,9 +16,9 @@ const FactsAndFiguresItem = ({ blok }) => {
                         suffix={blok?.suffix ?? ' '}
                         prefix={blok?.prefix ?? ' '}
                         duration={2}
-                        separator=" "
-                        decimals={blok?.decimals ?? 0}
-                        decimal="'"
+                        separator="'"
+                        decimals={blok?.decimals ?? 1}
+                        decimal="."
                         enableScrollSpy
                     ></CountUp>
                 </dd>

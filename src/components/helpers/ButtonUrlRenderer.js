@@ -1,9 +1,13 @@
 const ButtonUrlRenderer = (data) => {
     if (data.linktype == "story") {
-        return `/${data?.story?.full_slug}` || "/"
+        const anchor = data.anchor ? `#${data.anchor}` : ''
+        return `/${data?.story?.full_slug}${anchor}` || "/"
     }
     if (data.linktype == "url") {
         return data?.url || "/"
+    }
+    if (data.fieldtype == "asset") {
+        return data?.filename
     }
     if (data.linktype == "asset") {
 
@@ -11,6 +15,7 @@ const ButtonUrlRenderer = (data) => {
     if (data.linktype == "email") {
 
     }
+    return data
 };
 
 export default ButtonUrlRenderer;

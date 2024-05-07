@@ -8,6 +8,9 @@ import Text from '../typography/Text';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 function NewsTeaser({ blok }) {
     const [articlesCategory, setArticlesCategory] = useState([]);
@@ -16,6 +19,7 @@ function NewsTeaser({ blok }) {
             const categories = blok.categories.join(',');
 
             const storyblokApi = getStoryblokApi();
+            const currentLocale = useCurrentLocale(i18nConfig) || 'en';
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
                 starts_with: 'medien/news/',
@@ -24,6 +28,7 @@ function NewsTeaser({ blok }) {
                 'filter_query[categories][any_in_array]': categories,
                 sort_by: 'content.date:desc',
                 per_page: 4,
+                language: currentLocale
             });
 
             setArticlesCategory(() =>
@@ -97,8 +102,8 @@ function NewsTeaser({ blok }) {
                 </div>
                 <div className="col-span-12 w-full">
                     <ButtonPrimary
-                        buttonText={blok.ctag_all_news}
-                        href={blok.CTA_Show_All.url}
+                        buttonText={blok?.ctag_all_news}
+                        href={ButtonUrlRenderer(blok?.CTA_Show_All)}
                     ></ButtonPrimary>
                 </div>
             </ContentWidth>
