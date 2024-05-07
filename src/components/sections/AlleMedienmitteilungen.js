@@ -205,19 +205,31 @@ function AlleMedienmitteilungen({ blok }) {
                         medienmitteilungen.map((medienmitteilung, idx) => (
                             <div
                                 key={idx}
-                                className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b "
+                                className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b mb-4 last:mb-0 lg:mb-0 lg:last:mb-0 "
                             >
                                 <div className="grid grid-cols-1 items-center lg:grid-cols-12">
                                     <div className=" bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
-                                        {medienmitteilung.content?.date && DateFormatter(
-                                            medienmitteilung.content.date
-                                        )}
+                                        {medienmitteilung.content?.date &&
+                                            DateFormatter(
+                                                medienmitteilung.content.date
+                                            )}
                                     </div>
-                                    <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-black">
+                                    <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-primary">
                                         <a
+                                            className="inline-block"
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             {medienmitteilung.content.title}
+                                        </a>
+                                        <a
+                                            className=" block mt-4 lg:hidden"
+                                            href={`/${medienmitteilung.full_slug}`}
+                                        >
+                                            <img
+                                                width="20"
+                                                height="20"
+                                                src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                                            />
                                         </a>
                                     </div>
                                     <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
@@ -236,21 +248,22 @@ function AlleMedienmitteilungen({ blok }) {
                                         {medienmitteilung.content.downloads_block?.map(
                                             (downloadBlock, index) =>
                                                 downloadBlock.download_grid?.map(
-                                                    (downloadGrid, idx) => (
-                                                        downloadGrid.download_list?.map((item, index) => (
-                                                            <a
-                                                                href={
-                                                                    ButtonUrlRenderer(item?.cta_asset)
-                                                                }
-                                                                key={index}
-                                                                className="ml-3 pt-2 pb-2 inline-flex"
-                                                            >
-                                                                {
-                                                                    item?.cta_text
-                                                                }
-                                                            </a>
-                                                        ))
-                                                    )
+                                                    (downloadGrid, idx) =>
+                                                        downloadGrid.download_list?.map(
+                                                            (item, index) => (
+                                                                <a
+                                                                    href={ButtonUrlRenderer(
+                                                                        item?.cta_asset
+                                                                    )}
+                                                                    key={index}
+                                                                    className="first-of-type:ml-0 ml-3 inline-flex"
+                                                                >
+                                                                    {
+                                                                        item?.cta_text
+                                                                    }
+                                                                </a>
+                                                            )
+                                                        )
                                                 )
                                         )}
                                     </div>
