@@ -7,11 +7,15 @@ import Text from '../../components/typography/Text';
 import SmallWidth from '../layouts/SmallWidth';
 import { PinIcon } from '../icons/PinIcon';
 import { CalenderIcon } from '../icons/CalenderIcon';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 const HeroCareer = ({ blok }) => {
     const [values, setValues] = useState({ 10: "", 25: "" });
     const [urlQuery, setUrlQuery] = useState("");
     const [attributes, setAttributes] = useState([]);
+    const currentLocale = useCurrentLocale(i18nConfig);
 
     const changeChosenFilter = (value, property) => {
         const newValues = { ...values }
@@ -30,7 +34,7 @@ const HeroCareer = ({ blok }) => {
 
     const getAttributes = async () => {
 
-        const url = 'api/prospective-attributes';
+        const url = `/${currentLocale}/api/prospective-attributes?language=${currentLocale}`;
 
         const checkConnection = await fetch(url);
         const attributes = await checkConnection.json()
@@ -83,7 +87,7 @@ const HeroCareer = ({ blok }) => {
                                     onChange={(e) => (changeChosenFilter(e.target.value, "10"))}
                                 >
                                     <option value="">
-                                        Berufsfeld
+                                        {blok.first_select_placeholder}
                                     </option>
                                     {attributes["10"] && attributes["10"]["values"] && Object.keys(attributes["10"]["values"]).map((key) => {
                                         return <option key={key} value={key}>
@@ -109,7 +113,7 @@ const HeroCareer = ({ blok }) => {
                                     onChange={(e) => changeChosenFilter(e.target.value, "25")}
                                 >
                                     <option value="">
-                                        Land
+                                        {blok.second_select_placeholder}
                                     </option>
                                     {attributes["25"] && attributes["25"]["values"] && Object.keys(attributes["25"]["values"]).map((key) => {
                                         return <option key={key} value={key}>
@@ -121,7 +125,7 @@ const HeroCareer = ({ blok }) => {
                             </div>
                         </div>
                         <div className="">
-                            <ButtonPrimary href={`/career-search?${urlQuery}`} buttonText="Suchen" />
+                            <ButtonPrimary href={`${ButtonUrlRenderer(blok.search_button_link)}?${urlQuery}`} buttonText={blok.search_button_text} />
                         </div>
                     </form>
                 </div>
