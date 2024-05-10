@@ -8,6 +8,8 @@ import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import { ArrowForward } from '../icons/ArrowForward';
 import { Loader } from '../elements/Loader';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '@/i18nConfig';
 
 // 20 - Level
 // 25 - Arbeitsort
@@ -24,12 +26,13 @@ const ProspectiveCareer = ({ blok }) => {
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [isDataLoading, setIsDataLoading] = useState(true);
     const searchParams = useSearchParams()
+    const currentLocale = useCurrentLocale(i18nConfig);
 
     // function to get all the jobs (with possible filters and search query) via server function in next
     const getJobs = async (filter = '', search = '') => {
         setIsDataLoading(true);
 
-        const url = `../../api/prospective-jobs?filter=${filter}&search=${search}`;
+        const url = `/${currentLocale}/api/prospective-jobs?filter=${filter}&search=${search}`;
 
         const checkConnection = await fetch(url, filters);
         const data = await checkConnection.json()
@@ -41,10 +44,11 @@ const ProspectiveCareer = ({ blok }) => {
 
     // function to get all the attributes via server function in next
     const getAttributes = async () => {
-        const url = `../../api/prospective-attributes?language=${blok.default_language}`;
+        const url = `/${currentLocale}/api/prospective-attributes?language=${blok.default_language}`;
 
         const checkConnection = await fetch(url);
         const attributes = await checkConnection.json()
+        console.log("attributes", checkConnection, attributes)
 
         const selectAttributes = {}
 
@@ -74,6 +78,21 @@ const ProspectiveCareer = ({ blok }) => {
         if (searchParams.get('25')) {
             filters += `25:${searchParams.get('25')},`
             newSelectedOptions['25'] = searchParams.get('25');
+            console.log("searchParams.get('25')", searchParams.get('25'))
+            if (searchParams.get('25') == "1129870") {
+                const filterObject = {};
+                filterObject[`25_${searchParams.get('25')}`] = ""
+                setDependentFilter(filterObject)
+                setDependentField(true)
+                console.log("filterObject", filterObject, dependentFilter)
+            }
+            if (searchParams.get('25') == "1098730") {
+                const filterObject = {};
+                filterObject[`25_${searchParams.get('25')}`] = ""
+                setDependentFilter(filterObject)
+                setDependentField(true)
+                console.log("filterObject", filterObject, dependentFilter)
+            }
         }
         if (searchParams.get('20')) {
             filters += `20:${searchParams.get('20')},`
@@ -94,20 +113,69 @@ const ProspectiveCareer = ({ blok }) => {
         } else {
             let selectAttributes = {}
 
-            let jobValues = {}
-            jobValues["1077440"] = blok.purchasing || ''
-            jobValues["1077441"] = blok.engineering || ''
-            jobValues["1077442"] = blok.finance || ''
-            jobValues["1077443"] = blok.human_resources || ''
-            jobValues["1077444"] = blok.commissioning || ''
-            jobValues["1077445"] = blok.it || ''
-            jobValues["1077446"] = blok.commercial_professions || ''
-            jobValues["1077447"] = blok.logistics || ''
-            jobValues["1077448"] = blok.production || ''
-            jobValues["1077450"] = blok.quality_management || ''
-            jobValues["1077452"] = blok.sales_and_marketing || ''
-            jobValues["1186757"] = blok.project_management || ''
-            selectAttributes["10"] = jobValues
+            let berufsfeldValues = {}
+            berufsfeldValues["1077440"] = blok.purchasing || ''
+            berufsfeldValues["1077441"] = blok.engineering || ''
+            berufsfeldValues["1077442"] = blok.finance || ''
+            berufsfeldValues["1077443"] = blok.human_resources || ''
+            berufsfeldValues["1077444"] = blok.commissioning || ''
+            berufsfeldValues["1077445"] = blok.it || ''
+            berufsfeldValues["1077446"] = blok.commercial_professions || ''
+            berufsfeldValues["1077447"] = blok.logistics || ''
+            berufsfeldValues["1077448"] = blok.production || ''
+            berufsfeldValues["1077450"] = blok.quality_management || ''
+            berufsfeldValues["1077452"] = blok.sales_and_marketing || ''
+            berufsfeldValues["1186757"] = blok.project_management || ''
+            selectAttributes["10"] = berufsfeldValues
+
+            let locationValues = {}
+            locationValues["1098730"] = blok.switzerland || ''
+            locationValues["1098735"] = blok.germany || ''
+            locationValues["1129870"] = blok.other || ''
+            locationValues["1120079"] = blok.denmark || ''
+            locationValues["1223225"] = blok.finland || ''
+            locationValues["1112910"] = blok.great_britain || ''
+            locationValues["1112912"] = blok.italy || ''
+            locationValues["1616862"] = blok.kazakhstan || ''
+            locationValues["1101813"] = blok.netherlands || ''
+            locationValues["1120078"] = blok.norway || ''
+            locationValues["1112911"] = blok.austria || ''
+            locationValues["1101814"] = blok.poland || ''
+            locationValues["1112909"] = blok.sweden || ''
+            locationValues["1101815"] = blok.spain || ''
+            locationValues["1101816"] = blok.czech_republic || ''
+            locationValues["1221872"] = blok.turkey || ''
+            locationValues["1101818"] = blok.hungary || ''
+            locationValues["1101821"] = blok.usa || ''
+            selectAttributes["25"] = locationValues
+
+            let levelValues = {}
+            levelValues["1246527"] = blok.apprentices || ''
+            levelValues["1129862"] = blok.students || ''
+            levelValues["1186754"] = blok.graduates || ''
+            levelValues["1129863"] = blok.professionals || ''
+            levelValues["1129864"] = blok.management || ''
+            levelValues["1129865"] = blok.project_management_level || ''
+            selectAttributes["20"] = levelValues
+
+            let weitereValues = {}
+            weitereValues["1246527"] = blok.azerbaijan || ''
+            weitereValues["1616861"] = blok.belarus || ''
+            weitereValues["1616863"] = blok.portugal || ''
+            weitereValues["1616864"] = blok.saudi_arabia || ''
+            weitereValues["1182491"] = blok.serbia || ''
+            selectAttributes["25_1129870"] = weitereValues
+
+            let switzerlandValues = {}
+            switzerlandValues["1129867"] = blok.plateau || ''
+            switzerlandValues["1098731"] = blok.eastern_switzerland || ''
+            switzerlandValues["1129868"] = blok.ticino || ''
+            switzerlandValues["1098732"] = blok.western_switzerland || ''
+            switzerlandValues["1129869"] = blok.central_switzerland || ''
+            switzerlandValues["1098734"] = blok.zurich || ''
+            selectAttributes["25_1098730"] = switzerlandValues
+
+
             console.log(selectAttributes)
             setAttributes(selectAttributes)
         }
@@ -139,6 +207,7 @@ const ProspectiveCareer = ({ blok }) => {
         if (e.target.value == "1098730") {
             const filterObject = {};
             filterObject[`25_${e.target.value}`] = ""
+            console.log("filterObject", filterObject)
             setDependentFilter(filterObject)
             setDependentField(true)
         } else if (e.target.value == "1129870") {
@@ -162,6 +231,7 @@ const ProspectiveCareer = ({ blok }) => {
 
 
     const filterJobs = async (e, typeFilter, dependentField) => {
+        console.log("dependentField", dependentField)
         let dependentStringFilter = false;
         const newSelectedOptions = { ...selectedOptions };
         if (dependentField) {
@@ -170,12 +240,15 @@ const ProspectiveCareer = ({ blok }) => {
             console.log(dependentFilter, "dependentFilter", e)
             dependentStringFilter = `${Object.keys(dependentFilter)[0]}:${Object.values(dependentFilter)[0]}`
         }
+
+        let filtersString = ''
         if (!dependentField) {
             newSelectedOptions[typeFilter] = e.target.value;
             setSelectedOptions(newSelectedOptions);
+        } else if (dependentStringFilter) {
+            filtersString += `${dependentStringFilter}`
         }
-
-        let filtersString = ''
+        console.log("newSelectedOptions", newSelectedOptions)
 
         Object.keys(newSelectedOptions).map((key) => {
             if (newSelectedOptions[key]) {
@@ -185,9 +258,7 @@ const ProspectiveCareer = ({ blok }) => {
                 filtersString += `${key}:${newSelectedOptions[key]}`;
             }
         })
-        if (dependentStringFilter) {
-            filtersString += `,${dependentStringFilter}`
-        }
+
         console.log(filtersString, "filtersString")
 
         if (search.length > 2) {
@@ -200,7 +271,6 @@ const ProspectiveCareer = ({ blok }) => {
     return (
         <section className="mt-12" {...storyblokEditable(blok)}>
             <SmallWidth>
-                {JSON.stringify(blok)}
                 <div className="grid col-span-12">
                     <div
                         className="grid grid-cols-4 justify-stretch hover:cursor-pointer gap-x-2"
@@ -319,7 +389,7 @@ const ProspectiveCareer = ({ blok }) => {
                             </label>
                             <select
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                onChange={(e) => { filterJobs(e, '25'); setLocation(e, '25'); }}
+                                onChange={(e) => { filterJobs(e, '25', false); setLocation(e, '25'); }}
                                 value={selectedOptions["25"] ? selectedOptions["25"] : searchParams.get('25')}
                             >
                                 <option value="">
