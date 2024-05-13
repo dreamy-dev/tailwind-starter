@@ -22,7 +22,7 @@ export async function POST(request) {
     try {
         const data = await resend.emails.send({
             from: 'info@stadlerrail.com <info@stadlerrail.com>',
-            to: ['cecile.hefti@outlook.com'], //stadler.rail@stadlerrail.com
+            to: ['alchynskairyna@gmail.com'], //stadler.rail@stadlerrail.com
             subject: '[EXTERNAL] New Message from Contact Page',
             react: EmailTemplate({
                 language: language,
@@ -37,7 +37,7 @@ export async function POST(request) {
                 email: email,
                 phone: phone,
                 message: message,
-                data_protection: dataProtection ? dataProtection : 'off',
+                data_protection: dataProtection ,
             }),
         });
 

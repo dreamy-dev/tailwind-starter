@@ -3,12 +3,15 @@
 import SmallWidth from '../layouts/SmallWidth';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H2 from '../typography/H2';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
 import RichTextRenderer from '../helpers/RichTextRenderer';
+import H3 from '../typography/H3';
 
 export default function ContactForm({ blok }) {
+console.log(blok, "blok")
+
     const [first_name, setName] = useState('');
     const [last_name, setLastName] = useState('');
     const [subject, setSubject] = useState('');
@@ -22,126 +25,308 @@ export default function ContactForm({ blok }) {
     const [data_protection, setDataProtection] = useState('');
     const [gender, setGender] = useState('');
     const [loading, setLoading] = useState(false);
-     const [errors, setErrors] = useState({
-         email: false,
-         first_name: false,
-         last_name: false,
-         subject: false,
-         street: false,
-         number: false,
-     });
+    const [validationError, setValidationError] = useState(false);
+    const [validationSubscribedError, setValidationSubscribedError] =
+        useState(false);
+    const [validationSuccess, setValidationSuccess] = useState(false);
+    const [errors, setErrors] = useState({
+        first_name: false,
+        last_name: false,
+        subject: false,
+        street: false,
+        number: false,
+        zip: false,
+        city: false,
+        email: false,
+        phone: false,
+        message: false,
+        data_protection: false,
+    });
+console.log(errors, "errors")
+    // console.log('Validation Error State:', validationError);
+    // console.log('Subscribed Error State:', validationSubscribedError);
+    // console.log('Validation Success State:', validationSuccess);
 
     const currentLocale = useCurrentLocale(i18nConfig);
 
-    async function handleSubmit(event) {
+    const sendForm = async (event) => {
+      
+       
         setLoading(true);
-        event.preventDefault();
-        const formData = new FormData(event.target);
+         const formData = new FormData();
+         formData.append('first_name', first_name);
+         formData.append('last_name', last_name);
+         formData.append('email', email);
+         formData.append('subject', subject);
+         formData.append('street', street);
+         formData.append('number', number);
+         formData.append('zip', zip);
+         formData.append('city', city);
+         formData.append('phone', phone);
+         formData.append('message', message);
+         formData.append('data_protection', data_protection);
+         formData.append('gender', gender);
+
         try {
             const response = await fetch(`/${currentLocale}/api/send`, {
                 method: 'post',
                 body: formData,
             });
 
-            if (!response.ok) {
-                console.log('falling over');
-                throw new Error(`response status: ${response.status}`);
-            }
+            console.log('Response received:', response);
             const responseData = await response.json();
-            console.log(responseData['message']);
-            setLoading(false);
-            alert('Message successfully sent');
-        } catch (err) {
-            console.error(err);
-            setLoading(false);
-            alert('Error, please try resubmitting the form');
-        }
-    }
+            console.log('Response data:', responseData);
 
-     const validateFirstName = () => {
-         if (!first_name) {
-             setErrors({ ...errors, first_name: true });
-         } else {
-             setErrors({ ...errors, first_name: false });
-         }
-     };
-     const validateLastName = () => {
-         if (!last_name) {
-             setErrors({ ...errors, last_name: true });
-         } else {
-             setErrors({ ...errors, last_name: false });
-         }
-     };
-     const validateEmail = () => {
-         if (!email) {
-             setErrors({ ...errors, email: true });
-         } else if (!/\S+@\S+\.\S+/.test(email)) {
-             setErrors({ ...errors, email: true });
-         } else {
-             setErrors({ ...errors, email: false });
-         }
-     };
-     const validateSubject = () => {
-         if (!subject) {
-             setErrors({ ...errors, subject: true });
-         } else {
-             setErrors({ ...errors, subject: false });
-         }
+            if (responseData.data.id) {
+                setValidationSuccess(true);
+                setValidationError(false);
+                setValidationSubscribedError(false);
+                alert('Message successfully sent');
+                return false;
+            
+            } else {
+                setValidationSuccess(false);
+                setValidationError(true);
+                setValidationSubscribedError(response.status === 400);
+                alert('An error occurred, please try again later.');
+                 return false;
+            }
+        } catch (err) {
+            console.error('Submission failed:', err);
+            setValidationSuccess(false);
+            setValidationError(true);
+            setValidationSubscribedError(false);
+            alert('An error occurred, please try again later.');
+        } finally {
+            setLoading(false);
+        }
     };
-      const validateStreet = () => {
-          if (!street) {
-              setErrors({ ...errors, street: true });
-          } else {
-              setErrors({ ...errors, street: false });
-          }
+
+    const validateFirstName = () => {
+        if (blok?.required_first_name) {
+            const hasError = !first_name.trim();
+            console.log(
+                'Validating first name:',
+                first_name,
+                'Error:',
+                hasError
+            );
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                first_name: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                first_name: false,
+            }));
+        }
+    };
+    const validateLastName = () => {
+        if (blok?.required_last_name) {
+            const hasError = !last_name.trim();
+             console.log(
+                 'Validating last name:',
+                 last_name,
+                 'Error:',
+                 hasError
+             );
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                last_name: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                last_name: false,
+            }));
+        }
+    };
+
+    const validateEmail = () => {
+        if (blok?.required_email) {
+            const valid = /\S+@\S+\.\S+/.test(email);
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                email: !valid,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                email: false,
+            }));
+        }
+    };
+
+    const validateSubject = () => {
+        if (blok?.required_subject) {
+            const hasError = !subject.trim();
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                subject: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                subject: false,
+            }));
+        }
+    };
+
+    const validateStreet = () => {
+        if (blok?.required_street) {
+            const hasError = !street.trim();
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                street: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                street: false,
+            }));
+        }
+    };
+
+    const validateNumber = () => {
+        if (blok?.required_number) {
+            const hasError = !number.trim();
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                number: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                number: false,
+            }));
+        }
+    };
+
+    const validateZip = () => {
+        if (blok?.required_zip) {
+            const hasError = !zip.trim();
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                zip: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                zip: false,
+            }));
+        }
+    };
+
+    const validateCity = () => {
+        if (blok?.required_city) {
+            const hasError = !city.trim();
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                city: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                city: false,
+            }));
+        }
+    };
+
+    const validatePhone = () => {
+        if (blok?.required_phone) {
+            const phonePattern = /^\+?(\d[-.\s]?){7,14}\d$/;
+            const valid = phonePattern.test(phone);
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                phone: !valid,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                phone: false,
+            }));
+        }
+    };
+
+    const validateMessage = () => {
+        if (blok?.required_message) {
+            const hasError = !message.trim();
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                message: hasError,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                message: false,
+            }));
+        }
+    };
+   const validateCheckbox = (isChecked) => {
+     
+       if (data_protection && !isChecked) {
+           setErrors((prevErrors) => ({
+               ...prevErrors,
+               data_protection: true,
+           }));
+       } else {
+           setErrors((prevErrors) => ({
+               ...prevErrors,
+               data_protection: false,
+           }));
+       }
     };
     
-     const validateNumber = () => {
-         if (!number) {
-             setErrors({ ...errors, number: true });
-         } else {
-             setErrors({ ...errors, number: false });
-         }
-    };
     
-       const validateZip = () => {
-           if (!zip) {
-               setErrors({ ...errors, zip: true });
-           } else {
-               setErrors({ ...errors, zip: false });
-           }
-    };
-    
-      const validateCity = () => {
-          if (!city) {
-              setErrors({ ...errors, city: true });
-          } else {
-              setErrors({ ...errors, city: false });
-          }
-    };
-      const validatePhone = () => {
-          if (!phone) {
-              setErrors({ ...errors, phone: true });
-          } else if (!/^\+?(\d[-.\s]?){7,14}\d$/.test(phone)) {
-              setErrors({ ...errors, email: true });
-          } else {
-              setErrors({ ...errors, phone: false });
-          }
-    };
-     const validateMessage = () => {
-         if (!message) {
-             setErrors({ ...errors, message: true });
-         } else {
-             setErrors({ ...errors, message: false });
-         }
-     };
-     const validateCheckbox = (value) => {
-         if (value) {
-             setErrors({ ...errors, isSelected: true });
-         } else {
-             setErrors({ ...errors, isSelected: false });
-         }
-     };
+
+    const validateForm = async () => {
+        console.log(blok?.required_last_name, 'last_name');
+         console.log(blok?.required_email, 'required_email');
+      const newErrors = {
+          first_name: blok?.required_first_name ? !first_name.trim() : false,
+          last_name: blok?.required_last_name ? !last_name.trim() : false,
+          email: blok?.required_email ? !/\S+@\S+\.\S+/.test(email) : false,
+          phone: blok?.required_phone
+              ? !/^\+?(\d[-.\s]?){7,14}\d$/.test(phone)
+              : false,
+          subject: blok?.required_subject ? !subject.trim() : false,
+          street: blok?.required_street ? !street.trim() : false,
+          number: blok?.required_number ? !number.trim() : false,
+          zip: blok?.required_zip ? !zip.trim() : false,
+          city: blok?.required_city ? !city.trim() : false,
+          message: blok?.required_message ? !message.trim() : false,
+          data_protection: !data_protection,
+      };
+
+      
+
+      console.log('Errors found during form validation:', newErrors);
+      setErrors(newErrors);
+console.log('newErrors', newErrors);
+      const isFormValid = !Object.values(newErrors).some((isError) => isError);
+
+      console.log('Form valid status:', isFormValid);
+
+      if (isFormValid) {
+          console.log('Form is valid, sending form...');
+          await sendForm(); 
+      } else {
+          console.log('Form is not valid, errors need to be corrected.');
+      }
+
+      return isFormValid;
+  };
+
+
+   const handleSubmit = async (event) => {
+       event.preventDefault();
+       validateEmail()
+       const formIsValid = await validateForm();
+       if (!formIsValid) {
+           alert('Please correct the errors before submitting.');
+       }
+   };
 
     return (
         <section
@@ -150,7 +335,7 @@ export default function ContactForm({ blok }) {
         >
             <SmallWidth>
                 <div className="col-span-12">
-                    <form className="" onSubmit={handleSubmit}>
+                    <form className="relative" onSubmit={handleSubmit}>
                         <H2>{blok?.title}</H2>
                         <div className="relative z-0 w-full mb-5 group">
                             <label
@@ -170,11 +355,12 @@ export default function ContactForm({ blok }) {
                                 placeholder=""
                                 required={blok?.required_subject ? true : false}
                                 onChange={(e) => setSubject(e.target.value)}
+                                onBlur={validateSubject}
                             />
                             <div
-                                className={`${errors.first_name ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                className={`${errors.subject ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
                             >
-                                {blok.fname_error}
+                                {blok.subject_error}
                             </div>
                         </div>
                         <div className="flex flex-wrap mb-5">
@@ -233,7 +419,13 @@ export default function ContactForm({ blok }) {
                                         blok?.required_first_name ? true : false
                                     }
                                     onChange={(e) => setName(e.target.value)}
+                                    onBlur={validateFirstName}
                                 />
+                                <div
+                                    className={`${errors.first_name ? 'block' : 'hidden'} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.first_name_error}
+                                </div>
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
@@ -253,10 +445,17 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_last_name ? true : false
                                     }
-                                    onChange={(e) =>
-                                        setLastName(e.target.value)
-                                    }
+                                    onChange={(e) => {
+                                        setLastName(e.target.value);
+                                        validateLastName(e.target.value);
+                                    }}
+                                    onBlur={() => validateLastName(last_name)}
                                 />
+                                <div
+                                    className={`${errors.last_name ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.last_name_error}
+                                </div>
                             </div>
                         </div>
                         <div className="grid md:grid-cols-2 md:gap-6">
@@ -279,8 +478,14 @@ export default function ContactForm({ blok }) {
                                         blok?.required_street ? true : false
                                     }
                                     onChange={(e) => setStreet(e.target.value)}
+                                    onBlur={validateStreet}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
+                                <div
+                                    className={`${errors.street && blok?.required_street ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.street_error}
+                                </div>
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
@@ -301,8 +506,14 @@ export default function ContactForm({ blok }) {
                                         blok?.required_number ? true : false
                                     }
                                     onChange={(e) => setNumber(e.target.value)}
+                                    onBlur={validateNumber}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
+                                <div
+                                    className={`${errors.number && blok?.required_number ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.number_error}
+                                </div>
                             </div>
                         </div>
                         <div className="grid md:grid-cols-2 md:gap-6">
@@ -323,8 +534,14 @@ export default function ContactForm({ blok }) {
                                     placeholder=""
                                     required={blok?.required_zip ? true : false}
                                     onChange={(e) => setZIP(e.target.value)}
+                                    onBlur={validateZip}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
+                                <div
+                                    className={`${errors.zip && blok?.required_zip ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.zip_error}
+                                </div>
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
@@ -345,8 +562,14 @@ export default function ContactForm({ blok }) {
                                         blok?.required_city ? true : false
                                     }
                                     onChange={(e) => setCity(e.target.value)}
+                                    onBlur={validateCity}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
+                                <div
+                                    className={`${errors.city && blok?.required_city ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.city_error}
+                                </div>
                             </div>
                         </div>
 
@@ -370,8 +593,14 @@ export default function ContactForm({ blok }) {
                                         blok?.required_email ? true : false
                                     }
                                     onChange={(e) => setEmail(e.target.value)}
+                                    onBlur={validateEmail}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
+                                <div
+                                    className={`${errors.email && blok?.required_email ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.email_error}
+                                </div>
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
@@ -392,8 +621,14 @@ export default function ContactForm({ blok }) {
                                         blok?.required_phone ? true : false
                                     }
                                     onChange={(e) => setPhone(e.target.value)}
+                                    onBlur={validatePhone}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
+                                <div
+                                    className={`${errors.phone && blok?.required_phone ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                                >
+                                    {blok.phone_error}
+                                </div>
                             </div>
                         </div>
                         <div className="mb-5">
@@ -413,30 +648,45 @@ export default function ContactForm({ blok }) {
                                 placeholder=""
                                 required={blok?.required_message ? true : false}
                                 onChange={(e) => setMessage(e.target.value)}
+                                onBlur={validateMessage}
                                 className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
-                        </div>
-                        <div className="flex items-start mb-8">
-                            <input
-                                className="relative shrink-0 w-6 h-6 border-2 border-primary checked:bg-primary hover:checked:bg-primary checked:border-primary focus:checked:bg-primary hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary"
-                                type="checkbox"
-                                name="data_protection"
-                                id="data_protection"
-                                value="on"
-                                onChange={(e) =>
-                                    setDataProtection(e.target.value)
-                                }
-                            />
-                            <label
-                                htmlFor="checkbox"
-                                className="ms-2 !text-sm font-medium text-black dark:text-gray-300"
+                            <div
+                                className={`${errors.message && blok?.required_message ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
                             >
-                                <RichTextRenderer
-                                    text={blok?.disclaimer_text}
-                                    customStyles="!text-sm !my-0"
-                                />
-                            </label>
+                                {blok.message_error}
+                            </div>
                         </div>
+                        <div className="flex flex-col mb-8">
+                            <div className="flex items-center">
+                                <input
+                                    className="relative shrink-0 w-6 h-6 border-2 border-primary checked:bg-primary hover:checked:bg-primary checked:border-primary focus:checked:bg-primary hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary"
+                                    type="checkbox"
+                                    name="data_protection"
+                                    id="data_protection"
+                                    defaultChecked={data_protection}
+                                    onChange={(e) => {
+                                        setDataProtection(e.target.value);
+                                        validateCheckbox(e.target.checked);
+                                    }}
+                                />
+                                <label
+                                    htmlFor="data_protection"
+                                    className="ml-2 text-sm font-medium text-black dark:text-gray-300"
+                                >
+                                    <RichTextRenderer
+                                        text={blok?.disclaimer_text}
+                                        customStyles="!text-sm !my-0"
+                                    />
+                                </label>
+                            </div>
+                            <div
+                                className={`${errors.data_protection ? 'block' : 'hidden'} mt-2 text-sm text-red-700 font-medium`}
+                            >
+                                {blok.checkbox_error}
+                            </div>
+                        </div>
+
                         <button
                             type="submit"
                             className="cursor-pointer bg-stadlergradient text-white text-sm px-5 py-2.5 leading-6 font-medium rounded flex items-center gap-2"
@@ -452,6 +702,27 @@ export default function ContactForm({ blok }) {
                                 blok?.submit_button_text
                             )}
                         </button>
+                        <div
+                            className={`${validationError ? 'block ' : 'hidden '} mt-4 mb-2 text-sm text-red-700 font-medium`}
+                        >
+                            {validationSubscribedError
+                                ? blok.error_email_exists
+                                : blok.global_validation_error}
+                        </div>
+                        {validationSuccess && (
+                            <div className="top-0 left-0 absolute bg-white w-full h-full items-center flex flex-wrap content-center align-center justify-center text-md">
+                                <div className="w-full text-center">
+                                    <H3>{blok.global_validation_success}</H3>
+                                </div>
+                                <div className="w-2/3 text-center">
+                                    <RichTextRenderer
+                                        text={
+                                            blok?.global_validation_success_description
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        )}
                     </form>
                 </div>
             </SmallWidth>
