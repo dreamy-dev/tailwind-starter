@@ -20,7 +20,7 @@ export default function ContactForm({ blok }) {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
-    const [data_protection, setDataProtection] = useState('');
+    const [data_protection, setDataProtection] = useState(false);
     const [gender, setGender] = useState('');
     const [loading, setLoading] = useState(false);
     const [validationError, setValidationError] = useState(false);
@@ -92,168 +92,90 @@ export default function ContactForm({ blok }) {
     };
 
     const validateFirstName = () => {
-        if (blok?.required_first_name) {
-            const hasError = !first_name.trim();
-
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                first_name: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                first_name: false,
-            }));
-        }
-    };
-    const validateLastName = () => {
-        if (blok?.required_last_name) {
-            const hasError = !last_name.trim();
-
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                last_name: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                last_name: false,
-            }));
-        }
-    };
-
-    const validateEmail = () => {
-        if (blok?.required_email) {
-            const valid = /\S+@\S+\.\S+/.test(email);
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                email: !valid,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                email: false,
-            }));
-        }
+        const hasError = blok?.required_first_name && !first_name.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            first_name: hasError,
+        }));
     };
 
     const validateSubject = () => {
-        if (blok?.required_subject) {
-            const hasError = !subject.trim();
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                subject: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                subject: false,
-            }));
-        }
+        const hasError = blok?.required_subject && !subject.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            subject: hasError,
+        }));
+    };
+    const validateLastName = () => {
+        const hasError = blok?.required_last_name && !last_name.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            last_name: hasError,
+        }));
+    };
+
+    const validateEmail = () => {
+        const valid = /\S+@\S+\.\S+/.test(email);
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: blok?.required_email && !valid,
+        }));
     };
 
     const validateStreet = () => {
-        if (blok?.required_street) {
-            const hasError = !street.trim();
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                street: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                street: false,
-            }));
-        }
+        const hasError = blok?.required_street && !street.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            street: hasError,
+        }));
     };
-
-    const validateNumber = () => {
-        if (blok?.required_number) {
-            const hasError = !number.trim();
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                number: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                number: false,
-            }));
-        }
-    };
+const validateNumber = (value) => {
+ 
+    const hasError = blok?.required_number && value === '';
+    setErrors((prevErrors) => ({
+        ...prevErrors,
+        number: hasError,
+    }));
+    setNumber(value)
+};
 
     const validateZip = () => {
-        if (blok?.required_zip) {
-            const hasError = !zip.trim();
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                zip: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                zip: false,
-            }));
-        }
+        const hasError = blok?.required_zip && !zip.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            zip: hasError,
+        }));
     };
 
     const validateCity = () => {
-        if (blok?.required_city) {
-            const hasError = !city.trim();
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                city: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                city: false,
-            }));
-        }
+        const hasError = blok?.required_city && !city.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            city: hasError,
+        }));
     };
 
     const validatePhone = () => {
-        if (blok?.required_phone) {
-            const phonePattern = /^\+?(\d[-.\s]?){7,14}\d$/;
-            const valid = phonePattern.test(phone);
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                phone: !valid,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                phone: false,
-            }));
-        }
+        const phonePattern = /^\+?(\d[-.\s]?){7,14}\d$/;
+        const valid = phonePattern.test(phone);
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            phone: blok?.required_phone && !valid,
+        }));
     };
 
     const validateMessage = () => {
-        if (blok?.required_message) {
-            const hasError = !message.trim();
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                message: hasError,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                message: false,
-            }));
-        }
+        const hasError = blok?.required_message && !message.trim();
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            message: hasError,
+        }));
     };
     const validateCheckbox = (isChecked) => {
-        if (data_protection && !isChecked) {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                data_protection: true,
-            }));
-        } else {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                data_protection: false,
-            }));
-        }
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            data_protection: blok?.dataprotection_required ? !isChecked : false,
+        }));
     };
 
     const validateForm = async () => {
@@ -270,7 +192,9 @@ export default function ContactForm({ blok }) {
             zip: blok?.required_zip ? !zip.trim() : false,
             city: blok?.required_city ? !city.trim() : false,
             message: blok?.required_message ? !message.trim() : false,
-            data_protection: !data_protection,
+            data_protection: blok?.dataprotection_required
+                ? !data_protection
+                : false,
         };
 
         setErrors(newErrors);
@@ -329,7 +253,10 @@ export default function ContactForm({ blok }) {
                                 type="text"
                                 placeholder=""
                                 required={blok?.required_subject ? true : false}
-                                onChange={(e) => setSubject(e.target.value)}
+                                onChange={(e) => {
+                                    validateSubject();
+                                    setSubject(e.target.value);
+                                }}
                                 onBlur={validateSubject}
                             />
                             <div
@@ -393,7 +320,10 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_first_name ? true : false
                                     }
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={(e) => {
+                                        setName(e.target.value);
+                                        validateFirstName();
+                                    }}
                                     onBlur={validateFirstName}
                                 />
                                 <div
@@ -420,9 +350,10 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_last_name ? true : false
                                     }
-                                    onChange={(e) =>
-                                        setLastName(e.target.value)
-                                    }
+                                    onChange={(e) => {
+                                        validateLastName();
+                                        setLastName(e.target.value);
+                                    }}
                                     onBlur={validateLastName}
                                 />
                                 <div
@@ -451,7 +382,10 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_street ? true : false
                                     }
-                                    onChange={(e) => setStreet(e.target.value)}
+                                    onChange={(e) => {
+                                        validateStreet();
+                                        setStreet(e.target.value);
+                                    }}
                                     onBlur={validateStreet}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -474,12 +408,15 @@ export default function ContactForm({ blok }) {
                                     id="number"
                                     autoComplete="number"
                                     value={number}
-                                    type="number"
+                                    type="text"
                                     placeholder=""
                                     required={
                                         blok?.required_number ? true : false
                                     }
-                                    onChange={(e) => setNumber(e.target.value)}
+                                    onChange={(e) => {
+                                        validateNumber();
+                                        setNumber(e.target.value);
+                                    }}
                                     onBlur={validateNumber}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -507,7 +444,10 @@ export default function ContactForm({ blok }) {
                                     type="text"
                                     placeholder=""
                                     required={blok?.required_zip ? true : false}
-                                    onChange={(e) => setZIP(e.target.value)}
+                                    onChange={(e) => {
+                                        setZIP(e.target.value);
+                                        validateZip();
+                                    }}
                                     onBlur={validateZip}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -535,7 +475,10 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_city ? true : false
                                     }
-                                    onChange={(e) => setCity(e.target.value)}
+                                    onChange={(e) => {
+                                        setCity(e.target.value);
+                                        validateCity();
+                                    }}
                                     onBlur={validateCity}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -566,7 +509,10 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_email ? true : false
                                     }
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => {
+                                        validateEmail();
+                                        setEmail(e.target.value);
+                                    }}
                                     onBlur={validateEmail}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -594,7 +540,10 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_phone ? true : false
                                     }
-                                    onChange={(e) => setPhone(e.target.value)}
+                                    onChange={(e) => {
+                                        validatePhone();
+                                        setPhone(e.target.value);
+                                    }}
                                     onBlur={validatePhone}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
@@ -621,7 +570,10 @@ export default function ContactForm({ blok }) {
                                 type="text"
                                 placeholder=""
                                 required={blok?.required_message ? true : false}
-                                onChange={(e) => setMessage(e.target.value)}
+                                onChange={(e) => {
+                                    validateMessage()
+                                    setMessage(e.target.value);
+                                } }
                                 onBlur={validateMessage}
                                 className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
@@ -640,7 +592,7 @@ export default function ContactForm({ blok }) {
                                     id="data_protection"
                                     defaultChecked={data_protection}
                                     onChange={(e) => {
-                                        setDataProtection(e.target.value);
+                                        setDataProtection(e.target.checked);
                                         validateCheckbox(e.target.checked);
                                     }}
                                 />
