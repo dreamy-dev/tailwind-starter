@@ -64,32 +64,35 @@ const TestimonialsCarousel = ({ blok }) => {
     const [showTrains, setShowTrains] = useState(false);
     const [highlightsCategory, setHighlightsCategory] = useState([]);
     const [reference, setReference] = useState([]);
-console.log(highlightsCategory, 'highlightsCategory');
+
 
     useEffect(() => {
         const getArticles = async () => {
             const arrayHighlight = [];
-        
             blok.highlight_reference.map((item) => {
                 arrayHighlight.push(item.uuid);
             });
 
             const highlightReference = arrayHighlight.join(',');
-         
+           
             const storyblokApi = getStoryblokApi();
-            const { data } = await storyblokApi.get(`cdn/stories`, {
-                version: 'published',
-                starts_with: 'loesungen/',
-                is_startpage: false,
-                'filter_query[categories][any_in_array]': highlightReference,
-                per_page: 5,
-            });
+            const { data } = await storyblokApi.get(
+                `cdn/stories`,
+                {
+                    version: 'published',
+                    starts_with: "loesungen/",
+                    is_startpage: false,
+                    'filter_query[categories][any_in_array]':
+                        highlightReference,
+                    per_page: 5,
+                }
+            );
             console.log(data, "data")
            
             setHighlightsCategory((prev) =>
                 data.stories.map((article) => {
-                    article.content.full_slug = article.full_slug;
-                     console.log(article, 'article');
+                    article.content.slug = article.slug;
+                 
                     return article;
                 })
             );
@@ -177,9 +180,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                     }}
                                                 >
                                                     <a
-                                                        href={
-                                                            `referenzen/${article.slug}`
-                                                        }
+                                                        href={`/${article.full_slug}`}
                                                     >
                                                         <img
                                                             src={
@@ -213,7 +214,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                             ></RichTextRenderer>
                                                         </div>
                                                         <Link
-                                                            href={`referenzen/${article.slug}`}
+                                                            href={`/${article.full_slug}`}
                                                             className="inline-flex items-center py-2 text-sm font-medium text-center"
                                                         >
                                                             <svg
@@ -324,8 +325,7 @@ console.log(highlightsCategory, 'highlightsCategory');
                                             key={idx}
                                             className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
                                         >
-                                            <a href={`referenze/${train.slug}`}>
-                                               
+                                            <a href={`/${train.full_slug}`}>
                                                 <img
                                                     className="w-full aspect-[4/3]"
                                                     src={
@@ -339,7 +339,9 @@ console.log(highlightsCategory, 'highlightsCategory');
                                                 <H4 styles="mb-4">
                                                     {train.content.title}
                                                 </H4>
-                                                <Link href="#">
+                                                <Link
+                                                    href={`/${train.full_slug}`}
+                                                >
                                                     <svg
                                                         width="20"
                                                         height="20"

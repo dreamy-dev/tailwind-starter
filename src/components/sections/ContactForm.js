@@ -22,6 +22,14 @@ export default function ContactForm({ blok }) {
     const [data_protection, setDataProtection] = useState('');
     const [gender, setGender] = useState('');
     const [loading, setLoading] = useState(false);
+     const [errors, setErrors] = useState({
+         email: false,
+         first_name: false,
+         last_name: false,
+         subject: false,
+         street: false,
+         number: false,
+     });
 
     const currentLocale = useCurrentLocale(i18nConfig);
 
@@ -49,6 +57,91 @@ export default function ContactForm({ blok }) {
             alert('Error, please try resubmitting the form');
         }
     }
+
+     const validateFirstName = () => {
+         if (!first_name) {
+             setErrors({ ...errors, first_name: true });
+         } else {
+             setErrors({ ...errors, first_name: false });
+         }
+     };
+     const validateLastName = () => {
+         if (!last_name) {
+             setErrors({ ...errors, last_name: true });
+         } else {
+             setErrors({ ...errors, last_name: false });
+         }
+     };
+     const validateEmail = () => {
+         if (!email) {
+             setErrors({ ...errors, email: true });
+         } else if (!/\S+@\S+\.\S+/.test(email)) {
+             setErrors({ ...errors, email: true });
+         } else {
+             setErrors({ ...errors, email: false });
+         }
+     };
+     const validateSubject = () => {
+         if (!subject) {
+             setErrors({ ...errors, subject: true });
+         } else {
+             setErrors({ ...errors, subject: false });
+         }
+    };
+      const validateStreet = () => {
+          if (!street) {
+              setErrors({ ...errors, street: true });
+          } else {
+              setErrors({ ...errors, street: false });
+          }
+    };
+    
+     const validateNumber = () => {
+         if (!number) {
+             setErrors({ ...errors, number: true });
+         } else {
+             setErrors({ ...errors, number: false });
+         }
+    };
+    
+       const validateZip = () => {
+           if (!zip) {
+               setErrors({ ...errors, zip: true });
+           } else {
+               setErrors({ ...errors, zip: false });
+           }
+    };
+    
+      const validateCity = () => {
+          if (!city) {
+              setErrors({ ...errors, city: true });
+          } else {
+              setErrors({ ...errors, city: false });
+          }
+    };
+      const validatePhone = () => {
+          if (!phone) {
+              setErrors({ ...errors, phone: true });
+          } else if (!/^\+?(\d[-.\s]?){7,14}\d$/.test(phone)) {
+              setErrors({ ...errors, email: true });
+          } else {
+              setErrors({ ...errors, phone: false });
+          }
+    };
+     const validateMessage = () => {
+         if (!message) {
+             setErrors({ ...errors, message: true });
+         } else {
+             setErrors({ ...errors, message: false });
+         }
+     };
+     const validateCheckbox = (value) => {
+         if (value) {
+             setErrors({ ...errors, isSelected: true });
+         } else {
+             setErrors({ ...errors, isSelected: false });
+         }
+     };
 
     return (
         <section
@@ -78,6 +171,11 @@ export default function ContactForm({ blok }) {
                                 required={blok?.required_subject ? true : false}
                                 onChange={(e) => setSubject(e.target.value)}
                             />
+                            <div
+                                className={`${errors.first_name ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
+                            >
+                                {blok.fname_error}
+                            </div>
                         </div>
                         <div className="flex flex-wrap mb-5">
                             <div className="flex items-center me-4">
@@ -320,7 +418,7 @@ export default function ContactForm({ blok }) {
                         </div>
                         <div className="flex items-start mb-8">
                             <input
-                                className="relative shrink-0 w-6 h-6 border-2 border-primary bg-whitefocus:ring-primary checked:bg-primary checked:border-primary"
+                                className="relative shrink-0 w-6 h-6 border-2 border-primary checked:bg-primary hover:checked:bg-primary checked:border-primary focus:checked:bg-primary hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary"
                                 type="checkbox"
                                 name="data_protection"
                                 id="data_protection"

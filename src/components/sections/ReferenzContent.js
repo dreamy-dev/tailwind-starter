@@ -4,7 +4,7 @@ import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
 import Breadcrumbs from './Breadcrumbs';
-import SmallWidth from '../layouts/SmallWidth';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 function ReferenzContent({ blok }) {
     return (
@@ -47,7 +47,8 @@ function ReferenzContent({ blok }) {
             </SuperSmallWidth>
             <SuperSmallWidth>
                 <div>
-                    <div className="text-md richtext">{render(blok.text)}</div>
+                    <RichTextRenderer text={blok?.text} />
+                
                 </div>
             </SuperSmallWidth>
             {blok.news_blocks.map((nestedBlok) => (
