@@ -55,7 +55,11 @@ const RichTextRenderer = (props) => {
                         }
                         // Internal links: map to <Link>
                         return (
-                            <a className="text-primary" href={href}>
+                            <a
+                                className="text-primary"
+                                target={target}
+                                href={href}
+                            >
                                 {children}
                             </a>
                         );

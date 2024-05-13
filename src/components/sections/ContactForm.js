@@ -3,15 +3,13 @@
 import SmallWidth from '../layouts/SmallWidth';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H2 from '../typography/H2';
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 import H3 from '../typography/H3';
 
 export default function ContactForm({ blok }) {
-
-
     const [first_name, setName] = useState('');
     const [last_name, setLastName] = useState('');
     const [subject, setSubject] = useState('');
@@ -43,26 +41,23 @@ export default function ContactForm({ blok }) {
         data_protection: false,
     });
 
-
     const currentLocale = useCurrentLocale(i18nConfig);
 
     const sendForm = async () => {
-      
-       
         setLoading(true);
-         const formData = new FormData();
-         formData.append('first_name', first_name);
-         formData.append('last_name', last_name);
-         formData.append('email', email);
-         formData.append('subject', subject);
-         formData.append('street', street);
-         formData.append('number', number);
-         formData.append('zip', zip);
-         formData.append('city', city);
-         formData.append('phone', phone);
-         formData.append('message', message);
-         formData.append('data_protection', data_protection);
-         formData.append('gender', gender);
+        const formData = new FormData();
+        formData.append('first_name', first_name);
+        formData.append('last_name', last_name);
+        formData.append('email', email);
+        formData.append('subject', subject);
+        formData.append('street', street);
+        formData.append('number', number);
+        formData.append('zip', zip);
+        formData.append('city', city);
+        formData.append('phone', phone);
+        formData.append('message', message);
+        formData.append('data_protection', data_protection);
+        formData.append('gender', gender);
 
         try {
             const response = await fetch(`/${currentLocale}/api/send`, {
@@ -70,9 +65,7 @@ export default function ContactForm({ blok }) {
                 body: formData,
             });
 
-          
             const responseData = await response.json();
-          
 
             if (responseData.data.id) {
                 setValidationSuccess(true);
@@ -80,13 +73,12 @@ export default function ContactForm({ blok }) {
                 setValidationSubscribedError(false);
                 console.log('Message successfully sent');
                 return false;
-            
             } else {
                 setValidationSuccess(false);
                 setValidationError(true);
                 setValidationSubscribedError(response.status === 400);
                 console.log('An error occurred, please try again later.');
-                 return false;
+                return false;
             }
         } catch (err) {
             console.error('Submission failed:', err);
@@ -102,7 +94,7 @@ export default function ContactForm({ blok }) {
     const validateFirstName = () => {
         if (blok?.required_first_name) {
             const hasError = !first_name.trim();
-            
+
             setErrors((prevErrors) => ({
                 ...prevErrors,
                 first_name: hasError,
@@ -117,7 +109,7 @@ export default function ContactForm({ blok }) {
     const validateLastName = () => {
         if (blok?.required_last_name) {
             const hasError = !last_name.trim();
-            
+
             setErrors((prevErrors) => ({
                 ...prevErrors,
                 last_name: hasError,
@@ -131,7 +123,6 @@ export default function ContactForm({ blok }) {
     };
 
     const validateEmail = () => {
-    
         if (blok?.required_email) {
             const valid = /\S+@\S+\.\S+/.test(email);
             setErrors((prevErrors) => ({
@@ -251,70 +242,62 @@ export default function ContactForm({ blok }) {
             }));
         }
     };
-   const validateCheckbox = (isChecked) => {
-     
-       if (data_protection && !isChecked) {
-           setErrors((prevErrors) => ({
-               ...prevErrors,
-               data_protection: true,
-           }));
-       } else {
-           setErrors((prevErrors) => ({
-               ...prevErrors,
-               data_protection: false,
-           }));
-       }
+    const validateCheckbox = (isChecked) => {
+        if (data_protection && !isChecked) {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                data_protection: true,
+            }));
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                data_protection: false,
+            }));
+        }
     };
-    
-    
 
     const validateForm = async () => {
-      
-      const newErrors = {
-          first_name: blok?.required_first_name ? !first_name.trim() : false,
-          last_name: blok?.required_last_name ? !last_name.trim() : false,
-          email: blok?.required_email ? !/\S+@\S+\.\S+/.test(email) : false,
-          phone: blok?.required_phone
-              ? !/^\+?(\d[-.\s]?){7,14}\d$/.test(phone)
-              : false,
-          subject: blok?.required_subject ? !subject.trim() : false,
-          street: blok?.required_street ? !street.trim() : false,
-          number: blok?.required_number ? !number.trim() : false,
-          zip: blok?.required_zip ? !zip.trim() : false,
-          city: blok?.required_city ? !city.trim() : false,
-          message: blok?.required_message ? !message.trim() : false,
-          data_protection: !data_protection,
-      };
+        const newErrors = {
+            first_name: blok?.required_first_name ? !first_name.trim() : false,
+            last_name: blok?.required_last_name ? !last_name.trim() : false,
+            email: blok?.required_email ? !/\S+@\S+\.\S+/.test(email) : false,
+            phone: blok?.required_phone
+                ? !/^\+?(\d[-.\s]?){7,14}\d$/.test(phone)
+                : false,
+            subject: blok?.required_subject ? !subject.trim() : false,
+            street: blok?.required_street ? !street.trim() : false,
+            number: blok?.required_number ? !number.trim() : false,
+            zip: blok?.required_zip ? !zip.trim() : false,
+            city: blok?.required_city ? !city.trim() : false,
+            message: blok?.required_message ? !message.trim() : false,
+            data_protection: !data_protection,
+        };
 
-      
+        setErrors(newErrors);
 
-    
-      setErrors(newErrors);
+        const isFormValid = !Object.values(newErrors).some(
+            (isError) => isError
+        );
 
-      const isFormValid = !Object.values(newErrors).some((isError) => isError);
+        if (isFormValid) {
+            console.log('Form is valid, sending form...');
+            await sendForm();
+        } else {
+            console.log('Form is not valid, errors need to be corrected.');
+        }
 
-    
+        return isFormValid;
+    };
 
-      if (isFormValid) {
-          console.log('Form is valid, sending form...');
-          await sendForm(); 
-      } else {
-          console.log('Form is not valid, errors need to be corrected.');
-      }
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-      return isFormValid;
-  };
+        const formIsValid = validateForm();
 
-
-   const handleSubmit = (event) => {
-       event.preventDefault();
-      
-       const formIsValid = validateForm();
-   
-       if (!formIsValid) {
-           console.log('Please correct the errors before submitting.');
-       }
-   };
+        if (!formIsValid) {
+            console.log('Please correct the errors before submitting.');
+        }
+    };
 
     return (
         <section
@@ -323,7 +306,11 @@ export default function ContactForm({ blok }) {
         >
             <SmallWidth>
                 <div className="col-span-12">
-                    <form noValidate className="relative" onSubmit={(e) => handleSubmit(e) }>
+                    <form
+                        noValidate
+                        className="relative"
+                        onSubmit={(e) => handleSubmit(e)}
+                    >
                         <H2>{blok?.title}</H2>
                         <div className="relative z-0 w-full mb-5 group">
                             <label
@@ -433,9 +420,8 @@ export default function ContactForm({ blok }) {
                                     required={
                                         blok?.required_last_name ? true : false
                                     }
-                                    onChange={(e) => 
+                                    onChange={(e) =>
                                         setLastName(e.target.value)
-                                     
                                     }
                                     onBlur={validateLastName}
                                 />
