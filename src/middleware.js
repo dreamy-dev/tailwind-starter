@@ -4,15 +4,17 @@ import i18nConfig from '@/i18nConfig';
 
 // Middleware used for i18n Routing
 export function middleware(request) {
-    //check if country is one of the defined countries or global
-    const country = (request.geo && request.geo.country) || 'global';
+    // INFO
+    // Quite a few country logics are currently uncommented.
+    // This is because the logic will be enabled later on so DO NOT DELETE
 
-    // Console Log values
+    // Console Log values used for Debugging
+    /*  const country = (request.geo && request.geo.country) || 'global';
     console.log(`Visitor from ${country}`);
     console.log(request.geo.country);
     console.log(request);
     console.log(request.headers.get('accept-language')?.split(',')?.[0]);
-    console.log(`Pathname ${request.nextUrl.pathname}`);
+    console.log(`Pathname ${request.nextUrl.pathname}`); */
 
     const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
@@ -34,7 +36,7 @@ export function middleware(request) {
                 //page only available in EN
                 request.nextUrl.pathname = '/en/us-en/career-us-en';
                 return NextResponse.rewrite(request.nextUrl);
-            case 'ES':
+            /* case 'ES':
                 if (userLocale.includes('es')) {
                     request.nextUrl.pathname = '/en/es-es/career-es-es';
                 } else {
@@ -47,8 +49,7 @@ export function middleware(request) {
                 } else {
                     request.nextUrl.pathname = '/en/pl-pl/career-pl-en';
                 }
-                return NextResponse.rewrite(request.nextUrl);
-                break;
+                return NextResponse.rewrite(request.nextUrl); */
             case 'HU':
                 if (userLocale.includes('hu')) {
                     request.nextUrl.pathname = '/en/hu-hu/career-hu-hu';
@@ -57,7 +58,7 @@ export function middleware(request) {
                 }
                 return NextResponse.rewrite(request.nextUrl);
                 break;
-            case 'BY':
+            /* case 'BY':
                 if (userLocale.includes('ru')) {
                     request.nextUrl.pathname = '/en/by-ru/career-by-by';
                 } else {
@@ -70,7 +71,7 @@ export function middleware(request) {
                 } else {
                     request.nextUrl.pathname = '/en/kz-ru/career-kz-en';
                 }
-                return NextResponse.rewrite(request.nextUrl);
+                return NextResponse.rewrite(request.nextUrl); */
             case 'CZ':
                 if (userLocale.includes('cz')) {
                     request.nextUrl.pathname = '/en/cz-cz/career-cz-cz';
@@ -78,14 +79,14 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/cz-cz/career-cz-en';
                 }
                 return NextResponse.rewrite(request.nextUrl);
-            case 'AT':
+            /* case 'AT':
                 //german page is handled by german logic
                 request.nextUrl.pathname = '/en/at-de/career-at-en';
                 return NextResponse.rewrite(request.nextUrl);
             case 'GB':
                 //page only available in EN
                 request.nextUrl.pathname = '/en/gb-en/career-ch-en';
-                return NextResponse.rewrite(request.nextUrl);
+                return NextResponse.rewrite(request.nextUrl); */
             case 'IT':
                 if (userLocale.includes('it')) {
                     request.nextUrl.pathname = '/en/it-it/career-it-it';
@@ -93,13 +94,13 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/it-it/career-it-en';
                 }
                 return NextResponse.rewrite(request.nextUrl);
-            case 'NL':
+            /* case 'NL':
                 if (userLocale.includes('nl')) {
                     request.nextUrl.pathname = '/en/nl-nl/career-nl-nl';
                 } else {
                     request.nextUrl.pathname = '/en/nl-nl/career-nl-en';
                 }
-                return NextResponse.rewrite(request.nextUrl);
+                return NextResponse.rewrite(request.nextUrl); */
             case 'SE':
                 if (userLocale.includes('se')) {
                     request.nextUrl.pathname = '/en/se-se/career-se-se';
@@ -107,13 +108,13 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/se-se/career-se-en';
                 }
                 return NextResponse.rewrite(request.nextUrl);
-            case 'NO':
+            /* case 'NO':
                 if (userLocale.includes('no')) {
                     request.nextUrl.pathname = '/en/no-no/career-no-no';
                 } else {
                     request.nextUrl.pathname = '/en/no-no/career-no-en';
                 }
-                return NextResponse.rewrite(request.nextUrl);
+                return NextResponse.rewrite(request.nextUrl); */
             default:
             // bring on global page
             // current understanding of logic is:
@@ -129,9 +130,9 @@ export function middleware(request) {
             case 'DE':
                 request.nextUrl.pathname = '/de/de-de/career-de-de';
                 return NextResponse.rewrite(request.nextUrl);
-            case 'AT':
+            /* case 'AT':
                 request.nextUrl.pathname = '/de/at-de/career-at-de';
-                return NextResponse.rewrite(request.nextUrl);
+                return NextResponse.rewrite(request.nextUrl); */
         }
     } else {
         // nothing should happen really, right? not sure...
