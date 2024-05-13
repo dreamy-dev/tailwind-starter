@@ -10,7 +10,7 @@ import RichTextRenderer from '../helpers/RichTextRenderer';
 import H3 from '../typography/H3';
 
 export default function ContactForm({ blok }) {
-console.log(blok, "blok")
+
 
     const [first_name, setName] = useState('');
     const [last_name, setLastName] = useState('');
@@ -42,14 +42,11 @@ console.log(blok, "blok")
         message: false,
         data_protection: false,
     });
-console.log(errors, "errors")
-    // console.log('Validation Error State:', validationError);
-    // console.log('Subscribed Error State:', validationSubscribedError);
-    // console.log('Validation Success State:', validationSuccess);
+
 
     const currentLocale = useCurrentLocale(i18nConfig);
 
-    const sendForm = async (event) => {
+    const sendForm = async () => {
       
        
         setLoading(true);
@@ -73,22 +70,22 @@ console.log(errors, "errors")
                 body: formData,
             });
 
-            console.log('Response received:', response);
+          
             const responseData = await response.json();
-            console.log('Response data:', responseData);
+          
 
             if (responseData.data.id) {
                 setValidationSuccess(true);
                 setValidationError(false);
                 setValidationSubscribedError(false);
-                alert('Message successfully sent');
+                console.log('Message successfully sent');
                 return false;
             
             } else {
                 setValidationSuccess(false);
                 setValidationError(true);
                 setValidationSubscribedError(response.status === 400);
-                alert('An error occurred, please try again later.');
+                console.log('An error occurred, please try again later.');
                  return false;
             }
         } catch (err) {
@@ -96,7 +93,7 @@ console.log(errors, "errors")
             setValidationSuccess(false);
             setValidationError(true);
             setValidationSubscribedError(false);
-            alert('An error occurred, please try again later.');
+            console.log('An error occurred, please try again later.');
         } finally {
             setLoading(false);
         }
@@ -105,12 +102,7 @@ console.log(errors, "errors")
     const validateFirstName = () => {
         if (blok?.required_first_name) {
             const hasError = !first_name.trim();
-            console.log(
-                'Validating first name:',
-                first_name,
-                'Error:',
-                hasError
-            );
+            
             setErrors((prevErrors) => ({
                 ...prevErrors,
                 first_name: hasError,
@@ -125,12 +117,7 @@ console.log(errors, "errors")
     const validateLastName = () => {
         if (blok?.required_last_name) {
             const hasError = !last_name.trim();
-             console.log(
-                 'Validating last name:',
-                 last_name,
-                 'Error:',
-                 hasError
-             );
+            
             setErrors((prevErrors) => ({
                 ...prevErrors,
                 last_name: hasError,
@@ -144,6 +131,7 @@ console.log(errors, "errors")
     };
 
     const validateEmail = () => {
+    
         if (blok?.required_email) {
             const valid = /\S+@\S+\.\S+/.test(email);
             setErrors((prevErrors) => ({
@@ -281,8 +269,7 @@ console.log(errors, "errors")
     
 
     const validateForm = async () => {
-        console.log(blok?.required_last_name, 'last_name');
-         console.log(blok?.required_email, 'required_email');
+      
       const newErrors = {
           first_name: blok?.required_first_name ? !first_name.trim() : false,
           last_name: blok?.required_last_name ? !last_name.trim() : false,
@@ -301,12 +288,12 @@ console.log(errors, "errors")
 
       
 
-      console.log('Errors found during form validation:', newErrors);
+    
       setErrors(newErrors);
-console.log('newErrors', newErrors);
+
       const isFormValid = !Object.values(newErrors).some((isError) => isError);
 
-      console.log('Form valid status:', isFormValid);
+    
 
       if (isFormValid) {
           console.log('Form is valid, sending form...');
@@ -319,12 +306,13 @@ console.log('newErrors', newErrors);
   };
 
 
-   const handleSubmit = async (event) => {
+   const handleSubmit = (event) => {
        event.preventDefault();
-       validateEmail()
-       const formIsValid = await validateForm();
+      
+       const formIsValid = validateForm();
+   
        if (!formIsValid) {
-           alert('Please correct the errors before submitting.');
+           console.log('Please correct the errors before submitting.');
        }
    };
 
@@ -335,7 +323,7 @@ console.log('newErrors', newErrors);
         >
             <SmallWidth>
                 <div className="col-span-12">
-                    <form className="relative" onSubmit={handleSubmit}>
+                    <form noValidate className="relative" onSubmit={(e) => handleSubmit(e) }>
                         <H2>{blok?.title}</H2>
                         <div className="relative z-0 w-full mb-5 group">
                             <label
@@ -445,11 +433,11 @@ console.log('newErrors', newErrors);
                                     required={
                                         blok?.required_last_name ? true : false
                                     }
-                                    onChange={(e) => {
-                                        setLastName(e.target.value);
-                                        validateLastName(e.target.value);
-                                    }}
-                                    onBlur={() => validateLastName(last_name)}
+                                    onChange={(e) => 
+                                        setLastName(e.target.value)
+                                     
+                                    }
+                                    onBlur={validateLastName}
                                 />
                                 <div
                                     className={`${errors.last_name ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}

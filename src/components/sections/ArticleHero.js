@@ -39,7 +39,7 @@ function ArticleHero({ block }) {
             <div className="mt-12">
                 <Lead>{block?.lead}</Lead>
             </div>
-            {block.image_optional && (
+            {block?.image_optional && (
                 <img
                     
                     src={block?.image.filename}
