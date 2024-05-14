@@ -125,7 +125,7 @@ const HeroCareer = ({ blok }) => {
                             </div>
                         </div>
                         <div className="">
-                            <ButtonPrimary href={`${ButtonUrlRenderer(blok.search_button_link)}?${urlQuery}`} buttonText={blok.search_button_text} />
+                            <ButtonPrimary href={`${ButtonUrlRenderer(blok?.search_button_link)}?${urlQuery}`} buttonText={blok.search_button_text} />
                         </div>
                     </form>
                 </div>
