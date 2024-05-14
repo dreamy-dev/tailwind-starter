@@ -59,12 +59,15 @@ console.log(story, "story")
         return {};
     }
 
-    const title = story.content?.seo?.title || story.name;
-    const description = story.content?.seo?.description;
-
+     const title = story.metatags.title;
+     const description = story.metatags.description;
+     const url = story.slug;
+  console.log(title, 'title');
+  console.log(description, 'description');
+  console.log(url, 'url');
     console.log(title, 'title');
     return {
-        metadataBase: new URL('https://yoursite.com/example'),
+        metadataBase: url,
         title: `${title} · Stadler`,
         description: description,
         robots: {
@@ -84,6 +87,10 @@ console.log(story, "story")
         },
     };
 }
+
+generateMetadata({ params: { slug: 'home', lang: 'en' } })
+    .then((metadata) => console.log(metadata))
+    .catch((error) => console.error(error));
 
 
 export default async function Homepage({ params, lang }) {

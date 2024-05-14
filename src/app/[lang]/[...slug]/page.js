@@ -84,14 +84,14 @@ export async function generateMetadata({ params }) {
     return {}
   }
 
-  const title = story.content?.seo?.title || story.name
-    const description = story.content?.seo?.description
+  const title = story.metatags.title
+    const description = story.metatags.description
+    const url = story.slug
     console.log(title, "title");
-     console.log(description, 'description');
+    console.log(description, 'description');
+    console.log(url, 'url');
   return {
-      metadataBase: new URL(
-          'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/'
-      ),
+      metadataBase: url,
       title: `${title} · Stadler`,
       description: description,
       robots: {
