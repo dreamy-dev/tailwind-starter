@@ -54,20 +54,20 @@ async function fetchData(slug, lang) {
 export async function generateMetadata({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const { story } = await fetchData(slug, params.lang);
-console.log(story, "story")
+   console.log(story, "story11111111111111111")
     if (!story) {
         return {};
     }
 
-     const title = story.metatags.title;
-     const description = story.metatags.description;
-     const url = story.slug;
-  console.log(title, 'title');
-  console.log(description, 'description');
-  console.log(url, 'url');
-    console.log(title, 'title');
+     const title = story.content.metatags.title;
+     const description = story.content.metatags.description;
+     const url = `./${story.slug}`;
+//   console.log(title, 'title');
+//   console.log(description, 'description');
+//   console.log(url, 'url');
+//     console.log(title, 'title');
     return {
-        metadataBase: url,
+        //metadataBase: url,
         title: `${title} · Stadler`,
         description: description,
         robots: {
