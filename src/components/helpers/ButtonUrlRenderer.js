@@ -1,4 +1,7 @@
 const ButtonUrlRenderer = (data) => {
+    if (!data) {
+        return "/"
+    }
     if (data.linktype && data.linktype == "story") {
         const anchor = data.anchor ? `#${data.anchor}` : ''
         return `/${data?.story?.full_slug}${anchor}` || "/"
