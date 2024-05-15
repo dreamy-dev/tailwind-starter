@@ -43,7 +43,7 @@ const LanguageSwitcher = () => {
             <button
                 type="button"
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
-                className="inline-flex items-center dark:text-gray-300 hover:bg-greySolid-30 hover:text-primary text-primarySolid-800 font-medium rounded-lg text-base px-2.5 lg:px-5 py-2.5 dark:hover:bg-gray-700 focus:outline-none "
+                className="inline-flex items-center dark:text-gray-300 hover:bg-greySolid-30 hover:text-primary text-primarySolid-800 font-medium rounded-lg text-base lg:px-5 py-2.5 dark:hover:bg-gray-700 focus:outline-none "
             >
                 {currentLocale == 'en' ? 'English' : 'Deutsch'}
                 <svg
