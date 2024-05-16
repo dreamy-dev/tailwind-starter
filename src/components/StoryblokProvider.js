@@ -109,6 +109,8 @@ import ProspectiveCareer from './sections/ProspectiveCareer';
 import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
 import ConfigFooter from './sections/Config_footer';
 import ConfigHeader from './sections/Config_header';
+import NotFoundError from './sections/NotFoundError';
+
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -223,7 +225,8 @@ storyblokInit({
         'career-prospective': ProspectiveCareer,
         simple_container_wrapper: SimpleContainerWrapper,
         config_footer: ConfigFooter,
-        config_header: ConfigHeader
+        config_header: ConfigHeader,
+        'error_404': NotFoundError,
     },
 });
 

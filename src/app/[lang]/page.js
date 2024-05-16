@@ -55,7 +55,7 @@ async function fetchData(slug, lang) {
               sbParams
           );
 
-          if (!data.story) return notFound();
+          if (!data.story) return redirect('/not-found');
 
           return {
               story: data.story,
@@ -64,7 +64,7 @@ async function fetchData(slug, lang) {
           };
       } catch (error) {
           console.error('Error fetching data:', error);
-          return notFound();
+          return redirect('/not-found');
       }
 }
 
@@ -78,7 +78,7 @@ export default async function Homepage({ params, lang }) {
     );
 
     if (!story) {
-        return notFound();
+        return redirect('/not-found');
     }
 
     return (
