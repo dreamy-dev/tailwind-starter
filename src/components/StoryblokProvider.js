@@ -109,7 +109,7 @@ import ProspectiveCareer from './sections/ProspectiveCareer';
 import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
 import ConfigFooter from './sections/Config_footer';
 import ConfigHeader from './sections/Config_header';
-
+import NotFoundError from './sections/NotFoundError';
 import MailchimpContact from './sections/MailchimpContact';
 
 storyblokInit({
@@ -226,7 +226,8 @@ storyblokInit({
         simple_container_wrapper: SimpleContainerWrapper,
         config_footer: ConfigFooter,
         config_header: ConfigHeader,
-        "contact-form-mailchimp": MailchimpContact
+        'contact-form-mailchimp': MailchimpContact,
+        'error_404': NotFoundError
     },
 });
 
