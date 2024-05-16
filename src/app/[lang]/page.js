@@ -1,5 +1,8 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
+import { notFound } from 'next/navigation';
+
+
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -38,17 +41,31 @@ async function fetchData(slug, lang) {
    
 
     const storyblokApi = getStoryblokApi();
-    const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
- let config_footer = await storyblokApi.get(
-     'cdn/stories/config-footer-new',
-     sbParams
- );
- let config_header = await storyblokApi.get(
-     'cdn/stories/config-header-new',
-     sbParams
- );
-    return { story: data.story, config_footer: config_footer.data.story,
-        config_header: config_header.data.story };
+      try {
+          const { data } = await storyblokApi.get(
+              `cdn/stories/${slug}`,
+              sbParams
+          );
+          const config_footer = await storyblokApi.get(
+              'cdn/stories/config-footer-new',
+              sbParams
+          );
+          const config_header = await storyblokApi.get(
+              'cdn/stories/config-header-new',
+              sbParams
+          );
+
+          if (!data.story) return notFound();
+
+          return {
+              story: data.story,
+              config_footer: config_footer.data.story,
+              config_header: config_header.data.story,
+          };
+      } catch (error) {
+          console.error('Error fetching data:', error);
+          return notFound();
+      }
 }
 
 
