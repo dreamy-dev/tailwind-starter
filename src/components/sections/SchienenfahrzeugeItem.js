@@ -16,9 +16,6 @@ const SchienenfahrzeugeItem = ({ blok }) => {
         return imageSource;
     };
 
-    {
-        console.log(blok, 'blok SchienenfahrzeugeItem');
-    }
     return (
         <div
             {...storyblokEditable(blok)}
