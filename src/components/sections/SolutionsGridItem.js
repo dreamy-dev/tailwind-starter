@@ -1,15 +1,18 @@
 'use client';
 
 import { storyblokEditable } from '@storyblok/react/rsc';
+import Link from 'next/link';
 import H3 from '../typography/H3';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const SolutionsGridItem = ({ blok }) => {
+    console.log(blok, "block")
     return (
         <div
             {...storyblokEditable(blok)}
             className="  bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 max-w-fit"
         >
-            <a href={blok.link.url}>
+            <Link href={ButtonUrlRenderer(blok?.link)}>
                 <img className="w-full" src={blok?.image.filename} alt="" />
 
                 <div className="p-4 lg:p-5">
@@ -18,7 +21,7 @@ const SolutionsGridItem = ({ blok }) => {
                     </div>
                     {blok?.text ? <p>{blok?.text}</p> : ''}
                 </div>
-            </a>
+            </Link>
         </div>
     );
 };
