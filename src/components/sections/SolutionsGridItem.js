@@ -6,7 +6,7 @@ import H3 from '../typography/H3';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const SolutionsGridItem = ({ blok }) => {
-    console.log(blok, "block")
+    console.log(blok, 'block');
     return (
         <div
             {...storyblokEditable(blok)}

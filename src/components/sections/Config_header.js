@@ -3,11 +3,9 @@ import Header from './Header';
 const ConfigHeader = ({ blok }) => {
     return (
         <>
-        
             <div {...storyblokEditable(blok)}>
                 {blok?.header.map((nestedBlok) => (
-                 
-                    <Header   
+                    <Header
                         className=""
                         blok={nestedBlok}
                         key={nestedBlok._uid}

@@ -3,7 +3,7 @@ import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import RichTextRenderer from '../../components/helpers/RichTextRenderer';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
- const NotFoundError = ({ blok }) => {
+const NotFoundError = ({ blok }) => {
     return (
         <section
             className="bg-white dark:bg-gray-900 py-28 h-full"
@@ -28,5 +28,5 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
             </div>
         </section>
     );
-}
-export default NotFoundError
+};
+export default NotFoundError;

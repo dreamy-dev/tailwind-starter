@@ -1,9 +1,7 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
- import { notFound } from 'next/navigation';
-
-
+import { notFound } from 'next/navigation';
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -40,28 +38,31 @@ async function fetchData(slug, lang) {
     };
 
     const storyblokApi = getStoryblokApi();
-   try {
-       const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-       const config_footer = await storyblokApi.get(
-           'cdn/stories/config-footer-new',
-           sbParams
-       );
-       const config_header = await storyblokApi.get(
-           'cdn/stories/config-header-new',
-           sbParams
-       );
+    try {
+        const { data } = await storyblokApi.get(
+            `cdn/stories/${slug}`,
+            sbParams
+        );
+        const config_footer = await storyblokApi.get(
+            'cdn/stories/config-footer-new',
+            sbParams
+        );
+        const config_header = await storyblokApi.get(
+            'cdn/stories/config-header-new',
+            sbParams
+        );
 
-       if (!data.story) return redirect("/not-found"); 
+        if (!data.story) return redirect('/not-found');
 
-       return {
-           story: data.story,
-           config_footer: config_footer.data.story,
-           config_header: config_header.data.story,
-       };
-   } catch (error) {
-       console.error('Error fetching data:', error);
-       return redirect('/not-found'); 
-   }
+        return {
+            story: data.story,
+            config_footer: config_footer.data.story,
+            config_header: config_header.data.story,
+        };
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return redirect('/not-found');
+    }
 }
 
 export async function generateStaticParams() {
@@ -84,15 +85,49 @@ export async function generateStaticParams() {
         paths.push({ slug: splittedSlug });
     });
 
-    return paths
-       
-    
+    return paths;
 }
+
+export async function generateMetadata({ params }) {
+    const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
+    const { story } = await fetchData(slug, params.lang);
+    if (!story) {
+        return redirect('/not-found');
+    }
+
+    const title = story.content.metatags.title;
+    const description = story.content.metatags.description;
+
+    return {
+        title: `${title} · Stadler`,
+        description: description,
+        robots: {
+            index: true,
+            follow: true,
+        },
+        openGraph: {
+            og_title: title,
+            og_description: description,
+            url: `/${story.slug}`,
+        },
+        twitter: {
+            card: 'summary',
+            twitter_title: title,
+            twitter_description: description,
+        },
+    };
+}
+
+generateMetadata({ params: { slug: 'home', lang: 'en' } })
+    .then((metadata) => console.log(metadata))
+    .catch((error) => console.error(error));
 
 export default async function Detailpage({ params, lang }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
-    const { story, config_footer, config_header} = await fetchData(slug, params.lang);
-
+    const { story, config_footer, config_header } = await fetchData(
+        slug,
+        params.lang
+    );
 
     if (!story) {
         return redirect('/not-found');
@@ -100,7 +135,11 @@ export default async function Detailpage({ params, lang }) {
 
     return (
         <>
-            <Layout lang={ lang} config_footer={config_footer} config_header={config_header}>
+            <Layout
+                lang={lang}
+                config_footer={config_footer}
+                config_header={config_header}
+            >
                 <StoryblokStory story={story} />
             </Layout>
         </>

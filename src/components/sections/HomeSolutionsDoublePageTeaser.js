@@ -3,7 +3,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import { ArrowForward } from '../icons/ArrowForward';
-import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer'
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (

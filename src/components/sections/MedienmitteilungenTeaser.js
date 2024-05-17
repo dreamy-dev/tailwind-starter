@@ -26,7 +26,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                 resolve_relations: 'medienmitteilungen.categories',
                 sort_by: 'content.date:desc',
                 per_page: 5,
-                language: currentLocale
+                language: currentLocale,
             });
 
             setMedienmitteilungen((prev) =>

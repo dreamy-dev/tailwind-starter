@@ -1,7 +1,6 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import CountUp from 'react-countup';
 
-
 const FactsAndFiguresItem = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>

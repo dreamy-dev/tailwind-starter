@@ -138,16 +138,17 @@ export function middleware(request) {
         // nothing should happen really, right? not sure...
     }
 
-
     // Geolocation logic for Offene Stellen page with Prospective integration
 
     if (request.nextUrl.pathname == '/en/career/offene-stellen') {
         switch (request.geo.country) {
             case 'CH':
                 if (userLocale.includes('fr')) {
-                    request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-fr';
+                    request.nextUrl.pathname =
+                        '/en/career/offene-stellen/offene-stellen-fr';
                 } else if (userLocale.includes('it')) {
-                    request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-it';
+                    request.nextUrl.pathname =
+                        '/en/career/offene-stellen/offene-stellen-it';
                 } else {
                     request.nextUrl.pathname = '/en/career/offene-stellen';
                 }
@@ -175,7 +176,8 @@ export function middleware(request) {
                 return NextResponse.rewrite(request.nextUrl); */
             case 'HU':
                 if (userLocale.includes('hu')) {
-                    request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-hu';
+                    request.nextUrl.pathname =
+                        '/en/career/offene-stellen/offene-stellen-hu';
                 } else {
                     request.nextUrl.pathname = '/en/career/offene-stellen';
                 }
@@ -197,7 +199,8 @@ export function middleware(request) {
                 return NextResponse.rewrite(request.nextUrl); */
             case 'CZ':
                 if (userLocale.includes('cz')) {
-                    request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-cz';
+                    request.nextUrl.pathname =
+                        '/en/career/offene-stellen/offene-stellen-cz';
                 } else {
                     request.nextUrl.pathname = '/en/career/offene-stellen';
                 }
@@ -212,7 +215,8 @@ export function middleware(request) {
                 return NextResponse.rewrite(request.nextUrl); */
             case 'IT':
                 if (userLocale.includes('it')) {
-                    request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-it';
+                    request.nextUrl.pathname =
+                        '/en/career/offene-stellen/offene-stellen-it';
                 } else {
                     request.nextUrl.pathname = '/en/career/offene-stellen';
                 }
@@ -226,7 +230,8 @@ export function middleware(request) {
                 return NextResponse.rewrite(request.nextUrl); */
             case 'SE':
                 if (userLocale.includes('se')) {
-                    request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-se';
+                    request.nextUrl.pathname =
+                        '/en/career/offene-stellen/offene-stellen-se';
                 } else {
                     request.nextUrl.pathname = '/en/career/offene-stellen';
                 }

@@ -16,7 +16,7 @@ const ReportsItem = ({ blok }) => {
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.cta_link.url} - ${blok?.title}`
+                `${blok?.cta_link.url} - ${blok?.title}`,
             ]);
         });
     });

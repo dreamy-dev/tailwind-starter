@@ -23,7 +23,10 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                 <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
                     <H3>{blok.title}</H3>
                     <Text>{blok.lead}</Text>
-                    <a className="flex mt-4" href={ButtonUrlRenderer(blok?.cta_link)}>
+                    <a
+                        className="flex mt-4"
+                        href={ButtonUrlRenderer(blok?.cta_link)}
+                    >
                         <img
                             className="h-5"
                             src="/stadler-arrow-foreward.svg"
@@ -41,10 +44,11 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                             {blok.wrapper.map((item, key) => (
                                 <div
                                     key={key}
-                                    className={`${selectedCategory === key
-                                        ? 'text-white'
-                                        : 'text-greyBrighten-600'
-                                        } font-semibold text-center lg:px-4 flex flex-col items-center cursor-pointer`}
+                                    className={`${
+                                        selectedCategory === key
+                                            ? 'text-white'
+                                            : 'text-greyBrighten-600'
+                                    } font-semibold text-center lg:px-4 flex flex-col items-center cursor-pointer`}
                                     onClick={() => (
                                         setIsOpen(
                                             selectedCategory === key &&
