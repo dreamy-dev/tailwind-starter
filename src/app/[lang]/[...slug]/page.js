@@ -84,14 +84,12 @@ export async function generateMetadata({ params }) {
     return {}
   }
 
-  const title = story.metatags.title
-    const description = story.metatags.description
-    const url = story.slug
-    console.log(title, "title");
-    console.log(description, 'description');
-    console.log(url, 'url');
+  const title = story.content.metatags.title
+    const description = story.content.metatags.description
+
+
   return {
-      metadataBase: url,
+
       title: `${title} · Stadler`,
       description: description,
       robots: {

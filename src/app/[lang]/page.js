@@ -1,6 +1,7 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
 
+
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
 
@@ -60,14 +61,11 @@ export async function generateMetadata({ params }) {
     }
 
      const title = story.content.metatags.title;
-     const description = story.content.metatags.description;
-     const url = `./${story.slug}`;
-//   console.log(title, 'title');
-//   console.log(description, 'description');
-//   console.log(url, 'url');
-//     console.log(title, 'title');
+    const description = story.content.metatags.description;
+
+
     return {
-        //metadataBase: url,
+    
         title: `${title} · Stadler`,
         description: description,
         robots: {
