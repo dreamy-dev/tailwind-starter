@@ -12,8 +12,8 @@ const ButtonUrlRenderer = (data) => {
     if (data.linktype && data.fieldtype == "asset") {
         return data?.filename
     }
-    if (data.linktype && data.linktype == "asset") {
-
+    if (data.fieldtype && data.fieldtype == "asset") {
+        return data?.filename
     }
     if (data.linktype && data.linktype == "email") {
 
