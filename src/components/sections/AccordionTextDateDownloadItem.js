@@ -1,6 +1,37 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
+import { useEffect, useRef } from 'react';
 
 const AccordionTextDateDownloadItem = ({ blok }) => {
+    const investorsDE = useRef();
+    const investorsEN = useRef();
+
+    useEffect(() => {
+        let investorsDEreference = investorsDE.current;
+        let investorsENreference = investorsEN.current;
+
+        investorsDEreference?.addEventListener('click', () => {
+            var _paq = (window._paq = window._paq || []);
+            _paq.push([
+                'trackEvent',
+                'Investor Relations Publication',
+                `${blok?.title} - ${blok?.download_bericht.url}`
+            ]);
+            // _paq.push([
+            //     'trackGoal',
+            //     'Goal ID',
+            //     `${blok?.title} - ${blok?.download_bericht.url}`
+            // ]);
+        });
+
+        investorsENreference?.addEventListener('click', () => {
+            var _paq = (window._paq = window._paq || []);
+            _paq.push([
+                'trackEvent',
+                'Investor Relations Publication',
+                `${blok?.title} - ${blok?.download_presentation.url}`
+            ]);
+        });
+    });
     return (
         <tr
             {...storyblokEditable(blok)}
@@ -9,12 +40,17 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             <td className="px-6 py-4 font-bold">{blok?.title}</td>
             <td className="px-6 py-4 ">{blok?.text_date}</td>
             <td className="px-6 py-4  text-center">
-                <a className="text-primary" href={blok?.download_bericht.url}>
+                <a
+                    target='_blank'
+                    ref={investorsDE}
+                    className="text-primary" href={blok?.download_bericht.url}>
                     {blok?.CTA_download_bericht}
                 </a>
             </td>
-            <td className="px-6 py-4   text-center">
+            <td className="px-6 py-4 text-center">
                 <a
+                    target='_blank'
+                    ref={investorsEN}
                     className="text-primary"
                     href={blok?.download_presentation.url}
                 >
