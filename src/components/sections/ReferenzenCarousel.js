@@ -65,7 +65,6 @@ const TestimonialsCarousel = ({ blok }) => {
     const [highlightsCategory, setHighlightsCategory] = useState([]);
     const [reference, setReference] = useState([]);
 
-
     useEffect(() => {
         const getArticles = async () => {
             const arrayHighlight = [];
@@ -74,25 +73,21 @@ const TestimonialsCarousel = ({ blok }) => {
             });
 
             const highlightReference = arrayHighlight.join(',');
-           
+
             const storyblokApi = getStoryblokApi();
-            const { data } = await storyblokApi.get(
-                `cdn/stories`,
-                {
-                    version: 'published',
-                    starts_with: "loesungen/",
-                    is_startpage: false,
-                    'filter_query[categories][any_in_array]':
-                        highlightReference,
-                    per_page: 5,
-                }
-            );
-            console.log(data, "data")
-           
+            const { data } = await storyblokApi.get(`cdn/stories`, {
+                version: 'published',
+                starts_with: 'loesungen/',
+                is_startpage: false,
+                'filter_query[categories][any_in_array]': highlightReference,
+                per_page: 5,
+            });
+            console.log(data, 'data');
+
             setHighlightsCategory((prev) =>
                 data.stories.map((article) => {
                     article.content.slug = article.slug;
-                 
+
                     return article;
                 })
             );
@@ -115,7 +110,6 @@ const TestimonialsCarousel = ({ blok }) => {
                 starts_with: 'loesungen/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': references,
-                
             });
 
             setReference((prev) =>

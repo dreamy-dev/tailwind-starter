@@ -14,7 +14,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.title} - ${blok?.download_bericht.url}`
+                `${blok?.title} - ${blok?.download_bericht.url}`,
             ]);
             // _paq.push([
             //     'trackGoal',
@@ -28,7 +28,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.title} - ${blok?.download_presentation.url}`
+                `${blok?.title} - ${blok?.download_presentation.url}`,
             ]);
         });
     });
@@ -41,15 +41,17 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             <td className="px-6 py-4 ">{blok?.text_date}</td>
             <td className="px-6 py-4  text-center">
                 <a
-                    target='_blank'
+                    target="_blank"
                     ref={investorsDE}
-                    className="text-primary" href={blok?.download_bericht.url}>
+                    className="text-primary"
+                    href={blok?.download_bericht.url}
+                >
                     {blok?.CTA_download_bericht}
                 </a>
             </td>
             <td className="px-6 py-4 text-center">
                 <a
-                    target='_blank'
+                    target="_blank"
                     ref={investorsEN}
                     className="text-primary"
                     href={blok?.download_presentation.url}

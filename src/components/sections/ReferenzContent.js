@@ -48,7 +48,6 @@ function ReferenzContent({ blok }) {
             <SuperSmallWidth>
                 <div>
                     <RichTextRenderer text={blok?.text} />
-                
                 </div>
             </SuperSmallWidth>
             {blok.news_blocks.map((nestedBlok) => (

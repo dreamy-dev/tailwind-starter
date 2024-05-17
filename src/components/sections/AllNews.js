@@ -24,7 +24,7 @@ function AllNews({ blok }) {
         is_startpage: false,
         resolve_relations: 'news.categories',
         sort_by: 'content.date:desc',
-        language: currentLocale
+        language: currentLocale,
     };
     const onSearchChange = (e) => {
         setSearch(e.target.value);

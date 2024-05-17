@@ -1,7 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../../components/typography/H3';
 import ContentWidth from '../layouts/ContentWidth';
-import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer'
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const Features = ({ blok }) => {
     return (

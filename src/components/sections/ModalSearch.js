@@ -14,7 +14,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     const inputRef = useRef(null);
 
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
-    
+
     const apiRequest = {
         version: 'published',
         resolve_links: 'url',
@@ -50,7 +50,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                 return heroSubpage.title;
             }
         }
-        return article.name; 
+        return article.name;
     };
 
     const getArticles = async (filterSearchRequest = {}) => {
@@ -84,7 +84,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
             setArticles(
                 filteredArticles.map((article) => ({
                     ...article,
-                    displayTitle: determineTitle(article), 
+                    displayTitle: determineTitle(article),
                 }))
             );
         } else {
@@ -167,12 +167,9 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                                 onClick={() => handleArticleClick(article)}
                                 className="group transition-all cursor-pointer hover:bg-gray-100"
                             >
-                             
-                              
                                 <h2 className="p-4 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
                                     {article.displayTitle}
                                 </h2>
-                            
                             </div>
                         ))}
                     </div>

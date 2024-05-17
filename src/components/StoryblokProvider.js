@@ -111,7 +111,6 @@ import ConfigFooter from './sections/Config_footer';
 import ConfigHeader from './sections/Config_header';
 import NotFoundError from './sections/NotFoundError';
 
-
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
@@ -226,7 +225,7 @@ storyblokInit({
         simple_container_wrapper: SimpleContainerWrapper,
         config_footer: ConfigFooter,
         config_header: ConfigHeader,
-        'error_404': NotFoundError,
+        error_404: NotFoundError,
     },
 });
 

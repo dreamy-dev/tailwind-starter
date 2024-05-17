@@ -152,9 +152,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         ' overflow-x-hidden flex flex-col min-h-screen'
                     }
                 >
-
                     <main>{children}</main>
-
                 </body>
             </html>
         </StoryblokProvider>

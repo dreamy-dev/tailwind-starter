@@ -7,7 +7,11 @@ const useScrollImageSequenceFramerCanvas = ({ onDraw, keyframes }) => {
     const resizeCanvas = useCallback(() => {
         const canvas = canvasRef.current;
         canvas.width = window.innerWidth;
-        canvas.height = (window.innerWidth / 2.35) < (window.innerHeight - window.innerHeight / 4) ? (window.innerWidth / 2.35) : (window.innerHeight - window.innerHeight / 4);
+        canvas.height =
+            window.innerWidth / 2.35 <
+            window.innerHeight - window.innerHeight / 4
+                ? window.innerWidth / 2.35
+                : window.innerHeight - window.innerHeight / 4;
         console.log(
             'window',
             window.innerHeight - window.innerHeight / 4,
@@ -47,7 +51,6 @@ const useScrollImageSequenceFramerCanvas = ({ onDraw, keyframes }) => {
 
     useEffect(() => {
         onDraw(keyframes[0], canvasRef.current.getContext('2d'));
-
     }, []);
 
     //  useMotionValueEvent(progress, 'change', renderImage);

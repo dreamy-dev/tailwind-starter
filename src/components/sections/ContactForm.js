@@ -129,15 +129,14 @@ export default function ContactForm({ blok }) {
             street: hasError,
         }));
     };
-const validateNumber = (value) => {
- 
-    const hasError = blok?.required_number && value === '';
-    setErrors((prevErrors) => ({
-        ...prevErrors,
-        number: hasError,
-    }));
-    setNumber(value)
-};
+    const validateNumber = (value) => {
+        const hasError = blok?.required_number && value === '';
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            number: hasError,
+        }));
+        setNumber(value);
+    };
 
     const validateZip = () => {
         const hasError = blok?.required_zip && !zip.trim();
@@ -571,9 +570,9 @@ const validateNumber = (value) => {
                                 placeholder=""
                                 required={blok?.required_message ? true : false}
                                 onChange={(e) => {
-                                    validateMessage()
+                                    validateMessage();
                                     setMessage(e.target.value);
-                                } }
+                                }}
                                 onBlur={validateMessage}
                                 className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
