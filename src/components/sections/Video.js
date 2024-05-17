@@ -4,6 +4,7 @@ import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import Text from '../typography/Text';
 import FullWidth from '../layouts/FullWidth';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function Video({ blok }) {
     return (
@@ -35,6 +36,7 @@ export default function Video({ blok }) {
 
                         <div className="mt-6">
                             <ButtonPrimary
+                                href={ButtonUrlRenderer(blok?.cta_link)}
                                 buttonText={blok?.cta_text}
                                 position="left"
                             />
