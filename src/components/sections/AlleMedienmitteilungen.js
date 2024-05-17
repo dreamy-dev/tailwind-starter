@@ -232,7 +232,7 @@ function AlleMedienmitteilungen({ blok }) {
                                             />
                                         </a>
                                     </div>
-                                    <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
+                                    <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 pt-4 pb-3 font-medium text-black">
                                         {medienmitteilung.content.categories.map(
                                             (category, index) => (
                                                 <span
