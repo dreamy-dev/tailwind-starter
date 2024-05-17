@@ -39,11 +39,14 @@ function ArticleHero({ block }) {
             <div className="mt-12">
                 <Lead>{block?.lead}</Lead>
             </div>
-            <img
-                src={block?.image?.filename}
-                className="w-full my-8"
-                alt="full service"
-            />
+            {block?.image_optional && (
+                <img
+                    
+                    src={block?.image.filename}
+                    className="w-full my-8"
+                    alt="full service"
+                />
+            )}
         </SuperSmallWidth>
     );
 }

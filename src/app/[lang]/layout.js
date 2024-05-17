@@ -121,13 +121,12 @@ export default function RootLayout({ children, params: { lang } }) {
                 <head>
                     <Script>
                         {`
-            console.log("Matomo test with Storyblok")
-            var _mtm = window._mtm = window._mtm || [];
-              _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-              (function() {
+             var _mtm = window._mtm = window._mtm || [];
+            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+            (function() {
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src='https://matomo.gateb.com/js/container_9iU2twN3.js'; s.parentNode.insertBefore(g,s);
-              })();
+                g.async=true; g.src='https://cdn.matomo.cloud/etkstadlerrailcom.matomo.cloud/container_PFGEOIW5.js'; s.parentNode.insertBefore(g,s);
+            })();
               `}
                     </Script>
                     {/* <Script
