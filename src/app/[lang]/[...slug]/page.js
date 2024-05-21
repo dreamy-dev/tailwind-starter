@@ -90,13 +90,16 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
     const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
-    const { story } = await fetchData(slug, params.lang);
-    if (!story) {
+    const lang = params.lang || 'en';
+    const data = await fetchData(slug, lang);
+    if (!data || !data.story) {
         return redirect('/not-found');
     }
 
-    const title = story.content.metatags.title;
-    const description = story.content.metatags.description;
+    const { story } = data;
+    const metatags = story.content.metatags || {};
+    const title = metatags.title || 'Default Title';
+    const description = metatags.description || 'Default Description';
 
     return {
         title: `${title} · Stadler`,
@@ -122,26 +125,26 @@ generateMetadata({ params: { slug: 'home', lang: 'en' } })
     .then((metadata) => console.log(metadata))
     .catch((error) => console.error(error));
 
-export default async function Detailpage({ params, lang }) {
-    const slug = params?.slug ? params.slug.join('/') : 'home';
-    const { story, config_footer, config_header } = await fetchData(
-        slug,
-        params.lang
-    );
 
-    if (!story) {
+
+export default async function Detailpage({ params }) {
+    const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
+    const lang = params.lang || 'en';
+    const data = await fetchData(slug, lang);
+
+    if (!data || !data.story) {
         return redirect('/not-found');
     }
 
+    const { story, config_footer, config_header } = data;
+
     return (
-        <>
-            <Layout
-                lang={lang}
-                config_footer={config_footer}
-                config_header={config_header}
-            >
-                <StoryblokStory story={story} />
-            </Layout>
-        </>
+        <Layout
+            lang={lang}
+            config_footer={config_footer}
+            config_header={config_header}
+        >
+            <StoryblokStory story={story} />
+        </Layout>
     );
 }

@@ -65,14 +65,16 @@ async function fetchData(slug, lang) {
 
 export async function generateMetadata({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
-    const { story } = await fetchData(slug, params.lang);
+    const lang = params.lang || 'en';
+    const { story } = await fetchData(slug, lang);
 
     if (!story) {
         return redirect('/not-found');
     }
 
-    const title = story.content.metatags.title;
-    const description = story.content.metatags.description;
+   const metatags = story.content.metatags || {};
+   const title = metatags.title || 'Default Title';
+   const description = metatags.description || 'Default Description';
 
     return {
         title: `${title} · Stadler`,
@@ -98,11 +100,12 @@ generateMetadata({ params: { slug: 'home', lang: 'en' } })
     .then((metadata) => console.log(metadata))
     .catch((error) => console.error(error));
 
-export default async function Homepage({ params, lang }) {
+export default async function Homepage({ params }) {
     const slug = 'home';
+    const lang = params.lang || 'en';
     const { story, config_footer, config_header } = await fetchData(
         slug,
-        params.lang
+        lang
     );
 
     if (!story) {
