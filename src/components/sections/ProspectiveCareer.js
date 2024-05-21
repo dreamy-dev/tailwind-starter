@@ -1,5 +1,5 @@
 import { useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H4 from '../typography/H4';
@@ -27,6 +27,29 @@ const ProspectiveCareer = ({ blok }) => {
     const [isDataLoading, setIsDataLoading] = useState(true);
     const searchParams = useSearchParams()
     const currentLocale = useCurrentLocale(i18nConfig);
+
+    const jobClick = useRef();
+
+    let jobClickReference = jobClick.current;
+
+    useEffect(() => {
+        jobClickReference?.addEventListener('click', (e) => {
+            if (e.target.closest("a")) {
+                const careerLink = e.target.closest("a")?.getAttribute("href")
+                const careerTitle = e.target.closest("a")?.querySelector("h4")?.innerHTML
+                var _paq = (window._paq = window._paq || []);
+                _paq.push([
+                    'trackEvent',
+                    'Job Overview Engagement',
+                    `${careerTitle} - ${careerLink}`
+                ]);
+                console.log("jobClickReference", careerLink, careerTitle)
+            }
+        });
+    }, []);
+
+
+
 
     // function to get all the jobs (with possible filters and search query) via server function in next
     const getJobs = async (filter = '', search = '') => {
@@ -506,7 +529,8 @@ const ProspectiveCareer = ({ blok }) => {
                 </div>
                 <div className="grid col-span-12">
                     <H3>{blok.subtitle}</H3>
-                    <div className="divide-y">
+                    <div className="divide-y"
+                        ref={jobClick}>
                         {isDataLoading ? <Loader /> : jobs?.map((item, key) => (
                             <a key={key} href={item.links.directlink} target="_blank" className="block py-4 hover:cursor-pointer hover:text-primary">
                                 <H4>{item.title}</H4>
