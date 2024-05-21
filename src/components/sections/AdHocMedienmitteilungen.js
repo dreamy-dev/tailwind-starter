@@ -65,7 +65,7 @@ function AdHocMedienmitteilungen({ blok }) {
                                 <div className="mb-1 mt-4 flex flex-wrap">
                                     {article.content.categories.map(
                                         (category, index) => (
-                                            <span
+                                            category.full_slug.includes("categories/medienmitteilungen") && <span
                                                 key={index}
                                                 className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
                                             >
