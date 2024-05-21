@@ -14,6 +14,7 @@ const nextConfig = {
             '@react-email/tailwind',
         ],
     },
+   
 };
 
 module.exports = nextConfig;
