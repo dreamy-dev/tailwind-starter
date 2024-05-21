@@ -82,16 +82,20 @@ export default async function sitemap({ params }) {
           
         });
 
-        console.log(data, 'data sitemap');
+        // console.log(data, 'data sitemap');
+      console.log(data.links, 'data sitemap');
         //const lang = params.lang || 'en';
         const BaseUrl =
             'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/';
          const paths = [];
         Object.keys(data.links).map((id) => {
-             console.log(id, "linkKeyID");
-             const real_path = data.links[id].real_path;
-             paths.push({ real_path: real_path });
-             console.log(paths, "paths")
+            //  console.log(id, "linkKeyID");
+             const real_path = data.links[id].slug;
+            paths.push({ url: real_path });
+          
+          
+            console.log(paths, "paths")
+            return paths
          });
 
         return [
@@ -104,11 +108,13 @@ export default async function sitemap({ params }) {
                     },
                 },
             },
-            ...paths,
+            ...paths
         ];
       
     } catch (error) {
         console.error('Error fetching data from Storyblok API:', error);
     }
 }
+
+
 
