@@ -93,7 +93,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                         <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
                                             {item.content.categories.map(
                                                 (category, index) => (
-                                                    <span
+                                                    category.full_slug.includes("categories/medienmitteilungen") && <span
                                                         key={index}
                                                         className=" inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0 lg:whitespace-nowrap"
                                                     >
