@@ -14,7 +14,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     const inputRef = useRef(null);
 
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
-    
+
     const apiRequest = {
         version: 'published',
         resolve_links: 'url',
@@ -40,7 +40,9 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
             return article.content.title;
         } else if (article.content.body) {
             const heroSubpage = article.content.body.find(
-                (item) => item.component === 'hero-subpage'
+                (item) =>
+                    item.component === 'hero-subpage' ||
+                    item.component === 'hero-careerpage'
             );
             if (
                 heroSubpage &&
@@ -50,7 +52,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                 return heroSubpage.title;
             }
         }
-        return article.name; 
+        return null;
     };
 
     const getArticles = async (filterSearchRequest = {}) => {
@@ -69,6 +71,26 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                 'page',
                 'header',
                 'footer',
+                'not-found',
+                'datasheet',
+                'download-section',
+                'test-global-content',
+                'medienmitteilungen',
+                'news',
+                'referenzen',
+                'no-no',
+                'se-se',
+                'nl-nl',
+                'it-it',
+                'gb-en',
+                'at-de',
+                'cz-cz',
+                'kz-ru',
+                'by-ru',
+                'hu-hu',
+                'us-en',
+                'de-de',
+                'ch',
             ];
             const filteredArticles = data.stories.filter(
                 (article) =>
@@ -76,6 +98,10 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                     !article.full_slug.includes('/categories/') &&
                     !article.full_slug.startsWith('global/') &&
                     !article.full_slug.includes('/global') &&
+                    !article.full_slug.includes('not-found') &&
+                    !article.full_slug.includes('news') &&
+                    !article.full_slug.includes('download-section') &&
+                    !article.full_slug.includes('datasheet') &&
                     !excludedKeywords.some((keyword) =>
                         article.name.includes(keyword)
                     )
@@ -84,7 +110,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
             setArticles(
                 filteredArticles.map((article) => ({
                     ...article,
-                    displayTitle: determineTitle(article), 
+                    displayTitle: determineTitle(article),
                 }))
             );
         } else {
@@ -167,12 +193,9 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                                 onClick={() => handleArticleClick(article)}
                                 className="group transition-all cursor-pointer hover:bg-gray-100"
                             >
-                             
-                              
                                 <h2 className="p-4 text-base font-normal leading-tight text-gray-900 group-hover:text-primary transition-all">
                                     {article.displayTitle}
                                 </h2>
-                            
                             </div>
                         ))}
                     </div>

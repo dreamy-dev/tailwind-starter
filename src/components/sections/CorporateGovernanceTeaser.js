@@ -22,4 +22,3 @@ const CorporateGovernanceTeaser = ({ blok }) => {
     );
 };
 export default CorporateGovernanceTeaser;
-

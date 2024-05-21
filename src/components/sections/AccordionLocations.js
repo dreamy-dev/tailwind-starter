@@ -81,20 +81,19 @@ const AccordionLocations = ({ blok }) => {
                                 <div className="mb-4 flex justify-start items-center">
                                     <PhoneIcon color="#000" />
                                     <span className="ml-4">
-                                        {' '}
                                         {blok?.phonenumber}
                                     </span>
                                 </div>
 
                                 <div className="flex mb-4 justify-start items-center">
                                     <MailIcon className="fill-blueDark" />
-                                    <span className="ml-4"> {blok?.email}</span>
+                                    <span className="ml-4">{blok?.email}</span>
                                 </div>
 
                                 <div className="mb-2 flex justify-start items-center text-primary">
                                     <PinIcon />
                                     <a
-                                        className=""
+                                        className="cursor-pointer"
                                         href={blok?.link_google_maps?.url}
                                     >
                                         <span className="ml-2">

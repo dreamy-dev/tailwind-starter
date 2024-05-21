@@ -21,7 +21,9 @@ const TeaserImageRight = ({ blok }) => {
                                 <ButtonPrimary
                                     position="left"
                                     buttonText={blok?.cta_button_text}
-                                    href={ButtonUrlRenderer(blok?.cta_button_link)}
+                                    href={ButtonUrlRenderer(
+                                        blok?.cta_button_link
+                                    )}
                                 />
                             </div>
                         </div>

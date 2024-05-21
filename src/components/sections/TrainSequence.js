@@ -35,15 +35,20 @@ const handleDrawCanvas = (img, ctx) => {
 const ImageSequence = ({ category }) => {
     let imageWidth;
     let imageFormat;
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
         // imageWidth = "carousel_final_1728_webp"
         // console.log("imageWidth.split", imageWidth.split("_")[imageWidth.split("_").length - 1])
-        imageWidth = window?.innerWidth > 1740 ? "carousel_final_1728_webp" : window?.innerWidth > 600 ? "carousel_final_1440_webp" : "carousel_final_600_png"
+        imageWidth =
+            window?.innerWidth > 1740
+                ? 'carousel_final_1728_webp'
+                : window?.innerWidth > 600
+                  ? 'carousel_final_1440_webp'
+                  : 'carousel_final_600_png';
 
-        imageFormat = imageWidth.split("_")[imageWidth.split("_").length - 1]
+        imageFormat = imageWidth.split('_')[imageWidth.split('_').length - 1];
     } else {
-        imageWidth = "carousel_final_1728_webp"
-        imageFormat = "webp"
+        imageWidth = 'carousel_final_1728_webp';
+        imageFormat = 'webp';
     }
 
     const keyframes = useMemo(

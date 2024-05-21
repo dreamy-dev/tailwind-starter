@@ -26,7 +26,7 @@ function AlleMedienmitteilungen({ blok }) {
         is_startpage: false,
         resolve_relations: ['medienmitteilungen.categories'],
         sort_by: 'content.date:desc',
-        language: currentLocale
+        language: currentLocale,
     };
 
     const onSearchChange = (e) => {

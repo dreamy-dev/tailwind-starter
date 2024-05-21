@@ -6,7 +6,6 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import Link from 'next/link';
 
 const SchienenfahrzeugeItem = ({ blok }) => {
-
     const optimizeImage = (image) => {
         if (!image || !image.filename) return null;
 
@@ -17,7 +16,6 @@ const SchienenfahrzeugeItem = ({ blok }) => {
         return imageSource;
     };
 
-    {console.log(blok, 'blok SchienenfahrzeugeItem');}
     return (
         <div
             {...storyblokEditable(blok)}

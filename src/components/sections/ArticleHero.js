@@ -41,7 +41,6 @@ function ArticleHero({ block }) {
             </div>
             {block?.image_optional && (
                 <img
-                    
                     src={block?.image.filename}
                     className="w-full my-8"
                     alt="full service"

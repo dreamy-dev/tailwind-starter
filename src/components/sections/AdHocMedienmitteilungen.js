@@ -28,7 +28,7 @@ function AdHocMedienmitteilungen({ blok }) {
                 resolve_relations: 'medienmitteilungen.categories',
                 sort_by: 'content.date:desc',
                 per_page: 4,
-                language: currentLocale
+                language: currentLocale,
             });
 
             setArticles((prev) =>

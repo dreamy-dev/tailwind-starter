@@ -5,9 +5,7 @@ import H2 from '../typography/H2';
 import H3 from '../typography/H3';
 import { useState, useEffect } from 'react';
 import RichTextRenderer from '../helpers/RichTextRenderer';
-import {
-    render,
-} from 'storyblok-rich-text-react-renderer';
+import { render } from 'storyblok-rich-text-react-renderer';
 
 export default function MailchimpEmbed({ blok }) {
     const [email, setEmail] = useState('');
@@ -16,12 +14,18 @@ export default function MailchimpEmbed({ blok }) {
     const [company, setCompany] = useState('');
     const [isSelected, setSelection] = useState(false);
     const [validationError, setValidationError] = useState(false);
-    const [validationSubscribedError, setValidationSubscribedError] = useState(false);
+    const [validationSubscribedError, setValidationSubscribedError] =
+        useState(false);
     const [validationSuccess, setValidationSuccess] = useState(false);
-    const [errors, setErrors] = useState({ email: false, firstName: false, lastName: false, company: false, isSelected: false });
+    const [errors, setErrors] = useState({
+        email: false,
+        firstName: false,
+        lastName: false,
+        company: false,
+        isSelected: false,
+    });
 
     const subscribeUser = async () => {
-
         const url = `../api/mailchimp-subscribe?email=${email}&firma=${company}&firstName=${firstName}&lastName=${lastName}`;
 
         const checkConnection = await fetch(url, {
@@ -29,31 +33,29 @@ export default function MailchimpEmbed({ blok }) {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-            }
+            },
         });
-        const attributes = await checkConnection.json()
+        const attributes = await checkConnection.json();
 
-        if (attributes.status == "subscribed") {
-            setValidationSuccess(true)
-            setValidationError(false)
-            setValidationSubscribedError(false)
-            return false
-        }
-        else if (attributes.status == 400) {
-            setValidationSuccess(false)
-            setValidationError(true)
-            setValidationSubscribedError(true)
-            return false
-        }
-        else if (attributes.status) {
-            setValidationSuccess(false)
-            setValidationError(true)
-            setValidationSubscribedError(false)
-            return false
+        if (attributes.status == 'subscribed') {
+            setValidationSuccess(true);
+            setValidationError(false);
+            setValidationSubscribedError(false);
+            return false;
+        } else if (attributes.status == 400) {
+            setValidationSuccess(false);
+            setValidationError(true);
+            setValidationSubscribedError(true);
+            return false;
+        } else if (attributes.status) {
+            setValidationSuccess(false);
+            setValidationError(true);
+            setValidationSubscribedError(false);
+            return false;
         } else {
-            setValidationSuccess(false)
-            setValidationError(true)
-            setValidationSubscribedError(false)
+            setValidationSuccess(false);
+            setValidationError(true);
+            setValidationSubscribedError(false);
         }
     };
 
@@ -63,14 +65,14 @@ export default function MailchimpEmbed({ blok }) {
         } else {
             setErrors({ ...errors, firstName: false });
         }
-    }
+    };
     const validateLastName = () => {
         if (!lastName) {
             setErrors({ ...errors, lastName: true });
         } else {
             setErrors({ ...errors, lastName: false });
         }
-    }
+    };
     const validateEmail = () => {
         if (!email) {
             setErrors({ ...errors, email: true });
@@ -79,24 +81,30 @@ export default function MailchimpEmbed({ blok }) {
         } else {
             setErrors({ ...errors, email: false });
         }
-    }
+    };
     const validateCompany = () => {
         if (!company) {
             setErrors({ ...errors, company: true });
         } else {
             setErrors({ ...errors, company: false });
         }
-    }
+    };
     const validateCheckbox = (value) => {
         if (value) {
             setErrors({ ...errors, isSelected: true });
         } else {
             setErrors({ ...errors, isSelected: false });
         }
-    }
+    };
 
     const validateForm = () => {
-        let errors = { email: false, firstName: false, lastName: false, company: false, isSelected: false }
+        let errors = {
+            email: false,
+            firstName: false,
+            lastName: false,
+            company: false,
+            isSelected: false,
+        };
         if (!firstName) {
             errors = { ...errors, firstName: true };
         }
@@ -116,12 +124,12 @@ export default function MailchimpEmbed({ blok }) {
         }
         setErrors({ ...errors });
         if (Object.values(errors).includes(true)) {
-            return false
+            return false;
         } else {
-            subscribeUser()
+            subscribeUser();
         }
     };
-    // Submit 
+    // Submit
     const handleSubmit = () => {
         validateForm();
     };

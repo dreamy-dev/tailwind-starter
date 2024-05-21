@@ -35,7 +35,7 @@ export default function VideoFullWidth({ blok }) {
     }, [playing]);
 
     function isScrolledIntoView(elem) {
-           if (!elem) return false;
+        if (!elem) return false;
         var rect = elem.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;

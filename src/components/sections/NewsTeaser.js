@@ -29,7 +29,7 @@ function NewsTeaser({ blok }) {
                 'filter_query[categories][any_in_array]': categories,
                 sort_by: 'content.date:desc',
                 per_page: 4,
-                language: currentLocale
+                language: currentLocale,
             });
 
             setArticlesCategory(() =>
