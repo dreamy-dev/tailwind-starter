@@ -831,11 +831,11 @@ const ProspectiveCareer = ({ blok }) => {
                                 </option>
                                 {dependentField &&
                                     attributes[
-                                        Object.keys(dependentFilter)[0]
+                                    Object.keys(dependentFilter)[0]
                                     ] &&
                                     Object.values(
                                         attributes[
-                                            Object.keys(dependentFilter)[0]
+                                        Object.keys(dependentFilter)[0]
                                         ]
                                     ).map((value) => {
                                         return (
@@ -870,9 +870,10 @@ const ProspectiveCareer = ({ blok }) => {
                                         <p>{item.szas["sza_location.city"]}, {item.szas["sza_location.country"]}</p>
 
                                     </div>
-                                </a>
-                            ))
-                        )}
+                                </div>
+                            </a>
+                        ))
+                        }
                     </div>
                 </div>
             </SmallWidth>
