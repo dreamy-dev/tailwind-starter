@@ -64,17 +64,18 @@ async function fetchData(slug, lang) {
 }
 
 export async function generateMetadata({ params }) {
-    const slug = params?.slug ? params.slug.join('/') : 'home';
+    const slug = params?.slug || 'home';
     const lang = params.lang || 'en';
+    
     const { story } = await fetchData(slug, lang);
 
     if (!story) {
         return redirect('/not-found');
     }
 
-   const metatags = story.content.metatags || {};
-   const title = metatags.title || 'Default Title';
-   const description = metatags.description || 'Default Description';
+    const metatags = story.content.metatags || {};
+    const title = metatags.title || 'Default Title';
+    const description = metatags.description || 'Default Description';
 
     return {
         title: `${title} · Stadler`,
@@ -103,10 +104,7 @@ generateMetadata({ params: { slug: 'home', lang: 'en' } })
 export default async function Homepage({ params }) {
     const slug = 'home';
     const lang = params.lang || 'en';
-    const { story, config_footer, config_header } = await fetchData(
-        slug,
-        lang
-    );
+    const { story, config_footer, config_header } = await fetchData(slug, lang);
 
     if (!story) {
         return redirect('/not-found');
