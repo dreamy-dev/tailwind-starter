@@ -41,7 +41,8 @@ export default async function sitemap() {
 
      
 
-        const BaseUrl = 'https://test/';
+        const BaseUrl =
+            'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/';
         const paths = [];
         const langToFilter = ['en', 'de'];
 

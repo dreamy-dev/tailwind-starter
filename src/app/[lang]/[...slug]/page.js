@@ -1,7 +1,16 @@
-import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import {
+    getStoryblokApi,
+    StoryblokStory,
+    apiPlugin,
+    storyblokInit,
+} from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
-import { notFound } from 'next/navigation';
+
+storyblokInit({
+    accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+    use: [apiPlugin],
+});
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -71,7 +80,6 @@ export async function generateStaticParams() {
         version: 'published',
     });
     const paths = [];
-
     Object.keys(data.links).forEach((linkKey) => {
         if (
             data.links[linkKey].is_folder ||
@@ -90,9 +98,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-    const slug = params?.slug || 'home';
+    const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
     const lang = params.lang || 'en';
-    
     const data = await fetchData(slug, lang);
     if (!data || !data.story) {
         return redirect('/not-found');
@@ -128,7 +135,7 @@ generateMetadata({ params: { slug: 'home', lang: 'en' } })
     .catch((error) => console.error(error));
 
 export default async function Detailpage({ params }) {
-    const slug = params?.slug || 'home';
+    const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
     const lang = params.lang || 'en';
     const data = await fetchData(slug, lang);
 
