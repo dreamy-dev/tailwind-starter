@@ -12,12 +12,15 @@ import i18nConfig from '@/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AllNews({ blok }) {
+    console.log(blok, "blok news", "15 line")
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
-
     const [search, setSearch] = useState('');
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
-
+    console.log(articles, 'articles', '16 line');
+    console.log(selectedOptions, 'selectedOptions', '17 line');
+    console.log(search, 'search', '18 line');
+    
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -50,7 +53,7 @@ function AllNews({ blok }) {
             ...apiRequest,
             ...filterSearchRequest,
         });
-
+console.log(data, "data", "56 line")
         setArticles((prev) =>
             data.stories.map((article) => {
                 article.content.slug = article.slug;
@@ -73,7 +76,7 @@ function AllNews({ blok }) {
 
         const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] =
+            filterSearchParameters['filter_query[categories][all_in_array]'] =
                 categories.join(',');
         }
         if (search.length > 2) {
@@ -205,7 +208,8 @@ function AllNews({ blok }) {
                                             (category, index) =>
                                                 category.full_slug.includes(
                                                     '/news/'
-                                                ) && (
+                                                ) &&
+                                                (
                                                     <span
                                                         key={index}
                                                         className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
