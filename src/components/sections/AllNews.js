@@ -12,14 +12,11 @@ import i18nConfig from '@/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AllNews({ blok }) {
-    console.log(blok, "blok news", "15 line")
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [search, setSearch] = useState('');
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
-    console.log(articles, 'articles', '16 line');
-    console.log(selectedOptions, 'selectedOptions', '17 line');
-    console.log(search, 'search', '18 line');
+ 
     
     const apiRequest = {
         version: 'published',
@@ -53,7 +50,7 @@ function AllNews({ blok }) {
             ...apiRequest,
             ...filterSearchRequest,
         });
-console.log(data, "data", "56 line")
+
         setArticles((prev) =>
             data.stories.map((article) => {
                 article.content.slug = article.slug;
