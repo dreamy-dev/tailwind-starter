@@ -43,13 +43,9 @@ const ProspectiveCareer = ({ blok }) => {
                     'Job Overview Engagement',
                     `${careerTitle} - ${careerLink}`
                 ]);
-                console.log("jobClickReference", careerLink, careerTitle)
             }
         });
     }, []);
-
-
-
 
     // function to get all the jobs (with possible filters and search query) via server function in next
     const getJobs = async (filter = '', search = '') => {
@@ -609,26 +605,39 @@ const ProspectiveCareer = ({ blok }) => {
     const filterJobs = async (e, typeFilter, dependentField) => {
         let dependentStringFilter = false;
         const newSelectedOptions = { ...selectedOptions };
-        if (dependentField) {
+
+        if (dependentField && dependentField != "none") {
+            // If we pass the dependent field and it is not empty
             dependentStringFilter = `${typeFilter}:${dependentField}`;
+        } else if (dependentField == "none") {
+            // If the dependent field is already present and it is set to "none"
+        } else if (Object.values(dependentFilter)[0] == "none") {
+            // If we pass the dependent field and it is empty
         } else if (Object.keys(dependentFilter)[0]) {
+            // If we don't pass the dependent field, but it might be present since one of the previous selects
             dependentStringFilter = `${Object.keys(dependentFilter)[0]}:${Object.values(dependentFilter)[0]}`;
         }
 
         let filtersString = '';
+        // Add selected option to Berufsfelt, Entry Level or Location 
+        // as not a fourth select with dependent option was chosen
         if (!dependentField) {
             newSelectedOptions[typeFilter] = e.target.value;
             setSelectedOptions(newSelectedOptions);
-        } else if (dependentStringFilter) {
+        }
+        // Add a dependent filter to the query if it is not empty 
+        if (dependentStringFilter) {
             filtersString += `${dependentStringFilter}`;
         }
 
         Object.keys(newSelectedOptions).map((key) => {
             if (newSelectedOptions[key]) {
-                if (filtersString.length) {
-                    filtersString += `,`;
+                if (newSelectedOptions[key] != "none") {
+                    if (filtersString.length) {
+                        filtersString += `,`;
+                    }
+                    filtersString += `${key}:${newSelectedOptions[key]}`;
                 }
-                filtersString += `${key}:${newSelectedOptions[key]}`;
             }
         });
 
@@ -720,7 +729,7 @@ const ProspectiveCareer = ({ blok }) => {
                                         : searchParams.get('10')
                                 }
                             >
-                                <option value="">
+                                <option value="none">
                                     {blok.select_1_placeholder}
                                 </option>
                                 {attributes['10'] &&
@@ -754,7 +763,7 @@ const ProspectiveCareer = ({ blok }) => {
                                         : searchParams.get('20')
                                 }
                             >
-                                <option value="">
+                                <option value="none">
                                     {blok.select_2_placeholder}
                                 </option>
                                 {attributes['20'] &&
@@ -793,7 +802,7 @@ const ProspectiveCareer = ({ blok }) => {
                                         : searchParams.get('25')
                                 }
                             >
-                                <option value="">
+                                <option value="none">
                                     {blok.select_3_placeholder}
                                 </option>
                                 {attributes['25'] &&
@@ -826,7 +835,7 @@ const ProspectiveCareer = ({ blok }) => {
                                 id="countries_disabled"
                                 className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             >
-                                <option value="">
+                                <option value="none">
                                     {blok.select_4_placeholder}
                                 </option>
                                 {dependentField &&
