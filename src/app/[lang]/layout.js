@@ -1,6 +1,8 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import StoryblokProvider from '@/src/components/StoryblokProvider';
+// import { useParams } from 'next/navigation'
 import Script from 'next/script';
+import { headers } from "next/headers";
 
 import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -115,19 +117,38 @@ storyblokInit({
 });
 
 export default function RootLayout({ children, params: { lang } }) {
+
     return (
         <StoryblokProvider>
             <html lang={lang}>
                 <head>
                     <Script>
                         {`
-             var _mtm = window._mtm = window._mtm || [];
-            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-            (function() {
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src='https://cdn.matomo.cloud/etkstadlerrailcom.matomo.cloud/container_PFGEOIW5.js'; s.parentNode.insertBefore(g,s);
-            })();
-              `}
+                            var _mtm = window._mtm = window._mtm || [];
+                            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+                            (function() {
+                                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                                g.async=true; g.src='https://cdn.matomo.cloud/etkstadlerrailcom.matomo.cloud/container_PFGEOIW5.js'; s.parentNode.insertBefore(g,s);
+                            })();
+                        `}
+                    </Script>
+                    <Script>
+                        {`
+                            const curUrl = window.location.href
+                            const linksForMatomo = document.querySelectorAll("a")
+                            if (curUrl.includes("/investor-relations")) {
+                                linksForMatomo.forEach(item => {
+                                    item?.addEventListener('click', () => {
+                                        var _paq = (window._paq = window._paq || []);
+                                        _paq.push([
+                                            'trackEvent',
+                                            'Investor Relations - Events on the Page',
+                                            item.getAttribute("href"),
+                                        ]);
+                                    })
+                                })
+                            }
+                        `}
                     </Script>
                     {/* <Script
                     
