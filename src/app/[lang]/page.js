@@ -1,6 +1,17 @@
-import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import {
+    getStoryblokApi,
+    StoryblokStory,
+    apiPlugin,
+    storyblokInit,
+} from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
+
+
+storyblokInit({
+    accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+    use: [apiPlugin],
+});
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -64,6 +75,7 @@ async function fetchData(slug, lang) {
 }
 
 export async function generateMetadata({ params }) {
+ 
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const lang = params.lang || 'en';
     const { story } = await fetchData(slug, lang);
@@ -72,9 +84,9 @@ export async function generateMetadata({ params }) {
         return redirect('/not-found');
     }
 
-   const metatags = story.content.metatags || {};
-   const title = metatags.title || 'Default Title';
-   const description = metatags.description || 'Default Description';
+    const metatags = story.content.metatags || {};
+    const title = metatags.title || 'Default Title';
+    const description = metatags.description || 'Default Description';
 
     return {
         title: `${title} · Stadler`,
@@ -103,10 +115,7 @@ generateMetadata({ params: { slug: 'home', lang: 'en' } })
 export default async function Homepage({ params }) {
     const slug = 'home';
     const lang = params.lang || 'en';
-    const { story, config_footer, config_header } = await fetchData(
-        slug,
-        lang
-    );
+    const { story, config_footer, config_header } = await fetchData(slug, lang);
 
     if (!story) {
         return redirect('/not-found');

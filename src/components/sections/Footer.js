@@ -1,6 +1,7 @@
 import Button from '../elements/ButtonSecondary';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const Footer = ({ blok }) => {
     const legalLinks = (
@@ -104,7 +105,7 @@ const Footer = ({ blok }) => {
                                     textColorClass="text-white"
                                     borderColorClass="border-white"
                                     position="left"
-                                    href={`/${blok.button.story.url}`}
+                                    href={ButtonUrlRenderer(blok?.button)}
                                 >
                                     {blok.button_text}
                                 </Button>
