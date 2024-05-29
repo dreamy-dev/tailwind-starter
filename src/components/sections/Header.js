@@ -270,7 +270,7 @@ const Header = ({ blok }) => {
                                             (item, index) => (
                                                 <li
                                                     key={index}
-                                                    tabindex={index}
+                                                    tabIndex={index}
                                                     className="cursor-poiner lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                 >
                                                     {item.submenu ? (

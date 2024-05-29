@@ -18,7 +18,11 @@ export default function ButtonPrimary(props) {
 
     return (
         <div style={containerStyles}>
-            <a className={primaryButtonStyles} href={props.href}>
+            <a
+                ariaLabel="Button"
+                className={primaryButtonStyles}
+                href={props.href}
+            >
                 <p>{props.buttonText}</p>
                 <ArrowForward styles="fill-white w-3 h-3" />
             </a>

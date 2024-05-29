@@ -16,6 +16,7 @@ export default function HomePageHero({ blok }) {
                 >
                     <div className="-mt-16 md:mt-0 w-full flex pr-4 md:pr-0 items-center justify-end h-full">
                         <img
+                            rel="preload"
                             src="/Graph.svg"
                             className="block h-auto md:h-[60vh] w-full"
                             alt=""
@@ -42,6 +43,7 @@ export default function HomePageHero({ blok }) {
                     className="w-full  bg-center bg-cover object-center bg-no-repeat"
                 >
                     <img
+                        rel="preload"
                         src={blok?.image.filename ?? '/hero-home-big-min.jpg'}
                         className="lg:h-[90vh] w-full object-center object-cover"
                         alt="Hero image with train"
