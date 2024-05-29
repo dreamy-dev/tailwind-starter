@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';

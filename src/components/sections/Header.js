@@ -274,7 +274,7 @@ const Header = ({ blok }) => {
                                                     className="cursor-poiner lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                 >
                                                     {item.submenu ? (
-                                                        <motion.a
+                                                        <motion.div
                                                             className="md:border-0 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                             onClick={() =>
                                                                 toggleSubmenu(
@@ -293,7 +293,7 @@ const Header = ({ blok }) => {
                                                             initial="open"
                                                         >
                                                             {item.title}
-                                                        </motion.a>
+                                                        </motion.div>
                                                     ) : (
                                                         <Link
                                                             className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -307,7 +307,7 @@ const Header = ({ blok }) => {
                                                     {item.submenu &&
                                                         openSubmenu ===
                                                             item.id && (
-                                                            <motion.a
+                                                            <motion.div
                                                                 variants={
                                                                     submenuVariants
                                                                 }
@@ -414,7 +414,7 @@ const Header = ({ blok }) => {
                                                                         </div>
                                                                     </div>
                                                                 </ContentWidth>
-                                                            </motion.a>
+                                                            </motion.div>
                                                         )}
                                                 </li>
                                             )

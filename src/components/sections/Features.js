@@ -1,18 +1,21 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../../components/typography/H3';
 import ContentWidth from '../layouts/ContentWidth';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { useEffect } from 'react';
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 
 const Features = ({ blok }) => {
-    const pathname = usePathname()
+    const pathname = usePathname();
     useEffect(() => {
-        const linksForMatomo = document.querySelectorAll(".matomo-tracking-link")
+        const linksForMatomo = document.querySelectorAll(
+            '.matomo-tracking-link'
+        );
 
-        if (pathname.includes("/schienenfahrzeuge/")) {
-            linksForMatomo.forEach(item => {
-                if (item.getAttribute("href").includes("/signalling")) {
+        if (pathname.includes('/schienenfahrzeuge/')) {
+            linksForMatomo.forEach((item) => {
+                if (item.getAttribute('href').includes('/signalling')) {
                     item?.addEventListener('click', () => {
                         var _paq = (window._paq = window._paq || []);
                         _paq.push([
@@ -22,7 +25,7 @@ const Features = ({ blok }) => {
                         ]);
                     });
                 }
-                if (item.getAttribute("href").includes("/service")) {
+                if (item.getAttribute('href').includes('/service')) {
                     item?.addEventListener('click', () => {
                         var _paq = (window._paq = window._paq || []);
                         _paq.push([
@@ -32,9 +35,8 @@ const Features = ({ blok }) => {
                         ]);
                     });
                 }
-            })
+            });
         }
-
     });
     return (
         <section

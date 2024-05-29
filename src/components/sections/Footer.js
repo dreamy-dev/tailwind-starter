@@ -1,3 +1,4 @@
+'use client';
 import Button from '../elements/ButtonSecondary';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
@@ -59,28 +60,44 @@ const Footer = ({ blok }) => {
                 className="text-gray-500 hover:text-gray-400"
             >
                 <span className="sr-only">LinkedIn</span>
-                <img src="/LinkedIn.svg" className="h-6 w-6" alt="LinkedIn" />
+                <img
+                    src="/LinkedIn.svg"
+                    className="h-6 w-6"
+                    alt="Follow us on LinkedIn"
+                />
             </Link>
             <Link
                 href={blok.social_media_link_3.url}
                 className="text-gray-500 hover:text-gray-400"
             >
                 <span className="sr-only">YouTube</span>
-                <img src="/youtube.svg" className="h-6 w-6" alt="YouTube" />
+                <img
+                    src="/youtube.svg"
+                    className="h-6 w-6"
+                    alt="Watch our videos on YouTube"
+                />
             </Link>
             <Link
                 href={blok.social_media_link_4.url}
                 className="text-gray-500 hover:text-gray-400"
             >
                 <span className="sr-only">Facebook</span>
-                <img src="/facebook.svg" className="h-6 w-6" alt="Facebook" />
+                <img
+                    src="/facebook.svg"
+                    className="h-6 w-6"
+                    alt="Like us on Facebook"
+                />
             </Link>
             <Link
                 href={blok.social_media_link_1.url}
                 className="text-gray-500 hover:text-gray-400"
             >
                 <span className="sr-only">Xing</span>
-                <img src="/xing-icon.svg" className="h-6 w-6" alt="Xing" />
+                <img
+                    src="/xing-icon.svg"
+                    className="h-6 w-6"
+                    alt="Connect with us on Xing"
+                />
             </Link>
         </div>
     );

@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { useState } from 'react';
 import H3 from '../typography/H3';

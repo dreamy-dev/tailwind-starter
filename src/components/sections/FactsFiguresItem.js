@@ -1,9 +1,11 @@
+'use client';
+import React from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import CountUp from 'react-countup';
 
 const FactsAndFiguresItem = ({ blok }) => {
     return (
-        <div {...storyblokEditable(blok)}>
+        <dl {...storyblokEditable(blok)}>
             <div className="flex flex-col gap-y-2 col-span-1 mx-auto max-w-[400px]">
                 <dt className="text-base lg:text-xl leading-7 text-black">
                     {blok?.text}
@@ -19,10 +21,10 @@ const FactsAndFiguresItem = ({ blok }) => {
                         decimals={blok?.decimals ?? 1}
                         decimal="."
                         enableScrollSpy
-                    ></CountUp>
+                    />
                 </dd>
             </div>
-        </div>
+        </dl>
     );
 };
 

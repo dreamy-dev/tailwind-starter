@@ -1,3 +1,4 @@
+'use client';
 import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';

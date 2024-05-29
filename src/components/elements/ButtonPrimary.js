@@ -19,7 +19,7 @@ export default function ButtonPrimary(props) {
     return (
         <div style={containerStyles}>
             <a
-                ariaLabel="Button"
+             
                 className={primaryButtonStyles}
                 href={props.href}
             >

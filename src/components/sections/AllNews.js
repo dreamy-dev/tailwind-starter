@@ -1,3 +1,4 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
@@ -15,8 +16,7 @@ function AllNews({ blok }) {
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [search, setSearch] = useState('');
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
- 
-    
+
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -204,8 +204,7 @@ function AllNews({ blok }) {
                                             (category, index) =>
                                                 category.full_slug.includes(
                                                     '/news/'
-                                                ) &&
-                                                (
+                                                ) && (
                                                     <span
                                                         key={index}
                                                         className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"

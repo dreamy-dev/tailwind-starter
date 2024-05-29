@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import FullWidth from '../layouts/FullWidth';

@@ -13,6 +13,7 @@ export default function ImageFullWidth({ blok }) {
                     <img
                         className="lg:aspect-[2/1] object-cover"
                         width={'100%'}
+                        loading="lazy"
                         src={blok?.image.filename}
                         alt="Hero product image"
                     />

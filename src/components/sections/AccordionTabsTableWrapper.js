@@ -1,8 +1,8 @@
+'use client';
 import { useState } from 'react';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import AccordionYearWrapper from './AccordionYearWrapper';
-import ContentWidth from '../layouts/ContentWidth';
-import H2 from '../typography/H2';
+
 
 const AccordionTabsTableWrapper = ({ blok }) => {
     const [activeTab, setActiveTab] = useState(0);

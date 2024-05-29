@@ -25,7 +25,7 @@ export default function Button({
     return (
         <div style={containerStyles}>
             <a
-                ariaLabel="Button"
+              
                 className={secondaryButtonStyles}
                 href={href ?? '#'}
             >

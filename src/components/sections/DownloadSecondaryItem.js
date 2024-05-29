@@ -1,9 +1,6 @@
 'use client';
-
 import { storyblokEditable } from '@storyblok/react/rsc';
-import Button from '../elements/ButtonSecondary';
 import Text from '../typography/Text';
-import { DownloadIcon } from '../icons/DownloadIcon';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const DownloadSecondaryItem = ({ blok }) => {

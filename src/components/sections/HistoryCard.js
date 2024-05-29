@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../typography/H3';
 
@@ -9,7 +10,9 @@ export default function HistoryCard({ blok }) {
       bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
         >
             <img
+                className="w-full h-auto"
                 alt="History image"
+                loading="lazy"
                 src={blok?.image.filename}
             />
             <div className="p-5">
