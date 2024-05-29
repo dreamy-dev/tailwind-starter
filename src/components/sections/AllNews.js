@@ -2,7 +2,6 @@ import ContentWidth from '../layouts/ContentWidth';
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
-
 import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
@@ -14,10 +13,10 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
-
     const [search, setSearch] = useState('');
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
-
+ 
+    
     const apiRequest = {
         version: 'published',
         starts_with: 'medien/news/',
@@ -73,7 +72,7 @@ function AllNews({ blok }) {
 
         const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] =
+            filterSearchParameters['filter_query[categories][all_in_array]'] =
                 categories.join(',');
         }
         if (search.length > 2) {
@@ -205,7 +204,8 @@ function AllNews({ blok }) {
                                             (category, index) =>
                                                 category.full_slug.includes(
                                                     '/news/'
-                                                ) && (
+                                                ) &&
+                                                (
                                                     <span
                                                         key={index}
                                                         className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"

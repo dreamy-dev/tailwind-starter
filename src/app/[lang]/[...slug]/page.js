@@ -1,7 +1,16 @@
-import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import {
+    getStoryblokApi,
+    StoryblokStory,
+    apiPlugin,
+    storyblokInit,
+} from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
-import { notFound } from 'next/navigation';
+
+storyblokInit({
+    accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+    use: [apiPlugin],
+});
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -124,8 +133,6 @@ export async function generateMetadata({ params }) {
 generateMetadata({ params: { slug: 'home', lang: 'en' } })
     .then((metadata) => console.log(metadata))
     .catch((error) => console.error(error));
-
-
 
 export default async function Detailpage({ params }) {
     const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
