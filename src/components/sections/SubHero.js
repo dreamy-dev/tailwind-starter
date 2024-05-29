@@ -33,7 +33,7 @@ const SubHero = ({ imageUrl, children, blok }) => {
                             <img
                                 src={blok?.image.filename}
                                 className="w-full h-96 md:h-full object-cover object-right"
-                                alt=""
+                                alt="Sub Hero image"
                             />
                         </div>
                     </div>

@@ -44,7 +44,7 @@ export default function HomePageHero({ blok }) {
                     <img
                         src={blok?.image.filename ?? '/hero-home-big-min.jpg'}
                         className="lg:h-[90vh] w-full object-center object-cover"
-                        alt=""
+                        alt="Hero image with train"
                     />
                 </motion.div>
             </div>

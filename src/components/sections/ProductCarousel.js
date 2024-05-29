@@ -94,7 +94,7 @@ const ProductCarousel = () => {
                         <img
                             className="block max-w-full h-auto"
                             src={data[imageIndex].image}
-                            alt="Carousel Image"
+                            alt="Product Carousel Image"
                         />
 
                         <div className="p-24 mx-w-full md:w-auto">

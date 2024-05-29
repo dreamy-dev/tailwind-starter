@@ -32,7 +32,7 @@ const TeaserImageRight = ({ blok }) => {
                     <img
                         src={blok?.image.filename}
                         className="object-cover object-center w-full"
-                        alt=""
+                        alt={blok?.title}
                     />
                 </div>
             </SmallWidth>

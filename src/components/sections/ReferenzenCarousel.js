@@ -182,7 +182,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                                     .image
                                                                     .filename
                                                             }
-                                                            alt="Image 1"
+                                                            alt={`Image for ${blok?.title}`}
                                                             className="w-full h-full object-cover"
                                                         />
                                                     </a>
@@ -326,7 +326,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                         train.content.image
                                                             .filename
                                                     }
-                                                    alt=""
+                                                    alt={`Image for ${train.content.title}`}
                                                 />
                                             </a>
                                             <div className="h-full flex flex-col justify-between p-8">

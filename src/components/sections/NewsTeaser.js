@@ -61,7 +61,7 @@ function NewsTeaser({ blok }) {
                                         <img
                                             src={article.content.image.filename}
                                             className="object-cover w-full h-full group-hover:scale-110 transition-all"
-                                            alt="Image 1"
+                                            alt="NewsTeaser image"
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">

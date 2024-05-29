@@ -16,7 +16,7 @@ const CorporateGovernanceTeaser = ({ blok }) => {
                         {blok?.text}
                     </p>
                 </div>
-                <img className="w-5" src="/icons/arrow-blue.svg" alt="" />
+                <img className="w-5" src="/icons/arrow-blue.svg" alt="arrow icon" />
             </article>
         </a>
     );

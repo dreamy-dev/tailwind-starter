@@ -38,7 +38,7 @@ const SuccessStory = ({ current, idx, blok }) => {
                     <img
                         className="w-5 h-5"
                         src="/icons/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                        alt=""
+                        alt={card.title}
                     />
                 </Link>
             </div>

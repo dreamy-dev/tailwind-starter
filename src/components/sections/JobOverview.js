@@ -180,7 +180,7 @@ const JobOverview = ({ blok }) => (
                                         <img
                                             className="w-3 h-3 mr-1"
                                             src="/ohne-box/location.svg"
-                                            alt=""
+                                            alt="Location image"
                                         />
                                     </span>
                                     <p>Bussnang, Schweiz</p>
@@ -190,7 +190,7 @@ const JobOverview = ({ blok }) => (
                                         <img
                                             className="w-3 h-3 mr-1"
                                             src="/ohne-box/schedule.svg"
-                                            alt=""
+                                            alt="Schedule image"
                                         />
                                     </span>
                                     <p>Vollzeit</p>

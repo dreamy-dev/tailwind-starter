@@ -32,7 +32,7 @@ export default function CTASection(props) {
                         props.img ??
                         'https://www.stadlerrail.com/media/img/c/schweisser_berufserfahrene.jpg'
                     }
-                    alt="content gallery 1"
+                    alt="Content gallery 1"
                 />
                 <img
                     className=" object-cover h-80 scale-100 hidden col-span-1 sm:block  "
@@ -40,7 +40,7 @@ export default function CTASection(props) {
                         props.img2 ??
                         'https://www.stadlerrail.com/media/img/c/produktionsmechaniker_lernende.jpg'
                     }
-                    alt="content gallery 2"
+                    alt="Content gallery 2"
                 />
                 <img
                     className="object-cover h-80 scale-100 hidden col-span-1 sm:block  "
@@ -48,7 +48,7 @@ export default function CTASection(props) {
                         props.img3 ??
                         'https://www.stadlerrail.com/media/img/c/interne_transporte_berufserfahrene.jpg'
                     }
-                    alt="content gallery 3"
+                    alt="Content gallery 3"
                 />
             </div>
         </section>

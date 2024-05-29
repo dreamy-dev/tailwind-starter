@@ -50,7 +50,7 @@ const Features = ({ blok }) => {
                         <div className="flex flex-col justify-center items-center md:items-start ">
                             <img
                                 src={blok?.image_1.filename}
-                                alt="Image"
+                                alt="Feature Image"
                                 className="w-full md:w-auto h-[320px] object-cover"
                             />
                             <a
@@ -75,7 +75,7 @@ const Features = ({ blok }) => {
                         <div className="flex flex-col justify-center items-center md:items-start ">
                             <img
                                 src={blok?.image_2.filename}
-                                alt="Image"
+                                alt="Feature Image"
                                 className="w-full md:w-auto h-[320px] object-cover"
                             />
                             <a

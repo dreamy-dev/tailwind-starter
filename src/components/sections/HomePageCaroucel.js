@@ -101,7 +101,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                             <img
                                                 className="w-full aspect-[4/3] object-cover"
                                                 src={card.img}
-                                                alt=""
+                                                alt="Train image"
                                             />
                                             <div className="p-5 ">
                                                 <div className="mb-4">

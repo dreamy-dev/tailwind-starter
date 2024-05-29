@@ -873,7 +873,7 @@ const ProspectiveCareer = ({ blok }) => {
                                             <img
                                                 className="w-3 h-3 mr-1"
                                                 src="/ohne-box/location.svg"
-                                                alt=""
+                                                alt="Location image"
                                             />
                                         </span>
                                         <p>{item.szas["sza_location.city"]}, {item.szas["sza_location.country"]}</p>

@@ -48,7 +48,7 @@ const QualityFeatureGridExtended = ({ blok }) => {
                             <div className=" mt-8 sm:mt-0">
                                 <img
                                     src={blok?.assetOne.filename}
-                                    alt="Sizes"
+                                    alt="Quality Feature Train image"
                                 />
                             </div>
                         </div>

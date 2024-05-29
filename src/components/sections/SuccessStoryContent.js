@@ -26,7 +26,7 @@ const SuccessStoryContent = ({ blok }) => {
                         <img
                             className="object-right max-w-full w-full h-auto"
                             src={blok?.image.filename}
-                            alt=""
+                            alt={blok?.title}
                         />
                     </div>
                 </ContentWidth>
