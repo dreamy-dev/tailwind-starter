@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 
 const AccordionContactItem = ({ blok }) => {

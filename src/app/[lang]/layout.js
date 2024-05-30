@@ -3,7 +3,6 @@ import StoryblokProvider from '@/src/components/StoryblokProvider';
 import Head from 'next/head';
 import Script from 'next/script';
 import localFont from 'next/font/local';
-
 import './globals.css';
 
 const fontStadler = localFont({
@@ -102,15 +101,12 @@ const fontStadler = localFont({
     variable: '--font-stadler',
 });
 
-
-
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
 });
 
 export default function RootLayout({ children, params: { lang } }) {
-
     return (
         <StoryblokProvider>
             <html lang={lang}>

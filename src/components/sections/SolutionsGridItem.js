@@ -12,7 +12,11 @@ const SolutionsGridItem = ({ blok }) => {
             className="  bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 max-w-fit"
         >
             <Link href={ButtonUrlRenderer(blok?.link)}>
-                <img className="w-full" src={blok?.image.filename} alt="" />
+                <img
+                    className="w-full"
+                    src={blok?.image.filename}
+                    alt={`Image for ${blok?.title}`}
+                />
 
                 <div className="p-4 lg:p-5">
                     <div className="text-wrap hyphens-auto break-words">

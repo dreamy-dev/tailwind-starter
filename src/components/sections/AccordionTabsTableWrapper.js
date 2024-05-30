@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import AccordionYearWrapper from './AccordionYearWrapper';
 
-
 const AccordionTabsTableWrapper = ({ blok }) => {
     const [activeTab, setActiveTab] = useState(0);
 

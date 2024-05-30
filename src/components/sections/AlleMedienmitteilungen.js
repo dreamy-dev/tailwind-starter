@@ -1,5 +1,4 @@
-
-"use client"
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import React from 'react';
 import {
@@ -228,6 +227,7 @@ function AlleMedienmitteilungen({ blok }) {
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             <img
+                                                alt="Arrow button forward"
                                                 width="20"
                                                 height="20"
                                                 src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"

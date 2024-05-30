@@ -1,4 +1,4 @@
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
@@ -34,14 +34,16 @@ const ProspectiveCareer = ({ blok }) => {
 
     useEffect(() => {
         jobClickReference?.addEventListener('click', (e) => {
-            if (e.target.closest("a")) {
-                const careerLink = e.target.closest("a")?.getAttribute("href")
-                const careerTitle = e.target.closest("a")?.querySelector("h4")?.innerHTML
+            if (e.target.closest('a')) {
+                const careerLink = e.target.closest('a')?.getAttribute('href');
+                const careerTitle = e.target
+                    .closest('a')
+                    ?.querySelector('h4')?.innerHTML;
                 var _paq = (window._paq = window._paq || []);
                 _paq.push([
                     'trackEvent',
                     'Job Overview Engagement',
-                    `${careerTitle} - ${careerLink}`
+                    `${careerTitle} - ${careerLink}`,
                 ]);
             }
         });
@@ -606,12 +608,12 @@ const ProspectiveCareer = ({ blok }) => {
         let dependentStringFilter = false;
         const newSelectedOptions = { ...selectedOptions };
 
-        if (dependentField && dependentField != "none") {
+        if (dependentField && dependentField != 'none') {
             // If we pass the dependent field and it is not empty
             dependentStringFilter = `${typeFilter}:${dependentField}`;
-        } else if (dependentField == "none") {
+        } else if (dependentField == 'none') {
             // If the dependent field is already present and it is set to "none"
-        } else if (Object.values(dependentFilter)[0] == "none") {
+        } else if (Object.values(dependentFilter)[0] == 'none') {
             // If we pass the dependent field and it is empty
         } else if (Object.keys(dependentFilter)[0]) {
             // If we don't pass the dependent field, but it might be present since one of the previous selects
@@ -619,20 +621,20 @@ const ProspectiveCareer = ({ blok }) => {
         }
 
         let filtersString = '';
-        // Add selected option to Berufsfelt, Entry Level or Location 
+        // Add selected option to Berufsfelt, Entry Level or Location
         // as not a fourth select with dependent option was chosen
         if (!dependentField) {
             newSelectedOptions[typeFilter] = e.target.value;
             setSelectedOptions(newSelectedOptions);
         }
-        // Add a dependent filter to the query if it is not empty 
+        // Add a dependent filter to the query if it is not empty
         if (dependentStringFilter) {
             filtersString += `${dependentStringFilter}`;
         }
 
         Object.keys(newSelectedOptions).map((key) => {
             if (newSelectedOptions[key]) {
-                if (newSelectedOptions[key] != "none") {
+                if (newSelectedOptions[key] != 'none') {
                     if (filtersString.length) {
                         filtersString += `,`;
                     }
@@ -840,11 +842,11 @@ const ProspectiveCareer = ({ blok }) => {
                                 </option>
                                 {dependentField &&
                                     attributes[
-                                    Object.keys(dependentFilter)[0]
+                                        Object.keys(dependentFilter)[0]
                                     ] &&
                                     Object.values(
                                         attributes[
-                                        Object.keys(dependentFilter)[0]
+                                            Object.keys(dependentFilter)[0]
                                         ]
                                     ).map((value) => {
                                         return (
@@ -862,27 +864,41 @@ const ProspectiveCareer = ({ blok }) => {
                 </div>
                 <div className="grid col-span-12">
                     <H3>{blok.subtitle}</H3>
-                    <div className="divide-y"
-                        ref={jobClick}>
-                        {isDataLoading ? <Loader /> : jobs?.map((item, key) => (
-                            <a key={key} href={item.links.directlink} target="_blank" className="block py-4 hover:cursor-pointer hover:text-primary">
-                                <H4>{item.title}</H4>
-                                <div className="flex">
-                                    <div className="mr-4 flex items-center">
-                                        <span>
-                                            <img
-                                                className="w-3 h-3 mr-1"
-                                                src="/ohne-box/location.svg"
-                                                alt="Location image"
-                                            />
-                                        </span>
-                                        <p>{item.szas["sza_location.city"]}, {item.szas["sza_location.country"]}</p>
-
+                    <div className="divide-y" ref={jobClick}>
+                        {isDataLoading ? (
+                            <Loader />
+                        ) : (
+                            jobs?.map((item, key) => (
+                                <a
+                                    key={key}
+                                    href={item.links.directlink}
+                                    target="_blank"
+                                    className="block py-4 hover:cursor-pointer hover:text-primary"
+                                >
+                                    <H4>{item.title}</H4>
+                                    <div className="flex">
+                                        <div className="mr-4 flex items-center">
+                                            <span>
+                                                <img
+                                                    className="w-3 h-3 mr-1"
+                                                    src="/ohne-box/location.svg"
+                                                    alt="Location image"
+                                                />
+                                            </span>
+                                            <p>
+                                                {item.szas['sza_location.city']}
+                                                ,{' '}
+                                                {
+                                                    item.szas[
+                                                        'sza_location.country'
+                                                    ]
+                                                }
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        ))
-                        }
+                                </a>
+                            ))
+                        )}
                     </div>
                 </div>
             </SmallWidth>

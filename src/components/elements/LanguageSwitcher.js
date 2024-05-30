@@ -68,13 +68,13 @@ const LanguageSwitcher = () => {
                 className="lg:absolute lg:top-14 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
                 id="language-dropdown"
             >
-                <ul className="py-1" role="none">
+                <ul className="py-1" role="menu">
                     {/* TODO: With folder level translation, map over languages here to display options */}
-                    <li>
+                    <li role="none">
                         <a
+                            role="menuitem"
                             onClick={handleChange}
                             className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                            role="menuitem"
                         >
                             <div className="inline-flex items-center">
                                 {currentLocale == 'en' ? 'German' : 'Englisch'}

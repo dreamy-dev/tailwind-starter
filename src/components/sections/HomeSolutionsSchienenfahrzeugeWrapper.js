@@ -76,7 +76,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                         }
                                         variants={plusAnimation}
                                         key={item.key}
-                                        alt='Train Type image'
+                                        alt="Train Type image"
                                     />
                                 </div>
                             ))}

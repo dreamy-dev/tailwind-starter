@@ -76,6 +76,8 @@ const Features = ({ blok }) => {
                         </div>
                         <div className="flex flex-col justify-center items-center md:items-start ">
                             <img
+                                width="100%"
+                                height="auto"
                                 src={blok?.image_2.filename}
                                 alt="Feature Image"
                                 className="w-full md:w-auto h-[320px] object-cover"

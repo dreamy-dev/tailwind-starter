@@ -84,6 +84,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                 href={`/${item.full_slug}`}
                                             >
                                                 <img
+                                                    alt={`Icon arrow forward for  ${item.content.title}`}
                                                     width="20"
                                                     height="20"
                                                     src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
@@ -92,17 +93,20 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                         </div>
                                         <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
                                             {item.content.categories.map(
-                                                (category, index) => (
-                                                    category.full_slug.includes("categories/medienmitteilungen") && <span
-                                                        key={index}
-                                                        className=" inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0 lg:whitespace-nowrap"
-                                                    >
-                                                        {
-                                                            category.content
-                                                                .category
-                                                        }
-                                                    </span>
-                                                )
+                                                (category, index) =>
+                                                    category.full_slug.includes(
+                                                        'categories/medienmitteilungen'
+                                                    ) && (
+                                                        <span
+                                                            key={index}
+                                                            className=" inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0 lg:whitespace-nowrap"
+                                                        >
+                                                            {
+                                                                category.content
+                                                                    .category
+                                                            }
+                                                        </span>
+                                                    )
                                             )}
                                         </div>
 
