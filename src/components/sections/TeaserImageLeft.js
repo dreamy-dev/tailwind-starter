@@ -15,7 +15,7 @@ const TeaserImageLeft = ({ blok }) => {
                     <img
                         src={blok?.image.filename}
                         className="object-cover object-center w-full"
-                        alt=""
+                        alt={blok?.title}
                     />
 
                     <div className="space-y-4 sm:space-y-6 lg:space-y-8">

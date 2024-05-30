@@ -14,7 +14,6 @@ let currentPage = 1;
 let links = {};
 
 export default async function sitemap() {
- 
     try {
         const storyblokApi = getStoryblokApi();
 
@@ -29,17 +28,12 @@ export default async function sitemap() {
             paginated: 1,
         });
 
-      
-
         if (!response || !response.data || !response.data.links) {
             throw new Error('Invalid response structure');
         }
 
         const data = response.data;
         links = data.links;
-     
-
-     
 
         const BaseUrl =
             'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/';
@@ -51,8 +45,6 @@ export default async function sitemap() {
             const real_path = link.real_path;
 
             if (link.is_folder) return;
-
-          
 
             langToFilter.forEach((lang) => {
                 let translated_item = null;
@@ -83,8 +75,6 @@ export default async function sitemap() {
                     },
                 });
             });
-
-         
         });
 
         return paths;

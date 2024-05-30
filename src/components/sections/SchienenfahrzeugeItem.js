@@ -24,7 +24,7 @@ const SchienenfahrzeugeItem = ({ blok }) => {
             <img
                 className="w-full aspect-[9/5]"
                 src={optimizeImage(blok?.image)}
-                alt="Train"
+                alt={blok?.title}
             />
             <div className="p-4 lg:p-6 lg:pb-6">
                 {blok.tag ? (

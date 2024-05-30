@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import { motion, AnimatePresence } from 'framer-motion';
 import H2 from '../typography/H2';

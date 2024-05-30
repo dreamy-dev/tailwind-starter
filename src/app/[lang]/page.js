@@ -7,7 +7,6 @@ import {
 import Layout from '@/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
 
-
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
@@ -74,10 +73,17 @@ async function fetchData(slug, lang) {
     }
 }
 
+let metadataCache = {};
+
 export async function generateMetadata({ params }) {
- 
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const lang = params.lang || 'en';
+    const cacheKey = `${lang}-${slug}`;
+
+    if (metadataCache[cacheKey]) {
+        return metadataCache[cacheKey];
+    }
+
     const { story } = await fetchData(slug, lang);
 
     if (!story) {
@@ -88,29 +94,29 @@ export async function generateMetadata({ params }) {
     const title = metatags.title || 'Default Title';
     const description = metatags.description || 'Default Description';
 
-    return {
-        title: `${title} · Stadler`,
+    const metadata = {
+        title: `${title} `,
         description: description,
         robots: {
             index: true,
             follow: true,
         },
         openGraph: {
-            og_title: title,
-            og_description: description,
+            title: title,
+            description: description,
             url: `/${story.slug}`,
         },
         twitter: {
             card: 'summary',
-            twitter_title: title,
-            twitter_description: description,
+            title: title,
+            description: description,
         },
     };
-}
 
-generateMetadata({ params: { slug: 'home', lang: 'en' } })
-    .then((metadata) => console.log(metadata))
-    .catch((error) => console.error(error));
+    metadataCache[cacheKey] = metadata;
+
+    return metadata;
+}
 
 export default async function Homepage({ params }) {
     const slug = 'home';

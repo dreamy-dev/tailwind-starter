@@ -8,6 +8,7 @@ import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 import H3 from '../typography/H3';
+import debounce from '../helpers/Debounce';
 
 export default function ContactForm({ blok }) {
     const [first_name, setName] = useState('');
@@ -91,85 +92,89 @@ export default function ContactForm({ blok }) {
         }
     };
 
-    const validateFirstName = () => {
+    // Debounced validation functions
+    const debouncedValidateFirstName = debounce(() => {
         const hasError = blok?.required_first_name && !first_name.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             first_name: hasError,
         }));
-    };
+    }, 300);
 
-    const validateSubject = () => {
+    const debouncedValidateSubject = debounce(() => {
         const hasError = blok?.required_subject && !subject.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             subject: hasError,
         }));
-    };
-    const validateLastName = () => {
+    }, 300);
+
+    const debouncedValidateLastName = debounce(() => {
         const hasError = blok?.required_last_name && !last_name.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             last_name: hasError,
         }));
-    };
+    }, 300);
 
-    const validateEmail = () => {
+    const debouncedValidateEmail = debounce(() => {
         const valid = /\S+@\S+\.\S+/.test(email);
         setErrors((prevErrors) => ({
             ...prevErrors,
             email: blok?.required_email && !valid,
         }));
-    };
+    }, 300);
 
-    const validateStreet = () => {
+    const debouncedValidateStreet = debounce(() => {
         const hasError = blok?.required_street && !street.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             street: hasError,
         }));
-    };
-    const validateNumber = (value) => {
+    }, 300);
+
+    const debouncedValidateNumber = debounce((value) => {
         const hasError = blok?.required_number && value === '';
         setErrors((prevErrors) => ({
             ...prevErrors,
             number: hasError,
         }));
         setNumber(value);
-    };
+    }, 300);
 
-    const validateZip = () => {
+    const debouncedValidateZip = debounce(() => {
         const hasError = blok?.required_zip && !zip.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             zip: hasError,
         }));
-    };
+    }, 300);
 
-    const validateCity = () => {
+    const debouncedValidateCity = debounce(() => {
         const hasError = blok?.required_city && !city.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             city: hasError,
         }));
-    };
+    }, 300);
 
-    const validatePhone = () => {
+    const debouncedValidatePhone = debounce(() => {
         const phonePattern = /^\+?(\d[-.\s]?){7,14}\d$/;
         const valid = phonePattern.test(phone);
         setErrors((prevErrors) => ({
             ...prevErrors,
             phone: blok?.required_phone && !valid,
         }));
-    };
+    }, 300);
 
-    const validateMessage = () => {
+    const debouncedValidateMessage = debounce(() => {
         const hasError = blok?.required_message && !message.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             message: hasError,
         }));
-    };
+    }, 300);
+
     const validateCheckbox = (isChecked) => {
         setErrors((prevErrors) => ({
             ...prevErrors,
@@ -214,12 +219,7 @@ export default function ContactForm({ blok }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const formIsValid = validateForm();
-
-        if (!formIsValid) {
-            console.log('Please correct the errors before submitting.');
-        }
+        validateForm();
     };
 
     return (
@@ -253,10 +253,10 @@ export default function ContactForm({ blok }) {
                                 placeholder=""
                                 required={blok?.required_subject ? true : false}
                                 onChange={(e) => {
-                                    validateSubject();
                                     setSubject(e.target.value);
+                                    debouncedValidateSubject();
                                 }}
-                                onBlur={validateSubject}
+                                onBlur={debouncedValidateSubject}
                             />
                             <div
                                 className={`${errors.subject ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
@@ -271,8 +271,9 @@ export default function ContactForm({ blok }) {
                                     type="radio"
                                     value="male"
                                     name="gender"
-                                    className=" w-4 h-4 text-primary bg-gray-100 border-greySolid-400 focus:ring-primary focus:ring-2"
+                                    className="w-4 h-4 text-primary bg-gray-100 border-greySolid-400 focus:ring-primary focus:ring-2"
                                     onChange={(e) => setGender(e.target.value)}
+                                    onBlur={(e) => setGender(e.target.value)}
                                 />
                                 <label
                                     htmlFor="male"
@@ -287,8 +288,9 @@ export default function ContactForm({ blok }) {
                                     type="radio"
                                     value="female"
                                     name="gender"
-                                    className=" w-4 h-4 text-primary bg-gray-100 border-greySolid-400 focus:ring-primary focus:ring-2"
+                                    className="w-4 h-4 text-primary bg-gray-100 border-greySolid-400 focus:ring-primary focus:ring-2"
                                     onChange={(e) => setGender(e.target.value)}
+                                    onBlur={(e) => setGender(e.target.value)}
                                 />
                                 <label
                                     htmlFor="female"
@@ -321,9 +323,9 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setName(e.target.value);
-                                        validateFirstName();
+                                        debouncedValidateFirstName();
                                     }}
-                                    onBlur={validateFirstName}
+                                    onBlur={debouncedValidateFirstName}
                                 />
                                 <div
                                     className={`${errors.first_name ? 'block' : 'hidden'} mt-2 mb-2 text-sm text-red-700 font-medium`}
@@ -333,7 +335,7 @@ export default function ContactForm({ blok }) {
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_last_name"
+                                    htmlFor="last_name"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_last_name}{' '}
@@ -350,10 +352,10 @@ export default function ContactForm({ blok }) {
                                         blok?.required_last_name ? true : false
                                     }
                                     onChange={(e) => {
-                                        validateLastName();
                                         setLastName(e.target.value);
+                                        debouncedValidateLastName();
                                     }}
-                                    onBlur={validateLastName}
+                                    onBlur={debouncedValidateLastName}
                                 />
                                 <div
                                     className={`${errors.last_name ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
@@ -365,7 +367,7 @@ export default function ContactForm({ blok }) {
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_street"
+                                    htmlFor="street"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_street}{' '}
@@ -382,10 +384,10 @@ export default function ContactForm({ blok }) {
                                         blok?.required_street ? true : false
                                     }
                                     onChange={(e) => {
-                                        validateStreet();
                                         setStreet(e.target.value);
+                                        debouncedValidateStreet();
                                     }}
-                                    onBlur={validateStreet}
+                                    onBlur={debouncedValidateStreet}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -396,7 +398,7 @@ export default function ContactForm({ blok }) {
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_number"
+                                    htmlFor="number"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_nr}{' '}
@@ -407,16 +409,18 @@ export default function ContactForm({ blok }) {
                                     id="number"
                                     autoComplete="number"
                                     value={number}
-                                    type="text"
+                                    type="number"
                                     placeholder=""
                                     required={
                                         blok?.required_number ? true : false
                                     }
                                     onChange={(e) => {
-                                        validateNumber();
                                         setNumber(e.target.value);
+                                        debouncedValidateNumber(e.target.value);
                                     }}
-                                    onBlur={validateNumber}
+                                    onBlur={(e) =>
+                                        debouncedValidateNumber(e.target.value)
+                                    }
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -429,7 +433,7 @@ export default function ContactForm({ blok }) {
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_zip"
+                                    htmlFor="zip"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_zip}{' '}
@@ -445,9 +449,9 @@ export default function ContactForm({ blok }) {
                                     required={blok?.required_zip ? true : false}
                                     onChange={(e) => {
                                         setZIP(e.target.value);
-                                        validateZip();
+                                        debouncedValidateZip();
                                     }}
-                                    onBlur={validateZip}
+                                    onBlur={debouncedValidateZip}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -458,7 +462,7 @@ export default function ContactForm({ blok }) {
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_last_name"
+                                    htmlFor="city"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_city}{' '}
@@ -476,9 +480,9 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setCity(e.target.value);
-                                        validateCity();
+                                        debouncedValidateCity();
                                     }}
-                                    onBlur={validateCity}
+                                    onBlur={debouncedValidateCity}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -492,7 +496,7 @@ export default function ContactForm({ blok }) {
                         <div className="grid md:grid-cols-2 md:gap-6">
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_email"
+                                    htmlFor="email"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_email}{' '}
@@ -509,10 +513,10 @@ export default function ContactForm({ blok }) {
                                         blok?.required_email ? true : false
                                     }
                                     onChange={(e) => {
-                                        validateEmail();
                                         setEmail(e.target.value);
+                                        debouncedValidateEmail();
                                     }}
-                                    onBlur={validateEmail}
+                                    onBlur={debouncedValidateEmail}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -523,7 +527,7 @@ export default function ContactForm({ blok }) {
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
                                 <label
-                                    htmlFor="floating_phone"
+                                    htmlFor="phone"
                                     className="peer-focus:font-medium  mb-2 text-sm font-medium text-greySolid-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     {blok?.label_phone}{' '}
@@ -540,10 +544,10 @@ export default function ContactForm({ blok }) {
                                         blok?.required_phone ? true : false
                                     }
                                     onChange={(e) => {
-                                        validatePhone();
                                         setPhone(e.target.value);
+                                        debouncedValidatePhone();
                                     }}
-                                    onBlur={validatePhone}
+                                    onBlur={debouncedValidatePhone}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -570,10 +574,10 @@ export default function ContactForm({ blok }) {
                                 placeholder=""
                                 required={blok?.required_message ? true : false}
                                 onChange={(e) => {
-                                    validateMessage();
                                     setMessage(e.target.value);
+                                    debouncedValidateMessage();
                                 }}
-                                onBlur={validateMessage}
+                                onBlur={debouncedValidateMessage}
                                 className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
                             <div

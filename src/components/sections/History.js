@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import H2 from '../../components/typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';

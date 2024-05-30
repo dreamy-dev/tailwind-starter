@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
 const MedienmitteilungDownloadItem = ({ blok }) => {

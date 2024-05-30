@@ -9,17 +9,17 @@ const ImageTrippleBanner = ({ blok }) => {
                 <img
                     className="object-cover h-80 w-full scale-100 col-span-2  sm:block  "
                     src={blok?.image1.filename}
-                    alt="content gallery 1"
+                    alt="Content gallery 1"
                 />
                 <img
                     className=" object-cover h-80 w-full scale-100 hidden col-span-1 sm:block"
                     src={blok?.image2.filename}
-                    alt="content gallery 2"
+                    alt="Content gallery 2"
                 />
                 <img
                     className="object-cover h-80 w-full scale-100 hidden col-span-1 sm:block"
                     src={blok?.image3.filename}
-                    alt="content gallery 3"
+                    alt="Content gallery 3"
                 />
             </div>
         </section>

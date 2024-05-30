@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 
