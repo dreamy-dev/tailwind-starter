@@ -31,7 +31,7 @@ export default function Quote({ blok }) {
                         <img
                             className="w-20 h-20 rounded-full object-cover"
                             src={blok?.image.filename}
-                            alt="profile picture"
+                            alt="Profile picture"
                         />
                         <div className="flex flex-col">
                             <div className="font-medium text-gray-900 dark:text-white">

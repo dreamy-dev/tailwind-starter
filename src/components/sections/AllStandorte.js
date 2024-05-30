@@ -1,3 +1,4 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import {
     getStoryblokApi,

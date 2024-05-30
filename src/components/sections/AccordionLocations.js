@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { useState } from 'react';
 import H3 from '../typography/H3';
@@ -105,7 +106,7 @@ const AccordionLocations = ({ blok }) => {
                             <img
                                 src={blok?.image?.filename}
                                 className="flex md:w-3/12"
-                                alt="office"
+                                alt="Stadler Office image"
                             />
                         </div>
                         <div className="pt-8">

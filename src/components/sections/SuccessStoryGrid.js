@@ -157,10 +157,13 @@ const SuccessStoryGrid = ({ blok }) => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
-                                <button onClick={onPrevClick}>
+                                <button
+                                    onClick={onPrevClick}
+                                    aria-label="Previous"
+                                >
                                     <ChevronLeft styles="w-5 h-5 fill-primary" />
                                 </button>
-                                <button onClick={onNextClick}>
+                                <button onClick={onNextClick} aria-label="Next">
                                     <ChevronRight styles="w-5 h-5 fill-primary" />
                                 </button>
                             </motion.div>

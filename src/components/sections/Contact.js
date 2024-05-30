@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
@@ -18,7 +19,7 @@ const Contact = ({ blok }) => {
                         <img
                             className="object-cover object-right max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
                             src={blok?.image.filename}
-                            alt="contact"
+                            alt="Contact image"
                         />
                     </div>
                     <div className="w-full xl:col-span-8">

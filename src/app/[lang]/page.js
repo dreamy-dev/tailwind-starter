@@ -1,6 +1,16 @@
-import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import {
+    getStoryblokApi,
+    StoryblokStory,
+    apiPlugin,
+    storyblokInit,
+} from '@storyblok/react/rsc';
 import Layout from '@/src/components/sections/Layout';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
+
+storyblokInit({
+    accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+    use: [apiPlugin],
+});
 
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
@@ -63,50 +73,55 @@ async function fetchData(slug, lang) {
     }
 }
 
+let metadataCache = {};
+
 export async function generateMetadata({ params }) {
     const slug = params?.slug ? params.slug.join('/') : 'home';
     const lang = params.lang || 'en';
+    const cacheKey = `${lang}-${slug}`;
+
+    if (metadataCache[cacheKey]) {
+        return metadataCache[cacheKey];
+    }
+
     const { story } = await fetchData(slug, lang);
 
     if (!story) {
         return redirect('/not-found');
     }
 
-   const metatags = story.content.metatags || {};
-   const title = metatags.title || 'Default Title';
-   const description = metatags.description || 'Default Description';
+    const metatags = story.content.metatags || {};
+    const title = metatags.title || 'Default Title';
+    const description = metatags.description || 'Default Description';
 
-    return {
-        title: `${title} · Stadler`,
+    const metadata = {
+        title: `${title} `,
         description: description,
         robots: {
             index: true,
             follow: true,
         },
         openGraph: {
-            og_title: title,
-            og_description: description,
+            title: title,
+            description: description,
             url: `/${story.slug}`,
         },
         twitter: {
             card: 'summary',
-            twitter_title: title,
-            twitter_description: description,
+            title: title,
+            description: description,
         },
     };
-}
 
-generateMetadata({ params: { slug: 'home', lang: 'en' } })
-    .then((metadata) => console.log(metadata))
-    .catch((error) => console.error(error));
+    metadataCache[cacheKey] = metadata;
+
+    return metadata;
+}
 
 export default async function Homepage({ params }) {
     const slug = 'home';
     const lang = params.lang || 'en';
-    const { story, config_footer, config_header } = await fetchData(
-        slug,
-        lang
-    );
+    const { story, config_footer, config_header } = await fetchData(slug, lang);
 
     if (!story) {
         return redirect('/not-found');

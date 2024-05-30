@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
@@ -20,7 +21,7 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 w-6 h-6 mt-0.5"
                                 src={blok?.step_one_icon.filename}
-                                alt="icon-1"
+                                alt={`Icon for ${blok?.title}`}
                             />
                             <div>
                                 <H4>{blok?.step_one_title}</H4>
@@ -35,7 +36,7 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 w-6 h-6 mt-0.5"
                                 src={blok?.step_two_icon.filename}
-                                alt="icon-1"
+                                alt={`Icon for ${blok?.title}`}
                             />
                             <div>
                                 <H4>{blok?.step_two_title}</H4>
@@ -50,7 +51,7 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 w-6 h-6 mt-0.5"
                                 src={blok?.step_three_icon.filename}
-                                alt="icon-1"
+                                alt={`Icon for ${blok?.title}`}
                             />
                             <div>
                                 <H4>{blok?.step_three_title}</H4>

@@ -16,6 +16,7 @@ export default function Video({ blok }) {
                 <div className="col-span-12 flex flex-col lg:flex-row justify-between items-center">
                     <div className="overflow-hidden w-full lg:w-2/3 ">
                         <video
+                            loading="lazy"
                             className="-mt-[1%] -mb-[1%]"
                             controls={false}
                             autoPlay={true}

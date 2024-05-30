@@ -94,12 +94,12 @@ const ProductCarousel = () => {
                         <img
                             className="block max-w-full h-auto"
                             src={data[imageIndex].image}
-                            alt="Carousel Image"
+                            alt="Product Carousel Image"
                         />
 
                         <div className="p-24 mx-w-full md:w-auto">
                             <H3>{data[imageIndex].titleH3}</H3>
-                            <div className="mb-6 mt-8 md:mb-6 mt-4 md:mt-8">
+                            <div className="mb-6 md:mb-6 mt-4 md:mt-8">
                                 <Text>{data[imageIndex].text}</Text>
                             </div>
                             <button

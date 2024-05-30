@@ -21,7 +21,7 @@ const SuccessStory = ({ current, idx, blok }) => {
             <img
                 className="w-full aspect-[4/3] object-cover"
                 src={card.img}
-                alt=""
+                alt={`Image for ${card.title}`}
             />
             <div className="p-5 ">
                 <div className="mb-4">
@@ -38,7 +38,7 @@ const SuccessStory = ({ current, idx, blok }) => {
                     <img
                         className="w-5 h-5"
                         src="/icons/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                        alt=""
+                        alt={card.title}
                     />
                 </Link>
             </div>

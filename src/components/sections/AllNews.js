@@ -1,8 +1,8 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
-
 import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
@@ -14,7 +14,6 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
-
     const [search, setSearch] = useState('');
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
 
@@ -73,7 +72,7 @@ function AllNews({ blok }) {
 
         const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] =
+            filterSearchParameters['filter_query[categories][all_in_array]'] =
                 categories.join(',');
         }
         if (search.length > 2) {
@@ -197,7 +196,7 @@ function AllNews({ blok }) {
                                         <img
                                             src={article.content.image.filename}
                                             className="object-cover w-full h-full group-hover:scale-110 transition-all"
-                                            alt="Image 1"
+                                            alt="News Article image"
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">

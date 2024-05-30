@@ -1,3 +1,4 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import {
     getStoryblokApi,
@@ -59,19 +60,22 @@ function AdHocMedienmitteilungen({ blok }) {
                                     <img
                                         src={article.content.image.filename}
                                         className="object-cover w-full h-full group-hover:scale-110 transition-all"
-                                        alt="Image 1"
+                                        alt="Article Medienmitteilungen image"
                                     />
                                 </div>
                                 <div className="mb-1 mt-4 flex flex-wrap">
                                     {article.content.categories.map(
-                                        (category, index) => (
-                                            category.full_slug.includes("categories/medienmitteilungen") && <span
-                                                key={index}
-                                                className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                            >
-                                                {category.content.category}
-                                            </span>
-                                        )
+                                        (category, index) =>
+                                            category.full_slug.includes(
+                                                'categories/medienmitteilungen'
+                                            ) && (
+                                                <span
+                                                    key={index}
+                                                    className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                >
+                                                    {category.content.category}
+                                                </span>
+                                            )
                                     )}
                                 </div>
                                 <div className="text-sm mb-1 text-gray-500">

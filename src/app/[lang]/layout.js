@@ -1,12 +1,8 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import StoryblokProvider from '@/src/components/StoryblokProvider';
-// import { useParams } from 'next/navigation'
+import Head from 'next/head';
 import Script from 'next/script';
-import { headers } from "next/headers";
-
-import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
-
 import './globals.css';
 
 const fontStadler = localFont({
@@ -105,24 +101,17 @@ const fontStadler = localFont({
     variable: '--font-stadler',
 });
 
-// const fontFamily = Montserrat({
-//     subsets: ['latin'],
-//     variable: '--font-montserrat',
-// });
-//const mySchema = cloneDeep(RichTextSchema);
-
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
 });
 
 export default function RootLayout({ children, params: { lang } }) {
-
     return (
         <StoryblokProvider>
             <html lang={lang}>
-                <head>
-                    <Script>
+                <Head>
+                    <Script async>
                         {`
                             var _mtm = window._mtm = window._mtm || [];
                             _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
@@ -132,7 +121,7 @@ export default function RootLayout({ children, params: { lang } }) {
                             })();
                         `}
                     </Script>
-                    <Script>
+                    <Script async>
                         {`
                             const curUrl = window.location.href
                             const linksForMatomo = document.querySelectorAll("a")
@@ -166,7 +155,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         type="text/javascript"
                         async
                     ></Script> */}
-                </head>
+                </Head>
                 <body
                     className={
                         fontStadler.className +

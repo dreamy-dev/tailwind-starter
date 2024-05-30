@@ -23,10 +23,10 @@ const submenuVariants = {
         y: 50,
         height: 0,
         overflow: 'hidden',
-
         transitionEnd: { display: 'none' },
     },
 };
+
 const variantsSub = {
     open: { opacity: 1, y: 0, height: '100%' },
     closed: { opacity: 0, y: 50, height: 0 },
@@ -85,12 +85,13 @@ const Header = ({ blok }) => {
             },
         ],
     };
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState(null);
-
     const menuRef = useRef(null);
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
 
     const toggleSubmenu = (submenuId) => {
         if (openSubmenu === submenuId) {
@@ -130,17 +131,17 @@ const Header = ({ blok }) => {
         };
     }, []);
 
-    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
     useEffect(() => {
         const mediaWatcher = window.matchMedia('(max-width: 1024px)');
         setIsNarrowScreen(mediaWatcher.matches);
 
-        function updateIsNarrowScreen(e) {
+        const updateIsNarrowScreen = (e) => {
             setIsNarrowScreen(e.matches);
-        }
+        };
+
         if (mediaWatcher.addEventListener) {
             mediaWatcher.addEventListener('change', updateIsNarrowScreen);
-            return function cleanup() {
+            return () => {
                 mediaWatcher.removeEventListener(
                     'change',
                     updateIsNarrowScreen
@@ -148,11 +149,11 @@ const Header = ({ blok }) => {
             };
         } else {
             mediaWatcher.addListener(updateIsNarrowScreen);
-            return function cleanup() {
+            return () => {
                 mediaWatcher.removeListener(updateIsNarrowScreen);
             };
         }
-    });
+    }, []);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -169,18 +170,6 @@ const Header = ({ blok }) => {
         };
         switch (submenuId) {
             case 1:
-                return (
-                    <Link
-                        href={ButtonUrlRenderer(href)}
-                        className="cursor-pointer text-primarySolid-800 lg:bg-primaryTrans-100 lg:text-primary px-0 py-4 pt-8 lg:px-8 lg:py-24 lg:text-center"
-                        onClick={onClickHandler}
-                    >
-                        <p className="hidden lg:block lg:font-semibold lg:text-xl">
-                            {blok.main_submenu_2_text}
-                        </p>
-                        <p className="">{title}</p>
-                    </Link>
-                );
             case 2:
                 return (
                     <Link
@@ -191,7 +180,7 @@ const Header = ({ blok }) => {
                         <p className="hidden lg:block lg:font-semibold lg:text-xl">
                             {blok.main_submenu_2_text}
                         </p>
-                        <p className="">{title}</p>
+                        <p>{title}</p>
                     </Link>
                 );
             default:
@@ -201,7 +190,7 @@ const Header = ({ blok }) => {
 
     return (
         <header
-            className={` bg-white z-10 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
+            className={`bg-white z-10 ${isMobileNavOpen ? 'mobile-nav-open' : ''} ${
                 isMobileNavOpen && isNarrowScreen
                     ? 'fixed w-screen h-screen'
                     : ''
@@ -247,7 +236,7 @@ const Header = ({ blok }) => {
                     <TopNav blok={blok} />
                     <nav className="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 relative">
                         <ContentWidth>
-                            <div className=" bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolut lg:static">
+                            <div className="bg-white col-span-12 w-full flex flex-col items-start justify-center lg:justify-between lg:flex-row py-5 px-4 lg:px-0 lg:min-h-fit lg:w-auto left-0 top-[10%] absolute lg:static">
                                 <div className="hidden lg:block">
                                     <Link
                                         href={ButtonUrlRenderer(blok.LinkLogo)}
@@ -262,23 +251,35 @@ const Header = ({ blok }) => {
                                 </div>
                                 <div
                                     ref={menuRef}
-                                    className=" w-full lg:w-auto"
+                                    className="w-full lg:w-auto"
                                     id="navbar-solid-bg"
                                 >
-                                    <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center  lg:flex-row font-medium mt-4 rounded-lg bg-white  lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
+                                    <ul className="mb-10 lg:mb-0 flex flex-col gap-8 lg:gap-0 items-start justify-center lg:flex-row font-medium mt-4 rounded-lg bg-white lg:items-center lg:mt-0 md:border-0 lg:bg-transparent">
                                         {navigationMain.topNav.map(
                                             (item, index) => (
                                                 <li
                                                     key={index}
-                                                    className="cursor-poiner lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                    className="cursor-pointer lg:px-3 xl:px-5 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                 >
                                                     {item.submenu ? (
                                                         <motion.div
+                                                            tabIndex="0"
+                                                            className="md:border-0 flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                             onClick={() =>
                                                                 toggleSubmenu(
                                                                     item.id
                                                                 )
                                                             }
+                                                            onKeyPress={(e) => {
+                                                                if (
+                                                                    e.key ===
+                                                                    'Enter'
+                                                                ) {
+                                                                    toggleSubmenu(
+                                                                        item.id
+                                                                    );
+                                                                }
+                                                            }}
                                                             variants={
                                                                 submenuVariants
                                                             }
@@ -289,12 +290,18 @@ const Header = ({ blok }) => {
                                                                     : ''
                                                             }
                                                             initial="open"
+                                                            role="button"
+                                                            aria-expanded={
+                                                                openSubmenu ===
+                                                                item.id
+                                                            }
+                                                            aria-haspopup="true"
                                                         >
                                                             {item.title}
                                                         </motion.div>
                                                     ) : (
                                                         <Link
-                                                            className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                                            className="flex gap-2 justify-center items-start pr-4 text-primarySolid-800 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                                             href={ButtonUrlRenderer(
                                                                 item.href
                                                             )}
@@ -332,7 +339,6 @@ const Header = ({ blok }) => {
                                                                                     e
                                                                                 ) => {
                                                                                     e.preventDefault();
-
                                                                                     setIsOpen(
                                                                                         true
                                                                                     );
@@ -377,7 +383,6 @@ const Header = ({ blok }) => {
                                                                                         key={
                                                                                             subItem.title
                                                                                         }
-                                                                                        className=""
                                                                                     >
                                                                                         <Link
                                                                                             href={ButtonUrlRenderer(
@@ -400,7 +405,10 @@ const Header = ({ blok }) => {
                                                                                                 }
                                                                                             </p>
                                                                                             <span className="hidden lg:block">
-                                                                                                <img src="/icons/chevron-right-light.svg" />
+                                                                                                <img
+                                                                                                    alt="icon chevron right"
+                                                                                                    src="/icons/chevron-right-light.svg"
+                                                                                                />
                                                                                             </span>
                                                                                         </Link>
                                                                                     </motion.div>
@@ -417,6 +425,7 @@ const Header = ({ blok }) => {
                                         <li className="lg:relative lg:block z-20">
                                             <div className="relative block pt-6 pl-0 md:pl-12 md:pt-0">
                                                 <button
+                                                    aria-label="Open Modal"
                                                     onClick={openModal}
                                                     data-modal-target="default-modal"
                                                     data-modal-toggle="default-modal"

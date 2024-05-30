@@ -174,6 +174,7 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
                     </div>
                     <label htmlFor="search" className="w-full">
                         <input
+                            id="search"
                             ref={inputRef}
                             placeholder="Enter your search term..."
                             name="search"
