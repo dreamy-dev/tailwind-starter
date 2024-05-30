@@ -565,10 +565,12 @@ const ProspectiveCareer = ({ blok }) => {
 
         Object.keys(selectedOptions).map((key) => {
             if (selectedOptions[key]) {
-                if (filtersString.length) {
-                    filtersString += `,`;
+                if (selectedOptions[key] != "none") {
+                    if (filtersString.length) {
+                        filtersString += `,`;
+                    }
+                    filtersString += `${key}:${selectedOptions[key]}`;
                 }
-                filtersString += `${key}:${selectedOptions[key]}`;
             }
         });
 
