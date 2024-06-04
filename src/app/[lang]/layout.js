@@ -111,8 +111,32 @@ export default function RootLayout({ children, params: { lang } }) {
         <StoryblokProvider>
             <html lang={lang}>
                 <Head>
+                    {/* <Script
+                    
+                        id="Cookiebot"
+                        src="
+https://consent.cookiebot.com/uc.js"
+                        data-cbid="cedf775e-624e-499c-a386-4629e677f18e"
+                        data-blockingmode="auto"
+                        type="text/javascript"
+                    ></Script>
+                    <Script
+                        id="CookieDeclaration"
+                        src="
+https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
+                        type="text/javascript"
+                        async
+                    ></Script> */}
+                </Head>
+                <body
+                    className={
+                        fontStadler.className +
+                        ' overflow-x-hidden flex flex-col min-h-screen'
+                    }
+                >
                     <Script async>
                         {`
+                        console.log("Matomo test works")
                             var _mtm = window._mtm = window._mtm || [];
                             _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                             (function() {
@@ -139,29 +163,6 @@ export default function RootLayout({ children, params: { lang } }) {
                             }
                         `}
                     </Script>
-                    {/* <Script
-                    
-                        id="Cookiebot"
-                        src="
-https://consent.cookiebot.com/uc.js"
-                        data-cbid="cedf775e-624e-499c-a386-4629e677f18e"
-                        data-blockingmode="auto"
-                        type="text/javascript"
-                    ></Script>
-                    <Script
-                        id="CookieDeclaration"
-                        src="
-https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
-                        type="text/javascript"
-                        async
-                    ></Script> */}
-                </Head>
-                <body
-                    className={
-                        fontStadler.className +
-                        ' overflow-x-hidden flex flex-col min-h-screen'
-                    }
-                >
                     <main>{children}</main>
                 </body>
             </html>
