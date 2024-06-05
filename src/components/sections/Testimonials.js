@@ -71,7 +71,11 @@ const Testimonials = ({ blok }) => {
                                         <div className="rounded-b-lg bg-white">
                                             <blockquote className="my-4 border-l-4 border-gray-300 p-4 dark:border-gray-500 dark:bg-gray-800">
                                                 <p className="text-xl font-medium italic leading-relaxed text-gray-900 dark:text-white">
-                                                    "{selectedTab.quote}"
+                                                    "
+                                                    {
+                                                        selectedTab.quote
+                                                    }
+                                                    "
                                                 </p>
                                             </blockquote>
                                         </div>
