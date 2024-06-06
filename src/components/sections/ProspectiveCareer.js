@@ -33,8 +33,11 @@ const ProspectiveCareer = ({ blok }) => {
     let jobClickReference = jobClick.current;
 
     useEffect(() => {
+        console.log("jobClickReference", jobClickReference)
         jobClickReference?.addEventListener('click', (e) => {
+            console.log("still outside if", e.target)
             if (e.target.closest('a')) {
+                console.log("we are inside if", e.target)
                 const careerLink = e.target.closest('a')?.getAttribute('href');
                 const careerTitle = e.target
                     .closest('a')
@@ -844,11 +847,11 @@ const ProspectiveCareer = ({ blok }) => {
                                 </option>
                                 {dependentField &&
                                     attributes[
-                                        Object.keys(dependentFilter)[0]
+                                    Object.keys(dependentFilter)[0]
                                     ] &&
                                     Object.values(
                                         attributes[
-                                            Object.keys(dependentFilter)[0]
+                                        Object.keys(dependentFilter)[0]
                                         ]
                                     ).map((value) => {
                                         return (
@@ -892,7 +895,7 @@ const ProspectiveCareer = ({ blok }) => {
                                                 ,{' '}
                                                 {
                                                     item.szas[
-                                                        'sza_location.country'
+                                                    'sza_location.country'
                                                     ]
                                                 }
                                             </p>
