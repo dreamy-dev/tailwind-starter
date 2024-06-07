@@ -30,9 +30,9 @@ const ProspectiveCareer = ({ blok }) => {
 
     const jobClick = useRef();
 
-    let jobClickReference = jobClick.current;
 
     useEffect(() => {
+        let jobClickReference = jobClick.current;
         console.log("jobClickReference", jobClickReference)
         jobClickReference?.addEventListener('click', (e) => {
             console.log("still outside if", e.target)
