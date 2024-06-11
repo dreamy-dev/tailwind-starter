@@ -1,5 +1,6 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { useEffect, useRef } from 'react';
+import DateFormatter from '../helpers/DateFormatter';
 
 const AccordionTextDateDownloadItem = ({ blok }) => {
     const investorsDE = useRef();
@@ -38,7 +39,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             className="text-xs text-black whitespace-nowrap bg-white border-b last:mb-4 last:border-b-0 dark:bg-black dark:border-gray-700"
         >
             <td className="px-6 py-4 font-bold">{blok?.title}</td>
-            <td className="px-6 py-4 ">{blok?.text_date}</td>
+            <td className="px-6 py-4 ">{DateFormatter(blok?.text_date)}</td>
             <td className="px-6 py-4  text-center">
                 <a
                     target="_blank"
