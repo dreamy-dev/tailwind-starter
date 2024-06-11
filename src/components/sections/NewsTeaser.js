@@ -90,7 +90,7 @@ function NewsTeaser({ blok }) {
                                         </Text>
                                     </div>
                                     <div className="text-sm mb-1 group-hover:text-primary transition-all">
-                                        <H3>{article.name}</H3>
+                                        <H3>{article.content.title}</H3>
                                     </div>
                                     <div className="texl-lg mb-3">
                                         <Text>
