@@ -225,7 +225,7 @@ function AllNews({ blok }) {
                                         </Text>
                                     </div>
                                     <div className="group-hover:text-primary transition-all"></div>
-                                    <H4>{article.name}</H4>
+                                    <H4>{article.content.title}</H4>
                                     <div className="texl-lg mb-3 text-gray-500"></div>
                                     <Text>
                                         {TrimText(article.content.lead)}
