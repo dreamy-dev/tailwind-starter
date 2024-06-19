@@ -604,7 +604,7 @@ export default function ContactForm({ blok }) {
                                     className="ml-2 text-sm font-medium text-black dark:text-gray-300"
                                 >
                                     <RichTextRenderer
-                                        text={blok?.disclaimer_text}
+                                        text={blok.disclaimer_text}
                                         customStyles="!text-sm !my-0"
                                     />
                                 </label>
