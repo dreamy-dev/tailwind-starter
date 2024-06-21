@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import ButtonPrimary from '../../components/elements/ButtonPrimary';
 import H1 from '../../components/typography/H1';
@@ -12,6 +12,8 @@ import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
 
 const HeroCareer = ({ blok }) => {
+    const careerButton = useRef();
+
     const [values, setValues] = useState({ 10: '', 25: '' });
     const [urlQuery, setUrlQuery] = useState('');
     const [attributes, setAttributes] = useState([]);
@@ -27,6 +29,7 @@ const HeroCareer = ({ blok }) => {
                 query += `${key}=${newValues[key]}&`;
             }
         });
+        console.log("newValues", newValues)
 
         setUrlQuery(query);
     };
@@ -178,6 +181,27 @@ const HeroCareer = ({ blok }) => {
     };
 
     useEffect(() => {
+
+        let career = careerButton.current;
+
+        career?.addEventListener('click', () => {
+            var _paq = (window._paq = window._paq || []);
+            let searchAttributes = ""
+            Object.keys(values).forEach((key) => {
+                console.log("values", values)
+                if (values[key]) {
+                    searchAttributes += `${key}: ${values[key]}; `;
+                }
+            });
+            console.log("searchAttributes", searchAttributes, urlQuery)
+            _paq.push([
+                'trackEvent',
+                'Career Search',
+                `${blok?.search_button_link} - ${searchAttributes}`,
+            ]);
+        });
+
+
         if (blok.default_language !== 'unset') {
             getAttributes();
         } else {
@@ -400,9 +424,10 @@ const HeroCareer = ({ blok }) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="">
+                        <div
+                            ref={careerButton} className="">
                             <ButtonPrimary
-                                href={`${ButtonUrlRenderer(blok?.search_button_link)}?${urlQuery}`}
+                                // href={`${ButtonUrlRenderer(blok?.search_button_link)}?${urlQuery}`}
                                 buttonText={blok.search_button_text}
                             />
                         </div>

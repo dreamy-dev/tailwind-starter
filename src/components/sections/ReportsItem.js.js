@@ -13,10 +13,12 @@ const ReportsItem = ({ blok }) => {
 
         investors?.addEventListener('click', () => {
             var _paq = (window._paq = window._paq || []);
+            const titleArray = blok?.cta_link.url.split('/')
+            const title = titleArray[titleArray.length - 1]
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.cta_link.url} - ${blok?.title}`,
+                `${blok?.title} - ${title}`,
             ]);
         });
     });
