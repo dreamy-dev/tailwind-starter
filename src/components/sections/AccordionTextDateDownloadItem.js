@@ -12,10 +12,12 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
 
         investorsDEreference?.addEventListener('click', () => {
             var _paq = (window._paq = window._paq || []);
+            const titleArray = blok?.download_presentation.url.split('/')
+            const title = titleArray[titleArray.length - 1]
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.title} - ${blok?.download_bericht.url}`,
+                `${blok?.title} - ${title}`,
             ]);
             // _paq.push([
             //     'trackGoal',
@@ -26,10 +28,12 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
 
         investorsENreference?.addEventListener('click', () => {
             var _paq = (window._paq = window._paq || []);
+            const titleArray = blok?.download_presentation.url.split('/')
+            const title = titleArray[titleArray.length - 1]
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.title} - ${blok?.download_presentation.url}`,
+                `${blok?.title} - ${title}`,
             ]);
         });
     });
