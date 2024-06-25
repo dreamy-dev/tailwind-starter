@@ -188,20 +188,22 @@ const HeroCareer = ({ blok }) => {
             var _paq = (window._paq = window._paq || []);
             let searchAttributes = ""
             Object.keys(values).forEach((key) => {
-                console.log("values", values)
+                // console.log("values", values)
                 if (values[key]) {
                     searchAttributes += `${key}: ${values[key]}; `;
                 }
             });
-            console.log("searchAttributes", searchAttributes, urlQuery)
+            // console.log("searchAttributes", attributes, searchAttributes, ButtonUrlRenderer(blok?.search_button_link))
             _paq.push([
                 'trackEvent',
                 'Career Search',
                 `${blok?.search_button_link} - ${searchAttributes}`,
             ]);
         });
+    }, [values]);
 
 
+    useEffect(() => {
         if (blok.default_language !== 'unset') {
             getAttributes();
         } else {
@@ -427,7 +429,7 @@ const HeroCareer = ({ blok }) => {
                         <div
                             ref={careerButton} className="">
                             <ButtonPrimary
-                                // href={`${ButtonUrlRenderer(blok?.search_button_link)}?${urlQuery}`}
+                                href={`${ButtonUrlRenderer(blok?.search_button_link)}?${urlQuery}`}
                                 buttonText={blok.search_button_text}
                             />
                         </div>
