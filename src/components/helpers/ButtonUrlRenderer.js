@@ -17,7 +17,7 @@ const ButtonUrlRenderer = (data) => {
     }
     if (data.linktype && data.linktype == 'email') {
     }
-    return data;
+    return '/';
 };
 
 export default ButtonUrlRenderer;

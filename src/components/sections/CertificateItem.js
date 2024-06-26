@@ -2,16 +2,16 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
-function DownloadElementLanguage({ blok }) {
+function CertificateItem({ blok }) {
     return (
         <a
             {...storyblokEditable(blok)}
-            className="text-primary mr-4"
-            href={ButtonUrlRenderer(blok?.buttonLink)}
+            className="text-primary ml-4"
+            href={ButtonUrlRenderer(blok?.button_link)}
         >
-            {blok?.buttonText}
+            {blok?.button_text}
         </a>
     );
 }
 
-export default DownloadElementLanguage;
+export default CertificateItem;
