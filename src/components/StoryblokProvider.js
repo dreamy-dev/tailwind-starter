@@ -110,6 +110,7 @@ import SimpleContainerWrapper from './sections/SimpleContainerWrapper';
 import ConfigFooter from './sections/Config_footer';
 import ConfigHeader from './sections/Config_header';
 import NotFoundError from './sections/NotFoundError';
+import CertificateItem from './sections/CertificateItem';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -140,6 +141,7 @@ storyblokInit({
         'according-table-item': AccordionTableItem,
         'accordion-download-wrapper-blueline': AccordionWrapperBlueLine,
         'accordion-text-download-item': AccordionTextDownloadItem,
+        'certificate_item': CertificateItem,
         'highlights-grid': AdvantagesGrid,
         'highlights-item': AdvantageItem,
         'portrait-grid': PortraitGrid,
