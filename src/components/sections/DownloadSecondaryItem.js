@@ -10,10 +10,10 @@ const DownloadSecondaryItem = ({ blok }) => {
                 {...storyblokEditable(blok)}
                 className="mb-4 text-xl flex-col md:flex-row flex align-middle md:justify-between"
             >
-                <Text className="w-full md:w-auto mr-0 md:mr-10 text-wrap">
+                <Text className="w-8/12 md:w-auto mr-0 md:mr-10 text-wrap">
                     {blok.title}
                 </Text>
-                <div className="flex justify-start items-center">
+                <div className="w-3/12 flex justify-end items-center">
                     {blok?.download_list?.map(
                         (item) =>
                             item?.cta_text && (
