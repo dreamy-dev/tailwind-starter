@@ -17,7 +17,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
-                `${blok?.title} - ${title}`,
+                `${title}`,
             ]);
             // _paq.push([
             //     'trackGoal',
