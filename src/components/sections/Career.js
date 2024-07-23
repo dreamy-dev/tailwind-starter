@@ -14,7 +14,6 @@ export default function Career({ blok }) {
         let careerEl = careerRef.current;
 
         careerEl?.addEventListener('click', () => {
-            console.log('publicationEl', careerEl);
             var _paq = (window._paq = window._paq || []);
             _paq.push([
                 'trackEvent',

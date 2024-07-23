@@ -14,12 +14,19 @@ import i18nConfig from '@/i18nConfig';
 const HeroCareer = ({ blok }) => {
     const careerButton = useRef();
 
+    const [matomoObject, setMatomoObject] = useState({ 'field': '', 'location': '' });
     const [values, setValues] = useState({ 10: '', 25: '' });
     const [urlQuery, setUrlQuery] = useState('');
     const [attributes, setAttributes] = useState([]);
     const currentLocale = useCurrentLocale(i18nConfig);
 
-    const changeChosenFilter = (value, property) => {
+    const changeChosenFilter = (value, property, operator, name, e) => {
+        console.log("eventCur", operator, name, e.target.selectedOptions[0].label)
+
+        const newMatomoValues = { ...matomoObject };
+        newMatomoValues[operator] = name;
+        setMatomoObject(newMatomoValues)
+
         const newValues = { ...values };
         newValues[property] = value;
         setValues(newValues);
@@ -29,7 +36,7 @@ const HeroCareer = ({ blok }) => {
                 query += `${key}=${newValues[key]}&`;
             }
         });
-        console.log("newValues", newValues)
+        // console.log("newValues", newValues)
 
         setUrlQuery(query);
     };
@@ -187,17 +194,16 @@ const HeroCareer = ({ blok }) => {
         career?.addEventListener('click', () => {
             var _paq = (window._paq = window._paq || []);
             let searchAttributes = ""
-            Object.keys(values).forEach((key) => {
-                // console.log("values", values)
-                if (values[key]) {
-                    searchAttributes += `${key}: ${values[key]}; `;
+            Object.keys(matomoObject).forEach((key) => {
+                if (matomoObject[key]) {
+                    searchAttributes += `${key}: ${matomoObject[key]}; `;
                 }
             });
-            // console.log("searchAttributes", attributes, searchAttributes, ButtonUrlRenderer(blok?.search_button_link))
+            console.log("searchAttributes", searchAttributes)
             _paq.push([
                 'trackEvent',
                 'Career Search',
-                `${blok?.search_button_link} - ${searchAttributes}`,
+                `${searchAttributes}`,
             ]);
         });
     }, [values]);
@@ -370,7 +376,7 @@ const HeroCareer = ({ blok }) => {
                                 <select
                                     className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     onChange={(e) =>
-                                        changeChosenFilter(e.target.value, '10')
+                                        changeChosenFilter(e.target.value, '10', 'field', e.target.selectedOptions[0].label, e)
                                     }
                                 >
                                     <option value="">
@@ -404,7 +410,7 @@ const HeroCareer = ({ blok }) => {
                                 <select
                                     className="bg-greySolid-30 border rounded border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     onChange={(e) =>
-                                        changeChosenFilter(e.target.value, '25')
+                                        changeChosenFilter(e.target.value, '25', 'location', e.target.selectedOptions[0].label, e)
                                     }
                                 >
                                     <option value="">
