@@ -713,7 +713,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <input
                             type="text"
                             id="search"
-                            className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="border text-sm block w-full p-2.5  text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                             placeholder=""
                             onChange={(e) => onSearchChange(e)}
                         />
@@ -728,7 +728,7 @@ const ProspectiveCareer = ({ blok }) => {
                             </label>
 
                             <select
-                                className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="border text-sm block w-full p-2.5  text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                 onChange={(e) => filterJobs(e, '10')}
                                 value={
                                     selectedOptions['10']
@@ -762,7 +762,7 @@ const ProspectiveCareer = ({ blok }) => {
                                 {blok.select_2_label}
                             </label>
                             <select
-                                className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="border text-sm block w-full p-2.5  text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                 onChange={(e) => filterJobs(e, '20')}
                                 value={
                                     selectedOptions['20']
@@ -798,7 +798,7 @@ const ProspectiveCareer = ({ blok }) => {
                                 {blok.select_3_label}
                             </label>
                             <select
-                                className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="border text-sm block w-full p-2.5  text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                                 onChange={(e) => {
                                     filterJobs(e, '25', false);
                                     setLocation(e, '25');
@@ -840,7 +840,7 @@ const ProspectiveCareer = ({ blok }) => {
                                 }}
                                 disabled={!dependentField}
                                 id="countries_disabled"
-                                className="border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="border text-sm block w-full p-2.5  text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
                             >
                                 <option value="none">
                                     {blok.select_4_placeholder}
@@ -867,7 +867,7 @@ const ProspectiveCareer = ({ blok }) => {
                         </div>
                     </div>
                 </div>
-                <div className="grid col-span-12">
+                <div className="grid mb-24 col-span-12">
                     <H3>{blok.subtitle}</H3>
                     <div className="divide-y" ref={jobClick}>
                         {isDataLoading ? (

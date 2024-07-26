@@ -161,6 +161,42 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                                     })
                                 })
                             }
+
+                            linksForMatomo.forEach(item => {
+                                item?.addEventListener('click', () => {
+                                    console.log(item.getAttribute("href"),item.getAttribute("href").includes(".pdf"))
+                                    const fullHref = item.getAttribute("href")
+                                    if (fullHref.includes(".pdf") ||
+                                        fullHref.includes(".avi") ||
+                                        fullHref.includes(".doc") ||
+                                        fullHref.includes(".docx") ||
+                                        fullHref.includes(".gif") ||
+                                        fullHref.includes(".png") ||
+                                        fullHref.includes(".jpg") ||
+                                        fullHref.includes(".jpeg") ||
+                                        fullHref.includes(".png") ||
+                                        fullHref.includes(".tiff") ||
+                                        fullHref.includes(".mp3") ||
+                                        fullHref.includes(".txt") ||
+                                        fullHref.includes(".rar") ||
+                                        fullHref.includes(".zip") ||
+                                        fullHref.includes(".gzip") ||
+                                        fullHref.includes(".wav") ||
+                                        fullHref.includes(".csv") ||
+                                        fullHref.includes(".xlsx") ||
+                                        fullHref.includes(".pptx") ||
+                                        fullHref.includes(".webp")) {
+                                        const hrefArray = fullHref.split('/')
+                                        
+                                        var _paq = (window._paq = window._paq || []);
+                                        _paq.push([
+                                            'trackEvent',
+                                            'Documents Download',
+                                            hrefArray[hrefArray.length - 1]
+                                        ]);
+                                    }
+                                })
+                            })
                         `}
                     </Script>
                     <main>{children}</main>
