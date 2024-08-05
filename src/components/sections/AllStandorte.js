@@ -24,7 +24,7 @@ function AllStandorte({ blok }) {
             <option value="">{blok.filter_country_title}</option>
             {blok.filter_country.map((country, index) => (
                 <option key={index} value={country.uuid}>
-                    {country.name}
+                    {country.content.category}
                 </option>
             ))}
         </select>
