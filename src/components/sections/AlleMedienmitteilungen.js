@@ -104,7 +104,7 @@ function AlleMedienmitteilungen({ blok }) {
                             </option>
                             {blok.filter_country.map((country, index) => (
                                 <option key={index} value={country.uuid}>
-                                    {country.name}
+                                    {country.content.category}
                                 </option>
                             ))}
                         </select>
@@ -136,7 +136,7 @@ function AlleMedienmitteilungen({ blok }) {
                             </option>
                             {blok.filter_products.map((product, index) => (
                                 <option key={index} value={product.uuid}>
-                                    {product.name}
+                                    {product.content.category}
                                 </option>
                             ))}
                         </select>
@@ -149,7 +149,7 @@ function AlleMedienmitteilungen({ blok }) {
                             <option value="">{blok.filter_years_title}</option>
                             {blok.filter_years.map((year, index) => (
                                 <option key={index} value={year.uuid}>
-                                    {year.name}
+                                    {year.content.category}
                                 </option>
                             ))}
                         </select>
