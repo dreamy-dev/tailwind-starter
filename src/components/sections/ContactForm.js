@@ -93,40 +93,40 @@ export default function ContactForm({ blok }) {
     };
 
     // Debounced validation functions
-    const debouncedValidateFirstName = debounce(() => {
-        const hasError = blok?.required_first_name && !first_name.trim();
+    const debouncedValidateFirstName = debounce((value) => {
+        const hasError = blok?.required_first_name && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             first_name: hasError,
         }));
     }, 300);
 
-    const debouncedValidateSubject = debounce(() => {
-        const hasError = blok?.required_subject && !subject.trim();
+    const debouncedValidateSubject = debounce((value) => {
+        const hasError = blok?.required_subject && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             subject: hasError,
         }));
     }, 300);
 
-    const debouncedValidateLastName = debounce(() => {
-        const hasError = blok?.required_last_name && !last_name.trim();
+    const debouncedValidateLastName = debounce((value) => {
+        const hasError = blok?.required_last_name && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             last_name: hasError,
         }));
     }, 300);
 
-    const debouncedValidateEmail = debounce(() => {
-        const valid = /\S+@\S+\.\S+/.test(email);
+    const debouncedValidateEmail = debounce((value) => {
+        const valid = /\S+@\S+\.\S+/.test(value);
         setErrors((prevErrors) => ({
             ...prevErrors,
             email: blok?.required_email && !valid,
         }));
     }, 300);
 
-    const debouncedValidateStreet = debounce(() => {
-        const hasError = blok?.required_street && !street.trim();
+    const debouncedValidateStreet = debounce((value) => {
+        const hasError = blok?.required_street && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             street: hasError,
@@ -142,33 +142,33 @@ export default function ContactForm({ blok }) {
         setNumber(value);
     }, 300);
 
-    const debouncedValidateZip = debounce(() => {
-        const hasError = blok?.required_zip && !zip.trim();
+    const debouncedValidateZip = debounce((value) => {
+        const hasError = blok?.required_zip && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             zip: hasError,
         }));
     }, 300);
 
-    const debouncedValidateCity = debounce(() => {
-        const hasError = blok?.required_city && !city.trim();
+    const debouncedValidateCity = debounce((value) => {
+        const hasError = blok?.required_city && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             city: hasError,
         }));
     }, 300);
 
-    const debouncedValidatePhone = debounce(() => {
+    const debouncedValidatePhone = debounce((value) => {
         const phonePattern = /^\+?(\d[-.\s]?){7,14}\d$/;
-        const valid = phonePattern.test(phone);
+        const valid = phonePattern.test(value);
         setErrors((prevErrors) => ({
             ...prevErrors,
             phone: blok?.required_phone && !valid,
         }));
     }, 300);
 
-    const debouncedValidateMessage = debounce(() => {
-        const hasError = blok?.required_message && !message.trim();
+    const debouncedValidateMessage = debounce((value) => {
+        const hasError = blok?.required_message && !value.trim();
         setErrors((prevErrors) => ({
             ...prevErrors,
             message: hasError,
@@ -254,9 +254,9 @@ export default function ContactForm({ blok }) {
                                 required={blok?.required_subject ? true : false}
                                 onChange={(e) => {
                                     setSubject(e.target.value);
-                                    debouncedValidateSubject();
+                                    debouncedValidateSubject(e.target.value);
                                 }}
-                                onBlur={debouncedValidateSubject}
+                                onBlur={(e) => debouncedValidateSubject(e.target.value)}
                             />
                             <div
                                 className={`${errors.subject ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
@@ -323,9 +323,9 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setName(e.target.value);
-                                        debouncedValidateFirstName();
+                                        debouncedValidateFirstName(e.target.value);
                                     }}
-                                    onBlur={debouncedValidateFirstName}
+                                    onBlur={(e) => debouncedValidateFirstName(e.target.value)}
                                 />
                                 <div
                                     className={`${errors.first_name ? 'block' : 'hidden'} mt-2 mb-2 text-sm text-red-700 font-medium`}
@@ -353,9 +353,9 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setLastName(e.target.value);
-                                        debouncedValidateLastName();
+                                        debouncedValidateLastName(e.target.value);
                                     }}
-                                    onBlur={debouncedValidateLastName}
+                                    onBlur={(e) => debouncedValidateLastName(e.target.value)}
                                 />
                                 <div
                                     className={`${errors.last_name ? 'block ' : 'hidden '} mt-2 mb-2 text-sm text-red-700 font-medium`}
@@ -385,9 +385,9 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setStreet(e.target.value);
-                                        debouncedValidateStreet();
+                                        debouncedValidateStreet(e.target.value);
                                     }}
-                                    onBlur={debouncedValidateStreet}
+                                    onBlur={(e) => debouncedValidateStreet(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -449,9 +449,9 @@ export default function ContactForm({ blok }) {
                                     required={blok?.required_zip ? true : false}
                                     onChange={(e) => {
                                         setZIP(e.target.value);
-                                        debouncedValidateZip();
+                                        debouncedValidateZip(e.target.value);
                                     }}
-                                    onBlur={debouncedValidateZip}
+                                    onBlur={(e) => debouncedValidateZip(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -480,9 +480,9 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setCity(e.target.value);
-                                        debouncedValidateCity();
+                                        debouncedValidateCity(e.target.value);
                                     }}
-                                    onBlur={debouncedValidateCity}
+                                    onBlur={(e) => debouncedValidateCity(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -514,9 +514,8 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setEmail(e.target.value);
-                                        debouncedValidateEmail();
                                     }}
-                                    onBlur={debouncedValidateEmail}
+                                    onBlur={(e) => debouncedValidateEmail(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -545,9 +544,8 @@ export default function ContactForm({ blok }) {
                                     }
                                     onChange={(e) => {
                                         setPhone(e.target.value);
-                                        debouncedValidatePhone();
                                     }}
-                                    onBlur={debouncedValidatePhone}
+                                    onBlur={(e) => debouncedValidatePhone(e.target.value)}
                                     className="block p-3  w-full text-sm text-greySolid-800 bg-white  border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                                 />
                                 <div
@@ -575,9 +573,9 @@ export default function ContactForm({ blok }) {
                                 required={blok?.required_message ? true : false}
                                 onChange={(e) => {
                                     setMessage(e.target.value);
-                                    debouncedValidateMessage();
+                                    debouncedValidateMessage(e.target.value);
                                 }}
-                                onBlur={debouncedValidateMessage}
+                                onBlur={(e) => debouncedValidateMessage(e.target.value)}
                                 className="block p-2.5 w-full text-sm text-greySolid-800 bg-white border border-greySolid-400 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                             ></textarea>
                             <div
