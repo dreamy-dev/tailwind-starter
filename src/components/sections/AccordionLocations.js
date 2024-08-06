@@ -25,14 +25,7 @@ const AccordionLocations = ({ blok }) => {
                         <div className="flex">
                             <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
                                 {blok.tag_division.map((country, index) => (
-                                    <span key={index}>{country.name}</span>
-                                ))}
-                            </p>
-                        </div>
-                        <div className=" hidden">
-                            <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
-                                {blok.tag_country.map((country, index) => (
-                                    <span key={index}>{country.name}</span>
+                                    <span key={index}>{country.content.category}</span>
                                 ))}
                             </p>
                         </div>
@@ -52,11 +45,10 @@ const AccordionLocations = ({ blok }) => {
                     <div>
                         <button
                             type="button"
-                            className={`flex justify-between items-center py-5 w-full font-medium text-left ${
-                                isActive
-                                    ? 'text-gray-900 bg-white  dark:text-white'
-                                    : 'text-gray-500   dark:text-gray-400'
-                            }`}
+                            className={`flex justify-between items-center py-5 w-full font-medium text-left ${isActive
+                                ? 'text-gray-900 bg-white  dark:text-white'
+                                : 'text-gray-500   dark:text-gray-400'
+                                }`}
                             onClick={handleAccordionClick}
                             aria-expanded={isActive}
                         >
