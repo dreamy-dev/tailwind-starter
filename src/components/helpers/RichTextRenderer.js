@@ -20,6 +20,7 @@ import Blockquote from '../typography/Blockquote';
 
 import DownloadItem from '../sections/DownloadItem';
 import ButtonPrimary from '../elements/ButtonPrimary';
+import ButtonUrlRenderer from './ButtonUrlRenderer';
 
 const RichTextRenderer = (props) => {
     return (
@@ -71,7 +72,7 @@ const RichTextRenderer = (props) => {
                 blokResolvers: {
                     ['cta-small']: (props) => <ButtonPrimary position="left"
                         buttonText={props.CTA_text}
-                        href={props.CTA_link} />
+                        href={ButtonUrlRenderer(props.CTA_link)} />
 
                 },
                 nodeResolvers: {
