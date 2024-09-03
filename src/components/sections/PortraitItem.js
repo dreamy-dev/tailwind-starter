@@ -8,7 +8,7 @@ const PortraitItem = ({ blok }) => (
             <img
                 className="object-cover object-top w-full h-64 lg:h-96"
                 src={blok?.image.filename}
-                alt=""
+                alt="Portrait image"
             />
             <div className="mt-4 space-y-2">
                 <div>

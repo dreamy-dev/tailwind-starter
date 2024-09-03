@@ -18,7 +18,8 @@ export default function HomePageHero({ blok }) {
                         <img
                             src="/Graph.svg"
                             className="block h-auto md:h-[60vh] w-full"
-                            alt=""
+                            alt={`Shadow image for ${blok?.title} `}
+                            aria-label={`Shadow image for ${blok?.title} `}
                         />
                     </div>
                     <motion.div
@@ -35,16 +36,12 @@ export default function HomePageHero({ blok }) {
                         </Text>
                     </motion.div>
                 </motion.div>
-                <motion.div
-                    /* initial={{ x: -1800 }}
-                    animate={{ x: 0 }}
-                    transition={{ duration: 1 }} */
-                    className="w-full  bg-center bg-cover object-center bg-no-repeat"
-                >
+                <motion.div className="w-full  bg-center bg-cover object-center bg-no-repeat">
                     <img
                         src={blok?.image.filename ?? '/hero-home-big-min.jpg'}
                         className="lg:h-[90vh] w-full object-center object-cover"
-                        alt=""
+                        alt="Hero image with train for Home page"
+                        aria-label={`Shadow image for ${blok?.title} `}
                     />
                 </motion.div>
             </div>

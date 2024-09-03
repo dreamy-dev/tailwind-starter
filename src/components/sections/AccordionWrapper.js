@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import { useState } from 'react';
 import { ChevronDown } from '../icons/ChevronDown';

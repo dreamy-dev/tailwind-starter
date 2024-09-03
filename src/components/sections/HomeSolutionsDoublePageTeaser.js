@@ -1,9 +1,10 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import { ArrowForward } from '../icons/ArrowForward';
-import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer'
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (
@@ -13,7 +14,10 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                     <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 md:gap-20 lg:gap-y-40">
                         <li>
-                            <img src={blok?.image_1.filename} alt="Image" />
+                            <img
+                                src={blok?.image_1.filename}
+                                alt={`Image for ${blok?.title_1}`}
+                            />
 
                             <div className="pr-0">
                                 <a
@@ -33,7 +37,10 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             </div>
                         </li>
                         <li>
-                            <img src={blok?.image_2.filename} alt="Image" />
+                            <img
+                                src={blok?.image_2.filename}
+                                alt={`Image for ${blok?.title_2}`}
+                            />
                             <div className="pr-0">
                                 <a
                                     href={ButtonUrlRenderer(blok?.link_2)}

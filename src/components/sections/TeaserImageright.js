@@ -21,7 +21,9 @@ const TeaserImageRight = ({ blok }) => {
                                 <ButtonPrimary
                                     position="left"
                                     buttonText={blok?.cta_button_text}
-                                    href={ButtonUrlRenderer(blok?.cta_button_link)}
+                                    href={ButtonUrlRenderer(
+                                        blok?.cta_button_link
+                                    )}
                                 />
                             </div>
                         </div>
@@ -30,7 +32,7 @@ const TeaserImageRight = ({ blok }) => {
                     <img
                         src={blok?.image.filename}
                         className="object-cover object-center w-full"
-                        alt=""
+                        alt={blok?.title}
                     />
                 </div>
             </SmallWidth>

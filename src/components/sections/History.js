@@ -1,8 +1,9 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import { render } from 'storyblok-rich-text-react-renderer';
 import H2 from '../../components/typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import RichTextRenderer from '../helpers/RichTextRenderer';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 import ContentWidth from '../../components/layouts/ContentWidth';
 
@@ -29,7 +30,7 @@ const History = ({ blok }) => {
                     {blok?.show_button ? (
                         <ButtonPrimary
                             position="left"
-                            href={blok?.cta_link.url}
+                            href={ButtonUrlRenderer(blok?.cta_link)}
                             buttonText={blok?.cta_text}
                         />
                     ) : (

@@ -6,15 +6,6 @@ export default function VideoFullWidth({ blok }) {
     const [playing, setPlaying] = useState(false);
     const videoRef = useRef(null);
 
-    // useEffect(() => {
-    //     window.addEventListener('scroll', function () {
-    //         if (isScrolledIntoView(videoRef.current) && !playing) {
-    //             setPlaying(true);
-    //             videoRef.current.play();
-    //         }
-    //     });
-    // }, []);
-
     useEffect(() => {
         const onScroll = () => {
             if (
@@ -35,7 +26,7 @@ export default function VideoFullWidth({ blok }) {
     }, [playing]);
 
     function isScrolledIntoView(elem) {
-           if (!elem) return false;
+        if (!elem) return false;
         var rect = elem.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
@@ -52,13 +43,18 @@ export default function VideoFullWidth({ blok }) {
         >
             <SmallWidth>
                 <video
+                    loading="lazy"
                     ref={videoRef}
                     controls={true}
                     autoPlay={false}
                     muted={true}
                     src={blok?.video.filename}
                     loop={true}
-                />
+                    poster={blok?.videoPoster?.filename || ''}
+                >
+                    <source src={blok?.video.filename} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </SmallWidth>
         </section>
     );

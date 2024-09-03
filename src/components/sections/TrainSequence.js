@@ -34,12 +34,21 @@ const handleDrawCanvas = (img, ctx) => {
 
 const ImageSequence = ({ category }) => {
     let imageWidth;
-    if (typeof window !== "undefined") {
-        imageWidth = "Carousel_1700_short"
-        // imageWidth = window?.innerWidth > 1740 ? "Carousel_1700_png" : window?.innerWidth > 600 ? "Carousel_1440_png" : "Carousel_600_png"
+    let imageFormat;
+    if (typeof window !== 'undefined') {
+        // imageWidth = "carousel_final_1728_webp"
+        // console.log("imageWidth.split", imageWidth.split("_")[imageWidth.split("_").length - 1])
+        imageWidth =
+            window?.innerWidth > 1740
+                ? 'carousel_final_1728_webp'
+                : window?.innerWidth > 600
+                  ? 'carousel_final_1440_webp'
+                  : 'carousel_final_600_png';
+
+        imageFormat = imageWidth.split('_')[imageWidth.split('_').length - 1];
     } else {
-        imageWidth = "Carousel_1700_short"
-        // imageWidth = "Carousel_1440_png"
+        imageWidth = 'carousel_final_1728_webp';
+        imageFormat = 'webp';
     }
 
     const keyframes = useMemo(
@@ -48,7 +57,7 @@ const ImageSequence = ({ category }) => {
                 createImage(
                     `/${imageWidth}/Stadler_Carousel_${i
                         .toString()
-                        .padStart(3, '0')}.png`
+                        .padStart(3, '0')}.${imageFormat}`
                 )
             ),
         []
@@ -110,7 +119,6 @@ const ImageSequence = ({ category }) => {
                 }
             }
         }
-        console.log("count", count)
 
         if (newCategory < previousCategory) {
             const categoryDifference =
@@ -124,7 +132,6 @@ const ImageSequence = ({ category }) => {
                 done = true;
                 animationProgressChange(false);
                 categoryNumberChange(category);
-                console.log('end of animation', lastOfClickedCategories);
             } else {
                 if (!done) {
                     window.requestAnimationFrame(changeCarouselPositions);

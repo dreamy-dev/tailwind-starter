@@ -1,8 +1,8 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
-
 import { useState, useEffect } from 'react';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
@@ -14,7 +14,6 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AllNews({ blok }) {
     const [articles, setArticles] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
-
     const [search, setSearch] = useState('');
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
 
@@ -24,7 +23,7 @@ function AllNews({ blok }) {
         is_startpage: false,
         resolve_relations: 'news.categories',
         sort_by: 'content.date:desc',
-        language: currentLocale
+        language: currentLocale,
     };
     const onSearchChange = (e) => {
         setSearch(e.target.value);
@@ -73,7 +72,7 @@ function AllNews({ blok }) {
 
         const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] =
+            filterSearchParameters['filter_query[categories][all_in_array]'] =
                 categories.join(',');
         }
         if (search.length > 2) {
@@ -101,7 +100,7 @@ function AllNews({ blok }) {
                                 </option>
                                 {blok.filter_country.map((country, index) => (
                                     <option key={index} value={country.uuid}>
-                                        {country.name}
+                                        {country.content.category}
                                     </option>
                                 ))}
                             </select>
@@ -136,7 +135,7 @@ function AllNews({ blok }) {
                                 </option>
                                 {blok.filter_products.map((product, index) => (
                                     <option key={index} value={product.uuid}>
-                                        {product.name}
+                                        {product.content.category}
                                     </option>
                                 ))}
                             </select>
@@ -151,7 +150,7 @@ function AllNews({ blok }) {
                                 </option>
                                 {blok.filter_years.map((year, index) => (
                                     <option key={index} value={year.uuid}>
-                                        {year.name}
+                                        {year.content.category}
                                     </option>
                                 ))}
                             </select>
@@ -197,7 +196,7 @@ function AllNews({ blok }) {
                                         <img
                                             src={article.content.image.filename}
                                             className="object-cover w-full h-full group-hover:scale-110 transition-all"
-                                            alt="Image 1"
+                                            alt="News Article image"
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">
@@ -226,7 +225,7 @@ function AllNews({ blok }) {
                                         </Text>
                                     </div>
                                     <div className="group-hover:text-primary transition-all"></div>
-                                    <H4>{article.name}</H4>
+                                    <H4>{article.content.title}</H4>
                                     <div className="texl-lg mb-3 text-gray-500"></div>
                                     <Text>
                                         {TrimText(article.content.lead)}

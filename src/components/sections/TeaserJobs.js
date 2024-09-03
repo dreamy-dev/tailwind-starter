@@ -6,6 +6,17 @@ import Text from '../typography/Text';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const Jobs = ({ blok }) => {
+    function optimizeImage(image) {
+        if (!image.filename) return null;
+
+        // Resize the image to 1200px width and maintain the original aspect ratio.
+        let imageSource = image.filename + `/m/800x700`;
+
+        if (image.focus) imageSource += `/filters:focal(${image.focus})`
+        // if image.focus exist then append the focus point filters to the image
+
+        return imageSource
+    }
     return (
         <section className="bg-white dark:bg-gray-900 antialiased">
             <div className="max-w-screen-xl px-4 mx-auto lg:px-6 py-16 lg:py-24">
@@ -22,6 +33,7 @@ const Jobs = ({ blok }) => {
                         </div>
                     </div>
 
+
                     <div className="grid w-full grid-cols-1 gap-4 xl:max-w-3xl shrink-0 sm:grid-cols-2 md:grid-cols-3">
                         {blok?.career_open_positions_items.map((item) => (
                             <a
@@ -30,9 +42,9 @@ const Jobs = ({ blok }) => {
                                 className="relative overflow-hidden group"
                             >
                                 <img
-                                    className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
-                                    src={item.image.filename}
-                                    alt=""
+                                    className="object-cover h-80 w-full scale-100 ease-in duration-300 group-hover:scale-125"
+                                    src={optimizeImage(item.image)}
+                                    alt={item.title}
                                 />
                                 <div className="absolute inset-0 grid items-end justify-center p-4 bg-gradient-to-b from-transparent to-black/60">
                                     <div className="text-center">
@@ -43,7 +55,10 @@ const Jobs = ({ blok }) => {
                                             {item?.subtitle}
                                         </p>
                                     </div>
+
                                 </div>
+
+                                {/* {JSON.stringify(item.image)} */}
                             </a>
                         ))}
                     </div>

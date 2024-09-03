@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { useState } from 'react';
 import H3 from '../typography/H3';
@@ -24,14 +25,7 @@ const AccordionLocations = ({ blok }) => {
                         <div className="flex">
                             <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
                                 {blok.tag_division.map((country, index) => (
-                                    <span key={index}>{country.name}</span>
-                                ))}
-                            </p>
-                        </div>
-                        <div className=" hidden">
-                            <p className="mb-3 mr-4 py-1 px-2 inline-flex items-center text-xs font-light bg-primaryTrans-100 tracking-tight text-gray-900">
-                                {blok.tag_country.map((country, index) => (
-                                    <span key={index}>{country.name}</span>
+                                    <span key={index}>{country.content.category}</span>
                                 ))}
                             </p>
                         </div>
@@ -51,11 +45,10 @@ const AccordionLocations = ({ blok }) => {
                     <div>
                         <button
                             type="button"
-                            className={`flex justify-between items-center py-5 w-full font-medium text-left ${
-                                isActive
-                                    ? 'text-gray-900 bg-white  dark:text-white'
-                                    : 'text-gray-500   dark:text-gray-400'
-                            }`}
+                            className={`flex justify-between items-center py-5 w-full font-medium text-left ${isActive
+                                ? 'text-gray-900 bg-white  dark:text-white'
+                                : 'text-gray-500   dark:text-gray-400'
+                                }`}
                             onClick={handleAccordionClick}
                             aria-expanded={isActive}
                         >
@@ -81,20 +74,19 @@ const AccordionLocations = ({ blok }) => {
                                 <div className="mb-4 flex justify-start items-center">
                                     <PhoneIcon color="#000" />
                                     <span className="ml-4">
-                                        {' '}
                                         {blok?.phonenumber}
                                     </span>
                                 </div>
 
                                 <div className="flex mb-4 justify-start items-center">
                                     <MailIcon className="fill-blueDark" />
-                                    <span className="ml-4"> {blok?.email}</span>
+                                    <span className="ml-4">{blok?.email}</span>
                                 </div>
 
                                 <div className="mb-2 flex justify-start items-center text-primary">
                                     <PinIcon />
                                     <a
-                                        className=""
+                                        className="cursor-pointer"
                                         href={blok?.link_google_maps?.url}
                                     >
                                         <span className="ml-2">
@@ -106,7 +98,7 @@ const AccordionLocations = ({ blok }) => {
                             <img
                                 src={blok?.image?.filename}
                                 className="flex md:w-3/12"
-                                alt="office"
+                                alt="Stadler Office image"
                             />
                         </div>
                         <div className="pt-8">

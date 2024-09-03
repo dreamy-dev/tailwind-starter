@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
 import SuperSmallWidth from '../layouts/SuperSmallWidth';
@@ -8,7 +9,6 @@ const CorporateGorvernanceGrid = ({ blok }) => {
     return (
         <section className="bg-white dark:bg-gray-900 py-16 lg:py-24">
             <SuperSmallWidth>
-
                 <div className="col-span-12 mx-auto text-center mb-2 lg:mb-4">
                     <H2>{blok?.title}</H2>
                 </div>
@@ -26,7 +26,6 @@ const CorporateGorvernanceGrid = ({ blok }) => {
                         />
                     ))}
                 </div>
-
             </SuperSmallWidth>
         </section>
     );

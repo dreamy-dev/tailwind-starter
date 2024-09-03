@@ -26,7 +26,7 @@ const EmployeeContent = ({ blok }) => {
                         <img
                             className="object-right max-w-full w-full h-auto"
                             src={blok?.image.filename}
-                            alt=""
+                            alt={`Image for ${blok?.title}`}
                         />
                     </div>
                 </ContentWidth>

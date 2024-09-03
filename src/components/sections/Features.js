@@ -1,9 +1,43 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H3 from '../../components/typography/H3';
 import ContentWidth from '../layouts/ContentWidth';
-import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer'
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Features = ({ blok }) => {
+    const pathname = usePathname();
+    useEffect(() => {
+        const linksForMatomo = document.querySelectorAll(
+            '.matomo-tracking-link'
+        );
+
+        if (pathname.includes('/schienenfahrzeuge/')) {
+            linksForMatomo.forEach((item) => {
+                if (item.getAttribute('href').includes('/signalling')) {
+                    item?.addEventListener('click', () => {
+                        var _paq = (window._paq = window._paq || []);
+                        _paq.push([
+                            'trackEvent',
+                            'Actions from Product Page',
+                            `Signalling - Action from Product Page`,
+                        ]);
+                    });
+                }
+                if (item.getAttribute('href').includes('/service')) {
+                    item?.addEventListener('click', () => {
+                        var _paq = (window._paq = window._paq || []);
+                        _paq.push([
+                            'trackEvent',
+                            'Actions from Product Page',
+                            `Service - Action from Product Page`,
+                        ]);
+                    });
+                }
+            });
+        }
+    });
     return (
         <section
             {...storyblokEditable(blok)}
@@ -18,12 +52,12 @@ const Features = ({ blok }) => {
                         <div className="flex flex-col justify-center items-center md:items-start ">
                             <img
                                 src={blok?.image_1.filename}
-                                alt="Image"
+                                alt="Feature Image"
                                 className="w-full md:w-auto h-[320px] object-cover"
                             />
                             <a
                                 href={ButtonUrlRenderer(blok?.link_1)}
-                                className="flex items-center gap-2 text-2xl font-bold mt-4"
+                                className="matomo-tracking-link flex items-center gap-2 text-2xl font-bold mt-4"
                             >
                                 {blok?.text_1}
                                 <svg
@@ -42,13 +76,15 @@ const Features = ({ blok }) => {
                         </div>
                         <div className="flex flex-col justify-center items-center md:items-start ">
                             <img
+                                width="100%"
+                                height="auto"
                                 src={blok?.image_2.filename}
-                                alt="Image"
+                                alt="Feature Image"
                                 className="w-full md:w-auto h-[320px] object-cover"
                             />
                             <a
                                 href={ButtonUrlRenderer(blok?.link_2)}
-                                className="flex items-center gap-2 text-2xl font-bold mt-4"
+                                className="matomo-tracking-link flex items-center gap-2 text-2xl font-bold mt-4"
                             >
                                 {blok?.text_2}
                                 <svg

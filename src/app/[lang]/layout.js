@@ -1,10 +1,8 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import StoryblokProvider from '@/src/components/StoryblokProvider';
+import Head from 'next/head';
 import Script from 'next/script';
-
-import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
-
 import './globals.css';
 
 const fontStadler = localFont({
@@ -103,12 +101,6 @@ const fontStadler = localFont({
     variable: '--font-stadler',
 });
 
-// const fontFamily = Montserrat({
-//     subsets: ['latin'],
-//     variable: '--font-montserrat',
-// });
-//const mySchema = cloneDeep(RichTextSchema);
-
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
@@ -118,18 +110,7 @@ export default function RootLayout({ children, params: { lang } }) {
     return (
         <StoryblokProvider>
             <html lang={lang}>
-                <head>
-                    <Script>
-                        {`
-            console.log("Matomo test with Storyblok")
-            var _mtm = window._mtm = window._mtm || [];
-              _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-              (function() {
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src='https://matomo.gateb.com/js/container_9iU2twN3.js'; s.parentNode.insertBefore(g,s);
-              })();
-              `}
-                    </Script>
+                <Head>
                     {/* <Script
                     
                         id="Cookiebot"
@@ -146,16 +127,79 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         type="text/javascript"
                         async
                     ></Script> */}
-                </head>
+                </Head>
                 <body
                     className={
                         fontStadler.className +
                         ' overflow-x-hidden flex flex-col min-h-screen'
                     }
                 >
+                    <Script async>
+                        {`
+                        console.log("Matomo test works")
+                            var _mtm = window._mtm = window._mtm || [];
+                            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+                            (function() {
+                                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                                g.async=true; g.src='https://cdn.matomo.cloud/etkstadlerrailcom.matomo.cloud/container_PFGEOIW5.js'; s.parentNode.insertBefore(g,s);
+                            })();
+                        `}
+                    </Script>
+                    <Script async>
+                        {`
+                            const curUrl = window.location.href
+                            const linksForMatomo = document.querySelectorAll("a")
+                            if (curUrl.includes("/investor-relations")) {
+                                linksForMatomo.forEach(item => {
+                                    item?.addEventListener('click', () => {
+                                        var _paq = (window._paq = window._paq || []);
+                                        _paq.push([
+                                            'trackEvent',
+                                            'Investor Relations - Events on the Page',
+                                            item.getAttribute("href"),
+                                        ]);
+                                    })
+                                })
+                            }
 
+                            linksForMatomo.forEach(item => {
+                                item?.addEventListener('click', () => {
+                                    console.log(item.getAttribute("href"),item.getAttribute("href").includes(".pdf"))
+                                    const fullHref = item.getAttribute("href")
+                                    if (fullHref.includes(".pdf") ||
+                                        fullHref.includes(".avi") ||
+                                        fullHref.includes(".doc") ||
+                                        fullHref.includes(".docx") ||
+                                        fullHref.includes(".gif") ||
+                                        fullHref.includes(".png") ||
+                                        fullHref.includes(".jpg") ||
+                                        fullHref.includes(".jpeg") ||
+                                        fullHref.includes(".png") ||
+                                        fullHref.includes(".tiff") ||
+                                        fullHref.includes(".mp3") ||
+                                        fullHref.includes(".txt") ||
+                                        fullHref.includes(".rar") ||
+                                        fullHref.includes(".zip") ||
+                                        fullHref.includes(".gzip") ||
+                                        fullHref.includes(".wav") ||
+                                        fullHref.includes(".csv") ||
+                                        fullHref.includes(".xlsx") ||
+                                        fullHref.includes(".pptx") ||
+                                        fullHref.includes(".webp")) {
+                                        const hrefArray = fullHref.split('/')
+                                        
+                                        var _paq = (window._paq = window._paq || []);
+                                        _paq.push([
+                                            'trackEvent',
+                                            'Documents Download',
+                                            hrefArray[hrefArray.length - 1]
+                                        ]);
+                                    }
+                                })
+                            })
+                        `}
+                    </Script>
                     <main>{children}</main>
-
                 </body>
             </html>
         </StoryblokProvider>

@@ -1,4 +1,8 @@
 const DateFormatter = (textToFormat) => {
+    // console.log("ButtonUrlRenderer", textToFormat)
+    if (!textToFormat) {
+        return ''
+    }
     const date = new Date(textToFormat);
     const yyyy = date.getFullYear();
     let mm = date.getMonth() + 1;
@@ -9,7 +13,7 @@ const DateFormatter = (textToFormat) => {
 
     const formattedDay = dd + '.' + mm + '.' + yyyy;
 
-    return formattedDay;
+    return formattedDay ?? '';
 };
 
 export default DateFormatter;

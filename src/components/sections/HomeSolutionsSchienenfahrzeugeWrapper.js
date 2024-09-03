@@ -6,6 +6,7 @@ import ContentWidth from '../layouts/ContentWidth';
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import TrainSequence from './TrainSequence';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const plusAnimation = {
     open: { transform: 'rotate(45deg)' },
@@ -22,7 +23,10 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                 <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
                     <H3>{blok.title}</H3>
                     <Text>{blok.lead}</Text>
-                    <a className="flex mt-4" href={blok.cta_link.url}>
+                    <a
+                        className="flex mt-4"
+                        href={ButtonUrlRenderer(blok?.cta_link)}
+                    >
                         <img
                             className="h-5"
                             src="/stadler-arrow-foreward.svg"
@@ -72,6 +76,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                         }
                                         variants={plusAnimation}
                                         key={item.key}
+                                        alt="Train Type image"
                                     />
                                 </div>
                             ))}

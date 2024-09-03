@@ -42,13 +42,12 @@ function ReferenzContent({ blok }) {
                 <img
                     src={blok?.image.filename}
                     className="w-full my-8"
-                    alt="full service"
+                    alt="Full service image"
                 />
             </SuperSmallWidth>
             <SuperSmallWidth>
                 <div>
                     <RichTextRenderer text={blok?.text} />
-                
                 </div>
             </SuperSmallWidth>
             {blok.news_blocks.map((nestedBlok) => (

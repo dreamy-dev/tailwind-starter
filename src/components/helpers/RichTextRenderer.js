@@ -18,6 +18,10 @@ import H1 from '../typography/H1';
 import H4 from '../typography/H4';
 import Blockquote from '../typography/Blockquote';
 
+import DownloadItem from '../sections/DownloadItem';
+import ButtonPrimary from '../elements/ButtonPrimary';
+import ButtonUrlRenderer from './ButtonUrlRenderer';
+
 const RichTextRenderer = (props) => {
     return (
         <div className={'richtext ' + props.customStyles}>
@@ -55,11 +59,21 @@ const RichTextRenderer = (props) => {
                         }
                         // Internal links: map to <Link>
                         return (
-                            <a className="text-primary" href={href}>
+                            <a
+                                className="text-primary"
+                                target={target}
+                                href={href}
+                            >
                                 {children}
                             </a>
                         );
                     },
+                },
+                blokResolvers: {
+                    ['cta-small']: (props) => <ButtonPrimary position="left"
+                        buttonText={props.CTA_text}
+                        href={ButtonUrlRenderer(props.CTA_link)} />
+
                 },
                 nodeResolvers: {
                     [NODE_IMAGE]: (children, props) => (

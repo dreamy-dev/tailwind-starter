@@ -4,6 +4,7 @@ import H2 from '../typography/H2';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import Text from '../typography/Text';
 import FullWidth from '../layouts/FullWidth';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function Video({ blok }) {
     return (
@@ -15,6 +16,7 @@ export default function Video({ blok }) {
                 <div className="col-span-12 flex flex-col lg:flex-row justify-between items-center">
                     <div className="overflow-hidden w-full lg:w-2/3 ">
                         <video
+                            loading="lazy"
                             className="-mt-[1%] -mb-[1%]"
                             controls={false}
                             autoPlay={true}
@@ -35,6 +37,7 @@ export default function Video({ blok }) {
 
                         <div className="mt-6">
                             <ButtonPrimary
+                                href={ButtonUrlRenderer(blok?.cta_link)}
                                 buttonText={blok?.cta_text}
                                 position="left"
                             />

@@ -1,10 +1,27 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
+import { useEffect, useRef } from 'react';
 
 import H3 from '../typography/H3';
 import { ArrowForward } from '../icons/ArrowForward';
 
 const ReportsItem = ({ blok }) => {
+    const investorsReference = useRef();
+
+    useEffect(() => {
+        let investors = investorsReference.current;
+
+        investors?.addEventListener('click', () => {
+            var _paq = (window._paq = window._paq || []);
+            const titleArray = blok?.cta_link.url.split('/')
+            const title = titleArray[titleArray.length - 1]
+            _paq.push([
+                'trackEvent',
+                'Investor Relations Publication',
+                `${title}`,
+            ]);
+        });
+    });
     return (
         <div
             {...storyblokEditable(blok)}
@@ -18,6 +35,7 @@ const ReportsItem = ({ blok }) => {
             <div className="p-5">
                 <H3>{blok?.title}</H3>
                 <a
+                    ref={investorsReference}
                     href={blok?.cta_link.url ?? ''}
                     target="_blank"
                     className="inline-flex items-center text-sm font-medium text-center"

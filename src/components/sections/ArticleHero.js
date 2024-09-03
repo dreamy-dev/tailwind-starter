@@ -1,3 +1,4 @@
+'use client';
 import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
@@ -39,9 +40,8 @@ function ArticleHero({ block }) {
             <div className="mt-12">
                 <Lead>{block?.lead}</Lead>
             </div>
-            {block.image_optional && (
+            {block?.image_optional && (
                 <img
-                    
                     src={block?.image.filename}
                     className="w-full my-8"
                     alt="full service"

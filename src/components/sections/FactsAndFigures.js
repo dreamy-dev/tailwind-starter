@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import H2 from '../typography/H2';
 import CountUp from 'react-countup';

@@ -1,3 +1,4 @@
+'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import FullWidth from '../layouts/FullWidth';
@@ -30,7 +31,7 @@ export default function Map({ blok }) {
                             <img
                                 className="w-full h-auto"
                                 src={blok.map.filename}
-                                alt=""
+                                alt="Map image"
                             />
                         </div>
                         <div className="pl-6 lg:pl-20 md:flex flex-column pt-8 static w-full">

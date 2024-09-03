@@ -1,3 +1,4 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import React from 'react';
 import {
@@ -26,7 +27,7 @@ function AlleMedienmitteilungen({ blok }) {
         is_startpage: false,
         resolve_relations: ['medienmitteilungen.categories'],
         sort_by: 'content.date:desc',
-        language: currentLocale
+        language: currentLocale,
     };
 
     const onSearchChange = (e) => {
@@ -103,7 +104,7 @@ function AlleMedienmitteilungen({ blok }) {
                             </option>
                             {blok.filter_country.map((country, index) => (
                                 <option key={index} value={country.uuid}>
-                                    {country.name}
+                                    {country.content.category}
                                 </option>
                             ))}
                         </select>
@@ -135,7 +136,7 @@ function AlleMedienmitteilungen({ blok }) {
                             </option>
                             {blok.filter_products.map((product, index) => (
                                 <option key={index} value={product.uuid}>
-                                    {product.name}
+                                    {product.content.category}
                                 </option>
                             ))}
                         </select>
@@ -148,7 +149,7 @@ function AlleMedienmitteilungen({ blok }) {
                             <option value="">{blok.filter_years_title}</option>
                             {blok.filter_years.map((year, index) => (
                                 <option key={index} value={year.uuid}>
-                                    {year.name}
+                                    {year.content.category}
                                 </option>
                             ))}
                         </select>
@@ -226,22 +227,30 @@ function AlleMedienmitteilungen({ blok }) {
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             <img
+                                                alt="Arrow button forward"
                                                 width="20"
                                                 height="20"
                                                 src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
                                             />
                                         </a>
                                     </div>
-                                    <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 py-4 font-medium text-black">
+                                    <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 pt-4 pb-3 font-medium text-black">
+                                        {/* {JSON.stringify(medienmitteilung.content.categories)} */}
                                         {medienmitteilung.content.categories.map(
-                                            (category, index) => (
-                                                <span
-                                                    key={index}
-                                                    className="mb-1 inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
-                                                >
-                                                    {category.content.category}
-                                                </span>
-                                            )
+                                            (category, index) =>
+                                                category.full_slug.includes(
+                                                    'categories/medienmitteilungen'
+                                                ) && (
+                                                    <span
+                                                        key={index}
+                                                        className="mb-1 inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                    >
+                                                        {
+                                                            category.content
+                                                                .category
+                                                        }
+                                                    </span>
+                                                )
                                         )}
                                     </div>
                                     <div className="col-span-1 lg:col-span-3 px-6 py-4 text-primary items-center flex justify-start lg:justify-end">

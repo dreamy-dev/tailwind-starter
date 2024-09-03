@@ -29,7 +29,7 @@ function NewsTeaser({ blok }) {
                 'filter_query[categories][any_in_array]': categories,
                 sort_by: 'content.date:desc',
                 per_page: 4,
-                language: currentLocale
+                language: currentLocale,
             });
 
             setArticlesCategory(() =>
@@ -61,7 +61,7 @@ function NewsTeaser({ blok }) {
                                         <img
                                             src={article.content.image.filename}
                                             className="object-cover w-full h-full group-hover:scale-110 transition-all"
-                                            alt="Image 1"
+                                            alt="NewsTeaser image"
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">
@@ -90,7 +90,7 @@ function NewsTeaser({ blok }) {
                                         </Text>
                                     </div>
                                     <div className="text-sm mb-1 group-hover:text-primary transition-all">
-                                        <H3>{article.name}</H3>
+                                        <H3>{article.content.title}</H3>
                                     </div>
                                     <div className="texl-lg mb-3">
                                         <Text>

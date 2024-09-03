@@ -1,3 +1,4 @@
+'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import {
     getStoryblokApi,
@@ -23,7 +24,7 @@ function AllStandorte({ blok }) {
             <option value="">{blok.filter_country_title}</option>
             {blok.filter_country.map((country, index) => (
                 <option key={index} value={country.uuid}>
-                    {country.name}
+                    {country.content.category}
                 </option>
             ))}
         </select>
@@ -99,7 +100,6 @@ function AllStandorte({ blok }) {
                         {countryDropdown}
                     </li>
                     <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
-                   
                         {categoryDropdown}
                     </li>
                     <li className="w-full md:w-1/3 mb-4 mr-2 lg:mr-4">
