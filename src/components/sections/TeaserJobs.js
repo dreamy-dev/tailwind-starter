@@ -9,13 +9,11 @@ const Jobs = ({ blok }) => {
     function optimizeImage(image) {
         if (!image.filename) return null;
 
-        // Resize the image to 1200px width and maintain the original aspect ratio.
         let imageSource = image.filename + `/m/800x700`;
 
-        if (image.focus) imageSource += `/filters:focal(${image.focus})`
-        // if image.focus exist then append the focus point filters to the image
+        if (image.focus) imageSource += `/filters:focal(${image.focus})`;
 
-        return imageSource
+        return imageSource;
     }
     return (
         <section className="bg-white dark:bg-gray-900 antialiased">
@@ -32,7 +30,6 @@ const Jobs = ({ blok }) => {
                             />
                         </div>
                     </div>
-
 
                     <div className="grid w-full grid-cols-1 gap-4 xl:max-w-3xl shrink-0 sm:grid-cols-2 md:grid-cols-3">
                         {blok?.career_open_positions_items.map((item) => (
@@ -55,7 +52,6 @@ const Jobs = ({ blok }) => {
                                             {item?.subtitle}
                                         </p>
                                     </div>
-
                                 </div>
 
                                 {/* {JSON.stringify(item.image)} */}
