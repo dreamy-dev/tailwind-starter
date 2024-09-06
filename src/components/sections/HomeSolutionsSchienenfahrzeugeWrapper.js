@@ -3,7 +3,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ContentWidth from '../layouts/ContentWidth';
-import H3 from '../typography/H3';
+import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import TrainSequence from './TrainSequence';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
@@ -21,7 +21,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
         <>
             <ContentWidth {...storyblokEditable(blok)}>
                 <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
-                    <H3>{blok.title}</H3>
+                    <H2>{blok.title}</H2>
                     <Text>{blok.lead}</Text>
                     <a
                         className="flex mt-4"
