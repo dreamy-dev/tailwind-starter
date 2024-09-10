@@ -7,18 +7,11 @@ const ConfigHeader = ({ blok }) => {
         <>
             <div {...storyblokEditable(blok)}>
                 {blok?.header.map((nestedBlok) => (
-                    <>
-                        <Header
-                            className=""
-                            blok={nestedBlok}
-                            key={nestedBlok._uid}
-                        />
-                        <HeaderNew
-                            className=""
-                            blok={nestedBlok}
-                            key={nestedBlok._uid}
-                        />
-                    </>
+                    <HeaderNew
+                        className=""
+                        blok={nestedBlok}
+                        key={nestedBlok._uid}
+                    />
                 ))}
             </div>
         </>
