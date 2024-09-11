@@ -20,11 +20,22 @@ const variants = {
 };
 
 const HeaderNew = ({ blok }) => {
+    // State for modal search
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const buttonRef = useRef(null);
     // State for mobile menu
     const [isOpen, setIsOpen] = useState(false);
     // State for desktop menu
     const tabs = ['company', 'solutions'];
     const [selectedTab, setSelectedTab] = useState(false);
+
+    const toggleModal = () => {
+        setIsModalOpen((prevState) => !prevState);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <motion.header
@@ -208,18 +219,24 @@ const HeaderNew = ({ blok }) => {
                             >
                                 {blok.main_link_4_text}
                             </Link>
-                            {/* Search Button */}
-                            <div>
+                            <div className="relative">
                                 <button
-                                    /* onClick={openModal} */
+                                    ref={buttonRef}
+                                    onClick={toggleModal}
                                     type="button"
-                                    className="w-5 h-5 py-2 lg:py-0 my-4 lg:my-0 lg:ml-8"
+                                    className="w-5 h-5 py-2 lg:py-0 my-4 lg:my-0 lg:ml-8 z-100"
                                 >
                                     <SearchIcon
                                         className="w-5 h-5 fill-primary"
                                         color="#005893"
                                     />
                                 </button>
+
+                                <ModalSearch
+                                    isModalOpen={isModalOpen}
+                                    closeModal={closeModal}
+                                    buttonRef={buttonRef}
+                                />
                             </div>
                         </motion.nav>
                     </div>

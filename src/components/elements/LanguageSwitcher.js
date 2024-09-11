@@ -8,8 +8,8 @@ import i18nConfig from '@/i18nConfig';
 import { ChevronDown } from '../icons/ChevronDown';
 
 const variantsLang = {
-    open: { opacity: 1, zIndex: 21 },
-    closed: { opacity: 0, zIndex: 10 },
+    open: { opacity: 1, zIndex: 2 },
+    closed: { opacity: 0, zIndex: 1 },
 };
 
 const LanguageSwitcher = () => {
