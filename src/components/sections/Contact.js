@@ -6,12 +6,17 @@ import H4 from '../typography/H4';
 import Text from '../typography/Text';
 import { MailIcon } from '../icons/MailIcon';
 import { PhoneIcon } from '../icons/PhoneIcon';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 const Contact = ({ blok }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref);
     return (
         <section
             className="py-16 lg:py-24 bg-stadlergradient"
             {...storyblokEditable(blok)}
+            ref={ref}
         >
             <SmallWidth>
                 <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
@@ -23,7 +28,17 @@ const Contact = ({ blok }) => {
                         />
                     </div>
                     <div className="w-full xl:col-span-8">
-                        <div className=" tracking-tight text-white">
+                        <div
+                            style={{
+                                transform: isInView
+                                    ? 'none'
+                                    : 'translateY(10px)',
+                                opacity: isInView ? 1 : 0,
+                                transition:
+                                    'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                            }}
+                            className=" tracking-tight text-white"
+                        >
                             <H2>{blok?.Title}</H2>
                         </div>
                         <div className="mb-8 font-light md:text-lg text-white">
