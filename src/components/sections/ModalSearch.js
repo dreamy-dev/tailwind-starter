@@ -5,7 +5,7 @@ import { SearchIcon } from '../icons/SearchIcon';
 import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '@/i18nConfig';
 
-const ModalSearch = ({ isModalOpen, closeModal }) => {
+const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
     const [articles, setArticles] = useState([]);
     const [search, setSearch] = useState('');
 
@@ -133,7 +133,8 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
             if (
                 isModalOpen &&
                 contentRef.current &&
-                !contentRef.current.contains(event.target)
+                !contentRef.current.contains(event.target) &&
+                !buttonRef.current.contains(event.target)
             ) {
                 closeModal();
                 setSearch('');
@@ -146,6 +147,19 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
+    }, [isModalOpen, closeModal, buttonRef]);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Enter' && isModalOpen) {
+                closeModal();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
     }, [isModalOpen, closeModal]);
 
     const handleArticleClick = (article) => {
@@ -155,10 +169,10 @@ const ModalSearch = ({ isModalOpen, closeModal }) => {
     return (
         <div
             ref={modalRef}
-            className={`col-span-12 shadow-md absolute top-10 right-0  w-[100%] sm:w-[450px] md:w-[710px] transition-transform duration-500 ${
+            className={`col-span-12 shadow-md absolute top-10 right-0 w-[100%] sm:w-[450px] md:w-[710px] transition-all duration-500 ${
                 isModalOpen
-                    ? 'transform opacity-100 ease-in-out z-20'
-                    : 'transform opacity-0 ease-in-out max-h-0 overflow-hidden'
+                    ? 'transform scale-100 opacity-100 z-20 max-h-[600px]'
+                    : 'transform scale-95 opacity-0 z-[-1] max-h-0 overflow-hidden'
             }`}
         >
             <div

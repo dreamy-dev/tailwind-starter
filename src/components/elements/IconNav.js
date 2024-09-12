@@ -1,8 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const IconNav = () => {
     return (
-        <button type="button">
+        <motion.button
+            type="button"
+            whileHover={{
+                x: 2,
+            }}
+            whileTap={{ x: 2 }}
+            transition={{
+                type: 'tween',
+                ease: 'easeOut',
+            }}
+        >
             <svg
                 width="10"
                 height="10"
@@ -22,7 +33,7 @@ const IconNav = () => {
                     </clipPath>
                 </defs>
             </svg>
-        </button>
+        </motion.button>
     );
 };
 
