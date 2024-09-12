@@ -1,6 +1,6 @@
 'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import { useState } from 'react';
 import ContentWidth from '../layouts/ContentWidth';
 import H3 from '../typography/H3';
@@ -23,15 +23,19 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                 <div className="col-span-12 lg:col-span-6 lg:ml-8 text-white">
                     <H3>{blok.title}</H3>
                     <Text>{blok.lead}</Text>
-                    <a
+                    <motion.a
                         className="flex mt-4"
                         href={ButtonUrlRenderer(blok?.cta_link)}
+                        whileHover={{
+                            x: 2,
+                        }}
+                        whileTap={{ x: 2 }}
                     >
                         <img
                             className="h-5"
                             src="/stadler-arrow-foreward.svg"
                         />
-                    </a>
+                    </motion.a>
                 </div>
             </ContentWidth>
             <div className="w-full">
