@@ -8,8 +8,8 @@ import i18nConfig from '@/i18nConfig';
 import { ChevronDown } from '../icons/ChevronDown';
 
 const variantsLang = {
-    open: { opacity: 1, zIndex: 2 },
-    closed: { opacity: 0, zIndex: 1 },
+    open: { scale: 1, zIndex: 2 },
+    closed: { scale: 0, zIndex: 1 },
 };
 
 const LanguageSwitcher = () => {
@@ -65,6 +65,7 @@ const LanguageSwitcher = () => {
             <motion.div
                 animate={isOpen ? 'open' : 'closed'}
                 variants={variantsLang}
+                initial="closed"
                 className="lg:absolute lg:top-14 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
                 id="language-dropdown"
             >

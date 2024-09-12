@@ -126,8 +126,8 @@ const HeaderNew = ({ blok }) => {
                         >
                             <ul className="flex flex-col lg:flex-row">
                                 {tabs.map((item) => (
-                                    <>
-                                        <li
+                                    <li key={item}>
+                                        <div
                                             onClick={() => {
                                                 if (selectedTab === item) {
                                                     setSelectedTab(null); // Unset if clicked twice
@@ -135,13 +135,12 @@ const HeaderNew = ({ blok }) => {
                                                     setSelectedTab(item);
                                                 }
                                             }}
-                                            key={item}
                                             className="hover:cursor-pointer py-2 lg:py-0 lg:px-2"
                                         >
                                             {item == 'company'
                                                 ? blok.main_link_1_text
                                                 : blok.main_link_2_text}
-                                        </li>
+                                        </div>
                                         <AnimatePresence mode="wait">
                                             {item === selectedTab && (
                                                 <motion.div
@@ -204,7 +203,7 @@ const HeaderNew = ({ blok }) => {
                                                 </motion.div>
                                             )}
                                         </AnimatePresence>
-                                    </>
+                                    </li>
                                 ))}
                             </ul>
                             <Link
@@ -231,7 +230,6 @@ const HeaderNew = ({ blok }) => {
                                         color="#005893"
                                     />
                                 </button>
-
                                 <ModalSearch
                                     isModalOpen={isModalOpen}
                                     closeModal={closeModal}
