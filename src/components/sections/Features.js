@@ -1,6 +1,6 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
-import H3 from '../../components/typography/H3';
+import H2 from '../../components/typography/H2';
 import ContentWidth from '../layouts/ContentWidth';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { useEffect } from 'react';
@@ -46,7 +46,7 @@ const Features = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 max-w-full mx-auto bg-white">
                     <div className="mb-10 tracking-tight dark:text-white ">
-                        <H3>{blok?.title}</H3>
+                        <H2>{blok?.title}</H2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                         <div className="flex flex-col justify-center items-center md:items-start ">
