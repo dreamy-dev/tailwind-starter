@@ -178,22 +178,22 @@ const HeaderNew = ({ blok }) => {
                                                                     blok.main_link_2_text
                                                                 }
                                                                 subLinkOne={
-                                                                    blok.main_2_link_2_link
+                                                                    blok.main_2_link_1_link
                                                                 }
                                                                 subLinkTextOne={
-                                                                    blok.main_2_link_2_text
+                                                                    blok.main_2_link_1_text
                                                                 }
                                                                 subLinkTwo={
-                                                                    blok.main_2_link_3_link
+                                                                    blok.main_2_link_2_link
                                                                 }
                                                                 subLinkTextTwo={
-                                                                    blok.main_2_link_3_text
+                                                                    blok.main_2_link_2_text
                                                                 }
                                                                 subLinkThree={
                                                                     blok.main_2_link_3_link
                                                                 }
                                                                 subLinkTextThree={
-                                                                    blok.main_link_2_text
+                                                                    blok.main_2_link_3_text
                                                                 }
                                                             />
                                                         )
