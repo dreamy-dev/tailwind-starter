@@ -20,7 +20,6 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   base: main # Target branch for the PR
-                  head: next-no-typescript # Source branch for the PR
                   title: 'Auto-merge from develop to main'
                   body: 'This is an automated PR created after merging into develop.'
                   branch: 'auto-merge/develop-to-main' # Temporary branch name
