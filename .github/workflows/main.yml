@@ -12,16 +12,18 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
+            steps:
+                - name: Checkout repository
+                  uses: actions/checkout@v2
+                  with:
+                      ref: next-no-typescript # Check out the develop branch, since the PR was merged into it
 
-            - name: Create pull request to main
-              uses: peter-evans/create-pull-request@v3
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  base: main # Target branch for the PR
-                  head: next-no-typescript # Source branch for the PR
-                  title: 'Auto-merge from develop to main'
-                  body: 'This is an automated PR created after merging into develop.'
-                  branch: 'auto-merge/develop-to-main' # Temporary branch name
-                  labels: 'automated-pr'
+                - name: Create pull request to main
+                  uses: peter-evans/create-pull-request@v3
+                  with:
+                      token: ${{ secrets.GITHUB_TOKEN }}
+                      base: main # Target branch for the PR
+                      title: 'Auto-merge from develop to main'
+                      body: 'This is an automated PR created after merging into develop.'
+                      branch: 'auto-merge/develop-to-main' # Temporary branch name
+                      labels: 'automated-pr'
