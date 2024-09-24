@@ -8,6 +8,7 @@ on:
 
 jobs:
     create-pull-request:
+        if: github.event.pull_request.merged == true # Only run if the PR was merged, not just closed
         runs-on: ubuntu-latest
 
         steps:
