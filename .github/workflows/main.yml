@@ -9,6 +9,10 @@ on:
 jobs:
     create-pull-request:
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
+            repository-projects: write
         steps:
             - name: Create Pull Request
               uses: actions/github-script@v6
