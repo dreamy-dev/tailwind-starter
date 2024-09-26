@@ -10,6 +10,7 @@ const Jobs = ({ blok }) => {
         if (!image.filename) return null;
 
         let imageSource = image.filename + `/m/800x700`;
+        console.log("image", image)
 
         if (image.focus) imageSource += `/filters:focal(${image.focus})`;
 
