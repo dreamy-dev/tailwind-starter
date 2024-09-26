@@ -131,7 +131,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                 <body
                     className={
                         fontStadler.className +
-                        ' overflow-x-hidden flex flex-col min-h-screen'
+                        ' flex min-h-screen flex-col overflow-x-hidden'
                     }
                 >
                     <Script async>

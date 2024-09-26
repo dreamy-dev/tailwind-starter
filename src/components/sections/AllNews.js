@@ -50,7 +50,7 @@ function AllNews({ blok }) {
             ...filterSearchRequest,
         });
 
-        setArticles((prev) =>
+        setArticles(() =>
             data.stories.map((article) => {
                 article.content.slug = article.slug;
                 return article;
@@ -89,10 +89,10 @@ function AllNews({ blok }) {
                     <H2>{blok.title}</H2>
                 </div>
                 <div className="col-span-12 mb-8">
-                    <ul className="grid gap-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
+                    <ul className="grid gap-4 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'country')}
                             >
                                 <option value="">
@@ -107,7 +107,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'category')}
                             >
                                 <option value="">
@@ -127,7 +127,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'product')}
                             >
                                 <option value="">
@@ -142,7 +142,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'year')}
                             >
                                 <option value="">
@@ -157,9 +157,9 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-4">
                             <div className="relative">
-                                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                     <svg
-                                        className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                        className="h-4 w-4 text-gray-500 dark:text-gray-400"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -175,7 +175,7 @@ function AllNews({ blok }) {
                                     </svg>
                                 </div>
                                 <input
-                                    className="w-full pl-8 pr-4 py-2 text-base border-primary block focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
+                                    className="block w-full border-primary py-2 pl-8 pr-4 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                     placeholder={blok.text_search}
                                     onChange={onSearchChange}
                                 />
@@ -192,10 +192,10 @@ function AllNews({ blok }) {
                                     className="group mb-6 transition-all"
                                     key={article.uuid}
                                 >
-                                    <div className="overflow-hidden h-52">
+                                    <div className="h-52 overflow-hidden">
                                         <img
                                             src={article.content.image.filename}
-                                            className="object-cover w-full h-full group-hover:scale-110 transition-all"
+                                            className="h-full w-full object-cover transition-all group-hover:scale-110"
                                             alt="News Article image"
                                         />
                                     </div>
@@ -207,7 +207,7 @@ function AllNews({ blok }) {
                                                 ) && (
                                                     <span
                                                         key={index}
-                                                        className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                        className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0"
                                                     >
                                                         {
                                                             category.content
@@ -217,14 +217,14 @@ function AllNews({ blok }) {
                                                 )
                                         )}
                                     </div>
-                                    <div className="text-sm mb-1 text-gray-500">
+                                    <div className="mb-1 text-sm text-gray-500">
                                         <Text>
                                             {DateFormatter(
                                                 article.content.date
                                             )}
                                         </Text>
                                     </div>
-                                    <div className="group-hover:text-primary transition-all"></div>
+                                    <div className="transition-all group-hover:text-primary"></div>
                                     <H4>{article.content.title}</H4>
                                     <div className="texl-lg mb-3 text-gray-500"></div>
                                     <Text>

@@ -22,7 +22,7 @@ export async function GET(request) {
         const allJobs = await initialResponse.json();
 
         return NextResponse.json({ message: allJobs });
-    } catch (err) {
+    } catch {
         return NextResponse.json({ message: [] });
     }
 }

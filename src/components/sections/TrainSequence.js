@@ -75,11 +75,10 @@ const ImageSequence = ({ category }) => {
     const [lastOfClickedCategories, changeLastOfClickedCategories] = useState();
 
     const [animationProgress, animationProgressChange] = useState(false);
-    const [progress, canvasRef, renderImage] =
-        useScrollImageSequenceFramerCanvas({
-            onDraw: handleDrawCanvas,
-            keyframes: keyframes,
-        });
+    const [canvasRef, renderImage] = useScrollImageSequenceFramerCanvas({
+        onDraw: handleDrawCanvas,
+        keyframes: keyframes,
+    });
 
     let start;
     let done = false;
@@ -94,7 +93,7 @@ const ImageSequence = ({ category }) => {
     const singleSlideProgress =
         1 / (100 / Math.abs(Number(category) - Number(prevCategoryNumber)));
 
-    const changeCarouselPositions = (timeStamp) => {
+    const changeCarouselPositions = () => {
         let count;
         if (start === undefined) {
             start = Number(prevCategoryNumber) / 3;

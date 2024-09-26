@@ -12,8 +12,8 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
 
         investorsDEreference?.addEventListener('click', () => {
             var _paq = (window._paq = window._paq || []);
-            const titleArray = blok?.download_presentation.url.split('/')
-            const title = titleArray[titleArray.length - 1]
+            const titleArray = blok?.download_presentation.url.split('/');
+            const title = titleArray[titleArray.length - 1];
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
@@ -28,8 +28,8 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
 
         investorsENreference?.addEventListener('click', () => {
             var _paq = (window._paq = window._paq || []);
-            const titleArray = blok?.download_presentation.url.split('/')
-            const title = titleArray[titleArray.length - 1]
+            const titleArray = blok?.download_presentation.url.split('/');
+            const title = titleArray[titleArray.length - 1];
             _paq.push([
                 'trackEvent',
                 'Investor Relations Publication',
@@ -40,16 +40,17 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
     return (
         <tr
             {...storyblokEditable(blok)}
-            className="text-xs text-black whitespace-nowrap bg-white border-b last:mb-4 last:border-b-0 dark:bg-black dark:border-gray-700"
+            className="whitespace-nowrap border-b bg-white text-xs text-black last:mb-4 last:border-b-0 dark:border-gray-700 dark:bg-black"
         >
             <td className="px-6 py-4 font-bold">{blok?.title}</td>
-            <td className="px-6 py-4 ">{DateFormatter(blok?.text_date)}</td>
-            <td className="px-6 py-4  text-center">
+            <td className="px-6 py-4">{DateFormatter(blok?.text_date)}</td>
+            <td className="px-6 py-4 text-center">
                 <a
                     target="_blank"
                     ref={investorsDE}
                     className="text-primary"
                     href={blok?.download_bericht.url}
+                    rel="noreferrer"
                 >
                     {blok?.CTA_download_bericht}
                 </a>
@@ -60,6 +61,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                     ref={investorsEN}
                     className="text-primary"
                     href={blok?.download_presentation.url}
+                    rel="noreferrer"
                 >
                     {blok?.CTA_download_presentation}
                 </a>

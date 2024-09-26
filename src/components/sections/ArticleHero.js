@@ -15,7 +15,7 @@ function ArticleHero({ block }) {
             <div className="mb-8">
                 <H1>{block?.title}</H1>
             </div>
-            <div className="grid grid-cols-12 gap-6 mb-6">
+            <div className="mb-6 grid grid-cols-12 gap-6">
                 <div className="col-span-6">
                     {block?.categories?.map((category, index) => {
                         if (
@@ -25,7 +25,7 @@ function ArticleHero({ block }) {
                             return (
                                 <span
                                     key={index}
-                                    className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
+                                    className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-4 py-2 text-xs text-gray-700 last-of-type:mr-0"
                                 >
                                     {category.content.category}
                                 </span>
@@ -33,7 +33,7 @@ function ArticleHero({ block }) {
                         }
                     })}
                 </div>
-                <div className="col-span-6 align-right text-right text-md">
+                <div className="align-right text-md col-span-6 text-right">
                     <Text>{DateFormatter(block?.date)}</Text>
                 </div>
             </div>
@@ -43,7 +43,7 @@ function ArticleHero({ block }) {
             {block?.image_optional && (
                 <img
                     src={block?.image.filename}
-                    className="w-full my-8"
+                    className="my-8 w-full"
                     alt="full service"
                 />
             )}

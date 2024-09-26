@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request, res) {
+export async function POST(request) {
     const email = request.nextUrl.searchParams.get('email');
     const firma = request.nextUrl.searchParams.get('firma');
     const firstName = request.nextUrl.searchParams.get('firstName');

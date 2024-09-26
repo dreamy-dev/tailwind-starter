@@ -9,7 +9,7 @@
         "start": "next start",
         "lint": "eslint . --fix",
         "format": "prettier . --write",
-        "prepare": "husky install"
+        "prepare": "husky"
     },
     "dependencies": {
         "@headlessui/react": "^1.7.17",
@@ -64,18 +64,6 @@
     "lint-staged": {
         "*.{js,css,md,html,json}": "prettier --cache --write",
         "*.js": [
-            "eslint --fix",
-            "prettier --write"
-        ],
-        "*.ts": [
-            "eslint --fix",
-            "prettier --write"
-        ],
-        "*.jsx": [
-            "eslint --fix",
-            "prettier --write"
-        ],
-        "*.tsx": [
             "eslint --fix",
             "prettier --write"
         ]

@@ -8,17 +8,21 @@ const DownloadSecondaryItem = ({ blok }) => {
         <>
             <li
                 {...storyblokEditable(blok)}
-                className="mb-4 text-xl flex-col md:flex-row flex align-middle md:justify-between"
+                className="mb-4 flex flex-col align-middle text-xl md:flex-row md:justify-between"
             >
-                <Text className="w-8/12 md:w-auto mr-0 md:mr-10 text-wrap" styles="w-9/12">
+                <Text
+                    className="text-wrap mr-0 w-8/12 md:mr-10 md:w-auto"
+                    styles="w-9/12"
+                >
                     {blok.title}
                 </Text>
-                <div className="w-3/12 flex justify-end items-center">
+                <div className="flex w-3/12 items-center justify-end">
                     {blok?.download_list?.map(
-                        (item) =>
+                        (item, i) =>
                             item?.cta_text && (
                                 <a
-                                    className="ml-4 pt-2 pb-2 text-base text-primary inline-flex"
+                                    key={i}
+                                    className="ml-4 inline-flex pb-2 pt-2 text-base text-primary"
                                     href={ButtonUrlRenderer(item?.cta_asset)}
                                 >
                                     {item?.cta_text}
@@ -27,7 +31,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                     )}
                 </div>
             </li>
-            <div className="border-b mb-4"></div>
+            <div className="mb-4 border-b"></div>
         </>
     );
 };

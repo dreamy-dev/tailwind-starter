@@ -4,9 +4,9 @@ import H4 from '../typography/H4';
 
 const AccordionWrapperBlueLine = ({ blok }) => {
     return (
-        <div className="max-w-full col-span-12">
+        <div className="col-span-12 max-w-full">
             <div
-                className=" border-b-2 border-primary my-6"
+                className="my-6 border-b-2 border-primary"
                 {...storyblokEditable(blok)}
             >
                 <H4>{blok?.title}</H4>

@@ -12,7 +12,7 @@ const Testimonials = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
                     <nav
-                        className="mx-auto grid  max-w-6xl grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 sm:gap-4"
+                        className="mx-auto grid max-w-6xl grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3"
                         aria-label="Tabs"
                         id="myTab"
                         data-tabs-toggle="#myTabContent"
@@ -37,7 +37,7 @@ const Testimonials = ({ blok }) => {
                             >
                                 <span className="flex items-center">
                                     <img
-                                        className="h-20 w-20 md:h-16 md:w-16 object-cover"
+                                        className="h-20 w-20 object-cover md:h-16 md:w-16"
                                         src={item.image.filename}
                                         alt="profile picture"
                                     />
@@ -71,11 +71,7 @@ const Testimonials = ({ blok }) => {
                                         <div className="rounded-b-lg bg-white">
                                             <blockquote className="my-4 border-l-4 border-gray-300 p-4 dark:border-gray-500 dark:bg-gray-800">
                                                 <p className="text-xl font-medium italic leading-relaxed text-gray-900 dark:text-white">
-                                                    "
-                                                    {
-                                                        selectedTab.quote
-                                                    }
-                                                    "
+                                                    "{selectedTab.quote}"
                                                 </p>
                                             </blockquote>
                                         </div>

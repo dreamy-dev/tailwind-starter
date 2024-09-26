@@ -44,20 +44,20 @@ const Features = ({ blok }) => {
             className="bg-white py-16 lg:py-24"
         >
             <ContentWidth>
-                <div className="col-span-12 max-w-full mx-auto bg-white">
-                    <div className="mb-10 tracking-tight dark:text-white ">
+                <div className="col-span-12 mx-auto max-w-full bg-white">
+                    <div className="mb-10 tracking-tight dark:text-white">
                         <H2>{blok?.title}</H2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-                        <div className="flex flex-col justify-center items-center md:items-start ">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
+                        <div className="flex flex-col items-center justify-center md:items-start">
                             <img
                                 src={blok?.image_1.filename}
                                 alt="Feature Image"
-                                className="w-full md:w-auto h-[320px] object-cover"
+                                className="h-[320px] w-full object-cover md:w-auto"
                             />
                             <a
                                 href={ButtonUrlRenderer(blok?.link_1)}
-                                className="matomo-tracking-link flex items-center gap-2 text-2xl font-bold mt-4"
+                                className="matomo-tracking-link mt-4 flex items-center gap-2 text-2xl font-bold"
                             >
                                 {blok?.text_1}
                                 <svg
@@ -74,17 +74,17 @@ const Features = ({ blok }) => {
                                 </svg>
                             </a>
                         </div>
-                        <div className="flex flex-col justify-center items-center md:items-start ">
+                        <div className="flex flex-col items-center justify-center md:items-start">
                             <img
                                 width="100%"
                                 height="auto"
                                 src={blok?.image_2.filename}
                                 alt="Feature Image"
-                                className="w-full md:w-auto h-[320px] object-cover"
+                                className="h-[320px] w-full object-cover md:w-auto"
                             />
                             <a
                                 href={ButtonUrlRenderer(blok?.link_2)}
-                                className="matomo-tracking-link flex items-center gap-2 text-2xl font-bold mt-4"
+                                className="matomo-tracking-link mt-4 flex items-center gap-2 text-2xl font-bold"
                             >
                                 {blok?.text_2}
                                 <svg
