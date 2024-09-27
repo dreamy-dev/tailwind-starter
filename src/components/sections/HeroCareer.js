@@ -9,7 +9,7 @@ import { PinIcon } from '../icons/PinIcon';
 import { CalenderIcon } from '../icons/CalenderIcon';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 const HeroCareer = ({ blok }) => {
     const careerButton = useRef();

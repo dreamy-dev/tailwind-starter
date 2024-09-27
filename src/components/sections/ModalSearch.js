@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import { SearchIcon } from '../icons/SearchIcon';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
     const [articles, setArticles] = useState([]);

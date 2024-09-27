@@ -1,5 +1,5 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
-import StoryblokProvider from '@/src/components/StoryblokProvider';
+import StoryblokProvider from '/src/components/StoryblokProvider';
 import Head from 'next/head';
 import Script from 'next/script';
 import localFont from 'next/font/local';

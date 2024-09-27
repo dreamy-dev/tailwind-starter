@@ -9,7 +9,7 @@ import Text from '../typography/Text';
 import { ArrowForward } from '../icons/ArrowForward';
 import { Loader } from '../elements/Loader';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 // 20 - Level
 // 25 - Arbeitsort

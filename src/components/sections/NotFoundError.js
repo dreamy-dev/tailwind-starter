@@ -1,4 +1,4 @@
-import ButtonPrimary from '@/src/components/elements/ButtonPrimary';
+import ButtonPrimary from '/src/components/elements/ButtonPrimary';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import RichTextRenderer from '../../components/helpers/RichTextRenderer';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';

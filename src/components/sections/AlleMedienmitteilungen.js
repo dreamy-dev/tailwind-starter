@@ -8,7 +8,7 @@ import H1 from '../typography/H1';
 import DateFormatter from '../helpers/DateFormatter';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AlleMedienmitteilungen({ blok }) {

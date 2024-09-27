@@ -5,7 +5,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import H2 from '../typography/H2';
 import { useState } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 import H3 from '../typography/H3';
 import debounce from '../helpers/Debounce';

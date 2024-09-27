@@ -9,7 +9,7 @@ import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 import H4 from '../typography/H4';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 function AdHocMedienmitteilungen({ blok }) {
     const [articles, setArticles] = useState([]);

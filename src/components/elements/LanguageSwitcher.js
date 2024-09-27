@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useRouter, usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 const variantsLang = {
     open: { scale: 1, zIndex: 2 },

@@ -8,7 +8,7 @@ import H2 from '../typography/H2';
 import Text from '../typography/Text';
 import H4 from '../typography/H4';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AllNews({ blok }) {

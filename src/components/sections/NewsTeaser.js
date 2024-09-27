@@ -10,7 +10,7 @@ import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 function NewsTeaser({ blok }) {
     const [articlesCategory, setArticlesCategory] = useState([]);
