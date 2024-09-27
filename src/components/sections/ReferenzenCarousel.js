@@ -81,7 +81,6 @@ const TestimonialsCarousel = ({ blok }) => {
                 'filter_query[categories][any_in_array]': highlightReference,
                 per_page: 5,
             });
-            console.log(data, 'data');
 
             setHighlightsCategory(() =>
                 data.stories.map((article) => {

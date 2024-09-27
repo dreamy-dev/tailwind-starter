@@ -10,7 +10,6 @@ export async function GET(request) {
     if (request.nextUrl.searchParams.get('search')) {
         url += `&q=${request.nextUrl.searchParams.get('search')}`;
     }
-    console.log('filters', request.nextUrl.searchParams.get('search'), url);
 
     try {
         const initialResponse = await fetch(url, {

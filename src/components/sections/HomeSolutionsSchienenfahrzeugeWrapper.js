@@ -60,11 +60,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                                 ? true
                                                 : false
                                         ),
-                                        setSelectedCategory(key),
-                                        console.log(
-                                            'selectedCategory',
-                                            selectedCategory
-                                        )
+                                        setSelectedCategory(key)
                                     )}
                                 >
                                     <p className="text-sm lg:text-base">

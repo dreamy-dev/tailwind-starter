@@ -39,6 +39,7 @@ export default [
             'class-methods-use-this': 'off',
             'no-constant-binary-expression': 'off',
             'react/no-unescaped-entities': 'off',
+            'react/no-string-refs': 'off',
         },
     },
 ];

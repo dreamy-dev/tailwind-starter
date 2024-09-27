@@ -32,11 +32,9 @@ const ProspectiveCareer = ({ blok }) => {
 
     useEffect(() => {
         let jobClickReference = jobClick.current;
-        console.log('jobClickReference', jobClickReference);
+
         jobClickReference?.addEventListener('click', (e) => {
-            console.log('still outside if', e.target);
             if (e.target.closest('a')) {
-                console.log('we are inside if', e.target);
                 const careerLink = e.target.closest('a')?.getAttribute('href');
                 const careerTitle = e.target
                     .closest('a')
