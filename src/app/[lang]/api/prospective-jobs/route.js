@@ -10,7 +10,6 @@ export async function GET(request) {
     if (request.nextUrl.searchParams.get('search')) {
         url += `&q=${request.nextUrl.searchParams.get('search')}`;
     }
-    console.log('filters', request.nextUrl.searchParams.get('search'), url);
 
     try {
         const initialResponse = await fetch(url, {
@@ -22,7 +21,7 @@ export async function GET(request) {
         const allJobs = await initialResponse.json();
 
         return NextResponse.json({ message: allJobs });
-    } catch (err) {
+    } catch {
         return NextResponse.json({ message: [] });
     }
 }

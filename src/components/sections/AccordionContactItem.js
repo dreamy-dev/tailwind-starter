@@ -4,19 +4,19 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 const AccordionContactItem = ({ blok }) => {
     return (
         <ul {...storyblokEditable(blok)} className="mb-8">
-            <li className="mb-2 ">
-                <p className="text-gray-500 dark:text-gray-400 ">
+            <li className="mb-2">
+                <p className="text-gray-500 dark:text-gray-400">
                     {blok?.contact_name}
                 </p>
             </li>
-            <li className=" mb-2  ">
+            <li className="mb-2">
                 <div className="group-hover:text-primary">
                     <a
                         href="tel:+496170961709"
-                        className="flex items-center cursor-pointer hover:text-primary transition-all text-gray-500 dark:text-gray-400"
+                        className="flex cursor-pointer items-center text-gray-500 transition-all hover:text-primary dark:text-gray-400"
                     >
                         <svg
-                            className="mr-2 w-5 h-5"
+                            className="mr-2 h-5 w-5"
                             width="20"
                             height="20"
                             viewBox="0 0 20 21"
@@ -32,14 +32,14 @@ const AccordionContactItem = ({ blok }) => {
                     </a>
                 </div>
             </li>
-            <li className="mb-2   ">
+            <li className="mb-2">
                 <div className="group-hover:text-primary">
                     <a
                         href="mailto:ir@stadlerrail.com"
-                        className="flex items-center cursor-pointer hover:text-primary  transition-all text-gray-500 dark:text-gray-400"
+                        className="flex cursor-pointer items-center text-gray-500 transition-all hover:text-primary dark:text-gray-400"
                     >
                         <svg
-                            className="mr-2 w-5 h-5"
+                            className="mr-2 h-5 w-5"
                             width="20"
                             height="14"
                             viewBox="0 0 20 14"

@@ -10,7 +10,7 @@ const MedienMitteilungDownload = ({ blok }) => {
                 <div className="col-span-12">
                     <H2>{blok?.title}</H2>
                     <div>
-                        <div className=" my-4 text-xl ">
+                        <div className="my-4 text-xl">
                             {blok.download.map((nestedBlok) => (
                                 <StoryblokComponent
                                     blok={nestedBlok}

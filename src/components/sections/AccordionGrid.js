@@ -8,10 +8,10 @@ const AccordionGrid = ({ blok }) => {
         <section
             id={blok.anchor}
             {...storyblokEditable(blok)}
-            className="bg-white dark:bg-gray-900 py-16 lg:py-24"
+            className="bg-white py-16 dark:bg-gray-900 lg:py-24"
         >
             <SmallWidth>
-                <div className="mx-auto max-w-screen-xl ">
+                <div className="mx-auto max-w-screen-xl">
                     <H2>{blok?.title}</H2>
                     <p className="my-6">{blok?.text}</p>
 

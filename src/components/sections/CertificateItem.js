@@ -6,7 +6,7 @@ function CertificateItem({ blok }) {
     return (
         <a
             {...storyblokEditable(blok)}
-            className="text-primary ml-4"
+            className="ml-4 text-primary"
             href={ButtonUrlRenderer(blok?.button_link)}
         >
             {blok?.button_text}

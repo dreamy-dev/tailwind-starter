@@ -17,8 +17,6 @@ import H3 from '../typography/H3';
 import H1 from '../typography/H1';
 import H4 from '../typography/H4';
 import Blockquote from '../typography/Blockquote';
-
-import DownloadItem from '../sections/DownloadItem';
 import ButtonPrimary from '../elements/ButtonPrimary';
 import ButtonUrlRenderer from './ButtonUrlRenderer';
 
@@ -70,10 +68,13 @@ const RichTextRenderer = (props) => {
                     },
                 },
                 blokResolvers: {
-                    ['cta-small']: (props) => <ButtonPrimary position="left"
-                        buttonText={props.CTA_text}
-                        href={ButtonUrlRenderer(props.CTA_link)} />
-
+                    ['cta-small']: (props) => (
+                        <ButtonPrimary
+                            position="left"
+                            buttonText={props.CTA_text}
+                            href={ButtonUrlRenderer(props.CTA_link)}
+                        />
+                    ),
                 },
                 nodeResolvers: {
                     [NODE_IMAGE]: (children, props) => (
@@ -116,13 +117,13 @@ const RichTextRenderer = (props) => {
                                 );
                             case 3:
                                 return (
-                                    <div className="mt-12 mb-4 first:mt-0">
+                                    <div className="mb-4 mt-12 first:mt-0">
                                         <H3>{children}</H3>
                                     </div>
                                 );
                             case 4:
                                 return (
-                                    <div className="mt-5 mb-3 first:mt-1">
+                                    <div className="mb-3 mt-5 first:mt-1">
                                         <H4>{children}</H4>
                                     </div>
                                 );

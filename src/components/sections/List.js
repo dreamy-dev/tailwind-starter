@@ -3,12 +3,12 @@ import Button from '../elements/ButtonSecondary';
 import H4 from '../typography/H4';
 import ContentWidth from '../layouts/ContentWidth';
 
-const List = ({ items, onItemClick, listTitle }) => {
+const List = ({ items, listTitle }) => {
     return (
         <div>
             <ContentWidth>
-                <div className="max-w-full col-span-12">
-                    <div className=" border-b-2 border-primary mb-6">
+                <div className="col-span-12 max-w-full">
+                    <div className="mb-6 border-b-2 border-primary">
                         <H4>{listTitle}</H4>
                     </div>
                     <ul>
@@ -16,7 +16,7 @@ const List = ({ items, onItemClick, listTitle }) => {
                             <div key={index}>
                                 <li
                                     //   onClick={() => onItemClick?.(item.id)}
-                                    className=" my-4 text-xl flex justify-between items-center"
+                                    className="my-4 flex items-center justify-between text-xl"
                                 >
                                     <p className="w-1/2">{item.text}</p>
                                     <p className="w-1/3">{item.iso}</p>
@@ -45,7 +45,7 @@ const List = ({ items, onItemClick, listTitle }) => {
                                         Download
                                     </Button>
                                 </li>
-                                <div className="border-b mb-6"></div>
+                                <div className="mb-6 border-b"></div>
                             </div>
                         ))}
                     </ul>

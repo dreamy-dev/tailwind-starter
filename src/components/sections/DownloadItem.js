@@ -13,7 +13,7 @@ const DownloadItem = ({ blok }) => {
             className="pb-16 pt-8 lg:pb-24 lg:pt-16"
         >
             <ContentWidth>
-                <div className="col-span-12 flex flex-col lg:flex-row justify-between align-baseline">
+                <div className="col-span-12 flex flex-col justify-between align-baseline lg:flex-row">
                     <Text>{blok?.Text}</Text>
                     <ButtonPrimary
                         position="right"

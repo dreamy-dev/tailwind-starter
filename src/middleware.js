@@ -1,6 +1,6 @@
 import { i18nRouter } from 'next-i18n-router';
 import { NextResponse } from 'next/server';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 // Middleware used for i18n Routing
 export function middleware(request) {
@@ -57,7 +57,6 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/hu-hu/career-hu-en';
                 }
                 return NextResponse.rewrite(request.nextUrl);
-                break;
             /* case 'BY':
                 if (userLocale.includes('ru')) {
                     request.nextUrl.pathname = '/en/by-ru/career-by-by';
@@ -182,7 +181,6 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/career/offene-stellen';
                 }
                 return NextResponse.rewrite(request.nextUrl);
-                break;
             /* case 'BY':
                 if (userLocale.includes('ru')) {
                     request.nextUrl.pathname = '/en/career/offene-stellen/offene-stellen-ru';

@@ -1,10 +1,6 @@
 'use client';
 import ContentWidth from '../layouts/ContentWidth';
-import {
-    getStoryblokApi,
-    storyblokEditable,
-    StoryblokComponent,
-} from '@storyblok/react/rsc';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 
 import { useState, useEffect } from 'react';
 import H1 from '../typography/H1';
@@ -13,7 +9,7 @@ import DateFormatter from '../helpers/DateFormatter';
 import TrimText from '../helpers/TrimText';
 import H4 from '../typography/H4';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 
 function AdHocMedienmitteilungen({ blok }) {
     const [articles, setArticles] = useState([]);
@@ -32,7 +28,7 @@ function AdHocMedienmitteilungen({ blok }) {
                 language: currentLocale,
             });
 
-            setArticles((prev) =>
+            setArticles(() =>
                 data.stories.map((medienmitteilungen) => {
                     medienmitteilungen.content.slug = medienmitteilungen.slug;
                     return medienmitteilungen;
@@ -44,7 +40,7 @@ function AdHocMedienmitteilungen({ blok }) {
 
     return (
         <ContentWidth {...storyblokEditable(blok)}>
-            <div className="col-span-12 w-full mt-32">
+            <div className="col-span-12 mt-32 w-full">
                 <H1>{blok.title}</H1>
             </div>
             <div className="col-span-12 w-full">
@@ -56,10 +52,10 @@ function AdHocMedienmitteilungen({ blok }) {
                                 className="group mb-6 transition-all"
                                 key={article.uuid}
                             >
-                                <div className="overflow-hidden h-52">
+                                <div className="h-52 overflow-hidden">
                                     <img
                                         src={article.content.image.filename}
-                                        className="object-cover w-full h-full group-hover:scale-110 transition-all"
+                                        className="h-full w-full object-cover transition-all group-hover:scale-110"
                                         alt="Article Medienmitteilungen image"
                                     />
                                 </div>
@@ -71,19 +67,19 @@ function AdHocMedienmitteilungen({ blok }) {
                                             ) && (
                                                 <span
                                                     key={index}
-                                                    className="whitespace-nowrap mb-2 inline text-gray-700 px-2 py-1 mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                    className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0"
                                                 >
                                                     {category.content.category}
                                                 </span>
                                             )
                                     )}
                                 </div>
-                                <div className="text-sm mb-1 text-gray-500">
+                                <div className="mb-1 text-sm text-gray-500">
                                     <Text>
                                         {DateFormatter(article.content.date)}
                                     </Text>
                                 </div>
-                                <div className="group-hover:text-primary transition-all">
+                                <div className="transition-all group-hover:text-primary">
                                     <H4>{article.content.title}</H4>
                                 </div>
                                 <div className="texl-lg mb-3 text-gray-500">

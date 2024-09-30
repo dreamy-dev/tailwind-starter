@@ -4,7 +4,7 @@ import {
     apiPlugin,
     storyblokInit,
 } from '@storyblok/react/rsc';
-import Layout from '@/src/components/sections/Layout';
+import Layout from '/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
 
 storyblokInit({

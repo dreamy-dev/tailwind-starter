@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -49,7 +49,7 @@ const HeaderNew = ({ blok }) => {
                         initial="closed"
                         animate={isOpen ? 'open' : 'closed'}
                         variants={variants}
-                        className="[--responsive-opacity:0%] lg:[--responsive-opacity:100%] [--responsive-height:0px] lg:[--responsive-height:80px]"
+                        className="[--responsive-height:0px] [--responsive-opacity:0%] lg:[--responsive-height:80px] lg:[--responsive-opacity:100%]"
                     >
                         <hr className="bg-grey h-1 lg:hidden" />
                         <TopNav blok={blok} />
@@ -122,7 +122,7 @@ const HeaderNew = ({ blok }) => {
                                     paddingTop: 0,
                                 },
                             }}
-                            className="[--responsive-opacity:0%] lg:[--responsive-opacity:100%] [--responsive-min-height:0px] lg:[--responsive-min-height:80px] [--responsive-height:0px] lg:[--responsive-height:80px] text-primarySolid-800 font-semibold lg:mt-0 flex flex-col lg:flex-row justify-start lg:space-y-0"
+                            className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
                         >
                             <ul className="flex flex-col lg:flex-row">
                                 {tabs.map((item) => (
@@ -135,7 +135,7 @@ const HeaderNew = ({ blok }) => {
                                                     setSelectedTab(item);
                                                 }
                                             }}
-                                            className="hover:cursor-pointer py-2 lg:py-0 lg:px-2"
+                                            className="py-2 hover:cursor-pointer lg:px-2 lg:py-0"
                                         >
                                             {item == 'company'
                                                 ? blok.main_link_1_text
@@ -207,13 +207,13 @@ const HeaderNew = ({ blok }) => {
                                 ))}
                             </ul>
                             <Link
-                                className="py-2 lg:py-0 lg:px-2"
+                                className="py-2 lg:px-2 lg:py-0"
                                 href={ButtonUrlRenderer(blok.main_link_3_link)}
                             >
                                 {blok.main_link_3_text}
                             </Link>
                             <Link
-                                className="py-2 lg:py-0 lg:px-2"
+                                className="py-2 lg:px-2 lg:py-0"
                                 href={ButtonUrlRenderer(blok.main_link_4_link)}
                             >
                                 {blok.main_link_4_text}
@@ -223,10 +223,10 @@ const HeaderNew = ({ blok }) => {
                                     ref={buttonRef}
                                     onClick={toggleModal}
                                     type="button"
-                                    className="w-5 h-5 py-2 lg:py-0 my-4 lg:my-0 lg:ml-8 z-100"
+                                    className="z-100 my-4 h-5 w-5 py-2 lg:my-0 lg:ml-8 lg:py-0"
                                 >
                                     <SearchIcon
-                                        className="w-5 h-5 fill-primary"
+                                        className="h-5 w-5 fill-primary"
                                         color="#005893"
                                     />
                                 </button>

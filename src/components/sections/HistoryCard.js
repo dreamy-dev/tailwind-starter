@@ -6,11 +6,10 @@ export default function HistoryCard({ blok }) {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="max-w-sm
-      bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
+            className="max-w-sm border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
         >
             <img
-                className="w-full h-auto"
+                className="h-auto w-full"
                 alt={`History image ${blok?.title}`}
                 loading="lazy"
                 src={blok?.image.filename}

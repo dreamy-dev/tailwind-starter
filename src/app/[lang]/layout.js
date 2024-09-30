@@ -1,5 +1,5 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
-import StoryblokProvider from '@/src/components/StoryblokProvider';
+import StoryblokProvider from '/src/components/StoryblokProvider';
 import Head from 'next/head';
 import Script from 'next/script';
 import localFont from 'next/font/local';
@@ -131,12 +131,11 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                 <body
                     className={
                         fontStadler.className +
-                        ' overflow-x-hidden flex flex-col min-h-screen'
+                        ' flex min-h-screen flex-col overflow-x-hidden'
                     }
                 >
                     <Script async>
                         {`
-                        console.log("Matomo test works")
                             var _mtm = window._mtm = window._mtm || [];
                             _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                             (function() {
@@ -164,7 +163,6 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
 
                             linksForMatomo.forEach(item => {
                                 item?.addEventListener('click', () => {
-                                    console.log(item.getAttribute("href"),item.getAttribute("href").includes(".pdf"))
                                     const fullHref = item.getAttribute("href")
                                     if (fullHref.includes(".pdf") ||
                                         fullHref.includes(".avi") ||

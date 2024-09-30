@@ -3,7 +3,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import { useState } from 'react';
 import { ChevronDown } from '../icons/ChevronDown';
 
-const AccordionWrapper = ({ blok, years }) => {
+const AccordionWrapper = ({ blok }) => {
     const [isActive, setIsActive] = useState(false);
 
     const handleAccordionClick = () => {
@@ -14,10 +14,10 @@ const AccordionWrapper = ({ blok, years }) => {
             <h2 className="mb-2">
                 <button
                     type="button"
-                    className={`flex justify-between items-center py-5 w-full font-medium text-left ${
+                    className={`flex w-full items-center justify-between py-5 text-left font-medium ${
                         isActive
-                            ? 'text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white'
-                            : 'text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'
+                            ? 'border-b border-gray-200 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white'
+                            : 'border-b border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400'
                     }`}
                     onClick={handleAccordionClick}
                     aria-expanded={isActive}

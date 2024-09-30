@@ -6,11 +6,13 @@ const AccordionTextDownloadItem = ({ blok }) => {
         <div {...storyblokEditable(blok)}>
             <ul>
                 <div>
-                    <li className=" my-4 text-xl flex justify-between items-center">
+                    <li className="my-4 flex items-center justify-between text-xl">
                         <p className="w-5/12 pr-4">{blok?.text_location}</p>
-                        <p className="w-5/12 pr-4">{blok?.text_certifications}</p>
+                        <p className="w-5/12 pr-4">
+                            {blok?.text_certifications}
+                        </p>
 
-                        <div className="w-2/12 flex-wrap flex justify-end items-center">
+                        <div className="flex w-2/12 flex-wrap items-center justify-end">
                             {blok?.certificate_download?.map((nestedBlok) => (
                                 <StoryblokComponent
                                     blok={nestedBlok}
