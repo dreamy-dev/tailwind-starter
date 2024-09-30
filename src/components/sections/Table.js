@@ -19,7 +19,7 @@ const TableGrid = ({ blok }) => {
                         <Text>{blok?.text}</Text>
                     </div>
                     <div className="overflow-x-auto">
-                        <table className="w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
+                        <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
                             <thead className="bg-primarySolid-50 text-xs uppercase text-black dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     {blok?.table.thead.map((th, index) => (

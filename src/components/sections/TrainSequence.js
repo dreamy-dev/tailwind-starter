@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
+// const images = [];
 
 const onDraw = (img, ctx) => {
     const canvas = ctx.canvas;
@@ -188,6 +189,7 @@ const ImageSequence = ({ category }) => {
     };
 
     useEffect(() => {
+        console.log('category', category);
         if (!animationProgress) {
             if (previousCategory != newCategory) {
                 animationProgressChange(true);

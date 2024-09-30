@@ -180,7 +180,7 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
             </div>
             <div className="col-span-12 w-full pb-24">
-                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-gray-500 rtl:text-right dark:bg-gray-700 dark:text-gray-400 lg:grid">
+                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-gray-500 dark:bg-gray-700 dark:text-gray-400 lg:grid rtl:text-right">
                     {/* Header */}
                     <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_date_title}
@@ -197,7 +197,7 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
                 {/* Data Rows */}
                 <div className="blok mb-4 w-full border-b dark:border-gray-700 lg:hidden"></div>
-                <div className="grid w-full grid-cols-12 text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
+                <div className="grid w-full grid-cols-12 text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
                     {medienmitteilungen[0] &&
                         medienmitteilungen.map((medienmitteilung, idx) => (
                             <div

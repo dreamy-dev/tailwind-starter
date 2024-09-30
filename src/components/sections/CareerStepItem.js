@@ -6,7 +6,7 @@ import Text from '../typography/Text';
 function CareerStepItem({ blok }) {
     return (
         <li
-            className="mr-8 flex items-center space-x-2.5 text-gray-500 rtl:space-x-reverse dark:text-gray-400"
+            className="mr-8 flex items-center space-x-2.5 text-gray-500 dark:text-gray-400 rtl:space-x-reverse"
             {...storyblokEditable(blok)}
         >
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gray-500 text-xl">
