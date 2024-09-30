@@ -10,7 +10,7 @@ function CareerStepGrid({ blok }) {
                 <H2>{blok.title}</H2>
             </div>
             <div className="col-span-12 mx-auto w-full gap-8 pb-8 xl:grid">
-                <ol className="w-full items-center justify-start space-y-4 rtl:space-x-reverse sm:flex sm:space-x-8 sm:space-y-0">
+                <ol className="w-full items-center justify-start space-y-4 sm:flex sm:space-x-8 sm:space-y-0 rtl:space-x-reverse">
                     {blok.career_step_items.map((nestedBlok) => (
                         <StoryblokComponent
                             blok={nestedBlok}

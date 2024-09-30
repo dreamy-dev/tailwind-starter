@@ -23,14 +23,7 @@ const HeroCareer = ({ blok }) => {
     const [attributes, setAttributes] = useState([]);
     const currentLocale = useCurrentLocale(i18nConfig);
 
-    const changeChosenFilter = (value, property, operator, name, e) => {
-        console.log(
-            'eventCur',
-            operator,
-            name,
-            e.target.selectedOptions[0].label
-        );
-
+    const changeChosenFilter = (value, property, operator, name) => {
         const newMatomoValues = { ...matomoObject };
         newMatomoValues[operator] = name;
         setMatomoObject(newMatomoValues);
@@ -44,7 +37,6 @@ const HeroCareer = ({ blok }) => {
                 query += `${key}=${newValues[key]}&`;
             }
         });
-        // console.log("newValues", newValues)
 
         setUrlQuery(query);
     };
@@ -206,7 +198,6 @@ const HeroCareer = ({ blok }) => {
                     searchAttributes += `${key}: ${matomoObject[key]}; `;
                 }
             });
-            console.log('searchAttributes', searchAttributes);
             _paq.push(['trackEvent', 'Career Search', `${searchAttributes}`]);
         });
     }, [values]);

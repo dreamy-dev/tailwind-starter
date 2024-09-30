@@ -19,7 +19,7 @@ const SolutionsGridItem = ({ blok }) => {
                 />
 
                 <div className="p-4 lg:p-5">
-                    <div className="text-wrap hyphens-auto break-words">
+                    <div className="hyphens-auto text-wrap break-words">
                         <H3 styles="!mb-0 hyphens-auto">{blok?.title}</H3>
                     </div>
                     {blok?.text ? <p>{blok?.text}</p> : ''}

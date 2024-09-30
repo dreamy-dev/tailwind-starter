@@ -11,7 +11,7 @@ const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
                         <div className="text-start">
                             <H2>{mainTitle}</H2>
                         </div>
-                        <table className="w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
+                        <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
                             <thead className="bg-primarySolid-50 text-xs uppercase text-black dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" className="w-1/3 px-6 py-3">

@@ -11,7 +11,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                 className="mb-4 flex flex-col align-middle text-xl md:flex-row md:justify-between"
             >
                 <Text
-                    className="text-wrap mr-0 w-8/12 md:mr-10 md:w-auto"
+                    className="mr-0 w-8/12 text-wrap md:mr-10 md:w-auto"
                     styles="w-9/12"
                 >
                     {blok.title}

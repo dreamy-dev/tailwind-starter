@@ -136,7 +136,6 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                 >
                     <Script async>
                         {`
-                        console.log("Matomo test works")
                             var _mtm = window._mtm = window._mtm || [];
                             _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                             (function() {
@@ -164,7 +163,6 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
 
                             linksForMatomo.forEach(item => {
                                 item?.addEventListener('click', () => {
-                                    console.log(item.getAttribute("href"),item.getAttribute("href").includes(".pdf"))
                                     const fullHref = item.getAttribute("href")
                                     if (fullHref.includes(".pdf") ||
                                         fullHref.includes(".avi") ||

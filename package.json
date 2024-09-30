@@ -58,9 +58,6 @@
             "pre-commit": "lint-staged"
         }
     },
-    "eslintConfig": {
-        "extends": "eslintcr.json"
-    },
     "lint-staged": {
         "*.{js,css,md,html,json}": "prettier --cache --write",
         "*.js": [

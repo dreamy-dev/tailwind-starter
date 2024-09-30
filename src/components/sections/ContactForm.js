@@ -238,7 +238,7 @@ export default function ContactForm({ blok }) {
                         <div className="group relative z-0 mb-5 w-full">
                             <label
                                 htmlFor="subject"
-                                className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                             >
                                 {blok?.label_subject}{' '}
                                 {blok?.required_subject ? '*' : ''}
@@ -307,7 +307,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="first_name"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_first_name}{' '}
                                     {blok?.required_first_name ? '*' : ''}
@@ -344,7 +344,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="last_name"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_last_name}{' '}
                                     {blok?.required_last_name ? '*' : ''}
@@ -382,7 +382,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="street"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_street}{' '}
                                     {blok?.required_street ? '*' : ''}
@@ -415,7 +415,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="number"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_nr}{' '}
                                     {blok?.required_number ? '*' : ''}
@@ -450,7 +450,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="zip"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_zip}{' '}
                                     {blok?.required_zip ? '*' : ''}
@@ -481,7 +481,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="city"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_city}{' '}
                                     {blok?.required_city ? '*' : ''}
@@ -517,7 +517,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="email"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_email}{' '}
                                     {blok?.required_email ? '*' : ''}
@@ -549,7 +549,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="phone"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                                 >
                                     {blok?.label_phone}{' '}
                                     {blok?.required_phone ? '*' : ''}
@@ -582,7 +582,7 @@ export default function ContactForm({ blok }) {
                         <div className="mb-5">
                             <label
                                 htmlFor="message"
-                                className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-primary"
+                                className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
                             >
                                 {blok?.label_message}{' '}
                                 {blok?.required_message ? '*' : ''}
