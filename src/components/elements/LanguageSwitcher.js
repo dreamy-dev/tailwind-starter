@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import { useRouter, usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
-import { ChevronDown } from '../icons/ChevronDown';
+import i18nConfig from '/i18nConfig';
 
 const variantsLang = {
     open: { scale: 1, zIndex: 2 },
@@ -43,11 +42,11 @@ const LanguageSwitcher = () => {
             <button
                 type="button"
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
-                className="inline-flex items-center dark:text-gray-300 hover:bg-greySolid-30 hover:text-primary text-primarySolid-800 font-medium rounded-lg text-base lg:px-5 py-2.5 dark:hover:bg-gray-700 focus:outline-none "
+                className="inline-flex items-center rounded-lg py-2.5 text-base font-medium text-primarySolid-800 hover:bg-greySolid-30 hover:text-primary focus:outline-none dark:text-gray-300 dark:hover:bg-gray-700 lg:px-5"
             >
                 {currentLocale == 'en' ? 'English' : 'Deutsch'}
                 <svg
-                    className="ml-1 w-4 h-4"
+                    className="ml-1 h-4 w-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -66,7 +65,7 @@ const LanguageSwitcher = () => {
                 animate={isOpen ? 'open' : 'closed'}
                 variants={variantsLang}
                 initial="closed"
-                className="lg:absolute lg:top-14 lg:my-4 w-48 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hover:cursor-pointer dark:bg-gray-700"
+                className="w-48 list-none divide-y divide-gray-100 rounded bg-white text-base shadow hover:cursor-pointer dark:bg-gray-700 lg:absolute lg:top-14 lg:my-4"
                 id="language-dropdown"
             >
                 <ul className="py-1" role="menu">
@@ -75,7 +74,7 @@ const LanguageSwitcher = () => {
                         <a
                             role="menuitem"
                             onClick={handleChange}
-                            className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                             <div className="inline-flex items-center">
                                 {currentLocale == 'en' ? 'German' : 'Englisch'}

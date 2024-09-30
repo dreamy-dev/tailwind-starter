@@ -1,18 +1,14 @@
 'use client';
 import ContentWidth from '../layouts/ContentWidth';
 import React from 'react';
-import {
-    getStoryblokApi,
-    storyblokEditable,
-    StoryblokComponent,
-} from '@storyblok/react/rsc';
+import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
 
 import { useState, useEffect } from 'react';
 import H1 from '../typography/H1';
 import DateFormatter from '../helpers/DateFormatter';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '@/i18nConfig';
+import i18nConfig from '/i18nConfig';
 const filters = { country: '', category: '', product: '', year: '' };
 
 function AlleMedienmitteilungen({ blok }) {
@@ -55,7 +51,7 @@ function AlleMedienmitteilungen({ blok }) {
             ...filterSearchRequest,
         });
 
-        setMedienmitteilungen((prev) =>
+        setMedienmitteilungen(() =>
             data.stories.map((article) => {
                 article.content.slug = article.slug;
                 return article;
@@ -93,10 +89,10 @@ function AlleMedienmitteilungen({ blok }) {
                 <H1>{blok.title}</H1>
             </div>
             <div className="col-span-12 mb-8">
-                <ul className="grid gap-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
+                <ul className="grid gap-4 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
                     <li className="lg:col-span-2">
                         <select
-                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'country')}
                         >
                             <option value="">
@@ -111,7 +107,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="lg:col-span-2">
                         <select
-                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'category')}
                         >
                             <option value="">
@@ -128,7 +124,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="lg:col-span-2">
                         <select
-                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100  block"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'product')}
                         >
                             <option value="">
@@ -143,7 +139,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="lg:col-span-2">
                         <select
-                            className="w-full px-4 py-2 text-base border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100 block"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'year')}
                         >
                             <option value="">{blok.filter_years_title}</option>
@@ -157,9 +153,9 @@ function AlleMedienmitteilungen({ blok }) {
 
                     <li className="lg:col-span-4">
                         <div className="relative">
-                            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                                 <svg
-                                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                    className="h-4 w-4 text-gray-500 dark:text-gray-400"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -175,7 +171,7 @@ function AlleMedienmitteilungen({ blok }) {
                                 </svg>
                             </div>
                             <input
-                                className="w-full inline-block px-8 py-2 text-base  border-primary focus:ring-1 focus:ring-primary hover:text-gray-900 hover:bg-gray-100"
+                                className="inline-block w-full border-primary px-8 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={(e) => onSearchChange(e)}
                             />
@@ -183,39 +179,39 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                 </ul>
             </div>
-            <div className="col-span-12 w-full pb-24 ">
-                <ul className="hidden lg:grid grid-cols-12 gap-4 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-primarySolid-50 dark:bg-gray-700">
+            <div className="col-span-12 w-full pb-24">
+                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-gray-500 dark:bg-gray-700 dark:text-gray-400 lg:grid rtl:text-right">
                     {/* Header */}
-                    <li className="col-span-1 px-6 py-3 text-xs font-bold text-black uppercase">
+                    <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_date_title}
                     </li>
-                    <li className="col-span-5 px-6 py-3 text-xs font-bold text-black uppercase">
+                    <li className="col-span-5 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_medienmitteilung_title}
                     </li>
-                    <li className="col-span-3 px-6 py-3 text-xs font-bold text-black uppercase">
+                    <li className="col-span-3 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_category_title}
                     </li>
-                    <li className="col-span-3 px-6 py-3 text-xs font-bold text-black uppercase flex justify-end">
+                    <li className="col-span-3 flex justify-end px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_documents_title}
                     </li>
                 </ul>
                 {/* Data Rows */}
-                <div className="w-full blok lg:hidden  mb-4 border-b dark:border-gray-700"></div>
-                <div className="grid grid-cols-12 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <div className="blok mb-4 w-full border-b dark:border-gray-700 lg:hidden"></div>
+                <div className="grid w-full grid-cols-12 text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
                     {medienmitteilungen[0] &&
                         medienmitteilungen.map((medienmitteilung, idx) => (
                             <div
                                 key={idx}
-                                className="col-span-12 bg-white dark:bg-black dark:border-gray-700 border-b mb-4 last:mb-0 lg:mb-0 lg:last:mb-0 "
+                                className="col-span-12 mb-4 border-b bg-white last:mb-0 dark:border-gray-700 dark:bg-black lg:mb-0 lg:last:mb-0"
                             >
                                 <div className="grid grid-cols-1 items-center lg:grid-cols-12">
-                                    <div className=" bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-1 px-6 py-4 font-medium text-black whitespace-nowrap">
+                                    <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-1 lg:bg-white">
                                         {medienmitteilung.content?.date &&
                                             DateFormatter(
                                                 medienmitteilung.content.date
                                             )}
                                     </div>
-                                    <div className="col-span-1 lg:col-span-5 px-6 py-4 font-medium text-primary">
+                                    <div className="col-span-1 px-6 py-4 font-medium text-primary lg:col-span-5">
                                         <a
                                             className="inline-block"
                                             href={`/${medienmitteilung.full_slug}`}
@@ -223,7 +219,7 @@ function AlleMedienmitteilungen({ blok }) {
                                             {medienmitteilung.content.title}
                                         </a>
                                         <a
-                                            className=" block mt-4 lg:hidden"
+                                            className="mt-4 block lg:hidden"
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             <img
@@ -234,7 +230,7 @@ function AlleMedienmitteilungen({ blok }) {
                                             />
                                         </a>
                                     </div>
-                                    <div className="bg-primarySolid-50 lg:bg-white col-span-1 lg:col-span-3 px-6 pt-4 pb-3 font-medium text-black">
+                                    <div className="col-span-1 bg-primarySolid-50 px-6 pb-3 pt-4 font-medium text-black lg:col-span-3 lg:bg-white">
                                         {/* {JSON.stringify(medienmitteilung.content.categories)} */}
                                         {medienmitteilung.content.categories.map(
                                             (category, index) =>
@@ -243,7 +239,7 @@ function AlleMedienmitteilungen({ blok }) {
                                                 ) && (
                                                     <span
                                                         key={index}
-                                                        className="mb-1 inline-flex flex-wrap text-gray-700 px-2 py-1  lg:whitespace-nowrap mr-4 border border-gray-400 text-xs last-of-type:mr-0"
+                                                        className="mb-1 mr-4 inline-flex flex-wrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0 lg:whitespace-nowrap"
                                                     >
                                                         {
                                                             category.content
@@ -253,11 +249,11 @@ function AlleMedienmitteilungen({ blok }) {
                                                 )
                                         )}
                                     </div>
-                                    <div className="col-span-1 lg:col-span-3 px-6 py-4 text-primary items-center flex justify-start lg:justify-end">
+                                    <div className="col-span-1 flex items-center justify-start px-6 py-4 text-primary lg:col-span-3 lg:justify-end">
                                         {medienmitteilung.content.downloads_block?.map(
-                                            (downloadBlock, index) =>
+                                            (downloadBlock) =>
                                                 downloadBlock.download_grid?.map(
-                                                    (downloadGrid, idx) =>
+                                                    (downloadGrid) =>
                                                         downloadGrid.download_list?.map(
                                                             (item, index) => (
                                                                 <a
@@ -265,7 +261,7 @@ function AlleMedienmitteilungen({ blok }) {
                                                                         item?.cta_asset
                                                                     )}
                                                                     key={index}
-                                                                    className="first-of-type:ml-0 ml-3 inline-flex"
+                                                                    className="ml-3 inline-flex first-of-type:ml-0"
                                                                 >
                                                                     {
                                                                         item?.cta_text

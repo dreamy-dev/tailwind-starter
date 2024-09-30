@@ -6,7 +6,7 @@ function DownloadElementLanguage({ blok }) {
     return (
         <a
             {...storyblokEditable(blok)}
-            className="text-primary mr-4"
+            className="mr-4 text-primary"
             href={ButtonUrlRenderer(blok?.buttonLink)}
         >
             {blok?.buttonText}

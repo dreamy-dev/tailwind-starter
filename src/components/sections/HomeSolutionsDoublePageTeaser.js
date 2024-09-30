@@ -1,5 +1,5 @@
 'use client';
-import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+import { storyblokEditable } from '@storyblok/react/rsc';
 import ContentWidth from '../layouts/ContentWidth';
 import H2 from '../typography/H2';
 import Text from '../typography/Text';
@@ -15,9 +15,9 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
     return (
         <section {...storyblokEditable(blok)} className="pb-16 lg:pb-24">
             <ContentWidth>
-                <div className="col-span-12 max-w-full mx-auto">
-                    <div className="mb-12 tracking-tight dark:text-white border border-solid border-greyBrighten-300"></div>
-                    <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 md:gap-20 lg:gap-y-40">
+                <div className="col-span-12 mx-auto max-w-full">
+                    <div className="mb-12 border border-solid border-greyBrighten-300 tracking-tight dark:text-white"></div>
+                    <ul className="grid grid-cols-1 gap-4 sm:gap-12 md:gap-20 lg:grid-cols-2 lg:gap-y-40">
                         <li>
                             <img
                                 src={blok?.image_1.filename}
@@ -27,7 +27,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <motion.a
                                     href={ButtonUrlRenderer(blok?.link_1)}
-                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-4 lg:mb-0"
+                                    className="mb-4 mt-5 flex flex-col items-start text-xl font-bold text-white lg:mb-0"
                                     initial="rest"
                                     whileTap="hover"
                                     whileHover="hover"
@@ -61,7 +61,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <div className="pr-0">
                                 <motion.a
                                     href={ButtonUrlRenderer(blok?.link_2)}
-                                    className="flex flex-col items-start text-xl font-bold text-white mt-5 mb-0"
+                                    className="mb-0 mt-5 flex flex-col items-start text-xl font-bold text-white"
                                     initial="rest"
                                     whileTap="hover"
                                     whileHover="hover"

@@ -10,23 +10,23 @@ import { PhoneIcon } from '../icons/PhoneIcon';
 const Contact = ({ blok }) => {
     return (
         <section
-            className="py-16 lg:py-24 bg-stadlergradient"
+            className="bg-stadlergradient py-16 lg:py-24"
             {...storyblokEditable(blok)}
         >
             <SmallWidth>
-                <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:gap-20 xl:grid-cols-12 items-center">
+                <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 xl:grid-cols-12 xl:gap-20">
                     <div className="w-full xl:col-span-4">
                         <img
-                            className="object-cover object-right max-w-full w-full h-auto xl:w-[320px] xl:h-[369px] xl:max-w-[320px]"
+                            className="h-auto w-full max-w-full object-cover object-right xl:h-[369px] xl:w-[320px] xl:max-w-[320px]"
                             src={blok?.image.filename}
                             alt="Contact image"
                         />
                     </div>
                     <div className="w-full xl:col-span-8">
-                        <div className=" tracking-tight text-white">
+                        <div className="tracking-tight text-white">
                             <H2>{blok?.Title}</H2>
                         </div>
-                        <div className="mb-8 font-light md:text-lg text-white">
+                        <div className="mb-8 font-light text-white md:text-lg">
                             <Text>{blok?.text}</Text>
                         </div>
                         <div className="flex-col text-white">
@@ -36,20 +36,20 @@ const Contact = ({ blok }) => {
                             <div className="mb-2 flex items-center">
                                 <PhoneIcon
                                     color="#fff"
-                                    className="fill-white w-4 h-4"
+                                    className="h-4 w-4 fill-white"
                                 />
-                                <span className="py-2 px-3">
+                                <span className="px-3 py-2">
                                     {blok?.phonenumber}
                                 </span>
                             </div>
                             <div className="flex items-center">
                                 <MailIcon
                                     color="#fff"
-                                    className="fill-white w-4 h-4"
+                                    className="h-4 w-4 fill-white"
                                 />
                                 <a
                                     type="email"
-                                    className="bg-transparent border-none"
+                                    className="border-none bg-transparent"
                                     href={'mailto:' + blok?.email_link?.email}
                                 >
                                     {blok?.email}

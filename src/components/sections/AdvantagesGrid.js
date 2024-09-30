@@ -10,7 +10,7 @@ const AdvantagesGrid = ({ blok }) => (
                 <H2>{blok.title}</H2>
             </div>
             <div
-                className="col-span-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+                className="col-span-12 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3"
                 {...storyblokEditable(blok)}
             >
                 {blok.highlights_grid.map((nestedBlok) => (

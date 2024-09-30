@@ -19,16 +19,16 @@ const SchienenfahrzeugeItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="bg-white text-black flex flex-col"
+            className="flex flex-col bg-white text-black"
         >
             <img
-                className="w-full aspect-[9/5]"
+                className="aspect-[9/5] w-full"
                 src={optimizeImage(blok?.image)}
                 alt={blok?.title}
             />
             <div className="p-4 lg:p-6 lg:pb-6">
                 {blok.tag ? (
-                    <small className="text-greySolid-600 flex mb-2">
+                    <small className="mb-2 flex text-greySolid-600">
                         {blok?.tag}
                     </small>
                 ) : (

@@ -6,7 +6,7 @@ const PortraitItem = ({ blok }) => (
     <div {...storyblokEditable(blok)}>
         <div className="mb-4">
             <img
-                className="object-cover object-top w-full h-64 lg:h-96"
+                className="h-64 w-full object-cover object-top lg:h-96"
                 src={blok?.image.filename}
                 alt="Portrait image"
             />

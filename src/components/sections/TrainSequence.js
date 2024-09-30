@@ -1,16 +1,7 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
+// const images = [];
 
-import { useScrollImageSequenceFramerCanvas } from '../../hooks';
-
-const createImage = (src) => {
-    if (typeof document !== 'undefined') {
-        const img = document.createElement('img');
-        img.src = src;
-        return img;
-    }
-};
-
-const handleDrawCanvas = (img, ctx) => {
+const onDraw = (img, ctx) => {
     const canvas = ctx.canvas;
     const widthRatio = canvas.width / img.width;
     const heightRatio = canvas.height / img.height;
@@ -33,41 +24,103 @@ const handleDrawCanvas = (img, ctx) => {
 };
 
 const ImageSequence = ({ category }) => {
+    const canvasRef = useRef(null);
+    const progress = 0;
+
     let imageWidth;
     let imageFormat;
-    if (typeof window !== 'undefined') {
-        // imageWidth = "carousel_final_1728_webp"
-        // console.log("imageWidth.split", imageWidth.split("_")[imageWidth.split("_").length - 1])
-        imageWidth =
-            window?.innerWidth > 1740
-                ? 'carousel_final_1728_webp'
-                : window?.innerWidth > 600
-                  ? 'carousel_final_1440_webp'
-                  : 'carousel_final_600_png';
 
-        imageFormat = imageWidth.split('_')[imageWidth.split('_').length - 1];
-    } else {
-        imageWidth = 'carousel_final_1728_webp';
-        imageFormat = 'webp';
-    }
+    const createImage = (src) => {
+        console.log('src', src);
+        if (typeof document !== 'undefined') {
+            const img = document.createElement('img');
+            img.src = src;
+            return img;
+        }
+    };
 
-    const keyframes = useMemo(
-        () =>
-            [...new Array(100)].map((_, i) =>
-                createImage(
-                    `/${imageWidth}/Stadler_Carousel_${i
-                        .toString()
-                        .padStart(3, '0')}.${imageFormat}`
-                )
-            ),
-        []
+    const keyframes = useMemo(() => {
+        return [...new Array(100)].map((_, i) => {
+            if (typeof window !== 'undefined') {
+                imageWidth =
+                    window?.innerWidth > 1740
+                        ? 'carousel_final_1728_webp'
+                        : window?.innerWidth > 600
+                          ? 'carousel_final_1440_webp'
+                          : 'carousel_final_600_png';
+
+                if (i === 0 || i === 34 || i === 67 || i === 99) {
+                    imageFormat = 'webp';
+                } else {
+                    imageFormat = 'webp';
+                }
+            } else {
+                imageWidth = 'carousel_final_1728_webp';
+                imageFormat = 'webp';
+            }
+
+            return createImage(
+                `/${imageWidth}/Stadler_Carousel_${i
+                    .toString()
+                    .padStart(3, '0')}.${imageFormat}`
+            );
+        });
+    }, []);
+
+    const resizeCanvas = useCallback(() => {
+        const canvas = canvasRef.current;
+        canvas.width = window.innerWidth;
+        canvas.height =
+            window.innerWidth / 2.35 <
+            window.innerHeight - window.innerHeight / 4
+                ? window.innerWidth / 2.35
+                : window.innerHeight - window.innerHeight / 4;
+    }, []);
+
+    const renderImage = useCallback(
+        (progress) => {
+            const constraint = (n, min = 0, max = keyframes.length - 1) =>
+                Math.min(Math.max(n, min), max);
+            console.log(
+                Math.round(keyframes.length * progress),
+                keyframes[constraint(Math.round(keyframes.length * progress))]
+            );
+            onDraw(
+                keyframes[constraint(Math.round(keyframes.length * progress))],
+                canvasRef.current.getContext('2d')
+            );
+        },
+        [keyframes, onDraw]
     );
+
+    useEffect(() => {
+        resizeCanvas();
+        const resizeCanvasAndRerender = () => {
+            resizeCanvas();
+            renderImage(progress);
+        };
+        window.addEventListener('resize', resizeCanvasAndRerender);
+        return () => {
+            window.removeEventListener('resize', resizeCanvasAndRerender);
+        };
+    }, [progress, renderImage, resizeCanvas]);
+
+    useEffect(() => {
+        keyframes[0].onload = () => {
+            onDraw(keyframes[0], canvasRef.current.getContext('2d'));
+        };
+    }, [keyframes, onDraw]);
+
+    useEffect(() => {
+        onDraw(keyframes[0], canvasRef.current.getContext('2d'));
+    }, []);
 
     useEffect(() => {
         //preloading image
         keyframes.forEach((image) => {
             const img = new Image();
             img.src = image;
+            console.log('image', image);
         });
     }, []);
 
@@ -75,11 +128,6 @@ const ImageSequence = ({ category }) => {
     const [lastOfClickedCategories, changeLastOfClickedCategories] = useState();
 
     const [animationProgress, animationProgressChange] = useState(false);
-    const [progress, canvasRef, renderImage] =
-        useScrollImageSequenceFramerCanvas({
-            onDraw: handleDrawCanvas,
-            keyframes: keyframes,
-        });
 
     let start;
     let done = false;
@@ -94,7 +142,7 @@ const ImageSequence = ({ category }) => {
     const singleSlideProgress =
         1 / (100 / Math.abs(Number(category) - Number(prevCategoryNumber)));
 
-    const changeCarouselPositions = (timeStamp) => {
+    const changeCarouselPositions = () => {
         let count;
         if (start === undefined) {
             start = Number(prevCategoryNumber) / 3;
@@ -141,6 +189,7 @@ const ImageSequence = ({ category }) => {
     };
 
     useEffect(() => {
+        console.log('category', category);
         if (!animationProgress) {
             if (previousCategory != newCategory) {
                 animationProgressChange(true);

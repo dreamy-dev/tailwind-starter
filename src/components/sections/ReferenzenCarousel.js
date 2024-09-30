@@ -1,5 +1,4 @@
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
-import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import H3 from '../typography/H3';
 import Text from '../typography/Text';
 import H2 from '../typography/H2';
@@ -50,7 +49,7 @@ const images = [
 const Pagination = ({ total, current }) => {
     return (
         <div className="flex justify-center text-sm font-medium text-greySolid-400">
-            <p className="text-sm font-medium flex flex-row gap-2">
+            <p className="flex flex-row gap-2 text-sm font-medium">
                 <span> {current + 1}</span>
                 <span>|</span>
                 <span>{total}</span>
@@ -82,9 +81,8 @@ const TestimonialsCarousel = ({ blok }) => {
                 'filter_query[categories][any_in_array]': highlightReference,
                 per_page: 5,
             });
-            console.log(data, 'data');
 
-            setHighlightsCategory((prev) =>
+            setHighlightsCategory(() =>
                 data.stories.map((article) => {
                     article.content.slug = article.slug;
 
@@ -112,7 +110,7 @@ const TestimonialsCarousel = ({ blok }) => {
                 'filter_query[categories][any_in_array]': references,
             });
 
-            setReference((prev) =>
+            setReference(() =>
                 data.stories.map((article) => {
                     article.content.slug = article.slug;
                     return article;
@@ -141,11 +139,11 @@ const TestimonialsCarousel = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="py-16 lg:py-24 bg-primarySolid-50"
+            className="bg-primarySolid-50 py-16 lg:py-24"
         >
             <ContentWidth>
                 <div className="col-span-12 max-w-full 2xl:pl-0">
-                    <div className="flex justify-center items-center mb-4">
+                    <div className="mb-4 flex items-center justify-center">
                         <H2>{blok?.title}</H2>
                     </div>
                     <div className="flex flex-col items-center justify-between">
@@ -155,14 +153,14 @@ const TestimonialsCarousel = ({ blok }) => {
                                 ease: [0.32, 0.72, 0, 1],
                             }}
                         >
-                            <div className="relative w-full max-w-[100%] flex items-center ">
-                                <motion.div className="max-w-[100%] flex gap-6 flex-nowrap lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
+                            <div className="relative flex w-full max-w-[100%] items-center">
+                                <motion.div className="flex max-w-[100%] flex-nowrap gap-6 lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
                                     {highlightsCategory[0] &&
                                         highlightsCategory.map(
                                             (article, idx) => (
                                                 <TestimonialMotionDiv
                                                     key={article.uuid}
-                                                    className="min-w-[100%] grid grid-cols-1 lg:grid-cols-2 shadow lg:min-w-[90%] bg-white lg:flex-row "
+                                                    className="grid min-w-[100%] grid-cols-1 bg-white shadow lg:min-w-[90%] lg:grid-cols-2 lg:flex-row"
                                                     animate={{
                                                         translateX: `calc(-${current * 100}% - ${
                                                             current * 1.5
@@ -183,7 +181,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                                     .filename
                                                             }
                                                             alt={`Image for ${blok?.title}`}
-                                                            className="w-full h-full object-cover"
+                                                            className="h-full w-full object-cover"
                                                         />
                                                     </a>
                                                     <div className="flex flex-col justify-between p-10 leading-normal">
@@ -209,7 +207,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                         </div>
                                                         <Link
                                                             href={`/${article.full_slug}`}
-                                                            className="inline-flex items-center py-2 text-sm font-medium text-center"
+                                                            className="inline-flex items-center py-2 text-center text-sm font-medium"
                                                         >
                                                             <svg
                                                                 width="20"
@@ -243,11 +241,11 @@ const TestimonialsCarousel = ({ blok }) => {
                             </div>
                         </MotionConfig>
                     </div>
-                    <div className="col-span-12 relative  flex flex-row w-full mt-8 justify-beetween items-center ">
+                    <div className="justify-beetween relative col-span-12 mt-8 flex w-full flex-row items-center">
                         <button
                             type="button"
                             onClick={toggleTrainsVisibility}
-                            className="text-primary items-center text-base flex flex-row gap-2 w-1/2 whitespace-nowrap py-4"
+                            className="flex w-1/2 flex-row items-center gap-2 whitespace-nowrap py-4 text-base text-primary"
                         >
                             {!showTrains ? (
                                 <svg
@@ -290,13 +288,13 @@ const TestimonialsCarousel = ({ blok }) => {
                             {blok?.collapse_text}
                         </button>
 
-                        <div className=" flex flex-row gap-4 justify-end items-center w-full  py-4">
+                        <div className="flex w-full flex-row items-center justify-end gap-4 py-4">
                             <Pagination
                                 total={images.length}
                                 current={current}
                             />
                             <motion.div
-                                className="flex flex-row gap-4 z-10 "
+                                className="z-10 flex flex-row gap-4"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
@@ -312,16 +310,16 @@ const TestimonialsCarousel = ({ blok }) => {
                     </div>
                     <div className="col-span-12 max-w-full">
                         {showTrains && (
-                            <div className=" md:grid grid-cols-1 gap-6 md:gap-10 lg:grid-cols-3 xl:gap-6 mt-2 w-full">
+                            <div className="mt-2 w-full grid-cols-1 gap-6 md:grid md:gap-10 lg:grid-cols-3 xl:gap-6">
                                 {reference[0] &&
                                     reference.map((train, idx) => (
                                         <div
                                             key={idx}
-                                            className="flex flex-col mb-8 md:mb-0 relative max-full items-stretch justify-between mx-auto md:max-w-md bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700"
+                                            className="max-full relative mx-auto mb-8 flex flex-col items-stretch justify-between border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800 md:mb-0 md:max-w-md"
                                         >
                                             <a href={`/${train.full_slug}`}>
                                                 <img
-                                                    className="w-full aspect-[4/3]"
+                                                    className="aspect-[4/3] w-full"
                                                     src={
                                                         train.content.image
                                                             .filename
@@ -329,7 +327,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     alt={`Image for ${train.content.title}`}
                                                 />
                                             </a>
-                                            <div className="h-full flex flex-col justify-between p-8">
+                                            <div className="flex h-full flex-col justify-between p-8">
                                                 <H4 styles="mb-4">
                                                     {train.content.title}
                                                 </H4>

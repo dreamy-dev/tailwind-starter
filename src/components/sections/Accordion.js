@@ -13,7 +13,7 @@ const Accordion = ({ faqs, mainTitle }) => {
     return (
         <section className="bg-white dark:bg-gray-900">
             <SmallWidth>
-                <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
                     <H2>{mainTitle}</H2>
                     <p className="my-6">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -31,10 +31,10 @@ const Accordion = ({ faqs, mainTitle }) => {
                                     >
                                         <button
                                             type="button"
-                                            className={`flex justify-between items-center py-5 w-full font-medium text-left ${
+                                            className={`flex w-full items-center justify-between py-5 text-left font-medium ${
                                                 activeAccordion === index
-                                                    ? 'text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white'
-                                                    : 'text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'
+                                                    ? 'border-b border-gray-200 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white'
+                                                    : 'border-b border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400'
                                             }`}
                                             onClick={() =>
                                                 handleAccordionClick(index)
@@ -47,7 +47,7 @@ const Accordion = ({ faqs, mainTitle }) => {
                                             <span>{item?.title}</span>
                                             <svg
                                                 data-accordion-icon=""
-                                                className={`w-6 h-6 ${
+                                                className={`h-6 w-6 ${
                                                     activeAccordion === index
                                                         ? 'rotate-180'
                                                         : ''
@@ -69,7 +69,7 @@ const Accordion = ({ faqs, mainTitle }) => {
                                         className={`${activeAccordion === index ? '' : 'hidden'}`}
                                         aria-labelledby={`accordion-flush-heading-${index}`}
                                     >
-                                        <div className="py-5 border-b border-gray-200 dark:border-gray-700">
+                                        <div className="border-b border-gray-200 py-5 dark:border-gray-700">
                                             <p className="mb-2 text-gray-500 dark:text-gray-400">
                                                 {item?.description}
                                             </p>

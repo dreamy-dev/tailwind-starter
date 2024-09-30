@@ -21,7 +21,7 @@ const TeaserSuccessStories = ({ blok }) => {
                                 className="group relative overflow-hidden"
                             >
                                 <img
-                                    className="object-cover h-80 scale-100 ease-in duration-300 group-hover:scale-125"
+                                    className="h-80 scale-100 object-cover duration-300 ease-in group-hover:scale-125"
                                     src={item?.image.filename}
                                     alt={item?.name}
                                 />

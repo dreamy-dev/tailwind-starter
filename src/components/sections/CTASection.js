@@ -7,7 +7,7 @@ import Text from '../typography/Text';
 export default function CTASection(props) {
     return (
         <section className="bg-white dark:bg-gray-900">
-            <div className="bg-primaryBgcGray py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div className="bg-primaryBgcGray mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-sm text-center">
                     <H2>{props.title}</H2>
                     <div className="my-6">
@@ -24,9 +24,9 @@ export default function CTASection(props) {
                     />
                 </div>
             </div>
-            <div className="gap-4 mt-8 sm:grid sm:grid-cols-4 sm:mt-12">
+            <div className="mt-8 gap-4 sm:mt-12 sm:grid sm:grid-cols-4">
                 <img
-                    className="object-cover h-80 w-full scale-100 col-span-2 mb-4 sm:block  "
+                    className="col-span-2 mb-4 h-80 w-full scale-100 object-cover sm:block"
                     src={
                         props.img ??
                         'https://www.stadlerrail.com/media/img/c/schweisser_berufserfahrene.jpg'
@@ -34,7 +34,7 @@ export default function CTASection(props) {
                     alt="Content gallery 1"
                 />
                 <img
-                    className=" object-cover h-80 scale-100 hidden col-span-1 sm:block  "
+                    className="col-span-1 hidden h-80 scale-100 object-cover sm:block"
                     src={
                         props.img2 ??
                         'https://www.stadlerrail.com/media/img/c/produktionsmechaniker_lernende.jpg'
@@ -42,7 +42,7 @@ export default function CTASection(props) {
                     alt="Content gallery 2"
                 />
                 <img
-                    className="object-cover h-80 scale-100 hidden col-span-1 sm:block  "
+                    className="col-span-1 hidden h-80 scale-100 object-cover sm:block"
                     src={
                         props.img3 ??
                         'https://www.stadlerrail.com/media/img/c/interne_transporte_berufserfahrene.jpg'

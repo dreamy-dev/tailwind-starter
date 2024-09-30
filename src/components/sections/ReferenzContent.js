@@ -1,5 +1,4 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import { render } from 'storyblok-rich-text-react-renderer';
 import SuperSmallWidth from '../layouts/SuperSmallWidth';
 import H1 from '../typography/H1';
 import Text from '../typography/Text';
@@ -14,12 +13,12 @@ function ReferenzContent({ blok }) {
                     <Breadcrumbs />
                 </div>
                 <H1 styles="mb-8">{blok?.title}</H1>
-                <div className="grid grid-cols-12 gap-6 mb-6">
+                <div className="mb-6 grid grid-cols-12 gap-6">
                     <div className="col-span-6">
                         {blok?.categories?.map((category, index) => (
                             <span
                                 key={index}
-                                className="mb-2 inline text-gray-700 px-4 py-2 mr-4 border border-gray-400 text-xs last-of-type:mr-0 whitespace-nowrap"
+                                className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-4 py-2 text-xs text-gray-700 last-of-type:mr-0"
                             >
                                 {category.content.category}
                             </span>
@@ -41,7 +40,7 @@ function ReferenzContent({ blok }) {
                 <Text styles="text-lg mt-12">{blok?.lead}</Text>
                 <img
                     src={blok?.image.filename}
-                    className="w-full my-8"
+                    className="my-8 w-full"
                     alt="Full service image"
                 />
             </SuperSmallWidth>

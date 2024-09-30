@@ -1,12 +1,7 @@
 'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import H3 from '../typography/H3';
-import Link from 'next/link';
-import Text from '../typography/Text';
 import ContentWidth from '../layouts/ContentWidth';
 import H1 from '../typography/H1';
-import { render } from 'storyblok-rich-text-react-renderer';
-import HeroText from './HeroText';
 import SmallWidth from '../layouts/SmallWidth';
 import Lead from '../typography/Lead';
 import TextSection from './TextSection';
@@ -14,17 +9,17 @@ import TextSection from './TextSection';
 const EmployeeContent = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>
-            <section className="bg-white dark:bg-gray-900 py-16 lg:py-24">
+            <section className="bg-white py-16 dark:bg-gray-900 lg:py-24">
                 <SmallWidth>
                     <H1>{blok?.title}</H1>
                     <Lead className="richtext">{blok?.teaser}</Lead>
                 </SmallWidth>
             </section>
-            <section className="min-w-[100%] relative lg:min-w-[43%] md:flex-row">
+            <section className="relative min-w-[100%] md:flex-row lg:min-w-[43%]">
                 <ContentWidth>
                     <div className="col-span-12">
                         <img
-                            className="object-right max-w-full w-full h-auto"
+                            className="h-auto w-full max-w-full object-right"
                             src={blok?.image.filename}
                             alt={`Image for ${blok?.title}`}
                         />

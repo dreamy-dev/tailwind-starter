@@ -5,7 +5,7 @@ function MedienmitteilungDownloadLink({ blok }) {
     return (
         <a
             {...storyblokEditable(blok)}
-            className="text-primary mr-4 w-6"
+            className="mr-4 w-6 text-primary"
             href={blok?.download_link.url}
         >
             {blok?.download_title}

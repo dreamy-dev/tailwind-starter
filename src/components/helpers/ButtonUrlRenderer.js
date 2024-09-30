@@ -1,5 +1,4 @@
 const ButtonUrlRenderer = (data) => {
-    console.log("ButtonUrlRenderer", data)
     if (!data) {
         return '/';
     }
@@ -16,13 +15,13 @@ const ButtonUrlRenderer = (data) => {
         if (data.fieldtype) {
             return data?.filename || '/';
         }
-        return '/'
+        return '/';
     }
     if (data.fieldtype && data.fieldtype == 'asset') {
         if (data.filename) {
             return data?.filename || '/';
         }
-        return '/'
+        return '/';
     }
     if (data.linktype && data.linktype == 'url') {
         return data?.url || '/';
