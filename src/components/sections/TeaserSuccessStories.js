@@ -8,7 +8,7 @@ const TeaserSuccessStories = ({ blok }) => {
     return (
         <section className="bg-white antialiased dark:bg-gray-900">
             <SmallWidth>
-                <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-24">
+                <div className="mx-auto max-w-screen-xl py-16 lg:py-24">
                     <div className="mx-auto max-w-3xl text-center">
                         <H2>{blok?.title}</H2>
                         <Text>{blok?.text}</Text>
