@@ -123,7 +123,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                         key={
                                                                             index
                                                                         }
-                                                                        className="ml-3 inline-flex first-of-type:ml-0"
+                                                                        className="ml-3 inline-flex font-medium first-of-type:ml-0"
                                                                     >
                                                                         {
                                                                             item?.cta_text
