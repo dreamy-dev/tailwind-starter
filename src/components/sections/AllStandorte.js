@@ -91,14 +91,10 @@ function AllStandorte({ blok }) {
     return (
         <ContentWidth {...storyblokEditable(blok)}>
             <div className="col-span-12 mt-12">
-                <ul className="flex flex-col gap-0 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:flex md:flex-row lg:gap-8">
-                    <li className="mb-4 mr-2 w-full md:w-1/3 lg:mr-4">
-                        {countryDropdown}
-                    </li>
-                    <li className="mb-4 mr-2 w-full md:w-1/3 lg:mr-4">
-                        {categoryDropdown}
-                    </li>
-                    <li className="mb-4 mr-2 w-full md:w-1/3 lg:mr-4">
+                <ul className="flex flex-col gap-0 text-center text-sm font-normal text-black dark:text-gray-400 md:flex md:flex-row lg:gap-8">
+                    <li className="mb-4 w-full md:w-1/3">{countryDropdown}</li>
+                    <li className="mb-4 w-full md:w-1/3">{categoryDropdown}</li>
+                    <li className="mb-4 w-full md:w-1/3">
                         <div className="relative w-full">
                             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                                 <SearchIcon
@@ -107,7 +103,7 @@ function AllStandorte({ blok }) {
                                 />
                             </div>
                             <input
-                                className="inline-block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="inline-block w-full border-primary px-4 py-2 text-base text-black placeholder-black hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={handleSearchChange}
                             />
