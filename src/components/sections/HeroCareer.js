@@ -356,7 +356,7 @@ const HeroCareer = ({ blok }) => {
                     </div>
                     <form
                         action="#"
-                        className="mb-5 mt-16 flex w-full flex-col justify-between gap-4 bg-white p-4 dark:bg-gray-800 lg:mt-9 lg:grid-cols-5 lg:flex-row lg:gap-x-4"
+                        className="mb-5 mt-16 flex w-full flex-col items-center justify-between gap-4 bg-white p-4 dark:bg-gray-800 lg:mt-9 lg:grid-cols-5 lg:flex-row lg:gap-x-4"
                     >
                         <div className="flex-grow gap-x-4">
                             <div className="relative">
@@ -367,7 +367,7 @@ const HeroCareer = ({ blok }) => {
                                     />
                                 </div>
                                 <select
-                                    className="block w-full border-primary bg-greySolid-30 p-2.5 px-4 py-2 pl-10 text-base text-gray-900 hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                    className="block w-full border-primary p-2.5 px-4 py-2 pl-10 text-base text-gray-900 hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                     onChange={(e) =>
                                         changeChosenFilter(
                                             e.target.value,
@@ -407,7 +407,7 @@ const HeroCareer = ({ blok }) => {
                                     />
                                 </div>
                                 <select
-                                    className="block w-full border-primary bg-greySolid-30 p-2.5 px-4 py-2 pl-10 text-base text-gray-900 hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                    className="border-primar block w-full p-2.5 px-4 py-2 pl-10 text-base text-gray-900 hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
                                     onChange={(e) =>
                                         changeChosenFilter(
                                             e.target.value,
