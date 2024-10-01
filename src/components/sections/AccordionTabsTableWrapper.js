@@ -26,7 +26,7 @@ const AccordionTabsTableWrapper = ({ blok }) => {
                         onClick={() => handleTabClick(index)}
                         className={`${
                             index === activeTab ? 'bg-gray-100' : ''
-                        } p-3 text-center md:p-6 md:text-left ${
+                        } p-3 text-center md:p-6 ${
                             index === activeTab ? 'active' : ''
                         }`}
                     >

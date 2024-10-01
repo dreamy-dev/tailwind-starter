@@ -48,7 +48,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                 <a
                     target="_blank"
                     ref={investorsDE}
-                    className="text-primary"
+                    className="font-medium text-primary"
                     href={blok?.download_bericht.url}
                     rel="noreferrer"
                 >
@@ -59,7 +59,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                 <a
                     target="_blank"
                     ref={investorsEN}
-                    className="text-primary"
+                    className="font-medium text-primary"
                     href={blok?.download_presentation.url}
                     rel="noreferrer"
                 >
