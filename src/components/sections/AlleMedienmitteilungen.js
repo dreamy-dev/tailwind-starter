@@ -205,7 +205,7 @@ function AlleMedienmitteilungen({ blok }) {
                                 className="col-span-12 mb-4 border-b bg-white last:mb-0 dark:border-gray-700 dark:bg-black lg:mb-0 lg:last:mb-0"
                             >
                                 <div className="grid grid-cols-1 items-center lg:grid-cols-12">
-                                    <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-1 lg:bg-white">
+                                    <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 text-base text-black lg:col-span-1 lg:bg-white">
                                         {medienmitteilung.content?.date &&
                                             DateFormatter(
                                                 medienmitteilung.content.date
@@ -213,7 +213,7 @@ function AlleMedienmitteilungen({ blok }) {
                                     </div>
                                     <div className="col-span-1 px-6 py-4 font-medium text-primary lg:col-span-5">
                                         <a
-                                            className="inline-block"
+                                            className="inline-block text-base"
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             {medienmitteilung.content.title}
