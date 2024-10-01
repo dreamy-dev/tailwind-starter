@@ -13,8 +13,7 @@ const AccordionGrid = ({ blok }) => {
             <SmallWidth>
                 <div className="mx-auto max-w-screen-xl">
                     <H2>{blok?.title}</H2>
-                    <p className="my-6">{blok?.text}</p>
-
+                    <p className="my-6 text-base lg:text-xl">{blok?.text}</p>
                     <div id="accordion-flush">
                         {blok?.accordion_wrapper.map((nestedBlok) => (
                             <StoryblokComponent

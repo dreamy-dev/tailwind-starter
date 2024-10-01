@@ -14,17 +14,17 @@ const AccordionWrapper = ({ blok }) => {
             <h2 className="mb-2">
                 <button
                     type="button"
-                    className={`flex w-full items-center justify-between py-5 text-left font-medium ${
+                    className={`flex w-full items-center justify-between border-b border-gray-200 py-5 text-left text-base font-medium lg:text-xl ${
                         isActive
-                            ? 'border-b border-gray-200 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white'
-                            : 'border-b border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400'
+                            ? 'text-primary dark:text-white'
+                            : 'text-black dark:text-gray-400'
                     }`}
                     onClick={handleAccordionClick}
                     aria-expanded={isActive}
                 >
                     <span>{blok?.title}</span>
                     <ChevronDown
-                        styles={isActive ? 'fill-black' : 'fill-gray-500'}
+                        styles={isActive ? 'fill-primary' : 'fill-black'}
                     />
                 </button>
             </h2>
