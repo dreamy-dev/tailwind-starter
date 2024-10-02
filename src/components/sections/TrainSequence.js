@@ -31,7 +31,7 @@ const ImageSequence = ({ category }) => {
     let imageFormat;
 
     const createImage = (src) => {
-        console.log('src', src);
+        // console.log('src', src);
         if (typeof document !== 'undefined') {
             const img = document.createElement('img');
             img.src = src;
@@ -81,10 +81,10 @@ const ImageSequence = ({ category }) => {
         (progress) => {
             const constraint = (n, min = 0, max = keyframes.length - 1) =>
                 Math.min(Math.max(n, min), max);
-            console.log(
-                Math.round(keyframes.length * progress),
-                keyframes[constraint(Math.round(keyframes.length * progress))]
-            );
+            // console.log(
+            //     Math.round(keyframes.length * progress),
+            //     keyframes[constraint(Math.round(keyframes.length * progress))]
+            // );
             onDraw(
                 keyframes[constraint(Math.round(keyframes.length * progress))],
                 canvasRef.current.getContext('2d')
@@ -120,7 +120,7 @@ const ImageSequence = ({ category }) => {
         keyframes.forEach((image) => {
             const img = new Image();
             img.src = image;
-            console.log('image', image);
+            // console.log('image', image);
         });
     }, []);
 
@@ -159,7 +159,7 @@ const ImageSequence = ({ category }) => {
                 done = true;
                 animationProgressChange(false);
                 categoryNumberChange(category);
-                console.log('end of animation', lastOfClickedCategories);
+                // console.log('end of animation', lastOfClickedCategories);
             } else {
                 // If animation is not yet finished, call the animation function again
                 if (!done) {
@@ -189,7 +189,7 @@ const ImageSequence = ({ category }) => {
     };
 
     useEffect(() => {
-        console.log('category', category);
+        // console.log('category', category);
         if (!animationProgress) {
             if (previousCategory != newCategory) {
                 animationProgressChange(true);
