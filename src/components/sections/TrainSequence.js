@@ -195,7 +195,7 @@ const ImageSequence = ({ category }) => {
                 animationProgressChange(true);
                 window.requestAnimationFrame(changeCarouselPositions);
             } else {
-                console.log(category, listOfClickedCategories);
+                // console.log(category, listOfClickedCategories);
             }
         } else {
             // Here the logic of
