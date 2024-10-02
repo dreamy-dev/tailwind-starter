@@ -11,8 +11,8 @@ const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
                         <div className="text-start">
                             <H2>{mainTitle}</H2>
                         </div>
-                        <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-                            <thead className="bg-primarySolid-50 text-xs uppercase text-black dark:bg-gray-700 dark:text-gray-400">
+                        <table className="w-full text-left text-sm text-greySolid-600 dark:text-greySolid-400 rtl:text-right">
+                            <thead className="bg-primarySolid-50 text-xs uppercase text-black dark:bg-greySolid-600 dark:text-greySolid-400">
                                 <tr>
                                     <th scope="col" className="w-1/3 px-6 py-3">
                                         Event
@@ -34,7 +34,7 @@ const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
                                 {eventsData.map((item, index) => (
                                     <tr
                                         key={index}
-                                        className="border-b bg-white dark:border-gray-700 dark:bg-black"
+                                        className="border-b bg-white dark:border-greySolid-600 dark:bg-black"
                                     >
                                         <th
                                             scope="row"

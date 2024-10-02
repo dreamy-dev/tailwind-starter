@@ -17,7 +17,7 @@ const HistoryWrapper = ({ blok, index }) => {
 
     return (
         <div className="mb-6 ms-8">
-            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-greySolid-100 dark:border-greySolid-800 dark:bg-greySolid-600"></div>
             <span
                 onClick={toggleCards}
                 className="text-primary-800 dark:bg-primary-900 dark:text-primary-300 mb-4 inline-flex cursor-pointer items-center bg-primarySolid-200 px-2.5 py-0.5 text-xs font-medium"

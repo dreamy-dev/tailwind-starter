@@ -67,14 +67,14 @@ function AdHocMedienmitteilungen({ blok }) {
                                             ) && (
                                                 <span
                                                     key={index}
-                                                    className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0"
+                                                    className="mb-2 mr-4 inline whitespace-nowrap border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0"
                                                 >
                                                     {category.content.category}
                                                 </span>
                                             )
                                     )}
                                 </div>
-                                <div className="mb-1 text-sm text-gray-500">
+                                <div className="mb-1 text-sm text-greySolid-600">
                                     <Text>
                                         {DateFormatter(article.content.date)}
                                     </Text>
@@ -82,7 +82,7 @@ function AdHocMedienmitteilungen({ blok }) {
                                 <div className="transition-all group-hover:text-primary">
                                     <H4>{article.content.title}</H4>
                                 </div>
-                                <div className="texl-lg mb-3 text-gray-500">
+                                <div className="texl-lg mb-3 text-greySolid-600">
                                     <Text>
                                         {TrimText(article.content.lead)}
                                     </Text>

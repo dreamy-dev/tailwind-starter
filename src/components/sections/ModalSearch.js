@@ -176,9 +176,9 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
         >
             <div
                 ref={contentRef}
-                className="relative h-full bg-white shadow dark:bg-gray-700"
+                className="relative h-full bg-white shadow dark:bg-greySolid-600"
             >
-                <div className="flex items-center justify-between border-b p-4 dark:border-gray-600 md:p-5">
+                <div className="flex items-center justify-between border-b p-4 dark:border-greySolid-600 md:p-5">
                     <div className="h-5 w-7 pr-2">
                         <SearchIcon
                             className="h-5 w-5 fill-primary"
@@ -205,9 +205,9 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
                             <div
                                 key={article.uuid}
                                 onClick={() => handleArticleClick(article)}
-                                className="group cursor-pointer transition-all hover:bg-gray-100"
+                                className="group cursor-pointer transition-all hover:bg-greySolid-100"
                             >
-                                <h2 className="p-4 text-base font-normal leading-tight text-gray-900 transition-all group-hover:text-primary">
+                                <h2 className="p-4 text-base font-normal leading-tight text-greySolid-800 transition-all group-hover:text-primary">
                                     {article.displayTitle}
                                 </h2>
                             </div>

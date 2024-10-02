@@ -91,10 +91,10 @@ function AllNews({ blok }) {
                     <H2>{blok.title}</H2>
                 </div>
                 <div className="col-span-12 mb-8">
-                    <ul className="grid gap-4 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
+                    <ul className="grid gap-4 text-center text-sm font-medium text-greySolid-600 dark:text-greySolid-400 md:grid-cols-2 lg:grid-cols-12">
                         <li className="lg:col-span-2">
                             <select
-                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'country')}
                             >
                                 <option value="">
@@ -109,7 +109,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'category')}
                             >
                                 <option value="">
@@ -129,7 +129,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'product')}
                             >
                                 <option value="">
@@ -144,7 +144,7 @@ function AllNews({ blok }) {
                         </li>
                         <li className="lg:col-span-2">
                             <select
-                                className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterArticles(e, 'year')}
                             >
                                 <option value="">
@@ -162,13 +162,13 @@ function AllNews({ blok }) {
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                     <span className="h-4 w-4">
                                         <SearchIcon
-                                            className="h-2 w-2 fill-gray-500"
+                                            className="h-2 w-2 fill-greySolid-600"
                                             color="#00000080"
                                         />
                                     </span>
                                 </div>
                                 <input
-                                    className="block w-full border-primary py-2 pl-8 pr-4 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                    className="block w-full border-primary py-2 pl-8 pr-4 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                     placeholder={blok.text_search}
                                     onChange={onSearchChange}
                                 />
@@ -200,7 +200,7 @@ function AllNews({ blok }) {
                                                 ) && (
                                                     <span
                                                         key={index}
-                                                        className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0"
+                                                        className="mb-2 mr-4 inline whitespace-nowrap border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0"
                                                     >
                                                         {
                                                             category.content
@@ -210,7 +210,7 @@ function AllNews({ blok }) {
                                                 )
                                         )}
                                     </div>
-                                    <div className="mb-1 text-sm text-gray-500">
+                                    <div className="mb-1 text-sm text-greySolid-600">
                                         <Text>
                                             {DateFormatter(
                                                 article.content.date
@@ -219,7 +219,7 @@ function AllNews({ blok }) {
                                     </div>
                                     <div className="transition-all group-hover:text-primary"></div>
                                     <H4>{article.content.title}</H4>
-                                    <div className="texl-lg mb-3 text-gray-500"></div>
+                                    <div className="texl-lg mb-3 text-greySolid-600"></div>
                                     <Text>
                                         {TrimText(article.content.lead)}
                                     </Text>

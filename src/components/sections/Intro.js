@@ -6,7 +6,7 @@ export default function Intro({ blok }) {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white dark:bg-gray-900"
+            className="bg-white dark:bg-greySolid-800"
         >
             <ContentWidth>
                 <div className="col-span-12">

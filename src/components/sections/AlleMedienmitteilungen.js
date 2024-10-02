@@ -89,10 +89,10 @@ function AlleMedienmitteilungen({ blok }) {
                 <H1>{blok.title}</H1>
             </div>
             <div className="col-span-12 mb-8">
-                <ul className="grid gap-4 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:grid-cols-2 lg:grid-cols-12">
+                <ul className="grid gap-4 text-center text-sm font-medium text-greySolid-600 dark:text-greySolid-400 md:grid-cols-2 lg:grid-cols-12">
                     <li className="lg:col-span-2">
                         <select
-                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'country')}
                         >
                             <option value="">
@@ -107,7 +107,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="lg:col-span-2">
                         <select
-                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'category')}
                         >
                             <option value="">
@@ -124,7 +124,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="lg:col-span-2">
                         <select
-                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'product')}
                         >
                             <option value="">
@@ -139,7 +139,7 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                     <li className="lg:col-span-2">
                         <select
-                            className="block w-full border-primary px-4 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                            className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                             onChange={(e) => filterArticles(e, 'year')}
                         >
                             <option value="">{blok.filter_years_title}</option>
@@ -155,7 +155,7 @@ function AlleMedienmitteilungen({ blok }) {
                         <div className="relative">
                             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                                 <svg
-                                    className="h-4 w-4 text-gray-500 dark:text-gray-400"
+                                    className="h-4 w-4 text-greySolid-600 dark:text-greySolid-400"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -171,7 +171,7 @@ function AlleMedienmitteilungen({ blok }) {
                                 </svg>
                             </div>
                             <input
-                                className="inline-block w-full border-primary px-8 py-2 text-base hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="inline-block w-full border-primary px-8 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={(e) => onSearchChange(e)}
                             />
@@ -180,7 +180,7 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
             </div>
             <div className="col-span-12 w-full pb-24">
-                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-gray-500 dark:bg-gray-700 dark:text-gray-400 lg:grid rtl:text-right">
+                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 dark:bg-greySolid-600 dark:text-greySolid-400 lg:grid rtl:text-right">
                     {/* Header */}
                     <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_date_title}
@@ -196,13 +196,13 @@ function AlleMedienmitteilungen({ blok }) {
                     </li>
                 </ul>
                 {/* Data Rows */}
-                <div className="blok mb-4 w-full border-b dark:border-gray-700 lg:hidden"></div>
-                <div className="grid w-full grid-cols-12 text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
+                <div className="blok mb-4 w-full border-b dark:border-greySolid-600 lg:hidden"></div>
+                <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 dark:text-greySolid-400 rtl:text-right">
                     {medienmitteilungen[0] &&
                         medienmitteilungen.map((medienmitteilung, idx) => (
                             <div
                                 key={idx}
-                                className="col-span-12 mb-4 border-b bg-white last:mb-0 dark:border-gray-700 dark:bg-black lg:mb-0 lg:last:mb-0"
+                                className="col-span-12 mb-4 border-b bg-white last:mb-0 dark:border-greySolid-600 dark:bg-black lg:mb-0 lg:last:mb-0"
                             >
                                 <div className="grid grid-cols-1 items-center lg:grid-cols-12">
                                     <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 text-base text-black lg:col-span-1 lg:bg-white">
@@ -239,7 +239,7 @@ function AlleMedienmitteilungen({ blok }) {
                                                 ) && (
                                                     <span
                                                         key={index}
-                                                        className="mb-1 mr-4 inline-flex flex-wrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0 lg:whitespace-nowrap"
+                                                        className="mb-1 mr-4 inline-flex flex-wrap border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0 lg:whitespace-nowrap"
                                                     >
                                                         {
                                                             category.content

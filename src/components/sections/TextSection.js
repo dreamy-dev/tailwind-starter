@@ -6,7 +6,7 @@ export default function TextSection({ blok }) {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-16 dark:bg-gray-900 lg:py-24"
+            className="bg-white py-16 dark:bg-greySolid-800 lg:py-24"
         >
             <SmallWidth>
                 <RichTextRenderer text={blok.text} />

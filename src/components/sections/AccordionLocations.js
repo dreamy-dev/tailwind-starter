@@ -17,11 +17,11 @@ const AccordionLocations = ({ blok }) => {
         <div className="col-span-12" {...storyblokEditable(blok)}>
             <div
                 onClick={handleAccordionClick}
-                className="cursor-pointer border-b border-gray-200 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                className="cursor-pointer border-b border-greySolid-100 bg-white text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-800 dark:text-white"
             >
-                <div className="flex w-full flex-col py-5 font-medium text-gray-500 rtl:text-right">
+                <div className="flex w-full flex-col py-5 font-medium text-greySolid-600 rtl:text-right">
                     <div className="flex">
-                        <p className="mb-3 mr-4 inline-flex items-center bg-primaryTrans-100 px-2 py-1 text-xs font-light tracking-tight text-gray-900">
+                        <p className="mb-3 mr-4 inline-flex items-center bg-primaryTrans-100 px-2 py-1 text-xs font-light tracking-tight text-greySolid-800">
                             {blok.tag_division.map((country, index) => (
                                 <span key={index}>
                                     {country.content.category}
@@ -55,8 +55,8 @@ const AccordionLocations = ({ blok }) => {
                                 type="button"
                                 className={`flex w-full items-center justify-between text-left font-medium ${
                                     isActive
-                                        ? 'bg-white text-gray-900 dark:text-white'
-                                        : 'text-gray-500 dark:text-gray-400'
+                                        ? 'bg-white text-greySolid-800 dark:text-white'
+                                        : 'text-greySolid-600 dark:text-greySolid-400'
                                 }`}
                                 onClick={handleAccordionClick}
                                 aria-expanded={isActive}
@@ -71,7 +71,7 @@ const AccordionLocations = ({ blok }) => {
                     </div>
                 </div>
                 {isActive && (
-                    <div className="border-t border-gray-200 px-2 py-5 dark:border-gray-700 lg:p-5">
+                    <div className="border-t border-greySolid-100 px-2 py-5 dark:border-greySolid-600 lg:p-5">
                         <div className="flex flex-col items-start justify-start lg:flex-row">
                             <div className="mb-4 w-9/12 lg:mb-0">
                                 <div className="mb-4 flex items-center justify-start">
@@ -105,7 +105,7 @@ const AccordionLocations = ({ blok }) => {
                             />
                         </div>
                         <div className="pt-8">
-                            <p className="mb-2 text-black dark:text-gray-400">
+                            <p className="mb-2 text-black dark:text-greySolid-400">
                                 <RichTextRenderer text={blok?.text} />
                             </p>
                         </div>

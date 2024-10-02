@@ -14,10 +14,10 @@ const AccordionWrapper = ({ blok }) => {
             <h2 className="mb-2">
                 <button
                     type="button"
-                    className={`flex w-full items-center justify-between border-b border-gray-200 py-5 text-left text-base font-medium lg:text-xl ${
+                    className={`flex w-full items-center justify-between border-b border-greySolid-100 py-5 text-left text-base font-medium lg:text-xl ${
                         isActive
                             ? 'text-primary dark:text-white'
-                            : 'text-black dark:text-gray-400'
+                            : 'text-black dark:text-greySolid-400'
                     }`}
                     onClick={handleAccordionClick}
                     aria-expanded={isActive}

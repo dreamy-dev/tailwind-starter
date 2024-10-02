@@ -6,7 +6,7 @@ import Text from '../typography/Text';
 
 export default function CTASection(props) {
     return (
-        <section className="bg-white dark:bg-gray-900">
+        <section className="bg-white dark:bg-greySolid-800">
             <div className="bg-primaryBgcGray mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-sm text-center">
                     <H2>{props.title}</H2>

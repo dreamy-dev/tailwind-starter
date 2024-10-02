@@ -11,7 +11,7 @@ const Accordion = ({ faqs, mainTitle }) => {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
     return (
-        <section className="bg-white dark:bg-gray-900">
+        <section className="bg-white dark:bg-greySolid-800">
             <SmallWidth>
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
                     <H2>{mainTitle}</H2>
@@ -33,8 +33,8 @@ const Accordion = ({ faqs, mainTitle }) => {
                                             type="button"
                                             className={`flex w-full items-center justify-between py-5 text-left font-medium ${
                                                 activeAccordion === index
-                                                    ? 'border-b border-gray-200 bg-white text-black dark:border-gray-700 dark:bg-gray-900 dark:text-white'
-                                                    : 'border-b border-gray-200 text-black dark:border-gray-700 dark:text-gray-400'
+                                                    ? 'border-b border-greySolid-100 bg-white text-black dark:border-greySolid-600 dark:bg-greySolid-800 dark:text-white'
+                                                    : 'border-b border-greySolid-100 text-black dark:border-greySolid-600 dark:text-greySolid-400'
                                             }`}
                                             onClick={() =>
                                                 handleAccordionClick(index)
@@ -69,8 +69,8 @@ const Accordion = ({ faqs, mainTitle }) => {
                                         className={`${activeAccordion === index ? '' : 'hidden'}`}
                                         aria-labelledby={`accordion-flush-heading-${index}`}
                                     >
-                                        <div className="border-b border-gray-200 py-5 dark:border-gray-700">
-                                            <p className="mb-2 text-black dark:text-gray-400">
+                                        <div className="border-b border-greySolid-100 py-5 dark:border-greySolid-600">
+                                            <p className="mb-2 text-black dark:text-greySolid-400">
                                                 {item?.description}
                                             </p>
                                         </div>

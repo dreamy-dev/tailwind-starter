@@ -6,7 +6,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 const NotFoundError = ({ blok }) => {
     return (
         <section
-            className="h-full bg-white py-28 dark:bg-gray-900"
+            className="h-full bg-white py-28 dark:bg-greySolid-800"
             {...storyblokEditable(blok)}
         >
             <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
