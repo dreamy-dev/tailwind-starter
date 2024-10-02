@@ -40,15 +40,15 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
     return (
         <tr
             {...storyblokEditable(blok)}
-            className="whitespace-nowrap border-b bg-white text-xs text-black last:mb-4 last:border-b-0 dark:border-gray-700 dark:bg-black"
+            className="whitespace-nowrap border-b bg-white text-base text-black last:mb-4 last:border-b-0 dark:border-greySolid-600 dark:bg-black"
         >
-            <td className="px-6 py-4 font-bold">{blok?.title}</td>
+            <td className="px-6 py-4 font-medium">{blok?.title}</td>
             <td className="px-6 py-4">{DateFormatter(blok?.text_date)}</td>
             <td className="px-6 py-4 text-center">
                 <a
                     target="_blank"
                     ref={investorsDE}
-                    className="text-primary"
+                    className="font-medium text-primary"
                     href={blok?.download_bericht.url}
                     rel="noreferrer"
                 >
@@ -59,7 +59,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                 <a
                     target="_blank"
                     ref={investorsEN}
-                    className="text-primary"
+                    className="font-medium text-primary"
                     href={blok?.download_presentation.url}
                     rel="noreferrer"
                 >
@@ -67,34 +67,6 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                 </a>
             </td>
         </tr>
-        // <div {...storyblokEditable(blok)}>
-        //     {/* <ul className="w-full">
-        //         <div className="w-full">
-        //             <li className=" text-xs flex white-space-nowrap justify-between items-center bg-white border-b dark:bg-black dark:border-gray-700px-6 py-4 font-medium text-black dark:text-white">
-        //                 <p className=" px-6 py-3 md:w-3/12 font-bold">
-        //                     {blok?.title}
-        //                 </p>
-        //                 <p className="px-6 py-3 w-full md:w-5/12">
-        //                     {blok?.text_date}
-        //                 </p>
-
-        //                 <a
-        //                     className="text-primary px-6 py-3 w-full md:w-2/12 text-center"
-        //                     href={blok?.download_bericht.url}
-        //                 >
-        //                     {blok?.CTA_download_bericht}
-        //                 </a>
-        //                 <a
-        //                     className="text-primary px-6 py-3 w-full md:w-2/12 text-center"
-        //                     href={blok?.download_presentation.url}
-        //                 >
-        //                     {blok?.CTA_download_presentation}
-        //                 </a>
-        //             </li>
-        //         </div>
-        //     </ul> */}
-
-        // </div>
     );
 };
 

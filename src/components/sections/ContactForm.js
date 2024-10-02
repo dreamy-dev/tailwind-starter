@@ -238,13 +238,13 @@ export default function ContactForm({ blok }) {
                         <div className="group relative z-0 mb-5 w-full">
                             <label
                                 htmlFor="subject"
-                                className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                             >
                                 {blok?.label_subject}{' '}
                                 {blok?.required_subject ? '*' : ''}
                             </label>
                             <input
-                                className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 name="subject"
                                 id="subject"
                                 autoComplete="subject"
@@ -273,13 +273,13 @@ export default function ContactForm({ blok }) {
                                     type="radio"
                                     value="male"
                                     name="gender"
-                                    className="h-4 w-4 border-greySolid-400 bg-gray-100 text-primary focus:ring-2 focus:ring-primary"
+                                    className="h-4 w-4 border-greySolid-400 bg-greySolid-100 text-primary focus:ring-2 focus:ring-primary"
                                     onChange={(e) => setGender(e.target.value)}
                                     onBlur={(e) => setGender(e.target.value)}
                                 />
                                 <label
                                     htmlFor="male"
-                                    className="ms-2 text-sm font-medium text-greySolid-800 dark:text-gray-300"
+                                    className="ms-2 text-sm font-medium text-greySolid-800 dark:text-greySolid-300"
                                 >
                                     {blok?.gender_male}
                                 </label>
@@ -290,13 +290,13 @@ export default function ContactForm({ blok }) {
                                     type="radio"
                                     value="female"
                                     name="gender"
-                                    className="h-4 w-4 border-greySolid-400 bg-gray-100 text-primary focus:ring-2 focus:ring-primary"
+                                    className="h-4 w-4 border-greySolid-400 bg-greySolid-100 text-primary focus:ring-2 focus:ring-primary"
                                     onChange={(e) => setGender(e.target.value)}
                                     onBlur={(e) => setGender(e.target.value)}
                                 />
                                 <label
                                     htmlFor="female"
-                                    className="ms-2 text-sm font-medium text-greySolid-800 dark:text-gray-300"
+                                    className="ms-2 text-sm font-medium text-greySolid-800 dark:text-greySolid-300"
                                 >
                                     {blok?.gender_female}
                                 </label>
@@ -307,7 +307,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="first_name"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_first_name}{' '}
                                     {blok?.required_first_name ? '*' : ''}
@@ -318,7 +318,7 @@ export default function ContactForm({ blok }) {
                                     id="first_name"
                                     autoComplete="first_name"
                                     value={first_name}
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                     placeholder=""
                                     required={
                                         blok?.required_first_name ? true : false
@@ -344,7 +344,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="last_name"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_last_name}{' '}
                                     {blok?.required_last_name ? '*' : ''}
@@ -354,7 +354,7 @@ export default function ContactForm({ blok }) {
                                     name="last_name"
                                     id="last_name"
                                     value={last_name}
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                     placeholder=""
                                     required={
                                         blok?.required_last_name ? true : false
@@ -382,7 +382,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="street"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_street}{' '}
                                     {blok?.required_street ? '*' : ''}
@@ -404,7 +404,7 @@ export default function ContactForm({ blok }) {
                                     onBlur={(e) =>
                                         debouncedValidateStreet(e.target.value)
                                     }
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 />
                                 <div
                                     className={`${errors.street && blok?.required_street ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -415,7 +415,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="number"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_nr}{' '}
                                     {blok?.required_number ? '*' : ''}
@@ -437,7 +437,7 @@ export default function ContactForm({ blok }) {
                                     onBlur={(e) =>
                                         debouncedValidateNumber(e.target.value)
                                     }
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 />
                                 <div
                                     className={`${errors.number && blok?.required_number ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -450,7 +450,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="zip"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_zip}{' '}
                                     {blok?.required_zip ? '*' : ''}
@@ -470,7 +470,7 @@ export default function ContactForm({ blok }) {
                                     onBlur={(e) =>
                                         debouncedValidateZip(e.target.value)
                                     }
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 />
                                 <div
                                     className={`${errors.zip && blok?.required_zip ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -481,7 +481,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="city"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_city}{' '}
                                     {blok?.required_city ? '*' : ''}
@@ -503,7 +503,7 @@ export default function ContactForm({ blok }) {
                                     onBlur={(e) =>
                                         debouncedValidateCity(e.target.value)
                                     }
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 />
                                 <div
                                     className={`${errors.city && blok?.required_city ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -517,7 +517,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="email"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_email}{' '}
                                     {blok?.required_email ? '*' : ''}
@@ -538,7 +538,7 @@ export default function ContactForm({ blok }) {
                                     onBlur={(e) =>
                                         debouncedValidateEmail(e.target.value)
                                     }
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 />
                                 <div
                                     className={`${errors.email && blok?.required_email ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -549,7 +549,7 @@ export default function ContactForm({ blok }) {
                             <div className="group relative z-0 mb-5 w-full">
                                 <label
                                     htmlFor="phone"
-                                    className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                    className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                                 >
                                     {blok?.label_phone}{' '}
                                     {blok?.required_phone ? '*' : ''}
@@ -570,7 +570,7 @@ export default function ContactForm({ blok }) {
                                     onBlur={(e) =>
                                         debouncedValidatePhone(e.target.value)
                                     }
-                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                    className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 />
                                 <div
                                     className={`${errors.phone && blok?.required_phone ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -582,7 +582,7 @@ export default function ContactForm({ blok }) {
                         <div className="mb-5">
                             <label
                                 htmlFor="message"
-                                className="top-3 -z-10 mb-2 origin-[0] -translate-y-6 scale-75 transform text-sm font-medium text-greySolid-800 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-primary dark:text-gray-400 peer-focus:dark:text-primary rtl:peer-focus:translate-x-1/4"
+                                className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                             >
                                 {blok?.label_message}{' '}
                                 {blok?.required_message ? '*' : ''}
@@ -602,7 +602,7 @@ export default function ContactForm({ blok }) {
                                 onBlur={(e) =>
                                     debouncedValidateMessage(e.target.value)
                                 }
-                                className="block w-full border border-greySolid-400 bg-white p-2.5 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary"
+                                className="block w-full border border-greySolid-400 bg-white p-2.5 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                             ></textarea>
                             <div
                                 className={`${errors.message && blok?.required_message ? 'block' : 'hidden'} mb-2 mt-2 text-sm font-medium text-red-700`}
@@ -613,7 +613,7 @@ export default function ContactForm({ blok }) {
                         <div className="mb-8 flex flex-col">
                             <div className="flex items-center">
                                 <input
-                                    className="relative h-6 w-6 shrink-0 border-2 border-primary checked:border-primary checked:bg-primary hover:border-primary hover:checked:bg-primary focus:border-primary focus:ring-2 focus:ring-primary focus:checked:bg-primary"
+                                    className="border-1 relative h-6 w-6 shrink-0 border-greySolid-400 checked:border-primary checked:bg-primary hover:border-primary hover:checked:bg-primary focus:border-primary focus:ring-2 focus:ring-primary focus:checked:bg-primary"
                                     type="checkbox"
                                     name="data_protection"
                                     id="data_protection"
@@ -625,7 +625,7 @@ export default function ContactForm({ blok }) {
                                 />
                                 <label
                                     htmlFor="data_protection"
-                                    className="ml-2 text-sm font-medium text-black dark:text-gray-300"
+                                    className="ml-2 text-sm font-medium text-black dark:text-greySolid-300"
                                 >
                                     <RichTextRenderer
                                         text={blok.disclaimer_text}

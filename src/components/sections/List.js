@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import Button from '../elements/ButtonSecondary';
 import H4 from '../typography/H4';
 import ContentWidth from '../layouts/ContentWidth';
@@ -56,3 +56,4 @@ const List = ({ items, listTitle }) => {
 };
 
 export default List;
+ */

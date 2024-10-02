@@ -16,7 +16,7 @@ const AccordionYearWrapper = ({ blok, isActive }) => {
                         transition={{ duration: 0.2 }}
                     >
                         <div
-                            className={`col-span-12 mt-10 max-w-full overflow-x-auto ${isActive ? '' : 'hidden'} w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right`}
+                            className={`col-span-12 mt-10 max-w-full overflow-x-auto ${isActive ? '' : 'hidden'} w-full text-left text-sm text-greySolid-600 dark:text-greySolid-400 rtl:text-right`}
                         >
                             <table className="w-full">
                                 <thead className="whitespace-nowrap bg-primarySolid-50 text-xs font-bold uppercase text-black">

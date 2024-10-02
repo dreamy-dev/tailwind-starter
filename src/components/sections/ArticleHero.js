@@ -9,7 +9,7 @@ import DateFormatter from '../helpers/DateFormatter';
 function ArticleHero({ block }) {
     return (
         <SuperSmallWidth>
-            <div className="mt-20 flex font-normal text-gray-600">
+            <div className="mt-20 flex font-normal text-greySolid-600">
                 <Breadcrumbs />
             </div>
             <div className="mb-8">
@@ -25,7 +25,7 @@ function ArticleHero({ block }) {
                             return (
                                 <span
                                     key={index}
-                                    className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-4 py-2 text-xs text-gray-700 last-of-type:mr-0"
+                                    className="mb-2 mr-4 inline whitespace-nowrap border border-greySolid-400 px-4 py-2 text-xs text-greySolid-600 last-of-type:mr-0"
                                 >
                                     {category.content.category}
                                 </span>

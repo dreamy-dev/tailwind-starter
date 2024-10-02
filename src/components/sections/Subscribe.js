@@ -23,7 +23,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-gray-300 bg-greySolid-30 p-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400"
                                         placeholder="Enter your Vorname"
                                         type="text"
                                     />
@@ -34,7 +34,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-gray-300 bg-greySolid-30 p-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400"
                                         placeholder="Enter your Nachname"
                                         type="text"
                                     />
@@ -45,7 +45,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-gray-300 bg-greySolid-30 p-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400"
                                         placeholder="Enter your Firma"
                                         type="text"
                                     />
@@ -56,7 +56,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="block w-full border border-white bg-greySolid-30 p-3 text-sm text-gray-900"
+                                        className="block w-full border border-white bg-greySolid-30 p-3 text-sm text-greySolid-800"
                                         placeholder="Enter your E-mail"
                                         type="email"
                                     />
@@ -68,7 +68,7 @@ export default function Subscribe() {
                                     />
                                     <label
                                         htmlFor="checkbox-1"
-                                        className="ms-2 text-sm font-medium text-white dark:text-gray-300"
+                                        className="ms-2 text-sm font-medium text-white dark:text-greySolid-300"
                                     >
                                         I agree to the{' '}
                                         <a

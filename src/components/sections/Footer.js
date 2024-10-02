@@ -57,7 +57,7 @@ const Footer = ({ blok }) => {
         <div className="flex space-x-4">
             <Link
                 href={blok.social_media_link_2.url}
-                className="text-gray-500 hover:text-gray-400"
+                className="text-greySolid-600 hover:text-greySolid-400"
             >
                 <span className="sr-only">LinkedIn</span>
                 <img
@@ -68,7 +68,7 @@ const Footer = ({ blok }) => {
             </Link>
             <Link
                 href={blok.social_media_link_3.url}
-                className="text-gray-500 hover:text-gray-400"
+                className="text-greySolid-600 hover:text-greySolid-400"
             >
                 <span className="sr-only">YouTube</span>
                 <img
@@ -79,7 +79,7 @@ const Footer = ({ blok }) => {
             </Link>
             <Link
                 href={blok.social_media_link_4.url}
-                className="text-gray-500 hover:text-gray-400"
+                className="text-greySolid-600 hover:text-greySolid-400"
             >
                 <span className="sr-only">Facebook</span>
                 <img
@@ -90,7 +90,7 @@ const Footer = ({ blok }) => {
             </Link>
             <Link
                 href={blok.social_media_link_1.url}
-                className="text-gray-500 hover:text-gray-400"
+                className="text-greySolid-600 hover:text-greySolid-400"
             >
                 <span className="sr-only">Xing</span>
                 <img
