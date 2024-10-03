@@ -663,7 +663,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <a
                             href={blok.button_1.url}
                             type="button"
-                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-gray-100 hover:text-primary md:col-span-1"
+                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
                         >
                             {blok.button_1_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
@@ -671,7 +671,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <a
                             href={blok.button_2.url}
                             type="button"
-                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-gray-100 hover:text-primary md:col-span-1"
+                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
                         >
                             {blok.button_2_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
@@ -679,7 +679,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <a
                             href={blok.button_3.url}
                             type="button"
-                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-gray-100 hover:text-primary md:col-span-1"
+                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
                         >
                             {blok.button_3_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
@@ -687,7 +687,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <a
                             href={blok.button_4.url}
                             type="button"
-                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-gray-100 hover:text-primary md:col-span-1"
+                            className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
                         >
                             {blok.button_4_text}
                             <ArrowForward styles="w-3 h-3 fill-primary" />
@@ -703,14 +703,14 @@ const ProspectiveCareer = ({ blok }) => {
                     <div className="col-span-12 grid">
                         <label
                             htmlFor="search"
-                            className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                            className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                         >
                             {blok.search_input_label}
                         </label>
                         <input
                             type="text"
                             id="search"
-                            className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                            className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                             placeholder=""
                             onChange={(e) => onSearchChange(e)}
                         />
@@ -719,13 +719,13 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries"
-                                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                             >
                                 {blok.select_1_label}
                             </label>
 
                             <select
-                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterJobs(e, '10')}
                                 value={
                                     selectedOptions['10']
@@ -754,12 +754,12 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries"
-                                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                             >
                                 {blok.select_2_label}
                             </label>
                             <select
-                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => filterJobs(e, '20')}
                                 value={
                                     selectedOptions['20']
@@ -790,12 +790,12 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries"
-                                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                             >
                                 {blok.select_3_label}
                             </label>
                             <select
-                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 onChange={(e) => {
                                     filterJobs(e, '25', false);
                                     setLocation(e, '25');
@@ -827,7 +827,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries_disabled"
-                                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                className="mb-2 block text-sm font-medium text-greySolid-800 dark:text-white"
                             >
                                 {blok.select_4_label}
                             </label>
@@ -837,7 +837,7 @@ const ProspectiveCareer = ({ blok }) => {
                                 }}
                                 disabled={!dependentField}
                                 id="countries_disabled"
-                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-gray-100 hover:text-gray-900 focus:ring-1 focus:ring-primary"
+                                className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                             >
                                 <option value="none">
                                     {blok.select_4_placeholder}

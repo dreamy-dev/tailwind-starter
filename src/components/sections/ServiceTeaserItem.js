@@ -8,7 +8,7 @@ const ServiceTeaserItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="mx-auto border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
+            className="mx-auto border border-greySolid-100 bg-white shadow dark:border-greySolid-600 dark:bg-greySolid-800"
         >
             <a href={ButtonUrlRenderer(blok?.link)}>
                 {blok?.Icon.filename ? (

@@ -72,7 +72,7 @@ function NewsTeaser({ blok }) {
                                                 ) && (
                                                     <span
                                                         key={index}
-                                                        className="mb-2 mr-4 inline whitespace-nowrap border border-gray-400 px-2 py-1 text-xs text-gray-700 last-of-type:mr-0"
+                                                        className="mb-2 mr-4 inline whitespace-nowrap border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0"
                                                     >
                                                         {
                                                             category.content

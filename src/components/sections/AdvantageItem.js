@@ -8,7 +8,9 @@ const AdvantageItem = ({ blok }) => (
             {blok?.icon.filename}
         </div>
         <H4>{blok?.Title}</H4>
-        <p className="text-gray-500 dark:text-gray-400">{blok?.Text}</p>
+        <p className="text-greySolid-600 dark:text-greySolid-400">
+            {blok?.Text}
+        </p>
     </div>
 );
 

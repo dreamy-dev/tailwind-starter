@@ -1,15 +1,13 @@
 'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import H4 from '../typography/H4';
 
 const AccordionWrapperBlueLine = ({ blok }) => {
     return (
         <div className="col-span-12 max-w-full">
-            <div
-                className="my-6 border-b-2 border-primary"
-                {...storyblokEditable(blok)}
-            >
-                <H4>{blok?.title}</H4>
+            <div className="mt-6" {...storyblokEditable(blok)}>
+                <p className="text-base font-semibold lg:text-lg">
+                    {blok?.title}
+                </p>
             </div>
 
             {blok.accordion_item.map((nestedBlok) => (

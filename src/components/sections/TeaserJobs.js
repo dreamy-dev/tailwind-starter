@@ -16,7 +16,7 @@ const Jobs = ({ blok }) => {
         return imageSource;
     }
     return (
-        <section className="bg-white antialiased dark:bg-gray-900">
+        <section className="bg-white antialiased dark:bg-greySolid-800">
             <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-24">
                 <div className="flex flex-col gap-8 sm:gap-12 xl:flex-row xl:items-start xl:gap-16">
                     <div>
@@ -48,7 +48,7 @@ const Jobs = ({ blok }) => {
                                         <p className="text-xl font-bold text-white">
                                             {item?.title}
                                         </p>
-                                        <p className="text-base font-medium text-gray-300">
+                                        <p className="text-base font-medium text-greySolid-300">
                                             {item?.subtitle}
                                         </p>
                                     </div>
