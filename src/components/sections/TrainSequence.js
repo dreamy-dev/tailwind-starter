@@ -8,7 +8,7 @@ const onDraw = (img, ctx) => {
     const ratio = Math.max(widthRatio, heightRatio);
     const centerX = (canvas.width - img.width * ratio) / 2;
     const centerY = (canvas.height - img.height * ratio) / 2;
-    // console.log("ratio", ratio, widthRatio, heightRatio);
+    console.log('ratio', ratio, widthRatio, heightRatio);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(
         img,
@@ -195,7 +195,7 @@ const ImageSequence = ({ category }) => {
                 animationProgressChange(true);
                 window.requestAnimationFrame(changeCarouselPositions);
             } else {
-                // console.log(category, listOfClickedCategories)
+                // console.log(category, listOfClickedCategories);
             }
         } else {
             // Here the logic of
