@@ -188,7 +188,12 @@ const HeaderNew = ({ blok }) => {
                                                 <motion.div key={item}>
                                                     {item === 'company' ? (
                                                         <Submenu
-                                                            blok={blok}
+                                                            mainSubmenuText={
+                                                                blok.main_submenu_1_text
+                                                            }
+                                                            mainLinkUrl={
+                                                                blok.main_link_1_link
+                                                            }
                                                             mainLinkText={
                                                                 blok.main_link_1_text
                                                             }
@@ -207,7 +212,12 @@ const HeaderNew = ({ blok }) => {
                                                         />
                                                     ) : (
                                                         <Submenu
-                                                            blok={blok}
+                                                            mainSubmenuText={
+                                                                blok.main_submenu_2_text
+                                                            }
+                                                            mainLinkUrl={
+                                                                blok.main_link_2_link
+                                                            }
                                                             mainLinkText={
                                                                 blok.main_link_2_text
                                                             }
