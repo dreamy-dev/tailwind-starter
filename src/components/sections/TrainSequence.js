@@ -228,7 +228,7 @@ const ImageSequence = ({ category }) => {
     // Progress Value Equal to the Progress from Slide 0 to SLide 1
     let singleSlideProgress;
     if (Math.abs(Number(category) - Number(prevCategoryNumber)) > 1) {
-        singleSlideProgress = 1 / (100 / 1.5);
+        singleSlideProgress = 1 / (100 / 1);
     } else {
         singleSlideProgress =
             1 / (100 / Math.abs(Number(category) - Number(prevCategoryNumber)));
