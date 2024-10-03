@@ -34,7 +34,7 @@ const images = [
     '/carousel_final_1728_webp/Stadler_Carousel_031.webp',
     '/carousel_final_1728_webp/Stadler_Carousel_032.webp',
     '/carousel_final_1728_webp/Stadler_Carousel_033.png',
-    '/carousel_final_1728_webp/Stadler_Carousel_034.webp',
+    '/carousel_final_1728_webp/Stadler_Carousel_034.png',
     '/carousel_final_1728_webp/Stadler_Carousel_035.webp',
     '/carousel_final_1728_webp/Stadler_Carousel_036.webp',
     '/carousel_final_1728_webp/Stadler_Carousel_037.webp',
@@ -99,7 +99,7 @@ const images = [
     '/carousel_final_1728_webp/Stadler_Carousel_096.webp',
     '/carousel_final_1728_webp/Stadler_Carousel_097.webp',
     '/carousel_final_1728_webp/Stadler_Carousel_098.webp',
-    '/carousel_final_1728_webp/Stadler_Carousel_099.webp',
+    '/carousel_final_1728_webp/Stadler_Carousel_099.png',
 ];
 
 const onDraw = (img, ctx) => {
@@ -126,15 +126,9 @@ const onDraw = (img, ctx) => {
 const ImageSequence = ({ category }) => {
     const [prevCategoryNumber, categoryNumberChange] = useState(category);
     const canvasRef = useRef(null);
-    const progress = 0;
-
-    console.log('progress', progress, category, prevCategoryNumber);
-
-    // let imageWidth;
-    // let imageFormat;
+    let progress;
 
     const createImage = (src) => {
-        // console.log('src', src);
         if (typeof document !== 'undefined') {
             const img = document.createElement('img');
             img.src = src;
@@ -180,12 +174,6 @@ const ImageSequence = ({ category }) => {
         (progress) => {
             const constraint = (n, min = 0, max = keyframes.length - 1) =>
                 Math.min(Math.max(n, min), max);
-            console.log(
-                'render image 183',
-                progress,
-                category,
-                prevCategoryNumber
-            );
             onDraw(
                 keyframes[constraint(Math.round(keyframes.length * progress))],
                 canvasRef.current.getContext('2d')
@@ -196,13 +184,8 @@ const ImageSequence = ({ category }) => {
 
     useEffect(() => {
         resizeCanvas();
+        progress = Number(category) / 3;
         const resizeCanvasAndRerender = () => {
-            console.log(
-                'resize canvas',
-                progress,
-                category,
-                prevCategoryNumber
-            );
             resizeCanvas();
             renderImage(progress);
         };
@@ -210,7 +193,7 @@ const ImageSequence = ({ category }) => {
         return () => {
             window.removeEventListener('resize', resizeCanvasAndRerender);
         };
-    }, [progress, renderImage, resizeCanvas]);
+    }, [category, resizeCanvas]);
 
     useEffect(() => {
         keyframes[0].onload = () => {
@@ -227,11 +210,8 @@ const ImageSequence = ({ category }) => {
         keyframes.forEach((image) => {
             const img = new Image();
             img.src = image;
-            // console.log('image', image);
         });
     }, []);
-
-    // const [lastOfClickedCategories, changeLastOfClickedCategories] = useState();
 
     const [animationProgress, animationProgressChange] = useState(false);
 
@@ -246,7 +226,8 @@ const ImageSequence = ({ category }) => {
 
     // Progress Value Equal to the Progress from Slide 0 to SLide 1
     const singleSlideProgress =
-        1 / (100 / Math.abs(Number(category) - Number(prevCategoryNumber)));
+        1 /
+        (100 / Math.abs((Number(category) - Number(prevCategoryNumber)) / 2));
 
     const changeCarouselPositions = () => {
         let count;
@@ -294,23 +275,11 @@ const ImageSequence = ({ category }) => {
     };
 
     useEffect(() => {
-        console.log(
-            'category',
-            category,
-            prevCategoryNumber,
-            previousCategory,
-            newCategory
-        );
         if (!animationProgress) {
             if (previousCategory != newCategory) {
                 animationProgressChange(true);
                 window.requestAnimationFrame(changeCarouselPositions);
-            } else {
-                // console.log(category, listOfClickedCategories)
             }
-        } else {
-            // Here the logic of
-            // changeLastOfClickedCategories(category);
         }
     }, [category]);
 
@@ -324,7 +293,6 @@ const ImageSequence = ({ category }) => {
 };
 
 const TrainSequence = ({ selectedCategory }) => {
-    console.log('selectedCategory', selectedCategory);
     return (
         <div className="overflow-clip">
             <ImageSequence category={selectedCategory} />
