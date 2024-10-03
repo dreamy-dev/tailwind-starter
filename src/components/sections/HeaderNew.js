@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -20,14 +20,12 @@ const variants = {
 };
 
 const HeaderNew = ({ blok }) => {
-    // State for modal search
     const [isModalOpen, setIsModalOpen] = useState(false);
     const buttonRef = useRef(null);
-    // State for mobile menu
     const [isOpen, setIsOpen] = useState(false);
-    // State for desktop menu
     const tabs = ['company', 'solutions'];
-    const [selectedTab, setSelectedTab] = useState(false);
+    const [activeTab, setActiveTab] = useState(null);
+    const canToggleRef = useRef(true);
 
     const toggleModal = () => {
         setIsModalOpen((prevState) => !prevState);
@@ -36,6 +34,56 @@ const HeaderNew = ({ blok }) => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
+
+    const handleOutsideClick = useCallback(
+        (event) => {
+            if (activeTab !== null && !event.target.closest('ul')) {
+                setActiveTab(null);
+
+                canToggleRef.current = false;
+                setTimeout(() => {
+                    canToggleRef.current = true;
+                }, 300);
+            }
+        },
+        [activeTab]
+    );
+
+    const handleKeyPress = useCallback(
+        (event) => {
+            if (event.key === 'Enter' && activeTab !== null) {
+                setActiveTab(null);
+            }
+        },
+        [activeTab]
+    );
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleOutsideClick);
+        document.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+            document.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [handleOutsideClick, handleKeyPress]);
+
+    const handleTabClick = useCallback((item) => {
+        if (!canToggleRef.current) return;
+
+        setActiveTab((prevActiveTab) => {
+            if (prevActiveTab === item) {
+                return null;
+            } else {
+                return item;
+            }
+        });
+
+        canToggleRef.current = false;
+        setTimeout(() => {
+            canToggleRef.current = true;
+        }, 300);
+    }, []);
 
     return (
         <motion.header
@@ -122,83 +170,76 @@ const HeaderNew = ({ blok }) => {
                                     paddingTop: 0,
                                 },
                             }}
-                            className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
+                            className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-opacity:0%] [--responsive-min-height:0px] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-opacity:100%] lg:[--responsive-min-height:80px]"
                         >
                             <ul className="flex flex-col lg:flex-row">
                                 {tabs.map((item) => (
                                     <li key={item}>
                                         <div
-                                            onClick={() => {
-                                                if (selectedTab === item) {
-                                                    setSelectedTab(null); // Unset if clicked twice
-                                                } else {
-                                                    setSelectedTab(item);
-                                                }
-                                            }}
+                                            onClick={() => handleTabClick(item)}
                                             className="py-2 hover:cursor-pointer lg:px-2 lg:py-0"
                                         >
-                                            {item == 'company'
+                                            {item === 'company'
                                                 ? blok.main_link_1_text
                                                 : blok.main_link_2_text}
                                         </div>
                                         <AnimatePresence mode="wait">
-                                            {item === selectedTab && (
-                                                <motion.div
-                                                    key={
-                                                        selectedTab
-                                                            ? selectedTab
-                                                            : ''
-                                                    }
-                                                >
-                                                    {selectedTab ? (
-                                                        selectedTab ==
-                                                        'company' ? (
-                                                            <Submenu
-                                                                blok={blok}
-                                                                mainLinkText={
-                                                                    blok.main_link_1_text
-                                                                }
-                                                                subLinkOne={
-                                                                    blok.main_1_sublink_1_link
-                                                                }
-                                                                subLinkTextOne={
-                                                                    blok.main_1_sublink_1_text
-                                                                }
-                                                                subLinkTwo={
-                                                                    blok.main_1_sublink_2_link
-                                                                }
-                                                                subLinkTextTwo={
-                                                                    blok.main_1_sublink_2_text
-                                                                }
-                                                            />
-                                                        ) : (
-                                                            <Submenu
-                                                                blok={blok}
-                                                                mainLinkText={
-                                                                    blok.main_link_2_text
-                                                                }
-                                                                subLinkOne={
-                                                                    blok.main_2_link_1_link
-                                                                }
-                                                                subLinkTextOne={
-                                                                    blok.main_2_link_1_text
-                                                                }
-                                                                subLinkTwo={
-                                                                    blok.main_2_link_2_link
-                                                                }
-                                                                subLinkTextTwo={
-                                                                    blok.main_2_link_2_text
-                                                                }
-                                                                subLinkThree={
-                                                                    blok.main_2_link_3_link
-                                                                }
-                                                                subLinkTextThree={
-                                                                    blok.main_2_link_3_text
-                                                                }
-                                                            />
-                                                        )
+                                            {activeTab === item && (
+                                                <motion.div key={item}>
+                                                    {item === 'company' ? (
+                                                        <Submenu
+                                                            mainSubmenuText={
+                                                                blok.main_submenu_1_text
+                                                            }
+                                                            mainLinkUrl={
+                                                                blok.main_link_1_link
+                                                            }
+                                                            mainLinkText={
+                                                                blok.main_link_1_text
+                                                            }
+                                                            subLinkOne={
+                                                                blok.main_1_sublink_1_link
+                                                            }
+                                                            subLinkTextOne={
+                                                                blok.main_1_sublink_1_text
+                                                            }
+                                                            subLinkTwo={
+                                                                blok.main_1_sublink_2_link
+                                                            }
+                                                            subLinkTextTwo={
+                                                                blok.main_1_sublink_2_text
+                                                            }
+                                                        />
                                                     ) : (
-                                                        ''
+                                                        <Submenu
+                                                            mainSubmenuText={
+                                                                blok.main_submenu_2_text
+                                                            }
+                                                            mainLinkUrl={
+                                                                blok.main_link_2_link
+                                                            }
+                                                            mainLinkText={
+                                                                blok.main_link_2_text
+                                                            }
+                                                            subLinkOne={
+                                                                blok.main_2_link_1_link
+                                                            }
+                                                            subLinkTextOne={
+                                                                blok.main_2_link_1_text
+                                                            }
+                                                            subLinkTwo={
+                                                                blok.main_2_link_2_link
+                                                            }
+                                                            subLinkTextTwo={
+                                                                blok.main_2_link_2_text
+                                                            }
+                                                            subLinkThree={
+                                                                blok.main_2_link_3_link
+                                                            }
+                                                            subLinkTextThree={
+                                                                blok.main_2_link_3_text
+                                                            }
+                                                        />
                                                     )}
                                                 </motion.div>
                                             )}

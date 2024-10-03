@@ -3,7 +3,8 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import { motion } from 'framer-motion';
 
 export default function Submenu({
-    blok,
+    mainSubmenuText,
+    mainLinkUrl,
     mainLinkText,
     subLinkOne,
     subLinkTextOne,
@@ -25,11 +26,11 @@ export default function Submenu({
         >
             <div className="lg:flex lg:flex-col lg:bg-primaryTrans-100 lg:p-24 lg:text-center">
                 <a
-                    href={ButtonUrlRenderer(blok.main_link_1_link)}
+                    href={ButtonUrlRenderer(mainLinkUrl)}
                     className="lg:text-primary"
                 >
                     <p className="hidden font-normal lg:block">
-                        {blok.main_submenu_1_text}
+                        {mainSubmenuText}
                     </p>
                     <p className="lg:text-lg lg:text-primary">{mainLinkText}</p>
                 </a>

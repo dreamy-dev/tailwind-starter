@@ -25,7 +25,7 @@ export default function HomePageHero({ blok }) {
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 30 }}
-                        className="z-1 absolute top-4 flex h-4/5 w-3/6 max-w-[300px] -translate-y-1/2 translate-x-1/2 transform flex-col justify-center pb-16 md:left-0 md:top-8 md:ml-4 md:w-3/5 md:max-w-[330px] md:pb-0 xl:ml-12"
+                        className="z-1 absolute top-4 flex h-4/5 w-3/6 max-w-[300px] -translate-y-1/2 translate-x-1/2 transform flex-col justify-center pb-16 md:left-0 md:top-8 md:ml-4 md:w-3/5 md:max-w-[330px] md:pb-0 xl:ml-12 2xl:top-14"
                     >
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -35,7 +35,7 @@ export default function HomePageHero({ blok }) {
                                 delay: 1.5,
                             }}
                         >
-                            <H1 styles="lg:mt-0 text-3xl md:text-7xl lg:text-7xl">
+                            <H1 styles="lg:mt-0 text-3xl md:text-7xl lg:text-7xl xl:mb-8">
                                 {blok?.title}
                             </H1>
                         </motion.div>

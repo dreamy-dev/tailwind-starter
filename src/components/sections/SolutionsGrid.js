@@ -5,7 +5,7 @@ import H2 from '../typography/H2';
 
 const SolutionsGrid = ({ blok }) => {
     return (
-        <section className="bg-white py-16 antialiased dark:bg-gray-900 lg:py-24">
+        <section className="bg-white py-16 antialiased dark:bg-greySolid-800 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12">
                     <H2>{blok?.title}</H2>

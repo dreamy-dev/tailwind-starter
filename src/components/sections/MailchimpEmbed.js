@@ -152,7 +152,7 @@ export default function MailchimpEmbed({ blok }) {
                                     {blok.fname_label} <span>*</span>
                                 </label>
                                 <input
-                                    className="block w-full border border-gray-300 p-3 text-sm text-gray-900 focus:border-primary focus:ring-primary"
+                                    className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                     value={firstName}
                                     onChange={(e) =>
                                         setFirstName(e.target.value)
@@ -171,7 +171,7 @@ export default function MailchimpEmbed({ blok }) {
                                     {blok.lname_label} <span>*</span>
                                 </label>
                                 <input
-                                    className="block w-full border border-gray-300 p-3 text-sm text-gray-900 focus:border-primary focus:ring-primary"
+                                    className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                     value={lastName}
                                     onChange={(e) =>
                                         setLastName(e.target.value)
@@ -191,7 +191,7 @@ export default function MailchimpEmbed({ blok }) {
                                 {blok.company_label} <span>*</span>
                             </label>
                             <input
-                                className="block w-full border border-gray-300 p-3 text-sm text-gray-900 focus:border-primary focus:ring-primary"
+                                className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                 type="text"
                                 value={company}
                                 onChange={(e) => setCompany(e.target.value)}
@@ -208,7 +208,7 @@ export default function MailchimpEmbed({ blok }) {
                                 {blok.email_label} <span>*</span>
                             </label>
                             <input
-                                className="block w-full border border-gray-300 p-3 text-sm text-gray-900 focus:border-primary focus:ring-primary"
+                                className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -234,7 +234,7 @@ export default function MailchimpEmbed({ blok }) {
                                 />
                                 <label
                                     htmlFor="checkbox-1"
-                                    className="ms-2 text-sm text-gray-900"
+                                    className="ms-2 text-sm text-greySolid-800"
                                 >
                                     {render(blok?.checkbox_label)}
                                 </label>

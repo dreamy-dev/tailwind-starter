@@ -16,7 +16,7 @@ const HoverAnimationCards = ({ title, lead, list }) => {
                         {list.map((item) => (
                             <div
                                 key={item.title}
-                                className="group relative max-w-sm overflow-hidden border border-gray-200 bg-white"
+                                className="group relative max-w-sm overflow-hidden border border-greySolid-100 bg-white"
                             >
                                 <a className="" href={item.href}>
                                     <img

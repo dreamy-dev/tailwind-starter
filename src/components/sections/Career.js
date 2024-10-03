@@ -29,7 +29,7 @@ export default function Career({ blok }) {
                     <div className="mb-4 text-center tracking-tight dark:text-white">
                         <H2>{blok?.title}</H2>
                     </div>
-                    <p className="mb-10 px-4 text-center text-base font-normal text-gray-500 dark:text-gray-500 sm:text-xl md:mx-auto md:max-w-3xl">
+                    <p className="mb-10 px-4 text-center text-base font-normal text-greySolid-600 dark:text-greySolid-600 sm:text-xl md:mx-auto md:max-w-3xl">
                         {blok?.text}
                     </p>
                     <div className="flex justify-center">

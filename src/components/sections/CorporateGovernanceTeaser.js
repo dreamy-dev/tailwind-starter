@@ -10,10 +10,10 @@ const CorporateGovernanceTeaser = ({ blok }) => {
             href={ButtonUrlRenderer(blok?.page_link)}
             {...storyblokEditable(blok)}
         >
-            <article className="flex h-full flex-col justify-between border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800">
+            <article className="flex h-full flex-col justify-between border border-greySolid-100 bg-white p-4 shadow-md dark:border-greySolid-600 dark:bg-greySolid-800">
                 <div>
                     <H3>{blok?.title}</H3>
-                    <p className="mb-4 font-normal text-black dark:text-gray-400">
+                    <p className="mb-4 font-normal text-black dark:text-greySolid-400">
                         {blok?.text}
                     </p>
                 </div>

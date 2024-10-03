@@ -13,7 +13,7 @@ const FactsAndFigures = ({ data1, data2, showTwoRows = true, blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-primarySolid-50 py-16 dark:bg-gray-900 lg:py-24"
+            className="bg-primarySolid-50 py-16 dark:bg-greySolid-800 lg:py-24"
         >
             <ContentWidth>
                 <div className="col-span-12 my-auto">
