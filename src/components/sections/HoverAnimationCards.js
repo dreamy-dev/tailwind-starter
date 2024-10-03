@@ -18,7 +18,7 @@ const HoverAnimationCards = ({ title, lead, list }) => {
                                 key={item.title}
                                 className="group relative max-w-sm overflow-hidden border border-greySolid-100 bg-white"
                             >
-                                <a className="" href={item.href}>
+                                <a tabIndex="1" className="" href={item.href}>
                                     <img
                                         className="max-h-auto w-full object-contain"
                                         src={item.image}
@@ -26,6 +26,7 @@ const HoverAnimationCards = ({ title, lead, list }) => {
                                     />
                                 </a>
                                 <a
+                                    tabIndex="1"
                                     href={item.href}
                                     className="absolute inset-0 top-2/3 grid h-1/2 w-full items-start justify-center bg-gradient-to-b from-transparent to-black/60 px-5 pt-5 transition-all hover:top-0 hover:h-full hover:from-black/60 hover:to-black/60"
                                 >

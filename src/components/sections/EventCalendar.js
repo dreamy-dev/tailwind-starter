@@ -11,7 +11,7 @@ const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
                         <div className="text-start">
                             <H2>{mainTitle}</H2>
                         </div>
-                        <table className="w-full text-left text-sm text-greySolid-600 dark:text-greySolid-400 rtl:text-right">
+                        <table className="w-full text-left text-sm text-greySolid-600 rtl:text-right dark:text-greySolid-400">
                             <thead className="bg-primarySolid-50 text-xs uppercase text-black dark:bg-greySolid-600 dark:text-greySolid-400">
                                 <tr>
                                     <th scope="col" className="w-1/3 px-6 py-3">
@@ -48,6 +48,7 @@ const EventCalendar = ({ mainTitle, eventsData, withoutEventLink }) => {
                                         {!withoutEventLink && (
                                             <td className="px-6 py-4 text-primary">
                                                 <a
+                                                    tabIndex="1"
                                                     href={item.link}
                                                     target="_blank"
                                                     rel="noreferrer"

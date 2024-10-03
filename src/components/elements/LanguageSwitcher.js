@@ -40,6 +40,7 @@ const LanguageSwitcher = () => {
     return (
         <div>
             <button
+                tabIndex="1"
                 type="button"
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
                 className="inline-flex items-center rounded-lg py-2.5 text-base font-medium text-primarySolid-800 hover:bg-greySolid-30 hover:text-primary focus:outline-none dark:text-greySolid-300 dark:hover:bg-greySolid-600 lg:px-5"
@@ -72,6 +73,7 @@ const LanguageSwitcher = () => {
                     {/* TODO: With folder level translation, map over languages here to display options */}
                     <li role="none">
                         <a
+                            tabIndex="1"
                             role="menuitem"
                             onClick={handleChange}
                             className="block px-4 py-2 text-sm text-greySolid-600 hover:bg-greySolid-100 dark:text-greySolid-400 dark:hover:bg-greySolid-600 dark:hover:text-white"

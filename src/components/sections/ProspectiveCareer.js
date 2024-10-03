@@ -661,6 +661,7 @@ const ProspectiveCareer = ({ blok }) => {
                         role="group"
                     >
                         <a
+                            tabIndex="1"
                             href={blok.button_1.url}
                             type="button"
                             className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
@@ -669,6 +670,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                         <a
+                            tabIndex="1"
                             href={blok.button_2.url}
                             type="button"
                             className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
@@ -677,6 +679,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                         <a
+                            tabIndex="1"
                             href={blok.button_3.url}
                             type="button"
                             className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
@@ -685,6 +688,7 @@ const ProspectiveCareer = ({ blok }) => {
                             <ArrowForward styles="w-3 h-3 fill-primary" />
                         </a>
                         <a
+                            tabIndex="1"
                             href={blok.button_4.url}
                             type="button"
                             className="col-span-4 mb-4 flex items-center justify-between bg-primarySolid-50 px-4 py-2 text-sm font-medium text-primary hover:cursor-pointer hover:bg-greySolid-100 hover:text-primary md:col-span-1"
@@ -708,6 +712,7 @@ const ProspectiveCareer = ({ blok }) => {
                             {blok.search_input_label}
                         </label>
                         <input
+                            tabIndex="1"
                             type="text"
                             id="search"
                             className="block w-full border border-primary p-2.5 text-base text-sm hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
@@ -872,6 +877,7 @@ const ProspectiveCareer = ({ blok }) => {
                         ) : (
                             jobs?.map((item, key) => (
                                 <a
+                                    tabIndex="1"
                                     key={key}
                                     href={item.links.directlink}
                                     target="_blank"

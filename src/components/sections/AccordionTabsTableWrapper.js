@@ -20,6 +20,7 @@ const AccordionTabsTableWrapper = ({ blok }) => {
             >
                 {blok.year_wrapper.map((nestedBlok, index) => (
                     <button
+                        tabIndex="1"
                         key={nestedBlok._uid}
                         type="button"
                         id={`tab-${index}`}

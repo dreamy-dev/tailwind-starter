@@ -13,6 +13,7 @@ const AccordionWrapper = ({ blok }) => {
         <div {...storyblokEditable(blok)}>
             <h2 className="mb-2">
                 <button
+                    tabIndex="1"
                     type="button"
                     className={`flex w-full items-center justify-between border-b border-greySolid-100 py-5 text-left text-base font-medium lg:text-xl ${
                         isActive

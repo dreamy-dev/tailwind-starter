@@ -53,6 +53,7 @@ function NewsTeaser({ blok }) {
                         {articlesCategory[0] &&
                             articlesCategory.map((article) => (
                                 <a
+                                    tabIndex="1"
                                     href={`/${article.full_slug}`}
                                     className="group mb-6 transition-all"
                                     key={article.uuid}

@@ -56,6 +56,7 @@ const Features = ({ blok }) => {
                                 className="h-[320px] w-full object-cover md:w-auto"
                             />
                             <a
+                                tabIndex="1"
                                 href={ButtonUrlRenderer(blok?.link_1)}
                                 className="matomo-tracking-link mt-4 flex items-center gap-2 text-2xl font-bold"
                             >
@@ -83,6 +84,7 @@ const Features = ({ blok }) => {
                                 className="h-[320px] w-full object-cover md:w-auto"
                             />
                             <a
+                                tabIndex="1"
                                 href={ButtonUrlRenderer(blok?.link_2)}
                                 className="matomo-tracking-link mt-4 flex items-center gap-2 text-2xl font-bold"
                             >

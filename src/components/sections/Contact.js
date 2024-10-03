@@ -48,6 +48,7 @@ const Contact = ({ blok }) => {
                                     className="h-4 w-4 fill-white"
                                 />
                                 <a
+                                    tabIndex="1"
                                     type="email"
                                     className="border-none bg-transparent"
                                     href={'mailto:' + blok?.email_link?.email}

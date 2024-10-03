@@ -168,6 +168,7 @@ function AllNews({ blok }) {
                                     </span>
                                 </div>
                                 <input
+                                    tabIndex="1"
                                     className="block w-full border-primary py-2 pl-8 pr-4 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                     placeholder={blok.text_search}
                                     onChange={onSearchChange}
@@ -181,6 +182,7 @@ function AllNews({ blok }) {
                         {articles[0] &&
                             articles.map((article) => (
                                 <a
+                                    tabIndex="1"
                                     href={`/${article.full_slug}`}
                                     className="group mb-6 transition-all"
                                     key={article.uuid}

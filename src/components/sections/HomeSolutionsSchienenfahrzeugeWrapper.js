@@ -24,6 +24,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                     <H2>{blok.title}</H2>
                     <Text>{blok.lead}</Text>
                     <motion.a
+                        tabIndex="1"
                         className="mt-4 flex"
                         href={ButtonUrlRenderer(blok?.cta_link)}
                         whileHover={{

@@ -187,6 +187,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
                     </div>
                     <label htmlFor="search" className="w-full">
                         <input
+                            tabIndex="1"
                             id="search"
                             ref={inputRef}
                             placeholder="Enter your search term..."
@@ -203,6 +204,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
                     <div className="flex flex-col">
                         {articles.map((article) => (
                             <div
+                                tabIndex="1"
                                 key={article.uuid}
                                 onClick={() => handleArticleClick(article)}
                                 className="group cursor-pointer transition-all hover:bg-greySolid-100"

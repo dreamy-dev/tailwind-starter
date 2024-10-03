@@ -47,7 +47,7 @@ const Breadcrumbs = () => {
                         <li key={i}>
                             {i !== breadcrumbs.length - 1 ? (
                                 <>
-                                    <a href={breadcrumb.href}>
+                                    <a tabIndex="1" href={breadcrumb.href}>
                                         {convertBreadcrumb(
                                             breadcrumb.breadcrumb
                                         )}
@@ -55,7 +55,7 @@ const Breadcrumbs = () => {
                                     <span className="px-3">|</span>
                                 </>
                             ) : (
-                                <a href={breadcrumb.href}>
+                                <a tabIndex="1" href={breadcrumb.href}>
                                     {convertBreadcrumb(breadcrumb.breadcrumb)}
                                 </a>
                             )}

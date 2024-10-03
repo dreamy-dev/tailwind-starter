@@ -103,6 +103,7 @@ function AllStandorte({ blok }) {
                                 />
                             </div>
                             <input
+                                tabIndex="1"
                                 className="inline-block w-full border-primary px-4 py-2 text-base text-black placeholder-black hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={handleSearchChange}

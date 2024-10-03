@@ -25,6 +25,7 @@ export default function Submenu({
         >
             <div className="lg:flex lg:flex-col lg:bg-primaryTrans-100 lg:p-24 lg:text-center">
                 <a
+                    tabIndex="1"
                     href={ButtonUrlRenderer(blok.main_link_1_link)}
                     className="lg:text-primary"
                 >
@@ -36,6 +37,7 @@ export default function Submenu({
             </div>
             <motion.div className="flex flex-col lg:grid lg:w-2/12 lg:content-center">
                 <a
+                    tabIndex="1"
                     className="lg:flex lg:justify-between lg:py-4 lg:text-primarySolid-600 lg:hover:text-primary"
                     href={ButtonUrlRenderer(subLinkOne)}
                 >
@@ -46,6 +48,7 @@ export default function Submenu({
                     />
                 </a>
                 <a
+                    tabIndex="1"
                     className="lg:flex lg:justify-between lg:py-4 lg:text-primarySolid-600 lg:hover:text-primary"
                     href={ButtonUrlRenderer(subLinkTwo)}
                 >
@@ -57,6 +60,7 @@ export default function Submenu({
                 </a>
                 {subLinkThree ? (
                     <a
+                        tabIndex="1"
                         className="lg:flex lg:justify-between lg:py-4 lg:text-primarySolid-600 lg:hover:text-primary"
                         href={ButtonUrlRenderer(subLinkThree)}
                     >
