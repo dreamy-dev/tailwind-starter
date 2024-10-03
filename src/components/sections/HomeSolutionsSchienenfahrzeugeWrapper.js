@@ -47,6 +47,7 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                         <div className="flex flex-row items-start justify-between lg:justify-center">
                             {blok.wrapper.map((item, key) => (
                                 <div
+                                    tabIndex="1"
                                     key={key}
                                     className={`${
                                         selectedCategory === key
