@@ -24,7 +24,7 @@ const TeaserSuccessStories = ({ blok }) => {
                                 <img
                                     className="h-80 scale-100 object-cover duration-300 ease-in group-hover:scale-125"
                                     src={item?.image.filename}
-                                    alt={item?.name}
+                                    alt={item?.image.filename.alt ?? item?.name}
                                 />
                                 <div className="absolute inset-0 grid items-end justify-center bg-gradient-to-b from-transparent to-black/60 p-4">
                                     <div className="text-center text-white">

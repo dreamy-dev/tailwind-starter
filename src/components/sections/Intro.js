@@ -16,7 +16,10 @@ export default function Intro({ blok }) {
                             <img
                                 className="h-96 scale-100 object-cover object-left"
                                 src={blok?.image.filename}
-                                alt={`Office content for ${blok?.title}`}
+                                alt={
+                                    blok?.image.filename.alt ??
+                                    `Office content for ${blok?.title}`
+                                }
                             />
                         </div>
                     </div>

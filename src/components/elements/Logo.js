@@ -8,7 +8,7 @@ export default function Logo({ blok }) {
             <img
                 src={blok.Logo.filename}
                 className="h-4 lg:h-6"
-                alt="Stadler Logo"
+                alt={blok.Logo.filename.alt ?? 'Stadler Logo'}
             />
         </Link>
     );

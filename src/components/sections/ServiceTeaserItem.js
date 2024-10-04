@@ -15,7 +15,7 @@ const ServiceTeaserItem = ({ blok }) => {
                     <img
                         className="w-24 pl-5 pt-5"
                         src={blok?.Icon.filename}
-                        alt={blok?.title}
+                        alt={blok?.Icon.filename.alt ?? blok?.title}
                     />
                 ) : (
                     ''

@@ -40,7 +40,10 @@ const Testimonials = ({ blok }) => {
                                     <img
                                         className="h-20 w-20 object-cover md:h-16 md:w-16"
                                         src={item.image.filename}
-                                        alt="profile picture"
+                                        alt={
+                                            item.image.filename.alt ??
+                                            'profile picture'
+                                        }
                                     />
                                     <span className="ml-5 grow">
                                         <span className="hs-tab-active:text-blue-600 block font-semibold text-greySolid-800">

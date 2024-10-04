@@ -181,7 +181,13 @@ const TestimonialsCarousel = ({ blok }) => {
                                                                     .image
                                                                     .filename
                                                             }
-                                                            alt={`Image for ${blok?.title}`}
+                                                            alt={
+                                                                article.content
+                                                                    .image
+                                                                    .filename
+                                                                    .alt ??
+                                                                `Image for ${blok?.title}`
+                                                            }
                                                             className="h-full w-full object-cover"
                                                         />
                                                     </a>
@@ -318,7 +324,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                     reference.map((train, idx) => (
                                         <div
                                             key={idx}
-                                            className="max-full relative mx-auto mb-8 flex flex-col items-stretch justify-between border border-greySolid-100 bg-white shadow  md:mb-0 md:max-w-md"
+                                            className="max-full relative mx-auto mb-8 flex flex-col items-stretch justify-between border border-greySolid-100 bg-white shadow md:mb-0 md:max-w-md"
                                         >
                                             <a
                                                 tabIndex="1"
@@ -330,7 +336,11 @@ const TestimonialsCarousel = ({ blok }) => {
                                                         train.content.image
                                                             .filename
                                                     }
-                                                    alt={`Image for ${train.content.title}`}
+                                                    alt={
+                                                        train.content.image
+                                                            .filename.alt ??
+                                                        `Image for ${train.content.title}`
+                                                    }
                                                 />
                                             </a>
                                             <div className="flex h-full flex-col justify-between p-8">

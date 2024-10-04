@@ -107,7 +107,10 @@ const SuccessStoryGrid = ({ blok }) => {
                                                             nestedBlok.content
                                                                 ?.image.filename
                                                         }
-                                                        alt=""
+                                                        alt={
+                                                            nestedBlok.content
+                                                                ?.image.filename.alt ?? "Sussecc Stories Image"
+                                                        }
                                                     />
                                                     <div
                                                         className="p-5"

@@ -30,7 +30,9 @@ const ReportsItem = ({ blok }) => {
             <img
                 className="max-h-auto aspect-[2/1.2] w-full object-cover"
                 src={blok?.image.filename}
-                alt={blok?.title}
+                alt={
+                    blok?.image.filename.alt ?? 'Investor Relations Publication'
+                }
             />
             <div className="p-5">
                 <H3>{blok?.title}</H3>

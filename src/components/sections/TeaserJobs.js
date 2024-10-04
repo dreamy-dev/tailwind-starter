@@ -42,7 +42,7 @@ const Jobs = ({ blok }) => {
                                 <img
                                     className="h-80 w-full scale-100 object-cover duration-300 ease-in group-hover:scale-125"
                                     src={optimizeImage(item.image)}
-                                    alt={item.title}
+                                    alt={item.image.filename.alt ?? item?.title}
                                 />
                                 <div className="absolute inset-0 grid items-end justify-center bg-gradient-to-b from-transparent to-black/60 p-4">
                                     <div className="text-center">

@@ -21,7 +21,10 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_one_icon.filename}
-                                alt={`Icon for ${blok?.title}`}
+                                alt={
+                                    blok.step_one_icon.filename.alt ??
+                                    `Icon for ${blok?.title}`
+                                }
                             />
                             <div>
                                 <H4>{blok?.step_one_title}</H4>
@@ -36,7 +39,10 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_two_icon.filename}
-                                alt={`Icon for ${blok?.title}`}
+                                alt={
+                                    blok.step_two_icon.filename.alt ??
+                                    `Icon for ${blok?.title}`
+                                }
                             />
                             <div>
                                 <H4>{blok?.step_two_title}</H4>
@@ -51,7 +57,10 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_three_icon.filename}
-                                alt={`Icon for ${blok?.title}`}
+                                alt={
+                                    blok.step_three_icon.filename.alt ??
+                                    `Icon for ${blok?.title}`
+                                }
                             />
                             <div>
                                 <H4>{blok?.step_three_title}</H4>

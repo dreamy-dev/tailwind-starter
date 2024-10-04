@@ -8,7 +8,7 @@ const QualityFeatureItem = ({ blok }) => (
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-5">
             <div className="flex h-16 w-16 shrink-0 items-center justify-start lg:h-24 lg:w-24">
                 <img
-                    alt={`Image for ${blok?.title}`}
+                    alt={blok?.image.filename.alt ?? `Image for ${blok?.title}`}
                     src={blok?.image.filename}
                 />
             </div>

@@ -24,7 +24,7 @@ const SchienenfahrzeugeItem = ({ blok }) => {
             <img
                 className="aspect-[9/5] w-full"
                 src={optimizeImage(blok?.image)}
-                alt={blok?.title}
+                alt={blok?.image.filename.alt ?? blok?.title}
             />
             <div className="p-4 lg:p-6 lg:pb-6">
                 {blok.tag ? (
@@ -41,7 +41,7 @@ const SchienenfahrzeugeItem = ({ blok }) => {
                         className=""
                         href={ButtonUrlRenderer(blok.link)}
                     >
-                        <img src="/icons/arrow-blue.svg" alt="Arrow" />
+                        <img src="/icons/arrow-blue.svg" alt="Arrow Icon" />
                     </Link>
                 </div>
             </div>
