@@ -15,6 +15,8 @@
         "@headlessui/react": "^1.7.17",
         "@heroicons/react": "^2.0.18",
         "@storyblok/react": "^2.4.8",
+        "algoliasearch": "^5.7.0",
+        "axios": "^1.7.7",
         "clone-deep": "^4.0.1",
         "clsx": "^2.0.0",
         "flowbite": "^1.8.1",
