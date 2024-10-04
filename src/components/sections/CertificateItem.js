@@ -5,6 +5,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 function CertificateItem({ blok }) {
     return (
         <a
+            tabIndex="1"
             {...storyblokEditable(blok)}
             className="ml-4 text-primary"
             href={ButtonUrlRenderer(blok?.button_link)}

@@ -51,6 +51,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                 <div className="flex gap-3 rounded-full px-3 py-2 opacity-80">
                                     {items.map((_, idx) => (
                                         <button
+                                            tabIndex="1"
                                             key={idx}
                                             onClick={() => setCurrent(idx)}
                                         >
@@ -104,6 +105,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                                     <Text>{card.text}</Text>
                                                 </div>
                                                 <Link
+                                                    tabIndex="1"
                                                     href="#"
                                                     className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-center text-sm font-medium"
                                                 >
@@ -128,14 +130,14 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
-                                <button onClick={onPrevClick}>
+                                <button tabIndex="1" onClick={onPrevClick}>
                                     <img
                                         className="h-5 w-5"
                                         src="/icons/ohne-box/chevron_left_FILL0_wght400_GRAD0_opsz24_blue.svg"
                                         alt=""
                                     />
                                 </button>
-                                <button onClick={onNextClick}>
+                                <button tabIndex="1" onClick={onNextClick}>
                                     <img
                                         className="h-5 w-5"
                                         src="/icons/ohne-box/chevron_right_FILL0_wght400_GRAD0_opsz24_blue.svg"

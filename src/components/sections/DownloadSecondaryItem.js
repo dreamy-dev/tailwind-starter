@@ -11,7 +11,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                 className="mb-4 flex flex-col align-middle text-xl md:flex-row md:justify-between"
             >
                 <Text
-                    className="mr-0 w-8/12 text-wrap md:mr-10 md:w-auto"
+                    className="text-wrap mr-0 w-8/12 md:mr-10 md:w-auto"
                     styles="w-9/12"
                 >
                     {blok.title}
@@ -21,6 +21,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                         (item, i) =>
                             item?.cta_text && (
                                 <a
+                                    tabIndex="1"
                                     key={i}
                                     className="ml-4 inline-flex pb-2 pt-2 text-base text-primary"
                                     href={ButtonUrlRenderer(item?.cta_asset)}

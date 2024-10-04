@@ -46,6 +46,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             <td className="px-6 py-4">{DateFormatter(blok?.text_date)}</td>
             <td className="px-6 py-4 text-center">
                 <a
+                    tabIndex="1"
                     target="_blank"
                     ref={investorsDE}
                     className="font-medium text-primary"
@@ -57,6 +58,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             </td>
             <td className="px-6 py-4 text-center">
                 <a
+                    tabIndex="1"
                     target="_blank"
                     ref={investorsEN}
                     className="font-medium text-primary"

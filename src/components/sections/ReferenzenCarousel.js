@@ -172,6 +172,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     }}
                                                 >
                                                     <a
+                                                        tabIndex="1"
                                                         href={`/${article.full_slug}`}
                                                     >
                                                         <img
@@ -206,6 +207,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                             ></RichTextRenderer>
                                                         </div>
                                                         <Link
+                                                            tabIndex="1"
                                                             href={`/${article.full_slug}`}
                                                             className="inline-flex items-center py-2 text-center text-sm font-medium"
                                                         >
@@ -243,6 +245,7 @@ const TestimonialsCarousel = ({ blok }) => {
                     </div>
                     <div className="justify-beetween relative col-span-12 mt-8 flex w-full flex-row items-center">
                         <button
+                            tabIndex="1"
                             type="button"
                             onClick={toggleTrainsVisibility}
                             className="flex w-1/2 flex-row items-center gap-2 whitespace-nowrap py-4 text-base text-primary"
@@ -299,10 +302,10 @@ const TestimonialsCarousel = ({ blok }) => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
-                                <button onClick={onPrevClick}>
+                                <button tabIndex="1" onClick={onPrevClick}>
                                     <ChevronLeft styles="w-5 h-5 fill-primary" />
                                 </button>
-                                <button onClick={onNextClick}>
+                                <button tabIndex="1" onClick={onNextClick}>
                                     <ChevronRight styles="w-5 h-5 fill-primary" />
                                 </button>
                             </motion.div>
@@ -317,7 +320,10 @@ const TestimonialsCarousel = ({ blok }) => {
                                             key={idx}
                                             className="max-full relative mx-auto mb-8 flex flex-col items-stretch justify-between border border-greySolid-100 bg-white shadow dark:border-greySolid-600 dark:bg-greySolid-800 md:mb-0 md:max-w-md"
                                         >
-                                            <a href={`/${train.full_slug}`}>
+                                            <a
+                                                tabIndex="1"
+                                                href={`/${train.full_slug}`}
+                                            >
                                                 <img
                                                     className="aspect-[4/3] w-full"
                                                     src={
@@ -332,6 +338,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     {train.content.title}
                                                 </H4>
                                                 <Link
+                                                    tabIndex="1"
                                                     href={`/${train.full_slug}`}
                                                 >
                                                     <svg

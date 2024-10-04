@@ -36,7 +36,11 @@ const SchienenfahrzeugeItem = ({ blok }) => {
                 )}
                 <div className="flex flex-row items-center justify-between">
                     <H3 styles="max-lg:mb-0 lg:mb-0.5">{blok?.title}</H3>
-                    <Link className="" href={ButtonUrlRenderer(blok.link)}>
+                    <Link
+                        tabIndex="1"
+                        className=""
+                        href={ButtonUrlRenderer(blok.link)}
+                    >
                         <img src="/icons/arrow-blue.svg" alt="Arrow" />
                     </Link>
                 </div>

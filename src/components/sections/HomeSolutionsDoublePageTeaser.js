@@ -26,6 +26,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
 
                             <div className="pr-0">
                                 <motion.a
+                                    tabIndex="1"
                                     href={ButtonUrlRenderer(blok?.link_1)}
                                     className="mb-4 mt-5 flex flex-col items-start text-xl font-bold text-white lg:mb-0"
                                     initial="rest"
@@ -60,6 +61,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             />
                             <div className="pr-0">
                                 <motion.a
+                                    tabIndex="1"
                                     href={ButtonUrlRenderer(blok?.link_2)}
                                     className="mb-0 mt-5 flex flex-col items-start text-xl font-bold text-white"
                                     initial="rest"

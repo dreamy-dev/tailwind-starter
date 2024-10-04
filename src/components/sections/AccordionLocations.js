@@ -16,6 +16,7 @@ const AccordionLocations = ({ blok }) => {
     return (
         <div className="col-span-12" {...storyblokEditable(blok)}>
             <div
+                tabIndex="1"
                 onClick={handleAccordionClick}
                 className="cursor-pointer border-b border-greySolid-100 bg-white text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-800 dark:text-white"
             >
@@ -52,6 +53,7 @@ const AccordionLocations = ({ blok }) => {
                         </div>
                         <div>
                             <button
+                                tabIndex="1"
                                 type="button"
                                 className={`flex w-full items-center justify-between text-left font-medium ${
                                     isActive
@@ -89,6 +91,7 @@ const AccordionLocations = ({ blok }) => {
                                 <div className="mb-2 flex items-center justify-start text-primary">
                                     <PinIcon />
                                     <a
+                                        tabIndex="1"
                                         className="cursor-pointer"
                                         href={blok?.link_google_maps?.url}
                                     >

@@ -35,6 +35,7 @@ const ReportsItem = ({ blok }) => {
             <div className="p-5">
                 <H3>{blok?.title}</H3>
                 <a
+                    tabIndex="1"
                     ref={investorsReference}
                     href={blok?.cta_link.url ?? ''}
                     target="_blank"

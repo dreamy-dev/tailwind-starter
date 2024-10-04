@@ -171,6 +171,7 @@ function AlleMedienmitteilungen({ blok }) {
                                 </svg>
                             </div>
                             <input
+                                tabIndex="1"
                                 className="inline-block w-full border-primary px-8 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={(e) => onSearchChange(e)}
@@ -180,7 +181,7 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
             </div>
             <div className="col-span-12 w-full pb-24">
-                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 dark:bg-greySolid-600 dark:text-greySolid-400 lg:grid rtl:text-right">
+                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 rtl:text-right dark:bg-greySolid-600 dark:text-greySolid-400 lg:grid">
                     {/* Header */}
                     <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_date_title}
@@ -197,7 +198,7 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
                 {/* Data Rows */}
                 <div className="blok mb-4 w-full border-b dark:border-greySolid-600 lg:hidden"></div>
-                <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 dark:text-greySolid-400 rtl:text-right">
+                <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 rtl:text-right dark:text-greySolid-400">
                     {medienmitteilungen[0] &&
                         medienmitteilungen.map((medienmitteilung, idx) => (
                             <div
@@ -213,12 +214,14 @@ function AlleMedienmitteilungen({ blok }) {
                                     </div>
                                     <div className="col-span-1 px-6 py-4 font-medium text-primary lg:col-span-5">
                                         <a
+                                            tabIndex="1"
                                             className="inline-block text-base"
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
                                             {medienmitteilung.content.title}
                                         </a>
                                         <a
+                                            tabIndex="1"
                                             className="mt-4 block lg:hidden"
                                             href={`/${medienmitteilung.full_slug}`}
                                         >
@@ -257,6 +260,7 @@ function AlleMedienmitteilungen({ blok }) {
                                                         downloadGrid.download_list?.map(
                                                             (item, index) => (
                                                                 <a
+                                                                    tabIndex="1"
                                                                     href={ButtonUrlRenderer(
                                                                         item?.cta_asset
                                                                     )}

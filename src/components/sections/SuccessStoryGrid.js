@@ -132,6 +132,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                                             </Text>
                                                         </div>
                                                         <Link
+                                                            tabIndex="1"
                                                             href={
                                                                 '/successstories/' +
                                                                 nestedBlok?.slug
@@ -158,12 +159,17 @@ const SuccessStoryGrid = ({ blok }) => {
                                 exit={{ opacity: 0 }}
                             >
                                 <button
+                                    tabIndex="1"
                                     onClick={onPrevClick}
                                     aria-label="Previous"
                                 >
                                     <ChevronLeft styles="w-5 h-5 fill-primary" />
                                 </button>
-                                <button onClick={onNextClick} aria-label="Next">
+                                <button
+                                    tabIndex="1"
+                                    onClick={onNextClick}
+                                    aria-label="Next"
+                                >
                                     <ChevronRight styles="w-5 h-5 fill-primary" />
                                 </button>
                             </motion.div>

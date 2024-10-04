@@ -31,6 +31,7 @@ const SuccessStory = ({ current, idx, blok }) => {
                     <Text>{card.text}</Text>
                 </div>
                 <Link
+                    tabIndex="1"
                     href="#"
                     className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-center text-sm font-medium"
                 >

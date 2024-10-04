@@ -62,6 +62,7 @@ const LanguageSwitcher = () => {
     return (
         <div ref={dropdownRef}>
             <button
+                tabIndex="1"
                 type="button"
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
                 onKeyDown={handleKeyDown}
@@ -95,6 +96,7 @@ const LanguageSwitcher = () => {
                 <ul className="py-1" role="menu">
                     <li role="none">
                         <a
+                            tabIndex="1"
                             role="menuitem"
                             onClick={handleChange}
                             className="block px-4 py-2 text-sm text-greySolid-600 hover:bg-greySolid-100 dark:text-greySolid-400 dark:hover:bg-greySolid-600 dark:hover:text-white"

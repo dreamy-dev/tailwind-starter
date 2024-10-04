@@ -34,6 +34,7 @@ const Jobs = ({ blok }) => {
                     <div className="grid w-full shrink-0 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:max-w-3xl">
                         {blok?.career_open_positions_items.map((item) => (
                             <a
+                                tabIndex="1"
                                 key={item.title}
                                 href={`${ButtonUrlRenderer(item.link)}?20=${item.entry_level}`}
                                 className="group relative overflow-hidden"

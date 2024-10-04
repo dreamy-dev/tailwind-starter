@@ -16,6 +16,7 @@ const TeaserSuccessStories = ({ blok }) => {
                     <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:mt-16 xl:grid-cols-3">
                         {blok?.employee_items.map((item) => (
                             <a
+                                tabIndex="1"
                                 key={ButtonUrlRenderer(item?.link)}
                                 href={ButtonUrlRenderer(item?.link)}
                                 className="group relative overflow-hidden"

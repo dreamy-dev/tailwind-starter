@@ -47,6 +47,7 @@ const RichTextRenderer = (props) => {
                             // External links: map to <a>
                             return (
                                 <a
+                                    tabIndex="1"
                                     className="text-primary"
                                     href={href}
                                     target={target}
@@ -58,6 +59,7 @@ const RichTextRenderer = (props) => {
                         // Internal links: map to <Link>
                         return (
                             <a
+                                tabIndex="1"
                                 className="text-primary"
                                 target={target}
                                 href={href}

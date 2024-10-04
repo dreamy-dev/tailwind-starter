@@ -244,6 +244,7 @@ export default function ContactForm({ blok }) {
                                 {blok?.required_subject ? '*' : ''}
                             </label>
                             <input
+                                tabIndex="1"
                                 className="block w-full border border-greySolid-400 bg-white p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400 dark:focus:border-primary dark:focus:ring-primary"
                                 name="subject"
                                 id="subject"
@@ -269,6 +270,7 @@ export default function ContactForm({ blok }) {
                         <div className="mb-5 flex flex-wrap">
                             <div className="me-4 flex items-center">
                                 <input
+                                    tabIndex="1"
                                     id="male"
                                     type="radio"
                                     value="male"
@@ -286,6 +288,7 @@ export default function ContactForm({ blok }) {
                             </div>
                             <div className="me-4 flex items-center">
                                 <input
+                                    tabIndex="1"
                                     id="female"
                                     type="radio"
                                     value="female"
@@ -313,6 +316,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_first_name ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     type="text"
                                     name="first_name"
                                     id="first_name"
@@ -350,6 +354,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_last_name ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     type="text"
                                     name="last_name"
                                     id="last_name"
@@ -388,6 +393,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_street ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     name="street"
                                     id="street"
                                     autoComplete="street"
@@ -421,6 +427,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_number ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     name="number"
                                     id="number"
                                     autoComplete="number"
@@ -456,6 +463,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_zip ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     name="zip"
                                     id="zip"
                                     autoComplete="zip"
@@ -487,6 +495,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_city ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     name="city"
                                     id="city"
                                     autoComplete="city"
@@ -523,6 +532,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_email ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     name="email"
                                     id="email"
                                     autoComplete="email"
@@ -555,6 +565,7 @@ export default function ContactForm({ blok }) {
                                     {blok?.required_phone ? '*' : ''}
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     type="tel"
                                     name="phone"
                                     id="phone"
@@ -613,6 +624,7 @@ export default function ContactForm({ blok }) {
                         <div className="mb-8 flex flex-col">
                             <div className="flex items-center">
                                 <input
+                                    tabIndex="1"
                                     className="border-1 relative h-6 w-6 shrink-0 border-greySolid-400 checked:border-primary checked:bg-primary hover:border-primary hover:checked:bg-primary focus:border-primary focus:ring-2 focus:ring-primary focus:checked:bg-primary"
                                     type="checkbox"
                                     name="data_protection"
@@ -641,6 +653,7 @@ export default function ContactForm({ blok }) {
                         </div>
 
                         <button
+                            tabIndex="1"
                             type="submit"
                             className="flex cursor-pointer items-center gap-2 rounded bg-stadlergradient px-5 py-2.5 text-sm font-medium leading-6 text-white"
                         >

@@ -5,6 +5,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 function DownloadElementLanguage({ blok }) {
     return (
         <a
+            tabIndex="1"
             {...storyblokEditable(blok)}
             className="mr-4 font-medium text-primary"
             href={ButtonUrlRenderer(blok?.buttonLink)}

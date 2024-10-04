@@ -14,6 +14,7 @@ const AccordionContactItem = ({ blok }) => {
             <li className="mb-2">
                 <div className="group-hover:text-primary">
                     <a
+                        tabIndex="1"
                         href="tel:+496170961709"
                         className="flex cursor-pointer items-center text-black transition-all hover:text-primary dark:text-greySolid-400"
                     >
@@ -30,6 +31,7 @@ const AccordionContactItem = ({ blok }) => {
             <li className="mb-2">
                 <div className="group-hover:text-primary">
                     <a
+                        tabIndex="1"
                         href="mailto:ir@stadlerrail.com"
                         className="flex cursor-pointer items-center text-black transition-all hover:text-primary dark:text-greySolid-400"
                     >

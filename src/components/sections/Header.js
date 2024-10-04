@@ -164,6 +164,7 @@ const Header = ({ blok }) => {
             case 2:
                 return (
                     <Link
+                        tabIndex="1"
                         href={ButtonUrlRenderer(href)}
                         className="cursor-pointer px-0 py-4 pt-8 text-primarySolid-800 lg:bg-primaryTrans-100 lg:px-8 lg:py-24 lg:text-center lg:text-primary"
                         onClick={onClickHandler}
@@ -190,7 +191,10 @@ const Header = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 lg:hidden">
                     <div className="col-span-12 flex w-full items-center justify-between py-5">
-                        <Link href={ButtonUrlRenderer(blok.LinkLogo)}>
+                        <Link
+                            tabIndex="1"
+                            href={ButtonUrlRenderer(blok.LinkLogo)}
+                        >
                             <img
                                 src={blok.Logo.filename}
                                 className="h-4 sm:h-6"
@@ -201,6 +205,7 @@ const Header = ({ blok }) => {
                         <div className="lg:hidden">
                             {isMobileNavOpen ? (
                                 <img
+                                    tabIndex="1"
                                     src="/icons/times.svg"
                                     alt="close icon"
                                     onClick={toggleMobileNav}
@@ -208,6 +213,7 @@ const Header = ({ blok }) => {
                                 />
                             ) : (
                                 <img
+                                    tabIndex="1"
                                     src="/icons/equal.svg"
                                     alt="burger menu icon"
                                     onClick={toggleMobileNav}
@@ -230,6 +236,7 @@ const Header = ({ blok }) => {
                             <div className="absolute left-0 top-[10%] col-span-12 flex w-full flex-col items-start justify-center bg-white px-4 py-5 lg:static lg:min-h-fit lg:w-auto lg:flex-row lg:justify-between lg:px-0">
                                 <div className="hidden lg:block">
                                     <Link
+                                        tabIndex="1"
                                         href={ButtonUrlRenderer(blok.LinkLogo)}
                                         className="mb-10 flex items-start justify-start lg:mb-0 lg:items-center lg:justify-center"
                                     >
@@ -254,7 +261,7 @@ const Header = ({ blok }) => {
                                                 >
                                                     {item.submenu ? (
                                                         <motion.div
-                                                            tabIndex="0"
+                                                            tabIndex="1"
                                                             className="flex items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 dark:text-white dark:hover:bg-greySolid-600 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent"
                                                             onClick={() =>
                                                                 toggleSubmenu(
@@ -292,6 +299,7 @@ const Header = ({ blok }) => {
                                                         </motion.div>
                                                     ) : (
                                                         <Link
+                                                            tabIndex="1"
                                                             className="flex items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 dark:text-white dark:hover:bg-greySolid-600 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                                             href={ButtonUrlRenderer(
                                                                 item.href
@@ -325,6 +333,7 @@ const Header = ({ blok }) => {
                                                                     <div className="col-span-12 mt-6 grid w-full grid-cols-1 px-4 lg:col-span-6 lg:col-start-5 lg:mt-0 lg:grid-cols-2 lg:gap-6 lg:p-8 lg:px-0">
                                                                         <div className="border-b lg:hidden lg:border-none">
                                                                             <Link
+                                                                                tabIndex="1"
                                                                                 href="#"
                                                                                 onClick={(
                                                                                     e
@@ -376,6 +385,7 @@ const Header = ({ blok }) => {
                                                                                         }
                                                                                     >
                                                                                         <Link
+                                                                                            tabIndex="1"
                                                                                             href={ButtonUrlRenderer(
                                                                                                 subItem.href
                                                                                             )}
@@ -416,6 +426,7 @@ const Header = ({ blok }) => {
                                         <li className="z-20 lg:relative lg:block">
                                             <div className="relative block pl-0 pt-6 md:pl-12 md:pt-0">
                                                 <button
+                                                    tabIndex="1"
                                                     aria-label="Open Modal"
                                                     onClick={openModal}
                                                     data-modal-target="default-modal"
