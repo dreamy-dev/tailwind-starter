@@ -66,7 +66,7 @@ const LanguageSwitcher = () => {
                 type="button"
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
                 onKeyDown={handleKeyDown}
-                className="inline-flex items-center rounded-lg py-2.5 text-base font-medium text-primarySolid-800 hover:bg-greySolid-30 hover:text-primary focus:outline-none dark:text-greySolid-300 dark:hover:bg-greySolid-600 lg:px-5"
+                className="inline-flex items-center rounded-lg py-2.5 text-base font-medium text-primarySolid-800 hover:bg-greySolid-30 hover:text-primary focus:outline-none  lg:px-5"
             >
                 {currentLocale === 'en' ? 'English' : 'Deutsch'}
                 <svg
@@ -90,7 +90,7 @@ const LanguageSwitcher = () => {
                 variants={variantsLang}
                 initial="closed"
                 style={{ display: isOpen ? 'block' : 'none' }}
-                className="w-48 list-none divide-y divide-greySolid-100 rounded bg-white text-base shadow hover:cursor-pointer dark:bg-greySolid-600 lg:absolute lg:top-14 lg:my-4"
+                className="w-48 list-none divide-y divide-greySolid-100 rounded bg-white text-base shadow hover:cursor-pointer  lg:absolute lg:top-14 lg:my-4"
                 id="language-dropdown"
             >
                 <ul className="py-1" role="menu">
@@ -99,7 +99,7 @@ const LanguageSwitcher = () => {
                             tabIndex="1"
                             role="menuitem"
                             onClick={handleChange}
-                            className="block px-4 py-2 text-sm text-greySolid-600 hover:bg-greySolid-100 dark:text-greySolid-400 dark:hover:bg-greySolid-600 dark:hover:text-white"
+                            className="block px-4 py-2 text-sm text-greySolid-600 hover:bg-greySolid-100 "
                         >
                             <div className="inline-flex items-center">
                                 {currentLocale === 'en' ? 'German' : 'Englisch'}

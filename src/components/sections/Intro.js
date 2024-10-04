@@ -4,10 +4,7 @@ import H2 from '../typography/H2';
 
 export default function Intro({ blok }) {
     return (
-        <section
-            {...storyblokEditable(blok)}
-            className="bg-white dark:bg-greySolid-800"
-        >
+        <section {...storyblokEditable(blok)} className="bg-white">
             <ContentWidth>
                 <div className="col-span-12">
                     <div className="max-w-screen-xl items-center gap-16 py-8 lg:grid lg:grid-cols-2 lg:py-16">

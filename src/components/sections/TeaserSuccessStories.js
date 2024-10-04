@@ -6,7 +6,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserSuccessStories = ({ blok }) => {
     return (
-        <section className="bg-white antialiased dark:bg-greySolid-800">
+        <section className="bg-white antialiased">
             <SmallWidth>
                 <div className="mx-auto max-w-screen-xl py-16 lg:py-24">
                     <div className="mx-auto max-w-3xl text-center">

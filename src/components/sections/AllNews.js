@@ -91,7 +91,7 @@ function AllNews({ blok }) {
                     <H2>{blok.title}</H2>
                 </div>
                 <div className="col-span-12 mb-8">
-                    <ul className="grid gap-4 text-center text-sm font-medium text-greySolid-600 dark:text-greySolid-400 md:grid-cols-2 lg:grid-cols-12">
+                    <ul className="grid gap-4 text-center text-sm font-medium text-greySolid-600  md:grid-cols-2 lg:grid-cols-12">
                         <li className="lg:col-span-2">
                             <select
                                 className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"

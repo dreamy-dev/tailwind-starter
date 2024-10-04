@@ -16,7 +16,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
         <section {...storyblokEditable(blok)} className="pb-16 lg:pb-24">
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full">
-                    <div className="mb-12 border border-solid border-greyBrighten-300 tracking-tight dark:text-white"></div>
+                    <div className="mb-12 border border-solid border-greyBrighten-300 tracking-tight "></div>
                     <ul className="grid grid-cols-1 gap-4 sm:gap-12 md:gap-20 lg:grid-cols-2 lg:gap-y-40">
                         <li>
                             <img

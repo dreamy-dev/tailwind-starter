@@ -318,7 +318,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                     reference.map((train, idx) => (
                                         <div
                                             key={idx}
-                                            className="max-full relative mx-auto mb-8 flex flex-col items-stretch justify-between border border-greySolid-100 bg-white shadow dark:border-greySolid-600 dark:bg-greySolid-800 md:mb-0 md:max-w-md"
+                                            className="max-full relative mx-auto mb-8 flex flex-col items-stretch justify-between border border-greySolid-100 bg-white shadow  md:mb-0 md:max-w-md"
                                         >
                                             <a
                                                 tabIndex="1"

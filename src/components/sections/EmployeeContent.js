@@ -9,7 +9,7 @@ import TextSection from './TextSection';
 const EmployeeContent = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>
-            <section className="bg-white py-16 dark:bg-greySolid-800 lg:py-24">
+            <section className="bg-white py-16  lg:py-24">
                 <SmallWidth>
                     <H1>{blok?.title}</H1>
                     <Lead className="richtext">{blok?.teaser}</Lead>

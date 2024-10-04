@@ -91,7 +91,7 @@ function AllStandorte({ blok }) {
     return (
         <ContentWidth {...storyblokEditable(blok)}>
             <div className="col-span-12 mt-12">
-                <ul className="flex flex-col gap-0 text-center text-sm font-normal text-black dark:text-greySolid-400 md:flex md:flex-row lg:gap-8">
+                <ul className="flex flex-col gap-0 text-center text-sm font-normal text-black md:flex md:flex-row lg:gap-8">
                     <li className="mb-4 w-full md:w-1/3">{countryDropdown}</li>
                     <li className="mb-4 w-full md:w-1/3">{categoryDropdown}</li>
                     <li className="mb-4 w-full md:w-1/3">

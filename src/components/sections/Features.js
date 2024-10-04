@@ -45,7 +45,7 @@ const Features = ({ blok }) => {
         >
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full bg-white">
-                    <div className="mb-10 tracking-tight dark:text-white">
+                    <div className="mb-10 tracking-tight">
                         <H2>{blok?.title}</H2>
                     </div>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
