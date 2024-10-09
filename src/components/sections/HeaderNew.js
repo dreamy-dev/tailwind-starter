@@ -121,6 +121,7 @@ const HeaderNew = ({ blok }) => {
                                         fill="#005893"
                                         strokeWidth="2"
                                         stroke="#005893"
+                                        initial="closed"
                                         animate={isOpen ? 'open' : 'closed'}
                                         variants={{
                                             closed: { d: 'M 2 6 L 20 6' },
@@ -143,12 +144,15 @@ const HeaderNew = ({ blok }) => {
                                         fill="#005893"
                                         strokeWidth="2"
                                         stroke="#005893"
+                                        initial="closed"
                                         animate={isOpen ? 'open' : 'closed'}
                                         variants={{
                                             closed: {
                                                 d: 'M 2 16 L 20 16',
                                             },
-                                            open: { d: 'M 3 2.5 L 17 16.346' },
+                                            open: {
+                                                d: 'M 3 2.5 L 17 16',
+                                            },
                                         }}
                                     />
                                 </svg>
