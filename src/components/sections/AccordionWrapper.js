@@ -22,9 +22,11 @@ const AccordionWrapper = ({ blok }) => {
                     aria-expanded={isActive}
                 >
                     <span>{blok?.title}</span>
-                    <ChevronDown
-                        styles={isActive ? 'fill-primary' : 'fill-black'}
-                    />
+                    <div className={`${isActive ? 'rotate-180' : 'rotate-0'} `}>
+                        <ChevronDown
+                            styles={isActive ? 'fill-primary' : 'fill-black'}
+                        />
+                    </div>
                 </button>
             </h2>
             <div className={`${isActive ? '' : 'hidden'}`}>

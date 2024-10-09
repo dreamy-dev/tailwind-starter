@@ -63,11 +63,19 @@ const AccordionLocations = ({ blok }) => {
                                 onClick={handleAccordionClick}
                                 aria-expanded={isActive}
                             >
-                                <ChevronDown
-                                    styles={
-                                        isActive ? 'fill-primary' : 'fill-black'
-                                    }
-                                />
+                                <div
+                                    className={`${
+                                        isActive ? 'rotate-180' : 'rotate-0'
+                                    } `}
+                                >
+                                    <ChevronDown
+                                        styles={
+                                            isActive
+                                                ? 'fill-primary'
+                                                : 'fill-black'
+                                        }
+                                    />{' '}
+                                </div>
                             </button>
                         </div>
                     </div>
