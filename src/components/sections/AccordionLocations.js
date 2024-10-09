@@ -104,16 +104,11 @@ const AccordionLocations = ({ blok }) => {
                             <img
                                 src={blok?.image?.filename}
                                 className="flex md:w-3/12"
-                                alt={
-                                    blok.image?.filename.alt ??
-                                    'Stadler Office image'
-                                }
+                                alt={blok.image.alt ?? 'Stadler Office image'}
                             />
                         </div>
-                        <div className="pt-8">
-                            <p className="mb-2 text-black">
-                                <RichTextRenderer text={blok?.text} />
-                            </p>
+                        <div className="mb-2 pt-8 text-black">
+                            <RichTextRenderer text={blok?.text} />
                         </div>
                     </div>
                 )}
