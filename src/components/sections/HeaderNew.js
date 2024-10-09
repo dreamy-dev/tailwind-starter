@@ -179,7 +179,7 @@ const HeaderNew = ({ blok }) => {
                                         <div
                                             tabIndex="1"
                                             onClick={() => handleTabClick(item)}
-                                            className="py-2 hover:cursor-pointer lg:px-2 lg:py-0"
+                                            className="py-2 hover:cursor-pointer lg:px-4 lg:py-0"
                                         >
                                             {item === 'company'
                                                 ? blok.main_link_1_text
@@ -251,14 +251,14 @@ const HeaderNew = ({ blok }) => {
                             </ul>
                             <Link
                                 tabIndex="1"
-                                className="py-2 lg:px-2 lg:py-0"
+                                className="py-2 lg:px-4 lg:py-0"
                                 href={ButtonUrlRenderer(blok.main_link_3_link)}
                             >
                                 {blok.main_link_3_text}
                             </Link>
                             <Link
                                 tabIndex="1"
-                                className="py-2 lg:px-2 lg:py-0"
+                                className="py-2 lg:px-4 lg:py-0"
                                 href={ButtonUrlRenderer(blok.main_link_4_link)}
                             >
                                 {blok.main_link_4_text}
