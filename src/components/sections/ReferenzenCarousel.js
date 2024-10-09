@@ -338,7 +338,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                     }
                                                     alt={
                                                         train.content.image
-                                                            .filename.alt ??
+                                                            .alt ??
                                                         `Image for ${train.content.title}`
                                                     }
                                                 />
