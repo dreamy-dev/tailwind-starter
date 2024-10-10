@@ -174,11 +174,8 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
                     : 'z-[-1] max-h-0 scale-95 transform overflow-hidden opacity-0'
             }`}
         >
-            <div
-                ref={contentRef}
-                className="relative h-full bg-white shadow dark:bg-greySolid-600"
-            >
-                <div className="flex items-center justify-between border-b p-4 dark:border-greySolid-600 md:p-5">
+            <div ref={contentRef} className="relative h-full bg-white shadow">
+                <div className="flex items-center justify-between border-b p-4 md:p-5">
                     <div className="h-5 w-7 pr-2">
                         <SearchIcon
                             className="h-5 w-5 fill-primary"

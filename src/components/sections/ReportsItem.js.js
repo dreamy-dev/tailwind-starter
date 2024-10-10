@@ -25,12 +25,14 @@ const ReportsItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="max-w-full border border-greySolid-100 bg-white shadow dark:border-greySolid-600 dark:bg-greySolid-800 lg:max-w-sm"
+            className="max-w-full border border-greySolid-100 bg-white shadow lg:max-w-sm"
         >
             <img
                 className="max-h-auto aspect-[2/1.2] w-full object-cover"
                 src={blok?.image.filename}
-                alt={blok?.title}
+                alt={
+                    blok?.image.filename.alt ?? 'Investor Relations Publication'
+                }
             />
             <div className="p-5">
                 <H3>{blok?.title}</H3>

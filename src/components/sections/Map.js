@@ -31,7 +31,7 @@ export default function Map({ blok }) {
                             <img
                                 className="h-auto w-full"
                                 src={blok.map.filename}
-                                alt="Map image"
+                                alt={blok.map.filename.alt ?? 'Map image'}
                             />
                         </div>
                         <div className="flex-column static w-full pl-6 pt-8 md:flex lg:pl-20">

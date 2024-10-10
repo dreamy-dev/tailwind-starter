@@ -100,7 +100,7 @@ const LanguageSwitcher = () => {
                 variants={variantsLang}
                 initial="closed"
                 style={{ display: isOpen ? 'block' : 'none' }}
-                className="w-48 list-none divide-y divide-greySolid-100 rounded bg-white text-base shadow hover:cursor-pointer dark:bg-greySolid-600 lg:absolute lg:top-14 lg:my-4"
+                className="w-48 list-none divide-y divide-greySolid-100 rounded bg-white text-base shadow hover:cursor-pointer  lg:absolute lg:top-14 lg:my-4"
                 id="language-dropdown"
             >
                 <ul className="py-1" role="menu">
@@ -114,6 +114,8 @@ const LanguageSwitcher = () => {
                                     handleChange();
                             }}
                             className="block px-4 py-2 text-sm text-greySolid-600 hover:bg-greySolid-100 dark:text-greySolid-400 dark:hover:bg-greySolid-600 dark:hover:text-white"
+
+
                         >
                             <div className="inline-flex items-center">
                                 {currentLocale === 'en' ? 'German' : 'Englisch'}

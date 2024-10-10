@@ -8,7 +8,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 export default function TeaserMobilitySolutions({ blok }) {
     return (
-        <section className="pb-12 pt-16 dark:bg-greySolid-800 lg:pt-24">
+        <section className="pb-12 pt-16 lg:pt-24">
             <ContentWidth>
                 <div className="col-span-12 max-w-4xl lg:mx-auto">
                     <div className="break-words text-center leading-tight text-white">
@@ -27,7 +27,7 @@ export default function TeaserMobilitySolutions({ blok }) {
                         {blok.cta_text}
                     </Button>
                 </div>
-                <div className="col-span-12 border border-solid border-greyBrighten-300 tracking-tight dark:text-white"></div>
+                <div className="col-span-12 border border-solid border-greyBrighten-300 tracking-tight"></div>
             </ContentWidth>
         </section>
     );

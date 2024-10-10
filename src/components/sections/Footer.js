@@ -122,7 +122,7 @@ const Footer = ({ blok }) => {
                         <img
                             className="h-6"
                             src={blok.Logo.filename}
-                            alt="Company name"
+                            alt={blok.Logo.filename.alt ?? 'Logo Company name'}
                         />
                         <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
                             <div className="mb-6 mt-12 lg:mb-0 lg:mr-14 lg:mt-0">

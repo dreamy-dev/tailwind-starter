@@ -9,7 +9,7 @@ import ContentWidth from '../../components/layouts/ContentWidth';
 
 const History = ({ blok }) => {
     return (
-        <section className="bg-white py-16 antialiased dark:bg-greySolid-800 lg:py-24">
+        <section className="bg-white py-16 antialiased lg:py-24">
             <ContentWidth>
                 <div className="col-span-12" {...storyblokEditable(blok)}>
                     <div className="mx-auto max-w-3xl space-y-4 text-center">
@@ -18,7 +18,7 @@ const History = ({ blok }) => {
                     <div className="mb-4 text-left text-xl font-normal">
                         <RichTextRenderer text={blok.text} />
                     </div>
-                    <div className="relative border-s border-greySolid-100 dark:border-greySolid-600">
+                    <div className="relative border-s border-greySolid-100">
                         {blok?.history_block.map((nestedBlok, index) => (
                             <StoryblokComponent
                                 index={index}
