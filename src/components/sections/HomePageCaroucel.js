@@ -95,7 +95,10 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                             <img
                                                 className="aspect-[4/3] w-full object-cover"
                                                 src={card.img}
-                                                alt="Train image"
+                                                alt={
+                                                    card.img.alt ??
+                                                    'Train image'
+                                                }
                                             />
                                             <div className="p-5">
                                                 <div className="mb-4">
@@ -112,7 +115,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                                     <img
                                                         className="h-5 w-5"
                                                         src="/icons/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                        alt=""
+                                                        alt="Icon Arrow Forward"
                                                     />
                                                 </Link>
                                             </div>
@@ -134,14 +137,14 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                     <img
                                         className="h-5 w-5"
                                         src="/icons/ohne-box/chevron_left_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                        alt=""
+                                        alt="Icon Arrow Forward"
                                     />
                                 </button>
                                 <button tabIndex="1" onClick={onNextClick}>
                                     <img
                                         className="h-5 w-5"
                                         src="/icons/ohne-box/chevron_right_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                        alt=""
+                                        alt="Icon Arrow Forward"
                                     />
                                 </button>
                             </motion.div>

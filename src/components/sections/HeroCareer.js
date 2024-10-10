@@ -356,7 +356,7 @@ const HeroCareer = ({ blok }) => {
                     </div>
                     <form
                         action="#"
-                        className="mb-5 mt-16 flex w-full flex-col items-center justify-between gap-4 bg-white p-4 dark:bg-greySolid-800 lg:mt-9 lg:grid-cols-5 lg:flex-row lg:gap-x-4"
+                        className="mb-5 mt-16 flex w-full flex-col items-center justify-between gap-4 bg-white p-4  lg:mt-9 lg:grid-cols-5 lg:flex-row lg:gap-x-4"
                     >
                         <div className="flex-grow gap-x-4">
                             <div className="relative">

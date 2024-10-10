@@ -9,7 +9,7 @@ import TextSection from './TextSection';
 const EmployeeContent = ({ blok }) => {
     return (
         <div {...storyblokEditable(blok)}>
-            <section className="bg-white py-16 dark:bg-greySolid-800 lg:py-24">
+            <section className="bg-white py-16 lg:py-24">
                 <SmallWidth>
                     <H1>{blok?.title}</H1>
                     <Lead className="richtext">{blok?.teaser}</Lead>
@@ -21,7 +21,10 @@ const EmployeeContent = ({ blok }) => {
                         <img
                             className="h-auto w-full max-w-full object-right"
                             src={blok?.image.filename}
-                            alt={`Image for ${blok?.title}`}
+                            alt={
+                                blok?.image.filename.alt ??
+                                `Image for ${blok?.title}`
+                            }
                         />
                     </div>
                 </ContentWidth>

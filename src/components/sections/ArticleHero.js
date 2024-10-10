@@ -44,7 +44,7 @@ function ArticleHero({ block }) {
                 <img
                     src={block?.image.filename}
                     className="my-8 w-full"
-                    alt="full service"
+                    alt={block?.image.filename.alt ?? 'Full Service'}
                 />
             )}
         </SuperSmallWidth>

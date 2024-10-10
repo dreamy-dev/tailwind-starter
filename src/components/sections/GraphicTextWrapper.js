@@ -12,7 +12,7 @@ const GraphicTextWrapper = ({ blok }) => {
                 <div className="col-span-12 mx-auto py-8 lg:py-16">
                     <div>
                         <H2>{blok?.title}</H2>
-                        <p className="mx-auto mb-6 font-light text-greySolid-600 dark:text-greySolid-400 md:text-lg lg:mx-0 xl:mb-8 xl:text-xl">
+                        <p className="mx-auto mb-6 font-light text-greySolid-600 md:text-lg lg:mx-0 xl:mb-8 xl:text-xl">
                             {blok?.lead}
                         </p>
                     </div>
@@ -21,11 +21,14 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_one_icon.filename}
-                                alt={`Icon for ${blok?.title}`}
+                                alt={
+                                    blok.step_one_icon.filename.alt ??
+                                    `Icon for ${blok?.title}`
+                                }
                             />
                             <div>
                                 <H4>{blok?.step_one_title}</H4>
-                                <div className="richtext font-light text-greySolid-600 dark:text-greySolid-400">
+                                <div className="richtext font-light text-greySolid-600">
                                     <RichTextRenderer
                                         text={blok?.step_one_text}
                                     />
@@ -36,11 +39,14 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_two_icon.filename}
-                                alt={`Icon for ${blok?.title}`}
+                                alt={
+                                    blok.step_two_icon.filename.alt ??
+                                    `Icon for ${blok?.title}`
+                                }
                             />
                             <div>
                                 <H4>{blok?.step_two_title}</H4>
-                                <div className="richtext font-light text-greySolid-600 dark:text-greySolid-400">
+                                <div className="richtext font-light text-greySolid-600">
                                     <RichTextRenderer
                                         text={blok?.step_two_text}
                                     />
@@ -51,11 +57,14 @@ const GraphicTextWrapper = ({ blok }) => {
                             <img
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_three_icon.filename}
-                                alt={`Icon for ${blok?.title}`}
+                                alt={
+                                    blok.step_three_icon.filename.alt ??
+                                    `Icon for ${blok?.title}`
+                                }
                             />
                             <div>
                                 <H4>{blok?.step_three_title}</H4>
-                                <div className="richtext font-light text-greySolid-600 dark:text-greySolid-400">
+                                <div className="richtext font-light text-greySolid-600">
                                     <RichTextRenderer
                                         text={blok?.step_three_text}
                                     />

@@ -18,7 +18,7 @@ const AccordionLocations = ({ blok }) => {
             <div
                 tabIndex="1"
                 onClick={handleAccordionClick}
-                className="cursor-pointer border-b border-greySolid-100 bg-white text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-800 dark:text-white"
+                className="cursor-pointer border-b border-greySolid-100 bg-white text-greySolid-800"
             >
                 <div className="flex w-full flex-col py-5 font-medium text-greySolid-600 rtl:text-right">
                     <div className="flex">
@@ -57,23 +57,31 @@ const AccordionLocations = ({ blok }) => {
                                 type="button"
                                 className={`flex w-full items-center justify-between text-left font-medium ${
                                     isActive
-                                        ? 'bg-white text-greySolid-800 dark:text-white'
-                                        : 'text-greySolid-600 dark:text-greySolid-400'
+                                        ? 'bg-white text-greySolid-800'
+                                        : 'text-greySolid-600'
                                 }`}
                                 onClick={handleAccordionClick}
                                 aria-expanded={isActive}
                             >
-                                <ChevronDown
-                                    styles={
-                                        isActive ? 'fill-primary' : 'fill-black'
-                                    }
-                                />
+                                <div
+                                    className={`${
+                                        isActive ? 'rotate-180' : 'rotate-0'
+                                    } `}
+                                >
+                                    <ChevronDown
+                                        styles={
+                                            isActive
+                                                ? 'fill-primary'
+                                                : 'fill-black'
+                                        }
+                                    />{' '}
+                                </div>
                             </button>
                         </div>
                     </div>
                 </div>
                 {isActive && (
-                    <div className="border-t border-greySolid-100 px-2 py-5 dark:border-greySolid-600 lg:p-5">
+                    <div className="border-t border-greySolid-100 px-2 py-5 lg:p-5">
                         <div className="flex flex-col items-start justify-start lg:flex-row">
                             <div className="mb-4 w-9/12 lg:mb-0">
                                 <div className="mb-4 flex items-center justify-start">
@@ -104,13 +112,11 @@ const AccordionLocations = ({ blok }) => {
                             <img
                                 src={blok?.image?.filename}
                                 className="flex md:w-3/12"
-                                alt="Stadler Office image"
+                                alt={blok.image.alt ?? 'Stadler Office image'}
                             />
                         </div>
-                        <div className="pt-8">
-                            <p className="mb-2 text-black dark:text-greySolid-400">
-                                <RichTextRenderer text={blok?.text} />
-                            </p>
+                        <div className="mb-2 pt-8 text-black">
+                            <RichTextRenderer text={blok?.text} />
                         </div>
                     </div>
                 )}

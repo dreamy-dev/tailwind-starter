@@ -16,17 +16,17 @@ const AccordionWrapper = ({ blok }) => {
                     tabIndex="1"
                     type="button"
                     className={`flex w-full items-center justify-between border-b border-greySolid-100 py-5 text-left text-base font-medium lg:text-xl ${
-                        isActive
-                            ? 'text-primary dark:text-white'
-                            : 'text-black dark:text-greySolid-400'
+                        isActive ? 'text-primary' : 'text-black'
                     }`}
                     onClick={handleAccordionClick}
                     aria-expanded={isActive}
                 >
                     <span>{blok?.title}</span>
-                    <ChevronDown
-                        styles={isActive ? 'fill-primary' : 'fill-black'}
-                    />
+                    <div className={`${isActive ? 'rotate-180' : 'rotate-0'} `}>
+                        <ChevronDown
+                            styles={isActive ? 'fill-primary' : 'fill-black'}
+                        />
+                    </div>
                 </button>
             </h2>
             <div className={`${isActive ? '' : 'hidden'}`}>

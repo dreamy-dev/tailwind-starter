@@ -6,7 +6,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserSuccessStories = ({ blok }) => {
     return (
-        <section className="bg-white antialiased dark:bg-greySolid-800">
+        <section className="bg-white antialiased">
             <SmallWidth>
                 <div className="mx-auto max-w-screen-xl py-16 lg:py-24">
                     <div className="mx-auto max-w-3xl text-center">
@@ -24,7 +24,7 @@ const TeaserSuccessStories = ({ blok }) => {
                                 <img
                                     className="h-80 scale-100 object-cover duration-300 ease-in group-hover:scale-125"
                                     src={item?.image.filename}
-                                    alt={item?.name}
+                                    alt={item?.image.filename.alt ?? item?.name}
                                 />
                                 <div className="absolute inset-0 grid items-end justify-center bg-gradient-to-b from-transparent to-black/60 p-4">
                                     <div className="text-center text-white">
