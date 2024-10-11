@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+
+// import { InstantSearch } from 'react-instantsearch-dom';
+// import algoliasearch from 'algoliasearch/lite';
 import Link from 'next/link';
 import ContentWidth from '../layouts/ContentWidth';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -10,6 +13,8 @@ import TopNav from './TopNav';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 import Logo from '../elements/Logo';
 import Submenu from '../elements/Submenu';
+// import SearchHits from './SearchHits';
+// import SearchBox from './SearchBox';
 
 const variants = {
     open: { opacity: 1, height: '240px' },
@@ -26,6 +31,11 @@ const HeaderNew = ({ blok }) => {
     const tabs = ['company', 'solutions'];
     const [activeTab, setActiveTab] = useState(null);
     const canToggleRef = useRef(true);
+
+    // const searchClient = algoliasearch(
+    //     process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID,
+    //     process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY
+    // );
 
     const toggleModal = () => {
         setIsModalOpen((prevState) => !prevState);
@@ -105,6 +115,18 @@ const HeaderNew = ({ blok }) => {
                     <div className="py-2 lg:flex lg:justify-between">
                         <div className="flex justify-between">
                             <Logo blok={blok} />
+                            {/*  The Beginning of Algolia Search
+                             To make it visible and working correctly 
+                             Just uncomment everything in this file
+                            <InstantSearch
+                                searchClient={searchClient}
+                                indexName="dev_storyblok"
+                            >
+                                <div className="relative z-50 flex flex-col">
+                                    <SearchBox />
+                                    <SearchHits />
+                                </div>
+                            </InstantSearch> */}
                             <motion.button
                                 className="lg:hidden"
                                 onClick={() => setIsOpen((isOpen) => !isOpen)}
@@ -170,7 +192,7 @@ const HeaderNew = ({ blok }) => {
                                     paddingTop: 0,
                                 },
                             }}
-                            className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-opacity:0%] [--responsive-min-height:0px] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-opacity:100%] lg:[--responsive-min-height:80px]"
+                            className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
                         >
                             <ul className="flex flex-col lg:flex-row">
                                 {tabs.map((item) => (
