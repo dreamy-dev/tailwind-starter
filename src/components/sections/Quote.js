@@ -12,7 +12,7 @@ export default function Quote({ blok }) {
             <SmallWidth>
                 <figure className="mx-auto max-w-screen-lg">
                     <svg
-                        className="mx-auto mb-3 h-12 text-greySolid-400 dark:text-greySolid-600"
+                        className="mx-auto mb-3 h-12 text-greySolid-400"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ export default function Quote({ blok }) {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-center text-3xl font-medium leading-relaxed text-greySolid-800 dark:text-white">
+                        <p className="text-center text-3xl font-medium leading-relaxed text-greySolid-800">
                             <q>{blok?.text}</q>
                         </p>
                     </blockquote>
@@ -31,13 +31,13 @@ export default function Quote({ blok }) {
                         <img
                             className="h-20 w-20 rounded-full object-cover"
                             src={blok?.image.filename}
-                            alt="Profile picture"
+                            alt={blok?.image.filename.alt ?? 'Profile picture'}
                         />
                         <div className="flex flex-col">
-                            <div className="font-medium text-greySolid-800 dark:text-white">
+                            <div className="font-medium text-greySolid-800">
                                 {blok?.name}
                             </div>
-                            <div className="text-sm font-medium text-greySolid-600 dark:text-greySolid-400">
+                            <div className="text-sm font-medium text-greySolid-600">
                                 {blok?.name_function}
                             </div>
                         </div>

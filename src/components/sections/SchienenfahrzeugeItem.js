@@ -24,7 +24,7 @@ const SchienenfahrzeugeItem = ({ blok }) => {
             <img
                 className="aspect-[9/5] w-full"
                 src={optimizeImage(blok?.image)}
-                alt={blok?.title}
+                alt={blok?.image.alt ?? 'Train Type Image'}
             />
             <div className="p-4 lg:p-6 lg:pb-6">
                 {blok.tag ? (
@@ -36,8 +36,12 @@ const SchienenfahrzeugeItem = ({ blok }) => {
                 )}
                 <div className="flex flex-row items-center justify-between">
                     <H3 styles="max-lg:mb-0 lg:mb-0.5">{blok?.title}</H3>
-                    <Link className="" href={ButtonUrlRenderer(blok.link)}>
-                        <img src="/icons/arrow-blue.svg" alt="Arrow" />
+                    <Link
+                        tabIndex="1"
+                        className=""
+                        href={ButtonUrlRenderer(blok.link)}
+                    >
+                        <img src="/icons/arrow-blue.svg" alt="Arrow Icon" />
                     </Link>
                 </div>
             </div>

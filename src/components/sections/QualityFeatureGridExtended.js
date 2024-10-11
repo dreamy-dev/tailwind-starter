@@ -37,7 +37,7 @@ const QualityFeatureGridExtended = ({ blok }) => {
                                                 'Flexibles Kastensystem'}
                                         </H4>
                                     </div>
-                                    <div className="mt-2 text-xl text-white dark:text-greySolid-400 sm:text-lg">
+                                    <div className="mt-2 text-xl text-white sm:text-lg">
                                         <Text>
                                             {blok?.textOne ??
                                                 '  Es stehen zwei Wagenkastenlängen und -breiten zur Wahl, sowie verschiedene Lichtraumprofile. Der FLIRT hat einen hohen Niederfluranteil und ist barrierefrei über die Wagengänge begehbar.'}
@@ -48,7 +48,10 @@ const QualityFeatureGridExtended = ({ blok }) => {
                             <div className="mt-8 sm:mt-0">
                                 <img
                                     src={blok?.assetOne.filename}
-                                    alt="Quality Feature Train image"
+                                    alt={
+                                        blok?.assetOne.filename.alt ??
+                                        'Quality Feature Train image'
+                                    }
                                 />
                             </div>
                         </div>
@@ -60,7 +63,7 @@ const QualityFeatureGridExtended = ({ blok }) => {
                                     {blok?.subtitleTwo ??
                                         'Kapazität à la carte'}
                                 </H4>
-                                <div className="mt-2 text-xl font-normal text-white dark:text-greySolid-400 sm:text-lg">
+                                <div className="mt-2 text-xl font-normal text-white sm:text-lg">
                                     <Text>
                                         {blok?.textTwo ??
                                             '  Die Modularität der FLIRT-Typen ermöglicht flexible Passagierkapazitäten. Triebzüge von 2 bis 8 Teilen bieten Platz für 100 bis 500 Passagiere. Kleinere Formationen sind erweiterbar, um mehr Fahrgäste aufzunehmen, und bis zu vier Züge können in Vielfachtraktion verkehren.'}

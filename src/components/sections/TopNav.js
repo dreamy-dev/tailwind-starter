@@ -22,6 +22,7 @@ export default function TopNav({ blok }) {
                     {navigation.topNav.map((item) => (
                         <li key={item.name}>
                             <Link
+                                tabIndex="1"
                                 onClick={() => {
                                     // closeUnternehmenSubmenu();
                                     // closeSolutionsSubmenu();

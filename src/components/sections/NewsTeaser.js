@@ -53,6 +53,7 @@ function NewsTeaser({ blok }) {
                         {articlesCategory[0] &&
                             articlesCategory.map((article) => (
                                 <a
+                                    tabIndex="1"
                                     href={`/${article.full_slug}`}
                                     className="group mb-6 transition-all"
                                     key={article.uuid}
@@ -61,7 +62,10 @@ function NewsTeaser({ blok }) {
                                         <img
                                             src={article.content.image.filename}
                                             className="h-full w-full object-cover transition-all group-hover:scale-110"
-                                            alt="NewsTeaser image"
+                                            alt={
+                                                article.content.image.filename
+                                                    .alt ?? 'NewsTeaser image'
+                                            }
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">

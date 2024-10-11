@@ -53,6 +53,8 @@ const HeaderNew = ({ blok }) => {
         (event) => {
             if (event.key === 'Enter' && activeTab !== null) {
                 setActiveTab(null);
+            } else if (event.key === 'Escape' && activeTab !== null) {
+                setActiveTab(null);
             }
         },
         [activeTab]
@@ -85,6 +87,12 @@ const HeaderNew = ({ blok }) => {
         }, 300);
     }, []);
 
+    const handleKeyDown = (event, item) => {
+        if (event.key === 'Enter') {
+            handleTabClick(item);
+        }
+    };
+
     return (
         <motion.header
             className="py-4 lg:h-40"
@@ -106,6 +114,7 @@ const HeaderNew = ({ blok }) => {
                         <div className="flex justify-between">
                             <Logo blok={blok} />
                             <motion.button
+                                tabIndex="1"
                                 className="lg:hidden"
                                 onClick={() => setIsOpen((isOpen) => !isOpen)}
                             >
@@ -176,7 +185,11 @@ const HeaderNew = ({ blok }) => {
                                 {tabs.map((item) => (
                                     <li key={item}>
                                         <div
+                                            tabIndex="1"
                                             onClick={() => handleTabClick(item)}
+                                            onKeyDown={(e) =>
+                                                handleKeyDown(e, item)
+                                            }
                                             className="py-2 hover:cursor-pointer lg:px-2 lg:py-0"
                                         >
                                             {item === 'company'
@@ -248,12 +261,14 @@ const HeaderNew = ({ blok }) => {
                                 ))}
                             </ul>
                             <Link
+                                tabIndex="1"
                                 className="py-2 lg:px-2 lg:py-0"
                                 href={ButtonUrlRenderer(blok.main_link_3_link)}
                             >
                                 {blok.main_link_3_text}
                             </Link>
                             <Link
+                                tabIndex="1"
                                 className="py-2 lg:px-2 lg:py-0"
                                 href={ButtonUrlRenderer(blok.main_link_4_link)}
                             >
@@ -261,6 +276,7 @@ const HeaderNew = ({ blok }) => {
                             </Link>
                             <div className="relative">
                                 <button
+                                    tabIndex="1"
                                     ref={buttonRef}
                                     onClick={toggleModal}
                                     type="button"

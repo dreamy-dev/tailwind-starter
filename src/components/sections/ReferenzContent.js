@@ -41,7 +41,7 @@ function ReferenzContent({ blok }) {
                 <img
                     src={blok?.image.filename}
                     className="my-8 w-full"
-                    alt="Full service image"
+                    alt={blok?.image.filename.alt ?? 'Full service image'}
                 />
             </SuperSmallWidth>
             <SuperSmallWidth>

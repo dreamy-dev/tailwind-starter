@@ -57,8 +57,11 @@ export default function HomePageHero({ blok }) {
                     <img
                         src={blok?.image.filename ?? '/hero-home-big-min.jpg'}
                         className="w-full object-cover object-center lg:h-[90vh]"
-                        alt="Hero image with train for Home page"
-                        aria-label={`Shadow image for ${blok?.title} `}
+                        alt={
+                            blok?.image.filename.alt ??
+                            'Hero image with train for Home page'
+                        }
+                        aria-label={`Hero image with train for Home page `}
                     />
                 </motion.div>
             </div>

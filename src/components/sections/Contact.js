@@ -19,7 +19,7 @@ const Contact = ({ blok }) => {
                         <img
                             className="h-auto w-full max-w-full object-cover object-right xl:h-[369px] xl:w-[320px] xl:max-w-[320px]"
                             src={blok?.image.filename}
-                            alt="Contact image"
+                            alt={blok?.image.filename.alt ?? 'Contact image'}
                         />
                     </div>
                     <div className="w-full xl:col-span-8">
@@ -48,6 +48,7 @@ const Contact = ({ blok }) => {
                                     className="h-4 w-4 fill-white"
                                 />
                                 <a
+                                    tabIndex="1"
                                     type="email"
                                     className="border-none bg-transparent"
                                     href={'mailto:' + blok?.email_link?.email}

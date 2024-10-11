@@ -152,6 +152,7 @@ export default function MailchimpEmbed({ blok }) {
                                     {blok.fname_label} <span>*</span>
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                     value={firstName}
                                     onChange={(e) =>
@@ -171,6 +172,7 @@ export default function MailchimpEmbed({ blok }) {
                                     {blok.lname_label} <span>*</span>
                                 </label>
                                 <input
+                                    tabIndex="1"
                                     className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                     value={lastName}
                                     onChange={(e) =>
@@ -191,6 +193,7 @@ export default function MailchimpEmbed({ blok }) {
                                 {blok.company_label} <span>*</span>
                             </label>
                             <input
+                                tabIndex="1"
                                 className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                 type="text"
                                 value={company}
@@ -208,6 +211,7 @@ export default function MailchimpEmbed({ blok }) {
                                 {blok.email_label} <span>*</span>
                             </label>
                             <input
+                                tabIndex="1"
                                 className="block w-full border border-greySolid-300 p-3 text-sm text-greySolid-800 focus:border-primary focus:ring-primary"
                                 type="email"
                                 value={email}
@@ -223,6 +227,7 @@ export default function MailchimpEmbed({ blok }) {
                         <div>
                             <div className="mb-6 mt-4 flex items-start">
                                 <input
+                                    tabIndex="1"
                                     name="checkbox-1"
                                     className="relative mt-0.5 h-4 w-4 shrink-0 border-2 border-primary checked:border-primary checked:bg-primary hover:border-primary hover:checked:bg-primary focus:border-primary focus:ring-2 focus:ring-primary focus:checked:bg-primary"
                                     defaultChecked={isSelected}
@@ -247,6 +252,7 @@ export default function MailchimpEmbed({ blok }) {
                         </div>
                         <div className="clear flex justify-center">
                             <input
+                                tabIndex="1"
                                 type="submit"
                                 name="subscribe"
                                 className="flex items-center gap-2 rounded bg-stadlergradient px-5 py-2.5 text-sm font-medium leading-6 text-white"

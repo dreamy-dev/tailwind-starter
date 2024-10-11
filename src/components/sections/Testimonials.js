@@ -20,6 +20,7 @@ const Testimonials = ({ blok }) => {
                     >
                         {blok.testimonial.map((item) => (
                             <button
+                                tabIndex="1"
                                 key={item.name}
                                 onClick={() => setSelectedTab(item)}
                                 className={`${
@@ -39,13 +40,16 @@ const Testimonials = ({ blok }) => {
                                     <img
                                         className="h-20 w-20 object-cover md:h-16 md:w-16"
                                         src={item.image.filename}
-                                        alt="profile picture"
+                                        alt={
+                                            item.image.filename.alt ??
+                                            'profile picture'
+                                        }
                                     />
                                     <span className="ml-5 grow">
-                                        <span className="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 block font-semibold text-greySolid-800 dark:text-greySolid-100">
+                                        <span className="hs-tab-active:text-blue-600 block font-semibold text-greySolid-800">
                                             {item.name}
                                         </span>
-                                        <span className="mt-2 text-greySolid-800 dark:text-greySolid-100 lg:block">
+                                        <span className="mt-2 text-greySolid-800 lg:block">
                                             {item.job}
                                         </span>
                                     </span>
@@ -69,8 +73,8 @@ const Testimonials = ({ blok }) => {
                                 <div className="relative max-w-[1140px] lg:pb-12">
                                     <figure className="relative z-[1] ml-auto mr-20 h-auto w-[50rem] max-w-full rounded-b-lg">
                                         <div className="rounded-b-lg bg-white">
-                                            <blockquote className="my-4 border-l-4 border-greySolid-300 p-4 dark:border-greySolid-600 dark:bg-greySolid-800">
-                                                <p className="text-xl font-medium italic leading-relaxed text-greySolid-800 dark:text-white">
+                                            <blockquote className="my-4 border-l-4 border-greySolid-300 p-4">
+                                                <p className="text-xl font-medium italic leading-relaxed text-greySolid-800">
                                                     "{selectedTab.quote}"
                                                 </p>
                                             </blockquote>

@@ -66,23 +66,32 @@ function AllStandorte({ blok }) {
         const textMatch =
             !selectedOptions.searchTerm ||
             (location.title &&
+                typeof location.title === 'string' &&
                 location.title
-                    ?.toLowerCase()
+                    .toLowerCase()
                     .includes(selectedOptions.searchTerm)) ||
             (location.text &&
+                typeof location.text === 'string' &&
                 location.text
-                    ?.toLowerCase()
+                    .toLowerCase()
                     .includes(selectedOptions.searchTerm)) ||
-            location.tag_country.some((tag) =>
-                tag.name.toLowerCase().includes(selectedOptions.searchTerm)
+            location.tag_country.some(
+                (tag) =>
+                    typeof tag.name === 'string' &&
+                    tag.name.toLowerCase().includes(selectedOptions.searchTerm)
             ) ||
-            location.tag_business_area.some((tag) =>
-                tag.content.category
-                    ?.toLowerCase()
-                    .includes(selectedOptions.searchTerm)
+            location.tag_business_area.some(
+                (tag) =>
+                    tag.content.category &&
+                    typeof tag.content.category === 'string' &&
+                    tag.content.category
+                        .toLowerCase()
+                        .includes(selectedOptions.searchTerm)
             ) ||
-            location.tag_division.some((tag) =>
-                tag.name.toLowerCase().includes(selectedOptions.searchTerm)
+            location.tag_division.some(
+                (tag) =>
+                    typeof tag.name === 'string' &&
+                    tag.name.toLowerCase().includes(selectedOptions.searchTerm)
             );
 
         return countryMatch && categoryMatch && textMatch;
@@ -91,7 +100,7 @@ function AllStandorte({ blok }) {
     return (
         <ContentWidth {...storyblokEditable(blok)}>
             <div className="col-span-12 mt-12">
-                <ul className="flex flex-col gap-0 text-center text-sm font-normal text-black dark:text-greySolid-400 md:flex md:flex-row lg:gap-8">
+                <ul className="flex flex-col gap-0 text-center text-sm font-normal text-black md:flex md:flex-row lg:gap-8">
                     <li className="mb-4 w-full md:w-1/3">{countryDropdown}</li>
                     <li className="mb-4 w-full md:w-1/3">{categoryDropdown}</li>
                     <li className="mb-4 w-full md:w-1/3">
@@ -103,6 +112,7 @@ function AllStandorte({ blok }) {
                                 />
                             </div>
                             <input
+                                tabIndex="1"
                                 className="inline-block w-full border-primary px-4 py-2 text-base text-black placeholder-black hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                 placeholder={blok.text_search}
                                 onChange={handleSearchChange}

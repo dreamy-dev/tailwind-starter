@@ -51,6 +51,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                 <div className="flex gap-3 rounded-full px-3 py-2 opacity-80">
                                     {items.map((_, idx) => (
                                         <button
+                                            tabIndex="1"
                                             key={idx}
                                             onClick={() => setCurrent(idx)}
                                         >
@@ -94,7 +95,10 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                             <img
                                                 className="aspect-[4/3] w-full object-cover"
                                                 src={card.img}
-                                                alt="Train image"
+                                                alt={
+                                                    card.img.alt ??
+                                                    'Train image'
+                                                }
                                             />
                                             <div className="p-5">
                                                 <div className="mb-4">
@@ -104,13 +108,14 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                                     <Text>{card.text}</Text>
                                                 </div>
                                                 <Link
+                                                    tabIndex="1"
                                                     href="#"
                                                     className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-center text-sm font-medium"
                                                 >
                                                     <img
                                                         className="h-5 w-5"
                                                         src="/icons/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                        alt=""
+                                                        alt="Icon Arrow Forward"
                                                     />
                                                 </Link>
                                             </div>
@@ -128,18 +133,18 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
-                                <button onClick={onPrevClick}>
+                                <button tabIndex="1" onClick={onPrevClick}>
                                     <img
                                         className="h-5 w-5"
                                         src="/icons/ohne-box/chevron_left_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                        alt=""
+                                        alt="Icon Arrow Forward"
                                     />
                                 </button>
-                                <button onClick={onNextClick}>
+                                <button tabIndex="1" onClick={onNextClick}>
                                     <img
                                         className="h-5 w-5"
                                         src="/icons/ohne-box/chevron_right_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                        alt=""
+                                        alt="Icon Arrow Forward"
                                     />
                                 </button>
                             </motion.div>

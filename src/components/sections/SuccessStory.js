@@ -20,7 +20,7 @@ const SuccessStory = ({ current, idx, blok }) => {
             <img
                 className="aspect-[4/3] w-full object-cover"
                 src={card.img}
-                alt={`Image for ${card.title}`}
+                alt={card.img.alt ?? `Image for ${card.title}`}
             />
             <div className="p-5">
                 <div className="mb-4">
@@ -31,6 +31,7 @@ const SuccessStory = ({ current, idx, blok }) => {
                     <Text>{card.text}</Text>
                 </div>
                 <Link
+                    tabIndex="1"
                     href="#"
                     className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-center text-sm font-medium"
                 >

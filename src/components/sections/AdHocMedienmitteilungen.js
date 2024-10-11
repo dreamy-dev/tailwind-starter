@@ -48,6 +48,7 @@ function AdHocMedienmitteilungen({ blok }) {
                     {articles[0] &&
                         articles.map((article) => (
                             <a
+                                tabIndex="1"
                                 href={`/${article.full_slug}`}
                                 className="group mb-6 transition-all"
                                 key={article.uuid}
@@ -56,7 +57,10 @@ function AdHocMedienmitteilungen({ blok }) {
                                     <img
                                         src={article.content.image.filename}
                                         className="h-full w-full object-cover transition-all group-hover:scale-110"
-                                        alt="Article Medienmitteilungen image"
+                                        alt={
+                                            article.content.image.filename.alt ??
+                                            'Article Medienmitteilungen image'
+                                        }
                                     />
                                 </div>
                                 <div className="mb-1 mt-4 flex flex-wrap">

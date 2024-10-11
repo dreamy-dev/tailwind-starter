@@ -8,14 +8,14 @@ const ServiceTeaserItem = ({ blok }) => {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="mx-auto border border-greySolid-100 bg-white shadow dark:border-greySolid-600 dark:bg-greySolid-800"
+            className="mx-auto border border-greySolid-100 bg-white shadow"
         >
-            <a href={ButtonUrlRenderer(blok?.link)}>
+            <a tabIndex="1" href={ButtonUrlRenderer(blok?.link)}>
                 {blok?.Icon.filename ? (
                     <img
                         className="w-24 pl-5 pt-5"
                         src={blok?.Icon.filename}
-                        alt={blok?.title}
+                        alt={blok?.Icon.filename.alt ?? blok?.title}
                     />
                 ) : (
                     ''

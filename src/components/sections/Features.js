@@ -45,17 +45,21 @@ const Features = ({ blok }) => {
         >
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full bg-white">
-                    <div className="mb-10 tracking-tight dark:text-white">
+                    <div className="mb-10 tracking-tight">
                         <H2>{blok?.title}</H2>
                     </div>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
                         <div className="flex flex-col items-center justify-center md:items-start">
                             <img
                                 src={blok?.image_1.filename}
-                                alt="Feature Image"
+                                alt={
+                                    blok?.image_1.filename.alt ??
+                                    'Feature Image'
+                                }
                                 className="h-[320px] w-full object-cover md:w-auto"
                             />
                             <a
+                                tabIndex="1"
                                 href={ButtonUrlRenderer(blok?.link_1)}
                                 className="matomo-tracking-link mt-4 flex items-center gap-2 text-2xl font-bold"
                             >
@@ -79,10 +83,14 @@ const Features = ({ blok }) => {
                                 width="100%"
                                 height="auto"
                                 src={blok?.image_2.filename}
-                                alt="Feature Image"
+                                alt={
+                                    blok?.image_2.filename.alt ??
+                                    'Feature Image'
+                                }
                                 className="h-[320px] w-full object-cover md:w-auto"
                             />
                             <a
+                                tabIndex="1"
                                 href={ButtonUrlRenderer(blok?.link_2)}
                                 className="matomo-tracking-link mt-4 flex items-center gap-2 text-2xl font-bold"
                             >

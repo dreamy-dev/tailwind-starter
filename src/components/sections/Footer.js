@@ -12,6 +12,7 @@ const Footer = ({ blok }) => {
         >
             <li>
                 <a
+                    tabIndex="1"
                     href={`/${blok.link_1_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
@@ -20,6 +21,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
+                    tabIndex="1"
                     href={`/${blok.link_2_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
@@ -28,6 +30,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
+                    tabIndex="1"
                     href={`/${blok.link_3_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
@@ -36,6 +39,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
+                    tabIndex="1"
                     href={`/${blok.link_4_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
@@ -44,6 +48,7 @@ const Footer = ({ blok }) => {
             </li>
             <li>
                 <a
+                    tabIndex="1"
                     href={`/${blok.link_5_url.story.url}`}
                     className="inline-block text-base leading-6 text-primarySolid-400 hover:text-primarySolid-400"
                 >
@@ -56,6 +61,7 @@ const Footer = ({ blok }) => {
     const socialLinks = (
         <div className="flex space-x-4">
             <Link
+                tabIndex="1"
                 href={blok.social_media_link_2.url}
                 className="text-greySolid-600 hover:text-greySolid-400"
             >
@@ -67,6 +73,7 @@ const Footer = ({ blok }) => {
                 />
             </Link>
             <Link
+                tabIndex="1"
                 href={blok.social_media_link_3.url}
                 className="text-greySolid-600 hover:text-greySolid-400"
             >
@@ -78,6 +85,7 @@ const Footer = ({ blok }) => {
                 />
             </Link>
             <Link
+                tabIndex="1"
                 href={blok.social_media_link_4.url}
                 className="text-greySolid-600 hover:text-greySolid-400"
             >
@@ -89,6 +97,7 @@ const Footer = ({ blok }) => {
                 />
             </Link>
             <Link
+                tabIndex="1"
                 href={blok.social_media_link_1.url}
                 className="text-greySolid-600 hover:text-greySolid-400"
             >
@@ -113,7 +122,7 @@ const Footer = ({ blok }) => {
                         <img
                             className="h-6"
                             src={blok.Logo.filename}
-                            alt="Company name"
+                            alt={blok.Logo.filename.alt ?? 'Logo Company name'}
                         />
                         <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
                             <div className="mb-6 mt-12 lg:mb-0 lg:mr-14 lg:mt-0">

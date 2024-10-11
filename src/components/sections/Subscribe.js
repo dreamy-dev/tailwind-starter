@@ -23,7 +23,8 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400"
+                                        tabIndex="1"
+                                        className="focus:ring-primary-500 focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800"
                                         placeholder="Enter your Vorname"
                                         type="text"
                                     />
@@ -34,7 +35,8 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400"
+                                        tabIndex="1"
+                                        className="focus:ring-primary-500 focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800"
                                         placeholder="Enter your Nachname"
                                         type="text"
                                     />
@@ -45,7 +47,8 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
-                                        className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800 dark:border-greySolid-600 dark:bg-greySolid-600 dark:text-white dark:placeholder-greySolid-400"
+                                        tabIndex="1"
+                                        className="focus:ring-primary-500 focus:border-primary-500 block w-full border border-greySolid-300 bg-greySolid-30 p-3 text-sm text-greySolid-800"
                                         placeholder="Enter your Firma"
                                         type="text"
                                     />
@@ -56,6 +59,7 @@ export default function Subscribe() {
                                     </label>
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"></div>
                                     <input
+                                        tabIndex="1"
                                         className="block w-full border border-white bg-greySolid-30 p-3 text-sm text-greySolid-800"
                                         placeholder="Enter your E-mail"
                                         type="email"
@@ -63,15 +67,17 @@ export default function Subscribe() {
                                 </div>
                                 <div className="flex items-center">
                                     <input
+                                        tabIndex="1"
                                         className="peer relative h-6 w-6 shrink-0 appearance-none border-2 border-primary bg-white checked:border-primary checked:bg-primary hover:border-primary hover:checked:bg-primary focus:border-primary focus:ring-2 focus:ring-primary focus:checked:bg-primary"
                                         type="checkbox"
                                     />
                                     <label
                                         htmlFor="checkbox-1"
-                                        className="ms-2 text-sm font-medium text-white dark:text-greySolid-300"
+                                        className="ms-2 text-sm font-medium text-white"
                                     >
                                         I agree to the{' '}
                                         <a
+                                            tabIndex="1"
                                             href="#"
                                             className="text-white hover:underline"
                                         >

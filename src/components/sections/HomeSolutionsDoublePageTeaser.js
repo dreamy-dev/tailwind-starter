@@ -16,16 +16,20 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
         <section {...storyblokEditable(blok)} className="pb-16 lg:pb-24">
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full">
-                    <div className="mb-12 border border-solid border-greyBrighten-300 tracking-tight dark:text-white"></div>
+                    <div className="mb-12 border border-solid border-greyBrighten-300 tracking-tight"></div>
                     <ul className="grid grid-cols-1 gap-4 sm:gap-12 md:gap-20 lg:grid-cols-2 lg:gap-y-40">
                         <li>
                             <img
                                 src={blok?.image_1.filename}
-                                alt={`Image for ${blok?.title_1}`}
+                                alt={
+                                    blok?.image_1.filename.alt ??
+                                    `Image for ${blok?.title_1}`
+                                }
                             />
 
                             <div className="pr-0">
                                 <motion.a
+                                    tabIndex="1"
                                     href={ButtonUrlRenderer(blok?.link_1)}
                                     className="mb-4 mt-5 flex flex-col items-start text-xl font-bold text-white lg:mb-0"
                                     initial="rest"
@@ -56,10 +60,14 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                         <li>
                             <img
                                 src={blok?.image_2.filename}
-                                alt={`Image for ${blok?.title_2}`}
+                                alt={
+                                    blok?.image_2.filename.alt ??
+                                    `Image for ${blok?.title_2}`
+                                }
                             />
                             <div className="pr-0">
                                 <motion.a
+                                    tabIndex="1"
                                     href={ButtonUrlRenderer(blok?.link_2)}
                                     className="mb-0 mt-5 flex flex-col items-start text-xl font-bold text-white"
                                     initial="rest"

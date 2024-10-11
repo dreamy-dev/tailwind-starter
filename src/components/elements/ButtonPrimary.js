@@ -14,6 +14,7 @@ export default function ButtonPrimary(props) {
     return (
         <div style={containerStyles}>
             <motion.a
+                tabIndex="1"
                 initial="rest"
                 whileTap="hover"
                 whileHover="hover"

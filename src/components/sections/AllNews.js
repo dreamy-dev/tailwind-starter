@@ -91,7 +91,7 @@ function AllNews({ blok }) {
                     <H2>{blok.title}</H2>
                 </div>
                 <div className="col-span-12 mb-8">
-                    <ul className="grid gap-4 text-center text-sm font-medium text-greySolid-600 dark:text-greySolid-400 md:grid-cols-2 lg:grid-cols-12">
+                    <ul className="grid gap-4 text-center text-sm font-medium text-greySolid-600 md:grid-cols-2 lg:grid-cols-12">
                         <li className="lg:col-span-2">
                             <select
                                 className="block w-full border-primary px-4 py-2 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
@@ -168,6 +168,7 @@ function AllNews({ blok }) {
                                     </span>
                                 </div>
                                 <input
+                                    tabIndex="1"
                                     className="block w-full border-primary py-2 pl-8 pr-4 text-base hover:bg-greySolid-100 hover:text-greySolid-800 focus:ring-1 focus:ring-primary"
                                     placeholder={blok.text_search}
                                     onChange={onSearchChange}
@@ -181,6 +182,7 @@ function AllNews({ blok }) {
                         {articles[0] &&
                             articles.map((article) => (
                                 <a
+                                    tabIndex="1"
                                     href={`/${article.full_slug}`}
                                     className="group mb-6 transition-all"
                                     key={article.uuid}
@@ -189,7 +191,10 @@ function AllNews({ blok }) {
                                         <img
                                             src={article.content.image.filename}
                                             className="h-full w-full object-cover transition-all group-hover:scale-110"
-                                            alt="News Article image"
+                                            alt={
+                                                article.content.image.filename
+                                                    .alt ?? 'News Article image'
+                                            }
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">

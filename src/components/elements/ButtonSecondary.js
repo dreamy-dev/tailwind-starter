@@ -31,6 +31,7 @@ export default function Button({
     return (
         <div style={containerStyles}>
             <motion.a
+                tabIndex="1"
                 className={secondaryButtonStyles}
                 href={href ?? '#'}
                 initial="rest"
