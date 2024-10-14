@@ -56,6 +56,8 @@ const HeaderNew = ({ blok }) => {
         (event) => {
             if (event.key === 'Enter' && activeTab !== null) {
                 setActiveTab(null);
+            } else if (event.key === 'Escape' && activeTab !== null) {
+                setActiveTab(null);
             }
         },
         [activeTab]
@@ -88,6 +90,7 @@ const HeaderNew = ({ blok }) => {
         }, 300);
     }, []);
 
+
     const handleScroll = useCallback(() => {
         const currentScrollY = window.scrollY;
 
@@ -114,6 +117,13 @@ const HeaderNew = ({ blok }) => {
         };
     }, [handleScroll]);
 
+    const handleKeyDown = (event, item) => {
+        if (event.key === 'Enter') {
+            handleTabClick(item);
+        }
+    };
+
+
     return (
         <>
             <motion.header
@@ -126,6 +136,7 @@ const HeaderNew = ({ blok }) => {
                         <motion.div
                             initial="closed"
                             animate={isOpen ? 'open' : 'closed'}
+
                             variants={variants}
                             className="[--responsive-height:0px] [--responsive-opacity:0%] lg:[--responsive-height:80px] lg:[--responsive-opacity:100%]"
                         >
@@ -211,6 +222,7 @@ const HeaderNew = ({ blok }) => {
                                     },
                                 }}
                                 className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-opacity:0%] [--responsive-min-height:0px] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-opacity:100%] lg:[--responsive-min-height:80px]"
+
                             >
                                 <ul className="flex flex-col lg:flex-row">
                                     {tabs.map((item) => (

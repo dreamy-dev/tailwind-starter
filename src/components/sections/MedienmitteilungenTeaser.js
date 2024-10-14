@@ -42,7 +42,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
             <ContentWidth>
                 <div className="col-span-12 max-w-full pb-24">
                     <H2>{blok?.title}</H2>
-                    <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 rtl:text-right dark:bg-greySolid-600 dark:text-greySolid-400 lg:grid">
+                    <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 rtl:text-right  lg:grid">
                         <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
                             {blok.table_date_title}
                         </li>
@@ -56,13 +56,13 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                             {blok.table_documents_title}
                         </li>
                     </ul>
-                    <div className="blok my-4 w-full border-b dark:border-greySolid-600 lg:hidden"></div>
-                    <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 rtl:text-right dark:text-greySolid-400">
+                    <div className="blok my-4 w-full border-b  lg:hidden"></div>
+                    <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 rtl:text-right ">
                         {medienmitteilungen[0] &&
                             medienmitteilungen.map((item) => (
                                 <div
                                     key={item.uuid}
-                                    className="col-span-12 mb-4 border-b bg-white last:mb-0 dark:border-greySolid-600 dark:bg-black lg:mb-0 lg:last:mb-0"
+                                    className="col-span-12 mb-4 border-b bg-white last:mb-0  lg:mb-0 lg:last:mb-0"
                                 >
                                     <div className="grid grid-cols-1 items-center lg:grid-cols-12">
                                         <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-1 lg:bg-white">

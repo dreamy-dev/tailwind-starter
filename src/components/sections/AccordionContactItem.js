@@ -7,7 +7,7 @@ const AccordionContactItem = ({ blok }) => {
     return (
         <ul {...storyblokEditable(blok)} className="mb-8">
             <li className="mb-2">
-                <p className="text-base font-medium text-black dark:text-greySolid-400 lg:text-xl">
+                <p className="text-base font-medium text-black lg:text-xl">
                     {blok?.contact_name}
                 </p>
             </li>
@@ -16,7 +16,7 @@ const AccordionContactItem = ({ blok }) => {
                     <a
                         tabIndex="1"
                         href="tel:+496170961709"
-                        className="flex cursor-pointer items-center text-black transition-all hover:text-primary dark:text-greySolid-400"
+                        className="flex cursor-pointer items-center text-black transition-all hover:text-primary"
                     >
                         <span className="mr-2">
                             <PhoneIcon
@@ -33,7 +33,7 @@ const AccordionContactItem = ({ blok }) => {
                     <a
                         tabIndex="1"
                         href="mailto:ir@stadlerrail.com"
-                        className="flex cursor-pointer items-center text-black transition-all hover:text-primary dark:text-greySolid-400"
+                        className="flex cursor-pointer items-center text-black transition-all hover:text-primary"
                     >
                         <span className="mr-2">
                             <MailIcon

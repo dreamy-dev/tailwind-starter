@@ -198,7 +198,7 @@ const Header = ({ blok }) => {
                             <img
                                 src={blok.Logo.filename}
                                 className="h-4 sm:h-6"
-                                alt="Stadler Logo"
+                                alt={blok.Logo.filename.alt ?? 'Stadler Logo'}
                             />
                         </Link>
 
@@ -231,7 +231,7 @@ const Header = ({ blok }) => {
             >
                 <>
                     <TopNav blok={blok} />
-                    <nav className="relative border-greySolid-100 bg-white dark:border-greySolid-600 dark:bg-greySolid-800">
+                    <nav className="relative border-greySolid-100 bg-white">
                         <ContentWidth>
                             <div className="absolute left-0 top-[10%] col-span-12 flex w-full flex-col items-start justify-center bg-white px-4 py-5 lg:static lg:min-h-fit lg:w-auto lg:flex-row lg:justify-between lg:px-0">
                                 <div className="hidden lg:block">
@@ -257,12 +257,12 @@ const Header = ({ blok }) => {
                                             (item, index) => (
                                                 <li
                                                     key={index}
-                                                    className="flex cursor-pointer items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 dark:text-white dark:hover:bg-greySolid-600 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent lg:px-3 xl:px-5"
+                                                    className="flex cursor-pointer items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 md:border-0 md:p-0 md:hover:bg-transparent lg:px-3 xl:px-5"
                                                 >
                                                     {item.submenu ? (
                                                         <motion.div
                                                             tabIndex="1"
-                                                            className="flex items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 dark:text-white dark:hover:bg-greySolid-600 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent"
+                                                            className="flex items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 md:border-0 md:p-0 md:hover:bg-transparent"
                                                             onClick={() =>
                                                                 toggleSubmenu(
                                                                     item.id
@@ -300,7 +300,7 @@ const Header = ({ blok }) => {
                                                     ) : (
                                                         <Link
                                                             tabIndex="1"
-                                                            className="flex items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 dark:text-white dark:hover:bg-greySolid-600 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                                            className="flex items-start justify-center gap-2 rounded pr-4 font-semibold text-primarySolid-800 hover:bg-greySolid-100 md:border-0 md:p-0 md:hover:bg-transparent"
                                                             href={ButtonUrlRenderer(
                                                                 item.href
                                                             )}

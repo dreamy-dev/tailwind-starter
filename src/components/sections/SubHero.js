@@ -19,7 +19,7 @@ const SubHero = ({ blok }) => {
                                 <img
                                     src="/shadow-subhero.svg"
                                     className="absolute right-[-7%] h-full max-h-[750px] w-auto"
-                                    alt=""
+                                    alt="Background Image"
                                 />
                             </div>
                         </motion.div>
@@ -27,7 +27,9 @@ const SubHero = ({ blok }) => {
                             <img
                                 src={blok?.image.filename}
                                 className="h-96 w-full object-cover object-right md:h-full"
-                                alt="Sub Hero image"
+                                alt={
+                                    blok?.image.filename.alt ?? 'Sub Hero image'
+                                }
                             />
                         </div>
                     </div>
