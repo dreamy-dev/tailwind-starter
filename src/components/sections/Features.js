@@ -20,8 +20,8 @@ const Features = ({ blok }) => {
                         var _paq = (window._paq = window._paq || []);
                         _paq.push([
                             'trackEvent',
-                            'Actions from Product Page',
-                            `Signalling - Action from Product Page`,
+                            '4. Signalling und Service Klicks von Produkteseite',
+                            `Signalling`,
                         ]);
                     });
                 }
@@ -30,8 +30,8 @@ const Features = ({ blok }) => {
                         var _paq = (window._paq = window._paq || []);
                         _paq.push([
                             'trackEvent',
-                            'Actions from Product Page',
-                            `Service - Action from Product Page`,
+                            '4. Signalling und Service Klicks von Produkteseite',
+                            `Service`,
                         ]);
                     });
                 }

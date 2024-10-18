@@ -17,7 +17,7 @@ const ReportsItem = ({ blok }) => {
             const title = titleArray[titleArray.length - 1];
             _paq.push([
                 'trackEvent',
-                'Investor Relations Publication',
+                '5. Investorenseite Publikationsdownload',
                 `${title}`,
             ]);
         });
