@@ -23,6 +23,8 @@ export default function Video({ blok }) {
                             muted={true}
                             src={blok.video.filename}
                             loop={true}
+                            playsInline={true}
+                            webkit-playsinline={true}
                         />
                     </div>
                     <div className="m-auto w-[90%] lg:w-1/3 lg:px-4 xl:px-20">
