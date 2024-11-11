@@ -6,6 +6,8 @@ import {
 } from '@storyblok/react/rsc';
 import Layout from '/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
+import SocialMediaFeedLinkedIn from '../../components/sections/SocialMediaFeedLinkedIn';
+import SocialMediaFeedTwitter from '../../components/sections/SocialMediaFeedTwitter';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -131,6 +133,8 @@ export default async function Homepage({ params }) {
         <>
             <Layout config_footer={config_footer} config_header={config_header}>
                 <StoryblokStory story={story} />
+                <SocialMediaFeedLinkedIn />
+                <SocialMediaFeedTwitter />
             </Layout>
         </>
     );
