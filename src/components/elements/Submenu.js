@@ -30,10 +30,10 @@ export default function Submenu({
                     href={ButtonUrlRenderer(mainLinkUrl)}
                     className="lg:text-primary"
                 >
-                    <p className="hidden font-normal lg:block">
-                        {mainSubmenuText}
+                    <p className="font-normal">{mainSubmenuText}</p>
+                    <p className="hidden lg:block lg:text-lg lg:text-primary">
+                        {mainLinkText}
                     </p>
-                    <p className="lg:text-lg lg:text-primary">{mainLinkText}</p>
                 </a>
             </div>
             <motion.div className="flex flex-col lg:grid lg:w-2/12 lg:content-center">

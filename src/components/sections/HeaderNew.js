@@ -212,7 +212,7 @@ const HeaderNew = ({ blok }) => {
                                         paddingTop: 0,
                                     },
                                 }}
-                                className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-opacity:0%] [--responsive-min-height:0px] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-opacity:100%] lg:[--responsive-min-height:80px]"
+                                className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
                             >
                                 <ul className="flex flex-col lg:flex-row">
                                     {tabs.map((item) => (
@@ -222,11 +222,15 @@ const HeaderNew = ({ blok }) => {
                                                 onClick={() =>
                                                     handleTabClick(item)
                                                 }
-                                                className="py-2 hover:cursor-pointer lg:px-4 lg:py-0"
+                                                className="flex justify-between py-2 hover:cursor-pointer lg:px-4 lg:py-0"
                                             >
                                                 {item === 'company'
                                                     ? blok.main_link_1_text
                                                     : blok.main_link_2_text}
+                                                <img
+                                                    src="/icons/chevron-right.svg"
+                                                    className="block lg:hidden"
+                                                />
                                             </div>
                                             <AnimatePresence mode="wait">
                                                 {activeTab === item && (
