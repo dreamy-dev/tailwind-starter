@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
-export default function TopNav({ blok }) {
+export default function TopNav({ blok, translatedSlugs }) {
     const navigation = {
         topNav: [
             { name: blok.media_link_text, href: blok.media_link },
@@ -37,7 +37,7 @@ export default function TopNav({ blok }) {
                         </li>
                     ))}
                 </ul>
-                <LanguageSwitcher />
+                <LanguageSwitcher translatedSlugs={translatedSlugs} />
             </div>
         </div>
     );

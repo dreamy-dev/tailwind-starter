@@ -4,6 +4,7 @@ import {
     apiPlugin,
     storyblokInit,
 } from '@storyblok/react/rsc';
+import i18nConfig from '../../../../i18nConfig';
 import Layout from '/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
 
@@ -11,7 +12,6 @@ storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
 });
-
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
 
@@ -47,6 +47,7 @@ async function fetchData(slug, lang) {
     };
 
     const storyblokApi = getStoryblokApi();
+
     try {
         const { data } = await storyblokApi.get(
             `cdn/stories/${slug}`,
@@ -76,10 +77,12 @@ async function fetchData(slug, lang) {
 
 export async function generateStaticParams() {
     const storyblokApi = getStoryblokApi();
-    const { data } = await storyblokApi.get('cdn/links/', {
-        version: 'published',
+    let { data } = await storyblokApi.get('cdn/links/', {
+        version: 'draft',
     });
+
     const paths = [];
+
     Object.keys(data.links).forEach((linkKey) => {
         if (
             data.links[linkKey].is_folder ||
@@ -91,9 +94,13 @@ export async function generateStaticParams() {
         const slug = data.links[linkKey].slug;
         let splittedSlug = slug.split('/');
 
-        paths.push({ slug: splittedSlug });
+        for (const locale of i18nConfig.locales) {
+            paths.push({
+                params: { slug: splittedSlug, slugFull: slug },
+                locale,
+            });
+        }
     });
-
     return paths;
 }
 
@@ -145,8 +152,16 @@ export default async function Detailpage({ params }) {
 
     const { story, config_footer, config_header } = data;
 
+    const translatedSlugs = {};
+
+    translatedSlugs['en'] = { lang: 'en', slug: story.default_full_slug };
+    story.translated_slugs.forEach((item) => {
+        translatedSlugs[item.lang] = { lang: item.lang, slug: item.path };
+    });
+
     return (
         <Layout
+            translatedSlugs={translatedSlugs}
             lang={lang}
             config_footer={config_footer}
             config_header={config_header}

@@ -146,8 +146,8 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                     </Script>
                     <Script async>
                         {`
-                            const curUrl = window.location.href
-                            const linksForMatomo = document.querySelectorAll("a")
+                            var curUrl = window.location.href
+                            var linksForMatomo = document.querySelectorAll("a")
                             if (curUrl.includes("/investor-relations")) {
                                 linksForMatomo.forEach(item => {
                                     item?.addEventListener('click', () => {

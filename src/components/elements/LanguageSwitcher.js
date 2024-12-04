@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useCurrentLocale } from 'next-i18n-router/client';
 import i18nConfig from '/i18nConfig';
@@ -9,20 +10,31 @@ const variantsLang = {
     closed: { scale: 0, zIndex: 1 },
 };
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ translatedSlugs }) => {
     const router = useRouter();
+
+    // const pathname = usePathname();
+    useEffect(() => {
+        if (!router.isReady) return;
+
+        // codes using router.query
+    }, [router.isReady]);
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
-    const currentPathname = usePathname();
+    // const currentPathname = usePathname();
     const currentLocale = useCurrentLocale(i18nConfig);
+    // console.log('router.asPath', pathname, translatedSlugs);
 
     const handleChange = () => {
         //static implementation of language switcher
         const newLocale = currentLocale == 'en' ? 'de' : 'en';
 
         router.push(
-            currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+            `/${translatedSlugs[newLocale].lang}/${translatedSlugs[newLocale].slug}`,
+            {
+                locale: newLocale,
+            }
         );
         /* TODO: If folder level translations are added: use this logic */
         // redirect to the new locale path
@@ -33,7 +45,7 @@ const LanguageSwitcher = () => {
                 currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
             );
         } */
-        router.refresh();
+        // router.refresh();
     };
 
     useEffect(() => {
@@ -100,12 +112,12 @@ const LanguageSwitcher = () => {
                 variants={variantsLang}
                 initial="closed"
                 style={{ display: isOpen ? 'block' : 'none' }}
-                className="w-48 list-none divide-y divide-greySolid-100 rounded bg-white text-base shadow hover:cursor-pointer  lg:absolute lg:top-14 lg:my-4"
+                className="w-48 list-none divide-y divide-greySolid-100 rounded bg-white text-base shadow hover:cursor-pointer lg:absolute lg:top-14 lg:my-4"
                 id="language-dropdown"
             >
                 <ul className="py-1" role="menu">
                     <li role="none">
-                        <a
+                        <span
                             tabIndex="1"
                             role="menuitem"
                             onClick={handleChange}
@@ -114,13 +126,11 @@ const LanguageSwitcher = () => {
                                     handleChange();
                             }}
                             className="block px-4 py-2 text-sm text-greySolid-600 hover:bg-greySolid-100 dark:text-greySolid-400 dark:hover:bg-greySolid-600 dark:hover:text-white"
-
-
                         >
                             <div className="inline-flex items-center">
                                 {currentLocale === 'en' ? 'German' : 'Englisch'}
                             </div>
-                        </a>
+                        </span>
                     </li>
                 </ul>
             </motion.div>
