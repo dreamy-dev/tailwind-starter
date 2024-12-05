@@ -252,6 +252,15 @@ export function middleware(request) {
         }
         return NextResponse.rewrite(request.nextUrl);
     }
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-current-url', request.url);
+
+    NextResponse.next({
+        request: {
+            // Apply new request headers
+            headers: requestHeaders,
+        },
+    });
 
     return i18nRouter(request, i18nConfig);
 }

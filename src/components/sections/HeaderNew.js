@@ -19,7 +19,7 @@ const variants = {
     },
 };
 
-const HeaderNew = ({ blok }) => {
+const HeaderNew = ({ blok, translatedSlugs }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const buttonRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -132,7 +132,10 @@ const HeaderNew = ({ blok }) => {
                             className="[--responsive-height:0px] [--responsive-opacity:0%] lg:[--responsive-height:80px] lg:[--responsive-opacity:100%]"
                         >
                             <hr className="bg-grey h-1 lg:hidden" />
-                            <TopNav blok={blok} />
+                            <TopNav
+                                translatedSlugs={translatedSlugs}
+                                blok={blok}
+                            />
                         </motion.div>
                         <div className="py-2 lg:flex lg:justify-between">
                             <div className="flex justify-between">
@@ -212,7 +215,7 @@ const HeaderNew = ({ blok }) => {
                                         paddingTop: 0,
                                     },
                                 }}
-                                className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-opacity:0%] [--responsive-min-height:0px] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-opacity:100%] lg:[--responsive-min-height:80px]"
+                                className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
                             >
                                 <ul className="flex flex-col lg:flex-row">
                                     {tabs.map((item) => (

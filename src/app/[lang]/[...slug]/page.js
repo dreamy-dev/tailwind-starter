@@ -11,7 +11,6 @@ storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
     use: [apiPlugin],
 });
-
 const isDev = 'development';
 export const revalidate = isDev ? 0 : 3600;
 
@@ -47,6 +46,7 @@ async function fetchData(slug, lang) {
     };
 
     const storyblokApi = getStoryblokApi();
+
     try {
         const { data } = await storyblokApi.get(
             `cdn/stories/${slug}`,
@@ -79,7 +79,9 @@ export async function generateStaticParams() {
     const { data } = await storyblokApi.get('cdn/links/', {
         version: 'published',
     });
+
     const paths = [];
+
     Object.keys(data.links).forEach((linkKey) => {
         if (
             data.links[linkKey].is_folder ||
@@ -93,7 +95,6 @@ export async function generateStaticParams() {
 
         paths.push({ slug: splittedSlug });
     });
-
     return paths;
 }
 
@@ -145,8 +146,16 @@ export default async function Detailpage({ params }) {
 
     const { story, config_footer, config_header } = data;
 
+    const translatedSlugs = {};
+
+    translatedSlugs['en'] = { lang: 'en', slug: story.default_full_slug };
+    story.translated_slugs.forEach((item) => {
+        translatedSlugs[item.lang] = { lang: item.lang, slug: item.path };
+    });
+
     return (
         <Layout
+            translatedSlugs={translatedSlugs}
             lang={lang}
             config_footer={config_footer}
             config_header={config_header}
