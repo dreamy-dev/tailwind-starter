@@ -4,7 +4,6 @@ import {
     apiPlugin,
     storyblokInit,
 } from '@storyblok/react/rsc';
-import i18nConfig from '../../../../i18nConfig';
 import Layout from '/src/components/sections/Layout';
 import { redirect } from 'next/navigation';
 
@@ -77,8 +76,8 @@ async function fetchData(slug, lang) {
 
 export async function generateStaticParams() {
     const storyblokApi = getStoryblokApi();
-    let { data } = await storyblokApi.get('cdn/links/', {
-        version: 'draft',
+    const { data } = await storyblokApi.get('cdn/links/', {
+        version: 'published',
     });
 
     const paths = [];
@@ -94,12 +93,7 @@ export async function generateStaticParams() {
         const slug = data.links[linkKey].slug;
         let splittedSlug = slug.split('/');
 
-        for (const locale of i18nConfig.locales) {
-            paths.push({
-                params: { slug: splittedSlug, slugFull: slug },
-                locale,
-            });
-        }
+        paths.push({ slug: splittedSlug });
     });
     return paths;
 }
