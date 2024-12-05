@@ -18,8 +18,6 @@ export function middleware(request) {
 
     const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
-    console.log('request.geo.country', request.nextUrl.pathname, request.geo);
-
     if (request.nextUrl.pathname == '/career') {
         switch (request.geo.country) {
             case 'CH':
