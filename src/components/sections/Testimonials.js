@@ -39,9 +39,9 @@ const Testimonials = ({ blok }) => {
                                 <span className="flex items-center">
                                     <img
                                         className="h-20 w-20 object-cover md:h-16 md:w-16"
-                                        src={item.image.filename}
+                                        src={item?.image?.filename}
                                         alt={
-                                            item.image.filename.alt ??
+                                            item?.image?.filename?.alt ??
                                             'profile picture'
                                         }
                                     />

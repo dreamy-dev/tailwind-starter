@@ -17,6 +17,7 @@ const DownloadItem = ({ blok }) => {
                     <Text>{blok?.Text}</Text>
                     <ButtonPrimary
                         position="right"
+                        target={blok?.CTA_link?.target}
                         buttonText={blok?.CTA_text}
                         href={ButtonUrlRenderer(blok?.CTA_link)}
                     />

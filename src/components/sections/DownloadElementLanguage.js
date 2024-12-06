@@ -8,6 +8,7 @@ function DownloadElementLanguage({ blok }) {
             tabIndex="1"
             {...storyblokEditable(blok)}
             className="mr-4 font-medium text-primary"
+            target={blok.buttonLink?.target}
             href={ButtonUrlRenderer(blok?.buttonLink)}
         >
             {blok?.buttonText}
