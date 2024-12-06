@@ -10,6 +10,8 @@ import H4 from '../typography/H4';
 import { ChevronLeft } from '../icons/ChevronLeft';
 import { ChevronRight } from '../icons/ChevronRight';
 import RichTextRenderer from '../helpers/RichTextRenderer';
+import i18nConfig from '/i18nConfig';
+import { useCurrentLocale } from 'next-i18n-router/client';
 
 const TestimonialMotionDiv = motion.div;
 
@@ -59,6 +61,7 @@ const Pagination = ({ total, current }) => {
 };
 
 const TestimonialsCarousel = ({ blok }) => {
+    const currentLocale = useCurrentLocale(i18nConfig) || 'en';
     const [current, setCurrent] = useState(0);
     const [showTrains, setShowTrains] = useState(false);
     const [highlightsCategory, setHighlightsCategory] = useState([]);
@@ -80,7 +83,9 @@ const TestimonialsCarousel = ({ blok }) => {
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': highlightReference,
                 per_page: 5,
+                language: currentLocale,
             });
+            console.log('setHighlightsCategory', data);
 
             setHighlightsCategory(() =>
                 data.stories.map((article) => {
@@ -108,6 +113,7 @@ const TestimonialsCarousel = ({ blok }) => {
                 starts_with: 'loesungen/',
                 is_startpage: false,
                 'filter_query[categories][any_in_array]': references,
+                language: currentLocale,
             });
 
             setReference(() =>
@@ -178,14 +184,14 @@ const TestimonialsCarousel = ({ blok }) => {
                                                         <img
                                                             src={
                                                                 article.content
-                                                                    .image
-                                                                    .filename
+                                                                    ?.image
+                                                                    ?.filename
                                                             }
                                                             alt={
                                                                 article.content
-                                                                    .image
-                                                                    .filename
-                                                                    .alt ??
+                                                                    ?.image
+                                                                    ?.filename
+                                                                    ?.alt ??
                                                                 `Image for ${blok?.title}`
                                                             }
                                                             className="h-full w-full object-cover"
@@ -199,15 +205,15 @@ const TestimonialsCarousel = ({ blok }) => {
                                                             <H3>
                                                                 {
                                                                     article
-                                                                        .content
-                                                                        .title
+                                                                        ?.content
+                                                                        ?.title
                                                                 }
                                                             </H3>
                                                             <RichTextRenderer
                                                                 text={
                                                                     article
-                                                                        .content
-                                                                        .lead
+                                                                        ?.content
+                                                                        ?.lead
                                                                 }
                                                                 styles="mb-6 mt-8 md:mb-10 mt-4 md:mt-8"
                                                             ></RichTextRenderer>
@@ -333,12 +339,12 @@ const TestimonialsCarousel = ({ blok }) => {
                                                 <img
                                                     className="aspect-[4/3] w-full"
                                                     src={
-                                                        train.content.image
-                                                            .filename
+                                                        train?.content?.image
+                                                            ?.filename
                                                     }
                                                     alt={
-                                                        train.content.image
-                                                            .alt ??
+                                                        train?.content?.image
+                                                            ?.alt ??
                                                         `Image for ${train.content.title}`
                                                     }
                                                 />

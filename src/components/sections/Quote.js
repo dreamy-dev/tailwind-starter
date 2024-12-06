@@ -30,8 +30,10 @@ export default function Quote({ blok }) {
                     <figcaption className="mt-8 flex items-center justify-center space-x-3">
                         <img
                             className="h-20 w-20 rounded-full object-cover"
-                            src={blok?.image.filename}
-                            alt={blok?.image.filename.alt ?? 'Profile picture'}
+                            src={blok?.image?.filename}
+                            alt={
+                                blok?.image?.filename?.alt ?? 'Profile picture'
+                            }
                         />
                         <div className="flex flex-col">
                             <div className="font-medium text-greySolid-800">
