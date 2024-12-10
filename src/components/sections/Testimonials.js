@@ -2,15 +2,15 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ContentWidth from '../layouts/ContentWidth';
+import SmallWidth from '../layouts/SmallWidth';
 
 const Testimonials = ({ blok }) => {
     const [selectedTab, setSelectedTab] = useState(blok.testimonial[0]);
 
     return (
         <section>
-            <ContentWidth>
-                <div className="col-span-12 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+            <SmallWidth>
+                <div className="col-span-12 px-4 py-10 sm:px-6 lg:px-24 lg:py-14">
                     <nav
                         className="mx-auto grid max-w-6xl grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3"
                         aria-label="Tabs"
@@ -36,20 +36,20 @@ const Testimonials = ({ blok }) => {
                                 role="tab"
                                 data-tabs-target="#europe"
                             >
-                                <span className="flex items-center">
+                                <span className="flex flex-col items-center justify-around">
                                     <img
-                                        className="h-20 w-20 object-cover md:h-16 md:w-16"
+                                        className="h-40 w-40 object-cover md:h-52 md:w-60"
                                         src={item?.image?.filename}
                                         alt={
                                             item?.image?.filename?.alt ??
                                             'profile picture'
                                         }
                                     />
-                                    <span className="ml-5 grow">
-                                        <span className="hs-tab-active:text-blue-600 block font-semibold text-greySolid-800">
+                                    <span className="grow md:mt-4">
+                                        <span className="hs-tab-active:text-blue-600 block text-center font-semibold text-greySolid-800 md:max-w-60">
                                             {item.name}
                                         </span>
-                                        <span className="mt-2 text-greySolid-800 lg:block">
+                                        <span className="mt-2 text-greySolid-800 md:max-w-60 lg:block">
                                             {item.job}
                                         </span>
                                     </span>
@@ -85,7 +85,7 @@ const Testimonials = ({ blok }) => {
                         </AnimatePresence>
                     </div>
                 </div>
-            </ContentWidth>
+            </SmallWidth>
         </section>
     );
 };
