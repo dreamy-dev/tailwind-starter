@@ -134,6 +134,13 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         data-blockingmode="auto"
                         type="text/javascript"
                     ></Script>
+                    <Script
+                        id="CookieDeclaration"
+                        src="
+https://consent.cookiebot.com/0a239956-1c77-43b1-8052-f4eae73923ff/cd.js"
+                        type="text/javascript"
+                        async
+                    ></Script>
                 </Head>
                 <body
                     className={
