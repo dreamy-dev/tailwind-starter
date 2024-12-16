@@ -1,6 +1,6 @@
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import StoryblokProvider from '/src/components/StoryblokProvider';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Script from 'next/script';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -110,7 +110,7 @@ export default function RootLayout({ children, params: { lang } }) {
     return (
         <StoryblokProvider>
             <html lang={lang}>
-                <Head>
+                <head>
                     <Script
                         id="Cookiebot"
                         src="
@@ -126,7 +126,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         type="text/javascript"
                         async
                     ></Script>
-                </Head>
+                </head>
                 <body
                     className={
                         fontStadler.className +
