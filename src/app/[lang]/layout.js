@@ -119,6 +119,14 @@ https://consent.cookiebot.com/uc.js"
                         data-blockingmode="auto"
                         type="text/javascript"
                     ></Script>
+
+                    {/* <Script
+                        id="CookieDeclaration"
+                        src="
+https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
+                        type="text/javascript"
+                        async
+                    ></Script> */}
                 </head>
                 <body
                     className={
@@ -126,19 +134,6 @@ https://consent.cookiebot.com/uc.js"
                         ' flex min-h-screen flex-col overflow-x-hidden'
                     }
                 >
-                    <Script async>
-                        {`
-                            var curUrl = window.location.href
-                            if (curUrl.includes("/cookies")) {
-                                const script = document.createElement('script');
-                                script.id = 'CookieDeclaration';
-                                script.async = true;
-                                script.src = 'https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js'
-
-                                document.head.appendChild(script);
-                            }
-                        `}
-                    </Script>
                     <Script async>
                         {`
                             var _mtm = window._mtm = window._mtm || [];
