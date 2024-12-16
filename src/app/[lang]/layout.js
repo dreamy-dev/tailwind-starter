@@ -111,8 +111,7 @@ export default function RootLayout({ children, params: { lang } }) {
         <StoryblokProvider>
             <html lang={lang}>
                 <Head>
-                    {/* <Script
-                    
+                    <Script
                         id="Cookiebot"
                         src="
 https://consent.cookiebot.com/uc.js"
@@ -126,7 +125,7 @@ https://consent.cookiebot.com/uc.js"
 https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                         type="text/javascript"
                         async
-                    ></Script> */}
+                    ></Script>
                 </Head>
                 <body
                     className={
