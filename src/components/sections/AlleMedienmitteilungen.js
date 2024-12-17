@@ -240,7 +240,6 @@ function AlleMedienmitteilungen({ blok }) {
                                         </a>
                                     </div>
                                     <div className="col-span-1 bg-primarySolid-50 px-6 pb-3 pt-4 font-medium text-black lg:col-span-3 lg:bg-white">
-                                        {/* {JSON.stringify(medienmitteilung.content.categories)} */}
                                         {medienmitteilung.content.categories.map(
                                             (category, index) =>
                                                 category.full_slug.includes(
