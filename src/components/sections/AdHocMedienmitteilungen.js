@@ -14,13 +14,17 @@ import i18nConfig from '/i18nConfig';
 function AdHocMedienmitteilungen({ blok }) {
     const [articles, setArticles] = useState([]);
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+    const apiURL =
+        currentLocale == 'en'
+            ? 'media/media-releases/'
+            : 'medien/medienmitteilungen/';
 
     useEffect(() => {
         const getArticles = async () => {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'medien/medienmitteilungen/',
+                starts_with: apiURL,
                 is_startpage: false,
                 resolve_relations: 'medienmitteilungen.categories',
                 sort_by: 'content.date:desc',
@@ -58,7 +62,8 @@ function AdHocMedienmitteilungen({ blok }) {
                                         src={article.content.image.filename}
                                         className="h-full w-full object-cover transition-all group-hover:scale-110"
                                         alt={
-                                            article.content.image.filename.alt ??
+                                            article.content.image.filename
+                                                .alt ??
                                             'Article Medienmitteilungen image'
                                         }
                                     />
