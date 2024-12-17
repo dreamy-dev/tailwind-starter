@@ -2,6 +2,7 @@
 import ContentWidth from '../layouts/ContentWidth';
 import React from 'react';
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react/rsc';
+import { usePathname } from 'next/navigation';
 
 import { useState, useEffect } from 'react';
 import H1 from '../typography/H1';
@@ -15,11 +16,16 @@ function AlleMedienmitteilungen({ blok }) {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
     const [search, setSearch] = useState('');
+    let router = usePathname();
+    router = router.replace(/\s/g, '');
+    const splitURL = router.split('/');
+    const slicedURL = splitURL.slice(2);
+    const apiURL = slicedURL.join('/');
 
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
     const apiRequest = {
         version: 'published',
-        starts_with: 'medien/medienmitteilungen/',
+        starts_with: apiURL,
         is_startpage: false,
         resolve_relations: ['medienmitteilungen.categories'],
         sort_by: 'content.date:desc',
@@ -181,7 +187,7 @@ function AlleMedienmitteilungen({ blok }) {
                 </ul>
             </div>
             <div className="col-span-12 w-full pb-24">
-                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 rtl:text-right lg:grid">
+                <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 lg:grid rtl:text-right">
                     {/* Header */}
                     <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_date_title}
