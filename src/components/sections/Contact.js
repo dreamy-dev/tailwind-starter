@@ -18,8 +18,8 @@ const Contact = ({ blok }) => {
                     <div className="w-full xl:col-span-4">
                         <img
                             className="h-auto w-full max-w-full object-cover object-right xl:h-[369px] xl:w-[320px] xl:max-w-[320px]"
-                            src={blok?.image.filename}
-                            alt={blok?.image.filename.alt ?? 'Contact image'}
+                            src={blok?.image?.filename}
+                            alt={blok?.image?.filename.alt ?? 'Contact image'}
                         />
                     </div>
                     <div className="w-full xl:col-span-8">

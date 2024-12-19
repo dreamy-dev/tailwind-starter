@@ -64,7 +64,7 @@ function NewsTeaser({ blok }) {
                                             className="h-full w-full object-cover transition-all group-hover:scale-110"
                                             alt={
                                                 article.content.image.filename
-                                                    .alt ?? 'NewsTeaser image'
+                                                    ?.alt ?? 'NewsTeaser image'
                                             }
                                         />
                                     </div>

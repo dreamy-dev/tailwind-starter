@@ -53,7 +53,7 @@ const Features = ({ blok }) => {
                             <img
                                 src={blok?.image_1.filename}
                                 alt={
-                                    blok?.image_1.filename.alt ??
+                                    blok?.image_1.filename?.alt ??
                                     'Feature Image'
                                 }
                                 className="h-[320px] w-full object-cover md:w-auto"
@@ -84,7 +84,7 @@ const Features = ({ blok }) => {
                                 height="auto"
                                 src={blok?.image_2.filename}
                                 alt={
-                                    blok?.image_2.filename.alt ??
+                                    blok?.image_2?.filename?.alt ??
                                     'Feature Image'
                                 }
                                 className="h-[320px] w-full object-cover md:w-auto"

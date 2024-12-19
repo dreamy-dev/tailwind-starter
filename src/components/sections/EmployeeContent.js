@@ -22,7 +22,7 @@ const EmployeeContent = ({ blok }) => {
                             className="h-auto w-full max-w-full object-right"
                             src={blok?.image.filename}
                             alt={
-                                blok?.image.filename.alt ??
+                                blok?.image?.filename?.alt ??
                                 `Image for ${blok?.title}`
                             }
                         />
