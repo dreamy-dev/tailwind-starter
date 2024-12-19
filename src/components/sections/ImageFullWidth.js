@@ -15,7 +15,7 @@ export default function ImageFullWidth({ blok }) {
                         width={'100%'}
                         loading="lazy"
                         src={blok?.image.filename}
-                        alt={blok?.image.filename.alt ?? 'Hero product image'}
+                        alt={blok?.image.filename?.alt ?? 'Hero product image'}
                     />
                 </div>
             </FullWidth>

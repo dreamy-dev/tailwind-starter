@@ -22,7 +22,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <img
                                 src={blok?.image_1.filename}
                                 alt={
-                                    blok?.image_1.filename.alt ??
+                                    blok?.image_1?.filename?.alt ??
                                     `Image for ${blok?.title_1}`
                                 }
                             />
@@ -61,7 +61,7 @@ const HomeSolutionsDoublePageTeaser = ({ blok }) => {
                             <img
                                 src={blok?.image_2.filename}
                                 alt={
-                                    blok?.image_2.filename.alt ??
+                                    blok?.image_2.filename?.alt ??
                                     `Image for ${blok?.title_2}`
                                 }
                             />

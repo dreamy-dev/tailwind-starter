@@ -62,8 +62,8 @@ function AdHocMedienmitteilungen({ blok }) {
                                         src={article.content.image.filename}
                                         className="h-full w-full object-cover transition-all group-hover:scale-110"
                                         alt={
-                                            article.content.image.filename
-                                                .alt ??
+                                            article.content.image?.filename
+                                                ?.alt ??
                                             'Article Medienmitteilungen image'
                                         }
                                     />
