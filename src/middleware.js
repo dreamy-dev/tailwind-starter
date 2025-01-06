@@ -94,10 +94,10 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/at/career';
                 }
                 return NextResponse.redirect(request.nextUrl);
-            /* case 'GB':
+            case 'GB':
                 //page only available in EN
                 request.nextUrl.pathname = '/en/gb/career';
-                return NextResponse.redirect(request.nextUrl); */
+                return NextResponse.redirect(request.nextUrl);
             case 'IT':
                 if (userLocale.includes('it')) {
                     request.nextUrl.pathname = '/en/it/carriera';
@@ -105,13 +105,13 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/it/career';
                 }
                 return NextResponse.redirect(request.nextUrl);
-            /* case 'NL':
+            case 'NL':
                 if (userLocale.includes('nl')) {
                     request.nextUrl.pathname = '/en/nl/carriere';
                 } else {
                     request.nextUrl.pathname = '/en/nl/career';
                 }
-                return NextResponse.redirect(request.nextUrl); */
+                return NextResponse.redirect(request.nextUrl);
             case 'SE':
                 if (userLocale.includes('se')) {
                     request.nextUrl.pathname = '/en/se/karriaer';
@@ -208,10 +208,10 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/at/career';
                 }
                 return NextResponse.redirect(request.nextUrl);
-            /* case 'GB':
+            case 'GB':
                 //page only available in EN
                 request.nextUrl.pathname = '/en/gb/career';
-                return NextResponse.redirect(request.nextUrl); */
+                return NextResponse.redirect(request.nextUrl);
             case 'IT':
                 if (userLocale.includes('it')) {
                     request.nextUrl.pathname = '/en/it/carriera';
@@ -219,13 +219,13 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/en/it/career';
                 }
                 return NextResponse.redirect(request.nextUrl);
-            /* case 'NL':
+            case 'NL':
                 if (userLocale.includes('nl')) {
                     request.nextUrl.pathname = '/en/nl/carriere';
                 } else {
                     request.nextUrl.pathname = '/en/nl/career';
                 }
-                return NextResponse.redirect(request.nextUrl); */
+                return NextResponse.redirect(request.nextUrl);
             case 'SE':
                 if (userLocale.includes('se')) {
                     request.nextUrl.pathname = '/en/se/karriaer';
@@ -322,10 +322,10 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/de/at/career';
                 }
                 return NextResponse.redirect(request.nextUrl);
-            /* case 'GB':
+            case 'GB':
                 //page only available in EN
                 request.nextUrl.pathname = '/de/gb/career';
-                return NextResponse.redirect(request.nextUrl); */
+                return NextResponse.redirect(request.nextUrl);
             case 'IT':
                 if (userLocale.includes('it')) {
                     request.nextUrl.pathname = '/de/it/carriera';
@@ -333,13 +333,13 @@ export function middleware(request) {
                     request.nextUrl.pathname = '/de/it/career';
                 }
                 return NextResponse.redirect(request.nextUrl);
-            /* case 'NL':
+            case 'NL':
                 if (userLocale.includes('nl')) {
                     request.nextUrl.pathname = '/de/nl/carriere';
                 } else {
                     request.nextUrl.pathname = '/de/nl/career';
                 }
-                return NextResponse.redirect(request.nextUrl); */
+                return NextResponse.redirect(request.nextUrl);
             case 'SE':
                 if (userLocale.includes('se')) {
                     request.nextUrl.pathname = '/de/se/karriaer';
