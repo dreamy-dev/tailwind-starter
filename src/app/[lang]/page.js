@@ -121,7 +121,7 @@ export async function generateMetadata({ params }) {
     };
 
     metadataCache[cacheKey] = metadata;
-    console.log('metadata', metadata);
+
     return metadata;
 }
 
