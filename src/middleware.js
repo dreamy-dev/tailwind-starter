@@ -18,9 +18,9 @@ export function middleware(request) {
 
     const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
-    console.log('request.nextUrl.pathname', request.nextUrl.pathname);
+    // console.log('request.nextUrl.pathname', request.nextUrl.pathname);
     if (request.nextUrl.pathname == '/career') {
-        console.log('request.geo.country', request.geo.country);
+        // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
                 if (userLocale.includes('fr')) {
@@ -134,7 +134,7 @@ export function middleware(request) {
             // otherwise redirect here to global folder
         }
     } else if (request.nextUrl.pathname == '/en/career') {
-        console.log('request.geo.country', request.geo.country);
+        // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
                 if (userLocale.includes('fr')) {
@@ -248,7 +248,7 @@ export function middleware(request) {
             // otherwise redirect here to global folder
         }
     } else if (request.nextUrl.pathname == '/de/karriere') {
-        console.log('request.geo.country', request.geo.country);
+        // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
                 if (userLocale.includes('fr')) {
