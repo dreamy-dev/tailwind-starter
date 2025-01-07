@@ -93,23 +93,30 @@ export async function generateMetadata({ params }) {
     const metatags = story.content.metatags || {};
     const title = metatags.title || 'Default Title';
     const description = metatags.description || 'Default Description';
+    const og_description = metatags.og_description || 'Default OG Description';
+    const og_title = metatags.og_title || 'Default OG Title';
+    const og_image = metatags.og_image || 'Default OG Image url';
+    const twitter_image = metatags.twitter_image || 'Default Image url';
+    const twitter_title = metatags.twitter_title || 'Default Twitter Title';
+    const twitter_description =
+        metatags.twitter_description || 'Default Twitter Description';
 
     const metadata = {
-        title: `${title} `,
+        title: title,
         description: description,
         robots: {
             index: true,
             follow: true,
         },
         openGraph: {
-            title: title,
-            description: description,
-            url: `/${story.slug}`,
+            og_title: og_title,
+            og_description: og_description,
+            og_image: og_image,
         },
         twitter: {
-            card: 'summary',
-            title: title,
-            description: description,
+            twitter_image: twitter_image,
+            twitter_title: twitter_title,
+            twitter_description: twitter_description,
         },
     };
 
