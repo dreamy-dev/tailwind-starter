@@ -109,19 +109,19 @@ export async function generateMetadata({ params }) {
             follow: true,
         },
         openGraph: {
-            og_title: og_title,
-            og_description: og_description,
-            og_image: og_image,
+            title: og_title,
+            description: og_description,
+            url: og_image,
         },
         twitter: {
-            twitter_image: twitter_image,
-            twitter_title: twitter_title,
-            twitter_description: twitter_description,
+            card: twitter_image,
+            title: twitter_title,
+            description: twitter_description,
         },
     };
 
     metadataCache[cacheKey] = metadata;
-
+    console.log('metadata', metadata);
     return metadata;
 }
 

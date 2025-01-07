@@ -138,6 +138,10 @@ export async function generateMetadata({ params }) {
     };
 }
 
+generateMetadata({ params: { slug: 'home', lang: 'en' } })
+    .then((metadata) => console.log(metadata))
+    .catch((error) => console.error(error));
+
 export default async function Detailpage({ params }) {
     const slug = Array.isArray(params?.slug) ? params.slug.join('/') : 'home';
     const lang = params.lang || 'en';
