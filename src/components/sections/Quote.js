@@ -23,7 +23,7 @@ export default function Quote({ blok }) {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-center text-3xl font-medium leading-relaxed text-greySolid-800">
+                        <p className="text-center text-lg lg:text-3xl font-medium leading-relaxed text-greySolid-800">
                             <q>{blok?.text}</q>
                         </p>
                     </blockquote>

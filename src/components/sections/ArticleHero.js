@@ -16,24 +16,24 @@ function ArticleHero({ block }) {
                 <H1>{block?.title}</H1>
             </div>
             <div className="mb-6 grid grid-cols-12 gap-6">
-                <div className="col-span-6">
+                <div className="col-span-8 flex flex-wrap items-center">
                     {block?.categories?.map((category, index) => {
                         if (
                             category.full_slug.includes('/news/') ||
                             category.full_slug.includes('/medienmitteilungen/')
                         ) {
                             return (
-                                <span
+                                <div
                                     key={index}
-                                    className="mb-2 mr-4 inline whitespace-nowrap border border-greySolid-400 px-4 py-2 text-xs text-greySolid-600 last-of-type:mr-0"
+                                    className="mb-2 w-full md:w-auto md:mr-2 md:mb-0 h-fit text-center md:text-left whitespace-nowrap border border-greySolid-400 px-4 py-2 text-xs text-greySolid-600 last-of-type:mr-0"
                                 >
                                     {category.content.category}
-                                </span>
+                                </div>
                             );
                         }
                     })}
                 </div>
-                <div className="align-right text-md col-span-6 text-right">
+                <div className="align-right text-md col-span-4 text-right">
                     <Text>{DateFormatter(block?.date)}</Text>
                 </div>
             </div>
