@@ -109,14 +109,14 @@ const TestimonialsCarousel = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-primarySolid-50 py-16 lg:py-24"
+            className="bg-primarySolid-50 py-16 lg:py-24 overflow-hidden"
         >
             <ContentWidth>
                 <div className="col-span-12 max-w-full 2xl:pl-0">
                     <div className="mb-4 flex items-center justify-center">
                         <H2>{blok?.title}</H2>
                     </div>
-                    <div className="flex flex-col items-center justify-between">
+                    <div className="flex flex-col items-center justify-between overflow-hidden">
                         <MotionConfig
                             transition={{
                                 duration: 0.7,
@@ -124,7 +124,7 @@ const TestimonialsCarousel = ({ blok }) => {
                             }}
                         >
                             <div className="relative flex w-full max-w-[100%] items-center">
-                                <motion.div className="flex max-w-[100%] flex-nowrap gap-6 lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
+                                <motion.div className="overflow-hidden flex max-w-[100%] flex-nowrap gap-6 lg:mx-[-10px] lg:my-[-10px] lg:px-[10px] lg:py-[10px]">
                                     {referenceSlider.map((article, idx) => (
                                         <TestimonialMotionDiv
                                             key={article.uuid}
