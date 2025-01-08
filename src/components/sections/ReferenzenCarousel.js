@@ -15,39 +15,6 @@ import { useCurrentLocale } from 'next-i18n-router/client';
 
 const TestimonialMotionDiv = motion.div;
 
-const images = [
-    {
-        name: 'Dallas Area Rapid Transit (DART) USA',
-        title: 'Ein Hybrid-FLIRT baut die Pendlerstrecke vom Flughafen Dallas aus ',
-        text: 'Im Juni 2019 orderte  Dallas Area Rapid Transit bei Stadler acht bi-modale Niederflurtriebzüge vom Modell FLIRT 160 für ihr Silverline-Projekt. Die Züge werden auf der Pendlerstrecke im Korridor zwischen Plano und dem nördlichen Teil des internationalen Flughafens Fort Worth in Dallas verkehren.',
-        img: '/train-c.jpg',
-    },
-    {
-        name: 'Dallas Area Rapid Transit (DART) USA',
-        title: 'Der Weltrekord-Zug: FLIRT Akku',
-        text: 'Der FLIRT Akku stellt den Weltrekord für die längste Fahrt mit einem Batterietriebzug auf. Lesen Sie mehr über die Rekord-Leistung.',
-        img: '/train-c.jpg',
-    },
-    {
-        name: 'Dallas Area Rapid Transit (DART) USA',
-        title: 'Im Land der längsten Zugstrecken',
-        text: 'Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.',
-        img: '/train-c.jpg',
-    },
-    {
-        name: 'Dallas Area Rapid Transit (DART) USA',
-        title: 'Im Land der längsten Zugstrecken',
-        text: 'Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.',
-        img: '/train-c.jpg',
-    },
-    {
-        name: 'Dallas Area Rapid Transit (DART) USA',
-        title: 'Im Land der längsten Zugstrecken',
-        text: 'Das Land der Langstrecken stellt für den Schienenverkehr seit je her eine Herausforderung dar. Lesen Sie mehr über die Stadler-Projekte in den USA.',
-        img: '/train-c.jpg',
-    },
-];
-
 const Pagination = ({ total, current }) => {
     return (
         <div className="flex justify-center text-sm font-medium text-greySolid-400">
@@ -87,7 +54,6 @@ const TestimonialsCarousel = ({ blok }) => {
                 per_page: 5,
                 language: currentLocale,
             });
-            console.log('setHighlightsCategory', data);
 
             setHighlightsCategory(() =>
                 data.stories.map((article) => {
