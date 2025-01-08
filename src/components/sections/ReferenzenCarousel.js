@@ -290,7 +290,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                             href={`/${train.full_slug}`}
                                         >
                                             <img
-                                                className="aspect-[4/3] w-full"
+                                                className="h-[200px] w-full object-cover lg:h-[300px]"
                                                 src={
                                                     train?.content?.image
                                                         ?.filename
