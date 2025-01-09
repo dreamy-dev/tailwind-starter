@@ -202,12 +202,4 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
             </html>
         </StoryblokProvider>
     );
-
-    // <Script
-    //   src="https://app.storyblok.com/f/storyblok-latest.js?t=OzCkp5jSdfLeMLs4g0rshAtt"
-    //   type="text/javascript"
-    // ></Script>;
-
-    // data - blok - c;
-    // data - blok - uid;
 }

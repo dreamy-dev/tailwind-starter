@@ -41,7 +41,7 @@ const Features = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24"
+            className="bg-white py-8 lg:py-24"
         >
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full bg-white">

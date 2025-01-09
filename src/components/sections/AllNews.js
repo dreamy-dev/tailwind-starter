@@ -85,7 +85,7 @@ function AllNews({ blok }) {
     };
 
     return (
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-24">
             <ContentWidth {...storyblokEditable(blok)}>
                 <div className="col-span-12 w-full">
                     <H2>{blok.title}</H2>

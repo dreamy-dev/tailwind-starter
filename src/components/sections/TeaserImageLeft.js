@@ -8,7 +8,7 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserImageLeft = ({ blok }) => {
     return (
-        <section {...storyblokEditable(blok)} className="py-16 lg:py-24">
+        <section {...storyblokEditable(blok)} className="py-8 lg:py-24">
             <SmallWidth>
                 <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
                     <img
