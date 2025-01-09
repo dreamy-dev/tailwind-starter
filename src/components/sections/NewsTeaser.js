@@ -61,10 +61,12 @@ function NewsTeaser({ blok }) {
                                 >
                                     <div className="h-52 overflow-hidden">
                                         <img
-                                            src={article.content.image.filename}
+                                            src={
+                                                article.content.image?.filename
+                                            }
                                             className="h-full w-full object-cover transition-all group-hover:scale-110"
                                             alt={
-                                                article.content.image.filename
+                                                article.content.image?.filename
                                                     ?.alt ?? 'NewsTeaser image'
                                             }
                                         />
