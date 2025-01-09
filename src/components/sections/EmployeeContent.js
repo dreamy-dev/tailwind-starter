@@ -1,6 +1,4 @@
-'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
-import ContentWidth from '../layouts/ContentWidth';
 import H1 from '../typography/H1';
 import SmallWidth from '../layouts/SmallWidth';
 import Lead from '../typography/Lead';
@@ -15,21 +13,22 @@ const EmployeeContent = ({ blok }) => {
                     <Lead className="richtext">{blok?.teaser}</Lead>
                 </SmallWidth>
             </section>
-            <section className="relative min-w-[100%] md:flex-row lg:min-w-[43%]">
-                <ContentWidth>
-                    <div className="col-span-12">
-                        <img
-                            className="h-auto w-full max-w-full object-right"
-                            src={blok?.image.filename}
-                            alt={
-                                blok?.image?.filename?.alt ??
-                                `Image for ${blok?.title}`
-                            }
-                        />
-                    </div>
-                </ContentWidth>
-            </section>
-            <TextSection blok={blok} />
+
+            <TextSection blok={blok} className="lg:py-8" />
+
+            <SmallWidth>
+                <div className="flex items-center justify-center justify-items-center">
+                    <img
+                        className="h-auto max-w-[400px] object-cover"
+                        src={blok?.image.filename}
+                        alt={
+                            blok?.image?.filename?.alt ??
+                            `Image for ${blok?.title}`
+                        }
+                    />
+                </div>
+            </SmallWidth>
+
             {blok.career_block.map((nestedBlok) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
             ))}
