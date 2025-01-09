@@ -10,9 +10,9 @@ const Testimonials = ({ blok }) => {
     return (
         <section>
             <SmallWidth>
-                <div className="col-span-12 px-4 py-10 sm:px-6 lg:px-24 lg:py-14">
+                <div className="col-span-12 px-0 py-10 sm:px-6 lg:px-0 lg:py-14">
                     <nav
-                        className="mx-auto grid max-w-6xl grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3"
+                        className="mx-auto grid max-w-6xl grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:items-start"
                         aria-label="Tabs"
                         id="myTab"
                         data-tabs-toggle="#myTabContent"
@@ -36,20 +36,20 @@ const Testimonials = ({ blok }) => {
                                 role="tab"
                                 data-tabs-target="#europe"
                             >
-                                <span className="flex flex-col items-center justify-around">
+                                <span className="flex items-center justify-around lg:flex-col">
                                     <img
-                                        className="h-40 w-40 object-cover md:h-52 md:w-60"
+                                        className="aspect-[4/3] w-1/3 object-cover lg:w-full"
                                         src={item?.image?.filename}
                                         alt={
                                             item?.image?.filename?.alt ??
                                             'profile picture'
                                         }
                                     />
-                                    <span className="grow md:mt-4">
-                                        <span className="hs-tab-active:text-blue-600 block text-center font-semibold text-greySolid-800 md:max-w-60">
+                                    <span className="ml-4 flex grow flex-col justify-start lg:ml-0 lg:mt-4">
+                                        <span className="hs-tab-active:text-blue-600 flex font-semibold text-greySolid-800 md:max-w-60 lg:justify-center">
                                             {item.name}
                                         </span>
-                                        <span className="mt-2 text-greySolid-800 md:max-w-60 lg:block">
+                                        <span className="mt-2 flex text-greySolid-800 md:max-w-60 lg:block lg:justify-center">
                                             {item.job}
                                         </span>
                                     </span>
@@ -71,9 +71,9 @@ const Testimonials = ({ blok }) => {
                                 transition={{ duration: 0.2 }}
                             >
                                 <div className="relative max-w-[1140px] lg:pb-12">
-                                    <figure className="relative z-[1] ml-auto mr-20 h-auto w-[50rem] max-w-full rounded-b-lg">
+                                    <figure className="relative z-[1] mx-auto ml-auto h-auto max-w-full rounded-b-lg lg:w-8/12">
                                         <div className="rounded-b-lg bg-white">
-                                            <blockquote className="my-4 border-l-4 border-greySolid-300 p-4">
+                                            <blockquote className="my-2 border-l-4 border-greySolid-300 p-4">
                                                 <p className="text-xl font-medium italic leading-relaxed text-greySolid-800">
                                                     "{selectedTab.quote}"
                                                 </p>
