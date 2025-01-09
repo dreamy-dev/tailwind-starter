@@ -1,6 +1,6 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
-import FullWidth from '../layouts/FullWidth';
+import ContentWidth from '../layouts/ContentWidth';
 import { useEffect } from 'react';
 
 export default function CookiebotDeclaration({ blok }) {
@@ -23,11 +23,11 @@ export default function CookiebotDeclaration({ blok }) {
             {...storyblokEditable(blok)}
             className="px-4 py-0 lg:px-0 lg:py-24"
         >
-            <FullWidth>
+            <ContentWidth>
                 <div className="col-span-12">
                     <div id="CookiebotDeclaration" />
                 </div>
-            </FullWidth>
+            </ContentWidth>
         </section>
     );
 }
