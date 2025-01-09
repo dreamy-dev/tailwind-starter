@@ -3,6 +3,7 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 function CertificateItem({ blok }) {
+    console.log('button_link', blok?.button_link)
     return (
         <a
             tabIndex="1"
