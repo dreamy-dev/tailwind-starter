@@ -110,7 +110,8 @@ import NotFoundError from './sections/NotFoundError';
 import CertificateItem from './sections/CertificateItem';
 import CookiebotDeclaration from './sections/CookiebotDeclaration';
 import SocialWallComponent from './sections/SocialWallComponent';
-
+import ComplienceGrid from './sections/ComplienceGrid';
+import ComplienceItem from './sections/ComplienceItem';
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -229,6 +230,8 @@ storyblokInit({
         error_404: NotFoundError,
         cookiebot_declaration: CookiebotDeclaration,
         social_wall: SocialWallComponent,
+        complience_grid: ComplienceGrid,
+        complience_item: ComplienceItem,
     },
 });
 
