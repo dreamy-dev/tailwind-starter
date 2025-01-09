@@ -27,6 +27,7 @@ const Jobs = ({ blok }) => {
                                 href={ButtonUrlRenderer(blok?.link_URL)}
                                 position="left"
                                 buttonText={blok?.link_CTA}
+                                target={blok?.link?.target ?? false}
                             />
                         </div>
                     </div>
@@ -38,6 +39,7 @@ const Jobs = ({ blok }) => {
                                 key={item.title}
                                 href={`${ButtonUrlRenderer(item.link)}?20=${item.entry_level}`}
                                 className="group relative overflow-hidden"
+                                target={item.link.target ?? false}
                             >
                                 <img
                                     className="h-80 w-full scale-100 object-cover duration-300 ease-in group-hover:scale-125"
