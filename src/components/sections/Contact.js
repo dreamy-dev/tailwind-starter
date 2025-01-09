@@ -61,7 +61,7 @@ const Contact = ({ blok }) => {
                             <div className="flex space-x-4 py-2">
                                 <Link
                                     tabIndex="1"
-                                    href={blok.social_media_link_2.url}
+                                    href={blok.social_media_link_2?.url}
                                     className="text-greySolid-600 hover:text-greySolid-400"
                                 >
                                     <span className="sr-only">LinkedIn</span>
