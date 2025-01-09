@@ -22,7 +22,7 @@ const HoverAnimationCards = ({ title, lead, list }) => {
                                     <img
                                         className="max-h-auto w-full object-contain"
                                         src={item.image}
-                                        alt={item.image.alt ?? item.title}
+                                        alt={item.image?.alt ?? item.title}
                                     />
                                 </a>
                                 <a

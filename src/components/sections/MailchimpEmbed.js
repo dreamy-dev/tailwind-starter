@@ -4,6 +4,8 @@ import Text from '../typography/Text';
 import H2 from '../typography/H2';
 import H3 from '../typography/H3';
 import { useState } from 'react';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '/i18nConfig';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 import { render } from 'storyblok-rich-text-react-renderer';
 
@@ -25,34 +27,47 @@ export default function MailchimpEmbed({ blok }) {
         isSelected: false,
     });
 
+    const currentLocale = useCurrentLocale(i18nConfig);
     const subscribeUser = async () => {
-        const url = `../api/mailchimp-subscribe?email=${email}&firma=${company}&firstName=${firstName}&lastName=${lastName}`;
+        const formData = new FormData();
 
-        const checkConnection = await fetch(url, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-        });
-        const attributes = await checkConnection.json();
+        formData.append('email', email);
+        formData.append('firma', company);
+        formData.append('firstName', firstName);
+        formData.append('lastName', 'lastName');
 
-        if (attributes.status == 'subscribed') {
-            setValidationSuccess(true);
-            setValidationError(false);
-            setValidationSubscribedError(false);
-            return false;
-        } else if (attributes.status == 400) {
-            setValidationSuccess(false);
-            setValidationError(true);
-            setValidationSubscribedError(true);
-            return false;
-        } else if (attributes.status) {
-            setValidationSuccess(false);
-            setValidationError(true);
-            setValidationSubscribedError(false);
-            return false;
-        } else {
+        try {
+            const checkConnection = await fetch(
+                `/${currentLocale}/api/mailchimp-subscribe`,
+                {
+                    method: 'post',
+                    body: formData,
+                }
+            );
+            const attributes = await checkConnection.json();
+
+            if (attributes.status == 'subscribed') {
+                setValidationSuccess(true);
+                setValidationError(false);
+                setValidationSubscribedError(false);
+                return false;
+            } else if (attributes.status == 400) {
+                setValidationSuccess(false);
+                setValidationError(true);
+                setValidationSubscribedError(true);
+                return false;
+            } else if (attributes.status) {
+                setValidationSuccess(false);
+                setValidationError(true);
+                setValidationSubscribedError(false);
+                return false;
+            } else {
+                setValidationSuccess(false);
+                setValidationError(true);
+                setValidationSubscribedError(false);
+            }
+        } catch (err) {
+            console.error('Submission failed:', err);
             setValidationSuccess(false);
             setValidationError(true);
             setValidationSubscribedError(false);

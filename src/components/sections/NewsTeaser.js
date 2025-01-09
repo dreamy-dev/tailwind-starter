@@ -15,6 +15,7 @@ import i18nConfig from '/i18nConfig';
 function NewsTeaser({ blok }) {
     const [articlesCategory, setArticlesCategory] = useState([]);
     const currentLocale = useCurrentLocale(i18nConfig) || 'en';
+    const apiURL = currentLocale == 'en' ? 'media/news/' : 'media/news/';
 
     useEffect(() => {
         const getArticles = async () => {
@@ -23,7 +24,7 @@ function NewsTeaser({ blok }) {
             const storyblokApi = getStoryblokApi();
             const { data } = await storyblokApi.get(`cdn/stories`, {
                 version: 'published',
-                starts_with: 'medien/news/',
+                starts_with: apiURL,
                 is_startpage: false,
                 resolve_relations: 'news.categories',
                 'filter_query[categories][any_in_array]': categories,
@@ -60,11 +61,13 @@ function NewsTeaser({ blok }) {
                                 >
                                     <div className="h-52 overflow-hidden">
                                         <img
-                                            src={article.content.image.filename}
+                                            src={
+                                                article.content.image?.filename
+                                            }
                                             className="h-full w-full object-cover transition-all group-hover:scale-110"
                                             alt={
-                                                article.content.image.filename
-                                                    .alt ?? 'NewsTeaser image'
+                                                article.content.image?.filename
+                                                    ?.alt ?? 'NewsTeaser image'
                                             }
                                         />
                                     </div>

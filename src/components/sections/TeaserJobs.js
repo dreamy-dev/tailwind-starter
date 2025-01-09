@@ -54,8 +54,6 @@ const Jobs = ({ blok }) => {
                                         </p>
                                     </div>
                                 </div>
-
-                                {/* {JSON.stringify(item.image)} */}
                             </a>
                         ))}
                     </div>

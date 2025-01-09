@@ -42,7 +42,7 @@ const ProspectiveCareer = ({ blok }) => {
                 var _paq = (window._paq = window._paq || []);
                 _paq.push([
                     'trackEvent',
-                    'Job Overview Engagement',
+                    '3. Klicks auf individuelle Jobprofile',
                     `${careerTitle} - ${careerLink}`,
                 ]);
             }
@@ -657,7 +657,7 @@ const ProspectiveCareer = ({ blok }) => {
             <SmallWidth>
                 <div className="col-span-12 grid">
                     <div
-                        className="grid grid-cols-4 justify-stretch gap-x-2 hover:cursor-pointer"
+                        className="grid grid-cols-4 justify-stretch gap-x-2 hover:cursor-pointer mt-20 lg:mt-0"
                         role="group"
                     >
                         <a
@@ -707,7 +707,7 @@ const ProspectiveCareer = ({ blok }) => {
                     <div className="col-span-12 grid">
                         <label
                             htmlFor="search"
-                            className="mb-2 block text-sm font-medium text-greySolid-800 "
+                            className="mb-2 block text-sm font-medium text-greySolid-800"
                         >
                             {blok.search_input_label}
                         </label>
@@ -724,7 +724,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries"
-                                className="mb-2 block text-sm font-medium text-greySolid-800 "
+                                className="mb-2 block text-sm font-medium text-greySolid-800"
                             >
                                 {blok.select_1_label}
                             </label>
@@ -759,7 +759,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries"
-                                className="mb-2 block text-sm font-medium text-greySolid-800 "
+                                className="mb-2 block text-sm font-medium text-greySolid-800"
                             >
                                 {blok.select_2_label}
                             </label>
@@ -795,7 +795,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries"
-                                className="mb-2 block text-sm font-medium text-greySolid-800 "
+                                className="mb-2 block text-sm font-medium text-greySolid-800"
                             >
                                 {blok.select_3_label}
                             </label>
@@ -832,7 +832,7 @@ const ProspectiveCareer = ({ blok }) => {
                         <div className="col-span-6 grid">
                             <label
                                 htmlFor="countries_disabled"
-                                className="mb-2 block text-sm font-medium text-greySolid-800 "
+                                className="mb-2 block text-sm font-medium text-greySolid-800"
                             >
                                 {blok.select_4_label}
                             </label>

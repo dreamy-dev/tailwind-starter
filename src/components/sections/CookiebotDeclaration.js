@@ -2,7 +2,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import FullWidth from '../layouts/FullWidth';
 
-export default function ImageFullWidth({ blok }) {
+export default function CookiebotDeclaration({ blok }) {
     return (
         <section
             {...storyblokEditable(blok)}
@@ -10,13 +10,12 @@ export default function ImageFullWidth({ blok }) {
         >
             <FullWidth>
                 <div className="col-span-12">
-                    <img
-                        className="object-cover lg:aspect-[2/1]"
-                        width={'100%'}
-                        loading="lazy"
-                        src={blok?.image.filename}
-                        alt={blok?.image.filename?.alt ?? 'Hero product image'}
-                    />
+                    <script
+                        id="CookieDeclaration"
+                        src="https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
+                        type="text/javascript"
+                        async
+                    ></script>
                 </div>
             </FullWidth>
         </section>

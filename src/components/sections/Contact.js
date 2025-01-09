@@ -1,11 +1,10 @@
-'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
-import H4 from '../typography/H4';
 import Text from '../typography/Text';
 import { MailIcon } from '../icons/MailIcon';
 import { PhoneIcon } from '../icons/PhoneIcon';
+import RichTextRenderer from '../helpers/RichTextRenderer';
 
 const Contact = ({ blok }) => {
     return (
@@ -18,8 +17,8 @@ const Contact = ({ blok }) => {
                     <div className="w-full xl:col-span-4">
                         <img
                             className="h-auto w-full max-w-full object-cover object-right xl:h-[369px] xl:w-[320px] xl:max-w-[320px]"
-                            src={blok?.image.filename}
-                            alt={blok?.image.filename.alt ?? 'Contact image'}
+                            src={blok?.image?.filename}
+                            alt={blok?.image?.filename.alt ?? 'Contact image'}
                         />
                     </div>
                     <div className="w-full xl:col-span-8">
@@ -30,8 +29,10 @@ const Contact = ({ blok }) => {
                             <Text>{blok?.text}</Text>
                         </div>
                         <div className="flex-col text-white">
-                            <div className="mb-4">
-                                <H4>{blok?.subtitle}</H4>
+                            <div className="mb-4 break-words text-base font-bold lg:text-xl">
+                                <RichTextRenderer
+                                    text={blok?.subtitle}
+                                ></RichTextRenderer>
                             </div>
                             <div className="mb-2 flex items-center">
                                 <PhoneIcon

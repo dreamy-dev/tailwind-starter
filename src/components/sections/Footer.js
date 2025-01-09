@@ -101,11 +101,11 @@ const Footer = ({ blok }) => {
                 href={blok.social_media_link_1.url}
                 className="text-greySolid-600 hover:text-greySolid-400"
             >
-                <span className="sr-only">Xing</span>
+                <span className="sr-only">Instagram</span>
                 <img
-                    src="/xing-icon.svg"
+                    src="/ohne-box/Instagram.svg"
                     className="h-6 w-6"
-                    alt="Connect with us on Xing"
+                    alt="Connect with us on Instagram"
                 />
             </Link>
         </div>
@@ -122,7 +122,7 @@ const Footer = ({ blok }) => {
                         <img
                             className="h-6"
                             src={blok.Logo.filename}
-                            alt={blok.Logo.filename.alt ?? 'Logo Company name'}
+                            alt={blok.Logo.filename?.alt ?? 'Logo Company name'}
                         />
                         <div className="sm:mt-0 lg:flex lg:items-center lg:justify-between">
                             <div className="mb-6 mt-12 lg:mb-0 lg:mr-14 lg:mt-0">

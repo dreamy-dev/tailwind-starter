@@ -108,6 +108,9 @@ import ConfigFooter from './sections/Config_footer';
 import ConfigHeader from './sections/Config_header';
 import NotFoundError from './sections/NotFoundError';
 import CertificateItem from './sections/CertificateItem';
+import CookiebotDeclaration from './sections/CookiebotDeclaration';
+import SocialWallComponent from './sections/SocialWallComponent';
+
 
 storyblokInit({
     accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -224,6 +227,8 @@ storyblokInit({
         config_footer: ConfigFooter,
         config_header: ConfigHeader,
         error_404: NotFoundError,
+        cookiebot_declaration: CookiebotDeclaration,
+        social_wall: SocialWallComponent,
     },
 });
 

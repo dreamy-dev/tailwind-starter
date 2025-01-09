@@ -126,7 +126,9 @@ const RichTextRenderer = (props) => {
                             case 4:
                                 return (
                                     <div className="mb-3 mt-5 first:mt-1">
-                                        <H4>{children}</H4>
+                                        <H4 styles="font-bold break-words text-base lg:text-xl">
+                                            {children}
+                                        </H4>
                                     </div>
                                 );
                         }
