@@ -1,8 +1,23 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import FullWidth from '../layouts/FullWidth';
+import { useEffect } from 'react';
 
 export default function CookiebotDeclaration({ blok }) {
+    useEffect(() => {
+        const cookieBotWrapper = document.getElementById(
+            'CookiebotDeclaration'
+        );
+        if (cookieBotWrapper) {
+            const script = document.createElement('script');
+            script.id = 'CookieDeclaration';
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = `https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js`;
+
+            cookieBotWrapper.appendChild(script);
+        }
+    }, []);
     return (
         <section
             {...storyblokEditable(blok)}
@@ -10,12 +25,7 @@ export default function CookiebotDeclaration({ blok }) {
         >
             <FullWidth>
                 <div className="col-span-12">
-                    <script
-                        id="CookieDeclaration"
-                        src="https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
-                        type="text/javascript"
-                        async
-                    ></script>
+                    <div id="CookiebotDeclaration" />
                 </div>
             </FullWidth>
         </section>
