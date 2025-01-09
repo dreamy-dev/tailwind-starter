@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/docs/:path*",
-      "destination": "https://a.storyblok.com/f/269997/x/:path*"
+      "destination": "https://a.storyblok.com/f/269997/:path*"
     }
   ],
   "headers": [
