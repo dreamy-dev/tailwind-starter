@@ -102,7 +102,7 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                     ) && (
                                                         <div
                                                             key={index}
-                                                            className="inline lg:block mr-2 lg:mr-0 lg:w-full mb-1 border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0 lg:whitespace-nowrap"
+                                                            className="inline lg:block mr-2 lg:mr-0 lg:w-full mb-1 border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0 "
                                                         >
                                                             {
                                                                 category.content
