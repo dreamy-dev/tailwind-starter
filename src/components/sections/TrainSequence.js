@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 const images = [
     '/carousel_final_1728_webp/Stadler_Carousel_000.png',
@@ -260,7 +262,7 @@ const ImageSequence = ({ category }) => {
             //     imageFormat = 'webp';
             // }
 
-            return createImage(window?.innerWidth < 786 ? imagesMobile[i] : images[i]);
+            return createImage((typeof window !== 'undefined' && window?.innerWidth < 786) ? imagesMobile[i] : images[i]);
         });
     }, []);
 

@@ -119,7 +119,7 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
     return (
         <>
             <motion.header
-                className={`fixed z-50 mb-40 w-full bg-white py-4 transition-all duration-500 ease-in-out lg:h-40 ${showHeader ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-full opacity-0'} ${showBorderAndShadow ? 'shadow-md' : 'shadow-none'}`}
+                className={`fixed z-50 w-full bg-white py-4 transition-all duration-500 ease-in-out lg:h-40 ${showHeader ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-full opacity-0'} ${showBorderAndShadow ? 'shadow-md' : 'shadow-none'}`}
                 initial="closed"
                 animate={isOpen ? 'open' : 'closed'}
             >
@@ -129,7 +129,7 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                             initial="closed"
                             animate={isOpen ? 'open' : 'closed'}
                             variants={variants}
-                            className="[--responsive-height:0px] [--responsive-opacity:0%] lg:[--responsive-height:80px] lg:[--responsive-opacity:100%]"
+                            className="overflow-hidden [--responsive-height:0px] [--responsive-opacity:0%] lg:[--responsive-height:80px] lg:[--responsive-opacity:100%]"
                         >
                             <hr className="bg-grey h-1 lg:hidden" />
                             <TopNav
@@ -215,7 +215,7 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                                         paddingTop: 0,
                                     },
                                 }}
-                                className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
+                                className="overflow-hidden flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
                             >
                                 <ul className="flex flex-col lg:flex-row">
                                     {tabs.map((item) => (
