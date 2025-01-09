@@ -154,7 +154,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                                         var _paq = (window._paq = window._paq || []);
                                         _paq.push([
                                             'trackEvent',
-                                            'Investor Relations - Events on the Page',
+                                            '7. Investorenseite Klicks',
                                             item.getAttribute("href"),
                                         ]);
                                     })
@@ -189,7 +189,7 @@ https://consent.cookiebot.com/cedf775e-624e-499c-a386-4629e677f18e/cd.js"
                                         var _paq = (window._paq = window._paq || []);
                                         _paq.push([
                                             'trackEvent',
-                                            'Documents Download',
+                                            '6. Dokumentendownload',
                                             hrefArray[hrefArray.length - 1]
                                         ]);
                                     }
