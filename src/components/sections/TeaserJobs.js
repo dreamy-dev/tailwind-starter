@@ -17,7 +17,7 @@ const Jobs = ({ blok }) => {
     }
     return (
         <section className="bg-white antialiased">
-            <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-24">
+            <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-24">
                 <div className="flex flex-col gap-8 sm:gap-12 xl:flex-row xl:items-start xl:gap-16">
                     <div>
                         <H2>{blok?.title}</H2>

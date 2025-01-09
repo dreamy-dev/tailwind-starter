@@ -7,7 +7,7 @@ import Text from '../typography/Text';
 
 const ServiceTeasersGrid = ({ blok }) => {
     return (
-        <section className="bg-white py-16 antialiased lg:py-24">
+        <section className="bg-white py-8 antialiased lg:py-24">
             <ContentWidth>
                 <div className="col-span-12">
                     <H2>{blok?.title}</H2>

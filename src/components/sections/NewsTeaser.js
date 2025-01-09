@@ -44,7 +44,7 @@ function NewsTeaser({ blok }) {
     }, []);
 
     return (
-        <section {...storyblokEditable(blok)} className="py-16 lg:py-24">
+        <section {...storyblokEditable(blok)} className="py-8 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12 w-full">
                     <H2>{blok.title}</H2>

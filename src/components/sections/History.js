@@ -9,7 +9,7 @@ import ContentWidth from '../../components/layouts/ContentWidth';
 
 const History = ({ blok }) => {
     return (
-        <section className="bg-white py-16 antialiased lg:py-24">
+        <section className="bg-white py-8 antialiased lg:py-24">
             <ContentWidth>
                 <div className="col-span-12" {...storyblokEditable(blok)}>
                     <div className="mx-auto max-w-3xl space-y-4 text-center">

@@ -6,7 +6,7 @@ import ContentWidth from '../layouts/ContentWidth';
 
 const FactsAndFiguresGrid = ({ blok }) => {
     return (
-        <section className="bg-primarySolid-50 py-16 lg:py-24">
+        <section className="bg-primarySolid-50 py-8 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full">
                     <H2 styles="text-center">{blok.title}</H2>

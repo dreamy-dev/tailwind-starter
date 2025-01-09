@@ -6,7 +6,7 @@ const SocialWallComponent = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="py-16 antialiased lg:py-24"
+            className="py-8 antialiased lg:py-24"
         >
             <ContentWidth>
                 <div className="col-span-12">

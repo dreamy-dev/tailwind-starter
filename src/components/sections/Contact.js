@@ -5,11 +5,12 @@ import Text from '../typography/Text';
 import { MailIcon } from '../icons/MailIcon';
 import { PhoneIcon } from '../icons/PhoneIcon';
 import RichTextRenderer from '../helpers/RichTextRenderer';
+import Link from 'next/link';
 
 const Contact = ({ blok }) => {
     return (
         <section
-            className="bg-stadlergradient py-16 lg:py-24"
+            className="bg-stadlergradient py-8 lg:py-24"
             {...storyblokEditable(blok)}
         >
             <SmallWidth>
@@ -43,7 +44,7 @@ const Contact = ({ blok }) => {
                                     {blok?.phonenumber}
                                 </span>
                             </div>
-                            <div className="flex items-center">
+                            <div className="mb-2 flex items-center">
                                 <MailIcon
                                     color="#fff"
                                     className="h-4 w-4 fill-white"
@@ -56,6 +57,56 @@ const Contact = ({ blok }) => {
                                 >
                                     {blok?.email}
                                 </a>
+                            </div>
+                            <div className="flex space-x-4 py-2">
+                                <Link
+                                    tabIndex="1"
+                                    href={blok.social_media_link_2.url}
+                                    className="text-greySolid-600 hover:text-greySolid-400"
+                                >
+                                    <span className="sr-only">LinkedIn</span>
+                                    <img
+                                        src="/LinkedIn.svg"
+                                        className="h-6 w-6"
+                                        alt="Follow us on LinkedIn"
+                                    />
+                                </Link>
+                                <Link
+                                    tabIndex="1"
+                                    href={blok.social_media_link_3.url}
+                                    className="text-greySolid-600 hover:text-greySolid-400"
+                                >
+                                    <span className="sr-only">YouTube</span>
+                                    <img
+                                        src="/youtube.svg"
+                                        className="h-6 w-6"
+                                        alt="Watch our videos on YouTube"
+                                    />
+                                </Link>
+                                <Link
+                                    tabIndex="1"
+                                    href={blok.social_media_link_4.url}
+                                    className="text-greySolid-600 hover:text-greySolid-400"
+                                >
+                                    <span className="sr-only">Facebook</span>
+                                    <img
+                                        src="/facebook.svg"
+                                        className="h-6 w-6"
+                                        alt="Like us on Facebook"
+                                    />
+                                </Link>
+                                <Link
+                                    tabIndex="1"
+                                    href={blok.social_media_link_1.url}
+                                    className="text-greySolid-600 hover:text-greySolid-400"
+                                >
+                                    <span className="sr-only">Instagram</span>
+                                    <img
+                                        src="/ohne-box/Instagram.svg"
+                                        className="h-6 w-6"
+                                        alt="Connect with us on Instagram"
+                                    />
+                                </Link>
                             </div>
                         </div>
                     </div>

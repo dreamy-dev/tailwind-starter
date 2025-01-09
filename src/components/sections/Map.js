@@ -10,7 +10,7 @@ export default function Map({ blok }) {
     return (
         <section {...storyblokEditable(blok)}>
             <FullWidth>
-                <div className="col-span-12 w-full bg-white py-16 lg:py-24">
+                <div className="col-span-12 w-full bg-white py-8 lg:py-24">
                     <SmallWidth>
                         <div className="mx-auto mb-2 max-w-4xl text-center text-4xl font-bold">
                             <H2>{blok.title}</H2>

@@ -347,7 +347,7 @@ const HeroCareer = ({ blok }) => {
             className="bg-greySolid-400 bg-cover bg-center bg-no-repeat bg-blend-multiply"
         >
             <SmallWidth>
-                <div className="z-1 relative col-span-12 mx-auto max-w-screen-xl py-16 text-white lg:py-24 lg:pb-12 lg:pt-80 xl:px-0">
+                <div className="z-1 relative col-span-12 mx-auto max-w-screen-xl py-8 text-white lg:py-24 lg:pb-12 lg:pt-80 xl:px-0">
                     <div className="mb-6 max-w-screen-md text-white lg:mb-0">
                         <H1>{blok?.title}</H1>
                         <div className="my-8 lg:mb-8">
@@ -356,9 +356,9 @@ const HeroCareer = ({ blok }) => {
                     </div>
                     <form
                         action="#"
-                        className="mb-5 mt-16 flex w-full flex-col items-center justify-between gap-4 bg-white p-4  lg:mt-9 lg:grid-cols-5 md:flex-row lg:gap-x-4"
+                        className="mb-5 mt-16 flex w-full flex-col items-center justify-between gap-4 bg-white p-4 md:flex-row lg:mt-9 lg:grid-cols-5 lg:gap-x-4"
                     >
-                        <div className="flex-grow gap-x-4 w-full md:w-fit">
+                        <div className="w-full flex-grow gap-x-4 md:w-fit">
                             <div className="relative">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                     <CalenderIcon
@@ -397,7 +397,7 @@ const HeroCareer = ({ blok }) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="flex-grow w-full md:w-fit">
+                        <div className="w-full flex-grow md:w-fit">
                             <label className="sr-only">Location</label>
                             <div className="relative">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
