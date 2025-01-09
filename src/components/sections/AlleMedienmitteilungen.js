@@ -79,7 +79,7 @@ function AlleMedienmitteilungen({ blok }) {
 
         const filterSearchParameters = {};
         if (categories.length > 0) {
-            filterSearchParameters['filter_query[categories][any_in_array]'] =
+            filterSearchParameters['filter_query[categories][all_in_array]'] =
                 categories.join(',');
         }
         if (search.length > 2) {
@@ -189,10 +189,10 @@ function AlleMedienmitteilungen({ blok }) {
             <div className="col-span-12 w-full pb-24">
                 <ul className="hidden w-full grid-cols-12 gap-4 bg-primarySolid-50 text-left text-sm text-greySolid-600 lg:grid rtl:text-right">
                     {/* Header */}
-                    <li className="col-span-1 px-6 py-3 text-xs font-bold uppercase text-black">
+                    <li className="col-span-2 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_date_title}
                     </li>
-                    <li className="col-span-5 px-6 py-3 text-xs font-bold uppercase text-black">
+                    <li className="col-span-4 px-6 py-3 text-xs font-bold uppercase text-black">
                         {blok.table_medienmitteilung_title}
                     </li>
                     <li className="col-span-3 px-6 py-3 text-xs font-bold uppercase text-black">
@@ -212,13 +212,13 @@ function AlleMedienmitteilungen({ blok }) {
                                 className="col-span-12 mb-4 border-b bg-white last:mb-0 lg:mb-0 lg:last:mb-0"
                             >
                                 <div className="grid grid-cols-1 items-center lg:grid-cols-12">
-                                    <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 text-base text-black lg:col-span-1 lg:bg-white">
+                                    <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 text-base text-black lg:col-span-2 lg:bg-white">
                                         {medienmitteilung.content?.date &&
                                             DateFormatter(
                                                 medienmitteilung.content.date
                                             )}
                                     </div>
-                                    <div className="col-span-1 px-6 py-4 font-medium text-primary lg:col-span-5">
+                                    <div className="col-span-1 px-6 py-4 font-medium text-primary lg:col-span-4">
                                         <a
                                             tabIndex="1"
                                             className="inline-block text-base"
