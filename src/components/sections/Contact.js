@@ -61,7 +61,7 @@ const Contact = ({ blok }) => {
                             <div className="flex space-x-4 py-2">
                                 <Link
                                     tabIndex="1"
-                                    href={blok.social_media_link_2?.url}
+                                    href={blok.social_media_link_2?.url ?? ''}
                                     className="text-greySolid-600 hover:text-greySolid-400"
                                 >
                                     <span className="sr-only">LinkedIn</span>
@@ -73,7 +73,7 @@ const Contact = ({ blok }) => {
                                 </Link>
                                 <Link
                                     tabIndex="1"
-                                    href={blok?.social_media_link_3?.url}
+                                    href={blok?.social_media_link_3?.url ?? ''}
                                     className="text-greySolid-600 hover:text-greySolid-400"
                                 >
                                     <span className="sr-only">YouTube</span>
@@ -85,7 +85,7 @@ const Contact = ({ blok }) => {
                                 </Link>
                                 <Link
                                     tabIndex="1"
-                                    href={blok?.social_media_link_4?.url}
+                                    href={blok?.social_media_link_4?.url ?? ''}
                                     className="text-greySolid-600 hover:text-greySolid-400"
                                 >
                                     <span className="sr-only">Facebook</span>
@@ -97,7 +97,7 @@ const Contact = ({ blok }) => {
                                 </Link>
                                 <Link
                                     tabIndex="1"
-                                    href={blok?.social_media_link_1?.url}
+                                    href={blok?.social_media_link_1?.url ?? ''}
                                     className="text-greySolid-600 hover:text-greySolid-400"
                                 >
                                     <span className="sr-only">Instagram</span>
