@@ -12,7 +12,7 @@ const HeroText = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24"
+            className="bg-white pb-8 pt-24 lg:py-24 lg:pt-0"
         >
             <SmallWidth>
                 <Breadcrumbs />

@@ -8,7 +8,7 @@ import Text from '../typography/Text';
 const QualityFeatureGridExtended = ({ blok }) => {
     return (
         <section
-            className="bg-stadlergradient py-16 lg:py-24"
+            className="bg-stadlergradient py-8 lg:py-24"
             {...storyblokEditable(blok)}
         >
             <ContentWidth>

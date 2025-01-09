@@ -1,4 +1,3 @@
-'use client';
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 import SmallWidth from '../layouts/SmallWidth';
 import H2 from '../typography/H2';
@@ -8,7 +7,7 @@ const AccordionGrid = ({ blok }) => {
         <section
             id={blok.anchor}
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24"
+            className="bg-white py-8 lg:py-24"
         >
             <SmallWidth>
                 <div className="mx-auto max-w-screen-xl">

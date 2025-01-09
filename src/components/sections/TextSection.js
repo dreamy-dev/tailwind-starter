@@ -2,11 +2,11 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import SmallWidth from '../../components/layouts/SmallWidth';
 import RichTextRenderer from '../helpers/RichTextRenderer';
 
-export default function TextSection({ blok }) {
+export default function TextSection({ blok, className = '' }) {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24"
+            className={`bg-white py-8 lg:py-24 ${className}`}
         >
             <SmallWidth>
                 <RichTextRenderer text={blok.text} />

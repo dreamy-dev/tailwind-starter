@@ -7,7 +7,7 @@ import Text from '../typography/Text';
 
 const CorporateGorvernanceGrid = ({ blok }) => {
     return (
-        <section className="bg-white py-16  lg:py-24">
+        <section className="bg-white py-8 lg:py-24">
             <SuperSmallWidth>
                 <div className="col-span-12 mx-auto mb-2 text-center lg:mb-4">
                     <H2>{blok?.title}</H2>
