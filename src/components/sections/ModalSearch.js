@@ -168,7 +168,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
     return (
         <div
             ref={modalRef}
-            className={`absolute right-0 top-0 col-span-12 w-[100%] shadow-md transition-all duration-500 sm:w-[450px] md:w-[710px] lg:top-10 ${
+            className={`absolute right-0 top-0 col-span-12 w-[100%] transition-all duration-500 sm:w-[450px] md:w-[710px] lg:top-10 lg:shadow-md ${
                 isModalOpen
                     ? 'z-20 max-h-[600px] scale-100 transform opacity-100'
                     : 'z-[-1] max-h-0 scale-95 transform overflow-hidden opacity-0'
@@ -176,7 +176,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
         >
             <div
                 ref={contentRef}
-                className="relative h-full bg-transparent shadow lg:bg-white"
+                className="relative h-full bg-transparent lg:bg-white lg:shadow"
             >
                 <div className="flex items-center justify-between border-b p-3 pt-2 md:p-3 lg:p-4 lg:pt-4">
                     <div className="hidden h-5 w-7 pr-2 lg:block">
@@ -200,7 +200,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
                     </label>
                 </div>
 
-                <div className="h-[385px] overflow-y-scroll">
+                <div className="h-[385px] overflow-y-scroll bg-white">
                     <div className="flex flex-col">
                         {articles.map((article) => (
                             <div
