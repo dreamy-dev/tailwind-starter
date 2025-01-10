@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
   const { slug } = params;
-
   // Construct the Storyblok asset URL
   const storyblokUrl = `https://a.storyblok.com/f/269997/${slug.join('/')}`;
 
