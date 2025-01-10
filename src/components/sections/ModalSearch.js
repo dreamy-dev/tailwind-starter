@@ -168,7 +168,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
     return (
         <div
             ref={modalRef}
-            className={`absolute right-0 top-0 col-span-12 w-[100%] transition-all duration-500 sm:w-[450px] md:w-[710px] lg:top-10 lg:shadow-md ${
+            className={`absolute right-0 top-0 col-span-12 w-[100%] transition-all duration-500 md:w-[768px] lg:top-10 lg:shadow-md ${
                 isModalOpen
                     ? 'z-20 max-h-[600px] scale-100 transform opacity-100'
                     : 'z-[-1] max-h-0 scale-95 transform overflow-hidden opacity-0'
