@@ -168,7 +168,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
     return (
         <div
             ref={modalRef}
-            className={`absolute right-0 top-10 col-span-12 w-[100%] shadow-md transition-all duration-500 sm:w-[450px] md:w-[710px] ${
+            className={`absolute right-0 top-0 col-span-12 w-[100%] shadow-md transition-all duration-500 sm:w-[450px] md:w-[710px] lg:top-10 ${
                 isModalOpen
                     ? 'z-20 max-h-[600px] scale-100 transform opacity-100'
                     : 'z-[-1] max-h-0 scale-95 transform overflow-hidden opacity-0'
@@ -178,7 +178,7 @@ const ModalSearch = ({ isModalOpen, closeModal, buttonRef }) => {
                 ref={contentRef}
                 className="relative h-full bg-transparent shadow lg:bg-white"
             >
-                <div className="flex items-center justify-between border-b p-4 md:p-5">
+                <div className="flex items-center justify-between border-b p-3 md:p-3 lg:p-4">
                     <div className="hidden h-5 w-7 pr-2 lg:block">
                         <SearchIcon
                             className="h-5 w-5 fill-primary"
