@@ -9,7 +9,7 @@ storyblokInit({
     use: [apiPlugin],
 });
 
-let per_page = 100;
+let per_page = 1000;
 let currentPage = 1;
 let links = {};
 
