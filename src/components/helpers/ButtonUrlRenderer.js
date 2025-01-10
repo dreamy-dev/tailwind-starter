@@ -10,8 +10,7 @@ const ButtonUrlRenderer = (data) => {
     }
     if (data.linktype && data.linktype == 'asset') {
         if (data.url) {
-            // return data?.url || '/';
-            return data?.url.replace('https://a.storyblok.com/f/269997/', 'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/api/docs/') || '/';
+            return data?.url.replace('https://a.storyblok.com/f/269997/', `${process.env.BASE_URL}/api/docs/`) || '/';
         }
         if (data.fieldtype) {
             return data?.filename || '/';
