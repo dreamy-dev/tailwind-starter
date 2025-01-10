@@ -1,5 +1,6 @@
 'use client';
 import { storyblokEditable } from '@storyblok/react/rsc';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 function MedienmitteilungDownloadLink({ blok }) {
     return (
@@ -7,7 +8,7 @@ function MedienmitteilungDownloadLink({ blok }) {
             tabIndex="1"
             {...storyblokEditable(blok)}
             className="mr-4 w-6 text-primary"
-            href={blok?.download_link.url}
+            href={ButtonUrlRenderer(blok?.download_link.url)}
         >
             {blok?.download_title}
         </a>
