@@ -51,7 +51,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                     target="_blank"
                     ref={investorsDE}
                     className="font-medium text-primary"
-                    href={ButtonUrlRenderer(blok?.download_bericht.url)}
+                    href={ButtonUrlRenderer(blok?.download_bericht)}
                     rel="noreferrer"
                 >
                     {blok?.CTA_download_bericht}
@@ -63,7 +63,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                     target="_blank"
                     ref={investorsEN}
                     className="font-medium text-primary"
-                    href={ButtonUrlRenderer(blok?.download_presentation.url)}
+                    href={ButtonUrlRenderer(blok?.download_presentation)}
                     rel="noreferrer"
                 >
                     {blok?.CTA_download_presentation}
