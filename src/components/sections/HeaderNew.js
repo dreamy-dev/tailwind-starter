@@ -215,7 +215,7 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                                         paddingTop: 0,
                                     },
                                 }}
-                                className="flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:overflow-hidden lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
+                                className={`${!isModalOpen ? 'overflow-hidden' : ''} flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]`}
                             >
                                 <ul className="flex flex-col pt-4 lg:flex-row lg:pb-0 lg:pt-0">
                                     {tabs.map((item) => (
