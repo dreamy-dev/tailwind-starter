@@ -14,14 +14,6 @@ const nextConfig = {
             '@react-email/tailwind',
         ],
     },
-    // async rewrites() {
-    //     return [
-    //         {
-    //             source: '/api/docs/:path*', // get everything after /api/docs
-    //             destination: `https://a.storyblok.com/f/269997/:path*`, // send it to your API
-    //         },
-    //     ];
-    // },
 };
 
 module.exports = nextConfig;
