@@ -40,6 +40,7 @@ export default [
             'no-constant-binary-expression': 'off',
             'react/no-unescaped-entities': 'off',
             'react/no-string-refs': 'off',
+            'react/no-unknown-property': 'off',
         },
     },
 ];

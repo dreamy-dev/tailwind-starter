@@ -17,7 +17,7 @@ const Jobs = ({ blok }) => {
     }
     return (
         <section className="bg-white antialiased">
-            <div className="mx-auto max-w-screen-xl px-4 py-16 lg:px-6 lg:py-24">
+            <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-24">
                 <div className="flex flex-col gap-8 sm:gap-12 xl:flex-row xl:items-start xl:gap-16">
                     <div>
                         <H2>{blok?.title}</H2>
@@ -27,6 +27,7 @@ const Jobs = ({ blok }) => {
                                 href={ButtonUrlRenderer(blok?.link_URL)}
                                 position="left"
                                 buttonText={blok?.link_CTA}
+                                target={blok?.link?.target ?? false}
                             />
                         </div>
                     </div>
@@ -38,6 +39,7 @@ const Jobs = ({ blok }) => {
                                 key={item.title}
                                 href={`${ButtonUrlRenderer(item.link)}?20=${item.entry_level}`}
                                 className="group relative overflow-hidden"
+                                target={item.link.target ?? false}
                             >
                                 <img
                                     className="h-80 w-full scale-100 object-cover duration-300 ease-in group-hover:scale-125"
@@ -54,8 +56,6 @@ const Jobs = ({ blok }) => {
                                         </p>
                                     </div>
                                 </div>
-
-                                {/* {JSON.stringify(item.image)} */}
                             </a>
                         ))}
                     </div>

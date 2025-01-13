@@ -25,7 +25,7 @@ const AccordionLocations = ({ blok }) => {
                         <p className="mb-3 mr-4 inline-flex items-center bg-primaryTrans-100 px-2 py-1 text-xs font-light tracking-tight text-greySolid-800">
                             {blok.tag_division.map((country, index) => (
                                 <span key={index}>
-                                    {country.content.category}
+                                    {country?.content?.category}
                                 </span>
                             ))}
                         </p>
@@ -99,6 +99,10 @@ const AccordionLocations = ({ blok }) => {
                                 <div className="mb-2 flex items-center justify-start text-primary">
                                     <PinIcon />
                                     <a
+                                        target={
+                                            blok.link_google_maps?.target ??
+                                            false
+                                        }
                                         tabIndex="1"
                                         className="cursor-pointer"
                                         href={blok?.link_google_maps?.url}
@@ -109,11 +113,16 @@ const AccordionLocations = ({ blok }) => {
                                     </a>
                                 </div>
                             </div>
-                            <img
-                                src={blok?.image?.filename}
-                                className="flex md:w-3/12"
-                                alt={blok.image.alt ?? 'Stadler Office image'}
-                            />
+                            {blok?.image?.filename && (
+                                <img
+                                    src={blok?.image?.filename}
+                                    className="flex md:w-3/12"
+                                    alt={
+                                        blok?.image?.alt ??
+                                        'Stadler Office image'
+                                    }
+                                />
+                            )}
                         </div>
                         <div className="mb-2 pt-8 text-black">
                             <RichTextRenderer text={blok?.text} />

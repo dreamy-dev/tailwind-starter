@@ -10,7 +10,7 @@ export default function Video({ blok }) {
     return (
         <div
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24 2xl:mx-auto 2xl:max-w-[1760px]"
+            className="bg-white py-8 lg:py-24 2xl:mx-auto 2xl:max-w-[1760px]"
         >
             <FullWidth>
                 <div className="col-span-12 flex flex-col items-center justify-between lg:flex-row">
@@ -23,6 +23,8 @@ export default function Video({ blok }) {
                             muted={true}
                             src={blok.video.filename}
                             loop={true}
+                            playsInline={true}
+                            webkit-playsinline={true}
                         />
                     </div>
                     <div className="m-auto w-[90%] lg:w-1/3 lg:px-4 xl:px-20">

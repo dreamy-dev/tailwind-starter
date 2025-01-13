@@ -4,7 +4,7 @@ import H2 from '../typography/H2';
 import ContentWidth from '../layouts/ContentWidth';
 
 const AdvantagesGrid = ({ blok }) => (
-    <section className="bg-greySolid-30 py-16 lg:py-24">
+    <section className="bg-greySolid-30 py-8 lg:py-24">
         <ContentWidth>
             <div className="col-span-12 mb-8 lg:mb-16">
                 <H2>{blok.title}</H2>

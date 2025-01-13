@@ -15,9 +15,9 @@ export default function Intro({ blok }) {
                         <div className="mt-8 grid grid-cols-2 gap-4">
                             <img
                                 className="h-96 scale-100 object-cover object-left"
-                                src={blok?.image.filename}
+                                src={blok?.image?.filename}
                                 alt={
-                                    blok?.image.filename.alt ??
+                                    blok?.image?.filename?.alt ??
                                     `Office content for ${blok?.title}`
                                 }
                             />

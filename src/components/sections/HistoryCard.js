@@ -10,7 +10,9 @@ export default function HistoryCard({ blok }) {
         >
             <img
                 className="h-auto w-full"
-                alt={blok.image.filename.alt ?? `History image ${blok?.title}`}
+                alt={
+                    blok.image?.filename?.alt ?? `History image ${blok?.title}`
+                }
                 loading="lazy"
                 src={blok?.image.filename}
             />

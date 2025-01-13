@@ -57,10 +57,13 @@ const HomeSolutionsSchienenfahrzeugeWrapper = ({ blok }) => {
                                     } flex cursor-pointer flex-col items-center text-center font-semibold lg:px-4`}
                                     onClick={() => (
                                         setIsOpen(
-                                            selectedCategory === key &&
-                                                isOpen === false
+                                            isOpen === true &&
+                                                selectedCategory !== key
                                                 ? true
-                                                : false
+                                                : selectedCategory === key &&
+                                                    isOpen === false
+                                                  ? true
+                                                  : false
                                         ),
                                         setSelectedCategory(key)
                                     )}

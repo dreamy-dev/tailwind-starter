@@ -30,16 +30,18 @@ export default function Submenu({
                     href={ButtonUrlRenderer(mainLinkUrl)}
                     className="lg:text-primary"
                 >
-                    <p className="hidden font-normal lg:block">
+                    <p className="text-primarySolid py-1 pl-4 font-normal lg:py-0 lg:pl-0">
                         {mainSubmenuText}
                     </p>
-                    <p className="lg:text-lg lg:text-primary">{mainLinkText}</p>
+                    <p className="hidden lg:block lg:text-lg lg:text-primary">
+                        {mainLinkText}
+                    </p>
                 </a>
             </div>
-            <motion.div className="flex flex-col lg:grid lg:w-2/12 lg:content-center">
+            <motion.div className="flex flex-col pb-2 lg:grid lg:w-2/12 lg:content-center lg:pb-0">
                 <a
                     tabIndex="1"
-                    className="lg:flex lg:justify-between lg:py-4 lg:text-primarySolid-600 lg:hover:text-primary"
+                    className="py-1 pl-4 font-normal lg:flex lg:justify-between lg:py-4 lg:pl-0 lg:font-semibold lg:text-primarySolid-600 lg:hover:text-primary"
                     href={ButtonUrlRenderer(subLinkOne)}
                 >
                     <p>{subLinkTextOne}</p>
@@ -50,7 +52,7 @@ export default function Submenu({
                 </a>
                 <a
                     tabIndex="1"
-                    className="lg:flex lg:justify-between lg:py-4 lg:text-primarySolid-600 lg:hover:text-primary"
+                    className="py-1 pl-4 font-normal lg:flex lg:justify-between lg:py-4 lg:pl-0 lg:font-semibold lg:text-primarySolid-600 lg:hover:text-primary"
                     href={ButtonUrlRenderer(subLinkTwo)}
                 >
                     <p>{subLinkTextTwo}</p>
@@ -62,7 +64,7 @@ export default function Submenu({
                 {subLinkThree ? (
                     <a
                         tabIndex="1"
-                        className="lg:flex lg:justify-between lg:py-4 lg:text-primarySolid-600 lg:hover:text-primary"
+                        className="py-1 pl-4 font-normal lg:flex lg:justify-between lg:py-4 lg:pl-0 lg:font-semibold lg:text-primarySolid-600 lg:hover:text-primary"
                         href={ButtonUrlRenderer(subLinkThree)}
                     >
                         <p>{subLinkTextThree}</p>

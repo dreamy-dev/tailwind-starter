@@ -9,7 +9,7 @@ storyblokInit({
     use: [apiPlugin],
 });
 
-let per_page = 100;
+let per_page = 1000;
 let currentPage = 1;
 let links = {};
 
@@ -35,8 +35,8 @@ export default async function sitemap() {
         const data = response.data;
         links = data.links;
 
-        const BaseUrl =
-            'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app/';
+        const BaseUrl = `${process.env.BASE_URL}/`;
+
         const paths = [];
         const langToFilter = ['en', 'de'];
 

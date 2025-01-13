@@ -96,7 +96,7 @@ const HomePageCaroucel = ({ items, carouselTitle }) => {
                                                 className="aspect-[4/3] w-full object-cover"
                                                 src={card.img}
                                                 alt={
-                                                    card.img.alt ??
+                                                    card?.img?.alt ??
                                                     'Train image'
                                                 }
                                             />

@@ -20,8 +20,8 @@ const Features = ({ blok }) => {
                         var _paq = (window._paq = window._paq || []);
                         _paq.push([
                             'trackEvent',
-                            'Actions from Product Page',
-                            `Signalling - Action from Product Page`,
+                            '4. Signalling und Service Klicks von Produkteseite',
+                            `Signalling`,
                         ]);
                     });
                 }
@@ -30,8 +30,8 @@ const Features = ({ blok }) => {
                         var _paq = (window._paq = window._paq || []);
                         _paq.push([
                             'trackEvent',
-                            'Actions from Product Page',
-                            `Service - Action from Product Page`,
+                            '4. Signalling und Service Klicks von Produkteseite',
+                            `Service`,
                         ]);
                     });
                 }
@@ -41,7 +41,7 @@ const Features = ({ blok }) => {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24"
+            className="bg-white py-8 lg:py-24"
         >
             <ContentWidth>
                 <div className="col-span-12 mx-auto max-w-full bg-white">
@@ -53,7 +53,7 @@ const Features = ({ blok }) => {
                             <img
                                 src={blok?.image_1.filename}
                                 alt={
-                                    blok?.image_1.filename.alt ??
+                                    blok?.image_1.filename?.alt ??
                                     'Feature Image'
                                 }
                                 className="h-[320px] w-full object-cover md:w-auto"
@@ -84,7 +84,7 @@ const Features = ({ blok }) => {
                                 height="auto"
                                 src={blok?.image_2.filename}
                                 alt={
-                                    blok?.image_2.filename.alt ??
+                                    blok?.image_2?.filename?.alt ??
                                     'Feature Image'
                                 }
                                 className="h-[320px] w-full object-cover md:w-auto"

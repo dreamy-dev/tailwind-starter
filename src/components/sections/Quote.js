@@ -7,7 +7,7 @@ export default function Quote({ blok }) {
     return (
         <section
             {...storyblokEditable(blok)}
-            className="bg-white py-16 lg:py-24"
+            className="bg-white py-8 lg:py-24"
         >
             <SmallWidth>
                 <figure className="mx-auto max-w-screen-lg">
@@ -23,15 +23,17 @@ export default function Quote({ blok }) {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-center text-3xl font-medium leading-relaxed text-greySolid-800">
+                        <p className="text-center text-lg font-medium leading-relaxed text-greySolid-800 lg:text-3xl">
                             <q>{blok?.text}</q>
                         </p>
                     </blockquote>
                     <figcaption className="mt-8 flex items-center justify-center space-x-3">
                         <img
                             className="h-20 w-20 rounded-full object-cover"
-                            src={blok?.image.filename}
-                            alt={blok?.image.filename.alt ?? 'Profile picture'}
+                            src={blok?.image?.filename}
+                            alt={
+                                blok?.image?.filename?.alt ?? 'Profile picture'
+                            }
                         />
                         <div className="flex flex-col">
                             <div className="font-medium text-greySolid-800">

@@ -7,8 +7,8 @@ const ProductCard = ({ blok }) => (
     <li className="" {...storyblokEditable(blok)}>
         <H4 styles="mb-4">{blok.title}</H4>
         <img
-            src={blok.image.filename}
-            alt={blok.image.filename.alt ?? `Image for ${blok.title}`}
+            src={blok.image?.filename}
+            alt={blok.image?.filename?.alt ?? `Image for ${blok.title}`}
             className="h-auto w-full object-cover object-center"
         />
         <div className="pr-0">

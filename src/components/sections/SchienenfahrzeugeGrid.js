@@ -7,7 +7,7 @@ import Text from '../typography/Text';
 
 const SchienenfahrzeugeGrid = ({ blok }) => {
     return (
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12 pb-12 text-white lg:col-span-6">
                     <H2>{blok?.title}</H2>

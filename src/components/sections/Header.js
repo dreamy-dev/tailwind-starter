@@ -198,7 +198,7 @@ const Header = ({ blok }) => {
                             <img
                                 src={blok.Logo.filename}
                                 className="h-4 sm:h-6"
-                                alt={blok.Logo.filename.alt ?? 'Stadler Logo'}
+                                alt={blok.Logo?.filename?.alt ?? 'Stadler Logo'}
                             />
                         </Link>
 

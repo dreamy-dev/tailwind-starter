@@ -10,7 +10,7 @@ export default function Map({ blok }) {
     return (
         <section {...storyblokEditable(blok)}>
             <FullWidth>
-                <div className="col-span-12 w-full bg-white py-16 lg:py-24">
+                <div className="col-span-12 w-full bg-white py-8 lg:py-24">
                     <SmallWidth>
                         <div className="mx-auto mb-2 max-w-4xl text-center text-4xl font-bold">
                             <H2>{blok.title}</H2>
@@ -31,18 +31,14 @@ export default function Map({ blok }) {
                             <img
                                 className="h-auto w-full"
                                 src={blok.map.filename}
-                                alt={blok.map.filename.alt ?? 'Map image'}
+                                alt={blok.map.filename?.alt ?? 'Map image'}
                             />
                         </div>
-                        <div className="flex-column static w-full pl-6 pt-8 md:flex lg:pl-20">
-                            <div className="flex-column mb-8 w-full items-start justify-start md:w-1/3">
+                        <div className="flex-column static w-full items-center pl-6 pt-8 md:flex lg:pl-20">
+                            <div className="w-full items-center justify-start md:w-1/3">
                                 <div className="flex items-center justify-start">
                                     <div className="mr-3 h-3 w-3 rounded-full bg-map-dark"></div>
                                     <div>{blok.legend_text1}</div>
-                                </div>
-                                <div className="flex items-center justify-start">
-                                    <div className="mr-3 h-3 w-3 rounded-full bg-map-light"></div>
-                                    <div>{blok.legend_text2}</div>
                                 </div>
                             </div>
 

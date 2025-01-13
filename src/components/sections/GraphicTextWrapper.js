@@ -22,7 +22,7 @@ const GraphicTextWrapper = ({ blok }) => {
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_one_icon.filename}
                                 alt={
-                                    blok.step_one_icon.filename.alt ??
+                                    blok.step_one_icon.filename?.alt ??
                                     `Icon for ${blok?.title}`
                                 }
                             />
@@ -40,7 +40,7 @@ const GraphicTextWrapper = ({ blok }) => {
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_two_icon.filename}
                                 alt={
-                                    blok.step_two_icon.filename.alt ??
+                                    blok.step_two_icon?.filename?.alt ??
                                     `Icon for ${blok?.title}`
                                 }
                             />
@@ -58,7 +58,7 @@ const GraphicTextWrapper = ({ blok }) => {
                                 className="mr-3 mt-0.5 h-6 w-6"
                                 src={blok?.step_three_icon.filename}
                                 alt={
-                                    blok.step_three_icon.filename.alt ??
+                                    blok.step_three_icon?.filename?.alt ??
                                     `Icon for ${blok?.title}`
                                 }
                             />

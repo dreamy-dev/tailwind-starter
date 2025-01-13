@@ -6,7 +6,7 @@ import H2 from '../typography/H2';
 
 const ReportsGrid = ({ blok }) => {
     return (
-        <section className="bg-primarySolid-50 py-16 lg:py-24">
+        <section className="bg-primarySolid-50 py-8 lg:py-24">
             <ContentWidth>
                 <div className="col-span-12">
                     <div className="mb-8 text-start">

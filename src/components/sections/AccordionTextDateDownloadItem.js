@@ -1,6 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { useEffect, useRef } from 'react';
 import DateFormatter from '../helpers/DateFormatter';
+import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const AccordionTextDateDownloadItem = ({ blok }) => {
     const investorsDE = useRef();
@@ -16,7 +17,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             const title = titleArray[titleArray.length - 1];
             _paq.push([
                 'trackEvent',
-                'Investor Relations Publication',
+                '5. Investorenseite Publikationsdownload',
                 `${title}`,
             ]);
             // _paq.push([
@@ -32,7 +33,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
             const title = titleArray[titleArray.length - 1];
             _paq.push([
                 'trackEvent',
-                'Investor Relations Publication',
+                '5. Investorenseite Publikationsdownload',
                 `${blok?.title} - ${title}`,
             ]);
         });
@@ -50,7 +51,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                     target="_blank"
                     ref={investorsDE}
                     className="font-medium text-primary"
-                    href={blok?.download_bericht.url}
+                    href={ButtonUrlRenderer(blok?.download_bericht)}
                     rel="noreferrer"
                 >
                     {blok?.CTA_download_bericht}
@@ -62,7 +63,7 @@ const AccordionTextDateDownloadItem = ({ blok }) => {
                     target="_blank"
                     ref={investorsEN}
                     className="font-medium text-primary"
-                    href={blok?.download_presentation.url}
+                    href={ButtonUrlRenderer(blok?.download_presentation)}
                     rel="noreferrer"
                 >
                     {blok?.CTA_download_presentation}

@@ -85,7 +85,7 @@ function AllNews({ blok }) {
     };
 
     return (
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-24">
             <ContentWidth {...storyblokEditable(blok)}>
                 <div className="col-span-12 w-full">
                     <H2>{blok.title}</H2>
@@ -189,10 +189,12 @@ function AllNews({ blok }) {
                                 >
                                     <div className="h-52 overflow-hidden">
                                         <img
-                                            src={article.content.image.filename}
+                                            src={
+                                                article.content.image?.filename
+                                            }
                                             className="h-full w-full object-cover transition-all group-hover:scale-110"
                                             alt={
-                                                article.content.image.filename
+                                                article.content.image?.filename
                                                     .alt ?? 'News Article image'
                                             }
                                         />
