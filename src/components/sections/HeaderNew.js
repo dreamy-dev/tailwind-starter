@@ -215,9 +215,9 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                                         paddingTop: 0,
                                     },
                                 }}
-                                className="overflow-hidden flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]"
+                                className={`${!isModalOpen ? 'overflow-hidden' : ''} flex flex-col justify-start font-semibold text-primarySolid-800 [--responsive-height:0px] [--responsive-min-height:0px] [--responsive-opacity:0%] lg:mt-0 lg:flex-row lg:space-y-0 lg:[--responsive-height:80px] lg:[--responsive-min-height:80px] lg:[--responsive-opacity:100%]`}
                             >
-                                <ul className="flex flex-col lg:flex-row">
+                                <ul className="flex flex-col pt-4 lg:flex-row lg:pb-0 lg:pt-0">
                                     {tabs.map((item) => (
                                         <li key={item}>
                                             <div
@@ -225,11 +225,15 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                                                 onClick={() =>
                                                     handleTabClick(item)
                                                 }
-                                                className="py-2 hover:cursor-pointer lg:px-4 lg:py-0"
+                                                className="lg:text-md flex justify-between py-3 text-lg hover:cursor-pointer lg:px-4 lg:py-0"
                                             >
                                                 {item === 'company'
                                                     ? blok.main_link_1_text
                                                     : blok.main_link_2_text}
+                                                <img
+                                                    src="/icons/chevron-right.svg"
+                                                    className={`${activeTab === item ? 'rotate-90' : ''} block w-4 transition-all lg:hidden`}
+                                                />
                                             </div>
                                             <AnimatePresence mode="wait">
                                                 {activeTab === item && (
@@ -297,7 +301,7 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                                 </ul>
                                 <Link
                                     tabIndex="1"
-                                    className="py-2 lg:px-4 lg:py-0"
+                                    className="lg:text-md py-3 text-lg lg:px-4 lg:py-0"
                                     href={ButtonUrlRenderer(
                                         blok.main_link_3_link
                                     )}
@@ -306,7 +310,7 @@ const HeaderNew = ({ blok, translatedSlugs }) => {
                                 </Link>
                                 <Link
                                     tabIndex="1"
-                                    className="py-2 lg:px-4 lg:py-0"
+                                    className="lg:text-md py-3 text-lg lg:px-4 lg:py-0"
                                     href={ButtonUrlRenderer(
                                         blok.main_link_4_link
                                     )}
