@@ -128,6 +128,8 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                                                         href={ButtonUrlRenderer(
                                                                             item?.cta_asset
                                                                         )}
+                                                                        target="_blank"
+                                                                        rel="noreferrer"
                                                                         key={
                                                                             index
                                                                         }

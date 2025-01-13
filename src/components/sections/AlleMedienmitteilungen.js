@@ -269,6 +269,8 @@ function AlleMedienmitteilungen({ blok }) {
                                                                     href={ButtonUrlRenderer(
                                                                         item?.cta_asset
                                                                     )}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
                                                                     key={index}
                                                                     className="ml-3 inline-flex font-medium first-of-type:ml-0"
                                                                 >
