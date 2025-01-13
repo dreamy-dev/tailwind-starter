@@ -57,7 +57,7 @@ function AdHocMedienmitteilungen({ blok }) {
                                 className="group mb-6 transition-all"
                                 key={article.uuid}
                             >
-                                <div className="flex h-52 items-center overflow-hidden">
+                                <div className="flex h-52 items-center justify-center overflow-hidden">
                                     <img
                                         src={
                                             article.content?.image?.filename ??
