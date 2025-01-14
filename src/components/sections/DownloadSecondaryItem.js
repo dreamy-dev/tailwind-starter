@@ -25,6 +25,8 @@ const DownloadSecondaryItem = ({ blok }) => {
                                     key={i}
                                     className="ml-4 inline-flex pb-2 pt-2 text-base text-primary"
                                     href={ButtonUrlRenderer(item?.cta_asset)}
+                                    target="_blank"
+                                    rel="noreferrer"
                                 >
                                     {item?.cta_text}
                                 </a>
