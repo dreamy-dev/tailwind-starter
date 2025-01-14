@@ -148,9 +148,6 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                             </div>
                                         </div>
                                     </div>
-                                ) : (
-                                    <></>
-                                )
                             ))}
                     </div>
 
