@@ -1,5 +1,5 @@
 const H3 = ({ styles, children, resetStyles, onClick }) => {
-    const defaultStyles = 'font-bold text-xl lg:text-2xl';
+    const defaultStyles = 'font-bold text-xl lg:text-2xl hyphens-none';
     const conditionalStyles = resetStyles ? '' : 'mb-4 lg:mb-6';
     const H3Styles =
         `${defaultStyles} ${conditionalStyles} ${styles || ''}`.trim();

@@ -38,6 +38,8 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
         };
         getMedienmitteilungen();
     }, []);
+
+    console.log('medienmitteilungen', medienmitteilungen)
     return (
         <section
             {...storyblokEditable(blok)}
@@ -62,8 +64,9 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                     </ul>
                     <div className="blok my-4 w-full border-b lg:hidden"></div>
                     <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 rtl:text-right">
-                        {medienmitteilungen[0] &&
+                        {medienmitteilungen[0] && 
                             medienmitteilungen.map((item) => (
+
                                 <div
                                     key={item.uuid}
                                     className="col-span-12 mb-4 border-b bg-white last:mb-0 lg:mb-0 lg:last:mb-0"
@@ -112,39 +115,39 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                                             )}
                                         </div>
 
-                                        <div className="col-span-1 flex items-center justify-start px-6 py-4 text-primary lg:col-span-3 lg:justify-end">
-                                            {item.content.downloads_block?.map(
-                                                (downloadBlock) =>
-                                                    downloadBlock.download_grid?.map(
-                                                        (downloadGrid) =>
-                                                            downloadGrid.download_list?.map(
-                                                                (
-                                                                    item,
-                                                                    index
-                                                                ) => (
-                                                                    <a
-                                                                        tabIndex="1"
-                                                                        href={ButtonUrlRenderer(
-                                                                            item?.cta_asset
-                                                                        )}
-                                                                        target="_blank"
-                                                                        rel="noreferrer"
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="ml-3 inline-flex font-medium first-of-type:ml-0"
-                                                                    >
-                                                                        {
-                                                                            item?.cta_text
-                                                                        }
-                                                                    </a>
+                                            <div className="col-span-1 flex items-center justify-start px-6 py-4 text-primary lg:col-span-3 lg:justify-end">
+                                                {item.content.downloads_block?.map(
+                                                    (downloadBlock) =>
+                                                        downloadBlock.download_grid?.map(
+                                                            (downloadGrid) =>
+                                                                downloadGrid.download_list?.map(
+                                                                    (
+                                                                        item,
+                                                                        index
+                                                                    ) => (
+                                                                        <a
+                                                                            tabIndex="1"
+                                                                            href={ButtonUrlRenderer(
+                                                                                item?.cta_asset
+                                                                            )}
+                                                                            target="_blank"
+                                                                            rel="noreferrer"
+                                                                            key={
+                                                                                index
+                                                                            }
+                                                                            className="ml-3 inline-flex font-medium first-of-type:ml-0"
+                                                                        >
+                                                                            {
+                                                                                item?.cta_text
+                                                                            }
+                                                                        </a>
+                                                                    )
                                                                 )
-                                                            )
-                                                    )
-                                            )}
+                                                        )
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             ))}
                     </div>
 
