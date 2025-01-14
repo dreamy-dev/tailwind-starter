@@ -151,7 +151,7 @@ const TestimonialsCarousel = ({ blok }) => {
                                                             ?.filename?.alt ??
                                                         `Image for ${blok?.title}`
                                                     }
-                                                    className="h-full w-full object-cover"
+                                                    className="w-full h-auto object-cover"
                                                 />
                                             </a>
                                             <div className="flex flex-col justify-between p-10 leading-normal">

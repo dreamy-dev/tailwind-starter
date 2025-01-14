@@ -38,6 +38,8 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
         };
         getMedienmitteilungen();
     }, []);
+
+    console.log('medienmitteilungen', medienmitteilungen)
     return (
         <section
             {...storyblokEditable(blok)}
@@ -62,90 +64,94 @@ const MedienMedienmitteilungenTeaser = ({ blok }) => {
                     </ul>
                     <div className="blok my-4 w-full border-b lg:hidden"></div>
                     <div className="grid w-full grid-cols-12 text-left text-sm text-greySolid-600 rtl:text-right">
-                        {medienmitteilungen[0] &&
+                        {medienmitteilungen[0] && 
                             medienmitteilungen.map((item) => (
-                                <div
-                                    key={item.uuid}
-                                    className="col-span-12 mb-4 border-b bg-white last:mb-0 lg:mb-0 lg:last:mb-0"
-                                >
-                                    <div className="grid grid-cols-1 items-center lg:grid-cols-12">
-                                        <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-2
-                                         lg:bg-white">
-                                            {DateFormatter(item.content.date)}
-                                        </div>
-                                        <div className="col-span-1 cursor-pointer px-6 py-4 font-medium text-primary lg:col-span-4">
-                                            <a
-                                                tabIndex="1"
-                                                className="inline-block"
-                                                href={`/${item.full_slug}`}
-                                            >
-                                                {item.content.title}
-                                            </a>
-                                            <a
-                                                tabIndex="1"
-                                                className="mt-4 block lg:hidden"
-                                                href={`/${item.full_slug}`}
-                                            >
-                                                <img
-                                                    alt={`Icon arrow forward for  ${item.content.title}`}
-                                                    width="20"
-                                                    height="20"
-                                                    src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
-                                                />
-                                            </a>
-                                        </div>
-                                        <div className="flex flex-wrap col-span-1 bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-3 lg:bg-white">
-                                            {item.content.categories.map(
-                                                (category, index) =>
-                                                    category.full_slug.includes(
-                                                        'categories/medienmitteilungen'
-                                                    ) && (
-                                                        <div
-                                                            key={index}
-                                                            className="inline lg:block mr-2 lg:mr-0  mb-1 border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0 "
-                                                        >
-                                                            {
-                                                                category.content
-                                                                    .category
-                                                            }
-                                                        </div>
-                                                    )
-                                            )}
-                                        </div>
+                                item.content.categories ? (
+                                    <div
+                                        key={item.uuid}
+                                        className="col-span-12 mb-4 border-b bg-white last:mb-0 lg:mb-0 lg:last:mb-0"
+                                    >
+                                        <div className="grid grid-cols-1 items-center lg:grid-cols-12">
+                                            <div className="col-span-1 whitespace-nowrap bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-2
+                                            lg:bg-white">
+                                                {DateFormatter(item.content.date)}
+                                            </div>
+                                            <div className="col-span-1 cursor-pointer px-6 py-4 font-medium text-primary lg:col-span-4">
+                                                <a
+                                                    tabIndex="1"
+                                                    className="inline-block"
+                                                    href={`/${item.full_slug}`}
+                                                >
+                                                    {item.content.title}
+                                                </a>
+                                                <a
+                                                    tabIndex="1"
+                                                    className="mt-4 block lg:hidden"
+                                                    href={`/${item.full_slug}`}
+                                                >
+                                                    <img
+                                                        alt={`Icon arrow forward for  ${item.content.title}`}
+                                                        width="20"
+                                                        height="20"
+                                                        src="/ohne-box/arrow_forward_FILL0_wght400_GRAD0_opsz24_blue.svg"
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-wrap col-span-1 bg-primarySolid-50 px-6 py-4 font-medium text-black lg:col-span-3 lg:bg-white">
+                                                {item.content.categories?.map(
+                                                    (category, index) =>
+                                                        category.full_slug.includes(
+                                                            'categories/medienmitteilungen'
+                                                        ) && (
+                                                            <div
+                                                                key={index}
+                                                                className="inline lg:block mr-2 lg:mr-0  mb-1 border border-greySolid-400 px-2 py-1 text-xs text-greySolid-600 last-of-type:mr-0 "
+                                                            >
+                                                                {
+                                                                    category.content
+                                                                        .category
+                                                                }
+                                                            </div>
+                                                        )
+                                                )}
+                                            </div>
 
-                                        <div className="col-span-1 flex items-center justify-start px-6 py-4 text-primary lg:col-span-3 lg:justify-end">
-                                            {item.content.downloads_block?.map(
-                                                (downloadBlock) =>
-                                                    downloadBlock.download_grid?.map(
-                                                        (downloadGrid) =>
-                                                            downloadGrid.download_list?.map(
-                                                                (
-                                                                    item,
-                                                                    index
-                                                                ) => (
-                                                                    <a
-                                                                        tabIndex="1"
-                                                                        href={ButtonUrlRenderer(
-                                                                            item?.cta_asset
-                                                                        )}
-                                                                        target="_blank"
-                                                                        rel="noreferrer"
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="ml-3 inline-flex font-medium first-of-type:ml-0"
-                                                                    >
-                                                                        {
-                                                                            item?.cta_text
-                                                                        }
-                                                                    </a>
+                                            <div className="col-span-1 flex items-center justify-start px-6 py-4 text-primary lg:col-span-3 lg:justify-end">
+                                                {item.content.downloads_block?.map(
+                                                    (downloadBlock) =>
+                                                        downloadBlock.download_grid?.map(
+                                                            (downloadGrid) =>
+                                                                downloadGrid.download_list?.map(
+                                                                    (
+                                                                        item,
+                                                                        index
+                                                                    ) => (
+                                                                        <a
+                                                                            tabIndex="1"
+                                                                            href={ButtonUrlRenderer(
+                                                                                item?.cta_asset
+                                                                            )}
+                                                                            target="_blank"
+                                                                            rel="noreferrer"
+                                                                            key={
+                                                                                index
+                                                                            }
+                                                                            className="ml-3 inline-flex font-medium first-of-type:ml-0"
+                                                                        >
+                                                                            {
+                                                                                item?.cta_text
+                                                                            }
+                                                                        </a>
+                                                                    )
                                                                 )
-                                                            )
-                                                    )
-                                            )}
+                                                        )
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                ) : (
+                                    <></>
+                                )
                             ))}
                     </div>
 
