@@ -19,10 +19,10 @@ const TeaserSuccessStories = ({ blok }) => {
                                 tabIndex="1"
                                 key={ButtonUrlRenderer(item?.link)}
                                 href={ButtonUrlRenderer(item?.link)}
-                                className="group relative overflow-hidden"
+                                className="group relative h-80 overflow-hidden"
                             >
                                 <img
-                                    className="h-80 scale-100 object-cover duration-300 ease-in group-hover:scale-125"
+                                    className="min-h-full min-w-full scale-100 object-cover duration-300 ease-in group-hover:scale-125"
                                     src={item?.image.filename}
                                     alt={
                                         item?.image?.filename?.alt ?? item?.name
