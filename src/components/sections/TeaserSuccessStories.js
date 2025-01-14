@@ -5,6 +5,15 @@ import Text from '../typography/Text';
 import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 
 const TeaserSuccessStories = ({ blok }) => {
+    function optimizeImage(image) {
+        if (!image.filename) return null;
+
+        let imageSource = image.filename + `/m/372x320`;
+
+        if (image.focus) imageSource += `/filters:focal(${image.focus})`;
+
+        return imageSource;
+    }
     return (
         <section className="bg-white antialiased">
             <SmallWidth>
@@ -23,7 +32,7 @@ const TeaserSuccessStories = ({ blok }) => {
                             >
                                 <img
                                     className="min-h-full min-w-full scale-100 object-cover duration-300 ease-in group-hover:scale-125"
-                                    src={item?.image.filename}
+                                    src={optimizeImage(item?.image)}
                                     alt={
                                         item?.image?.filename?.alt ?? item?.name
                                     }
