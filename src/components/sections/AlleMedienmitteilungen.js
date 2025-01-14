@@ -15,6 +15,7 @@ const filters = { country: '', category: '', product: '', year: '' };
 function AlleMedienmitteilungen({ blok }) {
     const [medienmitteilungen, setMedienmitteilungen] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState(filters);
+    // const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
     let router = usePathname();
     router = router.replace(/\s/g, '');
@@ -30,6 +31,8 @@ function AlleMedienmitteilungen({ blok }) {
         resolve_relations: ['medienmitteilungen.categories'],
         sort_by: 'content.date:desc',
         language: currentLocale,
+        // page: page,
+        // per_page: 25,
     };
 
     const onSearchChange = (e) => {
@@ -286,6 +289,11 @@ function AlleMedienmitteilungen({ blok }) {
                                 </div>
                             </div>
                         ))}
+                </div>
+            </div>
+            <div className="col-span-12 flex w-full items-center justify-center pb-24">
+                <div className="flex cursor-pointer items-center gap-2 rounded bg-stadlergradient px-5 py-2.5 text-sm font-medium leading-6 text-white">
+                    Load More
                 </div>
             </div>
         </ContentWidth>
