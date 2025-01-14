@@ -19,6 +19,8 @@ function NewsTeaser({ blok }) {
         currentLocale == 'en'
             ? 'media/media-releases/'
             : 'medien/medienmitteilungen/';
+    const categoryURL =
+        currentLocale == 'en' ? '/media-releases/' : '/medienmitteilungen/';
 
     useEffect(() => {
         const getArticles = async () => {
@@ -76,10 +78,10 @@ function NewsTeaser({ blok }) {
                                         />
                                     </div>
                                     <div className="mb-1 mt-4 flex flex-wrap">
-                                        {article.content.categories.map(
+                                        {article.content?.categories?.map(
                                             (category, index) =>
                                                 category.full_slug.includes(
-                                                    '/news/'
+                                                    categoryURL
                                                 ) && (
                                                     <span
                                                         key={index}
