@@ -145,7 +145,7 @@ const SuccessStoryGrid = ({ blok }) => {
                                                     <Link
                                                         tabIndex="1"
                                                         href={
-                                                            '/successstories/' +
+                                                            '/success-stories/' +
                                                             nestedBlok?.slug
                                                         }
                                                         className="absolute bottom-[20px] left-[22px] inline-flex items-center py-2 text-center text-sm font-medium"
