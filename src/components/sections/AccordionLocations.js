@@ -101,7 +101,7 @@ const AccordionLocations = ({ blok }) => {
                                     <a
                                         target={
                                             blok.link_google_maps?.target ??
-                                            false
+                                            '_blank'
                                         }
                                         tabIndex="1"
                                         className="cursor-pointer"
