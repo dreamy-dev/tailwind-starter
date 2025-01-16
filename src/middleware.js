@@ -19,7 +19,7 @@ export function middleware(request) {
     const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
     // console.log('request.nextUrl.pathname', request.nextUrl.pathname);
-    if (request.nextUrl.pathname == '/career') {
+    if (request.nextUrl.pathname == '/careers') {
         // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
@@ -133,7 +133,7 @@ export function middleware(request) {
             // and update this career page just in english and german
             // otherwise redirect here to global folder
         }
-    } else if (request.nextUrl.pathname == '/en/career') {
+    } else if (request.nextUrl.pathname == '/en/careers') {
         // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
