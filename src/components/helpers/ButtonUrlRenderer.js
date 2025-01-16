@@ -19,7 +19,7 @@ const ButtonUrlRenderer = (data) => {
     }
     if (data.fieldtype && data.fieldtype == 'asset') {
         if (data.filename) {
-            return data?.filename || '/';
+            return data?.filename.replace('https://a.storyblok.com/f/269997/', `${process.env.BASE_URL ? process.env.BASE_URL : 'https://stadler-prototyping-git-next-no-typescript-stadler-rail.vercel.app'}/api/docs/`) || '/';
         }
         return '/';
     }
