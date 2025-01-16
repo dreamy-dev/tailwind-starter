@@ -231,6 +231,7 @@ const onDraw = (img, ctx) => {
 
 const ImageSequence = ({ category }) => {
     const [prevCategoryNumber, categoryNumberChange] = useState(category);
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
     const canvasRef = useRef(null);
     let progress;
 
@@ -262,7 +263,7 @@ const ImageSequence = ({ category }) => {
             //     imageFormat = 'webp';
             // }
 
-            return createImage((typeof window !== 'undefined' && window?.innerWidth < 786) ? imagesMobile[i] : images[i]);
+            return createImage(windowSize < 786 ? imagesMobile[i] : images[i]);
         });
     }, []);
 
@@ -289,6 +290,7 @@ const ImageSequence = ({ category }) => {
     );
 
     useEffect(() => {
+        setWindowSize(window.innerWidth);
         resizeCanvas();
         progress = Number(category) / 3;
         const resizeCanvasAndRerender = () => {
@@ -318,6 +320,8 @@ const ImageSequence = ({ category }) => {
             img.src = image;
         });
     }, []);
+
+    console.log('windowwidthINIT', windowSize)
 
     const [animationProgress, animationProgressChange] = useState(false);
 
