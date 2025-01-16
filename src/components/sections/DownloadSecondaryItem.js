@@ -6,17 +6,17 @@ import ButtonUrlRenderer from '../helpers/ButtonUrlRenderer';
 const DownloadSecondaryItem = ({ blok }) => {
     return (
         <>
-            <li
+            <div
                 {...storyblokEditable(blok)}
-                className="mb-4 flex flex-col align-middle text-xl md:flex-row md:justify-between"
+                className="mb-4 grid grid-cols-[4fr_1fr] align-middle text-xl"
             >
                 <Text
-                    className="text-wrap mr-0 w-8/12 md:mr-10 md:w-auto"
-                    styles="w-9/12"
+                    className="text-wrap mr-0 md:mr-10 md:w-auto"
+                    styles="inline-block align-middle h-fit my-auto"
                 >
                     {blok.title}
                 </Text>
-                <div className="flex w-3/12 items-center justify-end">
+                <div className="flex flex-wrap items-center justify-end">
                     {blok?.download_list?.map(
                         (item, i) =>
                             item?.cta_text && (
@@ -33,7 +33,7 @@ const DownloadSecondaryItem = ({ blok }) => {
                             )
                     )}
                 </div>
-            </li>
+            </div>
             <div className="mb-4 border-b"></div>
         </>
     );
