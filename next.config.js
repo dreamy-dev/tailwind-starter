@@ -14,6 +14,14 @@ const nextConfig = {
             '@react-email/tailwind',
         ],
     },
+    async rewrites() {
+        return [
+            {
+                source: '/api/getFeeding', // get everything after /api/
+                destination: `https://www.juicer.io/api/feeds/stadler_rail/iframe`, // send it to your API
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;
