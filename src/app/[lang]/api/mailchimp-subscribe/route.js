@@ -19,7 +19,7 @@ export async function POST(request) {
             method: 'POST',
             body: JSON.stringify({
                 email_address: email,
-                status: 'subscribed',
+                status: 'pending',
                 merge_fields: {
                     FNAME: firstName,
                     LNAME: lastName,
