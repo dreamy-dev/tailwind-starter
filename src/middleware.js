@@ -18,17 +18,10 @@ export function middleware(request) {
 
     const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
-    console.log(
-        request.nextUrl.href.split('?')[1],
-        request.nextUrl.href.split('?')[1]?.includes('_storyblok')
-    );
-
-    // console.log('request.nextUrl.pathname', request.nextUrl.pathname);
     if (
         request.nextUrl.pathname == '/careers' &&
         !request.nextUrl.href.split('?')[1]?.includes('_storyblok')
     ) {
-        // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
                 if (userLocale.includes('fr')) {
