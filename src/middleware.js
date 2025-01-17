@@ -18,12 +18,15 @@ export function middleware(request) {
 
     const userLocale = request.headers.get('accept-language')?.split(',')?.[0];
 
-    console.log();
+    console.log(
+        request.nextUrl.href.split('?')[1],
+        request.nextUrl.href.split('?')[1]?.includes('_storyblok')
+    );
 
     // console.log('request.nextUrl.pathname', request.nextUrl.pathname);
     if (
         request.nextUrl.pathname == '/careers' &&
-        !JSON.stringify(request.nextUrl.searchParams).includes('_storyblok')
+        !request.nextUrl.href.split('?')[1]?.includes('_storyblok')
     ) {
         // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
@@ -140,7 +143,7 @@ export function middleware(request) {
         }
     } else if (
         request.nextUrl.pathname == '/en/careers' &&
-        !JSON.stringify(request.nextUrl.searchParams).includes('_storyblok')
+        !request.nextUrl.href.split('?')[1]?.includes('_storyblok')
     ) {
         // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
@@ -255,7 +258,10 @@ export function middleware(request) {
             // and update this career page just in english and german
             // otherwise redirect here to global folder
         }
-    } else if (request.nextUrl.pathname == '/de/karriere') {
+    } else if (
+        request.nextUrl.pathname == '/de/karriere' &&
+        !request.nextUrl.href.split('?')[1]?.includes('_storyblok')
+    ) {
         // console.log('request.geo.country', request.geo.country);
         switch (request.geo.country) {
             case 'CH':
