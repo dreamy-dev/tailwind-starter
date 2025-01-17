@@ -231,12 +231,11 @@ const onDraw = (img, ctx) => {
 
 const ImageSequence = ({ category }) => {
     const [prevCategoryNumber, categoryNumberChange] = useState(category);
-    const [windowSize, setWindowSize] = useState(window.innerWidth);
     const canvasRef = useRef(null);
     let progress;
 
     const createImage = (src) => {
-        if (typeof window !== 'undefined') {
+        if (typeof document !== 'undefined') {
             const img = document.createElement('img');
             img.src = src;
             return img;
@@ -245,22 +244,22 @@ const ImageSequence = ({ category }) => {
 
     const keyframes = useMemo(() => {
         return [...new Array(100)].map((_, i) => {
-            return createImage(windowSize < 786 ? imagesMobile[i] : images[i]);
+            return createImage(
+                typeof window !== 'undefined' && window?.innerWidth < 786
+                    ? imagesMobile[i]
+                    : images[i]
+            );
         });
     }, []);
 
     const resizeCanvas = useCallback(() => {
-        if (typeof window !== 'undefined') {
-            const canvas = canvasRef.current;
-            if (canvas) {
-                canvas.width = window.innerWidth;
-                canvas.height =
-                    window.innerWidth / 2.35 <
-                    window.innerHeight - window.innerHeight / 4
-                        ? window.innerWidth / 2.35
-                        : window.innerHeight - window.innerHeight / 4;
-            }
-        }
+        const canvas = canvasRef.current;
+        canvas.width = window.innerWidth;
+        canvas.height =
+            window.innerWidth / 2.35 <
+            window.innerHeight - window.innerHeight / 4
+                ? window.innerWidth / 2.35
+                : window.innerHeight - window.innerHeight / 4;
     }, []);
 
     const renderImage = useCallback(
@@ -276,7 +275,6 @@ const ImageSequence = ({ category }) => {
     );
 
     useEffect(() => {
-        setWindowSize(window.innerWidth);
         resizeCanvas();
         progress = Number(category) / 3;
         const resizeCanvasAndRerender = () => {
@@ -306,8 +304,6 @@ const ImageSequence = ({ category }) => {
             img.src = image;
         });
     }, []);
-
-    console.log('windowwidthINIT', windowSize);
 
     const [animationProgress, animationProgressChange] = useState(false);
 
